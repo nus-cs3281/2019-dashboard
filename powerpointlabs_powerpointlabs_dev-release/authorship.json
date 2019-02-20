@@ -1,5 +1,118 @@
 [
   {
+    "path": "PowerPointLabs/PowerPointLabs/ActionFramework/PictureSlidesLab/PictureSlidesEnabledHandler.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "﻿using PowerPointLabs.ActionFramework.Common.Attribute;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Interface;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "using PowerPointLabs.TextCollection;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "namespace PowerPointLabs.ActionFramework.PictureSlidesLab"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    [ExportEnabledRibbonId(PictureSlidesLabText.PaneTag)]"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    class PictureSlidesEnabledHandler : EnabledHandler"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "        protected override bool GetEnabled(string ribbonId)"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            return PowerPointLabs.PictureSlidesLab.PictureSlidesLab.IsPictureSlidesEnabled;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ChesterSng": 15
+    }
+  },
+  {
     "path": "PowerPointLabs/PowerPointLabs/ActionFramework/ShapesLab/ShapesLabActionHandler.cs",
     "lines": [
       {
@@ -636,6 +749,239 @@
     "authorContributionMap": {
       "ChesterSng": 2,
       "-": 88
+    }
+  },
+  {
+    "path": "PowerPointLabs/PowerPointLabs/ActionFramework/ShortcutsLab/EditName/EditNameActionHandler.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "﻿using Microsoft.Office.Interop.PowerPoint;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Attribute;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Extension;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Interface;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using PowerPointLabs.ShortcutsLab.Views;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using PowerPointLabs.TextCollection;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "namespace PowerPointLabs.ActionFramework.ShortcutsLab"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    [ExportActionRibbonId(ShortcutsLabText.EditNameTag)]"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    class EditNameActionHandler : ActionHandler"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        protected override void ExecuteAction(string ribbonId)"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Selection selection \u003d this.GetCurrentSelection();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Shape selectedShape \u003d selection.ShapeRange[1];"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if (selection.HasChildShapeRange)"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                selectedShape \u003d selection.ChildShapeRange[1];"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            EditNameDialogBox editForm \u003d new EditNameDialogBox(selectedShape);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            editForm.ShowDialog();"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            if (!this.GetApplication().CommandBars.GetPressedMso(\"SelectionPane\"))"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "                this.GetApplication().CommandBars.ExecuteMso(\"SelectionPane\");"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ChesterSng": 5,
+      "-": 27
     }
   },
   {
@@ -2868,6 +3214,63 @@
     "authorContributionMap": {
       "blewjy": 12,
       "-": 109
+    }
+  },
+  {
+    "path": "PowerPointLabs/PowerPointLabs/PictureSlidesLab/PictureSlidesLab.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "﻿namespace PowerPointLabs.PictureSlidesLab"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    internal static class PictureSlidesLab"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "        public static bool IsPictureSlidesEnabled { get; set; } \u003d false;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ChesterSng": 7
     }
   },
   {
@@ -68465,72 +68868,72 @@
       {
         "lineNumber": 940,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "            }"
+        "content": "                PictureSlidesLab.PictureSlidesLab.IsPictureSlidesEnabled \u003d true;"
       },
       {
         "lineNumber": 941,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": "            }"
       },
       {
         "lineNumber": 942,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            else"
       },
       {
         "lineNumber": 943,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdateRecorderPane(sldRange.Count, -1);"
+        "content": "            {"
       },
       {
         "lineNumber": 944,
         "author": {
           "gitId": "-"
         },
-        "content": "                TimerLab.TimerLab.IsTimerEnabled \u003d false;"
+        "content": "                UpdateRecorderPane(sldRange.Count, -1);"
       },
       {
         "lineNumber": 945,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdateTimerPane(false);"
+        "content": "                TimerLab.TimerLab.IsTimerEnabled \u003d false;"
       },
       {
         "lineNumber": 946,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                UpdateTimerPane(false);"
       },
       {
         "lineNumber": 947,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "                PictureSlidesLab.PictureSlidesLab.IsPictureSlidesEnabled \u003d false;"
       },
       {
         "lineNumber": 948,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "            // in case the recorder is on event"
+        "content": "                ShutDownPictureSlidesLab();"
       },
       {
         "lineNumber": 949,
         "author": {
           "gitId": "-"
         },
-        "content": "            BreakRecorderEvents();"
+        "content": "            }"
       },
       {
         "lineNumber": 950,
@@ -68544,322 +68947,322 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            // ribbon function init"
+        "content": "            // in case the recorder is on event"
       },
       {
         "lineNumber": 952,
         "author": {
           "gitId": "-"
         },
-        "content": "            HighlightLab.HighlightBulletsText.IsHighlightPointsEnabled \u003d true;"
+        "content": "            BreakRecorderEvents();"
       },
       {
         "lineNumber": 953,
         "author": {
           "gitId": "-"
         },
-        "content": "            HighlightLab.HighlightBulletsBackground.IsHighlightBackgroundEnabled \u003d true;"
+        "content": ""
       },
       {
         "lineNumber": 954,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // ribbon function init"
       },
       {
         "lineNumber": 955,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (sldRange.Count !\u003d 1)"
+        "content": "            HighlightLab.HighlightBulletsText.IsHighlightPointsEnabled \u003d true;"
       },
       {
         "lineNumber": 956,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            HighlightLab.HighlightBulletsBackground.IsHighlightBackgroundEnabled \u003d true;"
       },
       {
         "lineNumber": 957,
         "author": {
           "gitId": "-"
         },
-        "content": "                HighlightLab.HighlightBulletsText.IsHighlightPointsEnabled \u003d false;"
+        "content": ""
       },
       {
         "lineNumber": 958,
         "author": {
           "gitId": "-"
         },
-        "content": "                HighlightLab.HighlightBulletsBackground.IsHighlightBackgroundEnabled \u003d false;"
+        "content": "            if (sldRange.Count !\u003d 1)"
       },
       {
         "lineNumber": 959,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 960,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": "                HighlightLab.HighlightBulletsText.IsHighlightPointsEnabled \u003d false;"
       },
       {
         "lineNumber": 961,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                HighlightLab.HighlightBulletsBackground.IsHighlightBackgroundEnabled \u003d false;"
       },
       {
         "lineNumber": 962,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.Slide tmp \u003d sldRange[1];"
+        "content": "            }"
       },
       {
         "lineNumber": 963,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.Presentation presentation \u003d PowerPointPresentation.Current.Presentation;"
+        "content": "            else"
       },
       {
         "lineNumber": 964,
         "author": {
           "gitId": "-"
         },
-        "content": "                int slideIndex \u003d tmp.SlideIndex;"
+        "content": "            {"
       },
       {
         "lineNumber": 965,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.Slide next \u003d tmp;"
+        "content": "                PowerPoint.Slide tmp \u003d sldRange[1];"
       },
       {
         "lineNumber": 966,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.Slide prev \u003d tmp;"
+        "content": "                PowerPoint.Presentation presentation \u003d PowerPointPresentation.Current.Presentation;"
       },
       {
         "lineNumber": 967,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                int slideIndex \u003d tmp.SlideIndex;"
       },
       {
         "lineNumber": 968,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (slideIndex \u003c presentation.Slides.Count)"
+        "content": "                PowerPoint.Slide next \u003d tmp;"
       },
       {
         "lineNumber": 969,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                PowerPoint.Slide prev \u003d tmp;"
       },
       {
         "lineNumber": 970,
         "author": {
           "gitId": "-"
         },
-        "content": "                    next \u003d presentation.Slides[slideIndex + 1];"
+        "content": ""
       },
       {
         "lineNumber": 971,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                if (slideIndex \u003c presentation.Slides.Count)"
       },
       {
         "lineNumber": 972,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                {"
       },
       {
         "lineNumber": 973,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (slideIndex \u003e 1)"
+        "content": "                    next \u003d presentation.Slides[slideIndex + 1];"
       },
       {
         "lineNumber": 974,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                }"
       },
       {
         "lineNumber": 975,
         "author": {
           "gitId": "-"
         },
-        "content": "                    prev \u003d presentation.Slides[slideIndex - 1];"
+        "content": ""
       },
       {
         "lineNumber": 976,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                if (slideIndex \u003e 1)"
       },
       {
         "lineNumber": 977,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                {"
       },
       {
         "lineNumber": 978,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(\"TimerLabButton\");"
+        "content": "                    prev \u003d presentation.Slides[slideIndex - 1];"
       },
       {
         "lineNumber": 979,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(\"HighlightPointsButton\");"
+        "content": "                }"
       },
       {
         "lineNumber": 980,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(\"HighlightBackgroundButton\");"
+        "content": "            }"
       },
       {
         "lineNumber": 981,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "            Ribbon.RefreshRibbonControl(\"RemoveCaptionsButton\");"
+        "content": "            Ribbon.RefreshRibbonControl(\"PictureSlidesLabButton\");"
       },
       {
         "lineNumber": 982,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(\"RemoveAudioButton\");"
+        "content": "            Ribbon.RefreshRibbonControl(\"TimerLabButton\");"
       },
       {
         "lineNumber": 983,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            Ribbon.RefreshRibbonControl(\"HighlightPointsButton\");"
       },
       {
         "lineNumber": 984,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            Ribbon.RefreshRibbonControl(\"HighlightBackgroundButton\");"
       },
       {
         "lineNumber": 985,
         "author": {
           "gitId": "-"
         },
-        "content": "        // To handle AccessViolationException"
+        "content": "            Ribbon.RefreshRibbonControl(\"RemoveCaptionsButton\");"
       },
       {
         "lineNumber": 986,
         "author": {
           "gitId": "-"
         },
-        "content": "        [HandleProcessCorruptedStateExceptions]"
+        "content": "            Ribbon.RefreshRibbonControl(\"RemoveAudioButton\");"
       },
       {
         "lineNumber": 987,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void ThisAddInSelectionChanged(PowerPoint.Selection sel)"
+        "content": "        }"
       },
       {
         "lineNumber": 988,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": ""
       },
       {
         "lineNumber": 989,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (sel.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes)"
+        "content": "        // To handle AccessViolationException"
       },
       {
         "lineNumber": 990,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        [HandleProcessCorruptedStateExceptions]"
       },
       {
         "lineNumber": 991,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.Shape sh \u003d null;"
+        "content": "        private void ThisAddInSelectionChanged(PowerPoint.Selection sel)"
       },
       {
         "lineNumber": 992,
         "author": {
           "gitId": "-"
         },
-        "content": "                try"
+        "content": "        {"
       },
       {
         "lineNumber": 993,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            if (sel.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes)"
       },
       {
         "lineNumber": 994,
         "author": {
           "gitId": "-"
         },
-        "content": "                    sh \u003d sel.ShapeRange[1];"
+        "content": "            {"
       },
       {
         "lineNumber": 995,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                PowerPoint.Shape sh \u003d null;"
       },
       {
         "lineNumber": 996,
         "author": {
           "gitId": "-"
         },
-        "content": "                catch (AccessViolationException e)"
+        "content": "                try"
       },
       {
         "lineNumber": 997,
@@ -68873,609 +69276,609 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                    Logger.LogException(e, \"ThisAddInSelectionChanged\");"
+        "content": "                    sh \u003d sel.ShapeRange[1];"
       },
       {
         "lineNumber": 999,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Logger.Log(\"We do not have access to the ShapeRange now!\");"
+        "content": "                }"
       },
       {
         "lineNumber": 1000,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "                catch (AccessViolationException e)"
       },
       {
         "lineNumber": 1001,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                {"
       },
       {
         "lineNumber": 1002,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    Logger.LogException(e, \"ThisAddInSelectionChanged\");"
       },
       {
         "lineNumber": 1003,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (isResizePaneVisible)"
+        "content": "                    Logger.Log(\"We do not have access to the ShapeRange now!\");"
       },
       {
         "lineNumber": 1004,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    return;"
       },
       {
         "lineNumber": 1005,
         "author": {
           "gitId": "-"
         },
-        "content": "                    sel.ShapeRange.LockAspectRatio \u003d ResizeLabPaneWPF.IsAspectRatioLocked"
+        "content": "                }"
       },
       {
         "lineNumber": 1006,
         "author": {
           "gitId": "-"
         },
-        "content": "                        ? Office.MsoTriState.msoTrue"
+        "content": ""
       },
       {
         "lineNumber": 1007,
         "author": {
           "gitId": "-"
         },
-        "content": "                        : Office.MsoTriState.msoFalse;"
+        "content": "                if (isResizePaneVisible)"
       },
       {
         "lineNumber": 1008,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                {"
       },
       {
         "lineNumber": 1009,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    sel.ShapeRange.LockAspectRatio \u003d ResizeLabPaneWPF.IsAspectRatioLocked"
       },
       {
         "lineNumber": 1010,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                        ? Office.MsoTriState.msoTrue"
       },
       {
         "lineNumber": 1011,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        : Office.MsoTriState.msoFalse;"
       },
       {
         "lineNumber": 1012,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1013,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            // When there is no selection on the slide, disable the add/copy buttons on"
-      },
-      {
-        "lineNumber": 1014,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            // customshapepane and syncpane respectively"
-      },
-      {
-        "lineNumber": 1015,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            if (GetActivePane(typeof(SyncPane)) !\u003d null)"
-      },
-      {
-        "lineNumber": 1016,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            {"
-      },
-      {
-        "lineNumber": 1017,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "                SyncPane syncPane \u003d GetActivePane(typeof(SyncPane)).Control as SyncPane;"
-      },
-      {
-        "lineNumber": 1018,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "                syncPane.UpdateOnSelectionChange(sel);"
-      },
-      {
-        "lineNumber": 1019,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 1020,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1021,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            if (GetActivePane(typeof(CustomShapePane)) !\u003d null)"
-      },
-      {
-        "lineNumber": 1022,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            {"
-      },
-      {
-        "lineNumber": 1023,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "                CustomShapePane customShapePane \u003d GetActivePane(typeof(CustomShapePane)).Control as CustomShapePane;"
-      },
-      {
-        "lineNumber": 1024,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "                customShapePane.UpdateOnSelectionChange(sel);"
-      },
-      {
-        "lineNumber": 1025,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 1026,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1027,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"AnimateInSlideButton\");"
-      },
-      {
-        "lineNumber": 1028,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"DrillDownButton\");"
-      },
-      {
-        "lineNumber": 1029,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"StepBackButton\");"
-      },
-      {
-        "lineNumber": 1030,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"AddSpotlightButton\");"
-      },
-      {
-        "lineNumber": 1031,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"AddZoomInButton\");"
-      },
-      {
-        "lineNumber": 1032,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"AddZoomOutButton\");"
-      },
-      {
-        "lineNumber": 1033,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"ZoomToAreaButton\");"
-      },
-      {
-        "lineNumber": 1034,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"ReplaceWithClipboardButton\");"
-      },
-      {
-        "lineNumber": 1035,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"PasteIntoGroupButton\");"
-      },
-      {
-        "lineNumber": 1036,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            // To grey out the \"HighlightText\" button whenever non-text fragment or nothing has been selected"
-      },
-      {
-        "lineNumber": 1037,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.RefreshRibbonControl(\"HighlightTextButton\");"
-      },
-      {
-        "lineNumber": 1038,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 1039,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1040,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        private void ThisAddInNewPresentation(PowerPoint.Presentation pres)"
-      },
-      {
-        "lineNumber": 1041,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        {"
-      },
-      {
-        "lineNumber": 1042,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            PowerPoint.DocumentWindow activeWindow \u003d pres.Application.ActiveWindow;"
-      },
-      {
-        "lineNumber": 1043,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            string tempName \u003d pres.Name.GetHashCode().ToString(CultureInfo.InvariantCulture);"
-      },
-      {
-        "lineNumber": 1044,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1045,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            _documentHashcodeMapper[activeWindow] \u003d tempName;"
-      },
-      {
-        "lineNumber": 1046,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1047,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            // Refresh ribbon to enable the menu buttons"
-      },
-      {
-        "lineNumber": 1048,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            RefreshRibbonMenuButtons();"
-      },
-      {
-        "lineNumber": 1049,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            // Initialise the \"Maintain Tab Focus\" checkbox"
-      },
-      {
-        "lineNumber": 1050,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            Ribbon.InitialiseVisibilityCheckbox();"
-      },
-      {
-        "lineNumber": 1051,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 1052,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1053,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        // solve new un-modified unsave problem"
-      },
-      {
-        "lineNumber": 1054,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        private void ThisAddInAfterNewPresentation(PowerPoint.Presentation pres)"
-      },
-      {
-        "lineNumber": 1055,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        {"
-      },
-      {
-        "lineNumber": 1056,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            //Access the BuiltInDocumentProperties so that the property storage does get created."
-      },
-      {
-        "lineNumber": 1057,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            object o \u003d pres.BuiltInDocumentProperties;"
-      },
-      {
-        "lineNumber": 1058,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            pres.Saved \u003d Microsoft.Office.Core.MsoTriState.msoTrue;"
-      },
-      {
-        "lineNumber": 1059,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 1060,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1061,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        private void ThisAddInPresentationOpen(PowerPoint.Presentation pres)"
-      },
-      {
-        "lineNumber": 1062,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        {"
-      },
-      {
-        "lineNumber": 1063,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            // Windows count could be zero if presentation is opened as preview of template slides"
-      },
-      {
-        "lineNumber": 1064,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            if (pres.Application.Windows.Count \u003e 0)"
-      },
-      {
-        "lineNumber": 1065,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            {"
-      },
-      {
-        "lineNumber": 1066,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                PowerPoint.DocumentWindow activeWindow \u003d pres.Application.ActiveWindow;"
-      },
-      {
-        "lineNumber": 1067,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                string tempName \u003d pres.Name.GetHashCode().ToString(CultureInfo.InvariantCulture);"
-      },
-      {
-        "lineNumber": 1068,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 1069,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                // if we opened a new window, register the window with its name"
-      },
-      {
-        "lineNumber": 1070,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                if (!_documentHashcodeMapper.ContainsKey(activeWindow))"
-      },
-      {
-        "lineNumber": 1071,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                {"
-      },
-      {
-        "lineNumber": 1072,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                    _documentHashcodeMapper[activeWindow] \u003d tempName;"
-      },
-      {
-        "lineNumber": 1073,
         "author": {
           "gitId": "-"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 1074,
+        "lineNumber": 1013,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 1075,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                // Refresh ribbon to enable the menu buttons if there are now at least one window"
-      },
-      {
-        "lineNumber": 1076,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                RefreshRibbonMenuButtons();"
-      },
-      {
-        "lineNumber": 1077,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                // Initialise the \"Maintain Tab Focus\" checkbox"
-      },
-      {
-        "lineNumber": 1078,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                Ribbon.InitialiseVisibilityCheckbox();"
-      },
-      {
-        "lineNumber": 1079,
+        "lineNumber": 1014,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 1080,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 1081,
+        "lineNumber": 1015,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 1082,
+        "lineNumber": 1016,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1017,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            // When there is no selection on the slide, disable the add/copy buttons on"
+      },
+      {
+        "lineNumber": 1018,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            // customshapepane and syncpane respectively"
+      },
+      {
+        "lineNumber": 1019,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            if (GetActivePane(typeof(SyncPane)) !\u003d null)"
+      },
+      {
+        "lineNumber": 1020,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 1021,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "                SyncPane syncPane \u003d GetActivePane(typeof(SyncPane)).Control as SyncPane;"
+      },
+      {
+        "lineNumber": 1022,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "                syncPane.UpdateOnSelectionChange(sel);"
+      },
+      {
+        "lineNumber": 1023,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 1024,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1025,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            if (GetActivePane(typeof(CustomShapePane)) !\u003d null)"
+      },
+      {
+        "lineNumber": 1026,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 1027,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "                CustomShapePane customShapePane \u003d GetActivePane(typeof(CustomShapePane)).Control as CustomShapePane;"
+      },
+      {
+        "lineNumber": 1028,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "                customShapePane.UpdateOnSelectionChange(sel);"
+      },
+      {
+        "lineNumber": 1029,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 1030,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1031,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void ThisAddInPresentationClose(PowerPoint.Presentation pres)"
+        "content": "            Ribbon.RefreshRibbonControl(\"AnimateInSlideButton\");"
       },
       {
-        "lineNumber": 1083,
+        "lineNumber": 1032,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"DrillDownButton\");"
+      },
+      {
+        "lineNumber": 1033,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"StepBackButton\");"
+      },
+      {
+        "lineNumber": 1034,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"AddSpotlightButton\");"
+      },
+      {
+        "lineNumber": 1035,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"AddZoomInButton\");"
+      },
+      {
+        "lineNumber": 1036,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"AddZoomOutButton\");"
+      },
+      {
+        "lineNumber": 1037,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"ZoomToAreaButton\");"
+      },
+      {
+        "lineNumber": 1038,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"ReplaceWithClipboardButton\");"
+      },
+      {
+        "lineNumber": 1039,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"PasteIntoGroupButton\");"
+      },
+      {
+        "lineNumber": 1040,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // To grey out the \"HighlightText\" button whenever non-text fragment or nothing has been selected"
+      },
+      {
+        "lineNumber": 1041,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.RefreshRibbonControl(\"HighlightTextButton\");"
+      },
+      {
+        "lineNumber": 1042,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 1043,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1044,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private void ThisAddInNewPresentation(PowerPoint.Presentation pres)"
+      },
+      {
+        "lineNumber": 1045,
         "author": {
           "gitId": "-"
         },
         "content": "        {"
       },
       {
+        "lineNumber": 1046,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            PowerPoint.DocumentWindow activeWindow \u003d pres.Application.ActiveWindow;"
+      },
+      {
+        "lineNumber": 1047,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            string tempName \u003d pres.Name.GetHashCode().ToString(CultureInfo.InvariantCulture);"
+      },
+      {
+        "lineNumber": 1048,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1049,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            _documentHashcodeMapper[activeWindow] \u003d tempName;"
+      },
+      {
+        "lineNumber": 1050,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1051,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // Refresh ribbon to enable the menu buttons"
+      },
+      {
+        "lineNumber": 1052,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            RefreshRibbonMenuButtons();"
+      },
+      {
+        "lineNumber": 1053,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // Initialise the \"Maintain Tab Focus\" checkbox"
+      },
+      {
+        "lineNumber": 1054,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Ribbon.InitialiseVisibilityCheckbox();"
+      },
+      {
+        "lineNumber": 1055,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 1056,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1057,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // solve new un-modified unsave problem"
+      },
+      {
+        "lineNumber": 1058,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private void ThisAddInAfterNewPresentation(PowerPoint.Presentation pres)"
+      },
+      {
+        "lineNumber": 1059,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 1060,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            //Access the BuiltInDocumentProperties so that the property storage does get created."
+      },
+      {
+        "lineNumber": 1061,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            object o \u003d pres.BuiltInDocumentProperties;"
+      },
+      {
+        "lineNumber": 1062,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            pres.Saved \u003d Microsoft.Office.Core.MsoTriState.msoTrue;"
+      },
+      {
+        "lineNumber": 1063,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 1064,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1065,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private void ThisAddInPresentationOpen(PowerPoint.Presentation pres)"
+      },
+      {
+        "lineNumber": 1066,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 1067,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // Windows count could be zero if presentation is opened as preview of template slides"
+      },
+      {
+        "lineNumber": 1068,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if (pres.Application.Windows.Count \u003e 0)"
+      },
+      {
+        "lineNumber": 1069,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 1070,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                PowerPoint.DocumentWindow activeWindow \u003d pres.Application.ActiveWindow;"
+      },
+      {
+        "lineNumber": 1071,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                string tempName \u003d pres.Name.GetHashCode().ToString(CultureInfo.InvariantCulture);"
+      },
+      {
+        "lineNumber": 1072,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1073,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                // if we opened a new window, register the window with its name"
+      },
+      {
+        "lineNumber": 1074,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if (!_documentHashcodeMapper.ContainsKey(activeWindow))"
+      },
+      {
+        "lineNumber": 1075,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 1076,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    _documentHashcodeMapper[activeWindow] \u003d tempName;"
+      },
+      {
+        "lineNumber": 1077,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 1078,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1079,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                // Refresh ribbon to enable the menu buttons if there are now at least one window"
+      },
+      {
+        "lineNumber": 1080,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                RefreshRibbonMenuButtons();"
+      },
+      {
+        "lineNumber": 1081,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                // Initialise the \"Maintain Tab Focus\" checkbox"
+      },
+      {
+        "lineNumber": 1082,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Ribbon.InitialiseVisibilityCheckbox();"
+      },
+      {
+        "lineNumber": 1083,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
         "lineNumber": 1084,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "            Trace.TraceInformation(\"Closing \" + pres.Name + \"...\");"
+        "content": "        }"
       },
       {
         "lineNumber": 1085,
@@ -69487,219 +69890,219 @@
       {
         "lineNumber": 1086,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "        private void ThisAddInPresentationClose(PowerPoint.Presentation pres)"
       },
       {
         "lineNumber": 1087,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "            // We need to check if there is only one window AND the active window\u0027s presentation "
+        "content": "        {"
       },
       {
         "lineNumber": 1088,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            // has the same name as the one we are closing because it is possible for background "
+        "content": "            Trace.TraceInformation(\"Closing \" + pres.Name + \"...\");"
       },
       {
         "lineNumber": 1089,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "            // presentation (those without windows) to close and trigger this event as well."
+        "content": ""
       },
       {
         "lineNumber": 1090,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            // We only want to shut down PPTLabs if we are closing the main presentation."
+        "content": ""
       },
       {
         "lineNumber": 1091,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            if (Application.Windows.Count \u003d\u003d 1 \u0026\u0026"
+        "content": "            // We need to check if there is only one window AND the active window\u0027s presentation "
       },
       {
         "lineNumber": 1092,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "                Application.ActiveWindow.Presentation.FullName \u003d\u003d pres.FullName)"
+        "content": "            // has the same name as the one we are closing because it is possible for background "
       },
       {
         "lineNumber": 1093,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            {"
+        "content": "            // presentation (those without windows) to close and trigger this event as well."
       },
       {
         "lineNumber": 1094,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "                // If this current window we are closing is the last window, then PptLabs should terminate."
+        "content": "            // We only want to shut down PPTLabs if we are closing the main presentation."
       },
       {
         "lineNumber": 1095,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "                _pptLabsShouldTerminate \u003d true;"
+        "content": "            if (Application.Windows.Count \u003d\u003d 1 \u0026\u0026"
       },
       {
         "lineNumber": 1096,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            }"
+        "content": "                Application.ActiveWindow.Presentation.FullName \u003d\u003d pres.FullName)"
       },
       {
         "lineNumber": 1097,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1098,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            // special case: if we are closing \u0027ShapeGallery.pptx\u0027 or \u0027Sync Lab - Do not edit.pptx\u0027, no other action will be done"
+        "content": "                // If this current window we are closing is the last window, then PptLabs should terminate."
       },
       {
         "lineNumber": 1099,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            if (pres.Name.Contains(ShapeGalleryPptxName) || pres.Name.Contains(SyncLabPptxName)) "
+        "content": "                _pptLabsShouldTerminate \u003d true;"
       },
       {
         "lineNumber": 1100,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 1101,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": ""
       },
       {
         "lineNumber": 1102,
+        "author": {
+          "gitId": "blewjy"
+        },
+        "content": "            // special case: if we are closing \u0027ShapeGallery.pptx\u0027 or \u0027Sync Lab - Do not edit.pptx\u0027, no other action will be done"
+      },
+      {
+        "lineNumber": 1103,
+        "author": {
+          "gitId": "blewjy"
+        },
+        "content": "            if (pres.Name.Contains(ShapeGalleryPptxName) || pres.Name.Contains(SyncLabPptxName)) "
+      },
+      {
+        "lineNumber": 1104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 1105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                return;"
+      },
+      {
+        "lineNumber": 1106,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 1103,
+        "lineNumber": 1107,
         "author": {
           "gitId": "-"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 1104,
-        "author": {
-          "gitId": "blewjy"
-        },
-        "content": "            if (_pptLabsShouldTerminate)"
-      },
-      {
-        "lineNumber": 1105,
-        "author": {
-          "gitId": "blewjy"
-        },
-        "content": "            {"
-      },
-      {
-        "lineNumber": 1106,
-        "author": {
-          "gitId": "blewjy"
-        },
-        "content": "                ShutDownSyncLab();"
-      },
-      {
-        "lineNumber": 1107,
-        "author": {
-          "gitId": "blewjy"
-        },
-        "content": "                ShutDownShapesLab();"
       },
       {
         "lineNumber": 1108,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "                ShutDownPictureSlidesLab();"
+        "content": "            if (_pptLabsShouldTerminate)"
       },
       {
         "lineNumber": 1109,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 1110,
         "author": {
           "gitId": "blewjy"
         },
-        "content": ""
+        "content": "                ShutDownSyncLab();"
       },
       {
         "lineNumber": 1111,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            ShutDownColorPane();"
+        "content": "                ShutDownShapesLab();"
       },
       {
         "lineNumber": 1112,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            ShutDownRecorderPane();"
+        "content": "                ShutDownPictureSlidesLab();"
       },
       {
         "lineNumber": 1113,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 1114,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            // find the document that holds the presentation with pres.Name"
+        "content": ""
       },
       {
         "lineNumber": 1115,
         "author": {
           "gitId": "-"
         },
-        "content": "            // special case will be embedded slide. in this case pres.Windows return exception"
+        "content": "            ShutDownColorPane();"
       },
       {
         "lineNumber": 1116,
         "author": {
           "gitId": "-"
         },
-        "content": "            PowerPoint.DocumentWindow associatedWindow;"
+        "content": "            ShutDownRecorderPane();"
       },
       {
         "lineNumber": 1117,
@@ -69713,511 +70116,511 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "            // find the document that holds the presentation with pres.Name"
       },
       {
         "lineNumber": 1119,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            // special case will be embedded slide. in this case pres.Windows return exception"
       },
       {
         "lineNumber": 1120,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "                Trace.TraceInformation(\"Total windows of closing presentation \u003d \" + pres.Windows.Count);"
+        "content": "            PowerPoint.DocumentWindow associatedWindow;"
       },
       {
         "lineNumber": 1121,
         "author": {
           "gitId": "-"
         },
-        "content": "                Trace.TraceInformation(\"Windows are: \");"
+        "content": ""
       },
       {
         "lineNumber": 1122,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            try"
       },
       {
         "lineNumber": 1123,
         "author": {
           "gitId": "-"
         },
-        "content": "                foreach (PowerPoint.DocumentWindow window in pres.Windows)"
+        "content": "            {"
       },
       {
         "lineNumber": 1124,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "                {"
+        "content": "                Trace.TraceInformation(\"Total windows of closing presentation \u003d \" + pres.Windows.Count);"
       },
       {
         "lineNumber": 1125,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "                    Trace.TraceInformation(\"\\t\" + window.Caption);"
+        "content": "                Trace.TraceInformation(\"Windows are: \");"
       },
       {
         "lineNumber": 1126,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 1127,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                foreach (PowerPoint.DocumentWindow window in pres.Windows)"
       },
       {
         "lineNumber": 1128,
         "author": {
           "gitId": "-"
         },
-        "content": "                associatedWindow \u003d pres.Windows[1];"
+        "content": "                {"
       },
       {
         "lineNumber": 1129,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            }"
+        "content": "                    Trace.TraceInformation(\"\\t\" + window.Caption);"
       },
       {
         "lineNumber": 1130,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch (Exception)"
+        "content": "                }"
       },
       {
         "lineNumber": 1131,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 1132,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "                Trace.TraceInformation(\"Closing presentation - \" + pres.FullName + \" - has no window.\");"
+        "content": "                associatedWindow \u003d pres.Windows[1];"
       },
       {
         "lineNumber": 1133,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "            }"
       },
       {
         "lineNumber": 1134,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            catch (Exception)"
       },
       {
         "lineNumber": 1135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1136,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            // for Functional Test to close presentation"
+        "content": "                Trace.TraceInformation(\"Closing presentation - \" + pres.FullName + \" - has no window.\");"
       },
       {
         "lineNumber": 1137,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (PowerPointLabsFT.IsFunctionalTestOn)"
+        "content": "                return;"
       },
       {
         "lineNumber": 1138,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 1139,
         "author": {
           "gitId": "-"
         },
-        "content": "                IntPtr handle \u003d Native.FindWindow(\"PPTFrameClass\", pres.Name + \" - Microsoft PowerPoint\");"
+        "content": ""
       },
       {
         "lineNumber": 1140,
         "author": {
           "gitId": "-"
         },
-        "content": "                Native.SetForegroundWindow(handle);"
+        "content": "            // for Functional Test to close presentation"
       },
       {
         "lineNumber": 1141,
         "author": {
           "gitId": "-"
         },
-        "content": "                SendKeys.Send(\"N\");"
+        "content": "            if (PowerPointLabsFT.IsFunctionalTestOn)"
       },
       {
         "lineNumber": 1142,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 1143,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                IntPtr handle \u003d Native.FindWindow(\"PPTFrameClass\", pres.Name + \" - Microsoft PowerPoint\");"
       },
       {
         "lineNumber": 1144,
         "author": {
           "gitId": "-"
         },
-        "content": "            Trace.TraceInformation(\"Closing associated window...\");"
+        "content": "                Native.SetForegroundWindow(handle);"
       },
       {
         "lineNumber": 1145,
         "author": {
           "gitId": "-"
         },
-        "content": "            CleanUp(associatedWindow);"
+        "content": "                SendKeys.Send(\"N\");"
       },
       {
         "lineNumber": 1146,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 1147,
         "author": {
           "gitId": "-"
         },
-        "content": "            // Refresh ribbon to grey out the menu / buttons if there are no windows open"
+        "content": ""
       },
       {
         "lineNumber": 1148,
         "author": {
           "gitId": "-"
         },
-        "content": "            RefreshRibbonMenuButtons();"
+        "content": "            Trace.TraceInformation(\"Closing associated window...\");"
       },
       {
         "lineNumber": 1149,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            CleanUp(associatedWindow);"
       },
       {
         "lineNumber": 1150,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 1151,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // Refresh ribbon to grey out the menu / buttons if there are no windows open"
       },
       {
         "lineNumber": 1152,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void RefreshRibbonMenuButtons() "
+        "content": "            RefreshRibbonMenuButtons();"
       },
       {
         "lineNumber": 1153,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": ""
       },
       {
         "lineNumber": 1154,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(AnimationLabText.RibbonMenuId);"
+        "content": "        }"
       },
       {
         "lineNumber": 1155,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(ZoomLabText.RibbonMenuId);"
+        "content": ""
       },
       {
         "lineNumber": 1156,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(NarrationsLabText.RibbonMenuId);"
+        "content": "        private void RefreshRibbonMenuButtons() "
       },
       {
         "lineNumber": 1157,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(CaptionsLabText.RibbonMenuId);"
+        "content": "        {"
       },
       {
         "lineNumber": 1158,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(HighlightLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(AnimationLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1159,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(EffectsLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(ZoomLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1160,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(PositionsLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(NarrationsLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1161,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(ResizeLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(CaptionsLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1162,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(ColorsLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(HighlightLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1163,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(SaveLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(EffectsLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1164,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(SyncLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(PositionsLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1165,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(ShapesLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(ResizeLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1166,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(CropLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(ColorsLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1167,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(PasteLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(SaveLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1168,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(TimerLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(SyncLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1169,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(AgendaLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(ShapesLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1170,
         "author": {
           "gitId": "-"
         },
-        "content": "            Ribbon.RefreshRibbonControl(PictureSlidesLabText.RibbonMenuId);"
+        "content": "            Ribbon.RefreshRibbonControl(CropLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1171,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            Ribbon.RefreshRibbonControl(PasteLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1172,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            Ribbon.RefreshRibbonControl(TimerLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1173,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void ThisAddInShutdown(object sender, EventArgs e)"
+        "content": "            Ribbon.RefreshRibbonControl(AgendaLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1174,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            Ribbon.RefreshRibbonControl(PictureSlidesLabText.RibbonMenuId);"
       },
       {
         "lineNumber": 1175,
         "author": {
           "gitId": "-"
         },
-        "content": "            PPMouse.StopHook();"
+        "content": "        }"
       },
       {
         "lineNumber": 1176,
         "author": {
           "gitId": "-"
         },
-        "content": "            PPKeyboard.StopHook();"
+        "content": ""
       },
       {
         "lineNumber": 1177,
         "author": {
           "gitId": "-"
         },
-        "content": "            PPCopy.StopHook();"
+        "content": "        private void ThisAddInShutdown(object sender, EventArgs e)"
       },
       {
         "lineNumber": 1178,
         "author": {
           "gitId": "-"
         },
-        "content": "            PositionsPaneWpf.ClearAllEventHandlers();"
+        "content": "        {"
       },
       {
         "lineNumber": 1179,
         "author": {
           "gitId": "-"
         },
-        "content": "            UIThreadExecutor.TearDown();"
+        "content": "            PPMouse.StopHook();"
       },
       {
         "lineNumber": 1180,
         "author": {
           "gitId": "-"
         },
-        "content": "            Trace.TraceInformation(DateTime.Now.ToString(\"yyyyMMddHHmmss\") + \": PowerPointLabs Exiting\");"
+        "content": "            PPKeyboard.StopHook();"
       },
       {
         "lineNumber": 1181,
         "author": {
           "gitId": "-"
         },
-        "content": "            Trace.Close();"
+        "content": "            PPCopy.StopHook();"
       },
       {
         "lineNumber": 1182,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (_ftChannel !\u003d null)"
+        "content": "            PositionsPaneWpf.ClearAllEventHandlers();"
       },
       {
         "lineNumber": 1183,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            UIThreadExecutor.TearDown();"
       },
       {
         "lineNumber": 1184,
         "author": {
           "gitId": "-"
         },
-        "content": "                ChannelServices.UnregisterChannel(_ftChannel);"
+        "content": "            Trace.TraceInformation(DateTime.Now.ToString(\"yyyyMMddHHmmss\") + \": PowerPointLabs Exiting\");"
       },
       {
         "lineNumber": 1185,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            Trace.Close();"
       },
       {
         "lineNumber": 1186,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            if (_ftChannel !\u003d null)"
       },
       {
         "lineNumber": 1187,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1188,
         "author": {
           "gitId": "-"
         },
-        "content": "        #endregion"
+        "content": "                ChannelServices.UnregisterChannel(_ftChannel);"
       },
       {
         "lineNumber": 1189,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 1190,
         "author": {
           "gitId": "-"
         },
-        "content": "        # region Copy paste handlers"
+        "content": "        }"
       },
       {
         "lineNumber": 1191,
@@ -70231,21 +70634,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        private PowerPoint.DocumentWindow _copyFromWnd;"
+        "content": "        #endregion"
       },
       {
         "lineNumber": 1193,
         "author": {
           "gitId": "-"
         },
-        "content": "        private readonly Regex _shapeNamePattern \u003d new Regex(@\"^[^\\[]\\D+\\s\\d+$\");"
+        "content": ""
       },
       {
         "lineNumber": 1194,
         "author": {
           "gitId": "-"
         },
-        "content": "        private HashSet\u003cString\u003e _isShapeMatchedAlready;"
+        "content": "        # region Copy paste handlers"
       },
       {
         "lineNumber": 1195,
@@ -70259,182 +70662,182 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        private void AfterPasteEventHandler(PowerPoint.Selection selection)"
+        "content": "        private PowerPoint.DocumentWindow _copyFromWnd;"
       },
       {
         "lineNumber": 1197,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        private readonly Regex _shapeNamePattern \u003d new Regex(@\"^[^\\[]\\D+\\s\\d+$\");"
       },
       {
         "lineNumber": 1198,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "        private HashSet\u003cString\u003e _isShapeMatchedAlready;"
       },
       {
         "lineNumber": 1199,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 1200,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.Slide currentSlide \u003d Application.ActiveWindow.View.Slide as PowerPoint.Slide;"
+        "content": "        private void AfterPasteEventHandler(PowerPoint.Selection selection)"
       },
       {
         "lineNumber": 1201,
         "author": {
           "gitId": "-"
         },
-        "content": "                string pptName \u003d Application.ActivePresentation.Name;"
+        "content": "        {"
       },
       {
         "lineNumber": 1202,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            try"
       },
       {
         "lineNumber": 1203,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes"
+        "content": "            {"
       },
       {
         "lineNumber": 1204,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 currentSlide !\u003d null"
+        "content": "                PowerPoint.Slide currentSlide \u003d Application.ActiveWindow.View.Slide as PowerPoint.Slide;"
       },
       {
         "lineNumber": 1205,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 currentSlide.SlideID !\u003d _previousSlideForCopyEvent.SlideID"
+        "content": "                string pptName \u003d Application.ActivePresentation.Name;"
       },
       {
         "lineNumber": 1206,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 pptName \u003d\u003d _previousPptName)"
+        "content": ""
       },
       {
         "lineNumber": 1207,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes"
       },
       {
         "lineNumber": 1208,
         "author": {
           "gitId": "-"
         },
-        "content": "                    PowerPoint.ShapeRange pastedShapes \u003d selection.ShapeRange;"
+        "content": "                    \u0026\u0026 currentSlide !\u003d null"
       },
       {
         "lineNumber": 1209,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    \u0026\u0026 currentSlide.SlideID !\u003d _previousSlideForCopyEvent.SlideID"
       },
       {
         "lineNumber": 1210,
         "author": {
           "gitId": "-"
         },
-        "content": "                    List\u003cstring\u003e nameListForPastedShapes \u003d new List\u003cstring\u003e();"
+        "content": "                    \u0026\u0026 pptName \u003d\u003d _previousPptName)"
       },
       {
         "lineNumber": 1211,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Dictionary\u003cstring, string\u003e nameDictForPastedShapes \u003d new Dictionary\u003cstring, string\u003e();"
+        "content": "                {"
       },
       {
         "lineNumber": 1212,
         "author": {
           "gitId": "-"
         },
-        "content": "                    List\u003cstring\u003e nameListForCopiedShapes \u003d new List\u003cstring\u003e();"
+        "content": "                    PowerPoint.ShapeRange pastedShapes \u003d selection.ShapeRange;"
       },
       {
         "lineNumber": 1213,
         "author": {
           "gitId": "-"
         },
-        "content": "                    List\u003cPowerPoint.Shape\u003e corruptedShapes \u003d new List\u003cPowerPoint.Shape\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 1214,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    List\u003cstring\u003e nameListForPastedShapes \u003d new List\u003cstring\u003e();"
       },
       {
         "lineNumber": 1215,
         "author": {
           "gitId": "-"
         },
-        "content": "                    foreach (PowerPoint.Shape shape in _copiedShapes)"
+        "content": "                    Dictionary\u003cstring, string\u003e nameDictForPastedShapes \u003d new Dictionary\u003cstring, string\u003e();"
       },
       {
         "lineNumber": 1216,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                    List\u003cstring\u003e nameListForCopiedShapes \u003d new List\u003cstring\u003e();"
       },
       {
         "lineNumber": 1217,
         "author": {
           "gitId": "-"
         },
-        "content": "                        try"
+        "content": "                    List\u003cPowerPoint.Shape\u003e corruptedShapes \u003d new List\u003cPowerPoint.Shape\u003e();"
       },
       {
         "lineNumber": 1218,
         "author": {
           "gitId": "-"
         },
-        "content": "                        {"
+        "content": ""
       },
       {
         "lineNumber": 1219,
         "author": {
           "gitId": "-"
         },
-        "content": "                            nameListForCopiedShapes.Add(shape.Name);"
+        "content": "                    foreach (PowerPoint.Shape shape in _copiedShapes)"
       },
       {
         "lineNumber": 1220,
         "author": {
           "gitId": "-"
         },
-        "content": "                        }"
+        "content": "                    {"
       },
       {
         "lineNumber": 1221,
         "author": {
           "gitId": "-"
         },
-        "content": "                        catch"
+        "content": "                        try"
       },
       {
         "lineNumber": 1222,
@@ -70448,385 +70851,385 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                            //handling corrupted shapes"
+        "content": "                            nameListForCopiedShapes.Add(shape.Name);"
       },
       {
         "lineNumber": 1224,
         "author": {
           "gitId": "-"
         },
-        "content": "                            shape.Copy();"
+        "content": "                        }"
       },
       {
         "lineNumber": 1225,
         "author": {
           "gitId": "-"
         },
-        "content": "                            PowerPoint.Shape fixedShape \u003d _previousSlideForCopyEvent.Shapes.Paste()[1];"
+        "content": "                        catch"
       },
       {
         "lineNumber": 1226,
         "author": {
           "gitId": "-"
         },
-        "content": "                            fixedShape.Left \u003d shape.Left;"
+        "content": "                        {"
       },
       {
         "lineNumber": 1227,
         "author": {
           "gitId": "-"
         },
-        "content": "                            fixedShape.Top \u003d shape.Top;"
+        "content": "                            //handling corrupted shapes"
       },
       {
         "lineNumber": 1228,
         "author": {
           "gitId": "-"
         },
-        "content": "                            while (fixedShape.ZOrderPosition \u003e shape.ZOrderPosition)"
+        "content": "                            shape.Copy();"
       },
       {
         "lineNumber": 1229,
         "author": {
           "gitId": "-"
         },
-        "content": "                            {"
+        "content": "                            PowerPoint.Shape fixedShape \u003d _previousSlideForCopyEvent.Shapes.Paste()[1];"
       },
       {
         "lineNumber": 1230,
         "author": {
           "gitId": "-"
         },
-        "content": "                                fixedShape.ZOrder(Office.MsoZOrderCmd.msoSendBackward);"
+        "content": "                            fixedShape.Left \u003d shape.Left;"
       },
       {
         "lineNumber": 1231,
         "author": {
           "gitId": "-"
         },
-        "content": "                            }"
+        "content": "                            fixedShape.Top \u003d shape.Top;"
       },
       {
         "lineNumber": 1232,
         "author": {
           "gitId": "-"
         },
-        "content": "                            corruptedShapes.Add(shape);"
+        "content": "                            while (fixedShape.ZOrderPosition \u003e shape.ZOrderPosition)"
       },
       {
         "lineNumber": 1233,
         "author": {
           "gitId": "-"
         },
-        "content": "                            nameListForCopiedShapes.Add(fixedShape.Name);"
+        "content": "                            {"
       },
       {
         "lineNumber": 1234,
         "author": {
           "gitId": "-"
         },
-        "content": "                        }"
+        "content": "                                fixedShape.ZOrder(Office.MsoZOrderCmd.msoSendBackward);"
       },
       {
         "lineNumber": 1235,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                            }"
       },
       {
         "lineNumber": 1236,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                            corruptedShapes.Add(shape);"
       },
       {
         "lineNumber": 1237,
         "author": {
           "gitId": "-"
         },
-        "content": "                    foreach (PowerPoint.Shape shape in corruptedShapes)"
+        "content": "                            nameListForCopiedShapes.Add(fixedShape.Name);"
       },
       {
         "lineNumber": 1238,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                        }"
       },
       {
         "lineNumber": 1239,
         "author": {
           "gitId": "-"
         },
-        "content": "                        shape.Delete();"
+        "content": "                    }"
       },
       {
         "lineNumber": 1240,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": ""
       },
       {
         "lineNumber": 1241,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    foreach (PowerPoint.Shape shape in corruptedShapes)"
       },
       {
         "lineNumber": 1242,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _isShapeMatchedAlready \u003d new HashSet\u003cstring\u003e();"
+        "content": "                    {"
       },
       {
         "lineNumber": 1243,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        shape.Delete();"
       },
       {
         "lineNumber": 1244,
         "author": {
           "gitId": "-"
         },
-        "content": "                    for (int i \u003d 1; i \u003c\u003d pastedShapes.Count; i++)"
+        "content": "                    }"
       },
       {
         "lineNumber": 1245,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": ""
       },
       {
         "lineNumber": 1246,
         "author": {
           "gitId": "-"
         },
-        "content": "                        PowerPoint.Shape shape \u003d pastedShapes[i];"
+        "content": "                    _isShapeMatchedAlready \u003d new HashSet\u003cstring\u003e();"
       },
       {
         "lineNumber": 1247,
         "author": {
           "gitId": "-"
         },
-        "content": "                        int matchedShapeIndex \u003d FindMatchedShape(shape);"
+        "content": ""
       },
       {
         "lineNumber": 1248,
         "author": {
           "gitId": "-"
         },
-        "content": "                        string uniqueName \u003d Guid.NewGuid().ToString();"
+        "content": "                    for (int i \u003d 1; i \u003c\u003d pastedShapes.Count; i++)"
       },
       {
         "lineNumber": 1249,
         "author": {
           "gitId": "-"
         },
-        "content": "                        nameDictForPastedShapes[uniqueName] \u003d nameListForCopiedShapes[matchedShapeIndex];"
+        "content": "                    {"
       },
       {
         "lineNumber": 1250,
         "author": {
           "gitId": "-"
         },
-        "content": "                        shape.Name \u003d uniqueName;"
+        "content": "                        PowerPoint.Shape shape \u003d pastedShapes[i];"
       },
       {
         "lineNumber": 1251,
         "author": {
           "gitId": "-"
         },
-        "content": "                        nameListForPastedShapes.Add(shape.Name);"
+        "content": "                        int matchedShapeIndex \u003d FindMatchedShape(shape);"
       },
       {
         "lineNumber": 1252,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                        string uniqueName \u003d Guid.NewGuid().ToString();"
       },
       {
         "lineNumber": 1253,
         "author": {
           "gitId": "-"
         },
-        "content": "                    //Re-select pasted shapes"
+        "content": "                        nameDictForPastedShapes[uniqueName] \u003d nameListForCopiedShapes[matchedShapeIndex];"
       },
       {
         "lineNumber": 1254,
         "author": {
           "gitId": "-"
         },
-        "content": "                    PowerPoint.ShapeRange range \u003d currentSlide.Shapes.Range(nameListForPastedShapes.ToArray());"
+        "content": "                        shape.Name \u003d uniqueName;"
       },
       {
         "lineNumber": 1255,
         "author": {
           "gitId": "-"
         },
-        "content": "                    foreach (PowerPoint.Shape shape in range)"
+        "content": "                        nameListForPastedShapes.Add(shape.Name);"
       },
       {
         "lineNumber": 1256,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                    }"
       },
       {
         "lineNumber": 1257,
         "author": {
           "gitId": "-"
         },
-        "content": "                        shape.Name \u003d nameDictForPastedShapes[shape.Name];"
+        "content": "                    //Re-select pasted shapes"
       },
       {
         "lineNumber": 1258,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    PowerPoint.ShapeRange range \u003d currentSlide.Shapes.Range(nameListForPastedShapes.ToArray());"
       },
       {
         "lineNumber": 1259,
         "author": {
           "gitId": "-"
         },
-        "content": "                    range.Select();"
+        "content": "                    foreach (PowerPoint.Shape shape in range)"
       },
       {
         "lineNumber": 1260,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    {"
       },
       {
         "lineNumber": 1261,
         "author": {
           "gitId": "-"
         },
-        "content": "                else if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionSlides)"
+        "content": "                        shape.Name \u003d nameDictForPastedShapes[shape.Name];"
       },
       {
         "lineNumber": 1262,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    }"
       },
       {
         "lineNumber": 1263,
         "author": {
           "gitId": "-"
         },
-        "content": "                    List\u003cPowerPoint.Slide\u003e pastedSlides \u003d selection.SlideRange.Cast\u003cPowerPoint.Slide\u003e().OrderBy(x \u003d\u003e x.SlideIndex).ToList();"
+        "content": "                    range.Select();"
       },
       {
         "lineNumber": 1264,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 1265,
         "author": {
           "gitId": "-"
         },
-        "content": "                    for (int i \u003d 0; i \u003c pastedSlides.Count; i++)"
+        "content": "                else if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionSlides)"
       },
       {
         "lineNumber": 1266,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                {"
       },
       {
         "lineNumber": 1267,
         "author": {
           "gitId": "-"
         },
-        "content": "                        if (AgendaLab.AgendaSlide.IsReferenceslide(_copiedSlides[i]))"
+        "content": "                    List\u003cPowerPoint.Slide\u003e pastedSlides \u003d selection.SlideRange.Cast\u003cPowerPoint.Slide\u003e().OrderBy(x \u003d\u003e x.SlideIndex).ToList();"
       },
       {
         "lineNumber": 1268,
         "author": {
           "gitId": "-"
         },
-        "content": "                        {"
+        "content": ""
       },
       {
         "lineNumber": 1269,
         "author": {
           "gitId": "-"
         },
-        "content": "                            pastedSlides[i].Name \u003d _copiedSlides[i].Name;"
+        "content": "                    for (int i \u003d 0; i \u003c pastedSlides.Count; i++)"
       },
       {
         "lineNumber": 1270,
         "author": {
           "gitId": "-"
         },
-        "content": "                            pastedSlides[i].Design \u003d _copiedSlides[i].Design;"
+        "content": "                    {"
       },
       {
         "lineNumber": 1271,
         "author": {
           "gitId": "-"
         },
-        "content": "                        }"
+        "content": "                        if (AgendaLab.AgendaSlide.IsReferenceslide(_copiedSlides[i]))"
       },
       {
         "lineNumber": 1272,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                        {"
       },
       {
         "lineNumber": 1273,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                            pastedSlides[i].Name \u003d _copiedSlides[i].Name;"
       },
       {
         "lineNumber": 1274,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                            pastedSlides[i].Design \u003d _copiedSlides[i].Design;"
       },
       {
         "lineNumber": 1275,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch"
+        "content": "                        }"
       },
       {
         "lineNumber": 1276,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    }"
       },
       {
         "lineNumber": 1277,
         "author": {
           "gitId": "-"
         },
-        "content": "                //TODO: log in ThisAddIn.cs"
+        "content": "                }"
       },
       {
         "lineNumber": 1278,
@@ -70840,707 +71243,707 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            catch"
       },
       {
         "lineNumber": 1280,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1281,
         "author": {
           "gitId": "-"
         },
-        "content": "        private int FindMatchedShape(PowerPoint.Shape shape)"
+        "content": "                //TODO: log in ThisAddIn.cs"
       },
       {
         "lineNumber": 1282,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 1283,
         "author": {
           "gitId": "-"
         },
-        "content": "            //Strong matching:"
+        "content": "        }"
       },
       {
         "lineNumber": 1284,
         "author": {
           "gitId": "-"
         },
-        "content": "            for (int i \u003d 0; i \u003c _copiedShapes.Count; i++)"
+        "content": ""
       },
       {
         "lineNumber": 1285,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        private int FindMatchedShape(PowerPoint.Shape shape)"
       },
       {
         "lineNumber": 1286,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (IsSimilarShape(shape, _copiedShapes[i])"
+        "content": "        {"
       },
       {
         "lineNumber": 1287,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 IsSimilarName(shape.Name, _copiedShapes[i].Name)"
+        "content": "            //Strong matching:"
       },
       {
         "lineNumber": 1288,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 Math.Abs(shape.Left - _copiedShapes[i].Left) \u003c float.Epsilon"
+        "content": "            for (int i \u003d 0; i \u003c _copiedShapes.Count; i++)"
       },
       {
         "lineNumber": 1289,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 Math.Abs(shape.Height - _copiedShapes[i].Height) \u003c float.Epsilon"
+        "content": "            {"
       },
       {
         "lineNumber": 1290,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 !_isShapeMatchedAlready.Contains(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture)))"
+        "content": "                if (IsSimilarShape(shape, _copiedShapes[i])"
       },
       {
         "lineNumber": 1291,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    \u0026\u0026 IsSimilarName(shape.Name, _copiedShapes[i].Name)"
       },
       {
         "lineNumber": 1292,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _isShapeMatchedAlready.Add(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture));"
+        "content": "                    \u0026\u0026 Math.Abs(shape.Left - _copiedShapes[i].Left) \u003c float.Epsilon"
       },
       {
         "lineNumber": 1293,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    \u0026\u0026 Math.Abs(shape.Height - _copiedShapes[i].Height) \u003c float.Epsilon"
       },
       {
         "lineNumber": 1294,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return i;"
+        "content": "                    \u0026\u0026 !_isShapeMatchedAlready.Contains(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture)))"
       },
       {
         "lineNumber": 1295,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                {"
       },
       {
         "lineNumber": 1296,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    _isShapeMatchedAlready.Add(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture));"
       },
       {
         "lineNumber": 1297,
         "author": {
           "gitId": "-"
         },
-        "content": "            //Blur matching:"
+        "content": ""
       },
       {
         "lineNumber": 1298,
         "author": {
           "gitId": "-"
         },
-        "content": "            for (int i \u003d 0; i \u003c _copiedShapes.Count; i++)"
+        "content": "                    return i;"
       },
       {
         "lineNumber": 1299,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                }"
       },
       {
         "lineNumber": 1300,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (IsSimilarShape(shape, _copiedShapes[i])"
+        "content": "            }"
       },
       {
         "lineNumber": 1301,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 IsSimilarName(shape.Name, _copiedShapes[i].Name)"
+        "content": "            //Blur matching:"
       },
       {
         "lineNumber": 1302,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 !_isShapeMatchedAlready.Contains(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture)))"
+        "content": "            for (int i \u003d 0; i \u003c _copiedShapes.Count; i++)"
       },
       {
         "lineNumber": 1303,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            {"
       },
       {
         "lineNumber": 1304,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _isShapeMatchedAlready.Add(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture));"
+        "content": "                if (IsSimilarShape(shape, _copiedShapes[i])"
       },
       {
         "lineNumber": 1305,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    \u0026\u0026 IsSimilarName(shape.Name, _copiedShapes[i].Name)"
       },
       {
         "lineNumber": 1306,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return i;"
+        "content": "                    \u0026\u0026 !_isShapeMatchedAlready.Contains(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture)))"
       },
       {
         "lineNumber": 1307,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                {"
       },
       {
         "lineNumber": 1308,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    _isShapeMatchedAlready.Add(_copiedShapes[i].Id.ToString(CultureInfo.InvariantCulture));"
       },
       {
         "lineNumber": 1309,
         "author": {
           "gitId": "-"
         },
-        "content": "            return -1;"
+        "content": ""
       },
       {
         "lineNumber": 1310,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    return i;"
       },
       {
         "lineNumber": 1311,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 1312,
         "author": {
           "gitId": "-"
         },
-        "content": "        private bool IsSimilarShape(PowerPoint.Shape shape, PowerPoint.Shape shape2)"
+        "content": "            }"
       },
       {
         "lineNumber": 1313,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            return -1;"
       },
       {
         "lineNumber": 1314,
         "author": {
           "gitId": "-"
         },
-        "content": "            return Math.Abs(shape.Width - shape2.Width) \u003c float.Epsilon"
+        "content": "        }"
       },
       {
         "lineNumber": 1315,
         "author": {
           "gitId": "-"
         },
-        "content": "                   \u0026\u0026 Math.Abs(shape.Height - shape2.Height) \u003c float.Epsilon"
+        "content": ""
       },
       {
         "lineNumber": 1316,
         "author": {
           "gitId": "-"
         },
-        "content": "                   \u0026\u0026 shape.Type \u003d\u003d shape2.Type"
+        "content": "        private bool IsSimilarShape(PowerPoint.Shape shape, PowerPoint.Shape shape2)"
       },
       {
         "lineNumber": 1317,
         "author": {
           "gitId": "-"
         },
-        "content": "                   \u0026\u0026 (shape.Type !\u003d Office.MsoShapeType.msoAutoShape"
+        "content": "        {"
       },
       {
         "lineNumber": 1318,
         "author": {
           "gitId": "-"
         },
-        "content": "                       || shape.AutoShapeType \u003d\u003d shape2.AutoShapeType);"
+        "content": "            return Math.Abs(shape.Width - shape2.Width) \u003c float.Epsilon"
       },
       {
         "lineNumber": 1319,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                   \u0026\u0026 Math.Abs(shape.Height - shape2.Height) \u003c float.Epsilon"
       },
       {
         "lineNumber": 1320,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                   \u0026\u0026 shape.Type \u003d\u003d shape2.Type"
       },
       {
         "lineNumber": 1321,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "                   \u0026\u0026 (shape.Type !\u003d Office.MsoShapeType.msoAutoShape"
       },
       {
         "lineNumber": 1322,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// Similar name defi:"
+        "content": "                       || shape.AutoShapeType \u003d\u003d shape2.AutoShapeType);"
       },
       {
         "lineNumber": 1323,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// 1. if they\u0027re not default shape name, they must be the exact same"
+        "content": "        }"
       },
       {
         "lineNumber": 1324,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// 2. if they\u0027re default shape name, the shape type in the name must be the exact same"
+        "content": ""
       },
       {
         "lineNumber": 1325,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// 3. otherwise not similar"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 1326,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "        /// Similar name defi:"
       },
       {
         "lineNumber": 1327,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"name1\"\u003e\u003c/param\u003e"
+        "content": "        /// 1. if they\u0027re not default shape name, they must be the exact same"
       },
       {
         "lineNumber": 1328,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"name2\"\u003e\u003c/param\u003e"
+        "content": "        /// 2. if they\u0027re default shape name, the shape type in the name must be the exact same"
       },
       {
         "lineNumber": 1329,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003creturns\u003e\u003c/returns\u003e"
+        "content": "        /// 3. otherwise not similar"
       },
       {
         "lineNumber": 1330,
         "author": {
           "gitId": "-"
         },
-        "content": "        private bool IsSimilarName(string name1, string name2)"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 1331,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        /// \u003cparam name\u003d\"name1\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 1332,
         "author": {
           "gitId": "-"
         },
-        "content": "            //remove enclosing brackets for name2"
+        "content": "        /// \u003cparam name\u003d\"name2\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 1333,
         "author": {
           "gitId": "-"
         },
-        "content": "            Regex nameEnclosedInBrackets \u003d new Regex(@\"^\\[\\D+\\s\\d+\\]$\");"
+        "content": "        /// \u003creturns\u003e\u003c/returns\u003e"
       },
       {
         "lineNumber": 1334,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!nameEnclosedInBrackets.IsMatch(name1)"
+        "content": "        private bool IsSimilarName(string name1, string name2)"
       },
       {
         "lineNumber": 1335,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 nameEnclosedInBrackets.IsMatch(name2)"
+        "content": "        {"
       },
       {
         "lineNumber": 1336,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 name2.Length \u003e 2)"
+        "content": "            //remove enclosing brackets for name2"
       },
       {
         "lineNumber": 1337,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            Regex nameEnclosedInBrackets \u003d new Regex(@\"^\\[\\D+\\s\\d+\\]$\");"
       },
       {
         "lineNumber": 1338,
         "author": {
           "gitId": "-"
         },
-        "content": "                name2 \u003d name2.Substring(1, name2.Length - 2);"
+        "content": "            if (!nameEnclosedInBrackets.IsMatch(name1)"
       },
       {
         "lineNumber": 1339,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                \u0026\u0026 nameEnclosedInBrackets.IsMatch(name2)"
       },
       {
         "lineNumber": 1340,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                \u0026\u0026 name2.Length \u003e 2)"
       },
       {
         "lineNumber": 1341,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!_shapeNamePattern.IsMatch(name1)"
+        "content": "            {"
       },
       {
         "lineNumber": 1342,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 !_shapeNamePattern.IsMatch(name2))"
+        "content": "                name2 \u003d name2.Substring(1, name2.Length - 2);"
       },
       {
         "lineNumber": 1343,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 1344,
         "author": {
           "gitId": "-"
         },
-        "content": "                return name1.Equals(name2);"
+        "content": ""
       },
       {
         "lineNumber": 1345,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            if (!_shapeNamePattern.IsMatch(name1)"
       },
       {
         "lineNumber": 1346,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                \u0026\u0026 !_shapeNamePattern.IsMatch(name2))"
       },
       {
         "lineNumber": 1347,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (_shapeNamePattern.IsMatch(name1)"
+        "content": "            {"
       },
       {
         "lineNumber": 1348,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 _shapeNamePattern.IsMatch(name2))"
+        "content": "                return name1.Equals(name2);"
       },
       {
         "lineNumber": 1349,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 1350,
         "author": {
           "gitId": "-"
         },
-        "content": "                Regex shapeTypeInName \u003d new Regex(@\"^[^\\[]\\D+\\s(?\u003d\\d+$)\");"
+        "content": ""
       },
       {
         "lineNumber": 1351,
         "author": {
           "gitId": "-"
         },
-        "content": "                string shapeTypeForName1 \u003d shapeTypeInName.Match(name1).ToString();"
+        "content": "            if (_shapeNamePattern.IsMatch(name1)"
       },
       {
         "lineNumber": 1352,
         "author": {
           "gitId": "-"
         },
-        "content": "                string shapeTypeForName2 \u003d shapeTypeInName.Match(name2).ToString();"
+        "content": "                \u0026\u0026 _shapeNamePattern.IsMatch(name2))"
       },
       {
         "lineNumber": 1353,
         "author": {
           "gitId": "-"
         },
-        "content": "                return shapeTypeForName1.Equals(shapeTypeForName2);"
+        "content": "            {"
       },
       {
         "lineNumber": 1354,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                Regex shapeTypeInName \u003d new Regex(@\"^[^\\[]\\D+\\s(?\u003d\\d+$)\");"
       },
       {
         "lineNumber": 1355,
         "author": {
           "gitId": "-"
         },
-        "content": "            return false;"
+        "content": "                string shapeTypeForName1 \u003d shapeTypeInName.Match(name1).ToString();"
       },
       {
         "lineNumber": 1356,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                string shapeTypeForName2 \u003d shapeTypeInName.Match(name2).ToString();"
       },
       {
         "lineNumber": 1357,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                return shapeTypeForName1.Equals(shapeTypeForName2);"
       },
       {
         "lineNumber": 1358,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void AfterPasteRecorderEventHandler(PowerPoint.Selection selection)"
+        "content": "            }"
       },
       {
         "lineNumber": 1359,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            return false;"
       },
       {
         "lineNumber": 1360,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionSlides)"
+        "content": "        }"
       },
       {
         "lineNumber": 1361,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 1362,
         "author": {
           "gitId": "-"
         },
-        "content": "                // invalid paste event triggered because of system message loss"
+        "content": "        private void AfterPasteRecorderEventHandler(PowerPoint.Selection selection)"
       },
       {
         "lineNumber": 1363,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (_copiedSlides.Count \u003c 1)"
+        "content": "        {"
       },
       {
         "lineNumber": 1364,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionSlides)"
       },
       {
         "lineNumber": 1365,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "            {"
       },
       {
         "lineNumber": 1366,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                // invalid paste event triggered because of system message loss"
       },
       {
         "lineNumber": 1367,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (_copiedSlides.Count \u003c 1)"
       },
       {
         "lineNumber": 1368,
         "author": {
           "gitId": "-"
         },
-        "content": "                // if we copied from a presentation without recorder pane or pasted to a"
+        "content": "                {"
       },
       {
         "lineNumber": 1369,
         "author": {
           "gitId": "-"
         },
-        "content": "                // presentation without recorder pane, paste event will not be entertained"
+        "content": "                    return;"
       },
       {
         "lineNumber": 1370,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (!_documentPaneMapper.ContainsKey(_copyFromWnd) ||"
+        "content": "                }"
       },
       {
         "lineNumber": 1371,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _documentPaneMapper[_copyFromWnd] \u003d\u003d null ||"
+        "content": ""
       },
       {
         "lineNumber": 1372,
         "author": {
           "gitId": "-"
         },
-        "content": "                    GetActivePane(typeof(RecorderTaskPane)) \u003d\u003d null)"
+        "content": "                // if we copied from a presentation without recorder pane or pasted to a"
       },
       {
         "lineNumber": 1373,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                // presentation without recorder pane, paste event will not be entertained"
       },
       {
         "lineNumber": 1374,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "                if (!_documentPaneMapper.ContainsKey(_copyFromWnd) ||"
       },
       {
         "lineNumber": 1375,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    _documentPaneMapper[_copyFromWnd] \u003d\u003d null ||"
       },
       {
         "lineNumber": 1376,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    GetActivePane(typeof(RecorderTaskPane)) \u003d\u003d null)"
       },
       {
         "lineNumber": 1377,
         "author": {
           "gitId": "-"
         },
-        "content": "                RecorderTaskPane copyFromRecorderPane \u003d"
+        "content": "                {"
       },
       {
         "lineNumber": 1378,
         "author": {
           "gitId": "-"
         },
-        "content": "                    GetPaneFromWindow(typeof(RecorderTaskPane), _copyFromWnd).Control as RecorderTaskPane;"
+        "content": "                    return;"
       },
       {
         "lineNumber": 1379,
         "author": {
           "gitId": "-"
         },
-        "content": "                RecorderTaskPane activeRecorderPane \u003d GetActivePane(typeof(RecorderTaskPane)).Control as RecorderTaskPane;"
+        "content": "                }"
       },
       {
         "lineNumber": 1380,
@@ -71554,238 +71957,238 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                if (activeRecorderPane \u003d\u003d null ||"
+        "content": "                RecorderTaskPane copyFromRecorderPane \u003d"
       },
       {
         "lineNumber": 1382,
         "author": {
           "gitId": "-"
         },
-        "content": "                    copyFromRecorderPane \u003d\u003d null)"
+        "content": "                    GetPaneFromWindow(typeof(RecorderTaskPane), _copyFromWnd).Control as RecorderTaskPane;"
       },
       {
         "lineNumber": 1383,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                RecorderTaskPane activeRecorderPane \u003d GetActivePane(typeof(RecorderTaskPane)).Control as RecorderTaskPane;"
       },
       {
         "lineNumber": 1384,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": ""
       },
       {
         "lineNumber": 1385,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                if (activeRecorderPane \u003d\u003d null ||"
       },
       {
         "lineNumber": 1386,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    copyFromRecorderPane \u003d\u003d null)"
       },
       {
         "lineNumber": 1387,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.SlideRange slideRange \u003d selection.SlideRange;"
+        "content": "                {"
       },
       {
         "lineNumber": 1388,
         "author": {
           "gitId": "-"
         },
-        "content": "                int oriSlide \u003d 0;"
+        "content": "                    return;"
       },
       {
         "lineNumber": 1389,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 1390,
         "author": {
           "gitId": "-"
         },
-        "content": "                foreach (object sld in slideRange)"
+        "content": ""
       },
       {
         "lineNumber": 1391,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                PowerPoint.SlideRange slideRange \u003d selection.SlideRange;"
       },
       {
         "lineNumber": 1392,
         "author": {
           "gitId": "-"
         },
-        "content": "                    PowerPointSlide oldSlide \u003d PowerPointSlide.FromSlideFactory(_copiedSlides[oriSlide]);"
+        "content": "                int oriSlide \u003d 0;"
       },
       {
         "lineNumber": 1393,
         "author": {
           "gitId": "-"
         },
-        "content": "                    PowerPointSlide newSlide \u003d PowerPointSlide.FromSlideFactory(sld as PowerPoint.Slide);"
+        "content": ""
       },
       {
         "lineNumber": 1394,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                foreach (object sld in slideRange)"
       },
       {
         "lineNumber": 1395,
         "author": {
           "gitId": "-"
         },
-        "content": "                    activeRecorderPane.PasteSlideAudioAndScript(newSlide,"
+        "content": "                {"
       },
       {
         "lineNumber": 1396,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                copyFromRecorderPane.CopySlideAudioAndScript(oldSlide));"
+        "content": "                    PowerPointSlide oldSlide \u003d PowerPointSlide.FromSlideFactory(_copiedSlides[oriSlide]);"
       },
       {
         "lineNumber": 1397,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    PowerPointSlide newSlide \u003d PowerPointSlide.FromSlideFactory(sld as PowerPoint.Slide);"
       },
       {
         "lineNumber": 1398,
         "author": {
           "gitId": "-"
         },
-        "content": "                    oriSlide++;"
+        "content": ""
       },
       {
         "lineNumber": 1399,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    activeRecorderPane.PasteSlideAudioAndScript(newSlide,"
       },
       {
         "lineNumber": 1400,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                                                copyFromRecorderPane.CopySlideAudioAndScript(oldSlide));"
       },
       {
         "lineNumber": 1401,
         "author": {
           "gitId": "-"
         },
-        "content": "                // update the lists when all done"
+        "content": ""
       },
       {
         "lineNumber": 1402,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdateRecorderPane(slideRange.Count, slideRange[1].SlideID);"
+        "content": "                    oriSlide++;"
       },
       {
         "lineNumber": 1403,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                }"
       },
       {
         "lineNumber": 1404,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 1405,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                // update the lists when all done"
       },
       {
         "lineNumber": 1406,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void AfterCopyEventHandler(PowerPoint.Selection selection)"
+        "content": "                UpdateRecorderPane(slideRange.Count, slideRange[1].SlideID);"
       },
       {
         "lineNumber": 1407,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 1408,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "        }"
       },
       {
         "lineNumber": 1409,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 1410,
         "author": {
           "gitId": "-"
         },
-        "content": "                _copyFromWnd \u003d Application.ActiveWindow;"
+        "content": "        private void AfterCopyEventHandler(PowerPoint.Selection selection)"
       },
       {
         "lineNumber": 1411,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {"
       },
       {
         "lineNumber": 1412,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionSlides)"
+        "content": "            try"
       },
       {
         "lineNumber": 1413,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            {"
       },
       {
         "lineNumber": 1414,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _copiedSlides.Clear();"
+        "content": "                _copyFromWnd \u003d Application.ActiveWindow;"
       },
       {
         "lineNumber": 1415,
@@ -71799,21 +72202,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                    foreach (object sld in selection.SlideRange)"
+        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionSlides)"
       },
       {
         "lineNumber": 1417,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                {"
       },
       {
         "lineNumber": 1418,
         "author": {
           "gitId": "-"
         },
-        "content": "                        PowerPoint.Slide slide \u003d sld as PowerPoint.Slide;"
+        "content": "                    _copiedSlides.Clear();"
       },
       {
         "lineNumber": 1419,
@@ -71827,189 +72230,189 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                        _copiedSlides.Add(slide);"
+        "content": "                    foreach (object sld in selection.SlideRange)"
       },
       {
         "lineNumber": 1421,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    {"
       },
       {
         "lineNumber": 1422,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        PowerPoint.Slide slide \u003d sld as PowerPoint.Slide;"
       },
       {
         "lineNumber": 1423,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _copiedSlides.Sort((x, y) \u003d\u003e (x.SlideIndex - y.SlideIndex));"
+        "content": ""
       },
       {
         "lineNumber": 1424,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                        _copiedSlides.Add(slide);"
       },
       {
         "lineNumber": 1425,
         "author": {
           "gitId": "-"
         },
-        "content": "                else if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes)"
+        "content": "                    }"
       },
       {
         "lineNumber": 1426,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": ""
       },
       {
         "lineNumber": 1427,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _copiedShapes.Clear();"
+        "content": "                    _copiedSlides.Sort((x, y) \u003d\u003e (x.SlideIndex - y.SlideIndex));"
       },
       {
         "lineNumber": 1428,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _previousSlideForCopyEvent \u003d Application.ActiveWindow.View.Slide as PowerPoint.Slide;"
+        "content": "                }"
       },
       {
         "lineNumber": 1429,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _previousPptName \u003d Application.ActivePresentation.Name;"
+        "content": "                else if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes)"
       },
       {
         "lineNumber": 1430,
         "author": {
           "gitId": "-"
         },
-        "content": "                    foreach (object sh in selection.ShapeRange)"
+        "content": "                {"
       },
       {
         "lineNumber": 1431,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                    _copiedShapes.Clear();"
       },
       {
         "lineNumber": 1432,
         "author": {
           "gitId": "-"
         },
-        "content": "                        PowerPoint.Shape shape \u003d sh as PowerPoint.Shape;"
+        "content": "                    _previousSlideForCopyEvent \u003d Application.ActiveWindow.View.Slide as PowerPoint.Slide;"
       },
       {
         "lineNumber": 1433,
         "author": {
           "gitId": "-"
         },
-        "content": "                        _copiedShapes.Add(shape);"
+        "content": "                    _previousPptName \u003d Application.ActivePresentation.Name;"
       },
       {
         "lineNumber": 1434,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    foreach (object sh in selection.ShapeRange)"
       },
       {
         "lineNumber": 1435,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    {"
       },
       {
         "lineNumber": 1436,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _copiedShapes.Sort((x, y) \u003d\u003e (x.Id - y.Id));"
+        "content": "                        PowerPoint.Shape shape \u003d sh as PowerPoint.Shape;"
       },
       {
         "lineNumber": 1437,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                        _copiedShapes.Add(shape);"
       },
       {
         "lineNumber": 1438,
         "author": {
           "gitId": "-"
         },
-        "content": "                Ribbon.RefreshRibbonControl(\"PasteToFillSlideButton\");"
+        "content": "                    }"
       },
       {
         "lineNumber": 1439,
         "author": {
           "gitId": "-"
         },
-        "content": "                Ribbon.RefreshRibbonControl(\"PasteToFitSlideButton\");"
+        "content": ""
       },
       {
         "lineNumber": 1440,
         "author": {
           "gitId": "-"
         },
-        "content": "                Ribbon.RefreshRibbonControl(\"PasteAtOriginalPositionButton\");"
+        "content": "                    _copiedShapes.Sort((x, y) \u003d\u003e (x.Id - y.Id));"
       },
       {
         "lineNumber": 1441,
         "author": {
           "gitId": "-"
         },
-        "content": "                Ribbon.RefreshRibbonControl(\"ReplaceWithClipboardButton\");"
+        "content": "                }"
       },
       {
         "lineNumber": 1442,
         "author": {
           "gitId": "-"
         },
-        "content": "                Ribbon.RefreshRibbonControl(\"PasteIntoGroupButton\");"
+        "content": "                Ribbon.RefreshRibbonControl(\"PasteToFillSlideButton\");"
       },
       {
         "lineNumber": 1443,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                Ribbon.RefreshRibbonControl(\"PasteToFitSlideButton\");"
       },
       {
         "lineNumber": 1444,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch"
+        "content": "                Ribbon.RefreshRibbonControl(\"PasteAtOriginalPositionButton\");"
       },
       {
         "lineNumber": 1445,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                Ribbon.RefreshRibbonControl(\"ReplaceWithClipboardButton\");"
       },
       {
         "lineNumber": 1446,
         "author": {
           "gitId": "-"
         },
-        "content": "                //TODO: log in ThisAddIn.cs"
+        "content": "                Ribbon.RefreshRibbonControl(\"PasteIntoGroupButton\");"
       },
       {
         "lineNumber": 1447,
@@ -72023,91 +72426,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            catch"
       },
       {
         "lineNumber": 1449,
         "author": {
           "gitId": "-"
         },
-        "content": "        # endregion"
+        "content": "            {"
       },
       {
         "lineNumber": 1450,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                //TODO: log in ThisAddIn.cs"
       },
       {
         "lineNumber": 1451,
         "author": {
           "gitId": "-"
         },
-        "content": "        #region Tab Activate"
+        "content": "            }"
       },
       {
         "lineNumber": 1452,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 1453,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void SetupTabActivateHandler()"
+        "content": "        # endregion"
       },
       {
         "lineNumber": 1454,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": ""
       },
       {
         "lineNumber": 1455,
         "author": {
           "gitId": "-"
         },
-        "content": "            _tabActivate +\u003d TabActivateEventHandler;"
+        "content": "        #region Tab Activate"
       },
       {
         "lineNumber": 1456,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 1457,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private void SetupTabActivateHandler()"
       },
       {
         "lineNumber": 1458,
         "author": {
           "gitId": "-"
         },
-        "content": "        private Native.WinEventDelegate _tabActivate;"
+        "content": "        {"
       },
       {
         "lineNumber": 1459,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            _tabActivate +\u003d TabActivateEventHandler;"
       },
       {
         "lineNumber": 1460,
         "author": {
           "gitId": "-"
         },
-        "content": "        private IntPtr _eventHook \u003d IntPtr.Zero;"
+        "content": "        }"
       },
       {
         "lineNumber": 1461,
@@ -72121,133 +72524,133 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        //This handler is used to check, whether Home tab is enabled or not"
+        "content": "        private Native.WinEventDelegate _tabActivate;"
       },
       {
         "lineNumber": 1463,
         "author": {
           "gitId": "-"
         },
-        "content": "        //After Shortcut (Alt + H + O) is sent to PowerPoint by method OpenPropertyWindowForOffice10,"
+        "content": ""
       },
       {
         "lineNumber": 1464,
         "author": {
           "gitId": "-"
         },
-        "content": "        //if unsuccessful (Home tab is not enabled), EVENT_SYSTEM_MENUEND will be received"
+        "content": "        private IntPtr _eventHook \u003d IntPtr.Zero;"
       },
       {
         "lineNumber": 1465,
         "author": {
           "gitId": "-"
         },
-        "content": "        //if successful   (Property window is open), EVENT_OBJECT_CREATE will be received"
+        "content": ""
       },
       {
         "lineNumber": 1466,
         "author": {
           "gitId": "-"
         },
-        "content": "        //To check the events occurred, use AccEvent32.exe"
+        "content": "        //This handler is used to check, whether Home tab is enabled or not"
       },
       {
         "lineNumber": 1467,
         "author": {
           "gitId": "-"
         },
-        "content": "        //Refer to MSAA - Event Constants:"
+        "content": "        //After Shortcut (Alt + H + O) is sent to PowerPoint by method OpenPropertyWindowForOffice10,"
       },
       {
         "lineNumber": 1468,
         "author": {
           "gitId": "-"
         },
-        "content": "        //http://msdn.microsoft.com/en-us/library/windows/desktop/dd318066(v\u003dvs.85).aspx"
+        "content": "        //if unsuccessful (Home tab is not enabled), EVENT_SYSTEM_MENUEND will be received"
       },
       {
         "lineNumber": 1469,
         "author": {
           "gitId": "-"
         },
-        "content": "        void TabActivateEventHandler(IntPtr hook, uint eventType,"
+        "content": "        //if successful   (Property window is open), EVENT_OBJECT_CREATE will be received"
       },
       {
         "lineNumber": 1470,
         "author": {
           "gitId": "-"
         },
-        "content": "        IntPtr hwnd, int idObject, int child, uint thread, uint time)"
+        "content": "        //To check the events occurred, use AccEvent32.exe"
       },
       {
         "lineNumber": 1471,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        //Refer to MSAA - Event Constants:"
       },
       {
         "lineNumber": 1472,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (eventType \u003d\u003d (uint)Native.Event.EVENT_SYSTEM_MENUEND"
+        "content": "        //http://msdn.microsoft.com/en-us/library/windows/desktop/dd318066(v\u003dvs.85).aspx"
       },
       {
         "lineNumber": 1473,
         "author": {
           "gitId": "-"
         },
-        "content": "                || eventType \u003d\u003d (uint)Native.Event.EVENT_OBJECT_CREATE)"
+        "content": "        void TabActivateEventHandler(IntPtr hook, uint eventType,"
       },
       {
         "lineNumber": 1474,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        IntPtr hwnd, int idObject, int child, uint thread, uint time)"
       },
       {
         "lineNumber": 1475,
         "author": {
           "gitId": "-"
         },
-        "content": "                Native.UnhookWinEvent(_eventHook);"
+        "content": "        {"
       },
       {
         "lineNumber": 1476,
         "author": {
           "gitId": "-"
         },
-        "content": "                _eventHook \u003d IntPtr.Zero;"
+        "content": "            if (eventType \u003d\u003d (uint)Native.Event.EVENT_SYSTEM_MENUEND"
       },
       {
         "lineNumber": 1477,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                || eventType \u003d\u003d (uint)Native.Event.EVENT_OBJECT_CREATE)"
       },
       {
         "lineNumber": 1478,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (eventType \u003d\u003d (uint)Native.Event.EVENT_SYSTEM_MENUEND)"
+        "content": "            {"
       },
       {
         "lineNumber": 1479,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                Native.UnhookWinEvent(_eventHook);"
       },
       {
         "lineNumber": 1480,
         "author": {
           "gitId": "-"
         },
-        "content": "                MessageBox.Show(CommonText.ErrorTabActivate, CommonText.ErrorTabActivateTitle);"
+        "content": "                _eventHook \u003d IntPtr.Zero;"
       },
       {
         "lineNumber": 1481,
@@ -72261,70 +72664,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            if (eventType \u003d\u003d (uint)Native.Event.EVENT_SYSTEM_MENUEND)"
       },
       {
         "lineNumber": 1483,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1484,
         "author": {
           "gitId": "-"
         },
-        "content": "        #endregion"
+        "content": "                MessageBox.Show(CommonText.ErrorTabActivate, CommonText.ErrorTabActivateTitle);"
       },
       {
         "lineNumber": 1485,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 1486,
         "author": {
           "gitId": "-"
         },
-        "content": "        #region Double Click to Open Property Window"
+        "content": "        }"
       },
       {
         "lineNumber": 1487,
         "author": {
           "gitId": "-"
         },
-        "content": "        private const string ShortcutAltHO \u003d \"%h%o\";"
+        "content": ""
       },
       {
         "lineNumber": 1488,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        #endregion"
       },
       {
         "lineNumber": 1489,
         "author": {
           "gitId": "-"
         },
-        "content": "        private const int CommandOpenBackgroundFormat \u003d 0x8F;"
+        "content": ""
       },
       {
         "lineNumber": 1490,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        #region Double Click to Open Property Window"
       },
       {
         "lineNumber": 1491,
         "author": {
           "gitId": "-"
         },
-        "content": "        private bool _isInSlideShow;"
+        "content": "        private const string ShortcutAltHO \u003d \"%h%o\";"
       },
       {
         "lineNumber": 1492,
@@ -72338,231 +72741,231 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        private void SetupAfterCopyPasteHandler()"
+        "content": "        private const int CommandOpenBackgroundFormat \u003d 0x8F;"
       },
       {
         "lineNumber": 1494,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": ""
       },
       {
         "lineNumber": 1495,
         "author": {
           "gitId": "-"
         },
-        "content": "            PPCopy.AfterCopy +\u003d AfterCopyEventHandler;"
+        "content": "        private bool _isInSlideShow;"
       },
       {
         "lineNumber": 1496,
         "author": {
           "gitId": "-"
         },
-        "content": "            PPCopy.AfterPaste +\u003d AfterPasteRecorderEventHandler;"
+        "content": ""
       },
       {
         "lineNumber": 1497,
         "author": {
           "gitId": "-"
         },
-        "content": "            PPCopy.AfterPaste +\u003d AfterPasteEventHandler;"
+        "content": "        private void SetupAfterCopyPasteHandler()"
       },
       {
         "lineNumber": 1498,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        {"
       },
       {
         "lineNumber": 1499,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            PPCopy.AfterCopy +\u003d AfterCopyEventHandler;"
       },
       {
         "lineNumber": 1500,
         "author": {
           "gitId": "-"
         },
-        "content": "        private readonly List\u003cPowerPoint.Shape\u003e _copiedShapes \u003d new List\u003cPowerPoint.Shape\u003e();"
+        "content": "            PPCopy.AfterPaste +\u003d AfterPasteRecorderEventHandler;"
       },
       {
         "lineNumber": 1501,
         "author": {
           "gitId": "-"
         },
-        "content": "        private readonly List\u003cPowerPoint.Slide\u003e _copiedSlides \u003d new List\u003cPowerPoint.Slide\u003e();"
+        "content": "            PPCopy.AfterPaste +\u003d AfterPasteEventHandler;"
       },
       {
         "lineNumber": 1502,
         "author": {
           "gitId": "-"
         },
-        "content": "        private PowerPoint.Slide _previousSlideForCopyEvent;"
+        "content": "        }"
       },
       {
         "lineNumber": 1503,
         "author": {
           "gitId": "-"
         },
-        "content": "        private string _previousPptName;"
+        "content": ""
       },
       {
         "lineNumber": 1504,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private readonly List\u003cPowerPoint.Shape\u003e _copiedShapes \u003d new List\u003cPowerPoint.Shape\u003e();"
       },
       {
         "lineNumber": 1505,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void SetupDoubleClickHandler()"
+        "content": "        private readonly List\u003cPowerPoint.Slide\u003e _copiedSlides \u003d new List\u003cPowerPoint.Slide\u003e();"
       },
       {
         "lineNumber": 1506,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        private PowerPoint.Slide _previousSlideForCopyEvent;"
       },
       {
         "lineNumber": 1507,
         "author": {
           "gitId": "-"
         },
-        "content": "            PPMouse.DoubleClick +\u003d DoubleClickEventHandler;"
+        "content": "        private string _previousPptName;"
       },
       {
         "lineNumber": 1508,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 1509,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private void SetupDoubleClickHandler()"
       },
       {
         "lineNumber": 1510,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void DoubleClickEventHandler(PowerPoint.Selection selection)"
+        "content": "        {"
       },
       {
         "lineNumber": 1511,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            PPMouse.DoubleClick +\u003d DoubleClickEventHandler;"
       },
       {
         "lineNumber": 1512,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "        }"
       },
       {
         "lineNumber": 1513,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 1514,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionNone)"
+        "content": "        private void DoubleClickEventHandler(PowerPoint.Selection selection)"
       },
       {
         "lineNumber": 1515,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        {"
       },
       {
         "lineNumber": 1516,
         "author": {
           "gitId": "-"
         },
-        "content": "                    TrySelectTransparentShape();"
+        "content": "            try"
       },
       {
         "lineNumber": 1517,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            {"
       },
       {
         "lineNumber": 1518,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionNone)"
       },
       {
         "lineNumber": 1519,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes)"
+        "content": "                {"
       },
       {
         "lineNumber": 1520,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    TrySelectTransparentShape();"
       },
       {
         "lineNumber": 1521,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (IsApplicationVersion2010())"
+        "content": "                }"
       },
       {
         "lineNumber": 1522,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": ""
       },
       {
         "lineNumber": 1523,
         "author": {
           "gitId": "-"
         },
-        "content": "                        OpenPropertyWindowForOffice10();"
+        "content": "                if (selection.Type \u003d\u003d PowerPoint.PpSelectionType.ppSelectionShapes)"
       },
       {
         "lineNumber": 1524,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                {"
       },
       {
         "lineNumber": 1525,
         "author": {
           "gitId": "-"
         },
-        "content": "                    else"
+        "content": "                    if (IsApplicationVersion2010())"
       },
       {
         "lineNumber": 1526,
@@ -72576,7 +72979,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                        OpenPropertyWindowForOffice13OrHigher(selection);"
+        "content": "                        OpenPropertyWindowForOffice10();"
       },
       {
         "lineNumber": 1528,
@@ -72590,651 +72993,651 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    else"
       },
       {
         "lineNumber": 1530,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    {"
       },
       {
         "lineNumber": 1531,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch (COMException e)"
+        "content": "                        OpenPropertyWindowForOffice13OrHigher(selection);"
       },
       {
         "lineNumber": 1532,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    }"
       },
       {
         "lineNumber": 1533,
         "author": {
           "gitId": "-"
         },
-        "content": "                string logText \u003d \"DoubleClickEventHandler\" + \": \" + e.Message + \": \" + e.StackTrace;"
+        "content": "                }"
       },
       {
         "lineNumber": 1534,
         "author": {
           "gitId": "-"
         },
-        "content": "                Trace.TraceError(DateTime.Now.ToString(\"yyyyMMddHHmmss\") + \": \" + logText);"
+        "content": "            }"
       },
       {
         "lineNumber": 1535,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            catch (COMException e)"
       },
       {
         "lineNumber": 1536,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            {"
       },
       {
         "lineNumber": 1537,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                string logText \u003d \"DoubleClickEventHandler\" + \": \" + e.Message + \": \" + e.StackTrace;"
       },
       {
         "lineNumber": 1538,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void TrySelectTransparentShape()"
+        "content": "                Trace.TraceError(DateTime.Now.ToString(\"yyyyMMddHHmmss\") + \": \" + logText);"
       },
       {
         "lineNumber": 1539,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 1540,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (PowerPointCurrentPresentationInfo.CurrentSlide \u003d\u003d null)"
+        "content": "        }"
       },
       {
         "lineNumber": 1541,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 1542,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "        private void TrySelectTransparentShape()"
       },
       {
         "lineNumber": 1543,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        {"
       },
       {
         "lineNumber": 1544,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if (PowerPointCurrentPresentationInfo.CurrentSlide \u003d\u003d null)"
       },
       {
         "lineNumber": 1545,
         "author": {
           "gitId": "-"
         },
-        "content": "            PowerPoint.Shape overlappingShape \u003d null;"
+        "content": "            {"
       },
       {
         "lineNumber": 1546,
         "author": {
           "gitId": "-"
         },
-        "content": "            int overlappingShapeZIndex \u003d -1;"
+        "content": "                return;"
       },
       {
         "lineNumber": 1547,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 1548,
         "author": {
           "gitId": "-"
         },
-        "content": "            PowerPoint.Shapes shapesInCurrentSlide \u003d PowerPointCurrentPresentationInfo.CurrentSlide.Shapes;"
+        "content": ""
       },
       {
         "lineNumber": 1549,
         "author": {
           "gitId": "-"
         },
-        "content": "            foreach (PowerPoint.Shape shape in shapesInCurrentSlide)"
+        "content": "            PowerPoint.Shape overlappingShape \u003d null;"
       },
       {
         "lineNumber": 1550,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            int overlappingShapeZIndex \u003d -1;"
       },
       {
         "lineNumber": 1551,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (IsMouseWithinShape(shape)"
+        "content": ""
       },
       {
         "lineNumber": 1552,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 shape.ZOrderPosition \u003e overlappingShapeZIndex)"
+        "content": "            PowerPoint.Shapes shapesInCurrentSlide \u003d PowerPointCurrentPresentationInfo.CurrentSlide.Shapes;"
       },
       {
         "lineNumber": 1553,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            foreach (PowerPoint.Shape shape in shapesInCurrentSlide)"
       },
       {
         "lineNumber": 1554,
         "author": {
           "gitId": "-"
         },
-        "content": "                    overlappingShape \u003d shape;"
+        "content": "            {"
       },
       {
         "lineNumber": 1555,
         "author": {
           "gitId": "-"
         },
-        "content": "                    overlappingShapeZIndex \u003d shape.ZOrderPosition;"
+        "content": "                if (IsMouseWithinShape(shape)"
       },
       {
         "lineNumber": 1556,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    \u0026\u0026 shape.ZOrderPosition \u003e overlappingShapeZIndex)"
       },
       {
         "lineNumber": 1557,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                {"
       },
       {
         "lineNumber": 1558,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (overlappingShape !\u003d null \u0026\u0026"
+        "content": "                    overlappingShape \u003d shape;"
       },
       {
         "lineNumber": 1559,
         "author": {
           "gitId": "-"
         },
-        "content": "                overlappingShape.Visible \u003d\u003d Office.MsoTriState.msoTrue)"
+        "content": "                    overlappingShapeZIndex \u003d shape.ZOrderPosition;"
       },
       {
         "lineNumber": 1560,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                }"
       },
       {
         "lineNumber": 1561,
         "author": {
           "gitId": "-"
         },
-        "content": "                overlappingShape.Select();"
+        "content": "            }"
       },
       {
         "lineNumber": 1562,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            if (overlappingShape !\u003d null \u0026\u0026"
       },
       {
         "lineNumber": 1563,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                overlappingShape.Visible \u003d\u003d Office.MsoTriState.msoTrue)"
       },
       {
         "lineNumber": 1564,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1565,
         "author": {
           "gitId": "-"
         },
-        "content": "        private bool IsMouseWithinShape(PowerPoint.Shape sh)"
+        "content": "                overlappingShape.Select();"
       },
       {
         "lineNumber": 1566,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 1567,
         "author": {
           "gitId": "-"
         },
-        "content": "            float x \u003d Cursor.Position.X;"
+        "content": "        }"
       },
       {
         "lineNumber": 1568,
         "author": {
           "gitId": "-"
         },
-        "content": "            float y \u003d Cursor.Position.Y;"
+        "content": ""
       },
       {
         "lineNumber": 1569,
         "author": {
           "gitId": "-"
         },
-        "content": "            int left \u003d Application.ActiveWindow.PointsToScreenPixelsX(sh.Left);"
+        "content": "        private bool IsMouseWithinShape(PowerPoint.Shape sh)"
       },
       {
         "lineNumber": 1570,
         "author": {
           "gitId": "-"
         },
-        "content": "            int top \u003d Application.ActiveWindow.PointsToScreenPixelsY(sh.Top);"
+        "content": "        {"
       },
       {
         "lineNumber": 1571,
         "author": {
           "gitId": "-"
         },
-        "content": "            int right \u003d Application.ActiveWindow.PointsToScreenPixelsX(sh.Left + sh.Width);"
+        "content": "            float x \u003d Cursor.Position.X;"
       },
       {
         "lineNumber": 1572,
         "author": {
           "gitId": "-"
         },
-        "content": "            int bottom \u003d Application.ActiveWindow.PointsToScreenPixelsY(sh.Top + sh.Height);"
+        "content": "            float y \u003d Cursor.Position.Y;"
       },
       {
         "lineNumber": 1573,
         "author": {
           "gitId": "-"
         },
-        "content": "            return x \u003e left"
+        "content": "            int left \u003d Application.ActiveWindow.PointsToScreenPixelsX(sh.Left);"
       },
       {
         "lineNumber": 1574,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 x \u003c right"
+        "content": "            int top \u003d Application.ActiveWindow.PointsToScreenPixelsY(sh.Top);"
       },
       {
         "lineNumber": 1575,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 y \u003e top"
+        "content": "            int right \u003d Application.ActiveWindow.PointsToScreenPixelsX(sh.Left + sh.Width);"
       },
       {
         "lineNumber": 1576,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 y \u003c bottom;"
+        "content": "            int bottom \u003d Application.ActiveWindow.PointsToScreenPixelsY(sh.Top + sh.Height);"
       },
       {
         "lineNumber": 1577,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return x \u003e left"
       },
       {
         "lineNumber": 1578,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                \u0026\u0026 x \u003c right"
       },
       {
         "lineNumber": 1579,
         "author": {
           "gitId": "-"
         },
-        "content": "        //For office 2013 or Higher version:"
+        "content": "                \u0026\u0026 y \u003e top"
       },
       {
         "lineNumber": 1580,
         "author": {
           "gitId": "-"
         },
-        "content": "        //Open Background Format window, then selecting the shape will"
+        "content": "                \u0026\u0026 y \u003c bottom;"
       },
       {
         "lineNumber": 1581,
         "author": {
           "gitId": "-"
         },
-        "content": "        //convert the window to Property window"
+        "content": "        }"
       },
       {
         "lineNumber": 1582,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void OpenPropertyWindowForOffice13OrHigher(PowerPoint.Selection selection)"
+        "content": ""
       },
       {
         "lineNumber": 1583,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        //For office 2013 or Higher version:"
       },
       {
         "lineNumber": 1584,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!_isInSlideShow)"
+        "content": "        //Open Background Format window, then selecting the shape will"
       },
       {
         "lineNumber": 1585,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        //convert the window to Property window"
       },
       {
         "lineNumber": 1586,
         "author": {
           "gitId": "-"
         },
-        "content": "                PowerPoint.ShapeRange selectedShapes \u003d selection.ShapeRange;"
+        "content": "        private void OpenPropertyWindowForOffice13OrHigher(PowerPoint.Selection selection)"
       },
       {
         "lineNumber": 1587,
         "author": {
           "gitId": "-"
         },
-        "content": "                Native.SendMessage("
+        "content": "        {"
       },
       {
         "lineNumber": 1588,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Process.GetCurrentProcess().MainWindowHandle,"
+        "content": "            if (!_isInSlideShow)"
       },
       {
         "lineNumber": 1589,
         "author": {
           "gitId": "-"
         },
-        "content": "                    (uint)Native.Message.WM_COMMAND,"
+        "content": "            {"
       },
       {
         "lineNumber": 1590,
         "author": {
           "gitId": "-"
         },
-        "content": "                    new IntPtr(CommandOpenBackgroundFormat),"
+        "content": "                PowerPoint.ShapeRange selectedShapes \u003d selection.ShapeRange;"
       },
       {
         "lineNumber": 1591,
         "author": {
           "gitId": "-"
         },
-        "content": "                    IntPtr.Zero);"
+        "content": "                Native.SendMessage("
       },
       {
         "lineNumber": 1592,
         "author": {
           "gitId": "-"
         },
-        "content": "                selectedShapes.Select();"
+        "content": "                    Process.GetCurrentProcess().MainWindowHandle,"
       },
       {
         "lineNumber": 1593,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    (uint)Native.Message.WM_COMMAND,"
       },
       {
         "lineNumber": 1594,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    new IntPtr(CommandOpenBackgroundFormat),"
       },
       {
         "lineNumber": 1595,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    IntPtr.Zero);"
       },
       {
         "lineNumber": 1596,
         "author": {
           "gitId": "-"
         },
-        "content": "        //For office 2010 (in office 2013, this method has bad user exp)"
+        "content": "                selectedShapes.Select();"
       },
       {
         "lineNumber": 1597,
         "author": {
           "gitId": "-"
         },
-        "content": "        //Use hotkey (Alt - H - O) to activate Property window"
+        "content": "            }"
       },
       {
         "lineNumber": 1598,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void OpenPropertyWindowForOffice10()"
+        "content": "        }"
       },
       {
         "lineNumber": 1599,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": ""
       },
       {
         "lineNumber": 1600,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "        //For office 2010 (in office 2013, this method has bad user exp)"
       },
       {
         "lineNumber": 1601,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        //Use hotkey (Alt - H - O) to activate Property window"
       },
       {
         "lineNumber": 1602,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (!_isInSlideShow)"
+        "content": "        private void OpenPropertyWindowForOffice10()"
       },
       {
         "lineNumber": 1603,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        {"
       },
       {
         "lineNumber": 1604,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (_eventHook \u003d\u003d IntPtr.Zero)"
+        "content": "            try"
       },
       {
         "lineNumber": 1605,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "            {"
       },
       {
         "lineNumber": 1606,
         "author": {
           "gitId": "-"
         },
-        "content": "                        //Check whether Home tab is enabled or not"
+        "content": "                if (!_isInSlideShow)"
       },
       {
         "lineNumber": 1607,
         "author": {
           "gitId": "-"
         },
-        "content": "                        _eventHook \u003d Native.SetWinEventHook("
+        "content": "                {"
       },
       {
         "lineNumber": 1608,
         "author": {
           "gitId": "-"
         },
-        "content": "                            (uint)Native.Event.EVENT_SYSTEM_MENUEND,"
+        "content": "                    if (_eventHook \u003d\u003d IntPtr.Zero)"
       },
       {
         "lineNumber": 1609,
         "author": {
           "gitId": "-"
         },
-        "content": "                            (uint)Native.Event.EVENT_OBJECT_CREATE,"
+        "content": "                    {"
       },
       {
         "lineNumber": 1610,
         "author": {
           "gitId": "-"
         },
-        "content": "                            IntPtr.Zero,"
+        "content": "                        //Check whether Home tab is enabled or not"
       },
       {
         "lineNumber": 1611,
         "author": {
           "gitId": "-"
         },
-        "content": "                            _tabActivate,"
+        "content": "                        _eventHook \u003d Native.SetWinEventHook("
       },
       {
         "lineNumber": 1612,
         "author": {
           "gitId": "-"
         },
-        "content": "                            (uint)Process.GetCurrentProcess().Id,"
+        "content": "                            (uint)Native.Event.EVENT_SYSTEM_MENUEND,"
       },
       {
         "lineNumber": 1613,
         "author": {
           "gitId": "-"
         },
-        "content": "                            0,"
+        "content": "                            (uint)Native.Event.EVENT_OBJECT_CREATE,"
       },
       {
         "lineNumber": 1614,
         "author": {
           "gitId": "-"
         },
-        "content": "                            0);"
+        "content": "                            IntPtr.Zero,"
       },
       {
         "lineNumber": 1615,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                            _tabActivate,"
       },
       {
         "lineNumber": 1616,
         "author": {
           "gitId": "-"
         },
-        "content": "                    SendKeys.Send(ShortcutAltHO);"
+        "content": "                            (uint)Process.GetCurrentProcess().Id,"
       },
       {
         "lineNumber": 1617,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                            0,"
       },
       {
         "lineNumber": 1618,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                            0);"
       },
       {
         "lineNumber": 1619,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch (InvalidOperationException)"
+        "content": "                    }"
       },
       {
         "lineNumber": 1620,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    SendKeys.Send(ShortcutAltHO);"
       },
       {
         "lineNumber": 1621,
         "author": {
           "gitId": "-"
         },
-        "content": "                // ignore exception"
+        "content": "                }"
       },
       {
         "lineNumber": 1622,
@@ -73248,178 +73651,206 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            catch (InvalidOperationException)"
       },
       {
         "lineNumber": 1624,
         "author": {
           "gitId": "-"
         },
-        "content": "        #endregion"
+        "content": "            {"
       },
       {
         "lineNumber": 1625,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                // ignore exception"
       },
       {
         "lineNumber": 1626,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void SetupFunctionalTestChannels()"
+        "content": "            }"
       },
       {
         "lineNumber": 1627,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        }"
       },
       {
         "lineNumber": 1628,
         "author": {
           "gitId": "-"
         },
-        "content": "            _ftChannel \u003d new IpcChannel(\"PowerPointLabsFT\");"
+        "content": "        #endregion"
       },
       {
         "lineNumber": 1629,
         "author": {
           "gitId": "-"
         },
-        "content": "            ChannelServices.RegisterChannel(_ftChannel, false);"
+        "content": ""
       },
       {
         "lineNumber": 1630,
         "author": {
           "gitId": "-"
         },
-        "content": "            RemotingConfiguration.RegisterWellKnownServiceType(typeof(PowerPointLabsFT),"
+        "content": "        private void SetupFunctionalTestChannels()"
       },
       {
         "lineNumber": 1631,
         "author": {
           "gitId": "-"
         },
-        "content": "                \"PowerPointLabsFT\", WellKnownObjectMode.Singleton);"
+        "content": "        {"
       },
       {
         "lineNumber": 1632,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            _ftChannel \u003d new IpcChannel(\"PowerPointLabsFT\");"
       },
       {
         "lineNumber": 1633,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            ChannelServices.RegisterChannel(_ftChannel, false);"
       },
       {
         "lineNumber": 1634,
         "author": {
           "gitId": "-"
         },
-        "content": "        #region VSTO generated code"
+        "content": "            RemotingConfiguration.RegisterWellKnownServiceType(typeof(PowerPointLabsFT),"
       },
       {
         "lineNumber": 1635,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                \"PowerPointLabsFT\", WellKnownObjectMode.Singleton);"
       },
       {
         "lineNumber": 1636,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "        }"
       },
       {
         "lineNumber": 1637,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// Required method for Designer support - do not modify"
+        "content": ""
       },
       {
         "lineNumber": 1638,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// the contents of this method with the code editor."
+        "content": "        #region VSTO generated code"
       },
       {
         "lineNumber": 1639,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1640,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void InternalStartup()"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 1641,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        /// Required method for Designer support - do not modify"
       },
       {
         "lineNumber": 1642,
         "author": {
           "gitId": "-"
         },
-        "content": "            Startup +\u003d ThisAddInStartup;"
+        "content": "        /// the contents of this method with the code editor."
       },
       {
         "lineNumber": 1643,
         "author": {
           "gitId": "-"
         },
-        "content": "            Shutdown +\u003d ThisAddInShutdown;"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 1644,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        private void InternalStartup()"
       },
       {
         "lineNumber": 1645,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {"
       },
       {
         "lineNumber": 1646,
         "author": {
           "gitId": "-"
         },
-        "content": "        #endregion"
+        "content": "            Startup +\u003d ThisAddInStartup;"
       },
       {
         "lineNumber": 1647,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            Shutdown +\u003d ThisAddInShutdown;"
       },
       {
         "lineNumber": 1648,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 1649,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1650,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        #endregion"
+      },
+      {
+        "lineNumber": 1651,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 1652,
         "author": {
           "gitId": "-"
         },
@@ -73427,7 +73858,7 @@
       }
     ],
     "authorContributionMap": {
-      "ChesterSng": 16,
+      "ChesterSng": 20,
       "blewjy": 76,
       "-": 1556
     }
