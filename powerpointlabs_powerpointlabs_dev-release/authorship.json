@@ -57758,6 +57758,925 @@
     }
   },
   {
+    "path": "PowerPointLabs/PowerPointLabs/SyncLab/SyncFormatConstants.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "﻿using System.Collections.Generic;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using System.Drawing;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using Microsoft.Office.Core;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using PowerPointLabs.SyncLab.Views;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "using Font \u003d System.Drawing.Font;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "namespace PowerPointLabs.SyncLab.ObjectFormats"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public class SyncFormatConstants"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly Size DisplayImageSize \u003d new Size(30, 30);"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // values for bevel display"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly float DisplayImageDepth \u003d 15;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly float DisplayBevelWidth \u003d 5;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly float DisplayBevelHeight \u003d 5;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly MsoBevelType DisplayBevelType \u003d MsoBevelType.msoBevelCircle;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly MsoPresetCamera DisplayCameraPreset \u003d MsoPresetCamera.msoCameraIsometricOffAxis2Top;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly string DisplaySizeUnit \u003d \"pt\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly string DisplayFontString \u003d \"Text\";"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly string DisplayDegreeSymbol \u003d \"°\";"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly int DisplayImageFontSize \u003d 12;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly Font DisplayImageFont \u003d new Font(\"Arial\", DisplayImageFontSize);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly int ColorBlack \u003d 0;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static readonly int DisplayLineWeight \u003d 5;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public static readonly string FormatNameSeparator \u003d \"\u003e\";"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static FormatTreeNode[] FormatCategories \u003d\u003e CreateFormatCategories();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        public static List\u003cFormat\u003e Formats"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            get"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                List\u003cFormat\u003e list \u003d new List\u003cFormat\u003e();"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                list.AddRange(GetFormatsFromFormatTreeNode(FormatCategories));"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                return list;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        /// \u003cSummary\u003e"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        /// Collect all format objects from an array of FormatTreeNodes"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        /// \u003c/Summary\u003e"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        /// \u003cparam name\u003d\"nodes\"\u003e\u003c/param\u003e"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        /// \u003creturns\u003eCollected formats\u003c/returns\u003e"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private static Format[] GetFormatsFromFormatTreeNode(FormatTreeNode[] nodes)"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            List\u003cFormat\u003e list \u003d new List\u003cFormat\u003e();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            foreach (FormatTreeNode node in nodes)"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if (node.IsFormatNode)"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    list.Add(node.Format);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                else if (node.ChildrenNodes !\u003d null)"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    list.AddRange(GetFormatsFromFormatTreeNode(node.ChildrenNodes));"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return list.ToArray();"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private static FormatTreeNode[] CreateFormatCategories()"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            FormatTreeNode[] formats \u003d"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    new FormatTreeNode("
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            \"Text\","
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Font\", new FontFormat()),"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Font Size\", new FontSizeFormat()),"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Font Color\", new FontColorFormat()),"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Style\", new FontStyleFormat())),"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    new FormatTreeNode("
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            \"Fill\","
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Color\", new FillFormat()),"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Transparency\", new FillTransparencyFormat())),"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    new FormatTreeNode("
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            \"Line\","
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Width\", new LineWeightFormat()),"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Compound Type\", new LineCompoundTypeFormat()),"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Dash Type\", new LineDashTypeFormat()),"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Arrow\", new LineArrowFormat()),"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Color\", new LineFillFormat()),"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Transparency\", new LineTransparencyFormat())),"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    new FormatTreeNode("
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            \"Visual Effects\","
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Artistic Effect\", new ArtisticEffectFormat()),"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Glow\", "
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Color\", new GlowColorFormat()),"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Size\", new GlowSizeFormat()),"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Transparency\", new GlowTransparencyFormat())),"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Reflection\", "
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Transparency\", new ReflectionTransparencyFormat()),"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Size\", new ReflectionSizeFormat()),"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Blur\", new ReflectionBlurFormat()),"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Distance\", new ReflectionDistanceFormat())),"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Shadow\", new ShadowEffectFormat()),"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Soft Edge\", new SoftEdgeEffectFormat()),"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"3D Effects\", "
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Bevel Top\", new BevelTopFormat()),"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Bevel Bottom\", new BevelBottomFormat()),"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Contour\", "
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                    new FormatTreeNode(\"Color\", new ContourColorFormat()),"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                    new FormatTreeNode(\"Width\", new ContourWidthFormat())),"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Depth\", "
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                    new FormatTreeNode(\"Color\", new DepthColorFormat()),"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                    new FormatTreeNode(\"Size\", new DepthSizeFormat())),"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Lighting\", "
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                    new FormatTreeNode(\"Angle\", new LightingAngleFormat()),"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                    new FormatTreeNode(\"Preset Lighting\", new LightingEffectFormat())),"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                                new FormatTreeNode(\"Material\", new MaterialEffectFormat())),"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"3D Rotation\", new ThreeDRotationEffectFormat())),"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    new FormatTreeNode("
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            \"Size/Position\","
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Width\", new PositionWidthFormat()),"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Height\", new PositionHeightFormat()),"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"X\", new PositionXFormat()),"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Y\", new PositionYFormat()))"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                };"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return formats;"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 2,
+      "-": 128
+    }
+  },
+  {
     "path": "PowerPointLabs/PowerPointLabs/SyncLab/Views/SyncFormatPaneItem.xaml.cs",
     "lines": [
       {
@@ -57777,142 +58696,142 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "using System.Windows;"
+        "content": "using System.Text;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "-"
         },
-        "content": "using System.Windows.Controls;"
+        "content": "using System.Windows;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "-"
         },
-        "content": "using System.Windows.Input;"
+        "content": "using System.Windows.Controls;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "-"
         },
-        "content": "using System.Windows.Interop;"
+        "content": "using System.Windows.Input;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "-"
         },
-        "content": "using System.Windows.Media.Imaging;"
+        "content": "using System.Windows.Interop;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "using System.Windows.Media.Imaging;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "-"
         },
-        "content": "using Microsoft.Office.Interop.PowerPoint;"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "using Microsoft.Office.Interop.PowerPoint;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "-"
         },
-        "content": "using PowerPointLabs.ActionFramework.Common.Extension;"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
-        "content": "using PowerPointLabs.TextCollection;"
+        "content": "using PowerPointLabs.ActionFramework.Common.Extension;"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": ""
+        "content": "using PowerPointLabs.SyncLab.ObjectFormats;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "-"
         },
-        "content": "namespace PowerPointLabs.SyncLab.Views"
+        "content": "using PowerPointLabs.TextCollection;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": "{"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": "    /// \u003csummary\u003e"
+        "content": "namespace PowerPointLabs.SyncLab.Views"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "    /// Interaction logic for SyncFormatPaneItem.xaml"
+        "content": "{"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": "    /// \u003c/summary\u003e"
+        "content": "    /// \u003csummary\u003e"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "    public partial class SyncFormatPaneItem : UserControl"
+        "content": "    /// Interaction logic for SyncFormatPaneItem.xaml"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": "    {"
+        "content": "    /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public partial class SyncFormatPaneItem : UserControl"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": "        private Bitmap image;"
+        "content": "    {"
       },
       {
         "lineNumber": 23,
@@ -57926,1039 +58845,1368 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        private SyncPaneWPF parent;"
+        "content": "        private Bitmap image;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "        private string shapeKey \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "        private SyncLabShapeStorage shapeStorage;"
+        "content": "        private SyncPaneWPF parent;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "        private FormatTreeNode[] formats \u003d null;"
+        "content": "        private string shapeKey \u003d null;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private SyncLabShapeStorage shapeStorage;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "        public SyncFormatPaneItem(SyncPaneWPF parent, string shapeKey,"
+        "content": "        private FormatTreeNode[] formats \u003d null;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "                    SyncLabShapeStorage shapeStorage, FormatTreeNode[] formats)"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        {"
+        "content": "        #region Constructors"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            InitializeComponent();"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.parent \u003d parent;"
+        "content": "        public SyncFormatPaneItem(SyncPaneWPF parent, string shapeKey,"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.shapeKey \u003d shapeKey;"
+        "content": "                    SyncLabShapeStorage shapeStorage, FormatTreeNode[] formats)"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.shapeStorage \u003d shapeStorage;"
+        "content": "        {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.formats \u003d formats;"
+        "content": "            InitializeComponent();"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "            editImage.Source \u003d System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap("
+        "content": "            this.parent \u003d parent;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "                Properties.Resources.SyncLabEditButton.GetHbitmap(),"
+        "content": "            this.shapeKey \u003d shapeKey;"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "                IntPtr.Zero,"
+        "content": "            this.shapeStorage \u003d shapeStorage;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "                Int32Rect.Empty,"
+        "content": "            this.formats \u003d formats;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "                BitmapSizeOptions.FromEmptyOptions());"
+        "content": "            editImage.Source \u003d System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap("
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "            pasteImage.Source \u003d System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap("
+        "content": "                Properties.Resources.SyncLabEditButton.GetHbitmap(),"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "                Properties.Resources.SyncLabPasteButton.GetHbitmap(),"
+        "content": "                IntPtr.Zero,"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "                IntPtr.Zero,"
+        "content": "                Int32Rect.Empty,"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "                Int32Rect.Empty,"
+        "content": "                BitmapSizeOptions.FromEmptyOptions());"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "                BitmapSizeOptions.FromEmptyOptions()); "
+        "content": "            pasteImage.Source \u003d System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap("
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "            deleteImage.Source \u003d System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap("
+        "content": "                Properties.Resources.SyncLabPasteButton.GetHbitmap(),"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "                Properties.Resources.SyncLabDeleteButton.GetHbitmap(),"
+        "content": "                IntPtr.Zero,"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "                IntPtr.Zero,"
+        "content": "                Int32Rect.Empty,"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "                Int32Rect.Empty,"
+        "content": "                BitmapSizeOptions.FromEmptyOptions()); "
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "                BitmapSizeOptions.FromEmptyOptions());"
+        "content": "            deleteImage.Source \u003d System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap("
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                Properties.Resources.SyncLabDeleteButton.GetHbitmap(),"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                IntPtr.Zero,"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "        public string FormatShapeKey"
+        "content": "                Int32Rect.Empty,"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                BitmapSizeOptions.FromEmptyOptions());"
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            get"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            {"
+        "content": "            UpdateToolTipBody();"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "                return shapeKey;"
+        "content": "        }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        }"
+        "content": "        #endregion"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
         "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        public FormatTreeNode[] Formats"
+        "content": "        #region Getters and Setters"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        {"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "            get"
+        "content": "        public string FormatShapeKey"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "                return formats;"
+        "content": "            get"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "            set"
+        "content": "                return shapeKey;"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "                formats \u003d value;"
+        "content": "        }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        public FormatTreeNode[] Formats"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "        public Bitmap Image"
+        "content": "            get"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "            get"
+        "content": "                return formats;"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "                return image;"
+        "content": "            set"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "            set"
+        "content": "                formats \u003d value;"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "                image \u003d value;"
+        "content": "        }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdateImage();"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        public Bitmap Image"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        {"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            get"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "        public bool FormatShapeExists"
+        "content": "            {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                return image;"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "            get"
+        "content": "            }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            set"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "                return shapeStorage.GetShape(shapeKey) !\u003d null;"
+        "content": "            {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                image \u003d value;"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                UpdateImage();"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void UpdateImage()"
+        "content": "        }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "            // if image isn\u0027t set, fill the control with the label"
+        "content": "        public bool FormatShapeExists"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (image \u003d\u003d null)"
+        "content": "        {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            get"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "                imageBox.Visibility \u003d Visibility.Hidden;"
+        "content": "            {"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "YuPeiHenry"
+          "gitId": "-"
         },
-        "content": "                col1.Width \u003d new GridLength(0);"
+        "content": "                return shapeStorage.GetShape(shapeKey) !\u003d null;"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "            }"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        private void UpdateImage()"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "                BitmapSource source \u003d Imaging.CreateBitmapSourceFromHBitmap("
+        "content": "        {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "                                        image.GetHbitmap(),"
+        "content": "            // if image isn\u0027t set, fill the control with the label"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "                                        IntPtr.Zero,"
+        "content": "            if (image \u003d\u003d null)"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "                                        Int32Rect.Empty,"
+        "content": "            {"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "                                        BitmapSizeOptions.FromEmptyOptions());"
+        "content": "                imageBox.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                imageBox.Source \u003d source;"
+        "content": "                col1.Width \u003d new GridLength(0);"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "                imageBox.Visibility \u003d Visibility.Visible;"
+        "content": "                return;"
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "YuPeiHenry"
+          "gitId": "-"
         },
-        "content": "                col1.Width \u003d new GridLength(60);"
+        "content": "            }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            else"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            {"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                BitmapSource source \u003d Imaging.CreateBitmapSourceFromHBitmap("
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "        public String Text"
+        "content": "                                        image.GetHbitmap(),"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                                        IntPtr.Zero,"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "            get"
+        "content": "                                        Int32Rect.Empty,"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                                        BitmapSizeOptions.FromEmptyOptions());"
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "YuPeiHenry"
+          "gitId": "-"
         },
-        "content": "                return textBlock.Text;"
+        "content": "                imageBox.Source \u003d source;"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                imageBox.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            set"
+        "content": "                col1.Width \u003d new GridLength(60);"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "YuPeiHenry"
+          "gitId": "-"
         },
-        "content": "                textBlock.Text \u003d value;"
+        "content": "        }"
       },
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "YuPeiHenry"
+          "gitId": "-"
         },
-        "content": "                textBlock.ToolTip \u003d value;"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            }"
+        "content": "        public string Text"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        {"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            get"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void PasteButton_Click(object sender, RoutedEventArgs e)"
+        "content": "            {"
       },
       {
         "lineNumber": 131,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        {"
+        "content": "                return textBlock.Text;"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "            ApplyFormatToSelected();"
+        "content": "            }"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            set"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        private void EditButton_Click(object sender, RoutedEventArgs e)"
+        "content": "                textBlock.Text \u003d value;"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        {"
+        "content": "                toolTipName.Text \u003d value;"
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            Shape shape \u003d shapeStorage.GetShape(shapeKey);"
+        "content": "            }"
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            parent.Dialog \u003d new SyncFormatDialog(shape, Text, formats);"
+        "content": "        }"
       },
       {
         "lineNumber": 139,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            parent.Dialog.ObjectName \u003d this.Text;"
+        "content": ""
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            bool? result \u003d parent.Dialog.ShowDialog();"
+        "content": "        #endregion"
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            if (!result.HasValue || !(bool)result)"
+        "content": ""
       },
       {
         "lineNumber": 142,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            {"
+        "content": "        #region Helper Functions"
       },
       {
         "lineNumber": 143,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                return;"
+        "content": ""
       },
       {
         "lineNumber": 144,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private void UpdateToolTipBody()"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            StringBuilder toolTipBodyText \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (FormatTreeNode format in formats)"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                toolTipBodyText.Append(GetNamesOfCheckedNodes(format.Name, format));"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            toolTipBody.Text \u003d toolTipBodyText.ToString().Trim(\"\\n\".ToCharArray());"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private string GetNamesOfCheckedNodes(string rootName, FormatTreeNode node)"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            if (node.IsChecked ?? false)"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                return (node.Name.Equals(rootName) ? \"\" : rootName +"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    SyncFormatConstants.FormatNameSeparator) + node.Name + \"\\n\";"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            StringBuilder result \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (FormatTreeNode child in node.ChildrenNodes ?? new FormatTreeNode[] { })"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                result.Append(GetNamesOfCheckedNodes(rootName, child));"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return result.ToString();"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private void ApplyFormatToSelected()"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Shape formatShape \u003d shapeStorage.GetShape(shapeKey);"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            if (formatShape \u003d\u003d null)"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                MessageBox.Show(SyncLabText.ErrorShapeDeleted, SyncLabText.ErrorDialogTitle);"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                parent.ClearInvalidFormats();"
+      },
+      {
+        "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 177,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            this.formats \u003d parent.Dialog.Formats;"
+        "content": "            this.StartNewUndoEntry();"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 178,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "            this.Text \u003d parent.Dialog.ObjectName;"
+        "content": "            parent.ApplyFormats(formats, formatShape);"
       },
       {
-        "lineNumber": 147,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            parent.Dialog \u003d null;"
-      },
-      {
-        "lineNumber": 148,
+        "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 181,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "        private void DeleteButton_Click(object sender, RoutedEventArgs e)"
+        "content": "        #endregion"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 182,
         "author": {
-          "gitId": "-"
-        },
-        "content": "        {"
-      },
-      {
-        "lineNumber": 152,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            parent.RemoveFormatItem(this);"
-      },
-      {
-        "lineNumber": 153,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 154,
-        "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
         "content": ""
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 183,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        #region Event Handlers"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void OnMouseDoubleClick(object sender, MouseButtonEventArgs e)"
+        "content": "        private void PasteButton_Click(object sender, RoutedEventArgs e)"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
         "content": "        {"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
         "content": "            ApplyFormatToSelected();"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void ApplyFormatToSelected()"
+        "content": "        private void EditButton_Click(object sender, RoutedEventArgs e)"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
         "content": "        {"
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "            Shape formatShape \u003d shapeStorage.GetShape(shapeKey);"
+        "content": "            Shape shape \u003d shapeStorage.GetShape(shapeKey);"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (formatShape \u003d\u003d null)"
+        "content": "            parent.Dialog \u003d new SyncFormatDialog(shape, Text, formats);"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            parent.Dialog.ObjectName \u003d this.Text;"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            bool? result \u003d parent.Dialog.ShowDialog();"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if (!result.HasValue || !(bool)result)"
+      },
+      {
+        "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
         "content": "            {"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "                MessageBox.Show(SyncLabText.ErrorShapeDeleted, SyncLabText.ErrorDialogTitle);"
+        "content": "                return;"
       },
       {
-        "lineNumber": 166,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                parent.ClearInvalidFormats();"
-      },
-      {
-        "lineNumber": 167,
+        "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.StartNewUndoEntry();"
+        "content": "            this.formats \u003d parent.Dialog.Formats;"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "            parent.ApplyFormats(formats, formatShape);"
+        "content": "            this.Text \u003d parent.Dialog.ObjectName;"
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            parent.Dialog \u003d null;"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            UpdateToolTipBody();"
+      },
+      {
+        "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private void DeleteButton_Click(object sender, RoutedEventArgs e)"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            parent.RemoveFormatItem(this);"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private void OnMouseDoubleClick(object sender, MouseButtonEventArgs e)"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            ApplyFormatToSelected();"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        #endregion"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
@@ -58966,8 +60214,142 @@
       }
     ],
     "authorContributionMap": {
-      "YuPeiHenry": 5,
-      "-": 167
+      "YuPeiHenry": 64,
+      "-": 155
+    }
+  },
+  {
+    "path": "PowerPointLabs/PowerPointLabs/SyncLab/Views/SyncFormatPanelItemStub.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using System.Drawing;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace PowerPointLabs.SyncLab.Views"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    class SyncFormatPaneItemStub : SyncFormatPaneItem"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public SyncFormatPaneItemStub(FormatTreeNode[] formats) :"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            base(null, null, null, formats)"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        new public string FormatShapeKey \u003d null;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        new public Bitmap Image \u003d null;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        new public bool FormatShapeExists \u003d false;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 18
     }
   },
   {
@@ -90228,6 +91610,994 @@
     "authorContributionMap": {
       "blewjy": 31,
       "-": 155
+    }
+  },
+  {
+    "path": "PowerPointLabs/Test/UnitTest/SyncLab/SyncLabFormatPaneItemTest.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using Microsoft.Office.Interop.PowerPoint;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using Microsoft.VisualStudio.TestTools.UnitTesting;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.SyncLab.ObjectFormats;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.SyncLab.Views;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using System;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using System.Collections.Generic;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace Test.UnitTest.SyncLab"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    [TestClass]"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    public class SyncLabFormatPaneItemTest : BaseSyncLabTest"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string TestName \u003d \"TestingN@meeeeeeeeeeeeeeeeee\";"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private string[] _testNodesNames;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestInitialize]"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public void TestInitialize()"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            _testNodesNames \u003d GetAllFormatNames();"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestMethod]"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestCategory(\"UT\")]"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public void TestSyncPaneTooltipName()"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            FormatTreeNode[] nodes \u003d SyncFormatConstants.FormatCategories;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            SyncFormatPaneItem item \u003d new SyncFormatPaneItemStub(nodes);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            item.Text \u003d TestName;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Assert.AreEqual(TestName, item.toolTipName.Text);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestMethod]"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestCategory(\"UT\")]"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public void TestSyncPaneTooltipBody()"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] nodes1 \u003d { _testNodesNames[0], _testNodesNames[13], _testNodesNames[16] };"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] nodes2 \u003d { _testNodesNames[4], _testNodesNames[6], _testNodesNames[8] };"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] nodes3 \u003d { _testNodesNames[7], _testNodesNames[11], _testNodesNames[18] };"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            TestFollowingNodes(nodes1);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            TestFollowingNodes(nodes2);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            TestFollowingNodes(nodes3);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// \u003csummary\u003e"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// Get the node names of all format nodes."
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// \u003c/summary\u003e"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// \u003creturns\u003e\u003c/returns\u003e"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private string[] GetAllFormatNames()"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Queue\u003cFormatTreeNode\u003e queue \u003d new Queue\u003cFormatTreeNode\u003e(SyncFormatConstants.FormatCategories);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            List\u003cstring\u003e allNames \u003d new List\u003cstring\u003e();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            while (queue.Count \u003e 0)"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                FormatTreeNode node \u003d queue.Dequeue();"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                string fullName \u003d node.Name;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                FormatTreeNode parentNode \u003d node.ParentNode;"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                while (parentNode !\u003d null)"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    fullName \u003d parentNode.Name + SyncFormatConstants.FormatNameSeparator + fullName;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    parentNode \u003d parentNode.ParentNode;"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                allNames.Add(fullName);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                if (node.ChildrenNodes \u003d\u003d null)"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    continue;"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                foreach (FormatTreeNode child in node.ChildrenNodes)"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    queue.Enqueue(child);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return allNames.ToArray();"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private FormatTreeNode[] SelectFormats(FormatTreeNode[] formats, string[] formatNames)"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (string name in formatNames)"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                GetEndNode(formats, name).IsChecked \u003d true;"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return formats;"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// \u003csummary\u003e"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// Gets the node at the end of the format tree, as specified by the string name"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// Returns early with the last matching node if the next node cannot be found"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// \u003c/summary\u003e"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private FormatTreeNode GetEndNode(FormatTreeNode[] formats, string name)"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] path \u003d name.Split(SyncFormatConstants.FormatNameSeparator.ToCharArray());"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            FormatTreeNode currentRoot \u003d new FormatTreeNode(\"root\", formats);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (string nodeName in path)"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                int nextIndex \u003d LastIndexOf(currentRoot.ChildrenNodes, nodeName);"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                if (nextIndex \u003c 0)"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                currentRoot \u003d currentRoot.ChildrenNodes[nextIndex];"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return currentRoot;"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private int LastIndexOf(FormatTreeNode[] nodes, string name)"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            int index \u003d nodes.Length - 1;"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            while (index \u003e\u003d 0)"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                if (nodes[index].Name.Equals(name))"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    return index;"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                index--;"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return index;"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// \u003csummary\u003e"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// Test the node names displayed by the tooltip against the expected node names."
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        /// \u003c/summary\u003e"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private void TestFollowingNodes(string[] nodeNames)"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            FormatTreeNode[] nodes \u003d SyncFormatConstants.FormatCategories;"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            nodes \u003d SelectFormats(SyncFormatConstants.FormatCategories, nodeNames);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            SyncFormatPaneItem item \u003d new SyncFormatPaneItemStub(nodes);"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] expected \u003d nodeNames;"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] actual \u003d item.toolTipBody.Text.Split(\"\\n\".ToCharArray());"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Array.Sort(expected);"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Array.Sort(actual);"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Assert.AreEqual(String.Join(\"\\n\", expected), String.Join(\"\\n\", actual));"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 140
     }
   },
   {
