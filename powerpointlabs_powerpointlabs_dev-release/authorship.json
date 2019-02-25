@@ -57070,6 +57070,1557 @@
     }
   },
   {
+    "path": "PowerPointLabs/PowerPointLabs/SyncLab/ObjectFormats/TextHorizontalAlignmentFormat.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using System;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using System.Drawing;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using Microsoft.Office.Interop.PowerPoint;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Log;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace PowerPointLabs.SyncLab.ObjectFormats"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    class TextHorizontalAlignmentFormat : Format"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override bool CanCopy(Shape formatShape)"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return Sync(formatShape, formatShape);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override void SyncFormat(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            if (!Sync(formatShape, newShape))"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.Log(newShape.Type + \" unable to sync Horizontal Text Alignment\");"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override Bitmap DisplayImage(Shape formatShape)"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string alignmentArt \u003d"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"\u003d\u003d\u003d\u003d\u003d\u003d\\n\" +"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"\u003d\u003d\u003d\\n\";"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return SyncFormatUtil.GetTextDisplay("
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                alignmentArt,"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                new System.Drawing.Font(formatShape.TextEffect.FontName,"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                                        SyncFormatConstants.DisplayImageFontSize,"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                                        FontStyle.Bold),"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                SyncFormatConstants.DisplayImageSize);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private static bool Sync(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            try"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                newShape.TextFrame.HorizontalAnchor \u003d formatShape.TextFrame2.HorizontalAnchor;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                newShape.TextFrame.TextRange.ParagraphFormat.Alignment \u003d"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    formatShape.TextFrame.TextRange.ParagraphFormat.Alignment;"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            catch (Exception e)"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.LogException(e, \"Sync TextAlignmentFormat\");"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                return false;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 54
+    }
+  },
+  {
+    "path": "PowerPointLabs/PowerPointLabs/SyncLab/ObjectFormats/TextLineSpacingFormat.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using System;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using System.Drawing;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using Microsoft.Office.Interop.PowerPoint;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Log;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace PowerPointLabs.SyncLab.ObjectFormats"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    class TextLineSpacingFormat : Format"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override bool CanCopy(Shape formatShape)"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return Sync(formatShape, formatShape);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override void SyncFormat(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            if (!Sync(formatShape, newShape))"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.Log(newShape.Type + \" unable to sync Line Spacing\");"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override Bitmap DisplayImage(Shape formatShape)"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string spacingArt \u003d"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"--------\\n\" +"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"____\\n\";"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return SyncFormatUtil.GetTextDisplay("
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                spacingArt,"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                new System.Drawing.Font(formatShape.TextEffect.FontName,"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                                        SyncFormatConstants.DisplayImageFontSize,"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                                        FontStyle.Bold),"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                SyncFormatConstants.DisplayImageSize);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private static bool Sync(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            try"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                newShape.TextFrame.TextRange.ParagraphFormat.SpaceAfter \u003d"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    formatShape.TextFrame2.TextRange.ParagraphFormat.SpaceAfter;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                newShape.TextFrame.TextRange.ParagraphFormat.SpaceBefore \u003d"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    formatShape.TextFrame2.TextRange.ParagraphFormat.SpaceBefore;"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                newShape.TextFrame.TextRange.ParagraphFormat.SpaceWithin \u003d"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    formatShape.TextFrame2.TextRange.ParagraphFormat.SpaceWithin;"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            catch (Exception e)"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.LogException(e, \"Sync TextLineSpacingFormat\");"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                return false;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 57
+    }
+  },
+  {
+    "path": "PowerPointLabs/PowerPointLabs/SyncLab/ObjectFormats/TextOrientationFormat.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using System;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using System.Drawing;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using Microsoft.Office.Interop.PowerPoint;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Log;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.Utils;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace PowerPointLabs.SyncLab.ObjectFormats"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    class TextOrientationFormat : Format"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override bool CanCopy(Shape formatShape)"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return Sync(formatShape, formatShape);"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override void SyncFormat(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            if (!Sync(formatShape, newShape))"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.Log(newShape.Type + \" unable to sync Text Orientation\");"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override Bitmap DisplayImage(Shape formatShape)"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Shapes shapes \u003d SyncFormatUtil.GetTemplateShapes();"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Shape shape \u003d shapes.AddLine("
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                0, SyncFormatConstants.DisplayImageSize.Height,"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                SyncFormatConstants.DisplayImageSize.Width, 0);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            SyncFormat(formatShape, shape);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            shape.Line.ForeColor.RGB \u003d SyncFormatConstants.ColorBlack;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            shape.Line.Weight \u003d SyncFormatConstants.DisplayLineWeight;"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Bitmap image \u003d GraphicsUtil.ShapeToBitmap(shape);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            shape.Delete();"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return image;"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private static bool Sync(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            try"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                newShape.TextFrame.Orientation \u003d formatShape.TextFrame2.Orientation;"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            catch (Exception e)"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.LogException(e, \"Sync TextOrientationFormat\");"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                return false;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 54
+    }
+  },
+  {
+    "path": "PowerPointLabs/PowerPointLabs/SyncLab/ObjectFormats/TextVerticalAlignmentFormat.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using System;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using System.Drawing;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using Microsoft.Office.Interop.PowerPoint;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.ActionFramework.Common.Log;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace PowerPointLabs.SyncLab.ObjectFormats"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    class TextVerticalAlignmentFormat : Format"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override bool CanCopy(Shape formatShape)"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return Sync(formatShape, formatShape);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override void SyncFormat(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            if (!Sync(formatShape, newShape))"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.Log(newShape.Type + \" unable to sync Vertical Text Alignment\");"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public override Bitmap DisplayImage(Shape formatShape)"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string alignmentArt \u003d"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"||\\n\" +"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"||\\n\";"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return SyncFormatUtil.GetTextDisplay("
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                alignmentArt,"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                new System.Drawing.Font(formatShape.TextEffect.FontName,"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                                        SyncFormatConstants.DisplayImageFontSize,"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                                        FontStyle.Bold),"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                SyncFormatConstants.DisplayImageSize);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private static bool Sync(Shape formatShape, Shape newShape)"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            try"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                newShape.TextFrame.VerticalAnchor \u003d formatShape.TextFrame2.VerticalAnchor;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            catch (Exception e)"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Logger.LogException(e, \"Sync TextAlignmentFormat\");"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                return false;"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return true;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 52
+    }
+  },
+  {
     "path": "PowerPointLabs/PowerPointLabs/SyncLab/ObjectFormats/ThreeDRotationEffectFormat.cs",
     "lines": [
       {
@@ -58309,362 +59860,397 @@
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                            new FormatTreeNode(\"Style\", new FontStyleFormat())),"
+        "content": "                            new FormatTreeNode(\"Style\", new FontStyleFormat()),"
       },
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                    new FormatTreeNode("
+        "content": "                            new FormatTreeNode(\"Alignment\","
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                            \"Fill\","
+        "content": "                                new FormatTreeNode(\"Horizontal Alignment\", new TextHorizontalAlignmentFormat()),"
       },
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                            new FormatTreeNode(\"Color\", new FillFormat()),"
+        "content": "                                new FormatTreeNode(\"Vertical Alignment\", new TextVerticalAlignmentFormat())),"
       },
       {
         "lineNumber": 83,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                            new FormatTreeNode(\"Transparency\", new FillTransparencyFormat())),"
+        "content": "                            new FormatTreeNode(\"Line Spacing\", new TextLineSpacingFormat()),"
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "-"
+          "gitId": "YuPeiHenry"
         },
-        "content": "                    new FormatTreeNode("
+        "content": "                            new FormatTreeNode(\"Orientation\", new TextOrientationFormat())),"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "                            \"Line\","
+        "content": "                    new FormatTreeNode("
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Width\", new LineWeightFormat()),"
+        "content": "                            \"Fill\","
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Compound Type\", new LineCompoundTypeFormat()),"
+        "content": "                            new FormatTreeNode(\"Color\", new FillFormat()),"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Dash Type\", new LineDashTypeFormat()),"
+        "content": "                            new FormatTreeNode(\"Transparency\", new FillTransparencyFormat())),"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Arrow\", new LineArrowFormat()),"
+        "content": "                    new FormatTreeNode("
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Color\", new LineFillFormat()),"
+        "content": "                            \"Line\","
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Transparency\", new LineTransparencyFormat())),"
+        "content": "                            new FormatTreeNode(\"Width\", new LineWeightFormat()),"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "                    new FormatTreeNode("
+        "content": "                            new FormatTreeNode(\"Compound Type\", new LineCompoundTypeFormat()),"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "                            \"Visual Effects\","
+        "content": "                            new FormatTreeNode(\"Dash Type\", new LineDashTypeFormat()),"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Artistic Effect\", new ArtisticEffectFormat()),"
+        "content": "                            new FormatTreeNode(\"Arrow\", new LineArrowFormat()),"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Glow\", "
+        "content": "                            new FormatTreeNode(\"Color\", new LineFillFormat()),"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Color\", new GlowColorFormat()),"
+        "content": "                            new FormatTreeNode(\"Transparency\", new LineTransparencyFormat())),"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Size\", new GlowSizeFormat()),"
+        "content": "                    new FormatTreeNode("
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Transparency\", new GlowTransparencyFormat())),"
+        "content": "                            \"Visual Effects\","
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Reflection\", "
+        "content": "                            new FormatTreeNode(\"Artistic Effect\", new ArtisticEffectFormat()),"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Transparency\", new ReflectionTransparencyFormat()),"
+        "content": "                            new FormatTreeNode(\"Glow\", "
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Size\", new ReflectionSizeFormat()),"
+        "content": "                                new FormatTreeNode(\"Color\", new GlowColorFormat()),"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Blur\", new ReflectionBlurFormat()),"
+        "content": "                                new FormatTreeNode(\"Size\", new GlowSizeFormat()),"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Distance\", new ReflectionDistanceFormat())),"
+        "content": "                                new FormatTreeNode(\"Transparency\", new GlowTransparencyFormat())),"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Shadow\", new ShadowEffectFormat()),"
+        "content": "                            new FormatTreeNode(\"Reflection\", "
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Soft Edge\", new SoftEdgeEffectFormat()),"
+        "content": "                                new FormatTreeNode(\"Transparency\", new ReflectionTransparencyFormat()),"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"3D Effects\", "
+        "content": "                                new FormatTreeNode(\"Size\", new ReflectionSizeFormat()),"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Bevel Top\", new BevelTopFormat()),"
+        "content": "                                new FormatTreeNode(\"Blur\", new ReflectionBlurFormat()),"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Bevel Bottom\", new BevelBottomFormat()),"
+        "content": "                                new FormatTreeNode(\"Distance\", new ReflectionDistanceFormat())),"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Contour\", "
+        "content": "                            new FormatTreeNode(\"Shadow\", new ShadowEffectFormat()),"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    new FormatTreeNode(\"Color\", new ContourColorFormat()),"
+        "content": "                            new FormatTreeNode(\"Soft Edge\", new SoftEdgeEffectFormat()),"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    new FormatTreeNode(\"Width\", new ContourWidthFormat())),"
+        "content": "                            new FormatTreeNode(\"3D Effects\", "
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Depth\", "
+        "content": "                                new FormatTreeNode(\"Bevel Top\", new BevelTopFormat()),"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    new FormatTreeNode(\"Color\", new DepthColorFormat()),"
+        "content": "                                new FormatTreeNode(\"Bevel Bottom\", new BevelBottomFormat()),"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    new FormatTreeNode(\"Size\", new DepthSizeFormat())),"
+        "content": "                                new FormatTreeNode(\"Contour\", "
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Lighting\", "
+        "content": "                                    new FormatTreeNode(\"Color\", new ContourColorFormat()),"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    new FormatTreeNode(\"Angle\", new LightingAngleFormat()),"
+        "content": "                                    new FormatTreeNode(\"Width\", new ContourWidthFormat())),"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    new FormatTreeNode(\"Preset Lighting\", new LightingEffectFormat())),"
+        "content": "                                new FormatTreeNode(\"Depth\", "
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "                                new FormatTreeNode(\"Material\", new MaterialEffectFormat())),"
+        "content": "                                    new FormatTreeNode(\"Color\", new DepthColorFormat()),"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"3D Rotation\", new ThreeDRotationEffectFormat())),"
+        "content": "                                    new FormatTreeNode(\"Size\", new DepthSizeFormat())),"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "                    new FormatTreeNode("
+        "content": "                                new FormatTreeNode(\"Lighting\", "
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "                            \"Size/Position\","
+        "content": "                                    new FormatTreeNode(\"Angle\", new LightingAngleFormat()),"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Width\", new PositionWidthFormat()),"
+        "content": "                                    new FormatTreeNode(\"Preset Lighting\", new LightingEffectFormat())),"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Height\", new PositionHeightFormat()),"
+        "content": "                                new FormatTreeNode(\"Material\", new MaterialEffectFormat())),"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"X\", new PositionXFormat()),"
+        "content": "                            new FormatTreeNode(\"3D Rotation\", new ThreeDRotationEffectFormat())),"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "                            new FormatTreeNode(\"Y\", new PositionYFormat()))"
+        "content": "                    new FormatTreeNode("
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "                };"
+        "content": "                            \"Size/Position\","
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "            return formats;"
+        "content": "                            new FormatTreeNode(\"Width\", new PositionWidthFormat()),"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                            new FormatTreeNode(\"Height\", new PositionHeightFormat()),"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                            new FormatTreeNode(\"X\", new PositionXFormat()),"
       },
       {
         "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            new FormatTreeNode(\"Y\", new PositionYFormat()))"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                };"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return formats;"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
@@ -58672,8 +60258,8 @@
       }
     ],
     "authorContributionMap": {
-      "YuPeiHenry": 2,
-      "-": 128
+      "YuPeiHenry": 8,
+      "-": 127
     }
   },
   {
@@ -92598,6 +94184,1577 @@
     ],
     "authorContributionMap": {
       "YuPeiHenry": 140
+    }
+  },
+  {
+    "path": "PowerPointLabs/Test/UnitTest/SyncLab/SyncLabTextAlignmentTest.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using Microsoft.VisualStudio.TestTools.UnitTesting;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.SyncLab.ObjectFormats;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace Test.UnitTest.SyncLab"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    [TestClass]"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    public class SyncLabTextAlignmentTest : BaseSyncLabTest"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int HorizontalAlignmentSlidesNo \u003d 4;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int HorizontalExpectedSlidesNo \u003d 5;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int VerticalAlignmentSlidesNo \u003d 6;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int VerticalExpectedSlidesNo \u003d 7;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string SourceSuffix \u003d \" source\";"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string TargetSuffix \u003d \" target\";"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        //Types of text formats"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Left \u003d \"Left\";"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Center \u003d \"Center\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Right \u003d \"Right\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Justify \u003d \"Justify\";"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Top \u003d \"Top\";"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Middle \u003d \"Middle\";"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Bottom \u003d \"Bottom\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        protected override string GetTestingSlideName()"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return \"SyncLab\\\\SyncLab_Text.pptx\";"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestMethod]"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestCategory(\"UT\")]"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public void TestSyncHorizontalAlignment()"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] prefixes \u003d { Left, Center, Right, Justify };"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (string prefix in prefixes)"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape formatShape \u003d"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(HorizontalAlignmentSlidesNo, prefix + SourceSuffix);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape newShape \u003d"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(HorizontalAlignmentSlidesNo, prefix + TargetSuffix);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                new TextHorizontalAlignmentFormat().SyncFormat(formatShape, newShape);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                CheckTextAlignment(prefix + TargetSuffix,"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    HorizontalAlignmentSlidesNo, HorizontalExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            CompareSlides(HorizontalAlignmentSlidesNo, HorizontalExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestMethod]"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestCategory(\"UT\")]"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public void TestSyncVerticalAlignment()"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] prefixes \u003d { Top, Middle, Bottom };"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (string prefix in prefixes)"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape formatShape \u003d"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(VerticalAlignmentSlidesNo, prefix + SourceSuffix);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape newShape \u003d"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(VerticalAlignmentSlidesNo, prefix + TargetSuffix);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                new TextVerticalAlignmentFormat().SyncFormat(formatShape, newShape);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                CheckTextAlignment(prefix + TargetSuffix,"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    VerticalAlignmentSlidesNo, VerticalExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            CompareSlides(VerticalAlignmentSlidesNo, VerticalExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        //Changes in text alignment are too minute for CompareSlide to detect so we need to check them manually"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        protected void CheckTextAlignment(string shape, int actualShapesSlideNo, int expectedShapesSlideNo)"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.Shape actualShape \u003d GetShape(actualShapesSlideNo, shape);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.Shape expectedShape \u003d GetShape(expectedShapesSlideNo, shape);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.TextFrame2 actualTextFrame \u003d actualShape.TextFrame2;"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.TextFrame2 expectedTextFrame \u003d expectedShape.TextFrame2;"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Assert.IsTrue(actualTextFrame.TextRange.ParagraphFormat.Alignment \u003d\u003d expectedTextFrame.TextRange.ParagraphFormat.Alignment"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \u0026\u0026 actualTextFrame.HorizontalAnchor \u003d\u003d expectedTextFrame.HorizontalAnchor"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \u0026\u0026 actualTextFrame.VerticalAnchor \u003d\u003d expectedTextFrame.VerticalAnchor,"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"Text alignment does not match expected text alignment.\" +"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"Expected paragraphAlignment: {0}, horizontalAlignment:{1}, verticalAlignment: {2}.\""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    + \"Actual paragraphAlignment: {3}, horizontalAlignment:{4}, verticalAlignment:{5}.\","
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                expectedTextFrame.TextRange.ParagraphFormat.Alignment,"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                expectedTextFrame.HorizontalAnchor, expectedTextFrame.VerticalAnchor,"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                actualTextFrame.TextRange.ParagraphFormat.Alignment,"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                actualTextFrame.HorizontalAnchor, actualTextFrame.VerticalAnchor);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 93
+    }
+  },
+  {
+    "path": "PowerPointLabs/Test/UnitTest/SyncLab/SyncLabTextLineSpacing.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using Microsoft.VisualStudio.TestTools.UnitTesting;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.SyncLab.ObjectFormats;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace Test.UnitTest.SyncLab"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    [TestClass]"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    public class SyncTestLineSpacing : BaseSyncLabTest"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int SpacingSlidesNo \u003d 12;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int SpacingExpectedSlidesNo \u003d 13;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string SourceSuffix \u003d \" source\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string TargetSuffix \u003d \" target\";"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        //Types of text formats"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Single \u003d \"Single\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string S1_5 \u003d \"1_5\";"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Double \u003d \"Double\";"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Exactly40 \u003d \"Exactly40\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Multiple3 \u003d \"Multiple3\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        protected override string GetTestingSlideName()"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return \"SyncLab\\\\SyncLab_Text.pptx\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestMethod]"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestCategory(\"UT\")]"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public void TestSyncLineSpacing()"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] prefixes \u003d { Single, S1_5, Double, Exactly40, Multiple3 };"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (string prefix in prefixes)"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape formatShape \u003d"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(SpacingSlidesNo, prefix + SourceSuffix);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape newShape \u003d"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(SpacingSlidesNo, prefix + TargetSuffix);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                new TextLineSpacingFormat().SyncFormat(formatShape, newShape);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                CheckTextLineSpacing(prefix + TargetSuffix,"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    SpacingSlidesNo, SpacingExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            CompareSlides(SpacingSlidesNo, SpacingExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        //Changes in text alignment are too minute for CompareSlide to detect so we need to check them manually"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        protected void CheckTextLineSpacing(string shape, int actualShapesSlideNo, int expectedShapesSlideNo)"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.Shape actualShape \u003d GetShape(actualShapesSlideNo, shape);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.Shape expectedShape \u003d GetShape(expectedShapesSlideNo, shape);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Core.ParagraphFormat2 actualPFormat \u003d actualShape.TextFrame2.TextRange.ParagraphFormat;"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Core.ParagraphFormat2 expectedPFormat \u003d expectedShape.TextFrame2.TextRange.ParagraphFormat;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Assert.IsTrue(actualPFormat.SpaceBefore \u003d\u003d expectedPFormat.SpaceBefore \u0026\u0026"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                actualPFormat.SpaceWithin \u003d\u003d expectedPFormat.SpaceWithin \u0026\u0026"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                actualPFormat.SpaceAfter \u003d\u003d expectedPFormat.SpaceAfter,"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"Text line spacing does not match expected line spacing.\" +"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"Expected before:{0}, within:{1}, after:{2}. \" +"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"Actual before:{3}, within:{4}, after:{5}.\","
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                expectedPFormat.SpaceBefore, expectedPFormat.SpaceWithin, expectedPFormat.SpaceAfter,"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                actualPFormat.SpaceBefore, actualPFormat.SpaceWithin, actualPFormat.SpaceAfter);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 66
+    }
+  },
+  {
+    "path": "PowerPointLabs/Test/UnitTest/SyncLab/SyncLabTextOrientation.cs",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "﻿using Microsoft.VisualStudio.TestTools.UnitTesting;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "using PowerPointLabs.SyncLab.ObjectFormats;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "namespace Test.UnitTest.SyncLab"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    [TestClass]"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    public class SyncLabTextOrientation : BaseSyncLabTest"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int OrientationSlidesNo \u003d 9;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const int OrientationExpectedSlidesNo \u003d 10;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string SourceSuffix \u003d \" source\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string TargetSuffix \u003d \" target\";"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        //Types of text formats"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Horizontal \u003d \"Horizontal\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Vertical \u003d \"Vertical\";"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Rotate90 \u003d \"Rotate90\";"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Rotate270 \u003d \"Rotate270\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        private const string Stacked \u003d \"Stacked\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        protected override string GetTestingSlideName()"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            return \"SyncLab\\\\SyncLab_Text.pptx\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestMethod]"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        [TestCategory(\"UT\")]"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        public void TestSyncOrientation()"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            string[] prefixes \u003d { Horizontal, Vertical, Rotate90, Rotate270, Stacked };"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            foreach (string prefix in prefixes)"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape formatShape \u003d"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(OrientationSlidesNo, prefix + SourceSuffix);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                Microsoft.Office.Interop.PowerPoint.Shape newShape \u003d"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    GetShape(OrientationSlidesNo, prefix + TargetSuffix);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                new TextOrientationFormat().SyncFormat(formatShape, newShape);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                CheckTextOrientation(prefix + TargetSuffix,"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                    OrientationSlidesNo, OrientationExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            CompareSlides(OrientationSlidesNo, OrientationExpectedSlidesNo);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        //Changes in text alignment are too minute for CompareSlide to detect so we need to check them manually"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        protected void CheckTextOrientation(string shape, int actualShapesSlideNo, int expectedShapesSlideNo)"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.Shape actualShape \u003d GetShape(actualShapesSlideNo, shape);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.Shape expectedShape \u003d GetShape(expectedShapesSlideNo, shape);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.TextFrame2 actualTextFrame \u003d actualShape.TextFrame2;"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Microsoft.Office.Interop.PowerPoint.TextFrame2 expectedTextFrame \u003d expectedShape.TextFrame2;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "            Assert.IsTrue(actualTextFrame.Orientation \u003d\u003d expectedTextFrame.Orientation,"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"Text orientation does not match expected text orientation.\" +"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                \"Expected orientation:{0}. Actual orientation:{1}.\","
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "                expectedTextFrame.Orientation, actualTextFrame.Orientation);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "YuPeiHenry"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "YuPeiHenry": 62
     }
   },
   {
