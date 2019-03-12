@@ -32141,317 +32141,317 @@
       {
         "lineNumber": 535,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "            StylesPreviewGrid.Width \u003d StylesPreviewGrid.ActualWidth + e.HorizontalChange;"
+        "content": "            double newWidth \u003d StylesPreviewGrid.ActualWidth + e.HorizontalChange;"
       },
       {
         "lineNumber": 536,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        }"
+        "content": "            // Prevent StylesPreviewGrid from becoming too small"
       },
       {
         "lineNumber": 537,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "            if (newWidth \u003c StylesPreviewGrid.MinWidth)"
       },
       {
         "lineNumber": 538,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "            {"
       },
       {
         "lineNumber": 539,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        /// Enable \u0026 disable Apply button for preview interface"
+        "content": "                StylesPreviewGrid.Width \u003d StylesPreviewGrid.MinWidth;"
       },
       {
         "lineNumber": 540,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "            }"
       },
       {
         "lineNumber": 541,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
+        "content": "            // Prevent StylesPreviewGrid from overflowing grid column 0"
       },
       {
         "lineNumber": 542,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
+        "content": "            else if (newWidth \u003e Column0.Width.Value)"
       },
       {
         "lineNumber": 543,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        private void StylesPreivewListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)"
+        "content": "            {"
       },
       {
         "lineNumber": 544,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        {"
+        "content": "                StylesPreviewGrid.Width \u003d Column0.Width.Value;"
       },
       {
         "lineNumber": 545,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "            UpdatePreviewStageControls();"
+        "content": "            }"
       },
       {
         "lineNumber": 546,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        }"
+        "content": "            else"
       },
       {
         "lineNumber": 547,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 548,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        private void UpdatePreviewStageControls()"
+        "content": "                StylesPreviewGrid.Width \u003d newWidth;"
       },
       {
         "lineNumber": 549,
         "author": {
-          "gitId": "-"
+          "gitId": "ChesterSng"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 550,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (StylesPreviewListBox.SelectedValue !\u003d null"
+        "content": "        }"
       },
       {
         "lineNumber": 551,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 IsDisplayDefaultPicture())"
+        "content": ""
       },
       {
         "lineNumber": 552,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 553,
         "author": {
           "gitId": "-"
         },
-        "content": "                StylesCustomizeButton.IsEnabled \u003d true;"
+        "content": "        /// Enable \u0026 disable Apply button for preview interface"
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "-"
         },
-        "content": "                StylesApplyButton.IsEnabled \u003d false;"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 555,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 556,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (StylesPreviewListBox.SelectedValue !\u003d null"
+        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 557,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u0026\u0026 ImageSelectionListBox.SelectedValue !\u003d null)"
+        "content": "        private void StylesPreivewListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)"
       },
       {
         "lineNumber": 558,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        {"
       },
       {
         "lineNumber": 559,
         "author": {
           "gitId": "-"
         },
-        "content": "                StylesCustomizeButton.IsEnabled \u003d true;"
+        "content": "            UpdatePreviewStageControls();"
       },
       {
         "lineNumber": 560,
         "author": {
           "gitId": "-"
         },
-        "content": "                StylesApplyButton.IsEnabled \u003d true;"
+        "content": "        }"
       },
       {
         "lineNumber": 561,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 562,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": "        private void UpdatePreviewStageControls()"
       },
       {
         "lineNumber": 563,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        {"
       },
       {
         "lineNumber": 564,
         "author": {
           "gitId": "-"
         },
-        "content": "                StylesCustomizeButton.IsEnabled \u003d false;"
+        "content": "            if (StylesPreviewListBox.SelectedValue !\u003d null"
       },
       {
         "lineNumber": 565,
         "author": {
           "gitId": "-"
         },
-        "content": "                StylesApplyButton.IsEnabled \u003d false;"
+        "content": "                \u0026\u0026 IsDisplayDefaultPicture())"
       },
       {
         "lineNumber": 566,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 567,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                StylesCustomizeButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 568,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                StylesApplyButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 569,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "            }"
       },
       {
         "lineNumber": 570,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// Press ENTER button to apply"
+        "content": "            else if (StylesPreviewListBox.SelectedValue !\u003d null"
       },
       {
         "lineNumber": 571,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "                     \u0026\u0026 ImageSelectionListBox.SelectedValue !\u003d null)"
       },
       {
         "lineNumber": 572,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
+        "content": "            {"
       },
       {
         "lineNumber": 573,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
+        "content": "                StylesCustomizeButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 574,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void StylesPreviewListBox_OnKeyUp(object sender, KeyEventArgs e)"
+        "content": "                StylesApplyButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 575,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 576,
         "author": {
           "gitId": "-"
         },
-        "content": "            ListBox listbox \u003d sender as ListBox;"
+        "content": "            else"
       },
       {
         "lineNumber": 577,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (listbox \u003d\u003d null || listbox.Items.Count \u003c\u003d 0)"
+        "content": "            {"
       },
       {
         "lineNumber": 578,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                StylesCustomizeButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 579,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "                StylesApplyButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 580,
@@ -32465,567 +32465,567 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 582,
         "author": {
           "gitId": "-"
         },
-        "content": "            switch (e.Key)"
+        "content": ""
       },
       {
         "lineNumber": 583,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 584,
         "author": {
           "gitId": "-"
         },
-        "content": "                case Key.Enter:"
+        "content": "        /// Press ENTER button to apply"
       },
       {
         "lineNumber": 585,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (StylesApplyButton.IsEnabled)"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 586,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 587,
         "author": {
           "gitId": "-"
         },
-        "content": "                        StylesApplyButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));"
+        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 588,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "        private void StylesPreviewListBox_OnKeyUp(object sender, KeyEventArgs e)"
       },
       {
         "lineNumber": 589,
         "author": {
           "gitId": "-"
         },
-        "content": "                    break;"
+        "content": "        {"
       },
       {
         "lineNumber": 590,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            ListBox listbox \u003d sender as ListBox;"
       },
       {
         "lineNumber": 591,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            if (listbox \u003d\u003d null || listbox.Items.Count \u003c\u003d 0)"
       },
       {
         "lineNumber": 592,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 593,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "                return;"
       },
       {
         "lineNumber": 594,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// When window is re-activated, refresh the preview images and hide QuickDrop dialog"
+        "content": "            }"
       },
       {
         "lineNumber": 595,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": ""
       },
       {
         "lineNumber": 596,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
+        "content": "            switch (e.Key)"
       },
       {
         "lineNumber": 597,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
+        "content": "            {"
       },
       {
         "lineNumber": 598,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void PictureSlidesLabWindow_OnActivated(object sender, EventArgs e)"
+        "content": "                case Key.Enter:"
       },
       {
         "lineNumber": 599,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                    if (StylesApplyButton.IsEnabled)"
       },
       {
         "lineNumber": 600,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "                    {"
       },
       {
         "lineNumber": 601,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                        StylesApplyButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));"
       },
       {
         "lineNumber": 602,
         "author": {
           "gitId": "-"
         },
-        "content": "                // init last selected slide index"
+        "content": "                    }"
       },
       {
         "lineNumber": 603,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (_lastSelectedSlideIndex \u003d\u003d -1)"
+        "content": "                    break;"
       },
       {
         "lineNumber": 604,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            }"
       },
       {
         "lineNumber": 605,
         "author": {
           "gitId": "-"
         },
-        "content": "                    _lastSelectedSlideIndex \u003d this.GetCurrentSlide().Index;"
+        "content": "        }"
       },
       {
         "lineNumber": 606,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 607,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 608,
         "author": {
           "gitId": "-"
         },
-        "content": "                // hide quick drop dialog when main window activated"
+        "content": "        /// When window is re-activated, refresh the preview images and hide QuickDrop dialog"
       },
       {
         "lineNumber": 609,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (QuickDropDialog !\u003d null \u0026\u0026 QuickDropDialog.IsOpen)"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 610,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 611,
         "author": {
           "gitId": "-"
         },
-        "content": "                    QuickDropDialog.HideQuickDropDialog();"
+        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 612,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "        private void PictureSlidesLabWindow_OnActivated(object sender, EventArgs e)"
       },
       {
         "lineNumber": 613,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {"
       },
       {
         "lineNumber": 614,
         "author": {
           "gitId": "-"
         },
-        "content": "                // when no current slide"
+        "content": "            try"
       },
       {
         "lineNumber": 615,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (this.GetCurrentSlide() \u003d\u003d null)"
+        "content": "            {"
       },
       {
         "lineNumber": 616,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                // init last selected slide index"
       },
       {
         "lineNumber": 617,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Logger.Log(\"Current slide is null\");"
+        "content": "                if (_lastSelectedSlideIndex \u003d\u003d -1)"
       },
       {
         "lineNumber": 618,
         "author": {
           "gitId": "-"
         },
-        "content": "                    GotoSlideButton.IsEnabled \u003d false;"
+        "content": "                {"
       },
       {
         "lineNumber": 619,
         "author": {
           "gitId": "-"
         },
-        "content": "                    LoadStylesButton.IsEnabled \u003d false;"
+        "content": "                    _lastSelectedSlideIndex \u003d this.GetCurrentSlide().Index;"
       },
       {
         "lineNumber": 620,
         "author": {
           "gitId": "-"
         },
-        "content": "                    ViewModel.StylesPreviewList.Clear();"
+        "content": "                }"
       },
       {
         "lineNumber": 621,
         "author": {
           "gitId": "-"
         },
-        "content": "                    ViewModel.StylesVariationList.Clear();"
+        "content": ""
       },
       {
         "lineNumber": 622,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                // hide quick drop dialog when main window activated"
       },
       {
         "lineNumber": 623,
         "author": {
           "gitId": "-"
         },
-        "content": "                // when allowed to do loading"
+        "content": "                if (QuickDropDialog !\u003d null \u0026\u0026 QuickDropDialog.IsOpen)"
       },
       {
         "lineNumber": 624,
         "author": {
           "gitId": "-"
         },
-        "content": "                else if (_isStylePreviewRegionInit \u0026\u0026 _isAbleLoadingOnWindowActivate)"
+        "content": "                {"
       },
       {
         "lineNumber": 625,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    QuickDropDialog.HideQuickDropDialog();"
       },
       {
         "lineNumber": 626,
         "author": {
           "gitId": "-"
         },
-        "content": "                    GotoSlideButton.IsEnabled \u003d true;"
+        "content": "                }"
       },
       {
         "lineNumber": 627,
         "author": {
           "gitId": "-"
         },
-        "content": "                    LoadStylesButton.IsEnabled \u003d true;"
+        "content": ""
       },
       {
         "lineNumber": 628,
         "author": {
           "gitId": "-"
         },
-        "content": "                    SetTimeout(() \u003d\u003e"
+        "content": "                // when no current slide"
       },
       {
         "lineNumber": 629,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                if (this.GetCurrentSlide() \u003d\u003d null)"
       },
       {
         "lineNumber": 630,
         "author": {
           "gitId": "-"
         },
-        "content": "                        // update preview images when slide no change"
+        "content": "                {"
       },
       {
         "lineNumber": 631,
         "author": {
           "gitId": "-"
         },
-        "content": "                        if (_lastSelectedSlideIndex \u003d\u003d this.GetCurrentSlide().Index)"
+        "content": "                    Logger.Log(\"Current slide is null\");"
       },
       {
         "lineNumber": 632,
         "author": {
           "gitId": "-"
         },
-        "content": "                        {"
+        "content": "                    GotoSlideButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 633,
         "author": {
           "gitId": "-"
         },
-        "content": "                            UpdatePreviewImages();"
+        "content": "                    LoadStylesButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 634,
         "author": {
           "gitId": "-"
         },
-        "content": "                        }"
+        "content": "                    ViewModel.StylesPreviewList.Clear();"
       },
       {
         "lineNumber": 635,
         "author": {
           "gitId": "-"
         },
-        "content": "                        // or load style and image if slide has been changed"
+        "content": "                    ViewModel.StylesVariationList.Clear();"
       },
       {
         "lineNumber": 636,
         "author": {
           "gitId": "-"
         },
-        "content": "                        else"
+        "content": "                }"
       },
       {
         "lineNumber": 637,
         "author": {
           "gitId": "-"
         },
-        "content": "                        {"
+        "content": "                // when allowed to do loading"
       },
       {
         "lineNumber": 638,
         "author": {
           "gitId": "-"
         },
-        "content": "                            LoadStyleAndImage(this.GetCurrentSlide());"
+        "content": "                else if (_isStylePreviewRegionInit \u0026\u0026 _isAbleLoadingOnWindowActivate)"
       },
       {
         "lineNumber": 639,
         "author": {
           "gitId": "-"
         },
-        "content": "                        }"
+        "content": "                {"
       },
       {
         "lineNumber": 640,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }, 250);"
+        "content": "                    GotoSlideButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 641,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    LoadStylesButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 642,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    SetTimeout(() \u003d\u003e"
       },
       {
         "lineNumber": 643,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch (Exception expt)"
+        "content": "                    {"
       },
       {
         "lineNumber": 644,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                        // update preview images when slide no change"
       },
       {
         "lineNumber": 645,
         "author": {
           "gitId": "-"
         },
-        "content": "                Logger.LogException(expt, \"PictureSlidesLabWindow_OnActivated\");"
+        "content": "                        if (_lastSelectedSlideIndex \u003d\u003d this.GetCurrentSlide().Index)"
       },
       {
         "lineNumber": 646,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                        {"
       },
       {
         "lineNumber": 647,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                            UpdatePreviewImages();"
       },
       {
         "lineNumber": 648,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        }"
       },
       {
         "lineNumber": 649,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "                        // or load style and image if slide has been changed"
       },
       {
         "lineNumber": 650,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// Obtain right-clicked listbox item and don\u0027t select any image"
+        "content": "                        else"
       },
       {
         "lineNumber": 651,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "                        {"
       },
       {
         "lineNumber": 652,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
+        "content": "                            LoadStyleAndImage(this.GetCurrentSlide());"
       },
       {
         "lineNumber": 653,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
+        "content": "                        }"
       },
       {
         "lineNumber": 654,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void ImageSelectionListBox_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)"
+        "content": "                    }, 250);"
       },
       {
         "lineNumber": 655,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                }"
       },
       {
         "lineNumber": 656,
         "author": {
           "gitId": "-"
         },
-        "content": "            ListBoxItem item \u003d ItemsControl.ContainerFromElement((ItemsControl) sender, (DependencyObject) e.OriginalSource) "
+        "content": "            }"
       },
       {
         "lineNumber": 657,
         "author": {
           "gitId": "-"
         },
-        "content": "                as ListBoxItem;"
+        "content": "            catch (Exception expt)"
       },
       {
         "lineNumber": 658,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (item \u003d\u003d null || item.Content \u003d\u003d null)"
+        "content": "            {"
       },
       {
         "lineNumber": 659,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                Logger.LogException(expt, \"PictureSlidesLabWindow_OnActivated\");"
       },
       {
         "lineNumber": 660,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "            }"
       },
       {
         "lineNumber": 661,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 662,
@@ -33039,539 +33039,539 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            if (e.RightButton \u003d\u003d MouseButtonState.Pressed)"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 664,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        /// Obtain right-clicked listbox item and don\u0027t select any image"
       },
       {
         "lineNumber": 665,
         "author": {
           "gitId": "-"
         },
-        "content": "                _clickedImageSelectionItemIndex \u003d -1;"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 666,
         "author": {
           "gitId": "-"
         },
-        "content": "                for (int i \u003d 0; i \u003c ImageSelectionListBox.Items.Count; i++)"
+        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 667,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 668,
         "author": {
           "gitId": "-"
         },
-        "content": "                    ListBoxItem listBoxItem \u003d ImageSelectionListBox.ItemContainerGenerator.ContainerFromIndex(i) "
+        "content": "        private void ImageSelectionListBox_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)"
       },
       {
         "lineNumber": 669,
         "author": {
           "gitId": "-"
         },
-        "content": "                        as ListBoxItem;"
+        "content": "        {"
       },
       {
         "lineNumber": 670,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (listBoxItem \u003d\u003d null)"
+        "content": "            ListBoxItem item \u003d ItemsControl.ContainerFromElement((ItemsControl) sender, (DependencyObject) e.OriginalSource) "
       },
       {
         "lineNumber": 671,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                as ListBoxItem;"
       },
       {
         "lineNumber": 672,
         "author": {
           "gitId": "-"
         },
-        "content": "                        continue;"
+        "content": "            if (item \u003d\u003d null || item.Content \u003d\u003d null)"
       },
       {
         "lineNumber": 673,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "            {"
       },
       {
         "lineNumber": 674,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                return;"
       },
       {
         "lineNumber": 675,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (IsMouseOverTarget(listBoxItem, e.GetPosition(listBoxItem)))"
+        "content": "            }"
       },
       {
         "lineNumber": 676,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": ""
       },
       {
         "lineNumber": 677,
         "author": {
           "gitId": "-"
         },
-        "content": "                        _clickedImageSelectionItemIndex \u003d i;"
+        "content": "            if (e.RightButton \u003d\u003d MouseButtonState.Pressed)"
       },
       {
         "lineNumber": 678,
         "author": {
           "gitId": "-"
         },
-        "content": "                        break;"
+        "content": "            {"
       },
       {
         "lineNumber": 679,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                _clickedImageSelectionItemIndex \u003d -1;"
       },
       {
         "lineNumber": 680,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                for (int i \u003d 0; i \u003c ImageSelectionListBox.Items.Count; i++)"
       },
       {
         "lineNumber": 681,
         "author": {
           "gitId": "-"
         },
-        "content": "                e.Handled \u003d true;"
+        "content": "                {"
       },
       {
         "lineNumber": 682,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    ListBoxItem listBoxItem \u003d ImageSelectionListBox.ItemContainerGenerator.ContainerFromIndex(i) "
       },
       {
         "lineNumber": 683,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (e.LeftButton \u003d\u003d MouseButtonState.Pressed)"
+        "content": "                        as ListBoxItem;"
       },
       {
         "lineNumber": 684,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    if (listBoxItem \u003d\u003d null)"
       },
       {
         "lineNumber": 685,
         "author": {
           "gitId": "-"
         },
-        "content": "                Logger.Log(\"begin import pictures\");"
+        "content": "                    {"
       },
       {
         "lineNumber": 686,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageItem imageItem \u003d item.Content as ImageItem;"
+        "content": "                        continue;"
       },
       {
         "lineNumber": 687,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (imageItem !\u003d null"
+        "content": "                    }"
       },
       {
         "lineNumber": 688,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 imageItem.ImageFile \u003d\u003d StoragePath.ChoosePicturesImgPath)"
+        "content": ""
       },
       {
         "lineNumber": 689,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    if (IsMouseOverTarget(listBoxItem, e.GetPosition(listBoxItem)))"
       },
       {
         "lineNumber": 690,
         "author": {
           "gitId": "-"
         },
-        "content": "                    OpenFileDialog openFileDialog \u003d new OpenFileDialog"
+        "content": "                    {"
       },
       {
         "lineNumber": 691,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                        _clickedImageSelectionItemIndex \u003d i;"
       },
       {
         "lineNumber": 692,
         "author": {
           "gitId": "-"
         },
-        "content": "                        Multiselect \u003d true,"
+        "content": "                        break;"
       },
       {
         "lineNumber": 693,
         "author": {
           "gitId": "-"
         },
-        "content": "                        Filter \u003d @\"Image File|*.png;*.jpg;*.jpeg;*.bmp;*.gif;\""
+        "content": "                    }"
       },
       {
         "lineNumber": 694,
         "author": {
           "gitId": "-"
         },
-        "content": "                    };"
+        "content": "                }"
       },
       {
         "lineNumber": 695,
         "author": {
           "gitId": "-"
         },
-        "content": "                    DisableLoadingStyleOnWindowActivate();"
+        "content": "                e.Handled \u003d true;"
       },
       {
         "lineNumber": 696,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (openFileDialog.ShowDialog() \u003d\u003d Forms.DialogResult.OK)"
+        "content": "            }"
       },
       {
         "lineNumber": 697,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "            else if (e.LeftButton \u003d\u003d MouseButtonState.Pressed)"
       },
       {
         "lineNumber": 698,
         "author": {
           "gitId": "-"
         },
-        "content": "                        ViewModel.AddImageSelectionListItem(openFileDialog.FileNames,"
+        "content": "            {"
       },
       {
         "lineNumber": 699,
         "author": {
           "gitId": "-"
         },
-        "content": "                            this.GetCurrentSlide().GetNativeSlide(),"
+        "content": "                Logger.Log(\"begin import pictures\");"
       },
       {
         "lineNumber": 700,
         "author": {
           "gitId": "-"
         },
-        "content": "                            this.GetCurrentPresentation().SlideWidth,"
+        "content": "                ImageItem imageItem \u003d item.Content as ImageItem;"
       },
       {
         "lineNumber": 701,
         "author": {
           "gitId": "-"
         },
-        "content": "                            this.GetCurrentPresentation().SlideHeight);"
+        "content": "                if (imageItem !\u003d null"
       },
       {
         "lineNumber": 702,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    \u0026\u0026 imageItem.ImageFile \u003d\u003d StoragePath.ChoosePicturesImgPath)"
       },
       {
         "lineNumber": 703,
         "author": {
           "gitId": "-"
         },
-        "content": "                    EnableLoadingStyleOnWindowActivate();"
+        "content": "                {"
       },
       {
         "lineNumber": 704,
         "author": {
           "gitId": "-"
         },
-        "content": "                    e.Handled \u003d true;"
+        "content": "                    OpenFileDialog openFileDialog \u003d new OpenFileDialog"
       },
       {
         "lineNumber": 705,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    {"
       },
       {
         "lineNumber": 706,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                        Multiselect \u003d true,"
       },
       {
         "lineNumber": 707,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                        Filter \u003d @\"Image File|*.png;*.jpg;*.jpeg;*.bmp;*.gif;\""
       },
       {
         "lineNumber": 708,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    };"
       },
       {
         "lineNumber": 709,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void MenuItemDeleteThisImage_OnClick(object sender, RoutedEventArgs e)"
+        "content": "                    DisableLoadingStyleOnWindowActivate();"
       },
       {
         "lineNumber": 710,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                    if (openFileDialog.ShowDialog() \u003d\u003d Forms.DialogResult.OK)"
       },
       {
         "lineNumber": 711,
         "author": {
           "gitId": "-"
         },
-        "content": "            DeleteImage();"
+        "content": "                    {"
       },
       {
         "lineNumber": 712,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                        ViewModel.AddImageSelectionListItem(openFileDialog.FileNames,"
       },
       {
         "lineNumber": 713,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                            this.GetCurrentSlide().GetNativeSlide(),"
       },
       {
         "lineNumber": 714,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void MenuItemDeleteAllImages_OnClick(object sender, RoutedEventArgs e)"
+        "content": "                            this.GetCurrentPresentation().SlideWidth,"
       },
       {
         "lineNumber": 715,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                            this.GetCurrentPresentation().SlideHeight);"
       },
       {
         "lineNumber": 716,
         "author": {
           "gitId": "-"
         },
-        "content": "            ShowInfoMessageBox(PictureSlidesLabText.InfoDeleteAllImage, "
+        "content": "                    }"
       },
       {
         "lineNumber": 717,
         "author": {
           "gitId": "-"
         },
-        "content": "                MessageDialogStyle.AffirmativeAndNegative)"
+        "content": "                    EnableLoadingStyleOnWindowActivate();"
       },
       {
         "lineNumber": 718,
         "author": {
           "gitId": "-"
         },
-        "content": "                .ContinueWith(task \u003d\u003e"
+        "content": "                    e.Handled \u003d true;"
       },
       {
         "lineNumber": 719,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                }"
       },
       {
         "lineNumber": 720,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (task.Result \u003d\u003d MessageDialogResult.Affirmative)"
+        "content": "            }"
       },
       {
         "lineNumber": 721,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "        }"
       },
       {
         "lineNumber": 722,
         "author": {
           "gitId": "-"
         },
-        "content": "                        Dispatcher.BeginInvoke(new Action(DeleteAllImage));"
+        "content": ""
       },
       {
         "lineNumber": 723,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "        private void MenuItemDeleteThisImage_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 724,
         "author": {
           "gitId": "-"
         },
-        "content": "                });"
+        "content": "        {"
       },
       {
         "lineNumber": 725,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            DeleteImage();"
       },
       {
         "lineNumber": 726,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 727,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void MenuItemAdjustImage_OnClick(object sender, RoutedEventArgs e)"
+        "content": ""
       },
       {
         "lineNumber": 728,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        private void MenuItemDeleteAllImages_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 729,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (_clickedImageSelectionItemIndex \u003c 0"
+        "content": "        {"
       },
       {
         "lineNumber": 730,
         "author": {
           "gitId": "-"
         },
-        "content": "                || _clickedImageSelectionItemIndex \u003e ImageSelectionListBox.Items.Count)"
+        "content": "            ShowInfoMessageBox(PictureSlidesLabText.InfoDeleteAllImage, "
       },
       {
         "lineNumber": 731,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                MessageDialogStyle.AffirmativeAndNegative)"
       },
       {
         "lineNumber": 732,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "                .ContinueWith(task \u003d\u003e"
       },
       {
         "lineNumber": 733,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                {"
       },
       {
         "lineNumber": 734,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    if (task.Result \u003d\u003d MessageDialogResult.Affirmative)"
       },
       {
         "lineNumber": 735,
         "author": {
           "gitId": "-"
         },
-        "content": "            ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.Items.GetItemAt(_clickedImageSelectionItemIndex);"
+        "content": "                    {"
       },
       {
         "lineNumber": 736,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
+        "content": "                        Dispatcher.BeginInvoke(new Action(DeleteAllImage));"
       },
       {
         "lineNumber": 737,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    }"
       },
       {
         "lineNumber": 738,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "                });"
       },
       {
         "lineNumber": 739,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 740,
@@ -33585,287 +33585,287 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            AdjustImageDimensions(selectedImage);"
+        "content": "        private void MenuItemAdjustImage_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 742,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        {"
       },
       {
         "lineNumber": 743,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if (_clickedImageSelectionItemIndex \u003c 0"
       },
       {
         "lineNumber": 744,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void MenuItemAdjustImage_OnClickFromPreviewListBox(object sender, RoutedEventArgs e)"
+        "content": "                || _clickedImageSelectionItemIndex \u003e ImageSelectionListBox.Items.Count)"
       },
       {
         "lineNumber": 745,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            {"
       },
       {
         "lineNumber": 746,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (ViewModel.IsInPictureVariation())"
+        "content": "                return;"
       },
       {
         "lineNumber": 747,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 748,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageItem imageItem \u003d ViewModel.GetSelectedPictureInPictureVariation("
+        "content": ""
       },
       {
         "lineNumber": 749,
         "author": {
           "gitId": "-"
         },
-        "content": "                    StylesVariationListBox.SelectedIndex);"
+        "content": "            ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.Items.GetItemAt(_clickedImageSelectionItemIndex);"
       },
       {
         "lineNumber": 750,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (imageItem.ImageFile \u003d\u003d StoragePath.NoPicturePlaceholderImgPath"
+        "content": "            if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
       },
       {
         "lineNumber": 751,
         "author": {
           "gitId": "-"
         },
-        "content": "                    || imageItem.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
+        "content": "            {"
       },
       {
         "lineNumber": 752,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                return;"
       },
       {
         "lineNumber": 753,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "            }"
       },
       {
         "lineNumber": 754,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 755,
         "author": {
           "gitId": "-"
         },
-        "content": "                AdjustImageDimensions(imageItem);"
+        "content": "            AdjustImageDimensions(selectedImage);"
       },
       {
         "lineNumber": 756,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 757,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": ""
       },
       {
         "lineNumber": 758,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        private void MenuItemAdjustImage_OnClickFromPreviewListBox(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 759,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.SelectedItem;"
+        "content": "        {"
       },
       {
         "lineNumber": 760,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
+        "content": "            if (ViewModel.IsInPictureVariation())"
       },
       {
         "lineNumber": 761,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            {"
       },
       {
         "lineNumber": 762,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "                ImageItem imageItem \u003d ViewModel.GetSelectedPictureInPictureVariation("
       },
       {
         "lineNumber": 763,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    StylesVariationListBox.SelectedIndex);"
       },
       {
         "lineNumber": 764,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (imageItem.ImageFile \u003d\u003d StoragePath.NoPicturePlaceholderImgPath"
       },
       {
         "lineNumber": 765,
         "author": {
           "gitId": "-"
         },
-        "content": "                AdjustImageDimensions(selectedImage);"
+        "content": "                    || imageItem.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
       },
       {
         "lineNumber": 766,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                {"
       },
       {
         "lineNumber": 767,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    return;"
       },
       {
         "lineNumber": 768,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 769,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void MenuItemEditSource_OnClick(object sender, RoutedEventArgs e)"
+        "content": "                AdjustImageDimensions(imageItem);"
       },
       {
         "lineNumber": 770,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 771,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (_clickedImageSelectionItemIndex \u003c 0"
+        "content": "            else"
       },
       {
         "lineNumber": 772,
         "author": {
           "gitId": "-"
         },
-        "content": "                || _clickedImageSelectionItemIndex \u003e ImageSelectionListBox.Items.Count)"
+        "content": "            {"
       },
       {
         "lineNumber": 773,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.SelectedItem;"
       },
       {
         "lineNumber": 774,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "                if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
       },
       {
         "lineNumber": 775,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                {"
       },
       {
         "lineNumber": 776,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    return;"
       },
       {
         "lineNumber": 777,
         "author": {
           "gitId": "-"
         },
-        "content": "            ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.Items.GetItemAt(_clickedImageSelectionItemIndex);"
+        "content": "                }"
       },
       {
         "lineNumber": 778,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
+        "content": ""
       },
       {
         "lineNumber": 779,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                AdjustImageDimensions(selectedImage);"
       },
       {
         "lineNumber": 780,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "            }"
       },
       {
         "lineNumber": 781,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 782,
@@ -33879,490 +33879,490 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            EditPictureSource(selectedImage);"
+        "content": "        private void MenuItemEditSource_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 784,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        {"
       },
       {
         "lineNumber": 785,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if (_clickedImageSelectionItemIndex \u003c 0"
       },
       {
         "lineNumber": 786,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void MenuItemEditSource_OnClickFromPreviewListBox(object sender, RoutedEventArgs e)"
+        "content": "                || _clickedImageSelectionItemIndex \u003e ImageSelectionListBox.Items.Count)"
       },
       {
         "lineNumber": 787,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            {"
       },
       {
         "lineNumber": 788,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (ViewModel.IsInPictureVariation())"
+        "content": "                return;"
       },
       {
         "lineNumber": 789,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 790,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageItem imageItem \u003d ViewModel.GetSelectedPictureInPictureVariation("
+        "content": ""
       },
       {
         "lineNumber": 791,
         "author": {
           "gitId": "-"
         },
-        "content": "                    StylesVariationListBox.SelectedIndex);"
+        "content": "            ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.Items.GetItemAt(_clickedImageSelectionItemIndex);"
       },
       {
         "lineNumber": 792,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (imageItem.ImageFile \u003d\u003d StoragePath.NoPicturePlaceholderImgPath"
+        "content": "            if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
       },
       {
         "lineNumber": 793,
         "author": {
           "gitId": "-"
         },
-        "content": "                    || imageItem.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
+        "content": "            {"
       },
       {
         "lineNumber": 794,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                return;"
       },
       {
         "lineNumber": 795,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "            }"
       },
       {
         "lineNumber": 796,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 797,
         "author": {
           "gitId": "-"
         },
-        "content": "                EditPictureSource(imageItem);"
+        "content": "            EditPictureSource(selectedImage);"
       },
       {
         "lineNumber": 798,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 799,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": ""
       },
       {
         "lineNumber": 800,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        private void MenuItemEditSource_OnClickFromPreviewListBox(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 801,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.SelectedItem;"
+        "content": "        {"
       },
       {
         "lineNumber": 802,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
+        "content": "            if (ViewModel.IsInPictureVariation())"
       },
       {
         "lineNumber": 803,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            {"
       },
       {
         "lineNumber": 804,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "                ImageItem imageItem \u003d ViewModel.GetSelectedPictureInPictureVariation("
       },
       {
         "lineNumber": 805,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    StylesVariationListBox.SelectedIndex);"
       },
       {
         "lineNumber": 806,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (imageItem.ImageFile \u003d\u003d StoragePath.NoPicturePlaceholderImgPath"
       },
       {
         "lineNumber": 807,
         "author": {
           "gitId": "-"
         },
-        "content": "                EditPictureSource(selectedImage);"
+        "content": "                    || imageItem.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
       },
       {
         "lineNumber": 808,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                {"
       },
       {
         "lineNumber": 809,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    return;"
       },
       {
         "lineNumber": 810,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 811,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "                EditPictureSource(imageItem);"
       },
       {
         "lineNumber": 812,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// Update controls states when selection changed in the variation stage"
+        "content": "            }"
       },
       {
         "lineNumber": 813,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "            else"
       },
       {
         "lineNumber": 814,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
+        "content": "            {"
       },
       {
         "lineNumber": 815,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
+        "content": "                ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.SelectedItem;"
       },
       {
         "lineNumber": 816,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void VariationListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)"
+        "content": "                if (selectedImage \u003d\u003d null || selectedImage.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
       },
       {
         "lineNumber": 817,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                {"
       },
       {
         "lineNumber": 818,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (ViewModel.IsInPictureVariation()"
+        "content": "                    return;"
       },
       {
         "lineNumber": 819,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u0026\u0026 StylesVariationListBox.SelectedIndex \u003e\u003d 0)"
+        "content": "                }"
       },
       {
         "lineNumber": 820,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 821,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageItem selectedImageItem \u003d"
+        "content": "                EditPictureSource(selectedImage);"
       },
       {
         "lineNumber": 822,
         "author": {
           "gitId": "-"
         },
-        "content": "                    ViewModel"
+        "content": "            }"
       },
       {
         "lineNumber": 823,
         "author": {
           "gitId": "-"
         },
-        "content": "                    .GetSelectedPictureInPictureVariation(StylesVariationListBox.SelectedIndex);"
+        "content": "        }"
       },
       {
         "lineNumber": 824,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (selectedImageItem.ImageFile \u003d\u003d StoragePath.NoPicturePlaceholderImgPath"
+        "content": ""
       },
       {
         "lineNumber": 825,
         "author": {
           "gitId": "-"
         },
-        "content": "                    || selectedImageItem.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 826,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        /// Update controls states when selection changed in the variation stage"
       },
       {
         "lineNumber": 827,
         "author": {
           "gitId": "-"
         },
-        "content": "                    StyleVariationApplyButton.IsEnabled \u003d false;"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 828,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 829,
         "author": {
           "gitId": "-"
         },
-        "content": "                else"
+        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 830,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        private void VariationListBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)"
       },
       {
         "lineNumber": 831,
         "author": {
           "gitId": "-"
         },
-        "content": "                    StyleVariationApplyButton.IsEnabled \u003d true;"
+        "content": "        {"
       },
       {
         "lineNumber": 832,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            if (ViewModel.IsInPictureVariation()"
       },
       {
         "lineNumber": 833,
         "author": {
           "gitId": "-"
         },
-        "content": "                ViewModel.UpdateStyleVariationStyleOptionsWhenSelectedItemChange();"
+        "content": "                     \u0026\u0026 StylesVariationListBox.SelectedIndex \u003e\u003d 0)"
       },
       {
         "lineNumber": 834,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdateVariationStageControls();"
+        "content": "            {"
       },
       {
         "lineNumber": 835,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                ImageItem selectedImageItem \u003d"
       },
       {
         "lineNumber": 836,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (ImageSelectionListBox.SelectedValue !\u003d null"
+        "content": "                    ViewModel"
       },
       {
         "lineNumber": 837,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 StylesVariationListBox.SelectedValue !\u003d null"
+        "content": "                    .GetSelectedPictureInPictureVariation(StylesVariationListBox.SelectedIndex);"
       },
       {
         "lineNumber": 838,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 StylesPreviewListBox.SelectedValue !\u003d null)"
+        "content": "                if (selectedImageItem.ImageFile \u003d\u003d StoragePath.NoPicturePlaceholderImgPath"
       },
       {
         "lineNumber": 839,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    || selectedImageItem.ImageFile \u003d\u003d StoragePath.LoadingImgPath)"
       },
       {
         "lineNumber": 840,
         "author": {
           "gitId": "-"
         },
-        "content": "                StyleVariationApplyButton.IsEnabled \u003d true;"
+        "content": "                {"
       },
       {
         "lineNumber": 841,
         "author": {
           "gitId": "-"
         },
-        "content": "                ViewModel.UpdateStyleVariationStyleOptionsWhenSelectedItemChange();"
+        "content": "                    StyleVariationApplyButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 842,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdateVariationStageControls();"
+        "content": "                }"
       },
       {
         "lineNumber": 843,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                else"
       },
       {
         "lineNumber": 844,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (IsDisplayDefaultPicture()"
+        "content": "                {"
       },
       {
         "lineNumber": 845,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u0026\u0026 StylesVariationListBox.SelectedValue !\u003d null"
+        "content": "                    StyleVariationApplyButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 846,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u0026\u0026 StylesPreviewListBox.SelectedValue !\u003d null)"
+        "content": "                }"
       },
       {
         "lineNumber": 847,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                ViewModel.UpdateStyleVariationStyleOptionsWhenSelectedItemChange();"
       },
       {
         "lineNumber": 848,
         "author": {
           "gitId": "-"
         },
-        "content": "                StyleVariationApplyButton.IsEnabled \u003d false;"
+        "content": "                UpdateVariationStageControls();"
       },
       {
         "lineNumber": 849,
         "author": {
           "gitId": "-"
         },
-        "content": "                ViewModel.UpdateStyleVariationStyleOptionsWhenSelectedItemChange();"
+        "content": "            }"
       },
       {
         "lineNumber": 850,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdateVariationStageControls();"
+        "content": "            else if (ImageSelectionListBox.SelectedValue !\u003d null"
       },
       {
         "lineNumber": 851,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                \u0026\u0026 StylesVariationListBox.SelectedValue !\u003d null"
       },
       {
         "lineNumber": 852,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": "                \u0026\u0026 StylesPreviewListBox.SelectedValue !\u003d null)"
       },
       {
         "lineNumber": 853,
@@ -34376,497 +34376,497 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                StyleVariationApplyButton.IsEnabled \u003d false;"
+        "content": "                StyleVariationApplyButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 855,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                ViewModel.UpdateStyleVariationStyleOptionsWhenSelectedItemChange();"
       },
       {
         "lineNumber": 856,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                UpdateVariationStageControls();"
       },
       {
         "lineNumber": 857,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 858,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "            else if (IsDisplayDefaultPicture()"
       },
       {
         "lineNumber": 859,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// step-by-step customization when user changes variant category"
+        "content": "                     \u0026\u0026 StylesVariationListBox.SelectedValue !\u003d null"
       },
       {
         "lineNumber": 860,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "                     \u0026\u0026 StylesPreviewListBox.SelectedValue !\u003d null)"
       },
       {
         "lineNumber": 861,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
+        "content": "            {"
       },
       {
         "lineNumber": 862,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
+        "content": "                StyleVariationApplyButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 863,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void VariantsComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)"
+        "content": "                ViewModel.UpdateStyleVariationStyleOptionsWhenSelectedItemChange();"
       },
       {
         "lineNumber": 864,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                UpdateVariationStageControls();"
       },
       {
         "lineNumber": 865,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "            }"
       },
       {
         "lineNumber": 866,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            else"
       },
       {
         "lineNumber": 867,
         "author": {
           "gitId": "-"
         },
-        "content": "                Logger.Log(\"Change aspect to \" + ViewModel.CurrentVariantCategory.Text);"
+        "content": "            {"
       },
       {
         "lineNumber": 868,
         "author": {
           "gitId": "-"
         },
-        "content": "                ViewModel.UpdateStepByStepStylesVariationImages("
+        "content": "                StyleVariationApplyButton.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 869,
         "author": {
           "gitId": "-"
         },
-        "content": "                    (ImageItem) ImageSelectionListBox.SelectedValue ?? CreateDefaultPictureItem(),"
+        "content": "            }"
       },
       {
         "lineNumber": 870,
         "author": {
           "gitId": "-"
         },
-        "content": "                    this.GetCurrentSlide().GetNativeSlide(),"
+        "content": "        }"
       },
       {
         "lineNumber": 871,
         "author": {
           "gitId": "-"
         },
-        "content": "                    this.GetCurrentPresentation().SlideWidth,"
+        "content": ""
       },
       {
         "lineNumber": 872,
         "author": {
           "gitId": "-"
         },
-        "content": "                    this.GetCurrentPresentation().SlideHeight);"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 873,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        /// step-by-step customization when user changes variant category"
       },
       {
         "lineNumber": 874,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch (Exception expt)"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 875,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        /// \u003cparam name\u003d\"sender\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 876,
         "author": {
           "gitId": "-"
         },
-        "content": "                ShowErrorMessageBox(TextCollection.PictureSlidesLabText.ErrorFailedToLoadPreviewImages, expt);"
+        "content": "        /// \u003cparam name\u003d\"e\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 877,
         "author": {
           "gitId": "-"
         },
-        "content": "                Logger.LogException(expt, \"VariantsComboBox_OnSelectionChanged\");"
+        "content": "        private void VariantsComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)"
       },
       {
         "lineNumber": 878,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        {"
       },
       {
         "lineNumber": 879,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            try"
       },
       {
         "lineNumber": 880,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 881,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void StylesVariationApplyButton_OnClick(object sender, RoutedEventArgs e)"
+        "content": "                Logger.Log(\"Change aspect to \" + ViewModel.CurrentVariantCategory.Text);"
       },
       {
         "lineNumber": 882,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                ViewModel.UpdateStepByStepStylesVariationImages("
       },
       {
         "lineNumber": 883,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.StartNewUndoEntry();"
+        "content": "                    (ImageItem) ImageSelectionListBox.SelectedValue ?? CreateDefaultPictureItem(),"
       },
       {
         "lineNumber": 884,
         "author": {
           "gitId": "-"
         },
-        "content": "            ViewModel.ApplyStyleInVariationStage("
+        "content": "                    this.GetCurrentSlide().GetNativeSlide(),"
       },
       {
         "lineNumber": 885,
         "author": {
           "gitId": "-"
         },
-        "content": "                this.GetCurrentSlide().GetNativeSlide(),"
+        "content": "                    this.GetCurrentPresentation().SlideWidth,"
       },
       {
         "lineNumber": 886,
         "author": {
           "gitId": "-"
         },
-        "content": "                this.GetCurrentPresentation().SlideWidth,"
+        "content": "                    this.GetCurrentPresentation().SlideHeight);"
       },
       {
         "lineNumber": 887,
         "author": {
           "gitId": "-"
         },
-        "content": "                this.GetCurrentPresentation().SlideHeight);"
+        "content": "            }"
       },
       {
         "lineNumber": 888,
         "author": {
           "gitId": "-"
         },
-        "content": "            GC.Collect();"
+        "content": "            catch (Exception expt)"
       },
       {
         "lineNumber": 889,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            {"
       },
       {
         "lineNumber": 890,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                ShowErrorMessageBox(TextCollection.PictureSlidesLabText.ErrorFailedToLoadPreviewImages, expt);"
       },
       {
         "lineNumber": 891,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void VariationFlyoutBackButton_OnClick(object sender, RoutedEventArgs e)"
+        "content": "                Logger.LogException(expt, \"VariantsComboBox_OnSelectionChanged\");"
       },
       {
         "lineNumber": 892,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 893,
         "author": {
           "gitId": "-"
         },
-        "content": "            CloseVariationsFlyout();"
+        "content": "        }"
       },
       {
         "lineNumber": 894,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 895,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private void StylesVariationApplyButton_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 896,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void AddCitationSlideButton_OnClick(object sender, RoutedEventArgs e)"
+        "content": "        {"
       },
       {
         "lineNumber": 897,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            this.StartNewUndoEntry();"
       },
       {
         "lineNumber": 898,
         "author": {
           "gitId": "-"
         },
-        "content": "            Models.PowerPointPresentation presentation \u003d this.GetCurrentPresentation();"
+        "content": "            ViewModel.ApplyStyleInVariationStage("
       },
       {
         "lineNumber": 899,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (presentation.Slides.Any(PictureCitationSlide.IsCitationSlide))"
+        "content": "                this.GetCurrentSlide().GetNativeSlide(),"
       },
       {
         "lineNumber": 900,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                this.GetCurrentPresentation().SlideWidth,"
       },
       {
         "lineNumber": 901,
         "author": {
           "gitId": "-"
         },
-        "content": "                Models.PowerPointSlide citationSlide \u003d presentation.Slides.Where(PictureCitationSlide.IsCitationSlide).First();"
+        "content": "                this.GetCurrentPresentation().SlideHeight);"
       },
       {
         "lineNumber": 902,
         "author": {
           "gitId": "-"
         },
-        "content": "                ViewModel.AddPictureCitationSlide(citationSlide.GetNativeSlide(), presentation.Slides);"
+        "content": "            GC.Collect();"
       },
       {
         "lineNumber": 903,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 904,
         "author": {
           "gitId": "-"
         },
-        "content": "            else // no citation slide yet, so create one"
+        "content": ""
       },
       {
         "lineNumber": 905,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        private void VariationFlyoutBackButton_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 906,
         "author": {
           "gitId": "-"
         },
-        "content": "                Slide slide \u003d presentation.Presentation.Slides.Add(presentation.SlideCount + 1, PpSlideLayout.ppLayoutText);"
+        "content": "        {"
       },
       {
         "lineNumber": 907,
         "author": {
           "gitId": "-"
         },
-        "content": "                ViewModel.AddPictureCitationSlide(slide, presentation.Slides);"
+        "content": "            CloseVariationsFlyout();"
       },
       {
         "lineNumber": 908,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 909,
         "author": {
           "gitId": "-"
         },
-        "content": "            presentation.AddAckSlide();"
+        "content": ""
       },
       {
         "lineNumber": 910,
         "author": {
           "gitId": "-"
         },
-        "content": "            ShowInfoMessageBox(PictureSlidesLabText.InfoAddPictureCitationSlide);"
+        "content": "        private void AddCitationSlideButton_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 911,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        {"
       },
       {
         "lineNumber": 912,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            Models.PowerPointPresentation presentation \u003d this.GetCurrentPresentation();"
       },
       {
         "lineNumber": 913,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void OpenSettingsButton_OnClick(object sender, RoutedEventArgs e)"
+        "content": "            if (presentation.Slides.Any(PictureCitationSlide.IsCitationSlide))"
       },
       {
         "lineNumber": 914,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            {"
       },
       {
         "lineNumber": 915,
         "author": {
           "gitId": "-"
         },
-        "content": "            SettingsFlyoutControl.IsOpen \u003d true;"
+        "content": "                Models.PowerPointSlide citationSlide \u003d presentation.Slides.Where(PictureCitationSlide.IsCitationSlide).First();"
       },
       {
         "lineNumber": 916,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                ViewModel.AddPictureCitationSlide(citationSlide.GetNativeSlide(), presentation.Slides);"
       },
       {
         "lineNumber": 917,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 918,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void SettingsFlyoutControl_OnIsOpenChanged(object sender, RoutedEventArgs e)"
+        "content": "            else // no citation slide yet, so create one"
       },
       {
         "lineNumber": 919,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            {"
       },
       {
         "lineNumber": 920,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!SettingsFlyoutControl.IsOpen)"
+        "content": "                Slide slide \u003d presentation.Presentation.Slides.Add(presentation.SlideCount + 1, PpSlideLayout.ppLayoutText);"
       },
       {
         "lineNumber": 921,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                ViewModel.AddPictureCitationSlide(slide, presentation.Slides);"
       },
       {
         "lineNumber": 922,
         "author": {
           "gitId": "-"
         },
-        "content": "                Logger.Log(\"Setting flyout is closed\");"
+        "content": "            }"
       },
       {
         "lineNumber": 923,
         "author": {
           "gitId": "-"
         },
-        "content": "                SetTimeout(() \u003d\u003e { UpdatePreviewImages(); }, 500);"
+        "content": "            presentation.AddAckSlide();"
       },
       {
         "lineNumber": 924,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            ShowInfoMessageBox(PictureSlidesLabText.InfoAddPictureCitationSlide);"
       },
       {
         "lineNumber": 925,
@@ -34887,7 +34887,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        private void PictureAspectRefreshButton_OnClick(object sender, RoutedEventArgs e)"
+        "content": "        private void OpenSettingsButton_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 928,
@@ -34901,252 +34901,252 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            ViewModel.RefreshLast8Pictures();"
+        "content": "            SettingsFlyoutControl.IsOpen \u003d true;"
       },
       {
         "lineNumber": 930,
         "author": {
           "gitId": "-"
         },
-        "content": "            UpdatePreviewImages();"
+        "content": "        }"
       },
       {
         "lineNumber": 931,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 932,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private void SettingsFlyoutControl_OnIsOpenChanged(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 933,
         "author": {
           "gitId": "-"
         },
-        "content": "        #endregion"
+        "content": "        {"
       },
       {
         "lineNumber": 934,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if (!SettingsFlyoutControl.IsOpen)"
       },
       {
         "lineNumber": 935,
         "author": {
           "gitId": "-"
         },
-        "content": "        #region Helper funcs"
+        "content": "            {"
       },
       {
         "lineNumber": 936,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                Logger.Log(\"Setting flyout is closed\");"
       },
       {
         "lineNumber": 937,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void DeleteAllImage()"
+        "content": "                SetTimeout(() \u003d\u003e { UpdatePreviewImages(); }, 500);"
       },
       {
         "lineNumber": 938,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 939,
         "author": {
           "gitId": "-"
         },
-        "content": "            ViewModel.RemoveAllImageSelectionListItems();"
+        "content": "        }"
       },
       {
         "lineNumber": 940,
         "author": {
           "gitId": "-"
         },
-        "content": "            HandleDeletePictureInPictureVariation();"
+        "content": ""
       },
       {
         "lineNumber": 941,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        private void PictureAspectRefreshButton_OnClick(object sender, RoutedEventArgs e)"
       },
       {
         "lineNumber": 942,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {"
       },
       {
         "lineNumber": 943,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void HandleDeletePictureInPictureVariation()"
+        "content": "            ViewModel.RefreshLast8Pictures();"
       },
       {
         "lineNumber": 944,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            UpdatePreviewImages();"
       },
       {
         "lineNumber": 945,
         "author": {
           "gitId": "-"
         },
-        "content": "            ViewModel.UpdatePictureInPictureVariationWhenDeleteSome();"
+        "content": "        }"
       },
       {
         "lineNumber": 946,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (ViewModel.IsInPictureVariation())"
+        "content": ""
       },
       {
         "lineNumber": 947,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        #endregion"
       },
       {
         "lineNumber": 948,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdatePreviewImages();"
+        "content": ""
       },
       {
         "lineNumber": 949,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        #region Helper funcs"
       },
       {
         "lineNumber": 950,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 951,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private void DeleteAllImage()"
       },
       {
         "lineNumber": 952,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void DeleteImage()"
+        "content": "        {"
       },
       {
         "lineNumber": 953,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            ViewModel.RemoveAllImageSelectionListItems();"
       },
       {
         "lineNumber": 954,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (_clickedImageSelectionItemIndex \u003c 1 "
+        "content": "            HandleDeletePictureInPictureVariation();"
       },
       {
         "lineNumber": 955,
         "author": {
           "gitId": "-"
         },
-        "content": "                || _clickedImageSelectionItemIndex \u003e\u003d ImageSelectionListBox.Items.Count)"
+        "content": "        }"
       },
       {
         "lineNumber": 956,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 957,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "        private void HandleDeletePictureInPictureVariation()"
       },
       {
         "lineNumber": 958,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        {"
       },
       {
         "lineNumber": 959,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            ViewModel.UpdatePictureInPictureVariationWhenDeleteSome();"
       },
       {
         "lineNumber": 960,
         "author": {
           "gitId": "-"
         },
-        "content": "            ImageItem selectedImage \u003d (ImageItem) ImageSelectionListBox.Items.GetItemAt(_clickedImageSelectionItemIndex);"
+        "content": "            if (ViewModel.IsInPictureVariation())"
       },
       {
         "lineNumber": 961,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (selectedImage \u003d\u003d null)"
+        "content": "            {"
       },
       {
         "lineNumber": 962,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                UpdatePreviewImages();"
       },
       {
         "lineNumber": 963,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "            }"
       },
       {
         "lineNumber": 964,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 965,
@@ -35160,322 +35160,322 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            ViewModel.ImageSelectionList.RemoveAt(_clickedImageSelectionItemIndex);"
+        "content": "        private void DeleteImage()"
       },
       {
         "lineNumber": 967,
         "author": {
           "gitId": "-"
         },
-        "content": "            HandleDeletePictureInPictureVariation();"
+        "content": "        {"
       },
       {
         "lineNumber": 968,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            if (_clickedImageSelectionItemIndex \u003c 1 "
       },
       {
         "lineNumber": 969,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                || _clickedImageSelectionItemIndex \u003e\u003d ImageSelectionListBox.Items.Count)"
       },
       {
         "lineNumber": 970,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void DeleteSelectedImage()"
+        "content": "            {"
       },
       {
         "lineNumber": 971,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                return;"
       },
       {
         "lineNumber": 972,
         "author": {
           "gitId": "-"
         },
-        "content": "            ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.SelectedItem;"
+        "content": "            }"
       },
       {
         "lineNumber": 973,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (selectedImage \u003d\u003d null"
+        "content": ""
       },
       {
         "lineNumber": 974,
         "author": {
           "gitId": "-"
         },
-        "content": "                || ImageSelectionListBox.SelectedIndex \u003d\u003d 0)"
+        "content": "            ImageItem selectedImage \u003d (ImageItem) ImageSelectionListBox.Items.GetItemAt(_clickedImageSelectionItemIndex);"
       },
       {
         "lineNumber": 975,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            if (selectedImage \u003d\u003d null)"
       },
       {
         "lineNumber": 976,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "            {"
       },
       {
         "lineNumber": 977,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                return;"
       },
       {
         "lineNumber": 978,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 979,
         "author": {
           "gitId": "-"
         },
-        "content": "            ViewModel.ImageSelectionList.RemoveAt(ImageSelectionListBox.SelectedIndex);"
+        "content": ""
       },
       {
         "lineNumber": 980,
         "author": {
           "gitId": "-"
         },
-        "content": "            HandleDeletePictureInPictureVariation();"
+        "content": "            ViewModel.ImageSelectionList.RemoveAt(_clickedImageSelectionItemIndex);"
       },
       {
         "lineNumber": 981,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            HandleDeletePictureInPictureVariation();"
       },
       {
         "lineNumber": 982,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 983,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void EditPictureSource(ImageItem source)"
+        "content": ""
       },
       {
         "lineNumber": 984,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        private void DeleteSelectedImage()"
       },
       {
         "lineNumber": 985,
         "author": {
           "gitId": "-"
         },
-        "content": "            MetroDialogSettings metroDialogSettings \u003d new MetroDialogSettings"
+        "content": "        {"
       },
       {
         "lineNumber": 986,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            ImageItem selectedImage \u003d (ImageItem)ImageSelectionListBox.SelectedItem;"
       },
       {
         "lineNumber": 987,
         "author": {
           "gitId": "-"
         },
-        "content": "                DefaultText \u003d source.Source"
+        "content": "            if (selectedImage \u003d\u003d null"
       },
       {
         "lineNumber": 988,
         "author": {
           "gitId": "-"
         },
-        "content": "            };"
+        "content": "                || ImageSelectionListBox.SelectedIndex \u003d\u003d 0)"
       },
       {
         "lineNumber": 989,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.ShowInputAsync(\"Edit Picture Source\", \"Picture taken from\", metroDialogSettings)"
+        "content": "            {"
       },
       {
         "lineNumber": 990,
         "author": {
           "gitId": "-"
         },
-        "content": "                .ContinueWith(task \u003d\u003e"
+        "content": "                return;"
       },
       {
         "lineNumber": 991,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            }"
       },
       {
         "lineNumber": 992,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (!string.IsNullOrEmpty(task.Result))"
+        "content": ""
       },
       {
         "lineNumber": 993,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "            ViewModel.ImageSelectionList.RemoveAt(ImageSelectionListBox.SelectedIndex);"
       },
       {
         "lineNumber": 994,
         "author": {
           "gitId": "-"
         },
-        "content": "                        source.Source \u003d task.Result;"
+        "content": "            HandleDeletePictureInPictureVariation();"
       },
       {
         "lineNumber": 995,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "        }"
       },
       {
         "lineNumber": 996,
         "author": {
           "gitId": "-"
         },
-        "content": "                });"
+        "content": ""
       },
       {
         "lineNumber": 997,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        private void EditPictureSource(ImageItem source)"
       },
       {
         "lineNumber": 998,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {"
       },
       {
         "lineNumber": 999,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void AdjustImageDimensions(ImageItem source)"
+        "content": "            MetroDialogSettings metroDialogSettings \u003d new MetroDialogSettings"
       },
       {
         "lineNumber": 1000,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            {"
       },
       {
         "lineNumber": 1001,
         "author": {
           "gitId": "-"
         },
-        "content": "            CropWindow \u003d new AdjustImageWindow();"
+        "content": "                DefaultText \u003d source.Source"
       },
       {
         "lineNumber": 1002,
         "author": {
           "gitId": "-"
         },
-        "content": "            CropWindow.SetThumbnailImage(source.ImageFile);"
+        "content": "            };"
       },
       {
         "lineNumber": 1003,
         "author": {
           "gitId": "-"
         },
-        "content": "            CropWindow.SetFullsizeImage(source.FullSizeImageFile);"
+        "content": "            this.ShowInputAsync(\"Edit Picture Source\", \"Picture taken from\", metroDialogSettings)"
       },
       {
         "lineNumber": 1004,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (source.Rect.Width \u003e 1)"
+        "content": "                .ContinueWith(task \u003d\u003e"
       },
       {
         "lineNumber": 1005,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                {"
       },
       {
         "lineNumber": 1006,
         "author": {
           "gitId": "-"
         },
-        "content": "                CropWindow.SetCropRect(source.Rect.X, source.Rect.Y, source.Rect.Width, source.Rect.Height);"
+        "content": "                    if (!string.IsNullOrEmpty(task.Result))"
       },
       {
         "lineNumber": 1007,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    {"
       },
       {
         "lineNumber": 1008,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        source.Source \u003d task.Result;"
       },
       {
         "lineNumber": 1009,
         "author": {
           "gitId": "-"
         },
-        "content": "            DisableLoadingStyleOnWindowActivate();"
+        "content": "                    }"
       },
       {
         "lineNumber": 1010,
         "author": {
           "gitId": "-"
         },
-        "content": "            CropWindow.ShowAdjustPictureDimensionsDialog();"
+        "content": "                });"
       },
       {
         "lineNumber": 1011,
         "author": {
           "gitId": "-"
         },
-        "content": "            EnableLoadingStyleOnWindowActivate();"
+        "content": "        }"
       },
       {
         "lineNumber": 1012,
@@ -35489,91 +35489,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            if (CropWindow.IsCropped)"
+        "content": "        private void AdjustImageDimensions(ImageItem source)"
       },
       {
         "lineNumber": 1014,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        {"
       },
       {
         "lineNumber": 1015,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (CropWindow.IsRotated)"
+        "content": "            CropWindow \u003d new AdjustImageWindow();"
       },
       {
         "lineNumber": 1016,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            CropWindow.SetThumbnailImage(source.ImageFile);"
       },
       {
         "lineNumber": 1017,
         "author": {
           "gitId": "-"
         },
-        "content": "                    source.Source \u003d CropWindow.RotateResult;"
+        "content": "            CropWindow.SetFullsizeImage(source.FullSizeImageFile);"
       },
       {
         "lineNumber": 1018,
         "author": {
           "gitId": "-"
         },
-        "content": "                    source.ImageFile \u003d ImageUtil.GetThumbnailFromFullSizeImg(CropWindow.RotateResult);"
+        "content": "            if (source.Rect.Width \u003e 1)"
       },
       {
         "lineNumber": 1019,
         "author": {
           "gitId": "-"
         },
-        "content": "                    source.FullSizeImageFile \u003d CropWindow.RotateResult;"
+        "content": "            {"
       },
       {
         "lineNumber": 1020,
         "author": {
           "gitId": "-"
         },
-        "content": "                    source.ContextLink \u003d CropWindow.RotateResult;"
+        "content": "                CropWindow.SetCropRect(source.Rect.X, source.Rect.Y, source.Rect.Width, source.Rect.Height);"
       },
       {
         "lineNumber": 1021,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            }"
       },
       {
         "lineNumber": 1022,
         "author": {
           "gitId": "-"
         },
-        "content": "                source.UpdateImageAdjustmentOffset(CropWindow.CropResult, CropWindow.CropResultThumbnail, CropWindow.Rect);        "
+        "content": ""
       },
       {
         "lineNumber": 1023,
         "author": {
           "gitId": "-"
         },
-        "content": "                UpdatePreviewImages();"
+        "content": "            DisableLoadingStyleOnWindowActivate();"
       },
       {
         "lineNumber": 1024,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            CropWindow.ShowAdjustPictureDimensionsDialog();"
       },
       {
         "lineNumber": 1025,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            EnableLoadingStyleOnWindowActivate();"
       },
       {
         "lineNumber": 1026,
@@ -35587,336 +35587,336 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "            if (CropWindow.IsCropped)"
       },
       {
         "lineNumber": 1028,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// decide visibility for instructions and stylesPreviewGrid"
+        "content": "            {"
       },
       {
         "lineNumber": 1029,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "                if (CropWindow.IsRotated)"
       },
       {
         "lineNumber": 1030,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void UpdatePreviewInterfaceWhenImageListChange(Collection\u003cImageItem\u003e list)"
+        "content": "                {"
       },
       {
         "lineNumber": 1031,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                    source.Source \u003d CropWindow.RotateResult;"
       },
       {
         "lineNumber": 1032,
         "author": {
           "gitId": "-"
         },
-        "content": "            // there is only `Choose Picture` placeholder image"
+        "content": "                    source.ImageFile \u003d ImageUtil.GetThumbnailFromFullSizeImg(CropWindow.RotateResult);"
       },
       {
         "lineNumber": 1033,
         "author": {
           "gitId": "-"
         },
-        "content": "            ImageSelectionInstructions.Visibility \u003d list.Count \u003c\u003d 1"
+        "content": "                    source.FullSizeImageFile \u003d CropWindow.RotateResult;"
       },
       {
         "lineNumber": 1034,
         "author": {
           "gitId": "-"
         },
-        "content": "                ? Visibility.Visible"
+        "content": "                    source.ContextLink \u003d CropWindow.RotateResult;"
       },
       {
         "lineNumber": 1035,
         "author": {
           "gitId": "-"
         },
-        "content": "                : Visibility.Hidden;"
+        "content": "                }"
       },
       {
         "lineNumber": 1036,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                source.UpdateImageAdjustmentOffset(CropWindow.CropResult, CropWindow.CropResultThumbnail, CropWindow.Rect);        "
       },
       {
         "lineNumber": 1037,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (ImageSelectionInstructions.Visibility \u003d\u003d Visibility.Visible)"
+        "content": "                UpdatePreviewImages();"
       },
       {
         "lineNumber": 1038,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 1039,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
+        "content": "        }"
       },
       {
         "lineNumber": 1040,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": ""
       },
       {
         "lineNumber": 1041,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructions.Visibility \u003d Visibility.Hidden;"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 1042,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": "        /// decide visibility for instructions and stylesPreviewGrid"
       },
       {
         "lineNumber": 1043,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 1044,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (ImageSelectionListBox.SelectedValue \u003d\u003d null"
+        "content": "        private void UpdatePreviewInterfaceWhenImageListChange(Collection\u003cImageItem\u003e list)"
       },
       {
         "lineNumber": 1045,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u0026\u0026 StylesPreviewListBox.Items.Count \u003d\u003d 0"
+        "content": "        {"
       },
       {
         "lineNumber": 1046,
         "author": {
           "gitId": "-"
         },
-        "content": "                     \u0026\u0026 StylesVariationListBox.Items.Count \u003d\u003d 0)"
+        "content": "            // there is only `Choose Picture` placeholder image"
       },
       {
         "lineNumber": 1047,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            ImageSelectionInstructions.Visibility \u003d list.Count \u003c\u003d 1"
       },
       {
         "lineNumber": 1048,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructions.Visibility \u003d Visibility.Visible;"
+        "content": "                ? Visibility.Visible"
       },
       {
         "lineNumber": 1049,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": "                : Visibility.Hidden;"
       },
       {
         "lineNumber": 1050,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructions.Visibility \u003d Visibility.Visible;"
+        "content": ""
       },
       {
         "lineNumber": 1051,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": "            if (ImageSelectionInstructions.Visibility \u003d\u003d Visibility.Visible)"
       },
       {
         "lineNumber": 1052,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 1053,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1054,
         "author": {
           "gitId": "-"
         },
-        "content": "            // there are `Choose Picture` placeholder image +"
+        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1055,
         "author": {
           "gitId": "-"
         },
-        "content": "            // 2 sample pictures + maybe 1 image chosen by user"
+        "content": "                VariationInstructions.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1056,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (StoragePath.IsFirstTimeUsage() \u0026\u0026 list.Count \u003c\u003d 4"
+        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1057,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 ImageSelectionInstructions.Visibility \u003d\u003d Visibility.Hidden)"
+        "content": "            }"
       },
       {
         "lineNumber": 1058,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            else if (ImageSelectionListBox.SelectedValue \u003d\u003d null"
       },
       {
         "lineNumber": 1059,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
+        "content": "                     \u0026\u0026 StylesPreviewListBox.Items.Count \u003d\u003d 0"
       },
       {
         "lineNumber": 1060,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageSelectionInstructionsForFirstTime.Visibility \u003d Visibility.Visible;"
+        "content": "                     \u0026\u0026 StylesVariationListBox.Items.Count \u003d\u003d 0)"
       },
       {
         "lineNumber": 1061,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 1062,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": "                PreviewInstructions.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1063,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1064,
         "author": {
           "gitId": "-"
         },
-        "content": "                ImageSelectionInstructionsForFirstTime.Visibility \u003d Visibility.Hidden;"
+        "content": "                VariationInstructions.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1065,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1066,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 1067,
         "author": {
           "gitId": "-"
         },
-        "content": "            // show StylesPreviewRegion aft there\u0027r some images in the SearchList region"
+        "content": ""
       },
       {
         "lineNumber": 1068,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (list.Count \u003e 1 \u0026\u0026 !_isStylePreviewRegionInit)"
+        "content": "            // there are `Choose Picture` placeholder image +"
       },
       {
         "lineNumber": 1069,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            // 2 sample pictures + maybe 1 image chosen by user"
       },
       {
         "lineNumber": 1070,
         "author": {
           "gitId": "-"
         },
-        "content": "                // only one time entry"
+        "content": "            if (StoragePath.IsFirstTimeUsage() \u0026\u0026 list.Count \u003c\u003d 4"
       },
       {
         "lineNumber": 1071,
         "author": {
           "gitId": "-"
         },
-        "content": "                _isStylePreviewRegionInit \u003d true;"
+        "content": "                \u0026\u0026 ImageSelectionInstructions.Visibility \u003d\u003d Visibility.Hidden)"
       },
       {
         "lineNumber": 1072,
         "author": {
           "gitId": "-"
         },
-        "content": "                StylesPreviewGrid.Visibility \u003d Visibility.Visible;"
+        "content": "            {"
       },
       {
         "lineNumber": 1073,
         "author": {
           "gitId": "-"
         },
-        "content": "                GotoSlideButton.IsEnabled \u003d true;"
+        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1074,
         "author": {
           "gitId": "-"
         },
-        "content": "                LoadStylesButton.IsEnabled \u003d true;"
+        "content": "                ImageSelectionInstructionsForFirstTime.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1075,
@@ -35930,1645 +35930,1645 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            else"
       },
       {
         "lineNumber": 1077,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1078,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "                ImageSelectionInstructionsForFirstTime.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1079,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// decide visibility and enability of variation stage\u0027s "
+        "content": "            }"
       },
       {
         "lineNumber": 1080,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1081,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void UpdateVariationInterface(Collection\u003cImageItem\u003e list)"
+        "content": "            // show StylesPreviewRegion aft there\u0027r some images in the SearchList region"
       },
       {
         "lineNumber": 1082,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            if (list.Count \u003e 1 \u0026\u0026 !_isStylePreviewRegionInit)"
       },
       {
         "lineNumber": 1083,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (list.Count !\u003d 0)"
+        "content": "            {"
       },
       {
         "lineNumber": 1084,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                // only one time entry"
       },
       {
         "lineNumber": 1085,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructions.Visibility \u003d Visibility.Hidden;"
+        "content": "                _isStylePreviewRegionInit \u003d true;"
       },
       {
         "lineNumber": 1086,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": "                StylesPreviewGrid.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1087,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsComboBox.IsEnabled \u003d true;"
+        "content": "                GotoSlideButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 1088,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsColorPanel.IsEnabled \u003d true;"
+        "content": "                LoadStylesButton.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 1089,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsSlider.IsEnabled \u003d true;"
+        "content": "            }"
       },
       {
         "lineNumber": 1090,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 1091,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (this.GetCurrentSlide() \u003d\u003d null)"
+        "content": ""
       },
       {
         "lineNumber": 1092,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 1093,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructions.Visibility \u003d Visibility.Hidden;"
+        "content": "        /// decide visibility and enability of variation stage\u0027s "
       },
       {
         "lineNumber": 1094,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Visible;"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 1095,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsComboBox.IsEnabled \u003d false;"
+        "content": "        private void UpdateVariationInterface(Collection\u003cImageItem\u003e list)"
       },
       {
         "lineNumber": 1096,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsColorPanel.IsEnabled \u003d false;"
+        "content": "        {"
       },
       {
         "lineNumber": 1097,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsSlider.IsEnabled \u003d false;"
+        "content": "            if (list.Count !\u003d 0)"
       },
       {
         "lineNumber": 1098,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 1099,
         "author": {
           "gitId": "-"
         },
-        "content": "            else // select \u0027loading\u0027 image"
+        "content": "                VariationInstructions.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1100,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1101,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructions.Visibility \u003d Visibility.Visible;"
+        "content": "                VariantsComboBox.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 1102,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": "                VariantsColorPanel.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 1103,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsComboBox.IsEnabled \u003d false;"
+        "content": "                VariantsSlider.IsEnabled \u003d true;"
       },
       {
         "lineNumber": 1104,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsColorPanel.IsEnabled \u003d false;"
+        "content": "            }"
       },
       {
         "lineNumber": 1105,
         "author": {
           "gitId": "-"
         },
-        "content": "                VariantsSlider.IsEnabled \u003d false;"
+        "content": "            else if (this.GetCurrentSlide() \u003d\u003d null)"
       },
       {
         "lineNumber": 1106,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 1107,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                VariationInstructions.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1108,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1109,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "                VariantsComboBox.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 1110,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// decide visibility for instructions"
+        "content": "                VariantsColorPanel.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 1111,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "                VariantsSlider.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 1112,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void UpdatePreviewInterfaceWhenPreviewListChange(Collection\u003cImageItem\u003e list)"
+        "content": "            }"
       },
       {
         "lineNumber": 1113,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            else // select \u0027loading\u0027 image"
       },
       {
         "lineNumber": 1114,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (list.Count !\u003d 0 || ImageSelectionInstructions.Visibility \u003d\u003d Visibility.Visible)"
+        "content": "            {"
       },
       {
         "lineNumber": 1115,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                VariationInstructions.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1116,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
+        "content": "                VariationInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1117,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": "                VariantsComboBox.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 1118,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                VariantsColorPanel.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 1119,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (this.GetCurrentSlide() \u003d\u003d null)"
+        "content": "                VariantsSlider.IsEnabled \u003d false;"
       },
       {
         "lineNumber": 1120,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 1121,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Visible;"
+        "content": "        }"
       },
       {
         "lineNumber": 1122,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
+        "content": ""
       },
       {
         "lineNumber": 1123,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 1124,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": "        /// decide visibility for instructions"
       },
       {
         "lineNumber": 1125,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 1126,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructions.Visibility \u003d Visibility.Visible;"
+        "content": "        private void UpdatePreviewInterfaceWhenPreviewListChange(Collection\u003cImageItem\u003e list)"
       },
       {
         "lineNumber": 1127,
         "author": {
           "gitId": "-"
         },
-        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
+        "content": "        {"
       },
       {
         "lineNumber": 1128,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            if (list.Count !\u003d 0 || ImageSelectionInstructions.Visibility \u003d\u003d Visibility.Visible)"
       },
       {
         "lineNumber": 1129,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            {"
       },
       {
         "lineNumber": 1130,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1131,
         "author": {
           "gitId": "-"
         },
-        "content": "        private static bool IsMouseOverTarget(Visual target, Point point)"
+        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1132,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 1133,
         "author": {
           "gitId": "-"
         },
-        "content": "            Rect bounds \u003d VisualTreeHelper.GetDescendantBounds(target);"
+        "content": "            else if (this.GetCurrentSlide() \u003d\u003d null)"
       },
       {
         "lineNumber": 1134,
         "author": {
           "gitId": "-"
         },
-        "content": "            return bounds.Contains(point);"
+        "content": "            {"
       },
       {
         "lineNumber": 1135,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1136,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                PreviewInstructions.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1137,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void OpenVariationsFlyout()"
+        "content": "            }"
       },
       {
         "lineNumber": 1138,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            else"
       },
       {
         "lineNumber": 1139,
         "author": {
           "gitId": "-"
         },
-        "content": "            Dispatcher.BeginInvoke(new Action(() \u003d\u003e"
+        "content": "            {"
       },
       {
         "lineNumber": 1140,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                PreviewInstructions.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1141,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (IsVariationsFlyoutOpen)"
+        "content": "                PreviewInstructionsWhenNoSelectedSlide.Visibility \u003d Visibility.Hidden;"
       },
       {
         "lineNumber": 1142,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            }"
       },
       {
         "lineNumber": 1143,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "        }"
       },
       {
         "lineNumber": 1144,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 1145,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private static bool IsMouseOverTarget(Visual target, Point point)"
       },
       {
         "lineNumber": 1146,
         "author": {
           "gitId": "-"
         },
-        "content": "                TranslateTransform left2RightToShowTranslate \u003d new TranslateTransform { X \u003d -StylesPreviewGrid.ActualWidth };"
+        "content": "        {"
       },
       {
         "lineNumber": 1147,
         "author": {
           "gitId": "-"
         },
-        "content": "                StyleVariationsFlyout.RenderTransform \u003d left2RightToShowTranslate;"
+        "content": "            Rect bounds \u003d VisualTreeHelper.GetDescendantBounds(target);"
       },
       {
         "lineNumber": 1148,
         "author": {
           "gitId": "-"
         },
-        "content": "                StyleVariationsFlyout.Visibility \u003d Visibility.Visible;"
+        "content": "            return bounds.Contains(point);"
       },
       {
         "lineNumber": 1149,
         "author": {
           "gitId": "-"
         },
-        "content": "                DoubleAnimation left2RightToShowAnimation \u003d new DoubleAnimation(-StylesPreviewGrid.ActualWidth, 0,"
+        "content": "        }"
       },
       {
         "lineNumber": 1150,
         "author": {
           "gitId": "-"
         },
-        "content": "                    TimeSpan.FromMilliseconds(350))"
+        "content": ""
       },
       {
         "lineNumber": 1151,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        private void OpenVariationsFlyout()"
       },
       {
         "lineNumber": 1152,
         "author": {
           "gitId": "-"
         },
-        "content": "                    EasingFunction \u003d new SineEase { EasingMode \u003d EasingMode.EaseInOut },"
+        "content": "        {"
       },
       {
         "lineNumber": 1153,
         "author": {
           "gitId": "-"
         },
-        "content": "                    AccelerationRatio \u003d 0.5"
+        "content": "            Dispatcher.BeginInvoke(new Action(() \u003d\u003e"
       },
       {
         "lineNumber": 1154,
         "author": {
           "gitId": "-"
         },
-        "content": "                };"
+        "content": "            {"
       },
       {
         "lineNumber": 1155,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (IsVariationsFlyoutOpen)"
       },
       {
         "lineNumber": 1156,
         "author": {
           "gitId": "-"
         },
-        "content": "                left2RightToShowTranslate.BeginAnimation(TranslateTransform.XProperty, left2RightToShowAnimation);"
+        "content": "                {"
       },
       {
         "lineNumber": 1157,
         "author": {
           "gitId": "-"
         },
-        "content": "                IsVariationsFlyoutOpen \u003d true;"
+        "content": "                    return;"
       },
       {
         "lineNumber": 1158,
         "author": {
           "gitId": "-"
         },
-        "content": "            }));"
+        "content": "                }"
       },
       {
         "lineNumber": 1159,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 1160,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                TranslateTransform left2RightToShowTranslate \u003d new TranslateTransform { X \u003d -StylesPreviewGrid.ActualWidth };"
       },
       {
         "lineNumber": 1161,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void CloseVariationsFlyout()"
+        "content": "                StyleVariationsFlyout.RenderTransform \u003d left2RightToShowTranslate;"
       },
       {
         "lineNumber": 1162,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                StyleVariationsFlyout.Visibility \u003d Visibility.Visible;"
       },
       {
         "lineNumber": 1163,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!IsVariationsFlyoutOpen)"
+        "content": "                DoubleAnimation left2RightToShowAnimation \u003d new DoubleAnimation(-StylesPreviewGrid.ActualWidth, 0,"
       },
       {
         "lineNumber": 1164,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    TimeSpan.FromMilliseconds(350))"
       },
       {
         "lineNumber": 1165,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "                {"
       },
       {
         "lineNumber": 1166,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    EasingFunction \u003d new SineEase { EasingMode \u003d EasingMode.EaseInOut },"
       },
       {
         "lineNumber": 1167,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    AccelerationRatio \u003d 0.5"
       },
       {
         "lineNumber": 1168,
         "author": {
           "gitId": "-"
         },
-        "content": "            TranslateTransform right2LeftToHideTranslate \u003d new TranslateTransform();"
+        "content": "                };"
       },
       {
         "lineNumber": 1169,
         "author": {
           "gitId": "-"
         },
-        "content": "            StyleVariationsFlyout.RenderTransform \u003d right2LeftToHideTranslate;"
+        "content": ""
       },
       {
         "lineNumber": 1170,
         "author": {
           "gitId": "-"
         },
-        "content": "            DoubleAnimation right2LeftToHideAnimation \u003d new DoubleAnimation(0, -StyleVariationsFlyout.ActualWidth,"
+        "content": "                left2RightToShowTranslate.BeginAnimation(TranslateTransform.XProperty, left2RightToShowAnimation);"
       },
       {
         "lineNumber": 1171,
         "author": {
           "gitId": "-"
         },
-        "content": "                TimeSpan.FromMilliseconds(350))"
+        "content": "                IsVariationsFlyoutOpen \u003d true;"
       },
       {
         "lineNumber": 1172,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }));"
       },
       {
         "lineNumber": 1173,
         "author": {
           "gitId": "-"
         },
-        "content": "                EasingFunction \u003d new SineEase { EasingMode \u003d EasingMode.EaseInOut },"
+        "content": "        }"
       },
       {
         "lineNumber": 1174,
         "author": {
           "gitId": "-"
         },
-        "content": "                AccelerationRatio \u003d 0.5"
+        "content": ""
       },
       {
         "lineNumber": 1175,
         "author": {
           "gitId": "-"
         },
-        "content": "            };"
+        "content": "        private void CloseVariationsFlyout()"
       },
       {
         "lineNumber": 1176,
         "author": {
           "gitId": "-"
         },
-        "content": "            right2LeftToHideAnimation.Completed +\u003d (sender, args) \u003d\u003e"
+        "content": "        {"
       },
       {
         "lineNumber": 1177,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            if (!IsVariationsFlyoutOpen)"
       },
       {
         "lineNumber": 1178,
         "author": {
           "gitId": "-"
         },
-        "content": "                Dispatcher.BeginInvoke(new Action(() \u003d\u003e"
+        "content": "            {"
       },
       {
         "lineNumber": 1179,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                return;"
       },
       {
         "lineNumber": 1180,
         "author": {
           "gitId": "-"
         },
-        "content": "                    StyleVariationsFlyout.Visibility \u003d Visibility.Collapsed;"
+        "content": "            }"
       },
       {
         "lineNumber": 1181,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (!IsDisplayDefaultPicture())"
+        "content": ""
       },
       {
         "lineNumber": 1182,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "            TranslateTransform right2LeftToHideTranslate \u003d new TranslateTransform();"
       },
       {
         "lineNumber": 1183,
         "author": {
           "gitId": "-"
         },
-        "content": "                        UpdatePreviewImages();"
+        "content": "            StyleVariationsFlyout.RenderTransform \u003d right2LeftToHideTranslate;"
       },
       {
         "lineNumber": 1184,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "            DoubleAnimation right2LeftToHideAnimation \u003d new DoubleAnimation(0, -StyleVariationsFlyout.ActualWidth,"
       },
       {
         "lineNumber": 1185,
         "author": {
           "gitId": "-"
         },
-        "content": "                    else"
+        "content": "                TimeSpan.FromMilliseconds(350))"
       },
       {
         "lineNumber": 1186,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "            {"
       },
       {
         "lineNumber": 1187,
         "author": {
           "gitId": "-"
         },
-        "content": "                        UpdatePreviewImages(CreateDefaultPictureItem());"
+        "content": "                EasingFunction \u003d new SineEase { EasingMode \u003d EasingMode.EaseInOut },"
       },
       {
         "lineNumber": 1188,
         "author": {
           "gitId": "-"
         },
-        "content": "                        UpdatePreviewStageControls();"
+        "content": "                AccelerationRatio \u003d 0.5"
       },
       {
         "lineNumber": 1189,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "            };"
       },
       {
         "lineNumber": 1190,
         "author": {
           "gitId": "-"
         },
-        "content": "                }));"
+        "content": "            right2LeftToHideAnimation.Completed +\u003d (sender, args) \u003d\u003e"
       },
       {
         "lineNumber": 1191,
         "author": {
           "gitId": "-"
         },
-        "content": "            };"
+        "content": "            {"
       },
       {
         "lineNumber": 1192,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                Dispatcher.BeginInvoke(new Action(() \u003d\u003e"
       },
       {
         "lineNumber": 1193,
         "author": {
           "gitId": "-"
         },
-        "content": "            right2LeftToHideTranslate.BeginAnimation(TranslateTransform.XProperty, right2LeftToHideAnimation);"
+        "content": "                {"
       },
       {
         "lineNumber": 1194,
         "author": {
           "gitId": "-"
         },
-        "content": "            IsVariationsFlyoutOpen \u003d false;"
+        "content": "                    StyleVariationsFlyout.Visibility \u003d Visibility.Collapsed;"
       },
       {
         "lineNumber": 1195,
         "author": {
           "gitId": "-"
         },
-        "content": "            ViewModel.CurrentVariantCategory.Text \u003d \"\";"
+        "content": "                    if (!IsDisplayDefaultPicture())"
       },
       {
         "lineNumber": 1196,
         "author": {
           "gitId": "-"
         },
-        "content": "            Logger.Log(\"Variation is closed\");"
+        "content": "                    {"
       },
       {
         "lineNumber": 1197,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                        UpdatePreviewImages();"
       },
       {
         "lineNumber": 1198,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    }"
       },
       {
         "lineNumber": 1199,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void UpdatePreviewImages(ImageItem source \u003d null, bool isEnteringPictureVariation \u003d false)"
+        "content": "                    else"
       },
       {
         "lineNumber": 1200,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                    {"
       },
       {
         "lineNumber": 1201,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "                        UpdatePreviewImages(CreateDefaultPictureItem());"
       },
       {
         "lineNumber": 1202,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                        UpdatePreviewStageControls();"
       },
       {
         "lineNumber": 1203,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (!_isEnableUpdatePreview)"
+        "content": "                    }"
       },
       {
         "lineNumber": 1204,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                }));"
       },
       {
         "lineNumber": 1205,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "            };"
       },
       {
         "lineNumber": 1206,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 1207,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            right2LeftToHideTranslate.BeginAnimation(TranslateTransform.XProperty, right2LeftToHideAnimation);"
       },
       {
         "lineNumber": 1208,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (IsVariationsFlyoutOpen \u0026\u0026 isEnteringPictureVariation)"
+        "content": "            IsVariationsFlyoutOpen \u003d false;"
       },
       {
         "lineNumber": 1209,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            ViewModel.CurrentVariantCategory.Text \u003d \"\";"
       },
       {
         "lineNumber": 1210,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Logger.Log(\"Entering pic aspect\");"
+        "content": "            Logger.Log(\"Variation is closed\");"
       },
       {
         "lineNumber": 1211,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // when it\u0027s to load the design for a default picture,"
+        "content": "        }"
       },
       {
         "lineNumber": 1212,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // and it\u0027s at the variation stage,"
+        "content": ""
       },
       {
         "lineNumber": 1213,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // directly jump to picture variation to select picture"
+        "content": "        private void UpdatePreviewImages(ImageItem source \u003d null, bool isEnteringPictureVariation \u003d false)"
       },
       {
         "lineNumber": 1214,
         "author": {
           "gitId": "-"
         },
-        "content": "                    int picVariationIndex \u003d ViewModel.VariantsCategory.IndexOf("
+        "content": "        {"
       },
       {
         "lineNumber": 1215,
         "author": {
           "gitId": "-"
         },
-        "content": "                        PictureSlidesLabText.VariantCategoryPicture);"
+        "content": "            try"
       },
       {
         "lineNumber": 1216,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (VariantsComboBox.SelectedIndex !\u003d picVariationIndex)"
+        "content": "            {"
       },
       {
         "lineNumber": 1217,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": "                if (!_isEnableUpdatePreview)"
       },
       {
         "lineNumber": 1218,
         "author": {
           "gitId": "-"
         },
-        "content": "                        VariantsComboBox.SelectedIndex \u003d picVariationIndex;"
+        "content": "                {"
       },
       {
         "lineNumber": 1219,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    return;"
       },
       {
         "lineNumber": 1220,
         "author": {
           "gitId": "-"
         },
-        "content": "                    else"
+        "content": "                }"
       },
       {
         "lineNumber": 1221,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {"
+        "content": ""
       },
       {
         "lineNumber": 1222,
         "author": {
           "gitId": "-"
         },
-        "content": "                        ViewModel.UpdatePreviewImages("
+        "content": "                if (IsVariationsFlyoutOpen \u0026\u0026 isEnteringPictureVariation)"
       },
       {
         "lineNumber": 1223,
         "author": {
           "gitId": "-"
         },
-        "content": "                        source ?? (ImageItem)ImageSelectionListBox.SelectedValue ?? CreateDefaultPictureItem(),"
+        "content": "                {"
       },
       {
         "lineNumber": 1224,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentSlide().GetNativeSlide(),"
+        "content": "                    Logger.Log(\"Entering pic aspect\");"
       },
       {
         "lineNumber": 1225,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentPresentation().SlideWidth,"
+        "content": "                    // when it\u0027s to load the design for a default picture,"
       },
       {
         "lineNumber": 1226,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentPresentation().SlideHeight);"
+        "content": "                    // and it\u0027s at the variation stage,"
       },
       {
         "lineNumber": 1227,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    // directly jump to picture variation to select picture"
       },
       {
         "lineNumber": 1228,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    int picVariationIndex \u003d ViewModel.VariantsCategory.IndexOf("
       },
       {
         "lineNumber": 1229,
         "author": {
           "gitId": "-"
         },
-        "content": "                else if (IsDisplayDefaultPicture())"
+        "content": "                        PictureSlidesLabText.VariantCategoryPicture);"
       },
       {
         "lineNumber": 1230,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    if (VariantsComboBox.SelectedIndex !\u003d picVariationIndex)"
       },
       {
         "lineNumber": 1231,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Logger.Log(\"In default pic mode\");"
+        "content": "                    {"
       },
       {
         "lineNumber": 1232,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // if it\u0027s in Default Picture mode, allow"
+        "content": "                        VariantsComboBox.SelectedIndex \u003d picVariationIndex;"
       },
       {
         "lineNumber": 1233,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // updating preview images"
+        "content": "                    }"
       },
       {
         "lineNumber": 1234,
         "author": {
           "gitId": "-"
         },
-        "content": "                    ViewModel.UpdatePreviewImages("
+        "content": "                    else"
       },
       {
         "lineNumber": 1235,
         "author": {
           "gitId": "-"
         },
-        "content": "                        source ?? CreateDefaultPictureItem(),"
+        "content": "                    {"
       },
       {
         "lineNumber": 1236,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentSlide().GetNativeSlide(),"
+        "content": "                        ViewModel.UpdatePreviewImages("
       },
       {
         "lineNumber": 1237,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentPresentation().SlideWidth,"
+        "content": "                        source ?? (ImageItem)ImageSelectionListBox.SelectedValue ?? CreateDefaultPictureItem(),"
       },
       {
         "lineNumber": 1238,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentPresentation().SlideHeight);"
+        "content": "                        this.GetCurrentSlide().GetNativeSlide(),"
       },
       {
         "lineNumber": 1239,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                        this.GetCurrentPresentation().SlideWidth,"
       },
       {
         "lineNumber": 1240,
         "author": {
           "gitId": "-"
         },
-        "content": "                else"
+        "content": "                        this.GetCurrentPresentation().SlideHeight);"
       },
       {
         "lineNumber": 1241,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "                    }"
       },
       {
         "lineNumber": 1242,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // else, try to update preview images using"
+        "content": "                }"
       },
       {
         "lineNumber": 1243,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // source or current selected picture."
+        "content": "                else if (IsDisplayDefaultPicture())"
       },
       {
         "lineNumber": 1244,
         "author": {
           "gitId": "-"
         },
-        "content": "                    ViewModel.UpdatePreviewImages("
+        "content": "                {"
       },
       {
         "lineNumber": 1245,
         "author": {
           "gitId": "-"
         },
-        "content": "                        source ?? (ImageItem) ImageSelectionListBox.SelectedValue,"
+        "content": "                    Logger.Log(\"In default pic mode\");"
       },
       {
         "lineNumber": 1246,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentSlide().GetNativeSlide(),"
+        "content": "                    // if it\u0027s in Default Picture mode, allow"
       },
       {
         "lineNumber": 1247,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentPresentation().SlideWidth,"
+        "content": "                    // updating preview images"
       },
       {
         "lineNumber": 1248,
         "author": {
           "gitId": "-"
         },
-        "content": "                        this.GetCurrentPresentation().SlideHeight);"
+        "content": "                    ViewModel.UpdatePreviewImages("
       },
       {
         "lineNumber": 1249,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                        source ?? CreateDefaultPictureItem(),"
       },
       {
         "lineNumber": 1250,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                        this.GetCurrentSlide().GetNativeSlide(),"
       },
       {
         "lineNumber": 1251,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch (Exception e)"
+        "content": "                        this.GetCurrentPresentation().SlideWidth,"
       },
       {
         "lineNumber": 1252,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                        this.GetCurrentPresentation().SlideHeight);"
       },
       {
         "lineNumber": 1253,
         "author": {
           "gitId": "-"
         },
-        "content": "                Logger.LogException(e, \"UpdatePreviewImages\");"
+        "content": "                }"
       },
       {
         "lineNumber": 1254,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                else"
       },
       {
         "lineNumber": 1255,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                {"
       },
       {
         "lineNumber": 1256,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    // else, try to update preview images using"
       },
       {
         "lineNumber": 1257,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void CustomizeStyle(ImageItem source, List\u003cStyleOption\u003e givenStyles \u003d null,"
+        "content": "                    // source or current selected picture."
       },
       {
         "lineNumber": 1258,
         "author": {
           "gitId": "-"
         },
-        "content": "            Dictionary\u003cstring, List\u003cStyleVariant\u003e\u003e givenVariants \u003d null)"
+        "content": "                    ViewModel.UpdatePreviewImages("
       },
       {
         "lineNumber": 1259,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                        source ?? (ImageItem) ImageSelectionListBox.SelectedValue,"
       },
       {
         "lineNumber": 1260,
         "author": {
           "gitId": "-"
         },
-        "content": "            try"
+        "content": "                        this.GetCurrentSlide().GetNativeSlide(),"
       },
       {
         "lineNumber": 1261,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                        this.GetCurrentPresentation().SlideWidth,"
       },
       {
         "lineNumber": 1262,
         "author": {
           "gitId": "-"
         },
-        "content": "                ViewModel.UpdateStyleVariationImagesWhenOpenFlyout("
+        "content": "                        this.GetCurrentPresentation().SlideHeight);"
       },
       {
         "lineNumber": 1263,
         "author": {
           "gitId": "-"
         },
-        "content": "                    source ?? (ImageItem) ImageSelectionListBox.SelectedValue,"
+        "content": "                }"
       },
       {
         "lineNumber": 1264,
         "author": {
           "gitId": "-"
         },
-        "content": "                    this.GetCurrentSlide().GetNativeSlide(),"
+        "content": "            }"
       },
       {
         "lineNumber": 1265,
         "author": {
           "gitId": "-"
         },
-        "content": "                    this.GetCurrentPresentation().SlideWidth,"
+        "content": "            catch (Exception e)"
       },
       {
         "lineNumber": 1266,
         "author": {
           "gitId": "-"
         },
-        "content": "                    this.GetCurrentPresentation().SlideHeight,"
+        "content": "            {"
       },
       {
         "lineNumber": 1267,
         "author": {
           "gitId": "-"
         },
-        "content": "                    givenStyles, givenVariants);"
+        "content": "                Logger.LogException(e, \"UpdatePreviewImages\");"
       },
       {
         "lineNumber": 1268,
         "author": {
           "gitId": "-"
         },
-        "content": "                OpenVariationsFlyout();"
+        "content": "            }"
       },
       {
         "lineNumber": 1269,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 1270,
         "author": {
           "gitId": "-"
         },
-        "content": "            catch (Exception e)"
+        "content": ""
       },
       {
         "lineNumber": 1271,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        private void CustomizeStyle(ImageItem source, List\u003cStyleOption\u003e givenStyles \u003d null,"
       },
       {
         "lineNumber": 1272,
         "author": {
           "gitId": "-"
         },
-        "content": "                Logger.LogException(e, \"CustomizeStyle\");"
+        "content": "            Dictionary\u003cstring, List\u003cStyleVariant\u003e\u003e givenVariants \u003d null)"
       },
       {
         "lineNumber": 1273,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        {"
       },
       {
         "lineNumber": 1274,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            try"
       },
       {
         "lineNumber": 1275,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1276,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void LeaveDefaultPictureMode()"
+        "content": "                ViewModel.UpdateStyleVariationImagesWhenOpenFlyout("
       },
       {
         "lineNumber": 1277,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                    source ?? (ImageItem) ImageSelectionListBox.SelectedValue,"
       },
       {
         "lineNumber": 1278,
         "author": {
           "gitId": "-"
         },
-        "content": "            _isDisplayDefaultPicture \u003d false;"
+        "content": "                    this.GetCurrentSlide().GetNativeSlide(),"
       },
       {
         "lineNumber": 1279,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    this.GetCurrentPresentation().SlideWidth,"
       },
       {
         "lineNumber": 1280,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    this.GetCurrentPresentation().SlideHeight,"
       },
       {
         "lineNumber": 1281,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void EnableLoadingStyleOnWindowActivate()"
+        "content": "                    givenStyles, givenVariants);"
       },
       {
         "lineNumber": 1282,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "                OpenVariationsFlyout();"
       },
       {
         "lineNumber": 1283,
         "author": {
           "gitId": "-"
         },
-        "content": "            _isAbleLoadingOnWindowActivate \u003d true;"
+        "content": "            }"
       },
       {
         "lineNumber": 1284,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            catch (Exception e)"
       },
       {
         "lineNumber": 1285,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 1286,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void DisableLoadingStyleOnWindowActivate()"
+        "content": "                Logger.LogException(e, \"CustomizeStyle\");"
       },
       {
         "lineNumber": 1287,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 1288,
         "author": {
           "gitId": "-"
         },
-        "content": "            _isAbleLoadingOnWindowActivate \u003d false;"
+        "content": "        }"
       },
       {
         "lineNumber": 1289,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 1290,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private void LeaveDefaultPictureMode()"
       },
       {
         "lineNumber": 1291,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003csummary\u003e"
+        "content": "        {"
       },
       {
         "lineNumber": 1292,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// Execute action after time (in ms)"
+        "content": "            _isDisplayDefaultPicture \u003d false;"
       },
       {
         "lineNumber": 1293,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003c/summary\u003e"
+        "content": "        }"
       },
       {
         "lineNumber": 1294,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"action\"\u003e\u003c/param\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1295,
         "author": {
           "gitId": "-"
         },
-        "content": "        /// \u003cparam name\u003d\"time\"\u003etime in ms\u003c/param\u003e"
+        "content": "        private void EnableLoadingStyleOnWindowActivate()"
       },
       {
         "lineNumber": 1296,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void SetTimeout(Action action, int time)"
+        "content": "        {"
       },
       {
         "lineNumber": 1297,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            _isAbleLoadingOnWindowActivate \u003d true;"
       },
       {
         "lineNumber": 1298,
         "author": {
           "gitId": "-"
         },
-        "content": "            DispatcherTimer timer \u003d new DispatcherTimer(DispatcherPriority.Render)"
+        "content": "        }"
       },
       {
         "lineNumber": 1299,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 1300,
         "author": {
           "gitId": "-"
         },
-        "content": "                Interval \u003d new TimeSpan(0, 0, 0, 0, time) // in ms"
+        "content": "        private void DisableLoadingStyleOnWindowActivate()"
       },
       {
         "lineNumber": 1301,
         "author": {
           "gitId": "-"
         },
-        "content": "            };"
+        "content": "        {"
       },
       {
         "lineNumber": 1302,
         "author": {
           "gitId": "-"
         },
-        "content": "            timer.Tick +\u003d (o, args) \u003d\u003e"
+        "content": "            _isAbleLoadingOnWindowActivate \u003d false;"
       },
       {
         "lineNumber": 1303,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        }"
       },
       {
         "lineNumber": 1304,
         "author": {
           "gitId": "-"
         },
-        "content": "                timer.Stop();"
+        "content": ""
       },
       {
         "lineNumber": 1305,
         "author": {
           "gitId": "-"
         },
-        "content": "                action();"
+        "content": "        /// \u003csummary\u003e"
       },
       {
         "lineNumber": 1306,
         "author": {
           "gitId": "-"
         },
-        "content": "            };"
+        "content": "        /// Execute action after time (in ms)"
       },
       {
         "lineNumber": 1307,
         "author": {
           "gitId": "-"
         },
-        "content": "            timer.Start();"
+        "content": "        /// \u003c/summary\u003e"
       },
       {
         "lineNumber": 1308,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        /// \u003cparam name\u003d\"action\"\u003e\u003c/param\u003e"
       },
       {
         "lineNumber": 1309,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        /// \u003cparam name\u003d\"time\"\u003etime in ms\u003c/param\u003e"
       },
       {
         "lineNumber": 1310,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void HandleUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)"
+        "content": "        private void SetTimeout(Action action, int time)"
       },
       {
         "lineNumber": 1311,
@@ -37582,192 +37582,290 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            Logger.LogException(e.Exception, sender.GetType() + \" \" + sender);"
+        "content": "            DispatcherTimer timer \u003d new DispatcherTimer(DispatcherPriority.Render)"
       },
       {
         "lineNumber": 1313,
         "author": {
           "gitId": "-"
         },
-        "content": "            ShowErrorMessageBox(\"Unexpected errors happened!\", e.Exception);"
+        "content": "            {"
       },
       {
         "lineNumber": 1314,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                Interval \u003d new TimeSpan(0, 0, 0, 0, time) // in ms"
       },
       {
         "lineNumber": 1315,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            };"
       },
       {
         "lineNumber": 1316,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void HandleUnhandledException(object sender, UnhandledExceptionEventArgs e)"
+        "content": "            timer.Tick +\u003d (o, args) \u003d\u003e"
       },
       {
         "lineNumber": 1317,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            {"
       },
       {
         "lineNumber": 1318,
         "author": {
           "gitId": "-"
         },
-        "content": "            Logger.LogException(e.ExceptionObject as Exception, sender.GetType() + \" \" + sender);"
+        "content": "                timer.Stop();"
       },
       {
         "lineNumber": 1319,
         "author": {
           "gitId": "-"
         },
-        "content": "            ShowErrorMessageBox(\"Unexpected errors happened!\", e.ExceptionObject as Exception);"
+        "content": "                action();"
       },
       {
         "lineNumber": 1320,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            };"
       },
       {
         "lineNumber": 1321,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            timer.Start();"
       },
       {
         "lineNumber": 1322,
         "author": {
           "gitId": "-"
         },
-        "content": "        // check PSL window is really closing or not"
+        "content": "        }"
       },
       {
         "lineNumber": 1323,
         "author": {
           "gitId": "-"
         },
-        "content": "        private bool IsDisposed"
+        "content": ""
       },
       {
         "lineNumber": 1324,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "        private void HandleUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)"
       },
       {
         "lineNumber": 1325,
         "author": {
           "gitId": "-"
         },
-        "content": "            get"
+        "content": "        {"
       },
       {
         "lineNumber": 1326,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            Logger.LogException(e.Exception, sender.GetType() + \" \" + sender);"
       },
       {
         "lineNumber": 1327,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (IsClosing)"
+        "content": "            ShowErrorMessageBox(\"Unexpected errors happened!\", e.Exception);"
       },
       {
         "lineNumber": 1328,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "        }"
       },
       {
         "lineNumber": 1329,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return true;"
+        "content": ""
       },
       {
         "lineNumber": 1330,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "        private void HandleUnhandledException(object sender, UnhandledExceptionEventArgs e)"
       },
       {
         "lineNumber": 1331,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {"
       },
       {
         "lineNumber": 1332,
         "author": {
           "gitId": "-"
         },
-        "content": "                System.Reflection.PropertyInfo propertyInfo \u003d typeof(Window).GetProperty(\"IsDisposed\", "
+        "content": "            Logger.LogException(e.ExceptionObject as Exception, sender.GetType() + \" \" + sender);"
       },
       {
         "lineNumber": 1333,
         "author": {
           "gitId": "-"
         },
-        "content": "                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);"
+        "content": "            ShowErrorMessageBox(\"Unexpected errors happened!\", e.ExceptionObject as Exception);"
       },
       {
         "lineNumber": 1334,
         "author": {
           "gitId": "-"
         },
-        "content": "                return (bool) propertyInfo.GetValue(this, null);"
+        "content": "        }"
       },
       {
         "lineNumber": 1335,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 1336,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        // check PSL window is really closing or not"
       },
       {
         "lineNumber": 1337,
         "author": {
           "gitId": "-"
         },
-        "content": "        #endregion"
+        "content": "        private bool IsDisposed"
       },
       {
         "lineNumber": 1338,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        {"
       },
       {
         "lineNumber": 1339,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            get"
+      },
+      {
+        "lineNumber": 1340,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            {"
+      },
+      {
+        "lineNumber": 1341,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if (IsClosing)"
+      },
+      {
+        "lineNumber": 1342,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 1343,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    return true;"
+      },
+      {
+        "lineNumber": 1344,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 1345,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1346,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                System.Reflection.PropertyInfo propertyInfo \u003d typeof(Window).GetProperty(\"IsDisposed\", "
+      },
+      {
+        "lineNumber": 1347,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);"
+      },
+      {
+        "lineNumber": 1348,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                return (bool) propertyInfo.GetValue(this, null);"
+      },
+      {
+        "lineNumber": 1349,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 1350,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 1351,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        #endregion"
+      },
+      {
+        "lineNumber": 1352,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 1353,
         "author": {
           "gitId": "-"
         },
@@ -37775,8 +37873,8 @@
       }
     ],
     "authorContributionMap": {
-      "ChesterSng": 11,
-      "-": 1328
+      "ChesterSng": 26,
+      "-": 1327
     }
   },
   {
