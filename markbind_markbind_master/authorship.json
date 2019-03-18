@@ -21013,7 +21013,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  \"version\": \"1.20.0\","
+        "content": "  \"version\": \"1.21.0\","
       },
       {
         "lineNumber": 4,
@@ -78990,7 +78990,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  \"version\": \"1.20.0\","
+        "content": "  \"version\": \"1.21.0\","
       },
       {
         "lineNumber": 4,
@@ -93049,7 +93049,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  \"version\": \"1.20.0\","
+        "content": "  \"version\": \"1.21.0\","
       },
       {
         "lineNumber": 4,
@@ -114849,7 +114849,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  \"version\": \"1.20.0\","
+        "content": "  \"version\": \"1.21.0\","
       },
       {
         "lineNumber": 4,
@@ -115821,7 +115821,7 @@
         "author": {
           "gitId": "Xenonym"
         },
-        "content": "    /:(fa[brs]|glyphicon)-([a-z-]+):/m,"
+        "content": "    /:(fa[brs]|glyphicon)-([a-z-]+):/,"
       },
       {
         "lineNumber": 3,
@@ -124185,89 +124185,103 @@
       {
         "lineNumber": 162,
         "author": {
-          "gitId": "marvinchin"
+          "gitId": "-"
         },
-        "content": "/* Temporary Styles */"
+        "content": "/* Temporary Anti-FOUC Styles */"
       },
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "marvinchin"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "/* By default, some VueStrap components break the layout of the page before Vue is mounted, */"
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "marvinchin"
+          "gitId": "-"
         },
-        "content": ".temp-navbar {"
+        "content": "/* so we apply temporary styles to fix the layout until Vue correctly updates the DOM. */"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": "    display: flex;"
+        "content": ""
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": "}"
+        "content": ".temp-navbar {"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": ""
+        "content": "    display: flex;"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": ".temp-navbar li {"
+        "content": "}"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": "    display: block;"
+        "content": ""
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": "}"
+        "content": ".temp-navbar li {"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": ""
+        "content": "    display: block;"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": ".temp-dropdown {"
+        "content": "}"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "marvinchin"
         },
-        "content": "    display: none;"
+        "content": ""
       },
       {
         "lineNumber": 174,
+        "author": {
+          "gitId": "marvinchin"
+        },
+        "content": ".temp-dropdown {"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "marvinchin"
+        },
+        "content": "    display: none;"
+      },
+      {
+        "lineNumber": 176,
         "author": {
           "gitId": "marvinchin"
         },
@@ -124276,8 +124290,8 @@
     ],
     "authorContributionMap": {
       "Xenonym": 15,
-      "marvinchin": 14,
-      "-": 138,
+      "marvinchin": 13,
+      "-": 141,
       "luyangkenneth": 7
     }
   },
@@ -124968,9 +124982,9 @@
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "/*  Standard style order for links, see CSS2�5.11.3:"
+        "content": "/*  Standard style order for links, see CSS2§5.11.3:"
       },
       {
         "lineNumber": 34,
@@ -126437,8 +126451,8 @@
       }
     ],
     "authorContributionMap": {
-      "Xenonym": 29,
-      "-": 213
+      "Xenonym": 28,
+      "-": 214
     }
   },
   {
@@ -136434,6 +136448,259 @@
     ],
     "authorContributionMap": {
       "marvinchin": 59
+    }
+  },
+  {
+    "path": "test/unit/markdown-it-icons.test.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "const markdownIt \u003d require(\u0027markdown-it\u0027)()"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  .use(require(\u0027../../src/lib/markbind/src/lib/markdown-it/markdown-it-icons\u0027));"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "test(\u0027markdown-it-icons renders icon syntax correctly\u0027, () \u003d\u003e {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  const source \u003d \u0027:fab-font-awesome: :glyphicon-home:\u0027;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  const result \u003d markdownIt.renderInline(source);"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  const expected \u003d ["
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027\u003cspan aria-hidden\u003d\"true\" class\u003d\"fab fa-font-awesome\"\u003e\u003c/span\u003e\u0027,"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027\u003cspan aria-hidden\u003d\"true\" class\u003d\"glyphicon glyphicon-home\"\u003e\u003c/span\u003e\u0027,"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  ].join(\u0027 \u0027);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  expect(result).toEqual(expected);"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "});"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "test(\u0027markdown-it-icons renders icon syntax in multi-line source correctly\u0027, () \u003d\u003e {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  const source \u003d ["
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027text with special characters: before icons\u0027,"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027:fab-font-awesome:\u0027,"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027text with special characters: between icons\u0027,"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027:glyphicon-home:\u0027,"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027text with special characters: after icons\u0027,"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  ].join(\u0027\\n\u0027);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  const result \u003d markdownIt.renderInline(source);"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  const expected \u003d ["
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027text with special characters: before icons\u0027,"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027\u003cspan aria-hidden\u003d\"true\" class\u003d\"fab fa-font-awesome\"\u003e\u003c/span\u003e\u0027,"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027text with special characters: between icons\u0027,"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027\u003cspan aria-hidden\u003d\"true\" class\u003d\"glyphicon glyphicon-home\"\u003e\u003c/span\u003e\u0027,"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    \u0027text with special characters: after icons\u0027,"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  ].join(\u0027\\n\u0027);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "  expect(result).toEqual(expected);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "});"
+      }
+    ],
+    "authorContributionMap": {
+      "Xenonym": 35
     }
   },
   {
