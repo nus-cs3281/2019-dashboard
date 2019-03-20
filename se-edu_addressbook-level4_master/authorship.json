@@ -21,77 +21,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": "import static org.hamcrest.CoreMatchers.containsString;"
+        "content": "import static org.junit.Assert.assertFalse;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "-"
         },
-        "content": "import static org.hamcrest.MatcherAssert.assertThat;"
+        "content": "import static org.junit.Assert.assertTrue;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "-"
         },
-        "content": "import static org.junit.Assert.assertFalse;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "-"
         },
-        "content": "import static org.junit.Assert.assertTrue;"
+        "content": "import java.io.FileNotFoundException;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "import java.util.Optional;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "-"
         },
-        "content": "import java.io.FileNotFoundException;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "-"
         },
-        "content": "import java.util.Optional;"
+        "content": "import org.junit.Rule;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "import org.junit.Test;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "-"
         },
-        "content": "import org.junit.Rule;"
+        "content": "import org.junit.rules.ExpectedException;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
-        "content": "import org.junit.Test;"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
-        "content": "import org.junit.rules.ExpectedException;"
+        "content": "public class StringUtilTest {"
       },
       {
         "lineNumber": 14,
@@ -105,28 +105,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "public class StringUtilTest {"
+        "content": "    @Rule"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public ExpectedException thrown \u003d ExpectedException.none();"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Rule"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "-"
+          "gitId": "sijie123"
         },
-        "content": "    public ExpectedException thrown \u003d ExpectedException.none();"
+        "content": "    //---------------- Tests for isNonZeroUnsignedInteger --------------------------------------"
       },
       {
         "lineNumber": 19,
@@ -138,247 +138,247 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "sijie123"
-        },
-        "content": "    //---------------- Tests for isNonZeroUnsignedInteger --------------------------------------"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 22,
-        "author": {
           "gitId": "-"
         },
         "content": "    @Test"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 21,
         "author": {
           "gitId": "sijie123"
         },
         "content": "    public void isNonZeroUnsignedInteger() {"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: empty strings"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"\")); // Boundary value"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"  \"));"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: not a number"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"a\"));"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"aaa\"));"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: zero"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"0\"));"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: zero as prefix"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
         "content": "        assertTrue(StringUtil.isNonZeroUnsignedInteger(\"01\"));"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: signed numbers"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"-1\"));"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"+1\"));"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: numbers with white space"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\" 10 \")); // Leading/trailing spaces"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(\"1 0\")); // Spaces in the middle"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: number larger than Integer.MAX_VALUE"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
         "content": "        assertFalse(StringUtil.isNonZeroUnsignedInteger(Long.toString(Integer.MAX_VALUE + 1)));"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
         "content": "        // EP: valid numbers, should return true"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
         "content": "        assertTrue(StringUtil.isNonZeroUnsignedInteger(\"1\")); // Boundary value"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
         "content": "        assertTrue(StringUtil.isNonZeroUnsignedInteger(\"10\"));"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //---------------- Tests for containsWordIgnoreCase --------------------------------------"
       },
       {
         "lineNumber": 55,
@@ -392,581 +392,581 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    //---------------- Tests for containsWordIgnoreCase --------------------------------------"
+        "content": "    /*"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Invalid equivalence partitions for word: null, empty, multiple words"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "    /*"
+        "content": "     * Invalid equivalence partitions for sentence: null"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Invalid equivalence partitions for word: null, empty, multiple words"
+        "content": "     * The four test cases below test one invalid input at a time."
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Invalid equivalence partitions for sentence: null"
+        "content": "     */"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "     * The four test cases below test one invalid input at a time."
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    @Test"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void containsWordIgnoreCase_nullWord_throwsNullPointerException() {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        assertExceptionThrown(NullPointerException.class, \"typical sentence\", null, Optional.empty());"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void containsWordIgnoreCase_nullWord_throwsNullPointerException() {"
+        "content": "    }"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertExceptionThrown(NullPointerException.class, \"typical sentence\", null, Optional.empty());"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    private void assertExceptionThrown(Class\u003c? extends Throwable\u003e exceptionClass, String sentence, String word,"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            Optional\u003cString\u003e errorMessage) {"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void assertExceptionThrown(Class\u003c? extends Throwable\u003e exceptionClass, String sentence, String word,"
+        "content": "        thrown.expect(exceptionClass);"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "            Optional\u003cString\u003e errorMessage) {"
+        "content": "        errorMessage.ifPresent(message -\u003e thrown.expectMessage(message));"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "        thrown.expect(exceptionClass);"
+        "content": "        StringUtil.containsWordIgnoreCase(sentence, word);"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "        errorMessage.ifPresent(message -\u003e thrown.expectMessage(message));"
+        "content": "    }"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "        StringUtil.containsWordIgnoreCase(sentence, word);"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void containsWordIgnoreCase_emptyWord_throwsIllegalArgumentException() {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        assertExceptionThrown(IllegalArgumentException.class, \"typical sentence\", \"  \","
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void containsWordIgnoreCase_emptyWord_throwsIllegalArgumentException() {"
+        "content": "                Optional.of(\"Word parameter cannot be empty\"));"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertExceptionThrown(IllegalArgumentException.class, \"typical sentence\", \"  \","
+        "content": "    }"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "                Optional.of(\"Word parameter cannot be empty\"));"
+        "content": ""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void containsWordIgnoreCase_multipleWords_throwsIllegalArgumentException() {"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        assertExceptionThrown(IllegalArgumentException.class, \"typical sentence\", \"aaa BBB\","
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void containsWordIgnoreCase_multipleWords_throwsIllegalArgumentException() {"
+        "content": "                Optional.of(\"Word parameter should be a single word\"));"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertExceptionThrown(IllegalArgumentException.class, \"typical sentence\", \"aaa BBB\","
+        "content": "    }"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "                Optional.of(\"Word parameter should be a single word\"));"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void containsWordIgnoreCase_nullSentence_throwsNullPointerException() {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        assertExceptionThrown(NullPointerException.class, null, \"abc\", Optional.empty());"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void containsWordIgnoreCase_nullSentence_throwsNullPointerException() {"
+        "content": "    }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertExceptionThrown(NullPointerException.class, null, \"abc\", Optional.empty());"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    /*"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Valid equivalence partitions for word:"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "    /*"
+        "content": "     *   - any word"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Valid equivalence partitions for word:"
+        "content": "     *   - word containing symbols/numbers"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - any word"
+        "content": "     *   - word with leading/trailing spaces"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - word containing symbols/numbers"
+        "content": "     *"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - word with leading/trailing spaces"
+        "content": "     * Valid equivalence partitions for sentence:"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "     *   - empty string"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Valid equivalence partitions for sentence:"
+        "content": "     *   - one word"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - empty string"
+        "content": "     *   - multiple words"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - one word"
+        "content": "     *   - sentence with extra spaces"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - multiple words"
+        "content": "     *"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - sentence with extra spaces"
+        "content": "     * Possible scenarios returning true:"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "     *   - matches first word in sentence"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Possible scenarios returning true:"
+        "content": "     *   - last word in sentence"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - matches first word in sentence"
+        "content": "     *   - middle word in sentence"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - last word in sentence"
+        "content": "     *   - matches multiple words"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - middle word in sentence"
+        "content": "     *"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - matches multiple words"
+        "content": "     * Possible scenarios returning false:"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "     *   - query word matches part of a sentence word"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Possible scenarios returning false:"
+        "content": "     *   - sentence word matches part of the query word"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - query word matches part of a sentence word"
+        "content": "     *"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "     *   - sentence word matches part of the query word"
+        "content": "     * The test method below tries to verify all above with a reasonably low number of test cases."
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "     */"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "     * The test method below tries to verify all above with a reasonably low number of test cases."
+        "content": ""
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    @Test"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void containsWordIgnoreCase_validInputs_correctResult() {"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void containsWordIgnoreCase_validInputs_correctResult() {"
+        "content": "        // Empty sentence"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"\", \"abc\")); // Boundary case"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Empty sentence"
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"    \", \"123\"));"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"\", \"abc\")); // Boundary case"
+        "content": ""
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"    \", \"123\"));"
+        "content": "        // Matches a partial word only"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"bb\")); // Sentence word bigger than query word"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Matches a partial word only"
+        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"bbbb\")); // Query word bigger than sentence word"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"bb\")); // Sentence word bigger than query word"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertFalse(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"bbbb\")); // Query word bigger than sentence word"
+        "content": "        // Matches word in the sentence, different upper/lower case letters"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bBb ccc\", \"Bbb\")); // First word (boundary case)"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Matches word in the sentence, different upper/lower case letters"
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bBb ccc@1\", \"CCc@1\")); // Last word (boundary case)"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bBb ccc\", \"Bbb\")); // First word (boundary case)"
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"  AAA   bBb   ccc  \", \"aaa\")); // Sentence has extra spaces"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bBb ccc@1\", \"CCc@1\")); // Last word (boundary case)"
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"Aaa\", \"aaa\")); // Only one word in sentence (boundary case)"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"  AAA   bBb   ccc  \", \"aaa\")); // Sentence has extra spaces"
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"  ccc  \")); // Leading/trailing spaces"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"Aaa\", \"aaa\")); // Only one word in sentence (boundary case)"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"aaa bbb ccc\", \"  ccc  \")); // Leading/trailing spaces"
+        "content": "        // Matches multiple words in sentence"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"AAA bBb ccc  bbb\", \"bbB\"));"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Matches multiple words in sentence"
+        "content": "    }"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertTrue(StringUtil.containsWordIgnoreCase(\"AAA bBb ccc  bbb\", \"bbB\"));"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    //---------------- Tests for getDetails --------------------------------------"
       },
       {
         "lineNumber": 139,
@@ -980,136 +980,122 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    //---------------- Tests for getDetails --------------------------------------"
+        "content": "    /*"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Equivalence Partitions: null, valid throwable object"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "    /*"
+        "content": "     */"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Equivalence Partitions: null, valid throwable object"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    @Test"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void getDetails_exceptionGiven() {"
       },
       {
         "lineNumber": 146,
         "author": {
-          "gitId": "-"
+          "gitId": "sijie123"
         },
-        "content": "    @Test"
+        "content": "        assertTrue(StringUtil.getDetails(new FileNotFoundException(\"file not found\"))"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "-"
+          "gitId": "sijie123"
         },
-        "content": "    public void getDetails_exceptionGiven() {"
+        "content": "            .contains(\"java.io.FileNotFoundException: file not found\"));"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "        assertThat(StringUtil.getDetails(new FileNotFoundException(\"file not found\")),"
+        "content": "    }"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "                   containsString(\"java.io.FileNotFoundException: file not found\"));"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void getDetails_nullGiven_throwsNullPointerException() {"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        thrown.expect(NullPointerException.class);"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void getDetails_nullGiven_throwsNullPointerException() {"
+        "content": "        StringUtil.getDetails(null);"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "        thrown.expect(NullPointerException.class);"
+        "content": "    }"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "        StringUtil.getDetails(null);"
+        "content": ""
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 157,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 158,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
@@ -1117,8 +1103,8 @@
       }
     ],
     "authorContributionMap": {
-      "-": 157,
-      "sijie123": 2
+      "-": 153,
+      "sijie123": 4
     }
   }
 ]

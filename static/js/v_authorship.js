@@ -1,4 +1,11 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const filesSortDict = {
+  lineOfCode: (file) => file.lineCount,
+  path: (file) => file.path,
+  fileName: (file) => file.path.split(/[/]+/).pop(),
+  fileType: (file) => file.path.split(/[/]+/).pop().split(/[.]+/).pop(),
+};
+
 window.toggleNext = function toggleNext(ele) {
   // function for toggling unopened code
   const targetClass = 'active';
@@ -32,9 +39,21 @@ window.vAuthorship = {
       filesBlankLinesObj: {},
       totalLineCount: '',
       totalBlankLineCount: '',
+      filesSortType: 'lineOfCode',
+      toReverseSortFiles: false,
       activeFilesCount: 0,
       filterSearch: '*',
+      sortingFunction: window.comparator(filesSortDict.lineOfCode),
     };
+  },
+
+  watch: {
+    filesSortType() {
+      this.sortFiles();
+    },
+    toReverseSortFiles() {
+      this.sortFiles();
+    },
   },
 
   methods: {
@@ -186,6 +205,11 @@ window.vAuthorship = {
       filesInfoObj[fileFormat] += lineCount;
     },
 
+    sortFiles() {
+      this.sortingFunction = (a, b) => (this.toReverseSortFiles ? -1 : 1)
+          * window.comparator(filesSortDict[this.filesSortType])(a, b);
+    },
+
     selectAll() {
       if (!this.isSelectAllChecked) {
         this.selectedFileFormats = this.fileFormats.slice();
@@ -278,8 +302,10 @@ window.vAuthorship = {
 
   computed: {
     selectedFiles() {
-      return this.files.filter((file) => this.isSelected(file.path)
-          && minimatch(file.path, this.filterSearch, { matchBase: true }));
+      return this.files
+          .filter((file) => this.isSelected(file.path)
+              && minimatch(file.path, this.filterSearch, { matchBase: true }))
+          .sort(this.sortingFunction);
     },
     getExistingLinesObj() {
       return Object.keys(this.filesLinesObj)
