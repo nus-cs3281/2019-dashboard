@@ -1,5 +1,3156 @@
 [
   {
+    "path": "dist/kjua.min.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "/*! kjua v0.2.0 - https://larsjung.de/kjua/ */"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "!function(r,t){\"object\"\u003d\u003dtypeof exports\u0026\u0026\"object\"\u003d\u003dtypeof module?module.exports\u003dt():\"function\"\u003d\u003dtypeof define\u0026\u0026define.amd?define([],t):\"object\"\u003d\u003dtypeof exports?exports.kjua\u003dt():r.kjua\u003dt()}(this,function(){return function(r){function t(n){if(e[n])return e[n].exports;var o\u003de[n]\u003d{exports:{},id:n,loaded:!1};return r[n].call(o.exports,o,o.exports,t),o.loaded\u003d!0,o.exports}var e\u003d{};return t.m\u003dr,t.c\u003de,t.p\u003d\"\",t(0)}([function(r,t,e){\"use strict\";var n\u003de(1),o\u003dn.create_canvas,i\u003dn.canvas_to_img,a\u003dn.dpr,u\u003de(2),f\u003de(3),c\u003de(4);r.exports\u003dfunction(r){var t\u003dObject.assign({},u,r),e\u003df(t.text,t.ecLevel,t.minVersion,t.quiet),n\u003dt.ratio||a,l\u003do(t.size,n),s\u003dl.getContext(\"2d\");return s.scale(n,n),c(e,s,t),\"image\"\u003d\u003d\u003dt.render?i(l):l}},function(r,t){\"use strict\";var e\u003dwindow,n\u003de.document,o\u003de.devicePixelRatio||1,i\u003dfunction(r){return n.createElement(r)},a\u003dfunction(r,t){return r.getAttribute(t)},u\u003dfunction(r,t,e){return r.setAttribute(t,e)},f\u003dfunction(r,t){var e\u003di(\"canvas\");return u(e,\"width\",r*t),u(e,\"height\",r*t),e.style.width\u003dr+\"px\",e.style.height\u003dr+\"px\",e},c\u003dfunction(r){var t\u003di(\"img\");return u(t,\"crossorigin\",\"anonymous\"),u(t,\"src\",r.toDataURL(\"image/png\")),u(t,\"width\",a(r,\"width\")),u(t,\"height\",a(r,\"height\")),t.style.width\u003dr.style.width,t.style.height\u003dr.style.height,t};r.exports\u003d{create_canvas:f,canvas_to_img:c,dpr:o}},function(r,t){\"use strict\";r.exports\u003d{render:\"image\",crisp:!0,minVersion:1,ecLevel:\"L\",size:200,ratio:null,fill:\"#333\",back:\"#fff\",text:\"no text\",rounded:0,quiet:0,mode:\"plain\",mSize:30,mPosX:50,mPosY:50,label:\"no label\",fontname:\"sans\",fontcolor:\"#333\",image:null}},function(r,t){\"use strict\";var e\u003d\"function\"\u003d\u003dtypeof Symbol\u0026\u0026\"symbol\"\u003d\u003dtypeof Symbol.iterator?function(r){return typeof r}:function(r){return r\u0026\u0026\"function\"\u003d\u003dtypeof Symbol\u0026\u0026r.constructor\u003d\u003d\u003dSymbol\u0026\u0026r!\u003d\u003dSymbol.prototype?\"symbol\":typeof r},n\u003d/code length overflow/i,o\u003dfunction(){var e\u003dfunction(){function r(t,e){if(\"undefined\"\u003d\u003dtypeof t.length)throw new Error(t.length+\"/\"+e);var n\u003dfunction(){for(var r\u003d0;r\u003ct.length\u0026\u00260\u003d\u003dt[r];)r+\u003d1;for(var n\u003dnew Array(t.length-r+e),o\u003d0;o\u003ct.length-r;o+\u003d1)n[o]\u003dt[o+r];return n}(),o\u003d{};return o.getAt\u003dfunction(r){return n[r]},o.getLength\u003dfunction(){return n.length},o.multiply\u003dfunction(t){for(var e\u003dnew Array(o.getLength()+t.getLength()-1),n\u003d0;n\u003co.getLength();n+\u003d1)for(var i\u003d0;i\u003ct.getLength();i+\u003d1)e[n+i]^\u003da.gexp(a.glog(o.getAt(n))+a.glog(t.getAt(i)));return r(e,0)},o.mod\u003dfunction(t){if(o.getLength()-t.getLength()\u003c0)return o;for(var e\u003da.glog(o.getAt(0))-a.glog(t.getAt(0)),n\u003dnew Array(o.getLength()),i\u003d0;i\u003co.getLength();i+\u003d1)n[i]\u003do.getAt(i);for(var i\u003d0;i\u003ct.getLength();i+\u003d1)n[i]^\u003da.gexp(a.glog(t.getAt(i))+e);return r(n,0).mod(t)},o}var t\u003dfunction(t,e){var o\u003d236,a\u003d17,l\u003dt,s\u003dn[e],g\u003dnull,h\u003d0,d\u003dnull,w\u003dnew Array,y\u003d{},p\u003dfunction(r,t){h\u003d4*l+17,g\u003dfunction(r){for(var t\u003dnew Array(r),e\u003d0;e\u003cr;e+\u003d1){t[e]\u003dnew Array(r);for(var n\u003d0;n\u003cr;n+\u003d1)t[e][n]\u003dnull}return t}(h),m(0,0),m(h-7,0),m(0,h-7),E(),B(),M(r,t),l\u003e\u003d7\u0026\u0026T(r),null\u003d\u003dd\u0026\u0026(d\u003dx(l,s,w)),b(d,t)},m\u003dfunction(r,t){for(var e\u003d-1;e\u003c\u003d7;e+\u003d1)if(!(r+e\u003c\u003d-1||h\u003c\u003dr+e))for(var n\u003d-1;n\u003c\u003d7;n+\u003d1)t+n\u003c\u003d-1||h\u003c\u003dt+n||(0\u003c\u003de\u0026\u0026e\u003c\u003d6\u0026\u0026(0\u003d\u003dn||6\u003d\u003dn)||0\u003c\u003dn\u0026\u0026n\u003c\u003d6\u0026\u0026(0\u003d\u003de||6\u003d\u003de)||2\u003c\u003de\u0026\u0026e\u003c\u003d4\u0026\u00262\u003c\u003dn\u0026\u0026n\u003c\u003d4?g[r+e][t+n]\u003d!0:g[r+e][t+n]\u003d!1)},A\u003dfunction(){for(var r\u003d0,t\u003d0,e\u003d0;e\u003c8;e+\u003d1){p(!0,e);var n\u003di.getLostPoint(y);(0\u003d\u003de||r\u003en)\u0026\u0026(r\u003dn,t\u003de)}return t},B\u003dfunction(){for(var r\u003d8;r\u003ch-8;r+\u003d1)null\u003d\u003dg[r][6]\u0026\u0026(g[r][6]\u003dr%2\u003d\u003d0);for(var t\u003d8;t\u003ch-8;t+\u003d1)null\u003d\u003dg[6][t]\u0026\u0026(g[6][t]\u003dt%2\u003d\u003d0)},E\u003dfunction(){for(var r\u003di.getPatternPosition(l),t\u003d0;t\u003cr.length;t+\u003d1)for(var e\u003d0;e\u003cr.length;e+\u003d1){var n\u003dr[t],o\u003dr[e];if(null\u003d\u003dg[n][o])for(var a\u003d-2;a\u003c\u003d2;a+\u003d1)for(var u\u003d-2;u\u003c\u003d2;u+\u003d1)a\u003d\u003d-2||2\u003d\u003da||u\u003d\u003d-2||2\u003d\u003du||0\u003d\u003da\u0026\u00260\u003d\u003du?g[n+a][o+u]\u003d!0:g[n+a][o+u]\u003d!1}},T\u003dfunction(r){for(var t\u003di.getBCHTypeNumber(l),e\u003d0;e\u003c18;e+\u003d1){var n\u003d!r\u0026\u00261\u003d\u003d(t\u003e\u003ee\u00261);g[Math.floor(e/3)][e%3+h-8-3]\u003dn}for(var e\u003d0;e\u003c18;e+\u003d1){var n\u003d!r\u0026\u00261\u003d\u003d(t\u003e\u003ee\u00261);g[e%3+h-8-3][Math.floor(e/3)]\u003dn}},M\u003dfunction(r,t){for(var e\u003ds\u003c\u003c3|t,n\u003di.getBCHTypeInfo(e),o\u003d0;o\u003c15;o+\u003d1){var a\u003d!r\u0026\u00261\u003d\u003d(n\u003e\u003eo\u00261);o\u003c6?g[o][8]\u003da:o\u003c8?g[o+1][8]\u003da:g[h-15+o][8]\u003da}for(var o\u003d0;o\u003c15;o+\u003d1){var a\u003d!r\u0026\u00261\u003d\u003d(n\u003e\u003eo\u00261);o\u003c8?g[8][h-o-1]\u003da:o\u003c9?g[8][15-o-1+1]\u003da:g[8][15-o-1]\u003da}g[h-8][8]\u003d!r},b\u003dfunction(r,t){for(var e\u003d-1,n\u003dh-1,o\u003d7,a\u003d0,u\u003di.getMaskFunction(t),f\u003dh-1;f\u003e0;f-\u003d2)for(6\u003d\u003df\u0026\u0026(f-\u003d1);;){for(var c\u003d0;c\u003c2;c+\u003d1)if(null\u003d\u003dg[n][f-c]){var l\u003d!1;a\u003cr.length\u0026\u0026(l\u003d1\u003d\u003d(r[a]\u003e\u003e\u003eo\u00261));var s\u003du(n,f-c);s\u0026\u0026(l\u003d!l),g[n][f-c]\u003dl,o-\u003d1,o\u003d\u003d-1\u0026\u0026(a+\u003d1,o\u003d7)}if(n+\u003de,n\u003c0||h\u003c\u003dn){n-\u003de,e\u003d-e;break}}},k\u003dfunction(t,e){for(var n\u003d0,o\u003d0,a\u003d0,u\u003dnew Array(e.length),f\u003dnew Array(e.length),c\u003d0;c\u003ce.length;c+\u003d1){var l\u003de[c].dataCount,s\u003de[c].totalCount-l;o\u003dMath.max(o,l),a\u003dMath.max(a,s),u[c]\u003dnew Array(l);for(var g\u003d0;g\u003cu[c].length;g+\u003d1)u[c][g]\u003d255\u0026t.getBuffer()[g+n];n+\u003dl;var h\u003di.getErrorCorrectPolynomial(s),v\u003dr(u[c],h.getLength()-1),d\u003dv.mod(h);f[c]\u003dnew Array(h.getLength()-1);for(var g\u003d0;g\u003cf[c].length;g+\u003d1){var w\u003dg+d.getLength()-f[c].length;f[c][g]\u003dw\u003e\u003d0?d.getAt(w):0}}for(var y\u003d0,g\u003d0;g\u003ce.length;g+\u003d1)y+\u003de[g].totalCount;for(var p\u003dnew Array(y),m\u003d0,g\u003d0;g\u003co;g+\u003d1)for(var c\u003d0;c\u003ce.length;c+\u003d1)g\u003cu[c].length\u0026\u0026(p[m]\u003du[c][g],m+\u003d1);for(var g\u003d0;g\u003ca;g+\u003d1)for(var c\u003d0;c\u003ce.length;c+\u003d1)g\u003cf[c].length\u0026\u0026(p[m]\u003df[c][g],m+\u003d1);return p},x\u003dfunction(r,t,e){for(var n\u003du.getRSBlocks(r,t),c\u003df(),l\u003d0;l\u003ce.length;l+\u003d1){var s\u003de[l];c.put(s.getMode(),4),c.put(s.getLength(),i.getLengthInBits(s.getMode(),r)),s.write(c)}for(var g\u003d0,l\u003d0;l\u003cn.length;l+\u003d1)g+\u003dn[l].dataCount;if(c.getLengthInBits()\u003e8*g)throw new Error(\"code length overflow. (\"+c.getLengthInBits()+\"\u003e\"+8*g+\")\");for(c.getLengthInBits()+4\u003c\u003d8*g\u0026\u0026c.put(0,4);c.getLengthInBits()%8!\u003d0;)c.putBit(!1);for(;;){if(c.getLengthInBits()\u003e\u003d8*g)break;if(c.put(o,8),c.getLengthInBits()\u003e\u003d8*g)break;c.put(a,8)}return k(c,n)};return y.addData\u003dfunction(r){var t\u003dc(r);w.push(t),d\u003dnull},y.isDark\u003dfunction(r,t){if(r\u003c0||h\u003c\u003dr||t\u003c0||h\u003c\u003dt)throw new Error(r+\",\"+t);return g[r][t]},y.getModuleCount\u003dfunction(){return h},y.make\u003dfunction(){p(!1,A())},y.createTableTag\u003dfunction(r,t){r\u003dr||2,t\u003d\"undefined\"\u003d\u003dtypeof t?4*r:t;var e\u003d\"\";e+\u003d\u0027\u003ctable style\u003d\"\u0027,e+\u003d\" border-width: 0px; border-style: none;\",e+\u003d\" border-collapse: collapse;\",e+\u003d\" padding: 0px; margin: \"+t+\"px;\",e+\u003d\u0027\"\u003e\u0027,e+\u003d\"\u003ctbody\u003e\";for(var n\u003d0;n\u003cy.getModuleCount();n+\u003d1){e+\u003d\"\u003ctr\u003e\";for(var o\u003d0;o\u003cy.getModuleCount();o+\u003d1)e+\u003d\u0027\u003ctd style\u003d\"\u0027,e+\u003d\" border-width: 0px; border-style: none;\",e+\u003d\" border-collapse: collapse;\",e+\u003d\" padding: 0px; margin: 0px;\",e+\u003d\" width: \"+r+\"px;\",e+\u003d\" height: \"+r+\"px;\",e+\u003d\" background-color: \",e+\u003dy.isDark(n,o)?\"#000000\":\"#ffffff\",e+\u003d\";\",e+\u003d\u0027\"/\u003e\u0027;e+\u003d\"\u003c/tr\u003e\"}return e+\u003d\"\u003c/tbody\u003e\",e+\u003d\"\u003c/table\u003e\"},y.createImgTag\u003dfunction(r,t){r\u003dr||2,t\u003d\"undefined\"\u003d\u003dtypeof t?4*r:t;var e\u003dy.getModuleCount()*r+2*t,n\u003dt,o\u003de-t;return v(e,e,function(t,e){if(n\u003c\u003dt\u0026\u0026t\u003co\u0026\u0026n\u003c\u003de\u0026\u0026e\u003co){var i\u003dMath.floor((t-n)/r),a\u003dMath.floor((e-n)/r);return y.isDark(a,i)?0:1}return 1})},y};t.stringToBytes\u003dfunction(r){for(var t\u003dnew Array,e\u003d0;e\u003cr.length;e+\u003d1){var n\u003dr.charCodeAt(e);t.push(255\u0026n)}return t},t.createStringToBytes\u003dfunction(r,t){var e\u003dfunction(){for(var e\u003dg(r),n\u003dfunction(){var r\u003de.read();if(r\u003d\u003d-1)throw new Error;return r},o\u003d0,i\u003d{};;){var a\u003de.read();if(a\u003d\u003d-1)break;var u\u003dn(),f\u003dn(),c\u003dn(),l\u003dString.fromCharCode(a\u003c\u003c8|u),s\u003df\u003c\u003c8|c;i[l]\u003ds,o+\u003d1}if(o!\u003dt)throw new Error(o+\" !\u003d \"+t);return i}(),n\u003d\"?\".charCodeAt(0);return function(r){for(var t\u003dnew Array,o\u003d0;o\u003cr.length;o+\u003d1){var i\u003dr.charCodeAt(o);if(i\u003c128)t.push(i);else{var a\u003de[r.charAt(o)];\"number\"\u003d\u003dtypeof a?(255\u0026a)\u003d\u003da?t.push(a):(t.push(a\u003e\u003e\u003e8),t.push(255\u0026a)):t.push(n)}}return t}};var e\u003d{MODE_NUMBER:1,MODE_ALPHA_NUM:2,MODE_8BIT_BYTE:4,MODE_KANJI:8},n\u003d{L:1,M:0,Q:3,H:2},o\u003d{PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7},i\u003dfunction(){var t\u003d[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],n\u003d1335,i\u003d7973,u\u003d21522,f\u003d{},c\u003dfunction(r){for(var t\u003d0;0!\u003dr;)t+\u003d1,r\u003e\u003e\u003e\u003d1;return t};return f.getBCHTypeInfo\u003dfunction(r){for(var t\u003dr\u003c\u003c10;c(t)-c(n)\u003e\u003d0;)t^\u003dn\u003c\u003cc(t)-c(n);return(r\u003c\u003c10|t)^u},f.getBCHTypeNumber\u003dfunction(r){for(var t\u003dr\u003c\u003c12;c(t)-c(i)\u003e\u003d0;)t^\u003di\u003c\u003cc(t)-c(i);return r\u003c\u003c12|t},f.getPatternPosition\u003dfunction(r){return t[r-1]},f.getMaskFunction\u003dfunction(r){switch(r){case o.PATTERN000:return function(r,t){return(r+t)%2\u003d\u003d0};case o.PATTERN001:return function(r,t){return r%2\u003d\u003d0};case o.PATTERN010:return function(r,t){return t%3\u003d\u003d0};case o.PATTERN011:return function(r,t){return(r+t)%3\u003d\u003d0};case o.PATTERN100:return function(r,t){return(Math.floor(r/2)+Math.floor(t/3))%2\u003d\u003d0};case o.PATTERN101:return function(r,t){return r*t%2+r*t%3\u003d\u003d0};case o.PATTERN110:return function(r,t){return(r*t%2+r*t%3)%2\u003d\u003d0};case o.PATTERN111:return function(r,t){return(r*t%3+(r+t)%2)%2\u003d\u003d0};default:throw new Error(\"bad maskPattern:\"+r)}},f.getErrorCorrectPolynomial\u003dfunction(t){for(var e\u003dr([1],0),n\u003d0;n\u003ct;n+\u003d1)e\u003de.multiply(r([1,a.gexp(n)],0));return e},f.getLengthInBits\u003dfunction(r,t){if(1\u003c\u003dt\u0026\u0026t\u003c10)switch(r){case e.MODE_NUMBER:return 10;case e.MODE_ALPHA_NUM:return 9;case e.MODE_8BIT_BYTE:return 8;case e.MODE_KANJI:return 8;default:throw new Error(\"mode:\"+r)}else if(t\u003c27)switch(r){case e.MODE_NUMBER:return 12;case e.MODE_ALPHA_NUM:return 11;case e.MODE_8BIT_BYTE:return 16;case e.MODE_KANJI:return 10;default:throw new Error(\"mode:\"+r)}else{if(!(t\u003c41))throw new Error(\"type:\"+t);switch(r){case e.MODE_NUMBER:return 14;case e.MODE_ALPHA_NUM:return 13;case e.MODE_8BIT_BYTE:return 16;case e.MODE_KANJI:return 12;default:throw new Error(\"mode:\"+r)}}},f.getLostPoint\u003dfunction(r){for(var t\u003dr.getModuleCount(),e\u003d0,n\u003d0;n\u003ct;n+\u003d1)for(var o\u003d0;o\u003ct;o+\u003d1){for(var i\u003d0,a\u003dr.isDark(n,o),u\u003d-1;u\u003c\u003d1;u+\u003d1)if(!(n+u\u003c0||t\u003c\u003dn+u))for(var f\u003d-1;f\u003c\u003d1;f+\u003d1)o+f\u003c0||t\u003c\u003do+f||0\u003d\u003du\u0026\u00260\u003d\u003df||a\u003d\u003dr.isDark(n+u,o+f)\u0026\u0026(i+\u003d1);i\u003e5\u0026\u0026(e+\u003d3+i-5)}for(var n\u003d0;n\u003ct-1;n+\u003d1)for(var o\u003d0;o\u003ct-1;o+\u003d1){var c\u003d0;r.isDark(n,o)\u0026\u0026(c+\u003d1),r.isDark(n+1,o)\u0026\u0026(c+\u003d1),r.isDark(n,o+1)\u0026\u0026(c+\u003d1),r.isDark(n+1,o+1)\u0026\u0026(c+\u003d1),0!\u003dc\u0026\u00264!\u003dc||(e+\u003d3)}for(var n\u003d0;n\u003ct;n+\u003d1)for(var o\u003d0;o\u003ct-6;o+\u003d1)r.isDark(n,o)\u0026\u0026!r.isDark(n,o+1)\u0026\u0026r.isDark(n,o+2)\u0026\u0026r.isDark(n,o+3)\u0026\u0026r.isDark(n,o+4)\u0026\u0026!r.isDark(n,o+5)\u0026\u0026r.isDark(n,o+6)\u0026\u0026(e+\u003d40);for(var o\u003d0;o\u003ct;o+\u003d1)for(var n\u003d0;n\u003ct-6;n+\u003d1)r.isDark(n,o)\u0026\u0026!r.isDark(n+1,o)\u0026\u0026r.isDark(n+2,o)\u0026\u0026r.isDark(n+3,o)\u0026\u0026r.isDark(n+4,o)\u0026\u0026!r.isDark(n+5,o)\u0026\u0026r.isDark(n+6,o)\u0026\u0026(e+\u003d40);for(var l\u003d0,o\u003d0;o\u003ct;o+\u003d1)for(var n\u003d0;n\u003ct;n+\u003d1)r.isDark(n,o)\u0026\u0026(l+\u003d1);var s\u003dMath.abs(100*l/t/t-50)/5;return e+\u003d10*s},f}(),a\u003dfunction(){for(var r\u003dnew Array(256),t\u003dnew Array(256),e\u003d0;e\u003c8;e+\u003d1)r[e]\u003d1\u003c\u003ce;for(var e\u003d8;e\u003c256;e+\u003d1)r[e]\u003dr[e-4]^r[e-5]^r[e-6]^r[e-8];for(var e\u003d0;e\u003c255;e+\u003d1)t[r[e]]\u003de;var n\u003d{};return n.glog\u003dfunction(r){if(r\u003c1)throw new Error(\"glog(\"+r+\")\");return t[r]},n.gexp\u003dfunction(t){for(;t\u003c0;)t+\u003d255;for(;t\u003e\u003d256;)t-\u003d255;return r[t]},n}(),u\u003dfunction(){var r\u003d[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],t\u003dfunction(r,t){var e\u003d{};return e.totalCount\u003dr,e.dataCount\u003dt,e},e\u003d{},o\u003dfunction(t,e){switch(e){case n.L:return r[4*(t-1)+0];case n.M:return r[4*(t-1)+1];case n.Q:return r[4*(t-1)+2];case n.H:return r[4*(t-1)+3];default:return}};return e.getRSBlocks\u003dfunction(r,e){var n\u003do(r,e);if(\"undefined\"\u003d\u003dtypeof n)throw new Error(\"bad rs block @ typeNumber:\"+r+\"/errorCorrectLevel:\"+e);for(var i\u003dn.length/3,a\u003dnew Array,u\u003d0;u\u003ci;u+\u003d1)for(var f\u003dn[3*u+0],c\u003dn[3*u+1],l\u003dn[3*u+2],s\u003d0;s\u003cf;s+\u003d1)a.push(t(c,l));return a},e}(),f\u003dfunction(){var r\u003dnew Array,t\u003d0,e\u003d{};return e.getBuffer\u003dfunction(){return r},e.getAt\u003dfunction(t){var e\u003dMath.floor(t/8);return 1\u003d\u003d(r[e]\u003e\u003e\u003e7-t%8\u00261)},e.put\u003dfunction(r,t){for(var n\u003d0;n\u003ct;n+\u003d1)e.putBit(1\u003d\u003d(r\u003e\u003e\u003et-n-1\u00261))},e.getLengthInBits\u003dfunction(){return t},e.putBit\u003dfunction(e){var n\u003dMath.floor(t/8);r.length\u003c\u003dn\u0026\u0026r.push(0),e\u0026\u0026(r[n]|\u003d128\u003e\u003e\u003et%8),t+\u003d1},e},c\u003dfunction(r){var n\u003de.MODE_8BIT_BYTE,o\u003dt.stringToBytes(r),i\u003d{};return i.getMode\u003dfunction(){return n},i.getLength\u003dfunction(r){return o.length},i.write\u003dfunction(r){for(var t\u003d0;t\u003co.length;t+\u003d1)r.put(o[t],8)},i},l\u003dfunction(){var r\u003dnew Array,t\u003d{};return t.writeByte\u003dfunction(t){r.push(255\u0026t)},t.writeShort\u003dfunction(r){t.writeByte(r),t.writeByte(r\u003e\u003e\u003e8)},t.writeBytes\u003dfunction(r,e,n){e\u003de||0,n\u003dn||r.length;for(var o\u003d0;o\u003cn;o+\u003d1)t.writeByte(r[o+e])},t.writeString\u003dfunction(r){for(var e\u003d0;e\u003cr.length;e+\u003d1)t.writeByte(r.charCodeAt(e))},t.toByteArray\u003dfunction(){return r},t.toString\u003dfunction(){var t\u003d\"\";t+\u003d\"[\";for(var e\u003d0;e\u003cr.length;e+\u003d1)e\u003e0\u0026\u0026(t+\u003d\",\"),t+\u003dr[e];return t+\u003d\"]\"},t},s\u003dfunction(){var r\u003d0,t\u003d0,e\u003d0,n\u003d\"\",o\u003d{},i\u003dfunction(r){n+\u003dString.fromCharCode(a(63\u0026r))},a\u003dfunction(r){if(r\u003c0);else{if(r\u003c26)return 65+r;if(r\u003c52)return 97+(r-26);if(r\u003c62)return 48+(r-52);if(62\u003d\u003dr)return 43;if(63\u003d\u003dr)return 47}throw new Error(\"n:\"+r)};return o.writeByte\u003dfunction(n){for(r\u003dr\u003c\u003c8|255\u0026n,t+\u003d8,e+\u003d1;t\u003e\u003d6;)i(r\u003e\u003e\u003et-6),t-\u003d6},o.flush\u003dfunction(){if(t\u003e0\u0026\u0026(i(r\u003c\u003c6-t),r\u003d0,t\u003d0),e%3!\u003d0)for(var o\u003d3-e%3,a\u003d0;a\u003co;a+\u003d1)n+\u003d\"\u003d\"},o.toString\u003dfunction(){return n},o},g\u003dfunction(r){var t\u003dr,e\u003d0,n\u003d0,o\u003d0,i\u003d{};i.read\u003dfunction(){for(;o\u003c8;){if(e\u003e\u003dt.length){if(0\u003d\u003do)return-1;throw new Error(\"unexpected end of file./\"+o)}var r\u003dt.charAt(e);if(e+\u003d1,\"\u003d\"\u003d\u003dr)return o\u003d0,-1;r.match(/^\\s$/)||(n\u003dn\u003c\u003c6|a(r.charCodeAt(0)),o+\u003d6)}var i\u003dn\u003e\u003e\u003eo-8\u0026255;return o-\u003d8,i};var a\u003dfunction(r){if(65\u003c\u003dr\u0026\u0026r\u003c\u003d90)return r-65;if(97\u003c\u003dr\u0026\u0026r\u003c\u003d122)return r-97+26;if(48\u003c\u003dr\u0026\u0026r\u003c\u003d57)return r-48+52;if(43\u003d\u003dr)return 62;if(47\u003d\u003dr)return 63;throw new Error(\"c:\"+r)};return i},h\u003dfunction(r,t){var e\u003dr,n\u003dt,o\u003dnew Array(r*t),i\u003d{};i.setPixel\u003dfunction(r,t,n){o[t*e+r]\u003dn},i.write\u003dfunction(r){r.writeString(\"GIF87a\"),r.writeShort(e),r.writeShort(n),r.writeByte(128),r.writeByte(0),r.writeByte(0),r.writeByte(0),r.writeByte(0),r.writeByte(0),r.writeByte(255),r.writeByte(255),r.writeByte(255),r.writeString(\",\"),r.writeShort(0),r.writeShort(0),r.writeShort(e),r.writeShort(n),r.writeByte(0);var t\u003d2,o\u003du(t);r.writeByte(t);for(var i\u003d0;o.length-i\u003e255;)r.writeByte(255),r.writeBytes(o,i,255),i+\u003d255;r.writeByte(o.length-i),r.writeBytes(o,i,o.length-i),r.writeByte(0),r.writeString(\";\")};var a\u003dfunction(r){var t\u003dr,e\u003d0,n\u003d0,o\u003d{};return o.write\u003dfunction(r,o){if(r\u003e\u003e\u003eo!\u003d0)throw new Error(\"length over\");for(;e+o\u003e\u003d8;)t.writeByte(255\u0026(r\u003c\u003ce|n)),o-\u003d8-e,r\u003e\u003e\u003e\u003d8-e,n\u003d0,e\u003d0;n|\u003dr\u003c\u003ce,e+\u003do},o.flush\u003dfunction(){e\u003e0\u0026\u0026t.writeByte(n)},o},u\u003dfunction(r){for(var t\u003d1\u003c\u003cr,e\u003d(1\u003c\u003cr)+1,n\u003dr+1,i\u003df(),u\u003d0;u\u003ct;u+\u003d1)i.add(String.fromCharCode(u));i.add(String.fromCharCode(t)),i.add(String.fromCharCode(e));var c\u003dl(),s\u003da(c);s.write(t,n);var g\u003d0,h\u003dString.fromCharCode(o[g]);for(g+\u003d1;g\u003co.length;){var v\u003dString.fromCharCode(o[g]);g+\u003d1,i.contains(h+v)?h+\u003dv:(s.write(i.indexOf(h),n),i.size()\u003c4095\u0026\u0026(i.size()\u003d\u003d1\u003c\u003cn\u0026\u0026(n+\u003d1),i.add(h+v)),h\u003dv)}return s.write(i.indexOf(h),n),s.write(e,n),s.flush(),c.toByteArray()},f\u003dfunction(){var r\u003d{},t\u003d0,e\u003d{};return e.add\u003dfunction(n){if(e.contains(n))throw new Error(\"dup key:\"+n);r[n]\u003dt,t+\u003d1},e.size\u003dfunction(){return t},e.indexOf\u003dfunction(t){return r[t]},e.contains\u003dfunction(t){return\"undefined\"!\u003dtypeof r[t]},e};return i},v\u003dfunction(r,t,e,n){for(var o\u003dh(r,t),i\u003d0;i\u003ct;i+\u003d1)for(var a\u003d0;a\u003cr;a+\u003d1)o.setPixel(a,i,e(a,i));var u\u003dl();o.write(u);for(var f\u003ds(),c\u003du.toByteArray(),g\u003d0;g\u003cc.length;g+\u003d1)f.writeByte(c[g]);f.flush();var v\u003d\"\";return v+\u003d\"\u003cimg\",v+\u003d\u0027 src\u003d\"\u0027,v+\u003d\"data:image/gif;base64,\",v+\u003df,v+\u003d\u0027\"\u0027,v+\u003d\u0027 width\u003d\"\u0027,v+\u003dr,v+\u003d\u0027\"\u0027,v+\u003d\u0027 height\u003d\"\u0027,v+\u003dt,v+\u003d\u0027\"\u0027,n\u0026\u0026(v+\u003d\u0027 alt\u003d\"\u0027,v+\u003dn,v+\u003d\u0027\"\u0027),v+\u003d\"/\u003e\"};return t}();return function(e){\"function\"\u003d\u003dtypeof define\u0026\u0026define.amd?define([],e):\"object\"\u003d\u003dtypeof t\u0026\u0026(r.exports\u003de())}(function(){return e}),!function(r){r.stringToBytes\u003dfunction(r){function t(r){for(var t\u003d[],e\u003d0;e\u003cr.length;e++){var n\u003dr.charCodeAt(e);n\u003c128?t.push(n):n\u003c2048?t.push(192|n\u003e\u003e6,128|63\u0026n):n\u003c55296||n\u003e\u003d57344?t.push(224|n\u003e\u003e12,128|n\u003e\u003e6\u002663,128|63\u0026n):(e++,n\u003d65536+((1023\u0026n)\u003c\u003c10|1023\u0026r.charCodeAt(e)),t.push(240|n\u003e\u003e18,128|n\u003e\u003e12\u002663,128|n\u003e\u003e6\u002663,128|63\u0026n))}return t}return t(r)}}(e),e}(),i\u003dfunction(r,t){var i\u003darguments.length\u003e2\u0026\u0026void 0!\u003d\u003darguments[2]?arguments[2]:1;i\u003dMath.max(1,i);for(var a\u003di;a\u003c\u003d40;a+\u003d1)try{var u\u003dfunction(){var e\u003do(a,t);e.addData(r),e.make();var n\u003de.getModuleCount(),i\u003dfunction(r,t){return r\u003e\u003d0\u0026\u0026r\u003cn\u0026\u0026t\u003e\u003d0\u0026\u0026t\u003cn\u0026\u0026e.isDark(r,t)};return{v:{text:r,level:t,version:a,moduleCount:n,isDark:i}}}();if(\"object\"\u003d\u003d\u003d(\"undefined\"\u003d\u003dtypeof u?\"undefined\":e(u)))return u.v}catch(r){if(!(a\u003c40\u0026\u0026n.test(r.message)))throw r}return null},a\u003dfunction(){var r\u003darguments.length\u003e0\u0026\u0026void 0!\u003d\u003darguments[0]?arguments[0]:\"\",t\u003darguments.length\u003e1\u0026\u0026void 0!\u003d\u003darguments[1]?arguments[1]:\"L\",e\u003darguments.length\u003e2\u0026\u0026void 0!\u003d\u003darguments[2]?arguments[2]:1,n\u003darguments.length\u003e3\u0026\u0026void 0!\u003d\u003darguments[3]?arguments[3]:0,o\u003di(r,t,e);if(o){var a\u003do.isDark;o.moduleCount+\u003d2*n,o.isDark\u003dfunction(r,t){return a(r-n,t-n)}}return o};r.exports\u003da},function(r,t,e){\"use strict\";var n\u003de(5),o\u003de(6),i\u003dfunction(r,t){r.fillStyle\u003dt.back,r.fillRect(0,0,t.size,t.size)},a\u003dfunction(r,t,e,n,o,i){r.isDark(o,i)\u0026\u0026t.rect(i*n,o*n,n,n)},u\u003dfunction(r,t,e){if(r){var o\u003de.rounded\u003e0\u0026\u0026e.rounded\u003c\u003d100?n:a,i\u003dr.moduleCount,u\u003de.size/i,f\u003d0;e.crisp\u0026\u0026(u\u003dMath.floor(u),f\u003dMath.floor((e.size-u*i)/2)),t.translate(f,f),t.beginPath();for(var c\u003d0;c\u003ci;c+\u003d1)for(var l\u003d0;l\u003ci;l+\u003d1)o(r,t,e,u,c,l);t.fillStyle\u003de.fill,t.fill(),t.translate(-f,-f)}},f\u003dfunction(r,t,e){i(t,e),u(r,t,e),o(t,e)};r.exports\u003df},function(r,t){\"use strict\";var e\u003dfunction(r){return{c:r,m:function(){var r;return(r\u003dthis.c).moveTo.apply(r,arguments),this},l:function(){var r;return(r\u003dthis.c).lineTo.apply(r,arguments),this},a:function(){var r;return(r\u003dthis.c).arcTo.apply(r,arguments),this}}},n\u003dfunction(r,t,e,n,o,i,a,u,f,c){a?r.m(t+i,e):r.m(t,e),u?r.l(n-i,e).a(n,e,n,o,i):r.l(n,e),f?r.l(n,o-i).a(n,o,t,o,i):r.l(n,o),c?r.l(t+i,o).a(t,o,t,e,i):r.l(t,o),a?r.l(t,e+i).a(t,e,n,e,i):r.l(t,e)},o\u003dfunction(r,t,e,n,o,i,a,u,f,c){a\u0026\u0026r.m(t+i,e).l(t,e).l(t,e+i).a(t,e,t+i,e,i),u\u0026\u0026r.m(n-i,e).l(n,e).l(n,e+i).a(n,e,n-i,e,i),f\u0026\u0026r.m(n-i,o).l(n,o).l(n,o-i).a(n,o,n-i,o,i),c\u0026\u0026r.m(t+i,o).l(t,o).l(t,o-i).a(t,o,t+i,o,i)},i\u003dfunction(r,t,i,a,u,f){var c\u003df*a,l\u003du*a,s\u003dc+a,g\u003dl+a,h\u003d.005*i.rounded*a,v\u003dr.isDark,d\u003du-1,w\u003du+1,y\u003df-1,p\u003df+1,m\u003dv(u,f),A\u003dv(d,y),B\u003dv(d,f),E\u003dv(d,p),T\u003dv(u,p),M\u003dv(w,p),b\u003dv(w,f),k\u003dv(w,y),x\u003dv(u,y);t\u003de(t),m?n(t,c,l,s,g,h,!B\u0026\u0026!x,!B\u0026\u0026!T,!b\u0026\u0026!T,!b\u0026\u0026!x):o(t,c,l,s,g,h,B\u0026\u0026x\u0026\u0026A,B\u0026\u0026T\u0026\u0026E,b\u0026\u0026T\u0026\u0026M,b\u0026\u0026x\u0026\u0026k)};r.exports\u003di},function(r,t){\"use strict\";var e\u003dfunction(r,t){var e\u003dt.size,n\u003d\"bold \"+.01*t.mSize*e+\"px \"+t.fontname;r.strokeStyle\u003dt.back,r.lineWidth\u003d.01*t.mSize*e*.1,r.fillStyle\u003dt.fontcolor,r.font\u003dn;var o\u003dr.measureText(t.label).width,i\u003d.01*t.mSize,a\u003do/e,u\u003d(1-a)*t.mPosX*.01,f\u003d(1-i)*t.mPosY*.01,c\u003du*e,l\u003df*e+.75*t.mSize*.01*e;r.strokeText(t.label,c,l),r.fillText(t.label,c,l)},n\u003dfunction(r,t){var e\u003dt.size,n\u003dt.image.naturalWidth||1,o\u003dt.image.naturalHeight||1,i\u003d.01*t.mSize,a\u003di*n/o,u\u003d(1-a)*t.mPosX*.01,f\u003d(1-i)*t.mPosY*.01,c\u003du*e,l\u003df*e,s\u003da*e,g\u003di*e;r.draw_image(t.image,c,l,s,g)},o\u003dfunction(r,t){var o\u003dt.mode;\"label\"\u003d\u003d\u003do?e(r,t):\"image\"\u003d\u003d\u003do\u0026\u0026n(r,t)};r.exports\u003do}])});"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 2
+    }
+  },
+  {
+    "path": "ghu.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const {resolve, join} \u003d require(\u0027path\u0027);"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const {ghu, includeit, jszip, mapfn, pug, read, remove, uglify, webpack, wrap, write} \u003d require(\u0027ghu\u0027);"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const NAME \u003d \u0027kjua\u0027;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const ROOT \u003d resolve(__dirname);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const SRC \u003d join(ROOT, \u0027src\u0027);"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const DEMO \u003d join(SRC, \u0027demo\u0027);"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const BUILD \u003d join(ROOT, \u0027build\u0027);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const DIST \u003d join(ROOT, \u0027dist\u0027);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.defaults(\u0027release\u0027);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.before(runtime \u003d\u003e {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    runtime.pkg \u003d Object.assign({}, require(\u0027./package.json\u0027));"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    runtime.comment \u003d `${NAME} v${runtime.pkg.version} - ${runtime.pkg.homepage}`;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    runtime.commentJs \u003d `/*! ${runtime.comment} */\\n`;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    console.log(runtime.comment);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "});"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.task(\u0027clean\u0027, () \u003d\u003e {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return remove(`${BUILD}, ${DIST}`);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "});"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.task(\u0027build:script\u0027, runtime \u003d\u003e {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const webpackConfig \u003d {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        output: {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            library: NAME,"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            libraryTarget: \u0027umd\u0027"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        module: {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            loaders: ["
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    include: [SRC],"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    loader: \u0027babel-loader\u0027,"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    query: {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                        cacheDirectory: true,"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "                        presets: [\u0027env\u0027]"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            ]"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return read(`${SRC}/${NAME}.js`)"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(webpack(webpackConfig, {showStats: false}))"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(includeit())"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(uglify({compressor: {warnings: false}}))"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(wrap(runtime.commentJs))"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(write(`${DIST}/${NAME}.min.js`, {overwrite: true}))"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(write(`${BUILD}/${NAME}-${runtime.pkg.version}.min.js`, {overwrite: true}));"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "});"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.task(\u0027build:copy\u0027, () \u003d\u003e {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return read(`${ROOT}/*.md`)"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(write(mapfn.p(ROOT, BUILD), {overwrite: true}));"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "});"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.task(\u0027build:demo\u0027, runtime \u003d\u003e {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return Promise.all(["
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        read(`${DEMO}/*.pug`)"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .then(pug({pkg: runtime.pkg}))"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .then(write(mapfn.p(SRC, BUILD).s(\u0027.pug\u0027, \u0027\u0027), {overwrite: true})),"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        read(`${DEMO}: *, !*.pug`)"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .then(write(mapfn.p(SRC, BUILD), {overwrite: true}))"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    ]);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "});"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.task(\u0027build\u0027, [\u0027build:script\u0027, \u0027build:copy\u0027, \u0027build:demo\u0027]);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.task(\u0027zip\u0027, [\u0027build\u0027], runtime \u003d\u003e {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return read(`${BUILD}/**`)"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(jszip({dir: BUILD, level: 9}))"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(write(`${BUILD}/${NAME}-${runtime.pkg.version}.zip`, {overwrite: true}));"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "});"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "ghu.task(\u0027release\u0027, [\u0027clean\u0027, \u0027zip\u0027]);"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 2,
+      "-": 75
+    }
+  },
+  {
+    "path": "src/demo/scripts.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* eslint-disable func-names,no-var,prefer-reflect,prefer-arrow-callback */"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "(function () {"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var win \u003d window; // eslint-disable-line no-undef"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var FR \u003d win.FileReader;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var doc \u003d win.document;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var kjua \u003d win.kjua;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    var gui_val_pairs \u003d ["
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027size\u0027, \u0027px\u0027],"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027minversion\u0027, \u0027\u0027],"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027quiet\u0027, \u0027 modules\u0027],"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027rounded\u0027, \u0027%\u0027],"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027msize\u0027, \u0027%\u0027],"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027mposx\u0027, \u0027%\u0027],"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027mposy\u0027, \u0027%\u0027]"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    ];"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function el_by_id(id) {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return doc.getElementById(id);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function val_by_id(id) {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        var el \u003d el_by_id(id);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return el \u0026\u0026 el.value;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function int_by_id(id) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        return parseInt(val_by_id(id), 10);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function on_event(el, type, fn) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        el.addEventListener(type, fn);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function on_ready(fn) {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        on_event(doc, \u0027DOMContentLoaded\u0027, fn);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function for_each(list, fn) {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Array.prototype.forEach.call(list, fn);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    function all(query, fn) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        var els \u003d doc.querySelectorAll(query);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (fn) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            for_each(els, fn);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return els;"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function update_gui() {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        gui_val_pairs.forEach(function (pair) {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            var label \u003d all(\u0027label[for\u003d\"\u0027 + pair[0] + \u0027\"]\u0027)[0];"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            var text \u003d label.innerHTML;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            label.innerHTML \u003d text.replace(/:.*$/, \u0027: \u0027 + val_by_id(pair[0]) + pair[1]);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function update_qrcode() {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        var options \u003d {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            render: val_by_id(\u0027render\u0027),"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            crisp: val_by_id(\u0027crisp\u0027) \u003d\u003d\u003d \u0027true\u0027,"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            ecLevel: val_by_id(\u0027eclevel\u0027),"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            minVersion: int_by_id(\u0027minversion\u0027),"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            fill: val_by_id(\u0027fill\u0027),"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            back: val_by_id(\u0027back\u0027),"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            text: val_by_id(\u0027text\u0027),"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            size: int_by_id(\u0027size\u0027),"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            rounded: int_by_id(\u0027rounded\u0027),"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            quiet: int_by_id(\u0027quiet\u0027),"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            mode: val_by_id(\u0027mode\u0027),"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            mSize: int_by_id(\u0027msize\u0027),"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            mPosX: int_by_id(\u0027mposx\u0027),"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            mPosY: int_by_id(\u0027mposy\u0027),"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            label: val_by_id(\u0027label\u0027),"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            fontname: val_by_id(\u0027font\u0027),"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            fontcolor: val_by_id(\u0027fontcolor\u0027),"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            image: el_by_id(\u0027img-buffer\u0027)"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        var container \u003d el_by_id(\u0027container\u0027);"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        var qrcode \u003d kjua(options);"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        for_each(container.childNodes, function (child) {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            container.removeChild(child);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (qrcode) {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            container.appendChild(qrcode);"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    function update() {"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        update_gui();"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        update_qrcode();"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    function on_img_input() {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        var input \u003d el_by_id(\u0027image\u0027);"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (input.files \u0026\u0026 input.files[0]) {"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            var reader \u003d new FR();"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            reader.onload \u003d function (ev) {"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "                el_by_id(\u0027img-buffer\u0027).setAttribute(\u0027src\u0027, ev.target.result);"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "                el_by_id(\u0027mode\u0027).value \u003d 4;"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                setTimeout(update, 250);"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            };"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            reader.readAsDataURL(input.files[0]);"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    on_ready(function () {"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        on_event(el_by_id(\u0027image\u0027), \u0027change\u0027, on_img_input);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        all(\u0027input, textarea, select\u0027, function (el) {"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            on_event(el, \u0027input\u0027, update);"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            on_event(el, \u0027change\u0027, update);"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        on_event(win, \u0027load\u0027, update);"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        update();"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}());"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* eslint-enable */"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 46,
+      "-": 79
+    }
+  },
+  {
+    "path": "src/kjua.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const {create_canvas, canvas_to_img, dpr} \u003d require(\u0027./lib/dom\u0027);"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const defaults \u003d require(\u0027./lib/defaults\u0027);"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const qrcode \u003d require(\u0027./lib/qrcode\u0027);"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const draw \u003d require(\u0027./lib/draw\u0027);"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "module.exports \u003d options \u003d\u003e {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const settings \u003d Object.assign({}, defaults, options);"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const qr \u003d qrcode(settings.text, settings.ecLevel, settings.minVersion, settings.quiet);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const ratio \u003d settings.ratio || dpr;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    const canvas \u003d create_canvas(settings.size, ratio);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const context \u003d canvas.getContext(\u00272d\u0027);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    context.scale(ratio, ratio);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    draw(qr, context, settings);"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    return settings.render \u003d\u003d\u003d \u0027image\u0027 ? canvas_to_img(canvas) : canvas;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 3,
+      "-": 15
+    }
+  },
+  {
+    "path": "src/lib/dom.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const win \u003d window; // eslint-disable-line no-undef"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const doc \u003d win.document;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const dpr \u003d win.devicePixelRatio || 1;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const create \u003d name \u003d\u003e doc.createElement(name);"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const get_attr \u003d (el, key) \u003d\u003e el.getAttribute(key);"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const set_attr \u003d (el, key, value) \u003d\u003e el.setAttribute(key, value);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const create_canvas \u003d (size, ratio) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const canvas \u003d create(\u0027canvas\u0027);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    set_attr(canvas, \u0027width\u0027, size * ratio);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    set_attr(canvas, \u0027height\u0027, size * ratio);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    canvas.style.width \u003d `${size}px`;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    canvas.style.height \u003d `${size}px`;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return canvas;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const canvas_to_img \u003d canvas \u003d\u003e {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const img \u003d create(\u0027img\u0027);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    set_attr(img, \u0027crossorigin\u0027, \u0027anonymous\u0027);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    set_attr(img, \u0027src\u0027, canvas.toDataURL(\u0027image/png\u0027));"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    set_attr(img, \u0027width\u0027, get_attr(canvas, \u0027width\u0027));"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    set_attr(img, \u0027height\u0027, get_attr(canvas, \u0027height\u0027));"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    img.style.width \u003d canvas.style.width;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    img.style.height \u003d canvas.style.height;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return img;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "module.exports \u003d {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    create_canvas,"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    canvas_to_img,"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    dpr"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 12,
+      "-": 20
+    }
+  },
+  {
+    "path": "src/lib/draw.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_module_rounded \u003d require(\u0027./draw_rounded\u0027);"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_mode \u003d require(\u0027./draw_mode\u0027);"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_background \u003d (ctx, settings) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.fillStyle \u003d settings.back;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.fillRect(0, 0, settings.size, settings.size);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_module_default \u003d (qr, ctx, settings, width, row, col) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (qr.isDark(row, col)) {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        ctx.rect(col * width, row * width, width, width);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_modules \u003d (qr, ctx, settings) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (!qr) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    const draw_module \u003d settings.rounded \u003e 0 \u0026\u0026 settings.rounded \u003c\u003d 100 ? draw_module_rounded : draw_module_default;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    const mod_count \u003d qr.moduleCount;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    let mod_size \u003d settings.size / mod_count;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    let offset \u003d 0;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (settings.crisp) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        mod_size \u003d Math.floor(mod_size);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        offset \u003d Math.floor((settings.size - mod_size * mod_count) / 2);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.translate(offset, offset);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.beginPath();"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    for (let row \u003d 0; row \u003c mod_count; row +\u003d 1) {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        for (let col \u003d 0; col \u003c mod_count; col +\u003d 1) {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "            draw_module(qr, ctx, settings, mod_size, row, col);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.fillStyle \u003d settings.fill;"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.fill();"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.translate(-offset, -offset);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw \u003d (qr, ctx, settings) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    draw_background(ctx, settings);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    draw_modules(qr, ctx, settings);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    draw_mode(ctx, settings);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "module.exports \u003d draw;"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 25,
+      "-": 23
+    }
+  },
+  {
+    "path": "src/lib/draw_mode.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_label \u003d (ctx, settings) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const size \u003d settings.size;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const font \u003d \u0027bold \u0027 + settings.mSize * 0.01 * size + \u0027px \u0027 + settings.fontname;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.strokeStyle \u003d settings.back;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.lineWidth \u003d settings.mSize * 0.01 * size * 0.1;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.fillStyle \u003d settings.fontcolor;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.font \u003d font;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    const w \u003d ctx.measureText(settings.label).width;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const sh \u003d settings.mSize * 0.01;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const sw \u003d w / size;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const sl \u003d (1 - sw) * settings.mPosX * 0.01;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const st \u003d (1 - sh) * settings.mPosY * 0.01;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const x \u003d sl * size;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const y \u003d st * size + 0.75 * settings.mSize * 0.01 * size;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.strokeText(settings.label, x, y);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.fillText(settings.label, x, y);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_image \u003d (ctx, settings) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const size \u003d settings.size;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const w \u003d settings.image.naturalWidth || 1;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const h \u003d settings.image.naturalHeight || 1;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const sh \u003d settings.mSize * 0.01;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const sw \u003d sh * w / h;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const sl \u003d (1 - sw) * settings.mPosX * 0.01;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const st \u003d (1 - sh) * settings.mPosY * 0.01;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const x \u003d sl * size;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const y \u003d st * size;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const iw \u003d sw * size;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const ih \u003d sh * size;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx.draw_image(settings.image, x, y, iw, ih);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_mode \u003d (ctx, settings) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const mode \u003d settings.mode;"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (mode \u003d\u003d\u003d \u0027label\u0027) {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        draw_label(ctx, settings);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else if (mode \u003d\u003d\u003d \u0027image\u0027) {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        draw_image(ctx, settings);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "module.exports \u003d draw_mode;"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 14,
+      "-": 33
+    }
+  },
+  {
+    "path": "src/lib/draw_rounded.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const wrap_ctx \u003d ctx \u003d\u003e {"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return {"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        c: ctx,"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        m(...args) {this.c.moveTo(...args); return this;},"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        l(...args) {this.c.lineTo(...args); return this;},"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        a(...args) {this.c.arcTo(...args); return this;}"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_dark \u003d (ctx, l, t, r, b, rad, nw, ne, se, sw) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (nw) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.m(l + rad, t);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.m(l, t);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (ne) {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(r - rad, t).a(r, t, r, b, rad);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(r, t);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (se) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(r, b - rad).a(r, b, l, b, rad);"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(r, b);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (sw) {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(l + rad, b).a(l, b, l, t, rad);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(l, b);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (nw) {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(l, t + rad).a(l, t, r, t, rad);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.l(l, t);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_light \u003d (ctx, l, t, r, b, rad, nw, ne, se, sw) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (nw) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.m(l + rad, t).l(l, t).l(l, t + rad).a(l, t, l + rad, t, rad);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (ne) {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.m(r - rad, t).l(r, t).l(r, t + rad).a(r, t, r - rad, t, rad);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (se) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.m(r - rad, b).l(r, b).l(r, b - rad).a(r, b, r - rad, b, rad);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (sw) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ctx.m(l + rad, b).l(l, b).l(l, b - rad).a(l, b, l + rad, b, rad);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "const draw_mod \u003d (qr, ctx, settings, width, row, col) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const left \u003d col * width;"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const top \u003d row * width;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const right \u003d left + width;"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const bottom \u003d top + width;"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const radius \u003d settings.rounded * 0.005 * width;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const isDark \u003d qr.isDark;"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const rowT \u003d row - 1;"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const rowB \u003d row + 1;"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const colL \u003d col - 1;"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const colR \u003d col + 1;"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dC \u003d isDark(row, col);"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dNW \u003d isDark(rowT, colL);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dN \u003d isDark(rowT, col);"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dNE \u003d isDark(rowT, colR);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dE \u003d isDark(row, colR);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dSE \u003d isDark(rowB, colR);"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dS \u003d isDark(rowB, col);"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dSW \u003d isDark(rowB, colL);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const dW \u003d isDark(row, colL);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "    ctx \u003d wrap_ctx(ctx);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (dC) {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        draw_dark(ctx, left, top, right, bottom, radius, !dN \u0026\u0026 !dW, !dN \u0026\u0026 !dE, !dS \u0026\u0026 !dE, !dS \u0026\u0026 !dW);"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "        draw_light(ctx, left, top, right, bottom, radius, dN \u0026\u0026 dW \u0026\u0026 dNW, dN \u0026\u0026 dE \u0026\u0026 dNE, dS \u0026\u0026 dE \u0026\u0026 dSE, dS \u0026\u0026 dW \u0026\u0026 dSW);"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "Lars Jung"
+        },
+        "content": "module.exports \u003d draw_mod;"
+      }
+    ],
+    "authorContributionMap": {
+      "Lars Jung": 9,
+      "-": 82
+    }
+  },
+  {
     "path": "src/lib/qrcode.js",
     "lines": [
       {
@@ -19,7 +3170,7 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "const vendor_qrcode \u003d (() \u003d\u003e {"
       },
@@ -61,14 +3212,14 @@
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "const min_qrcode \u003d (text, level, min_ver \u003d 1) \u003d\u003e {"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "    min_ver \u003d Math.max(1, min_ver);"
       },
@@ -82,7 +3233,7 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "    for (let version \u003d min_ver; version \u003c\u003d 40; version +\u003d 1) {"
       },
@@ -96,7 +3247,7 @@
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "            const qr \u003d vendor_qrcode(version, level);"
       },
@@ -243,14 +3394,14 @@
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "const quiet_qrcode \u003d (text \u003d \u0027\u0027, level \u003d \u0027L\u0027, min_ver \u003d 1, quiet \u003d 0) \u003d\u003e {"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "    const qr \u003d min_qrcode(text, level, min_ver);"
       },
@@ -264,7 +3415,7 @@
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "        const prev_is_dark \u003d qr.isDark;"
       },
@@ -278,7 +3429,7 @@
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "        qr.isDark \u003d (row, col) \u003d\u003e prev_is_dark(row - quiet, col - quiet);"
       },
@@ -313,14 +3464,15 @@
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "-"
+          "gitId": "Lars Jung"
         },
         "content": "module.exports \u003d quiet_qrcode;"
       }
     ],
     "authorContributionMap": {
       "ongspxm": 1,
-      "-": 44
+      "Lars Jung": 10,
+      "-": 34
     }
   }
 ]
