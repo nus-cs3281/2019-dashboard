@@ -2292,75 +2292,68 @@
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "blewjy"
         },
-        "content": "                PowerPoint.Shape calloutGroup \u003d AddTextbox.AddTextboxToCallout(currentSlide, callout);"
+        "content": "                AssignTooltip.AddTriggerAnimation(currentSlide, selectedShape, callout);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                AssignTooltip.AddTriggerAnimation(currentSlide, selectedShape, calloutGroup);"
+        "content": "            }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            }"
+        "content": "            "
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            "
+        "content": "            if (!this.GetApplication().CommandBars.GetPressedMso(TooltipsLabConstants.AnimationPaneName))"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            if (!this.GetApplication().CommandBars.GetPressedMso(TooltipsLabConstants.AnimationPaneName))"
+        "content": "            {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            {"
+        "content": "                this.GetApplication().CommandBars.ExecuteMso(TooltipsLabConstants.AnimationPaneName);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                this.GetApplication().CommandBars.ExecuteMso(TooltipsLabConstants.AnimationPaneName);"
+        "content": "            }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "ChesterSng"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 48,
         "author": {
           "gitId": "ChesterSng"
         },
@@ -2368,7 +2361,8 @@
       }
     ],
     "authorContributionMap": {
-      "ChesterSng": 49
+      "ChesterSng": 47,
+      "blewjy": 1
     }
   },
   {
@@ -3307,68 +3301,61 @@
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "blewjy"
         },
-        "content": "            PowerPoint.Shape calloutGroup \u003d AddTextbox.AddTextboxToCallout(currentSlide, callout);"
+        "content": "            AssignTooltip.AddTriggerAnimation(currentSlide, triggerShape, callout);"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            AssignTooltip.AddTriggerAnimation(currentSlide, triggerShape, calloutGroup);"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "            if (!this.GetApplication().CommandBars.GetPressedMso(TooltipsLabConstants.AnimationPaneName))"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            if (!this.GetApplication().CommandBars.GetPressedMso(TooltipsLabConstants.AnimationPaneName))"
+        "content": "            {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            {"
+        "content": "                this.GetApplication().CommandBars.ExecuteMso(TooltipsLabConstants.AnimationPaneName);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                this.GetApplication().CommandBars.ExecuteMso(TooltipsLabConstants.AnimationPaneName);"
+        "content": "            }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "ChesterSng"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 37,
         "author": {
           "gitId": "ChesterSng"
         },
@@ -3376,7 +3363,8 @@
       }
     ],
     "authorContributionMap": {
-      "ChesterSng": 38
+      "ChesterSng": 36,
+      "blewjy": 1
     }
   },
   {
@@ -129016,385 +129004,6 @@
     }
   },
   {
-    "path": "PowerPointLabs/PowerPointLabs/TooltipsLab/AddTextbox.cs",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "﻿using Microsoft.Office.Core;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "using Microsoft.Office.Interop.PowerPoint;"
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "using PowerPointLabs.Models;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "using PowerPointLabs.Utils;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "using Shape \u003d Microsoft.Office.Interop.PowerPoint.Shape;"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "namespace PowerPointLabs.TooltipsLab"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "{"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "    internal static class AddTextbox"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "    {"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        public static void AddTextboxToCallout(PowerPointSlide currentSlide, Selection selection)"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        {"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            if (!ShapeUtil.IsSelectionSingleShape(selection))"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            {"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "                return;"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            AddTextboxToCallout(currentSlide, selection.ShapeRange[1]);"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        public static Shape AddTextboxToCallout(PowerPointSlide currentSlide, Shape callout)"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        {"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            Shape textbox \u003d AddTextboxToSlide(currentSlide, callout.Left, callout.Top, callout.Width, callout.Height);"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            string[] rangeArray \u003d new string[2];"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            rangeArray[0] \u003d callout.Name;"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            rangeArray[1] \u003d textbox.Name;"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            Shape group \u003d currentSlide.Shapes.Range(rangeArray).Group();"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            group.ZOrder(MsoZOrderCmd.msoSendBackward);"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.Select(MsoTriState.msoTrue);"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            return group;"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        /// \u003csummary\u003e"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        /// Text alignment is default to be centralized"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        /// \u003c/summary\u003e"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        private static Shape AddTextboxToSlide(PowerPointSlide slide, float left, float top, float width, float height)"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        {"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            Shape textbox \u003d slide.GetNativeSlide().Shapes.AddTextbox(MsoTextOrientation.msoTextOrientationHorizontal, left, top, width, height);"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.TextFrame.TextRange.ParagraphFormat.Alignment \u003d PpParagraphAlignment.ppAlignCenter;"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.TextFrame2.AutoSize \u003d MsoAutoSize.msoAutoSizeTextToFitShape;"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.ZOrder(MsoZOrderCmd.msoBringForward);"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            //Somehow without explicitly restating the variables, the textbox size will be wrong."
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.Left \u003d left;"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.Top \u003d top;"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.Width \u003d width;"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            textbox.Height \u003d height;"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "            return textbox;"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "ChesterSng"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "ChesterSng": 53
-    }
-  },
-  {
     "path": "PowerPointLabs/PowerPointLabs/TooltipsLab/AssignToolTip.cs",
     "lines": [
       {
@@ -130451,411 +130060,439 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "blewjy"
         },
-        "content": ""
+        "content": "using Microsoft.Office.Core;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "blewjy"
         },
-        "content": "using PowerPointLabs.ActionFramework.Common.Log;"
+        "content": "using Microsoft.Office.Interop.PowerPoint;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "using PowerPointLabs.Models;"
+        "content": "using PowerPointLabs.ActionFramework.Common.Log;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "using PowerPointLabs.TextCollection;"
+        "content": "using PowerPointLabs.Models;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "using PowerPointLabs.Utils;"
+        "content": "using PowerPointLabs.TextCollection;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "using PowerPointLabs.Views;"
+        "content": "using PowerPointLabs.Utils;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "using PowerPointLabs.Views;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "using PowerPoint \u003d Microsoft.Office.Interop.PowerPoint;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "using PowerPoint \u003d Microsoft.Office.Interop.PowerPoint;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "namespace PowerPointLabs.TooltipsLab"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "{"
+        "content": "namespace PowerPointLabs.TooltipsLab"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "    internal static class CreateTooltip"
+        "content": "{"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "    {"
+        "content": "    internal static class CreateTooltip"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "    {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        // Generate a trigger shape directly in the center bottom position of the specified callout shape."
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        public static PowerPoint.Shape GenerateTriggerShapeWithReferenceCallout(PowerPointSlide currentSlide, PowerPoint.Shape callout)"
+        "content": "        // Generate a trigger shape directly in the center bottom position of the specified callout shape."
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        {"
+        "content": "        public static PowerPoint.Shape GenerateTriggerShapeWithReferenceCallout(PowerPointSlide currentSlide, PowerPoint.Shape callout)"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            float left \u003d ShapeUtil.GetCenterPoint(callout).X - TooltipsLabConstants.TriggerShapeDefaultWidth / 2;"
+        "content": "        {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            float top \u003d ShapeUtil.GetBottom(callout) + TooltipsLabConstants.TriggerShapeAndCalloutSpacing;"
+        "content": "            float left \u003d ShapeUtil.GetCenterPoint(callout).X - TooltipsLabConstants.TriggerShapeDefaultWidth / 2;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "            float top \u003d ShapeUtil.GetBottom(callout) + TooltipsLabConstants.TriggerShapeAndCalloutSpacing;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            PowerPoint.Shape triggerShape \u003d currentSlide.Shapes.AddShape("
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                Microsoft.Office.Core.MsoAutoShapeType.msoShapeOval, "
+        "content": "            PowerPoint.Shape triggerShape \u003d currentSlide.Shapes.AddShape("
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                left, "
+        "content": "                Microsoft.Office.Core.MsoAutoShapeType.msoShapeOval, "
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                top, "
+        "content": "                left, "
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.TriggerShapeDefaultWidth, "
+        "content": "                top, "
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.TriggerShapeDefaultHeight);"
+        "content": "                TooltipsLabConstants.TriggerShapeDefaultWidth, "
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "                TooltipsLabConstants.TriggerShapeDefaultHeight);"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            return triggerShape;"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        }"
+        "content": "            return triggerShape;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        public static PowerPoint.Shape GenerateCalloutWithReferenceTriggerShape(PowerPointSlide currentSlide, PowerPoint.Shape triggerShape)"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        {"
+        "content": "        public static PowerPoint.Shape GenerateCalloutWithReferenceTriggerShape(PowerPointSlide currentSlide, PowerPoint.Shape triggerShape)"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            float midpointX \u003d ShapeUtil.GetMidpointX(triggerShape);"
+        "content": "        {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "            float midpointX \u003d ShapeUtil.GetMidpointX(triggerShape);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "           "
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            PowerPoint.Shape callout \u003d currentSlide.Shapes.AddShape("
+        "content": "           "
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                Microsoft.Office.Core.MsoAutoShapeType.msoShapeRoundedRectangularCallout,"
+        "content": "            PowerPoint.Shape callout \u003d currentSlide.Shapes.AddShape("
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                midpointX - TooltipsLabConstants.CalloutShapeDefaultWidth/2 + (float)(TooltipsLabConstants.CalloutArrowheadHorizontalAdjustment * TooltipsLabConstants.CalloutShapeDefaultWidth),"
+        "content": "                Microsoft.Office.Core.MsoAutoShapeType.msoShapeRoundedRectangularCallout,"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                triggerShape.Top - (float)(TooltipsLabConstants.CalloutArrowheadVerticalAdjustment * TooltipsLabConstants.CalloutShapeDefaultHeight) - TooltipsLabConstants.TriggerShapeAndCalloutSpacing,"
+        "content": "                midpointX - TooltipsLabConstants.CalloutShapeDefaultWidth/2 + (float)(TooltipsLabConstants.CalloutArrowheadHorizontalAdjustment * TooltipsLabConstants.CalloutShapeDefaultWidth),"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.CalloutShapeDefaultWidth,"
+        "content": "                triggerShape.Top - (float)(TooltipsLabConstants.CalloutArrowheadVerticalAdjustment * TooltipsLabConstants.CalloutShapeDefaultHeight) - TooltipsLabConstants.TriggerShapeAndCalloutSpacing,"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.CalloutShapeDefaultHeight);"
+        "content": "                TooltipsLabConstants.CalloutShapeDefaultWidth,"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "                TooltipsLabConstants.CalloutShapeDefaultHeight);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            return callout;"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "blewjy"
         },
-        "content": "        }"
+        "content": "            callout.TextFrame2.AutoSize \u003d MsoAutoSize.msoAutoSizeTextToFitShape;"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "blewjy"
         },
-        "content": ""
+        "content": "            callout.TextEffect.Alignment \u003d MsoTextEffectAlignment.msoTextEffectAlignmentCentered;"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "blewjy"
         },
-        "content": "        public static PowerPoint.Shape GenerateTriggerShape(PowerPointSlide currentSlide)"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        {"
+        "content": "            return callout;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            PowerPoint.Shape triggerShape \u003d currentSlide.Shapes.AddShape("
+        "content": "        }"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                Microsoft.Office.Core.MsoAutoShapeType.msoShapeOval, "
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.TriggerShapeDefaultLeft, "
+        "content": "        public static PowerPoint.Shape GenerateTriggerShape(PowerPointSlide currentSlide)"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.TriggerShapeDefaultTop, "
+        "content": "        {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.TriggerShapeDefaultWidth, "
+        "content": "            PowerPoint.Shape triggerShape \u003d currentSlide.Shapes.AddShape("
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "                TooltipsLabConstants.TriggerShapeDefaultHeight);"
+        "content": "                Microsoft.Office.Core.MsoAutoShapeType.msoShapeOval, "
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "            return triggerShape;"
+        "content": "                TooltipsLabConstants.TriggerShapeDefaultLeft, "
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "        }"
+        "content": "                TooltipsLabConstants.TriggerShapeDefaultTop, "
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "                TooltipsLabConstants.TriggerShapeDefaultWidth, "
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": ""
+        "content": "                TooltipsLabConstants.TriggerShapeDefaultHeight);"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "ChesterSng"
         },
-        "content": "    }"
+        "content": "            return triggerShape;"
       },
       {
         "lineNumber": 61,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ChesterSng"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
         "author": {
           "gitId": "ChesterSng"
         },
@@ -130863,7 +130500,8 @@
       }
     ],
     "authorContributionMap": {
-      "ChesterSng": 61
+      "ChesterSng": 60,
+      "blewjy": 5
     }
   },
   {

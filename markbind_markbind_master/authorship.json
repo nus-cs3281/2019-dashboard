@@ -15148,7 +15148,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "You need to specify the tags to include in `site.json`, under the `tags` option:"
+        "content": "You need to specify the tags to include in the `pluginsContext`, under `tags`:"
       },
       {
         "lineNumber": 19,
@@ -15183,140 +15183,140 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  \"tags\": [\"language--java\"]"
+        "content": "  \"plugins\" : ["
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    \"filterTags\""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "  ],"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  \"pluginsContext\" : {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "All other tagged elements will be filtered out. In this case, only the element with the `language--java` tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies."
+        "content": "    \"filterTags\" : {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      \"tags\": [\"language--java\"]"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "If the `tags` option is not specified in `site.json`, all tagged elements will be rendered."
+        "content": "}"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "**You can also use multiple tags in a single HTML element. Specify each tag in the `tags` attribute** separated by a space. An element will be rendered if **any of the tags** matches the one in `site.json`."
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "All other tagged elements will be filtered out. In this case, only the element with the `language--java` tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies."
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cdiv class\u003d\"indented\"\u003e"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "{{ icon_example }} Attaching multiple tags to an element:"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": "If the `filterTags` plugin is not enabled in `site.json`, all tagged elements will be rendered."
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "# For loops"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "**You can also use multiple tags in a single HTML element. Specify each tag in the `tags` attribute** separated by a space. An element will be rendered if **any of the tags** matches the one in `site.json`."
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--java language--C#\"\u003efor (int i \u003d 0; i \u003c 5; i++) { ... }\u003c/p\u003e"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "\u003cdiv class\u003d\"indented\"\u003e"
       },
       {
         "lineNumber": 43,
@@ -15330,21 +15330,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "As long as the `language--java` or `language--C#` tag is specified, the code snippet will be rendered."
+        "content": "{{ icon_example }} Attaching multiple tags to an element:"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```html"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": "# For loops"
       },
       {
         "lineNumber": 47,
@@ -15358,287 +15358,287 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Alternatively, you can specify tags to render for a page in the front matter."
+        "content": "\u003cp tags\u003d\"language--java language--C#\"\u003efor (int i \u003d 0; i \u003c 5; i++) { ... }\u003c/p\u003e"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cdiv class\u003d\"indented\"\u003e"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "As long as the `language--java` or `language--C#` tag is specified, the code snippet will be rendered."
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "{{ icon_example }} Specifying tags in front matter:"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cfrontmatter\u003e"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "  title: \"Hello World\""
+        "content": "Alternatively, you can specify tags to render for a page in the front matter."
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "  tags: [\"language--java\"]"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/frontmatter\u003e"
+        "content": "\u003cdiv class\u003d\"indented\"\u003e"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": "{{ icon_example }} Specifying tags in front matter:"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```html"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cspan id\u003d\"short\" class\u003d\"d-none\"\u003e"
+        "content": "\u003cfrontmatter\u003e"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  title: \"Hello World\""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": "  tags: [\"language--java\"]"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--java advanced\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
+        "content": "\u003c/frontmatter\u003e"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--C# basic\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
+        "content": "```"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cfrontmatter\u003e"
+        "content": "\u003cspan id\u003d\"short\" class\u003d\"d-none\"\u003e"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "  title: \"Hello World\""
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "  tags: [\"language--java\"]"
+        "content": "```html"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/frontmatter\u003e"
+        "content": "\u003cp tags\u003d\"language--java advanced\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "\u003cp tags\u003d\"language--C# basic\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/span\u003e"
+        "content": "```"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "sijie123"
-        },
-        "content": "Tags in `site.json` will be merged with the ones in the front matter, and are processed after front matter tags. See [Hiding Tags](userGuide/tweakingThePageStructure.html#hiding-tags) for more information."
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "#### Advanced Tagging Tips"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "You can use a `*` in a tag name to match elements more generally. A `*` in a tag will match any number of characters at its position."
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "\u003cdiv class\u003d\"indented\"\u003e"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "{{ icon_example }} Using general tags:"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "-"
-        },
         "content": "```html"
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
         "content": "\u003cfrontmatter\u003e"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
         "content": "  title: \"Hello World\""
       },
       {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  tags: [\"language--java\"]"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c/frontmatter\u003e"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "sijie123"
+        },
+        "content": "Tags in `site.json` will be merged with the ones in the front matter, and are processed after front matter tags. See [Hiding Tags](userGuide/tweakingThePageStructure.html#hiding-tags) for more information."
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "#### Advanced Tagging Tips"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "You can use a `*` in a tag name to match elements more generally. A `*` in a tag will match any number of characters at its position."
+      },
+      {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "  tags: [\"language--*\"]"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/frontmatter\u003e"
+        "content": "\u003cdiv class\u003d\"indented\"\u003e"
       },
       {
         "lineNumber": 89,
@@ -15652,42 +15652,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--java\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
+        "content": "{{ icon_example }} Using general tags:"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--C#\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
+        "content": "```html"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--python\"\u003eprint(\"Hello world\")\u003c/p\u003e"
+        "content": "\u003cfrontmatter\u003e"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "  title: \"Hello World\""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  tags: [\"language--*\"]"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "All 3 `\u003cp\u003e`s will be shown."
+        "content": "\u003c/frontmatter\u003e"
       },
       {
         "lineNumber": 96,
@@ -15701,409 +15701,507 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": "\u003cp tags\u003d\"language--java\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003cp tags\u003d\"language--C#\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "#### Hiding Tags"
+        "content": "\u003cp tags\u003d\"language--python\"\u003eprint(\"Hello world\")\u003c/p\u003e"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "Using `-` at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag."
+        "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "All 3 `\u003cp\u003e`s will be shown."
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cdiv class\u003d\"indented\"\u003e"
+        "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "{{ icon_example }} Using general tags:"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": "#### Hiding Tags"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "index.md"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Using `-` at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag."
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cfrontmatter\u003e"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "  title: \"Hello World\""
+        "content": "\u003cdiv class\u003d\"indented\"\u003e"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "  tags: [\"language--java\"]"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/frontmatter\u003e"
+        "content": "{{ icon_example }} Using general tags:"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```html"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--java\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
+        "content": "index.md"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--C#\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
+        "content": ""
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--python\"\u003eprint(\"Hello world\")\u003c/p\u003e"
+        "content": "\u003cfrontmatter\u003e"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "  title: \"Hello World\""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  tags: [\"language--java\"]"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "```json"
+        "content": "\u003c/frontmatter\u003e"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "site.json"
+        "content": ""
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003cp tags\u003d\"language--java\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "{"
+        "content": "\u003cp tags\u003d\"language--C#\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "  ..."
+        "content": "\u003cp tags\u003d\"language--python\"\u003eprint(\"Hello world\")\u003c/p\u003e"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"tags\": [\"-language--*\", \"language--C#\"]"
+        "content": "```"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "```json"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "site.json"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "`language--java` is overridden by `-language--*`, so only `language--C#` is shown."
+        "content": ""
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "{"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": "  ..."
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  \"plugins\" : ["
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "This only works because tags are processed left to right, so all `language--*` tags are hidden before `language--C#`. Tags in `site.json` are processed after tags in `\u003cfrontmatter\u003e`."
+        "content": "    \"filterTags\""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  ],"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cspan id\u003d\"short\" class\u003d\"d-none\"\u003e"
+        "content": "  \"pluginsContext\" : {"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": "    \"filterTags\" : {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "# Print \u0027Hello world\u0027"
+        "content": "      \"tags\": [\"-language--*\", \"language--C#\"]"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--java\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
+        "content": "  }"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--C#\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
+        "content": "}"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cp tags\u003d\"language--python\"\u003eprint(\"Hello world\")\u003c/p\u003e"
+        "content": "```"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": ""
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "```json"
+        "content": "`language--java` is overridden by `-language--*`, so only `language--C#` is shown."
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "{"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "  ..."
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"plugins\" : ["
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "    \"filterTags\""
+        "content": "This only works because tags are processed left to right, so all `language--*` tags are hidden before `language--C#`. Tags in `site.json` are processed after tags in `\u003cfrontmatter\u003e`."
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "  ],"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"pluginsContext\" : {"
+        "content": "\u003cspan id\u003d\"short\" class\u003d\"d-none\"\u003e"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "    \"filterTags\" : {"
+        "content": "```html"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "      \"tags\": [\"language--java\"]"
+        "content": "# Print \u0027Hello world\u0027"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "\u003cp tags\u003d\"language--java\"\u003eSystem.out.println(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "\u003cp tags\u003d\"language--C#\"\u003eConsole.WriteLine(\"Hello world\");\u003c/p\u003e"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "\u003cp tags\u003d\"language--python\"\u003eprint(\"Hello world\")\u003c/p\u003e"
       },
       {
         "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```json"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  ..."
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \"plugins\" : ["
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    \"filterTags\""
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  ],"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \"pluginsContext\" : {"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    \"filterTags\" : {"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      \"tags\": [\"language--java\"]"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
@@ -16111,7 +16209,7 @@
       }
     ],
     "authorContributionMap": {
-      "-": 154,
+      "-": 168,
       "sijie123": 1
     }
   },
@@ -17623,77 +17721,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  \"tags\": [\"tag1\", \"tag2\"],"
+        "content": "  \"plugins\" : ["
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"headingIndexingLevel\": 4"
+        "content": "    \"filterTags\""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  ],"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "  \"pluginsContext\" : {"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    \"filterTags\" : {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`baseUrl`**"
+        "content": "      \"tags\": [\"tag1\", \"tag2\"]"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "**The base url relative to your domain.** Default: `\"\"`(empty)."
+        "content": "  },"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  \"headingIndexingLevel\": 4"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cinclude src\u003d\"deployingTheSite.md#warning-about-baseUrl\" /\u003e"
+        "content": "}"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 65,
@@ -17707,7 +17805,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`faviconPath`**"
+        "content": "#### **`baseUrl`**"
       },
       {
         "lineNumber": 67,
@@ -17721,7 +17819,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "**The location of the favicon.** Default: `favicon.ico`."
+        "content": "**The base url relative to your domain.** Default: `\"\"`(empty)."
       },
       {
         "lineNumber": 69,
@@ -17735,7 +17833,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cdiv class\u003d\"indented\"\u003e"
+        "content": "\u003cinclude src\u003d\"deployingTheSite.md#warning-about-baseUrl\" /\u003e"
       },
       {
         "lineNumber": 71,
@@ -17749,28 +17847,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "%%{{ icon_info }} If the favicon was recently changed, you may need to force-refresh the Browser to see the new image.%%"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### **`faviconPath`**"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "**The location of the favicon.** Default: `favicon.ico`."
       },
       {
         "lineNumber": 76,
@@ -17784,7 +17882,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`titlePrefix`**"
+        "content": "\u003cdiv class\u003d\"indented\"\u003e"
       },
       {
         "lineNumber": 78,
@@ -17798,7 +17896,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "**The prefix for all page titles.** The separator \u003ccode\u003e-\u003c/code\u003e will be inserted by MarkBind."
+        "content": "%%{{ icon_info }} If the favicon was recently changed, you may need to force-refresh the Browser to see the new image.%%"
       },
       {
         "lineNumber": 80,
@@ -17812,49 +17910,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "luyangkenneth"
+          "gitId": "-"
         },
-        "content": "#### **`theme`**"
+        "content": ""
       },
       {
         "lineNumber": 83,
         "author": {
-          "gitId": "luyangkenneth"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "luyangkenneth"
+          "gitId": "-"
         },
-        "content": "_(Optional)_ **The theme for the generated site.** Uses the default Bootstrap theme if not specified. See [User Guide: Themes](themes.html) for more details."
+        "content": "#### **`titlePrefix`**"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "luyangkenneth"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "luyangkenneth"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "**The prefix for all page titles.** The separator \u003ccode\u003e-\u003c/code\u003e will be inserted by MarkBind."
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`pages`**"
+        "content": ""
       },
       {
         "lineNumber": 88,
@@ -17866,58 +17964,58 @@
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "-"
+          "gitId": "luyangkenneth"
         },
-        "content": "**An array of pages to be rendered.**"
+        "content": "#### **`theme`**"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "-"
+          "gitId": "luyangkenneth"
         },
         "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "-"
+          "gitId": "luyangkenneth"
         },
-        "content": "* **`src`**/**`glob`**: `src` can be used to specify a file e.g., `docs/index.md`.\u003cbr\u003e"
+        "content": "_(Optional)_ **The theme for the generated site.** Uses the default Bootstrap theme if not specified. See [User Guide: Themes](themes.html) for more details."
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "-"
+          "gitId": "luyangkenneth"
         },
-        "content": "    Alternatively, `glob` can be used to define a file pattern in the [_glob syntax_](https://en.wikipedia.org/wiki/Glob_(programming)) e.g., `**/*.md`."
+        "content": ""
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "-"
+          "gitId": "luyangkenneth"
         },
-        "content": "* **`title`**: The page `\u003ctitle\u003e` for the generated web page. Titles specified here take priority over titles specified in the [front matter](addingPages.html#front-matter) of individual pages."
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "sijie123"
+          "gitId": "-"
         },
-        "content": "* **`layout`**: The [layout](tweakingThePageStructure.html#page-layouts) to be used by the page. Default: `default`."
+        "content": "#### **`pages`**"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "* **`searchable`**: Specifies that the page(s) should be excluded from searching. Default: `yes`."
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "* **`externalScripts`**: An array of external scripts to be referenced on the page. Scripts referenced will be run before the layout script."
+        "content": "**An array of pages to be rendered.**"
       },
       {
         "lineNumber": 97,
@@ -17931,42 +18029,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cspan id\u003d\"page-property-overriding\"\u003e"
+        "content": "* **`src`**/**`glob`**: `src` can be used to specify a file e.g., `docs/index.md`.\u003cbr\u003e"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cbox type\u003d\"warning\"\u003e"
+        "content": "    Alternatively, `glob` can be used to define a file pattern in the [_glob syntax_](https://en.wikipedia.org/wiki/Glob_(programming)) e.g., `**/*.md`."
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* **`title`**: The page `\u003ctitle\u003e` for the generated web page. Titles specified here take priority over titles specified in the [front matter](addingPages.html#front-matter) of individual pages."
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "-"
+          "gitId": "sijie123"
         },
-        "content": "Note: Page properties that are defined in `site.json` for a particular page will override those defined in the front matter of the page."
+        "content": "* **`layout`**: The [layout](tweakingThePageStructure.html#page-layouts) to be used by the page. Default: `default`."
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/box\u003e"
+        "content": "* **`searchable`**: Specifies that the page(s) should be excluded from searching. Default: `yes`."
       },
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "-"
+          "gitId": "Xenonym"
         },
-        "content": "\u003c/span\u003e"
+        "content": "* **`externalScripts`**: An array of external scripts to be referenced on the page. Scripts referenced will be run before the layout script."
       },
       {
         "lineNumber": 104,
@@ -17980,7 +18078,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cspan id\u003d\"page-glob-overriding\"\u003e"
+        "content": "\u003cspan id\u003d\"page-property-overriding\"\u003e"
       },
       {
         "lineNumber": 106,
@@ -18001,21 +18099,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Note: If multiple **`src`** (pages) or **`glob`** (globs) attributes match a file, MarkBind will merge properties from all entries. If there are conflicting properties, pages are given priority over globs. If there are multiple matching glob entries, the last entry is given priority."
+        "content": "Note: Page properties that are defined in `site.json` for a particular page will override those defined in the front matter of the page."
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/box\u003e"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cdiv class\u003d\"indented\"\u003e"
+        "content": "\u003c/span\u003e"
       },
       {
         "lineNumber": 111,
@@ -18029,357 +18127,357 @@
         "author": {
           "gitId": "-"
         },
-        "content": "{{ icon_example }} Multiple entries matching `index.md`:"
+        "content": "\u003cspan id\u003d\"page-glob-overriding\"\u003e"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003cbox type\u003d\"warning\"\u003e"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "```js"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "{"
+        "content": "Note: If multiple **`src`** (pages) or **`glob`** (globs) attributes match a file, MarkBind will merge properties from all entries. If there are conflicting properties, pages are given priority over globs. If there are multiple matching glob entries, the last entry is given priority."
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"pages\": ["
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "    {"
+        "content": "\u003cdiv class\u003d\"indented\"\u003e"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "      \"src\": \"index.md\","
+        "content": ""
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "      \"title\": \"Hello World\","
+        "content": "{{ icon_example }} Multiple entries matching `index.md`:"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "      \"searchable\": \"no\""
+        "content": ""
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "```js"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "    {"
+        "content": "{"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "      \"glob\": \"*.md\","
+        "content": "  \"pages\": ["
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "      \"layout\": \"normal\","
+        "content": "    {"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "      \"searchable\": \"yes\""
+        "content": "      \"src\": \"index.md\","
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      \"title\": \"Hello World\","
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "  ],"
+        "content": "      \"searchable\": \"no\""
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    },"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "    {"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      \"glob\": \"*.md\","
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "The following properties will apply to `index.md`:"
+        "content": "      \"layout\": \"normal\","
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      \"searchable\": \"yes\""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "```js"
+        "content": "    }"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "{"
+        "content": "  ],"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"src\": \"index.md\","
+        "content": "}"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"title\": \"Hello World\",  // Inherited from page"
+        "content": "```"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"layout\": \"normal\",      // Inherited from glob"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "  \"searchable\": \"no\",      // Page takes priority over glob"
+        "content": "The following properties will apply to `index.md`:"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "```js"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": "{"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/box\u003e"
+        "content": "  \"src\": \"index.md\","
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/span\u003e"
+        "content": "  \"title\": \"Hello World\",  // Inherited from page"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  \"layout\": \"normal\",      // Inherited from glob"
       },
       {
         "lineNumber": 145,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "#### **`externalScripts`**"
+        "content": "  \"searchable\": \"no\",      // Page takes priority over glob"
       },
       {
         "lineNumber": 146,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "**An array of external scripts to be referenced on all pages.** To reference an external script only on specific pages, `externalScripts` should be specified in `pages` instead. Scripts referenced will be run before the layout script."
+        "content": "```"
       },
       {
         "lineNumber": 148,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`ignore`**"
+        "content": "\u003c/box\u003e"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/span\u003e"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "**An array of file patterns to be ignored when copying files to the generated site.** By default, MarkBind will copy all the files as assets of the generated site."
+        "content": ""
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "-"
+          "gitId": "Xenonym"
         },
-        "content": ""
+        "content": "#### **`externalScripts`**"
       },
       {
         "lineNumber": 153,
         "author": {
-          "gitId": "-"
-        },
-        "content": "The ignore pattern follows the [glob pattern used in .gitignore](https://git-scm.com/docs/gitignore#_pattern_format). For example, `*.md` ignores all markdown source files."
-      },
-      {
-        "lineNumber": 154,
-        "author": {
-          "gitId": "-"
+          "gitId": "Xenonym"
         },
         "content": ""
       },
       {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "**An array of external scripts to be referenced on all pages.** To reference an external script only on specific pages, `externalScripts` should be specified in `pages` instead. Scripts referenced will be run before the layout script."
+      },
+      {
         "lineNumber": 155,
         "author": {
-          "gitId": "-"
+          "gitId": "Xenonym"
         },
-        "content": "\u003cdiv id\u003d\"site-json-deploy\"\u003e"
+        "content": ""
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### **`ignore`**"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`deploy`**"
+        "content": ""
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "**An array of file patterns to be ignored when copying files to the generated site.** By default, MarkBind will copy all the files as assets of the generated site."
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "sijie123"
+          "gitId": "-"
         },
-        "content": "**The settings for [auto-deployment to Github pages](deployingTheSite.html).**"
+        "content": ""
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The ignore pattern follows the [glob pattern used in .gitignore](https://git-scm.com/docs/gitignore#_pattern_format). For example, `*.md` ignores all markdown source files."
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "* **`message`** [Optional. Default: `\"Site Update.\"`]\u003cbr\u003e"
+        "content": ""
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "  The commit message used for the deployment commit."
+        "content": "\u003cdiv id\u003d\"site-json-deploy\"\u003e"
       },
       {
         "lineNumber": 163,
@@ -18393,136 +18491,199 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* **`repo`** [Optional. Default: the current working project\u0027s repo]\u003cbr\u003e"
+        "content": "#### **`deploy`**"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "  The repo you want to deploy to.\u003cbr\u003e"
+        "content": ""
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "-"
+          "gitId": "sijie123"
         },
-        "content": "  Format: `\"https://github.com/\u003corg|username\u003e/\u003crepo\u003e.git\"` (`\"git@github.com:\u003corg|username\u003e/\u003crepo\u003e.git\"` if you use SSH)\u003cbr\u003e"
+        "content": "**The settings for [auto-deployment to Github pages](deployingTheSite.html).**"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "  {{ icon_example }} `\"https://github.com/myorg/myrepo.git\"`"
+        "content": ""
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* **`message`** [Optional. Default: `\"Site Update.\"`]\u003cbr\u003e"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "* **`branch`** [Optional. Default: `\"gh-pages\"`]\u003cbr\u003e"
+        "content": "  The commit message used for the deployment commit."
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "  The branch that will be deployed to in the remote repo."
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/div\u003e"
+        "content": "* **`repo`** [Optional. Default: the current working project\u0027s repo]\u003cbr\u003e"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  The repo you want to deploy to.\u003cbr\u003e"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`tags`**"
+        "content": "  Format: `\"https://github.com/\u003corg|username\u003e/\u003crepo\u003e.git\"` (`\"git@github.com:\u003corg|username\u003e/\u003crepo\u003e.git\"` if you use SSH)\u003cbr\u003e"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  {{ icon_example }} `\"https://github.com/myorg/myrepo.git\"`"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "**A list of tags to filter page elements.**  Page elements with the specified tags are retained, while elements tagged with other tags are removed. Do not specify this option if you want to show everything. See [_User Guide: Tweaking the Page Structure → Using Tags_](tweakingThePageStructure.html#using-tags) section for more information."
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* **`branch`** [Optional. Default: `\"gh-pages\"`]\u003cbr\u003e"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`headingIndexingLevel`**"
+        "content": "  The branch that will be deployed to in the remote repo."
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/div\u003e"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "**The level of headings to be indexed for searching.** Default: `3` %%i.e., only headings of levels 1,2,3 will be indexed for searching%%."
+        "content": ""
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### **`plugins`**,  **`pluginsContext`**"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "#### **`enableSearch`**"
+        "content": ""
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "**A list of plugins to load.** Plugins are user-defined extensions that can add custom features to MarkBind. `pluginsContext` contains settings to be applied to the loaded plugins. See [User Guide: Using Plugins](usingPlugins.html) for more details."
       },
       {
         "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The example above uses tags as an example of configuring plugin settings, refer to the [`filterTags` plugin](tweakingThePageStructure.html#filtertags-toggling-alternative-contents-in-a-page) for more details."
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "#### **`headingIndexingLevel`**"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**The level of headings to be indexed for searching.** Default: `3` %%i.e., only headings of levels 1,2,3 will be indexed for searching%%."
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "#### **`enableSearch`**"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 192,
         "author": {
           "gitId": "sijie123"
         },
@@ -18531,7 +18692,7 @@
     ],
     "authorContributionMap": {
       "Xenonym": 12,
-      "-": 162,
+      "-": 171,
       "luyangkenneth": 6,
       "sijie123": 3
     }
