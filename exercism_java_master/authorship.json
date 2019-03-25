@@ -1,0 +1,3037 @@
+[
+  {
+    "path": "exercises/binary-search/.meta/src/reference/java/BinarySearch.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class BinarySearch {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private List\u003cInteger\u003e array;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private int arraySize;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    BinarySearch(List\u003cInteger\u003e array) {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.array \u003d array;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.arraySize \u003d array.size();"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    int indexOf(Integer value) throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return search(value);"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    private int search(Integer value) throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        int left \u003d 0;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        int right \u003d this.arraySize - 1;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        int middle;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Integer element;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        while (left \u003c\u003d right) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            middle \u003d (int) Math.floor(0.5 * (left + right));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            element \u003d this.array.get(middle);"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if (value.compareTo(element) \u003e 0) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                left \u003d middle + 1;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            } else if (value.compareTo(element) \u003c 0) {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                right \u003d middle - 1;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                return middle;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        throw new ValueNotFoundException(\"Value not in array\");"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RonakLakhotia": 3,
+      "-": 33
+    }
+  },
+  {
+    "path": "exercises/binary-search/.meta/src/reference/java/ValueNotFoundException.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "class ValueNotFoundException extends Exception {"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    ValueNotFoundException(String message) {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        super(message);"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RonakLakhotia": 6
+    }
+  },
+  {
+    "path": "exercises/binary-search/src/main/java/ValueNotFoundException.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "class ValueNotFoundException extends Exception {"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    ValueNotFoundException(String message) {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        super(message);"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RonakLakhotia": 6
+    }
+  },
+  {
+    "path": "exercises/binary-search/src/test/java/BinarySearchTest.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.Ignore;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import org.junit.Rule;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.Test;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import org.junit.rules.ExpectedException;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.Collections;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.Assert.assertEquals;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class BinarySearchTest {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Rule"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public ExpectedException expectedException \u003d ExpectedException.none();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void findsAValueInAnArrayWithOneElement() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e listOfUnitLength \u003d Collections.singletonList(6);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(listOfUnitLength);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(0, search.indexOf(6));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void findsAValueInTheMiddleOfAnArray() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedList \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 4, 6, 8, 9, 11)"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedList);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(3, search.indexOf(6));"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void findsAValueAtTheBeginningOfAnArray() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedList \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 4, 6, 8, 9, 11)"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedList);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(0, search.indexOf(1));"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void findsAValueAtTheEndOfAnArray() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedList \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 4, 6, 8, 9, 11)"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedList);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(6, search.indexOf(11));"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void findsAValueInAnArrayOfOddLength() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedListOfOddLength \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634)"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedListOfOddLength);"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(9, search.indexOf(144));"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void findsAValueInAnArrayOfEvenLength() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedListOfEvenLength \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377)"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedListOfEvenLength);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(5, search.indexOf(21));"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void identifiesThatAValueIsNotFoundInTheArray() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedList \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 4, 6, 8, 9, 11)"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedList);"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expect(ValueNotFoundException.class);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expectMessage(\"Value not in array\");"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        search.indexOf(7);"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void aValueSmallerThanTheArraysSmallestValueIsNotFound() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedList \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 4, 6, 8, 9, 11)"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedList);"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expect(ValueNotFoundException.class);"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expectMessage(\"Value not in array\");"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        search.indexOf(0);"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void aValueLargerThanTheArraysSmallestValueIsNotFound() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedList \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 3, 4, 6, 8, 9, 11)"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedList);"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expect(ValueNotFoundException.class);"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expectMessage(\"Value not in array\");"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        search.indexOf(13);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void nothingIsFoundInAnEmptyArray() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e emptyList \u003d Collections.emptyList();"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(emptyList);"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expect(ValueNotFoundException.class);"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expectMessage(\"Value not in array\");"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        search.indexOf(1);"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void nothingIsFoundWhenTheLeftAndRightBoundCross() throws ValueNotFoundException {"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        List\u003cInteger\u003e sortedList \u003d Collections.unmodifiableList("
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                Arrays.asList(1, 2)"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        BinarySearch search \u003d new BinarySearch(sortedList);"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expect(ValueNotFoundException.class);"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        expectedException.expectMessage(\"Value not in array\");"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        search.indexOf(0);"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RonakLakhotia": 36,
+      "-": 124
+    }
+  },
+  {
+    "path": "exercises/simple-cipher/.meta/src/reference/java/Cipher.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.Random;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.stream.IntStream;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class Cipher {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private static final String ALPHABET \u003d \"abcdefghijklmnopqrstuvwxyz\";"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private static final Random random \u003d new Random();"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public String key;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public Cipher() {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.key \u003d IntStream.range(0, 100)"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                .map(x -\u003e ALPHABET.toCharArray()[random.nextInt(ALPHABET.length())])"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                .toString();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public Cipher(String key) {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!isValidKey(key)) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            throw new IllegalArgumentException(\"Invalid key\");"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.key \u003d key;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private static boolean isValidKey(String key) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return key.matches(\"^[a-z]+$\");"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public String getKey() {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return key;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public String encode(String plainText) {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        StringBuilder ciphertext \u003d new StringBuilder(plainText.length());"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String sameLengthKey \u003d getSufficientlyLongKeyForPlaintext(plainText, key);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        for (int index \u003d 0; index \u003c plainText.length(); index++) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "            ciphertext.append(encodeCharacter(plainText, index, sameLengthKey));"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return ciphertext.toString();"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    private String getSufficientlyLongKeyForPlaintext(String plainText, String key) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        StringBuilder longKeyBuilder \u003d new StringBuilder(key.length());"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        longKeyBuilder.append(key);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        if (plainText.length() \u003e key.length()) {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "            int difference \u003d plainText.length() - key.length();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "            for (int i \u003d 0; i \u003c difference; i \u003d i + key.length()) {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "                longKeyBuilder.append(key);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        return longKeyBuilder.toString();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    private char encodeCharacter(String plainText, int index, String key) {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        int alphabetIdx \u003d ALPHABET.indexOf(plainText.toCharArray()[index]) + ALPHABET.indexOf(key.toCharArray()[index]);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (alphabetIdx \u003e\u003d ALPHABET.length()) {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            alphabetIdx -\u003d ALPHABET.length();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return ALPHABET.toCharArray()[alphabetIdx];"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public String decode(String cipherText) {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        StringBuilder plainText \u003d new StringBuilder(cipherText.length());"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        for (int i \u003d 0; i \u003c cipherText.length(); i++) {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            plainText.append(decodeCharacter(cipherText, i));"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return plainText.toString();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private char decodeCharacter(String cipherText, int index) {"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        int alphabetIdx \u003d ALPHABET"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "                .indexOf(cipherText.toCharArray()[index]) - ALPHABET.indexOf(key.toCharArray()[index]);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (alphabetIdx \u003c 0) {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            alphabetIdx +\u003d ALPHABET.length();"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return ALPHABET.toCharArray()[alphabetIdx];"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RonakLakhotia": 18,
+      "-": 69
+    }
+  },
+  {
+    "path": "exercises/simple-cipher/src/test/java/SimpleCipherStepOneTest.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.Before;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.Ignore;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.Assert.assertEquals;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import static org.junit.Assert.assertTrue;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import java.util.regex.Pattern;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Step 1: Make a simple shift cipher"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class SimpleCipherStepOneTest {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private Cipher cipherWithDefaultKey;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Before"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void setup() {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        cipherWithDefaultKey \u003d new Cipher();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Here we take advantage of the fact that plaintext of \"aaa...\" doesn\u0027t output the key. This is a critical problem"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * with shift ciphers, some characters will always output the key verbatim."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void cipherCanEncode() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"aaaaaaaaaa\";"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        String cipherText \u003d cipherWithDefaultKey.getKey().substring(0, 10);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void cipherCanDecode() {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        String cipherText \u003d \"aaaaaaaaaa\";"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(cipherText, cipherWithDefaultKey.decode(cipherWithDefaultKey.getKey().substring(0, 10)));"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void cipherIsReversible() {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        String plainText \u003d \"abcdefghij\";"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(plainText, cipherWithDefaultKey.decode(cipherWithDefaultKey.encode(plainText)));"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void keyIsLowercaseLetters() {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String key \u003d cipherWithDefaultKey.getKey();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertTrue(Pattern.matches(\"^[a-z]+$\", key));"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RonakLakhotia": 12,
+      "-": 40
+    }
+  },
+  {
+    "path": "exercises/simple-cipher/src/test/java/SimpleCipherStepTwoSubsitutionTest.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import org.junit.Ignore;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import org.junit.Rule;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import org.junit.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import org.junit.rules.ExpectedException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import static org.junit.Assert.*;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "import org.junit.Before;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "public class SimpleCipherStepTwoSubsitutionTest {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Rule"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public ExpectedException expectedException \u003d ExpectedException.none();"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    private Cipher cipherWithDefaultKey;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    private static final String key \u003d \"abcdefghij\";"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Before"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void setup() {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        cipherWithDefaultKey \u003d new Cipher(key);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void cipherCanEncode() {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"aaaaaaaaaa\";"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String cipherText \u003d \"abcdefghij\";"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void cipherCanDecode() {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"abcdefghij\";"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String cipherText \u003d \"aaaaaaaaaa\";"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(cipherText, cipherWithDefaultKey.decode(plainText));"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void cipherIsReversibleGivenKey() {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"abcdefghij\";"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(plainText, cipherWithDefaultKey.decode(cipherWithDefaultKey.encode(plainText)));"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void cipherCanDoubleShiftEncode() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"iamapandabear\";"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String cipherText \u003d \"qayaeaagaciai\";"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(cipherText, new Cipher(plainText).encode(plainText));"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void cipherCanWrapEncode() {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"zzzzzzzzzz\";"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String cipherText \u003d \"zabcdefghi\";"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(cipherText, cipherWithDefaultKey.encode(plainText));"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void cipherCanWrapDecode() {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"zabcdefghi\";"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String cipherText \u003d \"zzzzzzzzzz\";"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(cipherText, cipherWithDefaultKey.decode(plainText));"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Ignore(\"Remove to run test\")"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    public void cipherMessageLongerThanKey() {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String plainText \u003d \"iamapandabear\";"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String key \u003d \"abc\";"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        String cipherText \u003d \"iboaqcnecbfcr\";"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "        assertEquals(cipherText, new Cipher(key).encode(plainText));"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "RonakLakhotia"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RonakLakhotia": 78
+    }
+  }
+]
