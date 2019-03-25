@@ -1,0 +1,8041 @@
+[
+  {
+    "path": "lib/plugins/aws/invokeLocal/index.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u0027use strict\u0027;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const BbPromise \u003d require(\u0027bluebird\u0027);"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const _ \u003d require(\u0027lodash\u0027);"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const os \u003d require(\u0027os\u0027);"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const fs \u003d BbPromise.promisifyAll(require(\u0027fs\u0027));"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const fse \u003d require(\u0027fs-extra\u0027);"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const path \u003d require(\u0027path\u0027);"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const validate \u003d require(\u0027../lib/validate\u0027);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const chalk \u003d require(\u0027chalk\u0027);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const stdin \u003d require(\u0027get-stdin\u0027);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const spawn \u003d require(\u0027child_process\u0027).spawn;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const inspect \u003d require(\u0027util\u0027).inspect;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const download \u003d require(\u0027download\u0027);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const mkdirp \u003d require(\u0027mkdirp\u0027);"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const cachedir \u003d require(\u0027cachedir\u0027);"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const jszip \u003d require(\u0027jszip\u0027);"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const cachePath \u003d path.join(cachedir(\u0027serverless\u0027), \u0027invokeLocal\u0027);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class AwsInvokeLocal {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  constructor(serverless, options) {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.serverless \u003d serverless;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.options \u003d options || {};"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.provider \u003d this.serverless.getProvider(\u0027aws\u0027);"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    Object.assign(this, validate);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.hooks \u003d {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      \u0027before:invoke:local:loadEnvVars\u0027: () \u003d\u003e BbPromise.bind(this)"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(this.extendedValidate)"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(this.loadEnvVars),"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      \u0027invoke:local:invoke\u0027: () \u003d\u003e BbPromise.bind(this)"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(this.invokeLocal),"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  getRuntime() {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return this.options.functionObj.runtime"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      || this.serverless.service.provider.runtime"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      || \u0027nodejs4.3\u0027;"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  validateFile(filePath, key) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const absolutePath \u003d path.isAbsolute(filePath) ?"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      filePath :"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      path.join(this.serverless.config.servicePath, filePath);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (!this.serverless.utils.fileExistsSync(absolutePath)) {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      throw new this.serverless.classes.Error(\u0027The file you provided does not exist.\u0027);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (absolutePath.endsWith(\u0027.js\u0027)) {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      // to support js - export as an input data"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.options[key] \u003d require(absolutePath); // eslint-disable-line global-require"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.options[key] \u003d this.serverless.utils.readFileSync(absolutePath);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  extendedValidate() {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.validate();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // validate function exists in service"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.options.functionObj \u003d this.serverless.service.getFunction(this.options.function);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.options.data \u003d this.options.data || \u0027\u0027;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise(resolve \u003d\u003e {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (this.options.contextPath) {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.validateFile(this.options.contextPath, \u0027context\u0027);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (this.options.data) {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        resolve();"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      } else if (this.options.path) {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.validateFile(this.options.path, \u0027data\u0027);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        resolve();"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      } else {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          stdin().then(input \u003d\u003e {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            this.options.data \u003d input;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            resolve();"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          });"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } catch (exception) {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          // resolve if no stdin was provided"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          resolve();"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }).then(() \u003d\u003e {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      try {"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // unless asked to preserve raw input, attempt to parse any provided objects"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!this.options.raw) {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          if (this.options.data) {"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            this.options.data \u003d JSON.parse(this.options.data);"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          if (this.options.context) {"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            this.options.context \u003d JSON.parse(this.options.context);"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      } catch (exception) {"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // do nothing if it\u0027s a simple string or object already"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  loadEnvVars() {"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const lambdaName \u003d this.options.functionObj.name;"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const memorySize \u003d Number(this.options.functionObj.memorySize)"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      || Number(this.serverless.service.provider.memorySize)"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      || 1024;"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const lambdaDefaultEnvVars \u003d {"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      LANG: \u0027en_US.UTF-8\u0027,"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      LD_LIBRARY_PATH: \u0027/usr/local/lib64/node-v4.3.x/lib:/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib\u0027, // eslint-disable-line max-len"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      LAMBDA_TASK_ROOT: \u0027/var/task\u0027,"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      LAMBDA_RUNTIME_DIR: \u0027/var/runtime\u0027,"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      AWS_REGION: this.provider.getRegion(),"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      AWS_DEFAULT_REGION: this.provider.getRegion(),"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      AWS_LAMBDA_LOG_GROUP_NAME: this.provider.naming.getLogGroupName(lambdaName),"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      AWS_LAMBDA_LOG_STREAM_NAME: \u00272016/12/02/[$LATEST]f77ff5e4026c45bda9a9ebcec6bc9cad\u0027,"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      AWS_LAMBDA_FUNCTION_NAME: lambdaName,"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      AWS_LAMBDA_FUNCTION_MEMORY_SIZE: memorySize,"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      AWS_LAMBDA_FUNCTION_VERSION: \u0027$LATEST\u0027,"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      NODE_PATH: \u0027/var/runtime:/var/task:/var/runtime/node_modules\u0027,"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // profile override from config"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const profileOverride \u003d this.provider.getProfile();"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (profileOverride) {"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      lambdaDefaultEnvVars.AWS_PROFILE \u003d profileOverride;"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const providerEnvVars \u003d this.serverless.service.provider.environment || {};"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const functionEnvVars \u003d this.options.functionObj.environment || {};"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    _.merge(process.env, lambdaDefaultEnvVars, providerEnvVars, functionEnvVars);"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return BbPromise.resolve();"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  invokeLocal() {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const runtime \u003d this.getRuntime();"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const handler \u003d this.options.functionObj.handler;"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (this.options.docker) {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return this.invokeLocalDocker();"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (runtime.startsWith(\u0027nodejs\u0027)) {"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerPath \u003d handler.split(\u0027.\u0027)[0];"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerName \u003d handler.split(\u0027.\u0027)[1];"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return this.invokeLocalNodeJs("
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerPath,"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerName,"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.data,"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.context);"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (_.includes([\u0027python2.7\u0027, \u0027python3.6\u0027, \u0027python3.7\u0027], runtime)) {"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerComponents \u003d handler.split(/\\./);"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerPath \u003d handlerComponents.slice(0, -1).join(\u0027.\u0027);"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerName \u003d handlerComponents.pop();"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return this.invokeLocalPython("
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        process.platform \u003d\u003d\u003d \u0027win32\u0027 ? \u0027python.exe\u0027 : runtime,"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerPath,"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerName,"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.data,"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.context);"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (runtime \u003d\u003d\u003d \u0027java8\u0027) {"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const className \u003d handler.split(\u0027::\u0027)[0];"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerName \u003d handler.split(\u0027::\u0027)[1] || \u0027handleRequest\u0027;"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return this.invokeLocalJava("
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027java\u0027,"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        className,"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerName,"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.serverless.service.package.artifact,"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.data,"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.context);"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (runtime \u003d\u003d\u003d \u0027ruby2.5\u0027) {"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerComponents \u003d handler.split(/\\./);"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerPath \u003d handlerComponents[0];"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlerName \u003d handlerComponents.slice(1).join(\u0027.\u0027);"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return this.invokeLocalRuby("
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        process.platform \u003d\u003d\u003d \u0027win32\u0027 ? \u0027ruby.exe\u0027 : \u0027ruby\u0027,"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerPath,"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerName,"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.data,"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.context);"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return this.invokeLocalDocker();"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  checkDockerDaemonStatus() {"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027version\u0027]);"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e {"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (error) {"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          reject(\u0027Please start the Docker daemon to use the invoke local Docker integration.\u0027);"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        resolve();"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      });"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  checkDockerImage() {"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const runtime \u003d this.getRuntime();"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027images\u0027, \u0027-q\u0027, `lambci/lambda:${runtime}`]);"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      let stdout \u003d \u0027\u0027;"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      docker.stdout.on(\u0027data\u0027, (buf) \u003d\u003e { stdout +\u003d buf.toString(); });"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(Boolean(stdout.trim()))));"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  pullDockerImage() {"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const runtime \u003d this.getRuntime();"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.serverless.cli.log(\u0027Downloading base Docker image...\u0027);"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027pull\u0027, `lambci/lambda:${runtime}`]);"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve()));"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  getLayerPaths() {"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const layers \u003d _.mapKeys("
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.service.layers,"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      (value, key) \u003d\u003e this.provider.naming.getLambdaLayerLogicalId(key)"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return BbPromise.all("
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      (this.options.functionObj.layers || this.serverless.service.provider.layers || [])"
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .map(layer \u003d\u003e {"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          if (layer.Ref) {"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return layers[layer.Ref].path;"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          const arnParts \u003d layer.split(\u0027:\u0027);"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          const layerArn \u003d arnParts.slice(0, -1).join(\u0027:\u0027);"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          const layerVersion \u003d Number(arnParts.slice(-1)[0]);"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          const layerContentsPath \u003d path.join("
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \u0027.serverless\u0027, \u0027layers\u0027, arnParts[6], arnParts[7]);"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          const layerContentsCachePath \u003d path.join("
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            cachePath, \u0027layers\u0027, arnParts[6], arnParts[7]);"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          if (fs.existsSync(layerContentsPath)) {"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return layerContentsPath;"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          let downloadPromise \u003d BbPromise.resolve();"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          if (!fs.existsSync(layerContentsCachePath)) {"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            this.serverless.cli.log(`Downloading layer ${layer}...`);"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            mkdirp.sync(path.join(layerContentsCachePath));"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            downloadPromise \u003d this.provider.request("
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              \u0027Lambda\u0027, \u0027getLayerVersion\u0027, { LayerName: layerArn, VersionNumber: layerVersion })"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              .then(layerInfo \u003d\u003e download("
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                layerInfo.Content.Location,"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                layerContentsPath,"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                { extract: true }));"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          return downloadPromise"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .then(() \u003d\u003e fse.copySync(layerContentsCachePath, layerContentsPath))"
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .then(() \u003d\u003e layerContentsPath);"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }));"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  buildDockerImage(layerPaths) {"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const runtime \u003d this.getRuntime();"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const imageName \u003d \u0027sls-docker\u0027;"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      let dockerfile \u003d `FROM lambci/lambda:${runtime}`;"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      for (const layerPath of layerPaths) {"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        dockerfile +\u003d `\\nADD --chown\u003dsbx_user1051:495 ${layerPath} /opt`;"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      mkdirp.sync(path.join(\u0027.serverless\u0027, \u0027invokeLocal\u0027));"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const dockerfilePath \u003d path.join(\u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027Dockerfile\u0027);"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      fs.writeFileSync(dockerfilePath, dockerfile);"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli.log(\u0027Building Docker image...\u0027);"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027build\u0027, \u0027-t\u0027, imageName,"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        `${this.serverless.config.servicePath}`, \u0027-f\u0027, dockerfilePath]);"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(imageName)));"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  extractArtifact() {"
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const artifact \u003d _.get(this.options.functionObj, \u0027package.artifact\u0027, _.get("
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.service, \u0027package.artifact\u0027"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    ));"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (!artifact) {"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return this.serverless.config.servicePath;"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return fs.readFileAsync(artifact)"
+      },
+      {
+        "lineNumber": 300,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .then(jszip.loadAsync)"
+      },
+      {
+        "lineNumber": 301,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .then(zip \u003d\u003e BbPromise.all("
+      },
+      {
+        "lineNumber": 302,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Object.keys(zip.files)"
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          .map(filename \u003d\u003e zip.files[filename].async(\u0027nodebuffer\u0027).then(fileData \u003d\u003e {"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if (filename.endsWith(path.sep)) {"
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              return BbPromise.resolve();"
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            mkdirp.sync(path.join("
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027));"
+      },
+      {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return fs.writeFileAsync(path.join("
+      },
+      {
+        "lineNumber": 310,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027, filename), fileData, {"
+      },
+      {
+        "lineNumber": 311,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                mode: zip.files[filename].unixPermissions,"
+      },
+      {
+        "lineNumber": 312,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              });"
+      },
+      {
+        "lineNumber": 313,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }))))"
+      },
+      {
+        "lineNumber": 314,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .then(() \u003d\u003e path.join("
+      },
+      {
+        "lineNumber": 315,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.serverless.config.servicePath, \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027));"
+      },
+      {
+        "lineNumber": 316,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 317,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 318,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 319,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  invokeLocalDocker() {"
+      },
+      {
+        "lineNumber": 320,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const handler \u003d this.options.functionObj.handler;"
+      },
+      {
+        "lineNumber": 321,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 322,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return BbPromise.all(["
+      },
+      {
+        "lineNumber": 323,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.checkDockerDaemonStatus(),"
+      },
+      {
+        "lineNumber": 324,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.checkDockerImage().then(exists \u003d\u003e (exists ? {} : this.pullDockerImage())),"
+      },
+      {
+        "lineNumber": 325,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.getLayerPaths().then(layerPaths \u003d\u003e this.buildDockerImage(layerPaths)),"
+      },
+      {
+        "lineNumber": 326,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.extractArtifact(),"
+      },
+      {
+        "lineNumber": 327,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    ])"
+      },
+      {
+        "lineNumber": 328,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .then((results) \u003d\u003e new BbPromise((resolve, reject) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 329,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const imageName \u003d results[2];"
+      },
+      {
+        "lineNumber": 330,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const artifactPath \u003d results[3];"
+      },
+      {
+        "lineNumber": 331,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const dockerArgs \u003d ["
+      },
+      {
+        "lineNumber": 332,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027run\u0027, \u0027--rm\u0027, \u0027-v\u0027, `${artifactPath}:/var/task`, imageName,"
+      },
+      {
+        "lineNumber": 333,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          handler, JSON.stringify(this.options.data),"
+      },
+      {
+        "lineNumber": 334,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ];"
+      },
+      {
+        "lineNumber": 335,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const docker \u003d spawn(\u0027docker\u0027, dockerArgs);"
+      },
+      {
+        "lineNumber": 336,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        docker.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 337,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        docker.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 338,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(imageName)));"
+      },
+      {
+        "lineNumber": 339,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }));"
+      },
+      {
+        "lineNumber": 340,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 341,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 342,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  invokeLocalPython(runtime, handlerPath, handlerName, event, context) {"
+      },
+      {
+        "lineNumber": 343,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const input \u003d JSON.stringify({"
+      },
+      {
+        "lineNumber": 344,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      event: event || {},"
+      },
+      {
+        "lineNumber": 345,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      context: Object.assign("
+      },
+      {
+        "lineNumber": 346,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        {"
+      },
+      {
+        "lineNumber": 347,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          name: this.options.functionObj.name,"
+      },
+      {
+        "lineNumber": 348,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          version: \u0027LATEST\u0027,"
+      },
+      {
+        "lineNumber": 349,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
+      },
+      {
+        "lineNumber": 350,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          timeout: Number(this.options.functionObj.timeout)"
+      },
+      {
+        "lineNumber": 351,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            || Number(this.serverless.service.provider.timeout)"
+      },
+      {
+        "lineNumber": 352,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            || 6,"
+      },
+      {
+        "lineNumber": 353,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 354,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        context"
+      },
+      {
+        "lineNumber": 355,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ),"
+      },
+      {
+        "lineNumber": 356,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 357,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 358,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (process.env.VIRTUAL_ENV) {"
+      },
+      {
+        "lineNumber": 359,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const runtimeDir \u003d os.platform() \u003d\u003d\u003d \u0027win32\u0027 ? \u0027Scripts\u0027 : \u0027bin\u0027;"
+      },
+      {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      process.env.PATH \u003d ["
+      },
+      {
+        "lineNumber": 361,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        path.join(process.env.VIRTUAL_ENV, runtimeDir),"
+      },
+      {
+        "lineNumber": 362,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        path.delimiter,"
+      },
+      {
+        "lineNumber": 363,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        process.env.PATH,"
+      },
+      {
+        "lineNumber": 364,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 365,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 366,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 367,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise(resolve \u003d\u003e {"
+      },
+      {
+        "lineNumber": 368,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const python \u003d spawn(runtime.split(\u0027.\u0027)[0],"
+      },
+      {
+        "lineNumber": 369,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [\u0027-u\u0027, path.join(__dirname, \u0027invoke.py\u0027), handlerPath, handlerName],"
+      },
+      {
+        "lineNumber": 370,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        { env: process.env }, { shell: true });"
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      python.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 372,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      python.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 373,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      python.stdin.write(input);"
+      },
+      {
+        "lineNumber": 374,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      python.stdin.end();"
+      },
+      {
+        "lineNumber": 375,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      python.on(\u0027close\u0027, () \u003d\u003e resolve());"
+      },
+      {
+        "lineNumber": 376,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 377,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 378,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 379,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  callJavaBridge(artifactPath, className, handlerName, input) {"
+      },
+      {
+        "lineNumber": 380,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise((resolve) \u003d\u003e fs.statAsync(artifactPath).then(() \u003d\u003e {"
+      },
+      {
+        "lineNumber": 381,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const java \u003d spawn(\u0027java\u0027, ["
+      },
+      {
+        "lineNumber": 382,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        `-DartifactPath\u003d${artifactPath}`,"
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        `-DclassName\u003d${className}`,"
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        `-DhandlerName\u003d${handlerName}`,"
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027-jar\u0027,"
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        path.join(__dirname, \u0027java\u0027, \u0027target\u0027, \u0027invoke-bridge-1.0.jar\u0027),"
+      },
+      {
+        "lineNumber": 387,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ], { shell: true });"
+      },
+      {
+        "lineNumber": 388,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 389,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli.log(["
+      },
+      {
+        "lineNumber": 390,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027In order to get human-readable output,\u0027,"
+      },
+      {
+        "lineNumber": 391,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027 please implement \"toString()\" method of your \"ApiGatewayResponse\" object.\u0027,"
+      },
+      {
+        "lineNumber": 392,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ].join(\u0027\u0027));"
+      },
+      {
+        "lineNumber": 393,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 394,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      java.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 395,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      java.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 396,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      java.stdin.write(input);"
+      },
+      {
+        "lineNumber": 397,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      java.stdin.end();"
+      },
+      {
+        "lineNumber": 398,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      java.on(\u0027close\u0027, () \u003d\u003e resolve());"
+      },
+      {
+        "lineNumber": 399,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }).catch(() \u003d\u003e {"
+      },
+      {
+        "lineNumber": 400,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      throw new Error(`Artifact ${artifactPath} doesn\u0027t exists, please compile it first.`);"
+      },
+      {
+        "lineNumber": 401,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }));"
+      },
+      {
+        "lineNumber": 402,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 403,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 404,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  invokeLocalJava(runtime, className, handlerName, artifactPath, event, customContext) {"
+      },
+      {
+        "lineNumber": 405,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const timeout \u003d Number(this.options.functionObj.timeout)"
+      },
+      {
+        "lineNumber": 406,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      || Number(this.serverless.service.provider.timeout)"
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      || 6;"
+      },
+      {
+        "lineNumber": 408,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const context \u003d {"
+      },
+      {
+        "lineNumber": 409,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      name: this.options.functionObj.name,"
+      },
+      {
+        "lineNumber": 410,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      version: \u0027LATEST\u0027,"
+      },
+      {
+        "lineNumber": 411,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
+      },
+      {
+        "lineNumber": 412,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      timeout,"
+      },
+      {
+        "lineNumber": 413,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 414,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const input \u003d JSON.stringify({"
+      },
+      {
+        "lineNumber": 415,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      event: event || {},"
+      },
+      {
+        "lineNumber": 416,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      context: customContext || context,"
+      },
+      {
+        "lineNumber": 417,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 418,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 419,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const javaBridgePath \u003d path.join(__dirname, \u0027java\u0027);"
+      },
+      {
+        "lineNumber": 420,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const executablePath \u003d path.join(javaBridgePath, \u0027target\u0027);"
+      },
+      {
+        "lineNumber": 421,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 422,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise(resolve \u003d\u003e fs.statAsync(executablePath)"
+      },
+      {
+        "lineNumber": 423,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .then(() \u003d\u003e this.callJavaBridge(artifactPath, className, handlerName, input))"
+      },
+      {
+        "lineNumber": 424,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .then(resolve)"
+      },
+      {
+        "lineNumber": 425,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .catch(() \u003d\u003e {"
+      },
+      {
+        "lineNumber": 426,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const mvn \u003d spawn(\u0027mvn\u0027, ["
+      },
+      {
+        "lineNumber": 427,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027package\u0027,"
+      },
+      {
+        "lineNumber": 428,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027-f\u0027,"
+      },
+      {
+        "lineNumber": 429,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          path.join(javaBridgePath, \u0027pom.xml\u0027),"
+      },
+      {
+        "lineNumber": 430,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ], { shell: true });"
+      },
+      {
+        "lineNumber": 431,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 432,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.serverless.cli"
+      },
+      {
+        "lineNumber": 433,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          .log(\u0027Building Java bridge, first invocation might take a bit longer.\u0027);"
+      },
+      {
+        "lineNumber": 434,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 435,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        mvn.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(`mvn - ${buf.toString()}`));"
+      },
+      {
+        "lineNumber": 436,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        mvn.stdin.end();"
+      },
+      {
+        "lineNumber": 437,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 438,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        mvn.on(\u0027close\u0027, () \u003d\u003e this.callJavaBridge(artifactPath, className, handlerName, input)"
+      },
+      {
+        "lineNumber": 439,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          .then(resolve));"
+      },
+      {
+        "lineNumber": 440,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }));"
+      },
+      {
+        "lineNumber": 441,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 442,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 443,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  invokeLocalRuby(runtime, handlerPath, handlerName, event, context) {"
+      },
+      {
+        "lineNumber": 444,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const input \u003d JSON.stringify({"
+      },
+      {
+        "lineNumber": 445,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      event: event || {},"
+      },
+      {
+        "lineNumber": 446,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      context,"
+      },
+      {
+        "lineNumber": 447,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 448,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 449,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise(resolve \u003d\u003e {"
+      },
+      {
+        "lineNumber": 450,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const ruby \u003d spawn(runtime,"
+      },
+      {
+        "lineNumber": 451,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        [path.join(__dirname, \u0027invoke.rb\u0027), handlerPath, handlerName],"
+      },
+      {
+        "lineNumber": 452,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        { env: process.env }, { shell: true });"
+      },
+      {
+        "lineNumber": 453,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ruby.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 454,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ruby.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+      },
+      {
+        "lineNumber": 455,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ruby.stdin.write(input);"
+      },
+      {
+        "lineNumber": 456,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ruby.stdin.end();"
+      },
+      {
+        "lineNumber": 457,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ruby.on(\u0027close\u0027, () \u003d\u003e resolve());"
+      },
+      {
+        "lineNumber": 458,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 459,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 460,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 461,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  invokeLocalNodeJs(handlerPath, handlerName, event, customContext) {"
+      },
+      {
+        "lineNumber": 462,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    let lambda;"
+      },
+      {
+        "lineNumber": 463,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    let pathToHandler;"
+      },
+      {
+        "lineNumber": 464,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    let hasResponded \u003d false;"
+      },
+      {
+        "lineNumber": 465,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    try {"
+      },
+      {
+        "lineNumber": 466,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      /*"
+      },
+      {
+        "lineNumber": 467,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "       * we need require() here to load the handler from the file system"
+      },
+      {
+        "lineNumber": 468,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "       * which the user has to supply by passing the function name"
+      },
+      {
+        "lineNumber": 469,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "       */"
+      },
+      {
+        "lineNumber": 470,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      pathToHandler \u003d path.join("
+      },
+      {
+        "lineNumber": 471,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.serverless.config.servicePath,"
+      },
+      {
+        "lineNumber": 472,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.extraServicePath || \u0027\u0027,"
+      },
+      {
+        "lineNumber": 473,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handlerPath"
+      },
+      {
+        "lineNumber": 474,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      );"
+      },
+      {
+        "lineNumber": 475,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const handlersContainer \u003d require( // eslint-disable-line global-require"
+      },
+      {
+        "lineNumber": 476,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        pathToHandler"
+      },
+      {
+        "lineNumber": 477,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      );"
+      },
+      {
+        "lineNumber": 478,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      lambda \u003d handlersContainer[handlerName];"
+      },
+      {
+        "lineNumber": 479,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } catch (error) {"
+      },
+      {
+        "lineNumber": 480,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli.consoleLog(chalk.red(inspect(error)));"
+      },
+      {
+        "lineNumber": 481,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      throw new Error(`Exception encountered when loading ${pathToHandler}`);"
+      },
+      {
+        "lineNumber": 482,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 483,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 484,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    function handleError(err) {"
+      },
+      {
+        "lineNumber": 485,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      let errorResult;"
+      },
+      {
+        "lineNumber": 486,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (err instanceof Error) {"
+      },
+      {
+        "lineNumber": 487,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        errorResult \u003d {"
+      },
+      {
+        "lineNumber": 488,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          errorMessage: err.message,"
+      },
+      {
+        "lineNumber": 489,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          errorType: err.constructor.name,"
+      },
+      {
+        "lineNumber": 490,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "          stackTrace: err.stack.split(\u0027\\n\u0027),"
+      },
+      {
+        "lineNumber": 491,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 492,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      } else {"
+      },
+      {
+        "lineNumber": 493,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        errorResult \u003d {"
+      },
+      {
+        "lineNumber": 494,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          errorMessage: err,"
+      },
+      {
+        "lineNumber": 495,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 496,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 497,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 498,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli.consoleLog(chalk.red(JSON.stringify(errorResult, null, 4)));"
+      },
+      {
+        "lineNumber": 499,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      process.exitCode \u003d 1;"
+      },
+      {
+        "lineNumber": 500,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 501,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 502,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    function handleResult(result) {"
+      },
+      {
+        "lineNumber": 503,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (result instanceof Error) {"
+      },
+      {
+        "lineNumber": 504,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        handleError.call(this, result);"
+      },
+      {
+        "lineNumber": 505,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return;"
+      },
+      {
+        "lineNumber": 506,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      } else if (result.headers \u0026\u0026 result.headers[\u0027Content-Type\u0027] \u003d\u003d\u003d \u0027application/json\u0027) {"
+      },
+      {
+        "lineNumber": 507,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (result.body) {"
+      },
+      {
+        "lineNumber": 508,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          try {"
+      },
+      {
+        "lineNumber": 509,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            Object.assign(result, {"
+      },
+      {
+        "lineNumber": 510,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              body: JSON.parse(result.body),"
+      },
+      {
+        "lineNumber": 511,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            });"
+      },
+      {
+        "lineNumber": 512,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          } catch (e) {"
+      },
+      {
+        "lineNumber": 513,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            throw new Error(\u0027Content-Type of response is application/json but body is not json\u0027);"
+      },
+      {
+        "lineNumber": 514,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 515,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 516,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 517,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 518,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli.consoleLog(JSON.stringify(result, null, 4));"
+      },
+      {
+        "lineNumber": 519,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 520,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 521,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return new BbPromise((resolve) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 522,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const callback \u003d (err, result) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 523,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!hasResponded) {"
+      },
+      {
+        "lineNumber": 524,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          hasResponded \u003d true;"
+      },
+      {
+        "lineNumber": 525,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          if (err) {"
+      },
+      {
+        "lineNumber": 526,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            handleError.call(this, err);"
+      },
+      {
+        "lineNumber": 527,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          } else if (result) {"
+      },
+      {
+        "lineNumber": 528,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            handleResult.call(this, result);"
+      },
+      {
+        "lineNumber": 529,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 530,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 531,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        resolve();"
+      },
+      {
+        "lineNumber": 532,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      };"
+      },
+      {
+        "lineNumber": 533,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 534,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const startTime \u003d new Date();"
+      },
+      {
+        "lineNumber": 535,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const timeout \u003d Number(this.options.functionObj.timeout)"
+      },
+      {
+        "lineNumber": 536,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        || Number(this.serverless.service.provider.timeout)"
+      },
+      {
+        "lineNumber": 537,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        || 6;"
+      },
+      {
+        "lineNumber": 538,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      let context \u003d {"
+      },
+      {
+        "lineNumber": 539,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        awsRequestId: \u0027id\u0027,"
+      },
+      {
+        "lineNumber": 540,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        invokeid: \u0027id\u0027,"
+      },
+      {
+        "lineNumber": 541,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
+      },
+      {
+        "lineNumber": 542,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        logStreamName: \u00272015/09/22/[HEAD]13370a84ca4ed8b77c427af260\u0027,"
+      },
+      {
+        "lineNumber": 543,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        functionVersion: \u0027HEAD\u0027,"
+      },
+      {
+        "lineNumber": 544,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        isDefaultFunctionVersion: true,"
+      },
+      {
+        "lineNumber": 545,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 546,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        functionName: this.options.functionObj.name,"
+      },
+      {
+        "lineNumber": 547,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        memoryLimitInMB: \u00271024\u0027,"
+      },
+      {
+        "lineNumber": 548,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 549,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        succeed(result) {"
+      },
+      {
+        "lineNumber": 550,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          return callback(null, result);"
+      },
+      {
+        "lineNumber": 551,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 552,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        fail(error) {"
+      },
+      {
+        "lineNumber": 553,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          return callback(error);"
+      },
+      {
+        "lineNumber": 554,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 555,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        done(error, result) {"
+      },
+      {
+        "lineNumber": 556,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          return callback(error, result);"
+      },
+      {
+        "lineNumber": 557,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 558,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        getRemainingTimeInMillis() {"
+      },
+      {
+        "lineNumber": 559,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          return Math.max((timeout * 1000) - ((new Date()).valueOf() - startTime.valueOf()), 0);"
+      },
+      {
+        "lineNumber": 560,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 561,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      };"
+      },
+      {
+        "lineNumber": 562,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 563,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (customContext) {"
+      },
+      {
+        "lineNumber": 564,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        context \u003d customContext;"
+      },
+      {
+        "lineNumber": 565,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 566,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 567,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const maybeThennable \u003d lambda(event, context, callback);"
+      },
+      {
+        "lineNumber": 568,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (!_.isUndefined(maybeThennable)) {"
+      },
+      {
+        "lineNumber": 569,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return BbPromise.resolve(maybeThennable)"
+      },
+      {
+        "lineNumber": 570,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          .then("
+      },
+      {
+        "lineNumber": 571,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            callback.bind(this, null),"
+      },
+      {
+        "lineNumber": 572,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            callback.bind(this)"
+      },
+      {
+        "lineNumber": 573,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          );"
+      },
+      {
+        "lineNumber": 574,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 575,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 576,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return maybeThennable;"
+      },
+      {
+        "lineNumber": 577,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 578,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 579,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 580,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 581,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "module.exports \u003d AwsInvokeLocal;"
+      }
+    ],
+    "authorContributionMap": {
+      "Xenonym": 1,
+      "-": 580
+    }
+  },
+  {
+    "path": "lib/plugins/create/create.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u0027use strict\u0027;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const BbPromise \u003d require(\u0027bluebird\u0027);"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const path \u003d require(\u0027path\u0027);"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const fse \u003d require(\u0027fs-extra\u0027);"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const _ \u003d require(\u0027lodash\u0027);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const untildify \u003d require(\u0027untildify\u0027);"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const ServerlessError \u003d require(\u0027../../classes/Error\u0027).ServerlessError;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const userStats \u003d require(\u0027../../utils/userStats\u0027);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const download \u003d require(\u0027../../utils/downloadTemplateFromRepo\u0027);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const renameService \u003d require(\u0027../../utils/renameService\u0027).renameService;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const copyDirContentsSync \u003d require(\u0027../../utils/fs/copyDirContentsSync\u0027);"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const dirExistsSync \u003d require(\u0027../../utils/fs/dirExistsSync\u0027);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// class wide constants"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const validTemplates \u003d ["
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-clojure-gradle\u0027,"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-clojurescript-gradle\u0027,"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-nodejs\u0027,"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-nodejs-typescript\u0027,"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-alexa-typescript\u0027,"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-nodejs-ecma-script\u0027,"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-python\u0027,"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-python3\u0027,"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-groovy-gradle\u0027,"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-java-maven\u0027,"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-java-gradle\u0027,"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-kotlin-jvm-maven\u0027,"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-kotlin-jvm-gradle\u0027,"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-kotlin-nodejs-gradle\u0027,"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-scala-sbt\u0027,"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-csharp\u0027,"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-fsharp\u0027,"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-go\u0027,"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-go-dep\u0027,"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-go-mod\u0027,"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-ruby\u0027,"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027aws-provided\u0027,"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027azure-nodejs\u0027,"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027cloudflare-workers\u0027,"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027cloudflare-workers-enterprise\u0027,"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027fn-nodejs\u0027,"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027fn-go\u0027,"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027google-nodejs\u0027,"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027google-python\u0027,"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027google-go\u0027,"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027kubeless-python\u0027,"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027kubeless-nodejs\u0027,"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027openwhisk-java-maven\u0027,"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027openwhisk-nodejs\u0027,"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027openwhisk-php\u0027,"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027openwhisk-python\u0027,"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027openwhisk-ruby\u0027,"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027openwhisk-swift\u0027,"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027spotinst-nodejs\u0027,"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027spotinst-python\u0027,"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027spotinst-ruby\u0027,"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027spotinst-java8\u0027,"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027plugin\u0027,"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // this template is used to streamline the onboarding process"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // it uses the Node.js runtime and AWS provider"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  \u0027hello-world\u0027,"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "];"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const humanReadableTemplateList \u003d `${validTemplates.slice(0, -1)"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  .map((template) \u003d\u003e `\"${template}\"`).join(\u0027, \u0027)} and \"${validTemplates.slice(-1)}\"`;"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class Create {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  constructor(serverless, options) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.serverless \u003d serverless;"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.options \u003d options;"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.commands \u003d {"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      create: {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        usage: \u0027Create new Serverless service\u0027,"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        lifecycleEvents: ["
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027create\u0027,"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ],"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        options: {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          template: {"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            usage: `Template for the service. Available templates: ${humanReadableTemplateList}`,"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            shortcut: \u0027t\u0027,"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027template-url\u0027: {"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            usage: \u0027Template URL for the service. Supports: GitHub, BitBucket\u0027,"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            shortcut: \u0027u\u0027,"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027template-path\u0027: {"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            usage: \u0027Template local path for the service.\u0027,"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          path: {"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            usage: \u0027The path where the service should be created (e.g. --path my-service)\u0027,"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            shortcut: \u0027p\u0027,"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          name: {"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            usage: \u0027Name for the service. Overwrites the default name of the created service.\u0027,"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            shortcut: \u0027n\u0027,"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      },"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.hooks \u003d {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      \u0027create:create\u0027: () \u003d\u003e BbPromise.bind(this)"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(this.create),"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  create() {"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.serverless.cli.log(\u0027Generating boilerplate...\u0027);"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (\u0027template\u0027 in this.options) {"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.createFromTemplate();"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else if (\u0027template-url\u0027 in this.options) {"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return download.downloadTemplateFromRepo("
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options[\u0027template-url\u0027],"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.name,"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.options.path"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      )"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "        .then(serviceName \u003d\u003e {"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          const message \u003d ["
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "            `Successfully installed \"${serviceName}\" `,"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "            `${this.options.name \u0026\u0026"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "              this.options.name !\u003d\u003d serviceName ? `as \"${this.options.name}\"` : \u0027\u0027}`,"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          this.serverless.cli.log(message);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          userStats.track(\u0027service_created\u0027, {"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            template: this.options.template,"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            serviceName: this.options.name,"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          });"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        })"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .catch(err \u003d\u003e {"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          throw new this.serverless.classes.Error(err);"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else if (\u0027template-path\u0027 in this.options) {"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      // Copying template from a local directory"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const servicePath \u003d this.options.path"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ? untildify(this.options.path)"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        : path.join(process.cwd(), this.options.name);"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (dirExistsSync(servicePath)) {"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const errorMessage \u003d `A folder named \"${servicePath}\" already exists.`;"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        throw new ServerlessError(errorMessage);"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      copyDirContentsSync(untildify(this.options[\u0027template-path\u0027]), servicePath, {"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        noLinks: true,"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      });"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (this.options.name) {"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        renameService(this.options.name, servicePath);"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const errorMessage \u003d ["
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027You must either pass a template name (--template), \u0027,"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027a URL (--template-url) or a local path (--template-path).\u0027,"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      throw new this.serverless.classes.Error(errorMessage);"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return BbPromise.resolve();"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  createFromTemplate() {"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const notPlugin \u003d this.options.template !\u003d\u003d \u0027plugin\u0027;"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (validTemplates.indexOf(this.options.template) \u003d\u003d\u003d -1) {"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const errorMessage \u003d ["
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        `Template \"${this.options.template}\" is not supported.`,"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ` Supported templates are: ${humanReadableTemplateList}.`,"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      throw new this.serverless.classes.Error(errorMessage);"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // store the custom options for the service if given"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const boilerplatePath \u003d _.toString(this.options.path);"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const serviceName \u003d _.toString(this.options.name);"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const templateSrcDir \u003d path.join(this.serverless.config.serverlessPath,"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      \u0027plugins\u0027, \u0027create\u0027, \u0027templates\u0027, this.options.template);"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // create (if not yet present) and chdir into the directory for the service"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (boilerplatePath) {"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const newPath \u003d path.join(process.cwd(), boilerplatePath);"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (this.serverless.utils.dirExistsSync(newPath)) {"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const errorMessage \u003d ["
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          `The directory \"${newPath}\" already exists, and serverless will not overwrite it. `,"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027Rename or move the directory and try again if you want serverless to create it\"\u0027,"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        throw new this.serverless.classes.Error(errorMessage);"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli.log(`Generating boilerplate in \"${newPath}\"`);"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      fse.mkdirsSync(newPath);"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      process.chdir(newPath);"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      // ensure no template file already exists in cwd that we may overwrite"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const templateFullFilePaths \u003d this.serverless.utils.walkDirSync(templateSrcDir);"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      templateFullFilePaths.forEach(ffp \u003d\u003e {"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const filename \u003d path.basename(ffp);"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (this.serverless.utils.fileExistsSync(path.join(process.cwd(), filename))) {"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          const errorMessage \u003d ["
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            `The file \"${filename}\" already exists, and serverless will not overwrite it. `,"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            `Move the file and try again if you want serverless to write a new \"${filename}\"`,"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          throw new this.serverless.classes.Error(errorMessage);"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      });"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (notPlugin) {"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.config.update({ servicePath: process.cwd() });"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // copy template files recursively to cwd"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // while keeping template file tree"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    try {"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.utils.copyDirContentsSync(templateSrcDir, process.cwd());"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      // NPM renames .gitignore to .npmignore on publish so we have to rename it."
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (fse.existsSync(path.join(process.cwd(), \u0027gitignore\u0027))) {"
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        fse.renameSync(path.join(process.cwd(), \u0027gitignore\u0027),"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          path.join(process.cwd(), \u0027.gitignore\u0027));"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } catch (err) {"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const errorMessage \u003d ["
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027Error unable to create a service in this directory. \u0027,"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027Please check that you have the required permissions to write to the directory\u0027,"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      throw new this.serverless.classes.Error(errorMessage);"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // rename the service if the user has provided a path via options and is creating a service"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if ((boilerplatePath || serviceName) \u0026\u0026 notPlugin) {"
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const newServiceName \u003d serviceName || boilerplatePath.split(path.sep).pop();"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      renameService(newServiceName, this.serverless.config.servicePath);"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    userStats.track(\u0027service_created\u0027, {"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      template: this.options.template,"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      serviceName,"
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.serverless.cli.asciiGreeting();"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.serverless.cli"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      .log(`Successfully generated boilerplate for template: \"${this.options.template}\"`);"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (!(boilerplatePath || serviceName) \u0026\u0026 notPlugin) {"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .log(\u0027NOTE: Please update the \"service\" property in serverless.yml with your service name\u0027);"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "module.exports \u003d Create;"
+      }
+    ],
+    "authorContributionMap": {
+      "Xenonym": 4,
+      "-": 258
+    }
+  },
+  {
+    "path": "lib/plugins/create/templates/aws-nodejs-typescript/handler.ts",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import { APIGatewayProxyHandler } from \u0027aws-lambda\u0027;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import \u0027source-map-support/register\u0027;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "export const hello: APIGatewayProxyHandler \u003d async (event, _context) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    statusCode: 200,"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    body: JSON.stringify({"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      message: \u0027Go Serverless Webpack (Typescript) v1.0! Your function executed successfully!\u0027,"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      input: event,"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }),"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  };"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Xenonym": 1,
+      "-": 11
+    }
+  },
+  {
+    "path": "lib/plugins/install/install.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u0027use strict\u0027;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const BbPromise \u003d require(\u0027bluebird\u0027);"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const userStats \u003d require(\u0027../../utils/userStats\u0027);"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const download \u003d require(\u0027../../utils/downloadTemplateFromRepo\u0027);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class Install {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  constructor(serverless, options) {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.serverless \u003d serverless;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.options \u003d options;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.commands \u003d {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      install: {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        usage: \u0027Install a Serverless service from GitHub or a plugin from the Serverless registry\u0027,"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        lifecycleEvents: ["
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          \u0027install\u0027,"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ],"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        options: {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          url: {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            usage: \u0027URL of the Serverless service on GitHub\u0027,"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            required: true,"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            shortcut: \u0027u\u0027,"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          name: {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            usage: \u0027Name for the service\u0027,"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            shortcut: \u0027n\u0027,"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      },"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    this.hooks \u003d {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      \u0027install:install\u0027: () \u003d\u003e BbPromise.bind(this)"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .then(this.install),"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  install() {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return download.downloadTemplateFromRepo(this.options.url, this.options.name)"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "      .then(serviceName \u003d\u003e {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        const message \u003d ["
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "          `Successfully installed \"${serviceName}\" `,"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "          `${this.options.name \u0026\u0026"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "            this.options.name !\u003d\u003d serviceName ? `as \"${this.options.name}\"` : \u0027\u0027}`,"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ].join(\u0027\u0027);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        userStats.track(\u0027service_installed\u0027, {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          data: { // will be updated with core analtyics lib"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            url: this.options.url,"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          },"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        this.serverless.cli.log(message);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      });"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "module.exports \u003d Install;"
+      }
+    ],
+    "authorContributionMap": {
+      "Xenonym": 4,
+      "-": 54
+    }
+  },
+  {
+    "path": "lib/utils/downloadTemplateFromRepo.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u0027use strict\u0027;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const path \u003d require(\u0027path\u0027);"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const os \u003d require(\u0027os\u0027);"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const URL \u003d require(\u0027url\u0027);"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const download \u003d require(\u0027download\u0027);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const BbPromise \u003d require(\u0027bluebird\u0027);"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const fse \u003d require(\u0027fs-extra\u0027);"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const qs \u003d require(\u0027querystring\u0027);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const renameService \u003d require(\u0027./renameService\u0027).renameService;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const ServerlessError \u003d require(\u0027../classes/Error\u0027).ServerlessError;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const copyDirContentsSync \u003d require(\u0027./fs/copyDirContentsSync\u0027);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const dirExistsSync \u003d require(\u0027./fs/dirExistsSync\u0027);"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "const log \u003d require(\u0027./log/serverlessLog\u0027);"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Returns directory path"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {Number} length"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {Array} parts"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @returns {String} directory path"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "function getPathDirectory(length, parts) {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  if (!parts) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return \u0027\u0027;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return parts"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    .slice(length)"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    .filter(part \u003d\u003e part !\u003d\u003d \u0027\u0027)"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    .join(path.sep);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Validates URL"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {Object} url"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {String} hostname"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {String} service"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {String} owner"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {String} repo"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "function validateUrl(url, hostname, service, owner, repo) {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // validate if given url is a valid url"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  if (url.hostname !\u003d\u003d hostname || !owner || !repo) {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const errorMessage \u003d `The URL must be a valid ${"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        service"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      } URL in the following format: https://${"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        hostname"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }/serverless/serverless`;"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    throw new ServerlessError(errorMessage);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {Object} url"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @returns {Object}"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "function parseGitHubURL(url) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const pathLength \u003d 4;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const owner \u003d parts[1];"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const repo \u003d parts[2];"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const branch \u003d isSubdirectory ? parts[pathLength] : \u0027master\u0027;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // validate if given url is a valid GitHub url"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  validateUrl(url, \u0027github.com\u0027, \u0027GitHub\u0027, owner, repo);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const downloadUrl \u003d `https://${url.auth ? `${url.auth}@` : \u0027\u0027}github.com/${owner}/${repo}/archive/${branch}.zip`;"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    owner,"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    repo,"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    branch,"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    downloadUrl,"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    isSubdirectory,"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  };"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {Object} url"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @returns {Object}"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "function parseBitbucketURL(url) {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const pathLength \u003d 4;"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const owner \u003d parts[1];"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const repo \u003d parts[2];"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const query \u003d qs.parse(url.query);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const branch \u003d \u0027at\u0027 in query ? query.at : \u0027master\u0027;"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // validate if given url is a valid Bitbucket url"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  validateUrl(url, \u0027bitbucket.org\u0027, \u0027Bitbucket\u0027, owner, repo);"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const downloadUrl \u003d `https://bitbucket.org/${owner}/${repo}/get/${branch}.zip`;"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return {"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    owner,"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    repo,"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    branch,"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    downloadUrl,"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    isSubdirectory,"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  };"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {Object} url"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @returns {Object}"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "function parseGitlabURL(url) {"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const pathLength \u003d 4;"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const owner \u003d parts[1];"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const repo \u003d parts[2];"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const branch \u003d isSubdirectory ? parts[pathLength] : \u0027master\u0027;"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // validate if given url is a valid GitLab url"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  validateUrl(url, \u0027gitlab.com\u0027, \u0027Bitbucket\u0027, owner, repo);"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const downloadUrl \u003d `https://gitlab.com/${owner}/${repo}/-/archive/${branch}/${repo}-${branch}.zip`;"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    owner,"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    repo,"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    branch,"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    downloadUrl,"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    isSubdirectory,"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  };"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * Parse URL and call the appropriate adaptor"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " *"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {string} inputUrl"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @throws {ServerlessError}"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @returns {Object}"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "function parseRepoURL(inputUrl) {"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  if (!inputUrl) {"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    throw new ServerlessError(\u0027URL is required\u0027);"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const url \u003d URL.parse(inputUrl.replace(/\\/$/, \u0027\u0027));"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // check if url parameter is a valid url"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  if (!url.host) {"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    throw new ServerlessError(\u0027The URL you passed is not a valid URL\u0027);"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  switch (url.hostname) {"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    case \u0027github.com\u0027: {"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return parseGitHubURL(url);"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    case \u0027bitbucket.org\u0027: {"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return parseBitbucketURL(url);"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    case \u0027gitlab.com\u0027: {"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return parseGitlabURL(url);"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    default: {"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const msg \u003d"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027The URL you passed is not one of the valid providers: \"GitHub\", \"Bitbucket\", or \"GitLab\".\u0027;"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      throw new ServerlessError(msg);"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {string} inputUrl"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {string} [templateName]"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @param {string} [path]"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " * @returns {Promise}"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "function downloadTemplateFromRepo(inputUrl, templateName, downloadPath) {"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const repoInformation \u003d parseRepoURL(inputUrl);"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  let serviceName;"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  let dirName;"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  let downloadServicePath;"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  if (repoInformation.isSubdirectory) {"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const folderName \u003d repoInformation.pathToDirectory.split(\u0027/\u0027).splice(-1)[0];"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    serviceName \u003d folderName;"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    dirName \u003d downloadPath || templateName || folderName;"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    downloadServicePath \u003d path.join(os.tmpdir(), repoInformation.repo);"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  } else {"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    serviceName \u003d repoInformation.repo;"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    dirName \u003d downloadPath || templateName || repoInformation.repo;"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    downloadServicePath \u003d path.join(process.cwd(), dirName);"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const servicePath \u003d path.join(process.cwd(), dirName);"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  const renamed \u003d dirName !\u003d\u003d repoInformation.repo;"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  if (dirExistsSync(path.join(process.cwd(), dirName))) {"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    const errorMessage \u003d `A folder named \"${dirName}\" already exists.`;"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    throw new ServerlessError(errorMessage);"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  log(`Downloading and installing \"${serviceName}\"...`);"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // download service"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return download("
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    repoInformation.downloadUrl,"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    downloadServicePath,"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    { timeout: 30000, extract: true, strip: 1, mode: \u0027755\u0027 }"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  ).then(() \u003d\u003e {"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // if it\u0027s a directory inside of git"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (repoInformation.isSubdirectory) {"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const directory \u003d path.join(downloadServicePath, repoInformation.pathToDirectory);"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      copyDirContentsSync(directory, servicePath);"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      fse.removeSync(downloadServicePath);"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }).then(() \u003d\u003e {"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    if (renamed) renameService(dirName, servicePath);"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "    return BbPromise.resolve(serviceName);"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  });"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "module.exports \u003d {"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  downloadTemplateFromRepo,"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  parseRepoURL,"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "};"
+      }
+    ],
+    "authorContributionMap": {
+      "Xenonym": 2,
+      "-": 227
+    }
+  }
+]
