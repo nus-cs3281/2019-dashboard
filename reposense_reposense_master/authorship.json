@@ -7879,453 +7879,467 @@
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "              input.radio-button--search(type\u003d\"radio\", name\u003d\"filter\", value\u003d\"search\", v-on:click\u003d\"enableSearchBar()\")"
+        "content": "              input.radio-button--search(type\u003d\"radio\", name\u003d\"filter\", value\u003d\"search\", v-bind:checked\u003d\"isSearchBar\","
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "              form.file-picker.mui-form--inline(onsubmit\u003d\"return false\")"
+        "content": "                  v-on:click\u003d\"indicateSearchBar\")"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "                input#search(type\u003d\"search\", placeholder\u003d\"Filter by glob\", v-on:change\u003d\"updateFilterSearch\", disabled)"
+        "content": "              form.file-picker.mui-form--inline(onsubmit\u003d\"return false\")"
       },
       {
         "lineNumber": 217,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "                button#submit-button(type\u003d\"submit\", disabled) Filter"
+        "content": "                input#search(type\u003d\"search\", placeholder\u003d\"Filter by glob\", v-on:change\u003d\"updateFilterSearch\","
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "            .fileformat"
+        "content": "                    v-on:click\u003d\"indicateSearchBar\")"
       },
       {
         "lineNumber": 219,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "              input.radio-button--checkbox(type\u003d\"radio\", name\u003d\"filter\", value\u003d\"checkboxes\", v-on:click\u003d\"enableCheckBoxes()\","
+        "content": "                button#submit-button(type\u003d\"submit\", v-on:click\u003d\"indicateSearchBar\") Filter"
       },
       {
         "lineNumber": 220,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "                  checked)"
+        "content": "            .fileformat"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "              div.checkboxes.mui-form--inline(v-if\u003d\"files.length \u003e 0\")"
+        "content": "              input.radio-button--checkbox(type\u003d\"radio\", name\u003d\"filter\", value\u003d\"checkboxes\", v-bind:checked\u003d\"isCheckBoxes\","
       },
       {
         "lineNumber": 222,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "                  v-on:click\u003d\"indicateCheckBoxes\")"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "              div.checkboxes.mui-form--inline(v-if\u003d\"files.length \u003e 0\")"
+      },
+      {
+        "lineNumber": 224,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                label"
       },
       {
-        "lineNumber": 223,
+        "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
         "content": "                  input.mui-checkbox--fileformat(type\u003d\"checkbox\" v-on:click\u003d\"selectAll\" v-model\u003d\"isSelectAllChecked\")"
       },
       {
-        "lineNumber": 224,
+        "lineNumber": 226,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                  span(v-bind:title\u003d\"getTotalFileBlankLineInfo()\")"
       },
       {
-        "lineNumber": 225,
+        "lineNumber": 227,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                    span.select All:\u0026nbsp;"
       },
       {
-        "lineNumber": 226,
+        "lineNumber": 228,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                    span.loc {{ totalLineCount }}\u0026nbsp;"
       },
       {
-        "lineNumber": 227,
+        "lineNumber": 229,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                    span.bloc ({{ totalBlankLineCount }})"
       },
       {
-        "lineNumber": 228,
+        "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
         "content": "                template(v-for\u003d\"format in Object.keys(getExistingLinesObj)\", v-bind:key\u003d\"format\")"
       },
       {
-        "lineNumber": 229,
+        "lineNumber": 231,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                  label"
       },
       {
-        "lineNumber": 230,
+        "lineNumber": 232,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "                    input.mui-checkbox--fileformat(type\u003d\"checkbox\" :checked\u003d\"selectedFileFormats.includes(format)\""
+        "content": "                    input.mui-checkbox--fileformat(type\u003d\"checkbox\" v-bind:checked\u003d\"selectedFileFormats.includes(format)\""
       },
       {
-        "lineNumber": 231,
+        "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
         "content": "                        v-on:change\u003d\"selectFileFormat(format)\")"
       },
       {
-        "lineNumber": 232,
+        "lineNumber": 234,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                    span(v-bind:title\u003d\"getFileBlankLineInfo(format)\")"
       },
       {
-        "lineNumber": 233,
+        "lineNumber": 235,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                      span {{ format }}: {{ getExistingLinesObj[format] }}\u0026nbsp;"
       },
       {
-        "lineNumber": 234,
+        "lineNumber": 236,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                      span.bloc ({{ filesBlankLinesObj[format] }})"
       },
       {
-        "lineNumber": 235,
+        "lineNumber": 237,
         "author": {
           "gitId": "emer7"
         },
         "content": "            .sorting.mui-form--inline"
       },
       {
-        "lineNumber": 236,
+        "lineNumber": 238,
         "author": {
           "gitId": "emer7"
         },
         "content": "              .mui-select"
       },
       {
-        "lineNumber": 237,
+        "lineNumber": 239,
         "author": {
           "gitId": "emer7"
         },
         "content": "                select(v-model\u003d\"filesSortType\")"
       },
       {
-        "lineNumber": 238,
+        "lineNumber": 240,
         "author": {
           "gitId": "emer7"
         },
         "content": "                  option(value\u003d\"lineOfCode\") LoC"
       },
       {
-        "lineNumber": 239,
+        "lineNumber": 241,
         "author": {
           "gitId": "emer7"
         },
         "content": "                  option(value\u003d\"path\") Path"
       },
       {
-        "lineNumber": 240,
+        "lineNumber": 242,
         "author": {
           "gitId": "emer7"
         },
         "content": "                  option(value\u003d\"fileName\") File Name"
       },
       {
-        "lineNumber": 241,
+        "lineNumber": 243,
         "author": {
           "gitId": "emer7"
         },
         "content": "                  option(value\u003d\"fileType\") File Format"
       },
       {
-        "lineNumber": 242,
+        "lineNumber": 244,
         "author": {
           "gitId": "emer7"
         },
         "content": "                label sort by"
       },
       {
-        "lineNumber": 243,
+        "lineNumber": 245,
         "author": {
           "gitId": "emer7"
         },
         "content": "              label"
       },
       {
-        "lineNumber": 244,
+        "lineNumber": 246,
         "author": {
           "gitId": "emer7"
         },
         "content": "                input(type\u003d\"checkbox\", v-model\u003d\"toReverseSortFiles\").mui-checkbox"
       },
       {
-        "lineNumber": 245,
+        "lineNumber": 247,
         "author": {
           "gitId": "emer7"
         },
         "content": "                span reverse"
       },
       {
-        "lineNumber": 246,
+        "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 247,
+        "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
         "content": "        .files(v-if\u003d\"isLoaded\")"
       },
       {
-        "lineNumber": 248,
+        "lineNumber": 250,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "          .empty(v-if\u003d\"files.length \u003d\u003d\u003d 0\") nothing to see here :("
       },
       {
-        "lineNumber": 249,
+        "lineNumber": 251,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "          template(v-for\u003d\"file in selectedFiles\")"
       },
       {
-        "lineNumber": 250,
+        "lineNumber": 252,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "            .file.active(v-bind:key\u003d\"file.path\")"
       },
       {
-        "lineNumber": 251,
+        "lineNumber": 253,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "              .title"
       },
       {
-        "lineNumber": 252,
+        "lineNumber": 254,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "                span.path(onclick\u003d\"toggleNext(this.parentNode)\", v-on:click\u003d\"updateCount\") {{ file.path }}\u0026nbsp;"
       },
       {
-        "lineNumber": 253,
+        "lineNumber": 255,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "                span.loc ({{ file.lineCount }} lines)"
       },
       {
-        "lineNumber": 254,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "                a("
-      },
-      {
-        "lineNumber": 255,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "                  v-bind:href\u003d\"getFileLink(file, \u0027commits\u0027)\", target\u003d\"_blank\","
-      },
-      {
         "lineNumber": 256,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                  title\u003d\"click to view the history view of file\""
+        "content": "                a("
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                )"
+        "content": "                  v-bind:href\u003d\"getFileLink(file, \u0027commits\u0027)\", target\u003d\"_blank\","
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                  i.button.fas.fa-history"
+        "content": "                  title\u003d\"click to view the history view of file\""
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                a("
+        "content": "                )"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                  v-bind:href\u003d\"getFileLink(file, \u0027blame\u0027)\", target\u003d\"_blank\","
+        "content": "                  i.button.fas.fa-history"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                  title\u003d\"click to view the blame view of file\""
+        "content": "                a("
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                )"
+        "content": "                  v-bind:href\u003d\"getFileLink(file, \u0027blame\u0027)\", target\u003d\"_blank\","
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "                  i.button.fas.fa-user-edit"
+        "content": "                  title\u003d\"click to view the blame view of file\""
       },
       {
         "lineNumber": 264,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "              pre.hljs"
+        "content": "                )"
       },
       {
         "lineNumber": 265,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "                div(v-hljs\u003d\"file.path\")"
+        "content": "                  i.button.fas.fa-user-edit"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "                  template(v-for\u003d\"segment in file.segments\")"
+        "content": "              pre.hljs"
       },
       {
         "lineNumber": 267,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "                    .segment(v-bind:class\u003d\"{ untouched: !segment.authored, active: segment.lines.length\u003c5 }\")"
+        "content": "                div(v-hljs\u003d\"file.path\")"
       },
       {
         "lineNumber": 268,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "                      .closer(v-if\u003d\"!segment.authored \u0026\u0026 segment.lines.length\u003e4\", onclick\u003d\"toggleNext(this)\")"
+        "content": "                  template(v-for\u003d\"segment in file.segments\")"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "                        i.fas.fa-ellipsis-h.icon"
+        "content": "                    .segment(v-bind:class\u003d\"{ untouched: !segment.authored, active: segment.lines.length\u003c5 }\")"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "                        span.tooltiptext.tooltiptext--close Show untouched code"
+        "content": "                      .closer(v-if\u003d\"!segment.authored \u0026\u0026 segment.lines.length\u003e4\", onclick\u003d\"toggleNext(this)\")"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "                        span.tooltiptext.tooltiptext--open Hide untouched code"
+        "content": "                        i.fas.fa-ellipsis-h.icon"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "                      .code {{ segment.lines.join(\"\\n\") }}"
+        "content": "                        span.tooltiptext.tooltiptext--close Show untouched code"
       },
       {
         "lineNumber": 273,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "        .empty(v-else) loading..."
+        "content": "                        span.tooltiptext.tooltiptext--open Hide untouched code"
       },
       {
         "lineNumber": 274,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "                      .code {{ segment.lines.join(\"\\n\") }}"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "    script(src\u003d\"static/js/api.js\")"
+        "content": "        .empty(v-else) loading..."
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "    script(src\u003d\"static/js/v_summary.js\")"
+        "content": ""
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "    script(src\u003d\"static/js/v_authorship.js\")"
+        "content": "    script(src\u003d\"static/js/api.js\")"
       },
       {
         "lineNumber": 278,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    script(src\u003d\"static/js/v_summary.js\")"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    script(src\u003d\"static/js/v_authorship.js\")"
+      },
+      {
+        "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
@@ -8333,10 +8347,10 @@
       }
     ],
     "authorContributionMap": {
-      "fzdy1914": 34,
+      "fzdy1914": 42,
       "emer7": 31,
       "ongspxm": 40,
-      "-": 150,
+      "-": 144,
       "chelseyong": 23
     }
   },
@@ -10621,21 +10635,21 @@
       {
         "lineNumber": 326,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "            #submit-button[disabled]{"
+        "content": "            .select {"
       },
       {
         "lineNumber": 327,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "                background-color:mui-color(\"grey\");"
+        "content": "                font-weight:bold;"
       },
       {
         "lineNumber": 328,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
         "content": "            }"
       },
@@ -10644,42 +10658,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            .loc {"
       },
       {
         "lineNumber": 330,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "            .select {"
+        "content": "                font-weight:bolder;"
       },
       {
         "lineNumber": 331,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "                font-weight:bold;"
+        "content": "            }"
       },
       {
         "lineNumber": 332,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "            .loc {"
+        "content": "            .bloc {"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "                font-weight:bolder;"
+        "content": "                color:mui-color(\"grey\");"
       },
       {
         "lineNumber": 335,
@@ -10700,49 +10714,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            .bloc {"
+        "content": "            span.fileFormat {"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "                color:mui-color(\"grey\");"
+        "content": "                span.bloc::after {"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    content:\u0027, \u0027;"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "            span.fileFormat {"
+        "content": ""
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "                span.bloc::after {"
+        "content": "                span.bloc:last-child::after {"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "                    content:\u0027, \u0027;"
+        "content": "                    content:\u0027\u0027;"
       },
       {
         "lineNumber": 344,
@@ -10756,33 +10770,33 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 346,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "                span.bloc:last-child::after {"
+        "content": ""
       },
       {
         "lineNumber": 347,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "                    content:\u0027\u0027;"
+        "content": "            .mui-checkbox--fileformat {"
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "                }"
+        "content": "                vertical-align:middle;"
       },
       {
         "lineNumber": 349,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
         "content": "            }"
       },
@@ -10796,420 +10810,420 @@
       {
         "lineNumber": 351,
         "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "            .mui-checkbox--fileformat {"
-      },
-      {
-        "lineNumber": 352,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "                vertical-align:middle;"
-      },
-      {
-        "lineNumber": 353,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 354,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 355,
-        "author": {
           "gitId": "chelseyong"
         },
         "content": "            .checkboxes {"
       },
       {
-        "lineNumber": 356,
+        "lineNumber": 352,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                label{"
       },
       {
-        "lineNumber": 357,
+        "lineNumber": 353,
         "author": {
           "gitId": "emer7"
         },
         "content": "                    display:inline-flex;"
       },
       {
-        "lineNumber": 358,
+        "lineNumber": 354,
         "author": {
           "gitId": "emer7"
         },
         "content": "                    align-items:center;"
       },
       {
-        "lineNumber": 359,
+        "lineNumber": 355,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                    padding-right:10px;"
       },
       {
-        "lineNumber": 360,
+        "lineNumber": 356,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 361,
+        "lineNumber": 357,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                span{"
       },
       {
-        "lineNumber": 362,
+        "lineNumber": 358,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                    margin-left:0.25rem;"
       },
       {
-        "lineNumber": 363,
+        "lineNumber": 359,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 364,
+        "lineNumber": 360,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 365,
+        "lineNumber": 361,
         "author": {
           "gitId": "emer7"
         },
         "content": "            .sorting {"
       },
       {
-        "lineNumber": 366,
+        "lineNumber": 362,
         "author": {
           "gitId": "emer7"
         },
         "content": "                display:flex;"
       },
       {
-        "lineNumber": 367,
+        "lineNumber": 363,
         "author": {
           "gitId": "emer7"
         },
         "content": "                align-items:center;"
       },
       {
-        "lineNumber": 368,
+        "lineNumber": 364,
         "author": {
           "gitId": "emer7"
         },
         "content": "                .mui-select {"
       },
       {
-        "lineNumber": 369,
+        "lineNumber": 365,
         "author": {
           "gitId": "emer7"
         },
         "content": "                    cursor:pointer;"
       },
       {
-        "lineNumber": 370,
+        "lineNumber": 366,
         "author": {
           "gitId": "emer7"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 371,
+        "lineNumber": 367,
         "author": {
           "gitId": "emer7"
         },
         "content": "                label {"
       },
       {
-        "lineNumber": 372,
+        "lineNumber": 368,
         "author": {
           "gitId": "emer7"
         },
         "content": "                    overflow-y:hidden;"
       },
       {
-        "lineNumber": 373,
+        "lineNumber": 369,
         "author": {
           "gitId": "emer7"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 374,
+        "lineNumber": 370,
         "author": {
           "gitId": "emer7"
         },
         "content": "                \u0026 \u003e label {"
       },
       {
-        "lineNumber": 375,
+        "lineNumber": 371,
         "author": {
           "gitId": "emer7"
         },
         "content": "                    margin-left:10px;"
       },
       {
-        "lineNumber": 376,
+        "lineNumber": 372,
         "author": {
           "gitId": "emer7"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 377,
+        "lineNumber": 373,
         "author": {
           "gitId": "emer7"
         },
         "content": "                span {"
       },
       {
-        "lineNumber": 378,
+        "lineNumber": 374,
         "author": {
           "gitId": "emer7"
         },
         "content": "                    margin-left:0.25rem;"
       },
       {
-        "lineNumber": 379,
+        "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 380,
+        "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 381,
+        "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 382,
+        "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 383,
+        "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 384,
+        "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
         "content": "    .files{"
       },
       {
-        "lineNumber": 385,
+        "lineNumber": 381,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        clear:left;"
       },
       {
-        "lineNumber": 386,
+        "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 387,
+        "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
         "content": "        .file{"
       },
       {
-        "lineNumber": 388,
+        "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
         "content": "            pre{"
       },
       {
-        "lineNumber": 389,
+        "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
         "content": "                display:none;"
       },
       {
-        "lineNumber": 390,
+        "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 391,
+        "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 392,
+        "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
         "content": "            \u0026.active{"
       },
       {
-        "lineNumber": 393,
+        "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
         "content": "                pre{"
       },
       {
-        "lineNumber": 394,
+        "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
         "content": "                    display:grid;"
       },
       {
-        "lineNumber": 395,
+        "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
         "content": "                    .hljs{"
       },
       {
-        "lineNumber": 396,
+        "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
         "content": "                        // overwrite hljs library"
       },
       {
-        "lineNumber": 397,
+        "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
         "content": "                        display:inherit;"
       },
       {
-        "lineNumber": 398,
+        "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
         "content": "                    }"
       },
       {
-        "lineNumber": 399,
+        "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 400,
+        "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 401,
+        "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 402,
+        "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 403,
+        "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
         "content": "        .title{"
       },
       {
-        "lineNumber": 404,
+        "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
         "content": "            margin-top:1rem;"
       },
       {
-        "lineNumber": 405,
+        "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
         "content": "            font-size:1.25rem;"
       },
       {
-        "lineNumber": 406,
+        "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
         "content": "            font-weight:bold;"
       },
       {
-        "lineNumber": 407,
+        "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 408,
+        "lineNumber": 404,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "            .path{"
       },
       {
-        "lineNumber": 409,
+        "lineNumber": 405,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                cursor:pointer;"
       },
       {
-        "lineNumber": 410,
+        "lineNumber": 406,
         "author": {
           "gitId": "fzdy1914"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 408,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .loc{"
+      },
+      {
+        "lineNumber": 409,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                color:mui-color(\u0027grey\u0027);"
+      },
+      {
+        "lineNumber": 410,
+        "author": {
+          "gitId": "-"
         },
         "content": "            }"
       },
@@ -11223,310 +11237,310 @@
       {
         "lineNumber": 412,
         "author": {
-          "gitId": "-"
-        },
-        "content": "            .loc{"
-      },
-      {
-        "lineNumber": 413,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                color:mui-color(\u0027grey\u0027);"
-      },
-      {
-        "lineNumber": 414,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 415,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 416,
-        "author": {
           "gitId": "fzdy1914"
         },
         "content": "            .button{"
       },
       {
-        "lineNumber": 417,
+        "lineNumber": 413,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                font-size:1.15rem;"
       },
       {
-        "lineNumber": 418,
+        "lineNumber": 414,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                color:mui-color(\"grey\");"
       },
       {
-        "lineNumber": 419,
+        "lineNumber": 415,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                text-decoration:none;"
       },
       {
-        "lineNumber": 420,
+        "lineNumber": 416,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "                margin-left:0.5rem;"
       },
       {
-        "lineNumber": 421,
+        "lineNumber": 417,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 422,
+        "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 423,
+        "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 424,
+        "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
         "content": "        .code{"
       },
       {
-        "lineNumber": 425,
+        "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
         "content": "            padding-left:1rem;"
       },
       {
-        "lineNumber": 426,
+        "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
         "content": "            border-left:0.25rem solid mui-color(\u0027green\u0027);"
       },
       {
-        "lineNumber": 427,
+        "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
         "content": "            background-color:mui-color(\u0027green\u0027, \u002750\u0027);"
       },
       {
-        "lineNumber": 428,
+        "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 429,
+        "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 430,
+        "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
         "content": "        .untouched{"
       },
       {
-        "lineNumber": 431,
+        "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
         "content": "            $grey:mui-color(\u0027grey\u0027, \u0027400\u0027);"
       },
       {
-        "lineNumber": 432,
+        "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 433,
+        "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
         "content": "            \u0026.active{"
       },
       {
-        "lineNumber": 434,
+        "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
         "content": "                .code{"
       },
       {
-        "lineNumber": 435,
+        "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
         "content": "                    display:inherit;"
       },
       {
-        "lineNumber": 436,
+        "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
         "content": "                    background-color:mui-color(\u0027white\u0027);"
       },
       {
-        "lineNumber": 437,
+        "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 438,
+        "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 439,
+        "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
         "content": "                .closer{"
       },
       {
-        "lineNumber": 440,
+        "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
         "content": "                    .icon{"
       },
       {
-        "lineNumber": 441,
+        "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
         "content": "                        background-color:mui-color(\u0027black\u0027);"
       },
       {
-        "lineNumber": 442,
+        "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
         "content": "                    }"
       },
       {
-        "lineNumber": 443,
+        "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 444,
+        "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
         "content": "                    .tooltiptext{"
       },
       {
-        "lineNumber": 445,
+        "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
         "content": "                        \u0026--open{ display:inline-block; }"
       },
       {
-        "lineNumber": 446,
+        "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
         "content": "                        \u0026--close{ display:none; }"
       },
       {
-        "lineNumber": 447,
+        "lineNumber": 443,
         "author": {
           "gitId": "-"
         },
         "content": "                    }"
       },
       {
-        "lineNumber": 448,
+        "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 449,
+        "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 450,
+        "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 451,
+        "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
         "content": "            .code{"
       },
       {
-        "lineNumber": 452,
+        "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
         "content": "                display:none;"
       },
       {
-        "lineNumber": 453,
+        "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
         "content": "                border-left:0.25rem solid $grey;"
       },
       {
-        "lineNumber": 454,
+        "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
         "content": "                background-color:mui-color(\u0027white\u0027);"
       },
       {
-        "lineNumber": 455,
+        "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
+      },
+      {
+        "lineNumber": 452,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 453,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            .closer{"
+      },
+      {
+        "lineNumber": 454,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                cursor:pointer;"
+      },
+      {
+        "lineNumber": 455,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                padding:0.5rem 1rem;"
       },
       {
         "lineNumber": 456,
@@ -11540,21 +11554,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            .closer{"
+        "content": "                .icon{"
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": "                cursor:pointer;"
+        "content": "                    background-color:$grey;"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": "                padding:0.5rem 1rem;"
+        "content": "                    color:mui-color(\u0027white\u0027);"
       },
       {
         "lineNumber": 460,
@@ -11568,42 +11582,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                .icon{"
+        "content": "                    width:2.2rem;"
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "-"
         },
-        "content": "                    background-color:$grey;"
+        "content": "                    border-radius:0.25rem;"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": "                    color:mui-color(\u0027white\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 464,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    \u0026:hover{"
       },
       {
         "lineNumber": 465,
         "author": {
           "gitId": "-"
         },
-        "content": "                    width:2.2rem;"
+        "content": "                        background:black;"
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
-        "content": "                    border-radius:0.25rem;"
+        "content": "                    }"
       },
       {
         "lineNumber": 467,
@@ -11617,14 +11631,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026:hover{"
+        "content": "                    \u0026:hover ~ .tooltiptext{"
       },
       {
         "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
-        "content": "                        background:black;"
+        "content": "                        visibility:visible;"
       },
       {
         "lineNumber": 470,
@@ -11638,154 +11652,154 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026:hover ~ .tooltiptext{"
+        "content": ""
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "-"
         },
-        "content": "                        visibility:visible;"
+        "content": "                .tooltiptext{"
       },
       {
         "lineNumber": 474,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    padding:0.5rem;"
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    margin-left:0.5rem;"
       },
       {
         "lineNumber": 476,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    border-radius:0.25rem;"
       },
       {
         "lineNumber": 477,
         "author": {
           "gitId": "-"
         },
-        "content": "                .tooltiptext{"
+        "content": ""
       },
       {
         "lineNumber": 478,
         "author": {
           "gitId": "-"
         },
-        "content": "                    padding:0.5rem;"
+        "content": "                    color:mui-color(\u0027white\u0027);"
       },
       {
         "lineNumber": 479,
         "author": {
           "gitId": "-"
         },
-        "content": "                    margin-left:0.5rem;"
+        "content": "                    background-color:mui-color(\u0027black\u0027);"
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "-"
         },
-        "content": "                    border-radius:0.25rem;"
+        "content": ""
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    text-align:center;"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "-"
         },
-        "content": "                    color:mui-color(\u0027white\u0027);"
+        "content": "                    visibility:hidden;"
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "-"
         },
-        "content": "                    background-color:mui-color(\u0027black\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    \u0026--open{ display:none; }"
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "-"
         },
-        "content": "                    text-align:center;"
+        "content": "                    \u0026--close{ display:inline-block; }"
       },
       {
         "lineNumber": 486,
         "author": {
           "gitId": "-"
         },
-        "content": "                    visibility:hidden;"
+        "content": "                }"
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026--open{ display:none; }"
+        "content": "        }"
       },
       {
         "lineNumber": 489,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026--close{ display:inline-block; }"
+        "content": "    }"
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 491,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "    .empty{"
       },
       {
         "lineNumber": 492,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        text-align:center;"
       },
       {
         "lineNumber": 493,
@@ -11799,41 +11813,13 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 495,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    .empty{"
-      },
-      {
-        "lineNumber": 496,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        text-align:center;"
-      },
-      {
-        "lineNumber": 497,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 498,
-        "author": {
-          "gitId": "-"
-        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
       "emer7": 57,
       "fzdy1914": 31,
-      "-": 397,
+      "-": 393,
       "chelseyong": 13
     }
   },
@@ -14405,1652 +14391,1652 @@
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "    };"
+        "content": "      isSearchBar: false,"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "  },"
+        "content": "      isCheckBoxes: true,"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    };"
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "  watch: {"
+        "content": "  },"
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "    filesSortType() {"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "emer7"
         },
-        "content": "      this.sortFiles();"
+        "content": "  watch: {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "emer7"
         },
-        "content": "    },"
+        "content": "    filesSortType() {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "emer7"
         },
-        "content": "    toReverseSortFiles() {"
+        "content": "      this.sortFiles();"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "emer7"
         },
-        "content": "      this.sortFiles();"
+        "content": "    },"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "emer7"
         },
-        "content": "    },"
+        "content": "    toReverseSortFiles() {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "emer7"
         },
-        "content": "  },"
+        "content": "      this.sortFiles();"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "emer7"
         },
-        "content": ""
+        "content": "    },"
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "  methods: {"
+        "content": "  },"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "    initiate() {"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "      const repo \u003d window.REPOS[this.info.repo];"
+        "content": "  methods: {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    initiate() {"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      this.getRepoProps(repo);"
+        "content": "      const repo \u003d window.REPOS[this.info.repo];"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      if (!repo || !this.info.name) {"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        window.app.isTabActive \u003d false;"
+        "content": "      this.getRepoProps(repo);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        return;"
+        "content": "      if (!repo || !this.info.name) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      }"
+        "content": "        window.app.isTabActive \u003d false;"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "      if (repoCache.length \u003d\u003d\u003d 2) {"
+        "content": "        return;"
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "        const toRemove \u003d repoCache.shift();"
+        "content": "      }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (toRemove !\u003d\u003d this.info.repo) {"
+        "content": "      if (repoCache.length \u003d\u003d\u003d 2) {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "          delete window.REPOS[toRemove].files;"
+        "content": "        const toRemove \u003d repoCache.shift();"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (toRemove !\u003d\u003d this.info.repo) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "          delete window.REPOS[toRemove].files;"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "      repoCache.push(this.info.repo);"
+        "content": "        }"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (repo.files) {"
+        "content": "      repoCache.push(this.info.repo);"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.processFiles(repo.files);"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "      } else {"
+        "content": "      if (repo.files) {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "        window.api.loadAuthorship(this.info.repo)"
+        "content": "        this.processFiles(repo.files);"
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "            .then((files) \u003d\u003e this.processFiles(files));"
+        "content": "      } else {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        window.api.loadAuthorship(this.info.repo)"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "    },"
+        "content": "            .then((files) \u003d\u003e this.processFiles(files));"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      }"
       },
       {
         "lineNumber": 83,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "    getRepoProps(repo) {"
+        "content": "    },"
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      if (repo) {"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        const author \u003d repo.users.filter((user) \u003d\u003e user.name \u003d\u003d\u003d this.info.author);"
+        "content": "    getRepoProps(repo) {"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        if (author.length \u003e 0) {"
+        "content": "      if (repo) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "          this.info.name \u003d author[0].displayName;"
+        "content": "        const author \u003d repo.users.filter((user) \u003d\u003e user.name \u003d\u003d\u003d this.info.author);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "          this.filesLinesObj \u003d author[0].fileFormatContribution;"
+        "content": "        if (author.length \u003e 0) {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        }"
+        "content": "          this.info.name \u003d author[0].displayName;"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        this.info.location \u003d repo.location.location;"
+        "content": "          this.filesLinesObj \u003d author[0].fileFormatContribution;"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      }"
+        "content": "        }"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "    },"
+        "content": "        this.info.location \u003d repo.location.location;"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": ""
+        "content": "      }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "    setInfoHash() {"
+        "content": "    },"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      const { addHash, removeHash } \u003d window;"
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      addHash(\u0027tabAuthor\u0027, this.info.author);"
+        "content": "    setInfoHash() {"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      addHash(\u0027tabRepo\u0027, this.info.repo);"
+        "content": "      const { addHash, removeHash } \u003d window;"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      removeHash(\u0027tabOpen\u0027);"
+        "content": "      addHash(\u0027tabAuthor\u0027, this.info.author);"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "    },"
+        "content": "      addHash(\u0027tabRepo\u0027, this.info.repo);"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": ""
+        "content": "      removeHash(\u0027tabOpen\u0027);"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "chelseyong"
         },
-        "content": "    expandAll(isActive) {"
+        "content": "    },"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "chelseyong"
         },
-        "content": "      const renameValue \u003d isActive ? \u0027file active\u0027 : \u0027file\u0027;"
+        "content": ""
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "    expandAll(isActive) {"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "      const files \u003d document.getElementsByClassName(\u0027file\u0027);"
+        "content": "      const renameValue \u003d isActive ? \u0027file active\u0027 : \u0027file\u0027;"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "      Array.from(files).forEach((file) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "        file.className \u003d renameValue;"
+        "content": "      const files \u003d document.getElementsByClassName(\u0027file\u0027);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "      });"
+        "content": "      Array.from(files).forEach((file) \u003d\u003e {"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "        file.className \u003d renameValue;"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "      this.activeFilesCount \u003d isActive ? this.selectedFiles.length : 0;"
+        "content": "      });"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "    },"
+        "content": ""
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "      this.activeFilesCount \u003d isActive ? this.selectedFiles.length : 0;"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "    updateCount() {"
+        "content": "    },"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "      this.activeFilesCount \u003d document.getElementsByClassName(\u0027file active\u0027).length;"
+        "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "    },"
+        "content": "    updateCount() {"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "      this.activeFilesCount \u003d document.getElementsByClassName(\u0027file active\u0027).length;"
       },
       {
         "lineNumber": 116,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "ongspxm"
         },
-        "content": "    hasCommits(info) {"
+        "content": "    },"
       },
       {
         "lineNumber": 117,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "ongspxm"
         },
-        "content": "      if (window.REPOS[info.repo]) {"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        return window.REPOS[info.repo].commits.authorFinalContributionMap[info.author] \u003e 0;"
+        "content": "    hasCommits(info) {"
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "      }"
+        "content": "      if (window.REPOS[info.repo]) {"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      return false;"
+        "content": "        return window.REPOS[info.repo].commits.authorFinalContributionMap[info.author] \u003e 0;"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "      }"
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": ""
+        "content": "      return false;"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "    splitSegments(lines) {"
+        "content": "    },"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "      // split into segments separated by authored"
+        "content": ""
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "      let lastState;"
+        "content": "    splitSegments(lines) {"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "      let lastId \u003d -1;"
+        "content": "      // split into segments separated by authored"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "      const segments \u003d [];"
+        "content": "      let lastState;"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "      let blankLineCount \u003d 0;"
+        "content": "      let lastId \u003d -1;"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const segments \u003d [];"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "      lines.forEach((line) \u003d\u003e {"
+        "content": "      let blankLineCount \u003d 0;"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "        const authored \u003d (line.author \u0026\u0026 line.author.gitId \u003d\u003d\u003d this.info.author);"
+        "content": ""
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      lines.forEach((line) \u003d\u003e {"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (authored !\u003d\u003d lastState || lastId \u003d\u003d\u003d -1) {"
+        "content": "        const authored \u003d (line.author \u0026\u0026 line.author.gitId \u003d\u003d\u003d this.info.author);"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "          segments.push({"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "            authored,"
+        "content": "        if (authored !\u003d\u003d lastState || lastId \u003d\u003d\u003d -1) {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "            lines: [],"
+        "content": "          segments.push({"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "          });"
+        "content": "            authored,"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            lines: [],"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "          lastId +\u003d 1;"
+        "content": "          });"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "          lastState \u003d authored;"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "          lastId +\u003d 1;"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          lastState \u003d authored;"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "        const content \u003d line.content || \u0027 \u0027;"
+        "content": "        }"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "        segments[lastId].lines.push(content);"
+        "content": ""
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        const content \u003d line.content || \u0027 \u0027;"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (line.content \u003d\u003d\u003d \u0027\u0027 \u0026\u0026 authored) {"
+        "content": "        segments[lastId].lines.push(content);"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "          blankLineCount +\u003d 1;"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (line.content \u003d\u003d\u003d \u0027\u0027 \u0026\u0026 authored) {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "          blankLineCount +\u003d 1;"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "      return {"
+        "content": "      });"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "        segments,"
+        "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "        blankLineCount,"
+        "content": "      return {"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "      };"
+        "content": "        segments,"
       },
       {
         "lineNumber": 155,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "    },"
+        "content": "        blankLineCount,"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      };"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "    processFiles(files) {"
+        "content": "    },"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "      const res \u003d [];"
+        "content": ""
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      const filesBlanksInfoObj \u003d {};"
+        "content": "    processFiles(files) {"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "      let totalLineCount \u003d 0;"
+        "content": "      const res \u003d [];"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      let totalBlankLineCount \u003d 0;"
+        "content": "      const filesBlanksInfoObj \u003d {};"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      let totalLineCount \u003d 0;"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "      files.forEach((file) \u003d\u003e {"
+        "content": "      let totalBlankLineCount \u003d 0;"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "        const lineCnt \u003d file.authorContributionMap[this.info.author];"
+        "content": ""
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (lineCnt) {"
+        "content": "      files.forEach((file) \u003d\u003e {"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "          totalLineCount +\u003d lineCnt;"
+        "content": "        const lineCnt \u003d file.authorContributionMap[this.info.author];"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "          const out \u003d {};"
+        "content": "        if (lineCnt) {"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "          out.path \u003d file.path;"
+        "content": "          totalLineCount +\u003d lineCnt;"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "          out.lineCount \u003d lineCnt;"
+        "content": "          const out \u003d {};"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          out.path \u003d file.path;"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "          const segmentInfo \u003d this.splitSegments(file.lines);"
+        "content": "          out.lineCount \u003d lineCnt;"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "          out.segments \u003d segmentInfo.segments;"
+        "content": ""
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "          totalBlankLineCount +\u003d segmentInfo.blankLineCount;"
+        "content": "          const segmentInfo \u003d this.splitSegments(file.lines);"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "          this.addBlankLineCountToFileFormat(file.path, segmentInfo.blankLineCount,"
+        "content": "          out.segments \u003d segmentInfo.segments;"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "              filesBlanksInfoObj);"
+        "content": "          totalBlankLineCount +\u003d segmentInfo.blankLineCount;"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "          res.push(out);"
+        "content": "          this.addBlankLineCountToFileFormat(file.path, segmentInfo.blankLineCount,"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "              filesBlanksInfoObj);"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "          res.push(out);"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.totalLineCount \u003d totalLineCount;"
+        "content": "      });"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.totalBlankLineCount \u003d totalBlankLineCount;"
+        "content": ""
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "      res.sort((a, b) \u003d\u003e b.lineCount - a.lineCount);"
+        "content": "      this.totalLineCount \u003d totalLineCount;"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      this.totalBlankLineCount \u003d totalBlankLineCount;"
       },
       {
         "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      res.sort((a, b) \u003d\u003e b.lineCount - a.lineCount);"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 186,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      Object.keys(this.filesLinesObj).forEach((file) \u003d\u003e {"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 187,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "        if (this.filesLinesObj[file] !\u003d\u003d 0) {"
       },
       {
-        "lineNumber": 186,
+        "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
         "content": "          this.selectedFileFormats.push(file);"
       },
       {
-        "lineNumber": 187,
+        "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
         "content": "          this.fileFormats.push(file);"
       },
       {
-        "lineNumber": 188,
+        "lineNumber": 190,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 189,
+        "lineNumber": 191,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "      });"
       },
       {
-        "lineNumber": 190,
+        "lineNumber": 192,
         "author": {
           "gitId": "ongspxm"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 191,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      this.filesBlankLinesObj \u003d filesBlanksInfoObj;"
-      },
-      {
-        "lineNumber": 192,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      this.files \u003d res;"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.isLoaded \u003d true;"
+        "content": "      this.filesBlankLinesObj \u003d filesBlanksInfoObj;"
       },
       {
         "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.files \u003d res;"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.isLoaded \u003d true;"
+      },
+      {
+        "lineNumber": 196,
         "author": {
           "gitId": "ongspxm"
         },
         "content": ""
       },
       {
-        "lineNumber": 195,
+        "lineNumber": 197,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "      this.activeFilesCount \u003d this.selectedFiles.length;"
       },
       {
-        "lineNumber": 196,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    },"
-      },
-      {
-        "lineNumber": 197,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "    addBlankLineCountToFileFormat(path, lineCount, filesInfoObj) {"
+        "content": "    },"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "      let fileFormat \u003d path.split(\u0027.\u0027).pop();"
+        "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "      fileFormat \u003d (fileFormat.length \u003d\u003d\u003d 0) ? \u0027others\u0027 : fileFormat;"
+        "content": "    addBlankLineCountToFileFormat(path, lineCount, filesInfoObj) {"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      let fileFormat \u003d path.split(\u0027.\u0027).pop();"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!filesInfoObj[fileFormat]) {"
+        "content": "      fileFormat \u003d (fileFormat.length \u003d\u003d\u003d 0) ? \u0027others\u0027 : fileFormat;"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "        filesInfoObj[fileFormat] \u003d 0;"
+        "content": ""
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      if (!filesInfoObj[fileFormat]) {"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        filesInfoObj[fileFormat] \u003d 0;"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "      filesInfoObj[fileFormat] +\u003d lineCount;"
+        "content": "      }"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": ""
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      filesInfoObj[fileFormat] +\u003d lineCount;"
       },
       {
         "lineNumber": 209,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "    sortFiles() {"
+        "content": "    },"
       },
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "      this.sortingFunction \u003d (a, b) \u003d\u003e (this.toReverseSortFiles ? -1 : 1)"
+        "content": ""
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "emer7"
         },
-        "content": "          * window.comparator(filesSortDict[this.filesSortType])(a, b);"
+        "content": "    sortFiles() {"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "emer7"
         },
-        "content": "    },"
+        "content": "      this.sortingFunction \u003d (a, b) \u003d\u003e (this.toReverseSortFiles ? -1 : 1)"
       },
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
+        },
+        "content": "          * window.comparator(filesSortDict[this.filesSortType])(a, b);"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "    },"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "emer7"
         },
         "content": ""
       },
       {
-        "lineNumber": 214,
+        "lineNumber": 216,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    selectAll() {"
       },
       {
-        "lineNumber": 215,
+        "lineNumber": 217,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "      if (this.isSearchBar) {"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "        this.indicateCheckBoxes();"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 220,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      if (!this.isSelectAllChecked) {"
       },
       {
-        "lineNumber": 216,
+        "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
         "content": "        this.selectedFileFormats \u003d this.fileFormats.slice();"
       },
       {
-        "lineNumber": 217,
+        "lineNumber": 222,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "        this.activeFilesCount \u003d this.files.length;"
       },
       {
-        "lineNumber": 218,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      } else {"
-      },
-      {
-        "lineNumber": 219,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        this.selectedFileFormats \u003d [];"
-      },
-      {
-        "lineNumber": 220,
-        "author": {
-          "gitId": "ongspxm"
-        },
-        "content": "        this.activeFilesCount \u003d 0;"
-      },
-      {
-        "lineNumber": 221,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      }"
-      },
-      {
-        "lineNumber": 222,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "    },"
-      },
-      {
         "lineNumber": 223,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": ""
+        "content": "      } else {"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "    selectFileFormat(format) {"
+        "content": "        this.selectedFileFormats \u003d [];"
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      if (this.selectedFileFormats.includes(format)) {"
+        "content": "        this.activeFilesCount \u003d 0;"
       },
       {
         "lineNumber": 226,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "        const index \u003d this.selectedFileFormats.indexOf(format);"
+        "content": "      }"
       },
       {
         "lineNumber": 227,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "        this.selectedFileFormats.splice(index, 1);"
+        "content": "    },"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      } else {"
+        "content": ""
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.selectedFileFormats.push(format);"
+        "content": "    selectFileFormat(format) {"
       },
       {
         "lineNumber": 230,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "fzdy1914"
         },
-        "content": "      }"
+        "content": "      if (this.isSearchBar) {"
       },
       {
         "lineNumber": 231,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "      if (this.fileFormats.length \u003d\u003d\u003d this.selectedFileFormats.length) {"
+        "content": "        this.indicateCheckBoxes();"
       },
       {
         "lineNumber": 232,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "fzdy1914"
         },
-        "content": "        this.isSelectAllChecked \u003d true;"
+        "content": "      }"
       },
       {
         "lineNumber": 233,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "      } else {"
+        "content": "      if (this.selectedFileFormats.includes(format)) {"
       },
       {
         "lineNumber": 234,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "        this.isSelectAllChecked \u003d false;"
+        "content": "        const index \u003d this.selectedFileFormats.indexOf(format);"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        this.selectedFileFormats.splice(index, 1);"
       },
       {
         "lineNumber": 236,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": ""
+        "content": "      } else {"
       },
       {
         "lineNumber": 237,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      setTimeout(this.updateCount, 0);"
+        "content": "        this.selectedFileFormats.push(format);"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "    },"
+        "content": "      }"
       },
       {
         "lineNumber": 239,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "      if (this.fileFormats.length \u003d\u003d\u003d this.selectedFileFormats.length) {"
       },
       {
         "lineNumber": 240,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "    updateFilterSearch(evt) {"
+        "content": "        this.isSelectAllChecked \u003d true;"
       },
       {
         "lineNumber": 241,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "      this.filterSearch \u003d (evt.target.value.length !\u003d\u003d 0) ? evt.target.value : \u0027*\u0027;"
+        "content": "      } else {"
       },
       {
         "lineNumber": 242,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "    },"
+        "content": "        this.isSelectAllChecked \u003d false;"
       },
       {
         "lineNumber": 243,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": ""
+        "content": "      }"
       },
       {
         "lineNumber": 244,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "    tickAllCheckboxes() {"
+        "content": ""
       },
       {
         "lineNumber": 245,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      this.selectedFileFormats \u003d this.fileFormats.slice();"
+        "content": "      setTimeout(this.updateCount, 0);"
       },
       {
         "lineNumber": 246,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "      this.isSelectAllChecked \u003d true;"
+        "content": "    },"
       },
       {
         "lineNumber": 247,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "      this.filterSearch \u003d \u0027*\u0027;"
+        "content": ""
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "    updateFilterSearch(evt) {"
       },
       {
         "lineNumber": 249,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": ""
+        "content": "      if (this.isCheckBoxes) {"
       },
       {
         "lineNumber": 250,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "    enableSearchBar() {"
+        "content": "        this.indicateSearchBar();"
       },
       {
         "lineNumber": 251,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "      const searchBar \u003d document.getElementById(\u0027search\u0027);"
+        "content": "      }"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "      const submitButton \u003d document.getElementById(\u0027submit-button\u0027);"
+        "content": "      this.filterSearch \u003d (evt.target.value.length !\u003d\u003d 0) ? evt.target.value : \u0027*\u0027;"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "      searchBar.disabled \u003d false;"
+        "content": "    },"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "      submitButton.disabled \u003d false;"
+        "content": ""
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    tickAllCheckboxes() {"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.tickAllCheckboxes();"
+        "content": "      this.selectedFileFormats \u003d this.fileFormats.slice();"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "      const checkboxes \u003d document.getElementsByClassName(\u0027mui-checkbox--fileformat\u0027);"
+        "content": "      this.isSelectAllChecked \u003d true;"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "      Array.from(checkboxes).forEach((checkbox) \u003d\u003e {"
+        "content": "    },"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkbox.disabled \u003d true;"
+        "content": ""
       },
       {
         "lineNumber": 260,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "      });"
+        "content": "    indicateSearchBar() {"
       },
       {
         "lineNumber": 261,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "    },"
+        "content": "      this.isSearchBar \u003d true;"
       },
       {
         "lineNumber": 262,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": ""
+        "content": "      this.isCheckBoxes \u003d false;"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "    enableCheckBoxes() {"
+        "content": "      this.tickAllCheckboxes();"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "      const searchBar \u003d document.getElementById(\u0027search\u0027);"
+        "content": "    },"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "      const submitButton \u003d document.getElementById(\u0027submit-button\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 266,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "      searchBar.value \u003d \u0027\u0027;"
+        "content": "    indicateCheckBoxes() {"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "      searchBar.disabled \u003d true;"
+        "content": "      const searchBar \u003d document.getElementById(\u0027search\u0027);"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "      submitButton.disabled \u003d true;"
+        "content": "      searchBar.value \u003d \u0027\u0027;"
       },
       {
         "lineNumber": 269,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": ""
+        "content": "      this.filterSearch \u003d \u0027*\u0027;"
       },
       {
         "lineNumber": 270,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "      this.tickAllCheckboxes();"
+        "content": "      this.isSearchBar \u003d false;"
       },
       {
         "lineNumber": 271,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "      const checkboxes \u003d document.getElementsByClassName(\u0027mui-checkbox--fileformat\u0027);"
+        "content": "      this.isCheckBoxes \u003d true;"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "      Array.from(checkboxes).forEach((checkbox) \u003d\u003e {"
+        "content": "    },"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkbox.disabled \u003d false;"
-      },
-      {
-        "lineNumber": 274,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      });"
-      },
-      {
-        "lineNumber": 275,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    },"
-      },
-      {
-        "lineNumber": 276,
-        "author": {
-          "gitId": "-"
-        },
         "content": ""
       },
       {
-        "lineNumber": 277,
+        "lineNumber": 274,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    isSelected(filePath) {"
       },
       {
-        "lineNumber": 278,
+        "lineNumber": 275,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      const fileExt \u003d filePath.split(\u0027.\u0027).pop();"
       },
       {
-        "lineNumber": 279,
+        "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
         "content": "      return this.selectedFileFormats.includes(fileExt);"
       },
       {
-        "lineNumber": 280,
+        "lineNumber": 277,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 281,
+        "lineNumber": 278,
         "author": {
           "gitId": "chelseyong"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "    getFileLink(file, path) {"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "      const repo \u003d window.REPOS[this.info.repo];"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "fzdy1914"
         },
         "content": ""
       },
@@ -16059,276 +16045,255 @@
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "    getFileLink(file, path) {"
+        "content": "      return `http://github.com/${"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "      const repo \u003d window.REPOS[this.info.repo];"
+        "content": "        repo.location.organization}/${repo.location.repoName}/${path}/${repo.branch}/${file.path}`;"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": ""
+        "content": "    },"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "      return `http://github.com/${"
-      },
-      {
-        "lineNumber": 286,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "        repo.location.organization}/${repo.location.repoName}/${path}/${repo.branch}/${file.path}`;"
-      },
-      {
-        "lineNumber": 287,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    },"
-      },
-      {
-        "lineNumber": 288,
-        "author": {
-          "gitId": "-"
-        },
         "content": ""
       },
       {
-        "lineNumber": 289,
+        "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
         "content": "    getFileBlankLineInfo(fileFormat) {"
       },
       {
-        "lineNumber": 290,
+        "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
         "content": "      return `${fileFormat}: Blank: ${"
       },
       {
-        "lineNumber": 291,
+        "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
         "content": "        this.filesBlankLinesObj[fileFormat]}, Non-Blank: ${"
       },
       {
-        "lineNumber": 292,
+        "lineNumber": 289,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        this.filesLinesObj[fileFormat] - this.filesBlankLinesObj[fileFormat]}`;"
       },
       {
-        "lineNumber": 293,
+        "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 294,
+        "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 295,
+        "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
         "content": "    getTotalFileBlankLineInfo() {"
       },
       {
-        "lineNumber": 296,
+        "lineNumber": 293,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "      return `Total: Blank: ${this.totalBlankLineCount}, Non-Blank: ${"
       },
       {
-        "lineNumber": 297,
+        "lineNumber": 294,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "        this.totalLineCount - this.totalBlankLineCount}`;"
       },
       {
-        "lineNumber": 298,
+        "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 299,
+        "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 300,
+        "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 301,
+        "lineNumber": 298,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "  computed: {"
       },
       {
-        "lineNumber": 302,
+        "lineNumber": 299,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    selectedFiles() {"
       },
       {
-        "lineNumber": 303,
+        "lineNumber": 300,
         "author": {
           "gitId": "emer7"
         },
         "content": "      return this.files"
       },
       {
-        "lineNumber": 304,
+        "lineNumber": 301,
         "author": {
           "gitId": "emer7"
         },
         "content": "          .filter((file) \u003d\u003e this.isSelected(file.path)"
       },
       {
-        "lineNumber": 305,
+        "lineNumber": 302,
         "author": {
           "gitId": "emer7"
         },
         "content": "              \u0026\u0026 minimatch(file.path, this.filterSearch, { matchBase: true }))"
       },
       {
-        "lineNumber": 306,
+        "lineNumber": 303,
         "author": {
           "gitId": "emer7"
         },
         "content": "          .sort(this.sortingFunction);"
       },
       {
-        "lineNumber": 307,
+        "lineNumber": 304,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 308,
+        "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
         "content": "    getExistingLinesObj() {"
       },
       {
-        "lineNumber": 309,
+        "lineNumber": 306,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      return Object.keys(this.filesLinesObj)"
       },
       {
-        "lineNumber": 310,
+        "lineNumber": 307,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "          .filter((type) \u003d\u003e this.filesLinesObj[type] \u003e 0)"
       },
       {
-        "lineNumber": 311,
+        "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
         "content": "          .reduce((acc, key) \u003d\u003e ({"
       },
       {
-        "lineNumber": 312,
+        "lineNumber": 309,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "            ...acc, [key]: this.filesLinesObj[key],"
       },
       {
-        "lineNumber": 313,
+        "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
         "content": "          }), {});"
       },
       {
-        "lineNumber": 314,
+        "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 315,
+        "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 316,
+        "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 317,
+        "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
         "content": "  created() {"
       },
       {
-        "lineNumber": 318,
+        "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
         "content": "    this.initiate();"
       },
       {
-        "lineNumber": 319,
+        "lineNumber": 316,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    this.setInfoHash();"
       },
       {
-        "lineNumber": 320,
+        "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 321,
+        "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
@@ -16336,11 +16301,11 @@
       }
     ],
     "authorContributionMap": {
-      "emer7": 27,
-      "ongspxm": 30,
-      "fzdy1914": 8,
-      "-": 203,
-      "chelseyong": 53
+      "emer7": 28,
+      "ongspxm": 31,
+      "fzdy1914": 28,
+      "-": 177,
+      "chelseyong": 54
     }
   },
   {
