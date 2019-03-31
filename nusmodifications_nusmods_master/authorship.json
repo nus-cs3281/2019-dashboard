@@ -16213,27 +16213,63 @@
       {
         "lineNumber": 2,
         "author": {
-          "gitId": "Kai Li"
+          "gitId": "Rahul Rajesh"
         },
-        "content": "const Adapter \u003d require(\u0027enzyme-adapter-react-16\u0027);"
+        "content": "const { setAutoFreeze } \u003d require(\u0027immer\u0027);"
       },
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "-"
+          "gitId": "Kai Li"
         },
-        "content": ""
+        "content": "const Adapter \u003d require(\u0027enzyme-adapter-react-16\u0027);"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "-"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
         "content": "configure({ adapter: new Adapter() });"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Rahul Rajesh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Rahul Rajesh"
+        },
+        "content": "// immer uses Object.freeze on returned state objects, which is incompatible with"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Rahul Rajesh"
+        },
+        "content": "// redux-persist. See https://github.com/rt2zz/redux-persist/issues/747"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Rahul Rajesh"
+        },
+        "content": "setAutoFreeze(false);"
       }
     ],
     "authorContributionMap": {
       "Kai Li": 2,
+      "Rahul Rajesh": 5,
       "-": 2
     }
   },

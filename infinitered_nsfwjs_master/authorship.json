@@ -1139,9 +1139,9 @@
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "    const gifObj \u003d new SuperGif({ gif })"
+        "content": "    let gifObj \u003d new SuperGif({ gif })"
       },
       {
         "lineNumber": 164,
@@ -1265,250 +1265,257 @@
       {
         "lineNumber": 181,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "        // try to clean up"
       },
       {
         "lineNumber": 182,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "        resolve(arrayOfClasses)"
+        "content": "        gifObj \u003d null"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "emer7"
         },
-        "content": "      })"
+        "content": "        resolve(arrayOfClasses)"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "emer7"
         },
-        "content": "    })"
+        "content": "      })"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "emer7"
         },
-        "content": "  }"
+        "content": "    })"
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "}"
+        "content": "  }"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "async function getTopKClasses("
+        "content": ""
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "  logits: tf.Tensor2D,"
+        "content": "async function getTopKClasses("
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "  topK: number"
+        "content": "  logits: tf.Tensor2D,"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "): Promise\u003cArray\u003c{ className: string; probability: number }\u003e\u003e {"
+        "content": "  topK: number"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "  const values \u003d await logits.data()"
+        "content": "): Promise\u003cArray\u003c{ className: string; probability: number }\u003e\u003e {"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const values \u003d await logits.data()"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "  const valuesAndIndices \u003d []"
+        "content": ""
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "  for (let i \u003d 0; i \u003c values.length; i++) {"
+        "content": "  const valuesAndIndices \u003d []"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "    valuesAndIndices.push({ value: values[i], index: i })"
+        "content": "  for (let i \u003d 0; i \u003c values.length; i++) {"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    valuesAndIndices.push({ value: values[i], index: i })"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "  valuesAndIndices.sort((a, b) \u003d\u003e {"
+        "content": "  }"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "    return b.value - a.value"
+        "content": "  valuesAndIndices.sort((a, b) \u003d\u003e {"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "  })"
+        "content": "    return b.value - a.value"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "  const topkValues \u003d new Float32Array(topK)"
+        "content": "  })"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "  const topkIndices \u003d new Int32Array(topK)"
+        "content": "  const topkValues \u003d new Float32Array(topK)"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "  for (let i \u003d 0; i \u003c topK; i++) {"
+        "content": "  const topkIndices \u003d new Int32Array(topK)"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "    topkValues[i] \u003d valuesAndIndices[i].value"
+        "content": "  for (let i \u003d 0; i \u003c topK; i++) {"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "    topkIndices[i] \u003d valuesAndIndices[i].index"
+        "content": "    topkValues[i] \u003d valuesAndIndices[i].value"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    topkIndices[i] \u003d valuesAndIndices[i].index"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "  const topClassesAndProbs \u003d []"
+        "content": ""
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "  for (let i \u003d 0; i \u003c topkIndices.length; i++) {"
+        "content": "  const topClassesAndProbs \u003d []"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "    topClassesAndProbs.push({"
+        "content": "  for (let i \u003d 0; i \u003c topkIndices.length; i++) {"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "      className: NSFW_CLASSES[topkIndices[i]],"
+        "content": "    topClassesAndProbs.push({"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "      probability: topkValues[i]"
+        "content": "      className: NSFW_CLASSES[topkIndices[i]],"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "    })"
+        "content": "      probability: topkValues[i]"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    })"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "  return topClassesAndProbs"
+        "content": "  }"
       },
       {
         "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return topClassesAndProbs"
+      },
+      {
+        "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
@@ -1516,8 +1523,8 @@
       }
     ],
     "authorContributionMap": {
-      "emer7": 23,
-      "-": 193
+      "emer7": 21,
+      "-": 196
     }
   },
   {
