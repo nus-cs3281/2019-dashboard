@@ -3665,6 +3665,3839 @@
     }
   },
   {
+    "path": "src/test/java/com/puppycrawl/tools/checkstyle/checks/blocks/RightCurlyCheckTest.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "////////////////////////////////////////////////////////////////////////////////"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// checkstyle: Checks Java source code for adherence to a set of rules."
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// Copyright (C) 2001-2019 the original author or authors."
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// This library is free software; you can redistribute it and/or"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// modify it under the terms of the GNU Lesser General Public"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// License as published by the Free Software Foundation; either"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// version 2.1 of the License, or (at your option) any later version."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// This library is distributed in the hope that it will be useful,"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// but WITHOUT ANY WARRANTY; without even the implied warranty of"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// Lesser General Public License for more details."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// You should have received a copy of the GNU Lesser General Public"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// License along with this library; if not, write to the Free Software"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "////////////////////////////////////////////////////////////////////////////////"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package com.puppycrawl.tools.checkstyle.checks.blocks;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck.MSG_KEY_LINE_ALONE;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck.MSG_KEY_LINE_BREAK_BEFORE;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck.MSG_KEY_LINE_SAME;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.Assert.assertEquals;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.Assert.fail;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.Test;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import com.puppycrawl.tools.checkstyle.AbstractModuleTestSupport;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import com.puppycrawl.tools.checkstyle.DefaultConfiguration;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import com.puppycrawl.tools.checkstyle.api.CheckstyleException;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import com.puppycrawl.tools.checkstyle.utils.CommonUtil;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class RightCurlyCheckTest extends AbstractModuleTestSupport {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    protected String getPackageLocation() {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return \"com/puppycrawl/tools/checkstyle/checks/blocks/rightcurly\";"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /* Additional test for jacoco, since valueOf()"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * is generated by javac and jacoco reports that"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * valueOf() is uncovered."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testRightCurlyOptionValueOf() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final RightCurlyOption option \u003d RightCurlyOption.valueOf(\"ALONE\");"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertEquals(\"Invalid valueOf result\", RightCurlyOption.ALONE, option);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testDefault() throws Exception {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"25:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"28:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"40:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"44:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_BREAK_BEFORE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testSame() throws Exception {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"25:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"28:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"40:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"44:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_BREAK_BEFORE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testSameOmitOneLiners() throws Exception {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyNameForOneLiners.java\"), expected);"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testAlone() throws Exception {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"97:72: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 72),"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testNewLine() throws Exception {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, CTOR_DEF\");"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"111:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"111:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"122:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"122:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"136:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"136:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testShouldStartLine() throws Exception {"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"97:72: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 72),"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testShouldStartLine2() throws Exception {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF\");"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"111:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"122:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"122:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"136:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"136:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testMethodCtorNamedClassClosingBrace() throws Exception {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"97:72: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 72),"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testForceLineBreakBefore() throws Exception {"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_FOR,\""
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"35:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"41:71: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 71),"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"47:25: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 25),"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLineBreakBefore.java\"), expected);"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testForceLineBreakBefore2() throws Exception {"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLineBreakBefore.java\"), expected);"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testNullPointerException() throws Exception {"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyEmptyAbstractMethod.java\"), expected);"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testWithAnnotations() throws Exception {"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            + \"LITERAL_IF, LITERAL_ELSE, CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"8:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"11:65: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 65),"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"22:46: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 46),"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"26:31: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 31),"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"29:35: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 35),"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"32:36: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 36),"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"38:73: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 73),"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"40:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"45:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"47:88: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 88),"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"50:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"53:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"60:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"67:62: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 62),"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"76:28: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 28),"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"78:21: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 21),"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"80:20: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 20),"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"82:14: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 14),"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"93:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"103:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"107:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"111:88: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 88),"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"111:40: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 40),"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"114:18: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 18),"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"118:23: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 23),"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"121:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"123:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"127:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"136:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"138:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"138:33: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 33),"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"150:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"151:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"151:74: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 74),"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"152:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"153:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"153:74: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 74),"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"159:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"166:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"181:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"188:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"188:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"197:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"197:10: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 10),"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"201:54: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 54),"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"201:55: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 55),"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"204:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"204:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"204:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"208:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"216:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAnnotations.java\"), expected);"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testAloneOrSingleLine() throws Exception {"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            + \"LITERAL_IF, LITERAL_ELSE, CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"60:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"74:42: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 42),"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"77:18: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 18),"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"85:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"89:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"97:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"99:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"110:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"111:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"111:93: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 93),"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"112:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"113:64: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 64),"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"113:80: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 80),"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"119:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"126:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"141:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"148:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"148:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"157:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"157:10: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 10),"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"161:54: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 54),"
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"161:55: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 55),"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"164:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"164:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"168:80: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 80),"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"164:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"176:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"182:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"185:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"188:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAloneOrSingleline.java\"), expected);"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testCatchWithoutFinally() throws Exception {"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"15:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testSingleLineClass() throws Exception {"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 300,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF\");"
+      },
+      {
+        "lineNumber": 301,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 302,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"24:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testInvalidOption() throws Exception {"
+      },
+      {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 310,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", \"invalid_option\");"
+      },
+      {
+        "lineNumber": 311,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 312,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 313,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+      },
+      {
+        "lineNumber": 314,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 315,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
+      },
+      {
+        "lineNumber": 316,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            fail(\"exception expected\");"
+      },
+      {
+        "lineNumber": 317,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 318,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        catch (CheckstyleException ex) {"
+      },
+      {
+        "lineNumber": 319,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            assertEquals(\"Invalid exception message\","
+      },
+      {
+        "lineNumber": 320,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                \"cannot initialize module com.puppycrawl.tools.checkstyle.TreeWalker - \""
+      },
+      {
+        "lineNumber": 321,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    + \"cannot initialize module com.puppycrawl.tools.checkstyle.checks.\""
+      },
+      {
+        "lineNumber": 322,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    + \"blocks.RightCurlyCheck - \""
+      },
+      {
+        "lineNumber": 323,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    + \"Cannot set property \u0027option\u0027 to \u0027invalid_option\u0027\","
+      },
+      {
+        "lineNumber": 324,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                ex.getMessage());"
+      },
+      {
+        "lineNumber": 325,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 326,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 327,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 328,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 329,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testRightCurlySameAndLiteralDo() throws Exception {"
+      },
+      {
+        "lineNumber": 330,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 331,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+      },
+      {
+        "lineNumber": 332,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_DO\");"
+      },
+      {
+        "lineNumber": 333,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 334,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"62:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
+      },
+      {
+        "lineNumber": 335,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"67:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+      },
+      {
+        "lineNumber": 336,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"83:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
+      },
+      {
+        "lineNumber": 337,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 338,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyDoWhile.java\"), expected);"
+      },
+      {
+        "lineNumber": 339,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 340,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 341,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 342,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testTryWithResourceSame() throws Exception {"
+      },
+      {
+        "lineNumber": 343,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 344,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+      },
+      {
+        "lineNumber": 345,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 346,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"11:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
+      },
+      {
+        "lineNumber": 347,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"24:67: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 67),"
+      },
+      {
+        "lineNumber": 348,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_BREAK_BEFORE, \"}\", 15),"
+      },
+      {
+        "lineNumber": 349,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+      },
+      {
+        "lineNumber": 350,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 351,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
+      },
+      {
+        "lineNumber": 352,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 353,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 354,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 355,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testTryWithResourceAlone() throws Exception {"
+      },
+      {
+        "lineNumber": 356,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 357,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 358,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 359,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"19:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"24:67: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 67),"
+      },
+      {
+        "lineNumber": 361,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"25:35: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 35),"
+      },
+      {
+        "lineNumber": 362,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"27:92: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 92),"
+      },
+      {
+        "lineNumber": 363,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"33:67: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 67),"
+      },
+      {
+        "lineNumber": 364,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
+      },
+      {
+        "lineNumber": 365,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+      },
+      {
+        "lineNumber": 366,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 367,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
+      },
+      {
+        "lineNumber": 368,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 369,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 370,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testTryWithResourceAloneSingle() throws Exception {"
+      },
+      {
+        "lineNumber": 372,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 373,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+      },
+      {
+        "lineNumber": 374,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 375,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"19:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 376,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
+      },
+      {
+        "lineNumber": 377,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+      },
+      {
+        "lineNumber": 378,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 379,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
+      },
+      {
+        "lineNumber": 380,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 381,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 382,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testBracePolicyAloneAndSinglelineIfBlocks() throws Exception {"
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 387,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"5:32: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 32),"
+      },
+      {
+        "lineNumber": 388,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"7:45: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 45),"
+      },
+      {
+        "lineNumber": 389,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"7:47: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 47),"
+      },
+      {
+        "lineNumber": 390,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 391,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlySinglelineIfBlocks.java\"), expected);"
+      },
+      {
+        "lineNumber": 392,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 393,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 394,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 395,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testRightCurlyIsAloneLambda() throws Exception {"
+      },
+      {
+        "lineNumber": 396,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 397,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 398,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+      },
+      {
+        "lineNumber": 399,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAloneLambda.java\"), expected);"
+      },
+      {
+        "lineNumber": 400,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 401,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 402,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 403,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testRightCurlyIsAloneOrSinglelineLambda() throws Exception {"
+      },
+      {
+        "lineNumber": 404,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 405,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\","
+      },
+      {
+        "lineNumber": 406,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+      },
+      {
+        "lineNumber": 408,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig,"
+      },
+      {
+        "lineNumber": 409,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            getPath(\"InputRightCurlyAloneOrSinglelineLambda.java\"), expected);"
+      },
+      {
+        "lineNumber": 410,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 411,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 412,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 413,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testRightCurlyIsSameLambda() throws Exception {"
+      },
+      {
+        "lineNumber": 414,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 415,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+      },
+      {
+        "lineNumber": 416,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+      },
+      {
+        "lineNumber": 417,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig,"
+      },
+      {
+        "lineNumber": 418,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            getPath(\"InputRightCurlySameLambda.java\"), expected);"
+      },
+      {
+        "lineNumber": 419,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 420,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 421,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 422,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testOptionAlone() throws Exception {"
+      },
+      {
+        "lineNumber": 423,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 424,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+      },
+      {
+        "lineNumber": 425,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, LITERAL_IF, LITERAL_ELSE, \""
+      },
+      {
+        "lineNumber": 426,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, STATIC_INIT, INSTANCE_INIT\");"
+      },
+      {
+        "lineNumber": 427,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 428,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"7:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
+      },
+      {
+        "lineNumber": 429,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"8:21: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 21),"
+      },
+      {
+        "lineNumber": 430,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"12:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+      },
+      {
+        "lineNumber": 431,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"21:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 432,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"38:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 433,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"42:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 434,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"45:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+      },
+      {
+        "lineNumber": 435,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"47:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 436,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"49:17: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 17),"
+      },
+      {
+        "lineNumber": 437,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"51:53: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 53),"
+      },
+      {
+        "lineNumber": 438,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"53:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 439,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"53:52: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 52),"
+      },
+      {
+        "lineNumber": 440,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"61:42: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 42),"
+      },
+      {
+        "lineNumber": 441,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"63:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
+      },
+      {
+        "lineNumber": 442,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"67:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 443,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "            \"74:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 444,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 445,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAlone.java\"),"
+      },
+      {
+        "lineNumber": 446,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                expected);"
+      },
+      {
+        "lineNumber": 447,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 448,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 449,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 450,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testOptionAloneOrSingleLine() throws Exception {"
+      },
+      {
+        "lineNumber": 451,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 452,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+      },
+      {
+        "lineNumber": 453,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, LITERAL_IF, LITERAL_ELSE, \""
+      },
+      {
+        "lineNumber": 454,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, STATIC_INIT, INSTANCE_INIT\");"
+      },
+      {
+        "lineNumber": 455,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 456,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"12:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+      },
+      {
+        "lineNumber": 457,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"21:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 458,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"29:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 459,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"38:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 460,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"42:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 461,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"63:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
+      },
+      {
+        "lineNumber": 462,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"67:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 463,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 464,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath("
+      },
+      {
+        "lineNumber": 465,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                \"InputRightCurlyAloneOrSingleLine2.java\"), expected);"
+      },
+      {
+        "lineNumber": 466,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 467,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 468,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "fzdy1914": 1,
+      "-": 467
+    }
+  },
+  {
+    "path": "src/test/resources/com/puppycrawl/tools/checkstyle/checks/blocks/rightcurly/InputRightCurlyAlone.java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package com.puppycrawl.tools.checkstyle.checks.blocks.rightcurly;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class InputRightCurlyAlone {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private int a;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private static int b;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    {  a \u003d 2; }  //violation"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    static { b \u003d 3; }  //violation"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    void method1() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Thread t \u003d new Thread() {@Override public void run() {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            int a; int b;} //violation"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    void method2(java.util.HashSet\u003cString\u003e set) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        java.util.Map\u003cString, String\u003e map1 \u003d new java.util.LinkedHashMap\u003cString, String\u003e() {{"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"Hello\", \"World\");"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"first\", \"second\");"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"polygene\", \"lubricants\");"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"alpha\", \"betical\");}  //violation"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        java.util.Map\u003cString, String\u003e map2 \u003d new java.util.LinkedHashMap\u003cString, String\u003e() {{"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"Hello\", \"World\");"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"first\", \"second\");"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"polygene\", \"lubricants\");"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            put(\"alpha\", \"betical\");"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }}; //NO violation"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    void method3() {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        method2(new java.util.HashSet\u003cString\u003e() {{"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            add(\"XZ13s\");"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            add(\"AB21/X\");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            add(\"YYLEX\");"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            add(\"AR5E\");"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }});  //violation"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    int method4(int a) {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (a\u003e2) a*\u003d10; return ++a; }   //violation"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    void method5(int a) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        while (a \u003e 5) { a--; }  //violation"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (a \u003e 4) { a++; }  //violation"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        do {a--;} while (a \u003e 3);  //violation"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        for (int i \u003d 1; i \u003c 10; i++) { byte b \u003d 10; }  //violation"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (a \u003c 2) { --a; } else if (a \u003e 3) { a++; } //2 violations"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        java.util.List\u003cString\u003e list \u003d new java.util.ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        list.stream()"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                .filter(e -\u003e {return !e.isEmpty() \u0026\u0026 !\"null\".equals(e);} )"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                .collect(java.util.stream.Collectors.toList());"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    class TestClass { private int field; }  //violation"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    class TestClass2 { private int field; };  //violation"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    class TestClass3 {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        private int field;"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    };  //violation"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "    void method6(int a) {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "        java.util.Map\u003cString, String\u003e map3 \u003d new java.util.LinkedHashMap\u003cString, String\u003e() {{"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "            put(\"Hello\", \"World\");"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "            put(\"first\", \"second\");"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "            put(\"polygene\", \"lubricants\");"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "        }{}; // violation"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "fzdy1914": 9,
+      "-": 68
+    }
+  },
+  {
     "path": "src/xdocs/extending.xml",
     "lines": [
       {
