@@ -1,5 +1,4078 @@
 [
   {
+    "path": "src/common/common.css",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "@import url(\"./variables.css\");"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "body {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  direction: __MSG_@@bidi_dir__;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* https://design.firefox.com/photon/components/links.html */"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "a {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--blue-60);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  text-decoration: none;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "a:focus {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  border-radius: 4px;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  box-shadow: 0 0 0 2px var(--blue-50), 0 0 0 6px var(--blue-50-a30);"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "a:hover, a:active {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  text-decoration: underline;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "a:active {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--blue-70);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* external link symbol */"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* currently disabled, because it is not clear what an external link is, in our case */"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/*a:not([class])[href*\u003d\"//\"]::after {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-image: url(/common/img/open-in-new.svg);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-repeat: no-repeat;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-size: 16px 16px;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  content: \"\";"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  display: inline-block;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  height: 16px;"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin: -.3rem .15rem 0 .25rem;"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  vertical-align: middle;"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  width: 16px;"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}*/"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".center-container {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  display: flex;"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  flex-direction: column;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  align-items: center;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* small classes in order to avoid inline CSS */"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".invisible {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  display: none !important;"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".message-container {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  position: relative;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* buttons https://design.firefox.com/photon/components/buttons.html */"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  min-height: 24px;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  height: auto;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  border-radius: 2px;"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  padding-left: 8px;"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  padding-right: 8px;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* not documented, but looks ugly otherwise */"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  padding-top: 2px;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  padding-bottom: 2px;"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  box-sizing: content-box;"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* do not break over multiple lines */"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* white-space: nowrap; */"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  height: auto; /* currently, we rather prefer breaking until https://github.com/rugk/offline-qr-code/issues/12 is done */"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* use light color for dark backgrounds */"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:hover.success,"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:active.success,"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:hover.warning,"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:active.warning,"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:hover.error,"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:active.error {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--white-100);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button.info {"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--grey-90-a10);"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:hover.info {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--grey-90-a20);"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:active.info {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--grey-90-a30);"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button.success {"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--green-60);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:hover.success {"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--green-70);"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:active.success {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--green-80);"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button.warning {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--yellow-60);"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:hover.warning {"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--yellow-70);"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:active.warning {"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--yellow-80);"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button.error {"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--red-70);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--white-100);"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:hover.error {"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--red-80);"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:active.error {"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--red-90);"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".micro-button:focus {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3)"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* message box */"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* follows https://design.firefox.com/photon/components/message-bars.html */"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".message-box {"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  padding: 4px;"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  border-radius: 4px;"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* use whole width */"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  width: calc(100% - 8px);"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  min-height: 32px;"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* make errors selectable, so users can copy them */"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  -moz-user-select: text;"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  cursor: text;"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* multiline */"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  hypens: auto;"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  overflow-wrap: break-word;"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* center-vertically */"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  display: flex;"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  align-items: center;"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  z-index: 2;"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* fade-in transition */"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* follow https://design.firefox.com/photon/motion/duration-and-easing.html */"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  opacity: 1;"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  max-height: 100px;"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  transition: opacity 150ms cubic-bezier(.07,.95,0,1),"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "              max-height 200ms cubic-bezier(.07,.95,0,1);"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".message-box.fade-hide {"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  max-height: 0px;"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  opacity: 0;"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  min-height: 0px;"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* add margin when messages are stacked on each other */"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".message-box:not(.invisible) ~ .message-box:not(.invisible) {"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin-top: 8px;"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".error {"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--white-100);"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--red-60);"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".info {"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--grey-90);"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--grey-20);"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".success {"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--green-90);"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--green-50);"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".warning {"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--yellow-90);"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--yellow-50);"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* message box action button */"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".message-action-button {"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin-left: 8px;"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* center vertially */"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin-top: auto;"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin-bottom: auto;"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* some minimum margin to dismiss button or similar */"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin-right: 4px;"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  border: 0;"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  color: var(--grey-90);"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  cursor: pointer;"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* icons for the message boxes */"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".message-box::before {"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  display: inline-block;"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* fixed size */"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-size: 16px 16px;"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  width: 16px;"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  height: 16px;"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  min-width: 16px;"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  min-height: 16px;"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  content: \"\";"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin: 4px;"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".error::before {"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-image: url(\u0027/common/img/error-white.svg\u0027);"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".info::before {"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-image: url(\u0027/common/img/info-dark.svg\u0027);"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".success::before {"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-image: url(\u0027/common/img/check.svg\u0027);"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".warning::before {"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-image: url(\u0027/common/img/warning-dark.svg\u0027);"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".icon-dismiss {"
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  box-sizing: content-box;"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  padding: 2px;"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  width: 24px;"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  height: 24px;"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  margin-left: auto;"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  cursor: pointer;"
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* some animation on hover */"
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  transition: background-color 150ms cubic-bezier(.07,.95,0,1);"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".icon-dismiss:hover {"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--grey-90-a10);"
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  border-radius: 2px;"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".icon-dismiss:active {"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  background-color: var(--grey-90-a20);"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  border-radius: 2px;"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ".icon-dismiss:focus {"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  box-shadow: 0 0 0 1px var(--blue-50) inset, 0 0 0 1px var(--blue-50), 0 0 0 4px var(--blue-50-a30);"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  border-radius: 2px;"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "ongspxm": 1,
+      "-": 262
+    }
+  },
+  {
+    "path": "src/options/options.css",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ":root {"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  --gray-separator: rgba(12, 12, 13, 0.15);"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "body {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  /* body20 */"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  font-size: 15px;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  padding: 0 8px;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* on (small) mobile displays */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "body.mobile {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  /* smaller size -\u003e default on Firefox for Android is 14px */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  font-size: 14px;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* disable all options incomaptible with mobile devices */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "body.mobile .mobile-incompatible {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  display: none;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/* https://design.firefox.com/photon/patterns/inactive.html */"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[disabled] {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  opacity: 0.4;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "section {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin-bottom: 32px;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "hr {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  border: 0;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  height: 1px;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  background-color: var(--gray-separator);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "h1 {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin: 32px 0 16px 0;"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  padding: 16px 0 0 0;"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  /* title30 */"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  font-size: 22px;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  font-weight: 300;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  border-top: 1px solid var(--gray-separator);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "form section:first-child h1 {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  border-top: none;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin-top: 16px;"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "h2{"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  /* title20 */"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  font-size: 17px;"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  font-weight: 600;"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin: 32px 0 16px 0;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "ul {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin: 0;"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  padding: 0;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "li {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  list-style-type: none;"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  padding: 2px 0;"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin: 0 0 4px 0;"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  display: flex;"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  align-items: center;"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "li * {"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  /* https://design.firefox.com/photon/visuals/grid.html#spacing */"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin: 0 8px 0 0;"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "li.indent {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin-inline-start: 28px;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ".helper-text {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  /* caption30 */"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  font-size: 15px;"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  color: var(--grey-50);"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  display: inline;"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "/* when a link is used in a helper text, add margin */"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ".helper-text \u003e a {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  margin-left: 4px;"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  overflow-wrap: none;"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "button {"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "  padding: 4px 8px;"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      }
+    ],
+    "authorContributionMap": {
+      "ongspxm": 56,
+      "-": 44
+    }
+  },
+  {
+    "path": "src/options/options.html",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c!DOCTYPE html\u003e"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003chtml lang\u003d\"en\"\u003e"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\u003chead\u003e"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cmeta charset\u003d\"utf-8\"\u003e"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cmeta name\u003d\"viewport\" content\u003d\"width\u003ddevice-width, initial-scale\u003d1.0\"\u003e"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003clink rel\u003d\"stylesheet\" href\u003d\"../common/common.css\"\u003e"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003clink rel\u003d\"stylesheet\" href\u003d\"options.css\"\u003e"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cscript type\u003d\"module\" src\u003d\"/common/modules/Logger/OverwriteConsoleLog.js\" async\u003e\u003c/script\u003e"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cscript async src\u003d\"./fastLoad.js\" type\u003d\"module\"\u003e\u003c/script\u003e"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cscript defer src\u003d\"../common/common.js\" type\u003d\"module\"\u003e\u003c/script\u003e"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cscript defer src\u003d\"./options.js\" type\u003d\"module\"\u003e\u003c/script\u003e"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\u003c/head\u003e"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\u003cbody\u003e"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cdiv class\u003d\"message-container\"\u003e"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003cdiv id\u003d\"messageTips\" aria-label\u003d\"info message\" data-i18n data-i18n-aria-label\u003d\"__MSG_ariaMessageInfo__\" class\u003d\"message-box info invisible fade-hide\"\u003e"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cspan class\u003d\"message-text\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ca href\u003d\"#\"\u003e"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\u003cbutton class\u003d\"message-action-button micro-button info invisible\"\u003e\u003c/button\u003e"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cimg class\u003d\"icon-dismiss invisible\" src\u003d\"/common/img/close.svg\" width\u003d\"24\" height\u003d\"24\" tabindex\u003d\"0\" data-i18n data-i18n-aria-label\u003d\"__MSG_dismissIconDescription__\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003cdiv id\u003d\"messageInfo\" aria-label\u003d\"info message\" data-i18n data-i18n-aria-label\u003d\"__MSG_ariaMessageInfo__\" class\u003d\"message-box info invisible fade-hide\"\u003e"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cspan class\u003d\"message-text\"\u003eSome settings are managed by your administrator and cannot be changed.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ca href\u003d\"#\"\u003e"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\u003cbutton class\u003d\"message-action-button micro-button info invisible\"\u003e\u003c/button\u003e"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cimg class\u003d\"icon-dismiss invisible\" src\u003d\"/common/img/close.svg\" width\u003d\"24\" height\u003d\"24\" tabindex\u003d\"0\" data-i18n data-i18n-aria-label\u003d\"__MSG_dismissIconDescription__\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003cdiv id\u003d\"messageSuccess\" aria-label\u003d\"success message\" data-i18n data-i18n-aria-label\u003d\"__MSG_ariaMessageSuccess__\" class\u003d\"message-box success invisible fade-hide\"\u003e"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cspan class\u003d\"message-text\"\u003eThat worked!\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ca href\u003d\"#\"\u003e"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\u003cbutton class\u003d\"message-action-button micro-button success invisible\"\u003e\u003c/button\u003e"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cimg class\u003d\"icon-dismiss invisible\" src\u003d\"/common/img/close.svg\" width\u003d\"24\" height\u003d\"24\" tabindex\u003d\"0\" data-i18n data-i18n-aria-label\u003d\"__MSG_dismissIconDescription__\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003cdiv id\u003d\"messageError\" aria-label\u003d\"error message\" data-i18n data-i18n-aria-label\u003d\"__MSG_ariaMessageError__\" class\u003d\"message-box error invisible fade-hide\"\u003e"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cspan class\u003d\"message-text\"\u003eAn error happened.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ca href\u003d\"#\"\u003e"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\u003cbutton class\u003d\"message-action-button micro-button error invisible\"\u003e\u003c/button\u003e"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cimg class\u003d\"icon-dismiss invisible\" src\u003d\"/common/img/close-white.svg\" width\u003d\"24\" height\u003d\"24\" tabindex\u003d\"0\" data-i18n data-i18n-aria-label\u003d\"__MSG_dismissIconDescription__\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003cdiv id\u003d\"messageWarning\" aria-label\u003d\"warning message\" data-i18n data-i18n-aria-label\u003d\"__MSG_ariaMessageWarning__\" class\u003d\"message-box warning invisible fade-hide\"\u003e"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cspan class\u003d\"message-text\"\u003eThere were some difficulties.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ca href\u003d\"#\"\u003e"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\u003cbutton class\u003d\"message-action-button micro-button warning invisible\"\u003e\u003c/button\u003e"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cimg class\u003d\"icon-dismiss invisible\" src\u003d\"/common/img/close.svg\" width\u003d\"24\" height\u003d\"24\" tabindex\u003d\"0\" data-i18n data-i18n-aria-label\u003d\"__MSG_dismissIconDescription__\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003cdiv id\u003d\"messageContrast\" aria-label\u003d\"info message\" data-i18n data-i18n-aria-label\u003d\"__MSG_ariaMessageInfo__\" class\u003d\"message-box info invisible fade-hide\"\u003e"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cspan class\u003d\"message-text\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ca href\u003d\"#\"\u003e"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\u003cbutton class\u003d\"message-action-button micro-button info invisible\"\u003e\u003c/button\u003e"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cimg class\u003d\"icon-dismiss invisible\" src\u003d\"/common/img/close.svg\" width\u003d\"24\" height\u003d\"24\" tabindex\u003d\"0\" data-i18n data-i18n-aria-label\u003d\"__MSG_dismissIconDescription__\"\u003e\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003cform\u003e"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003csection class\u003d\"mobile-incompatible\"\u003e"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003ch1 data-i18n\u003d\"__MSG_titleGeneral__\"\u003eAdd-on\u003c/h1\u003e"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cinput class\u003d\"setting save-on-change\" type\u003d\"checkbox\" id\u003d\"popupIconColored\" name\u003d\"popupIconColored\"\u003e"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionPopupIconColored__\" for\u003d\"popupIconColored\"\u003eColored Icon\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli class\u003d\"indent\"\u003e"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cspan class\u003d\"helper-text\" data-i18n\u003d\"__MSG_optionPopupIconColoredDescr__\"\u003eShows a colored icon instead of the black/white icon in the toolbar.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003c/section\u003e"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003csection\u003e"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ch1 data-i18n\u003d\"__MSG_titleQrCodeSetting__\"\u003eQR code\u003c/h1\u003e"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003ch2 data-i18n\u003d\"__MSG_subtitleQrCodeType__\"\u003eQR code type\u003c/h2\u003e"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cdiv class\u003d\"setting save-on-input\" data-type\u003d\"radiogroup\" id\u003d\"qrCodeType\"\u003e"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cinput id\u003d\"qrCodeTypeSvg\" type\u003d\"radio\" name\u003d\"qrCodeType\" value\u003d\"svg\"\u003e"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrCodeTypeSvg__\" for\u003d\"qrCodeTypeSvg\"\u003eSVG\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli class\u003d\"indent\"\u003e"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cspan data-i18n\u003d\"__MSG_optionQrCodeTypeSvgHelper__\" class\u003d\"helper-text\"\u003eUses a modern generation method with vector graphics that enable smoother resizing.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cinput id\u003d\"qrCodeTypeCanvas\" type\u003d\"radio\" name\u003d\"qrCodeType\" value\u003d\"canvas\"\u003e"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrCodeTypeCanvas__\" for\u003d\"qrCodeTypeCanvas\"\u003eCanvas image\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli class\u003d\"indent\"\u003e"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cspan data-i18n\u003d\"__MSG_optionQrCodeTypeCanvasHelper__\" class\u003d\"helper-text\"\u003eA legacy generation method generating the QR code as an image (\"canvas\").\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003ch2 data-i18n\u003d\"__MSG_subtitleQrCodeSize__\"\u003eQR code size\u003c/h2\u003e"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cdiv id\u003d\"sizeType\" data-type\u003d\"radiogroup\" class\u003d\"setting\" data-optiongroup\u003d\"qrCodeSize\"\u003e"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cinput id\u003d\"qrCodeSizeFixed\" type\u003d\"radio\" name\u003d\"sizeType\" value\u003d\"fixed\" class\u003d\"save-on-input\"\u003e"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrCodeSizeFixed__\" for\u003d\"qrCodeSizeFixed\"\u003eFixed size: \u003c/label\u003e"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cinput data-i18n\u003d\"__MSG_optionPixelAbbreviation__\" class\u003d\"setting save-on-change\" data-optiongroup\u003d\"qrCodeSize\" type\u003d\"number\" id\u003d\"qrCodeSizeFixedValue\" min\u003d\"160\" step\u003d\"5\" size\u003d\"5\" name\u003d\"size\"\u003e"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003clabel for\u003d\"qrCodeSizeFixedValue\"\u003epx\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cinput id\u003d\"qrCodeSizeAuto\" type\u003d\"radio\" name\u003d\"sizeType\" value\u003d\"auto\" class\u003d\"save-on-input\"\u003e"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrCodeSizeAuto__\" for\u003d\"qrCodeSizeAuto\"\u003eAutomatically adjust size\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli class\u003d\"indent\"\u003e"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cspan data-i18n\u003d\"__MSG_optionQrCodeSizeAutoHelper__\" class\u003d\"helper-text\"\u003eMostly useful on mobile devices, where the QR code opens in a new tab.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cinput id\u003d\"qrCodeSizeRemember\" type\u003d\"radio\" name\u003d\"sizeType\" value\u003d\"remember\" class\u003d\"save-on-input\"\u003e"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrCodeSizeRemember__\" for\u003d\"qrCodeSizeRemember\"\u003eRemember last size\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/div\u003e"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003ch2 data-i18n\u003d\"__MSG_subtitleMisc__\"\u003eMiscellaneous settings\u003c/h2\u003e"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrQuietZone__\" for\u003d\"qrQuietZone\"\u003eQR quiet zone: \u003c/label\u003e"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cinput class\u003d\"setting save-on-input\" type\u003d\"range\" value\u003d\"1\" min\u003d\"0\" max\u003d\"5\" step\u003d\"1\" id\u003d\"qrQuietZone\" name\u003d\"qrQuietZone\"\u003e"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cspan\u003e"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003cspan id\u003d\"qrQuietZoneStatus\"\u003e(1 square)\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli class\u003d\"helper-text\"\u003e"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cspan data-i18n\u003d\"__MSG_optionQrQuietZoneDescr__\"\u003eThe number of border modules around the QR code colored in the background color.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003ca data-i18n\u003d\"__MSG_optionLearnMore__\" data-i18n-href\u003d\"__MSG_optionQrQuietZoneDescrLink__\" href\u003d\"https://github.com/rugk/offline-qr-code/wiki/FAQ#what-is-a-quiet-zone\"\u003eLearn more\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrCodeColor__\" for\u003d\"qrColor\"\u003eQR code color: \u003c/label\u003e"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cinput class\u003d\"setting save-on-change trigger-on-update\" type\u003d\"color\" id\u003d\"qrColor\" name\u003d\"qrColor\"\u003e"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionQrCodeBackgroundColor__\" for\u003d\"qrBackgroundColor\"\u003eQR code background color: \u003c/label\u003e"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cinput class\u003d\"setting save-on-change trigger-on-update\" type\u003d\"color\" id\u003d\"qrBackgroundColor\" name\u003d\"qrBackgroundColor\"\u003e"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionErrorCorrection__\" for\u003d\"qrErrorCorrection\"\u003eError correction level: \u003c/label\u003e"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cselect id\u003d\"qrErrorCorrection\" class\u003d\"setting save-on-change\" name\u003d\"qrErrorCorrection\" size\u003d\"0\"\u003e"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003coption data-i18n\u003d\"__MSG_optionEcLow__\" value\u003d\"L\"\u003eLow (7%)\u003c/option\u003e"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003coption data-i18n\u003d\"__MSG_optionEcMedium__\" value\u003d\"M\"\u003eMedium (15%)\u003c/option\u003e"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003coption data-i18n\u003d\"__MSG_optionEcQuartile__\" value\u003d\"Q\"\u003eQuartile (25%)\u003c/option\u003e"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\t\u003coption data-i18n\u003d\"__MSG_optionEcHigh__\" value\u003d\"H\"\u003eHigh (30%)\u003c/option\u003e"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003c/select\u003e"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli class\u003d\"helper-text\"\u003e"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cspan data-i18n\u003d\"__MSG_optionErrorCorrectionDescr__\"\u003e"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\tIf a QR code is damaged or some parts are missing, it can often still be scanned."
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\tThe higher the value the more the machine is able to understand."
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003ca data-i18n\u003d\"__MSG_optionLearnMore__\" data-i18n-href\u003d\"__MSG_optionErrorCorrectionDescrLink__\" href\u003d\"https://en.wikipedia.org/wiki/QR_code#Error_correction\"\u003eLearn more\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003c/section\u003e"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003csection\u003e"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003ch1 data-i18n\u003d\"__MSG_titleAddonBehavior__\"\u003eAddon behavior\u003c/h1\u003e"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cinput class\u003d\"setting save-on-change\" type\u003d\"checkbox\" id\u003d\"autoGetSelectedText\" name\u003d\"autoGetSelectedText\"\u003e"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionAutoGetSelectedText__\" for\u003d\"autoGetSelectedText\"\u003eAutomatically use text selected on website\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cinput class\u003d\"setting save-on-change\" type\u003d\"checkbox\" id\u003d\"monospaceFont\" name\u003d\"monospaceFont\"\u003e"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionUseMonospaceFont__\" for\u003d\"monospaceFont\"\u003eUse monospace font\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cul\u003e"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli\u003e"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cinput class\u003d\"setting save-on-change\" type\u003d\"checkbox\" id\u003d\"debugMode\" name\u003d\"debugMode\"\u003e"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003clabel data-i18n\u003d\"__MSG_optionDebugMode__\" for\u003d\"debugMode\"\u003eEnable debug mode\u003c/label\u003e"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003cli class\u003d\"indent\"\u003e"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\t\t\u003cspan data-i18n\u003d\"__MSG_optionDebugModeDescr__\" class\u003d\"helper-text\"\u003eThis is only useful to get more detailed logging output in the console for reporting bugs, etc.\u003c/span\u003e"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\t\u003c/li\u003e"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003c/ul\u003e"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003c/section\u003e"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003csection\u003e"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\t\u003cbr /\u003e\u003cbr /\u003e"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\t\t\u003cbutton data-i18n\u003d\"__MSG_optionsResetButton__\" type\u003d\"button\" id\u003d\"resetButton\"\u003eReset all settings to defaults\u003c/button\u003e"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "ongspxm"
+        },
+        "content": "\t\t\t\u003c/section\u003e"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\t\u003c/form\u003e"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\u003c/body\u003e"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c/html\u003e"
+      }
+    ],
+    "authorContributionMap": {
+      "ongspxm": 104,
+      "-": 111
+    }
+  },
+  {
     "path": "src/popup/modules/QrLib/QrError.js",
     "lines": [
       {
