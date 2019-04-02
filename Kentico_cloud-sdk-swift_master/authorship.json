@@ -1,0 +1,8072 @@
+[
+  {
+    "path": "Example/KenticoCloud/AppDelegate.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  AppDelegate.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  KenticoCloud"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Created by martinmakarsky@gmail.com on 08/16/2017."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Copyright © 2017 Kentico Software. All rights reserved."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import UIKit"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "@UIApplicationMain"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class AppDelegate: UIResponder, UIApplicationDelegate {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var window: UIWindow?"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -\u003e Bool {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Customize appearance"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        UINavigationBar.appearance().isHidden \u003d true"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        UITableView.appearance().backgroundColor \u003d AppConstants.globalBackgroundColor"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        UITableViewCell.appearance().backgroundColor \u003d AppConstants.globalBackgroundColor"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return true"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      }
+    ],
+    "authorContributionMap": {
+      "-": 25,
+      "Adoby7": 1
+    }
+  },
+  {
+    "path": "Example/KenticoCloud/Utils/Extensions.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Extensions.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  KenticoCloud"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Created by Martin Makarsky on 26/09/2017."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Copyright © 2017 CocoaPods. All rights reserved."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import UIKit"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "extension UIButton {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func stylePinkButton() {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.layer.cornerRadius \u003d 18"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.layer.borderWidth \u003d 2"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.layer.borderColor \u003d UIColor.white.cgColor"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.layer.masksToBounds \u003d true"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "extension UILabel {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func styleWithRichtextString(richtextString: String) {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        do {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            let attributedString \u003d try NSMutableAttributedString(data: richtextString.data(using: String.Encoding.unicode, allowLossyConversion: true)!, options:[.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue],"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                documentAttributes: nil)"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            let fontSizeAttribute \u003d [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16.0)]"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            let paragraphStyle \u003d NSMutableParagraphStyle()"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            paragraphStyle.lineSpacing \u003d 1.5"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            let lineSpacingAttribute \u003d [NSAttributedString.Key.paragraphStyle : paragraphStyle]"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            attributedString.addAttributes(fontSizeAttribute, range: NSMakeRange(0, attributedString.length))"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            attributedString.addAttributes(lineSpacingAttribute, range: NSMakeRange(0, attributedString.length))"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            self.attributedText \u003d attributedString"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } catch {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            print(error)"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "extension UIImageView {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func addBorder() {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.layer.borderColor \u003d AppConstants.imageBorderColor.cgColor"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.layer.borderWidth \u003d 2"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "extension Date {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func getDateString() -\u003e String {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let dateFormatter \u003d DateFormatter()"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        dateFormatter.dateFormat \u003d \"yyyy-MM-dd\""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return dateFormatter.string(from: self)"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 55,
+      "Adoby7": 2
+    }
+  },
+  {
+    "path": "Example/KenticoCloud/ViewControllers/Coffee/CoffeeDetailViewController.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  CoffeeDetailViewController.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  KenticoCloud"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Created by Martin Makarsky on 31/08/2017."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Copyright © 2017 Kentico Software. All rights reserved."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import UIKit"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class CoffeeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // MARK: Properties"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var coffee: Coffee!"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var backButton: UIButton!"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var tableView: UITableView!"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var price: UILabel!"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var farm: UILabel!"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var variety: UILabel!"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var processing: UILabel!"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var altitude: UILabel!"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBOutlet var coffeeImage: UIImageView!"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private var screenName \u003d \"CoffeeDetailView\""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // MARK: Lifecycle"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    override func viewDidLoad() {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        super.viewDidLoad()"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.tableView.dataSource \u003d self"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.tableView.delegate \u003d self"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    override func viewWillAppear(_ animated: Bool) {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        backButton.stylePinkButton()"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        setContent()"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    override func didReceiveMemoryWarning() {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        super.didReceiveMemoryWarning()"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // MARK: Delegates"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -\u003e Int {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return 1"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -\u003e UITableViewCell {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let cell \u003d tableView.dequeueReusableCell(withIdentifier: \"coffeeDescriptionCell\") as! CoffeeDescriptionViewCell"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        cell.coffeeDescription.styleWithRichtextString(richtextString: (coffee.longDescription?.htmlContentString)!)"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return cell"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -\u003e CGFloat {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return 1000"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -\u003e CGFloat {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return UITableView.automaticDimension;"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // MARK: Outlet actions"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @IBAction func navigateBack(_ sender: Any) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        _ \u003d navigationController?.popViewController(animated: true)"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // MARK: Behaviour"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func setContent() {"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let price \u003d coffee.price?.value {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            self.price.text \u003d \"$\\(price) / 1lb\""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.farm.text \u003d coffee.farm?.value"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.variety.text \u003d coffee.variety?.value"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if !((coffee.processing?.value?.isEmpty)!) {"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if let processingTechnique \u003d coffee.processing?.value?[0].name {"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                self.processing.text \u003d processingTechnique"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let altitude \u003d coffee.altitude?.value {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            self.altitude.text \u003d \"\\(altitude) ft\""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let assets \u003d coffee.image?.value {"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if assets.count \u003e 0 {"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                let url \u003d URL(string: assets[0].url!)"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                coffeeImage.af_setImage(withURL: url!)"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                coffeeImage.image \u003d UIImage(named: \"noContent\")"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            coffeeImage.image \u003d UIImage(named: \"noContent\")"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 106,
+      "Adoby7": 1
+    }
+  },
+  {
+    "path": "Example/KenticoCloud/ViewControllers/ListingBaseViewController.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  ListingBaseViewController.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  KenticoCloud"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Created by Martin Makarsky on 01/10/2017."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Copyright © 2017 Kentico Software. All rights reserved."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import UIKit"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class ListingBaseViewController: UIViewController {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // MARK: Properties"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var loader: UIAlertController!"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // MARK: Behaviour"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func showLoader(message: String) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        loader \u003d UIAlertController(title: nil, message: message, preferredStyle: .alert)"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let loadingIndicator \u003d UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        loadingIndicator.hidesWhenStopped \u003d true"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        loadingIndicator.style \u003d UIActivityIndicatorView.Style.gray"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        loadingIndicator.startAnimating();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        loader.view.addSubview(loadingIndicator)"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.view.window?.rootViewController?.present(loader, animated: true, completion: nil)"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func hideLoader() {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.loader.dismiss(animated: false, completion: nil)"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 34,
+      "Adoby7": 1
+    }
+  },
+  {
+    "path": "Example/Tests/DeliveryService/DeliveryClient/RetryPolicyOption.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  RetryPolicyOption.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  KenticoCloud_Example"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  Created by Jiang Chunhui on 19/2/19."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  Copyright © 2019 CocoaPods. All rights reserved."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import Quick"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import Nimble"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "class RetryPolicy: QuickSpec {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    override func spec() {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        describe(\"Configure retry policy option\") {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with negative maximum retry attempts\", {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"sets maximum retry attempts to 0\") {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let client1 \u003d DeliveryClient(projectId: TestConstants.projectId, maxRetryAttempts: -7)"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(client1.getMaximumRetryAttempts()) \u003d\u003d 0"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let client2 \u003d DeliveryClient(projectId: TestConstants.projectId)"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    client2.setRetryAttribute(isRetryEnabled: true, maxRetryAttempts: -2)"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(client2.getMaximumRetryAttempts()) \u003d\u003d 0"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Adoby7": 32
+    }
+  },
+  {
+    "path": "KenticoCloud/Classes/DeliveryService/DeliveryClient.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  DeliveryClient.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  KenticoCloud"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Created by Martin Makarsky on 15/08/2017."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//  Copyright © 2017 Martin Makarsky. All rights reserved."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import AlamofireObjectMapper"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import Alamofire"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import ObjectMapper"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/// DeliveryClient is the main class repsonsible for getting items from Delivery API."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class DeliveryClient {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private var projectId: String"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private var previewApiKey: String?"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private var secureApiKey: String?"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private var headers: HTTPHeaders?"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private var isDebugLoggingEnabled: Bool"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private var sessionManager: SessionManager"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Inits delivery client instance."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Requests Preview API if previewApiKey is specified, otherwise requests Live API."
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter projectId: Identifier of the project."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter previewApiKey: Preview API key for the project."
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter secureApiKey: Secure API key for the project."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter enableDebugLogging: Flag for logging debug messages."
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter isRetryEnabled: Flag for enabling retry policy."
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter maxRetryAttempts: Maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Returns: Instance of the DeliveryClient."
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public init(projectId: String, previewApiKey: String? \u003d nil, secureApiKey: String? \u003d nil, enableDebugLogging: Bool \u003d false,"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                isRetryEnabled: Bool \u003d true, maxRetryAttempts: Int \u003d 5) {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.projectId \u003d projectId"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.previewApiKey \u003d previewApiKey"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.secureApiKey \u003d secureApiKey"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.isDebugLoggingEnabled \u003d enableDebugLogging"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        self.sessionManager \u003d SessionManager()"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        self.headers \u003d getHeaders()"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        let retryHandler \u003d RetryHandler(maxRetryAttempts: maxRetryAttempts, isRetryEnabled: isRetryEnabled)"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.retrier \u003d retryHandler"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Configures retry policy of the delivery client."
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter isRetryEnabled: Flag for enabling retry policy."
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter maxRetryAttempts: Maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    */"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func setRetryAttribute(isRetryEnabled enabled: Bool, maxRetryAttempts attempts: Int) {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        let retryHandler \u003d RetryHandler(maxRetryAttempts: attempts, isRetryEnabled: enabled)"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.retrier \u003d retryHandler"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Gets the maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    */"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func getMaximumRetryAttempts() -\u003e Int {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        guard let retryHandler \u003d self.sessionManager.retrier as? RetryHandler else {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            fatalError(\"Session manager retrier must be an instance of RetryHandler\")"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return retryHandler.getMaximumRetryNumber()"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Gets whether the retry policy is enabled"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: the flag for enabling retry policy."
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func getIsRetryEnabled() -\u003e Bool {"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        guard let retryHandler \u003d self.sessionManager.retrier as? RetryHandler else {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            fatalError(\"Session manager retrier must be an instance of RetryHandler\")"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return retryHandler.getIsRetryEnabled()"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets multiple items from Delivery service."
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Suitable for strongly typed query."
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter modelType: Type of the requested items. Type must conform to Mappable protocol."
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter queryParameters: Array of the QueryParameters which specifies requested items."
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter items: Received items."
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getItems\u003cT\u003e(modelType: T.Type, queryParameters: [QueryParameter], completionHandler: @escaping (_ isSuccess: Bool, _ items: ItemsResponse\u003cT\u003e?,_ error: Error?) -\u003e ()) where T: Mappable {"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getItemsRequestUrl(queryParameters: queryParameters)"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetItemsRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets multiple items from Delivery service."
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Suitable for custom string query."
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter modelType: Type of the requested items. Type must conform to Mappable protocol."
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter customQuery: String query which specifies requested items."
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter items: Received items."
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getItems\u003cT\u003e(modelType: T.Type, customQuery: String, completionHandler: @escaping (_ isSuccess: Bool, _ items: ItemsResponse\u003cT\u003e?, _ error: Error?) -\u003e ()) where T: Mappable {"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getItemsRequestUrl(customQuery: customQuery)"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetItemsRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets single item from Delivery service."
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter modelType: Type of the requested items. Type must conform to Mappable protocol."
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter language: Language of the requested variant."
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter item: Received item."
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getItem\u003cT\u003e(modelType: T.Type, itemName: String, language: String? \u003d nil, completionHandler: @escaping (_ isSuccess: Bool, _ item: ItemResponse\u003cT\u003e?, _ error: Error?) -\u003e ()) where T: Mappable {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getItemRequestUrl(itemName: itemName, language: language)"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetItemRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets single item from Delivery service."
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Suitable for custom string query."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter modelType: Type of the requested items. Type must conform to Mappable protocol."
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter customQuery: String query which specifies requested item."
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter item: Received item."
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getItem\u003cT\u003e(modelType: T.Type, customQuery: String, completionHandler: @escaping (_ isSuccess: Bool, _ item: ItemResponse\u003cT\u003e?,_ error: Error?) -\u003e ()) where T: Mappable {"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getItemRequestUrl(customQuery: customQuery)"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetItemRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets content types from Delivery service."
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter skip: Number of content types to skip."
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter limit: Number of content types to retrieve in a single request."
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter contentTypes: Received content types response."
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getContentTypes(skip: Int?, limit: Int?, completionHandler: @escaping (_ isSuccess: Bool, _ contentTypes: ContentTypesResponse?,_ error: Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getContentTypesUrl(skip: skip, limit: limit)"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetContentTypesRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets single content type from Delivery service."
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter name: The codename of a specific content type."
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter contentTypes: Received content type response."
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getContentType(name: String, completionHandler: @escaping (_ isSuccess: Bool, _ contentType: ContentType?,_ error: Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getContentTypeUrl(name: name)"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetContentTypeRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets taxonomies from Delivery service."
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter customQuery: String query which specifies requested taxonomies. If ommited, all taxonomies for the given project are returned. Custom query example: \"taxonomies?skip\u003d1\u0026limit\u003d1\""
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter taxonomyGroups: Received taxonomy groups."
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getTaxonomies(customQuery: String? \u003d nil, completionHandler: @escaping (_ isSuccess: Bool, _ taxonomyGroups: [TaxonomyGroup]?, _ error: Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getTaxonomiesRequestUrl(customQuery: customQuery)"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetTaxonomiesRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     Gets TaxonomyGroup from Delivery service."
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     "
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter taxonomyGroupName: Name which specifies requested TaxonomyGroup"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter completionHandler: A handler which is called after completetion."
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter isSuccess: Result of the action."
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter taxonomyGroup: Received taxonomy group."
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     - Parameter error: Potential error."
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func getTaxonomyGroup(taxonomyGroupName: String, completionHandler: @escaping (_ isSuccess: Bool, _ taxonomyGroup: TaxonomyGroup?, _ error: Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestUrl \u003d getTaxonomyRequestUrl(taxonomyName: taxonomyGroupName)"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        sendGetTaxonomyRequest(url: requestUrl, completionHandler: completionHandler)"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func sendGetItemsRequest\u003cT\u003e(url: String, completionHandler: @escaping (Bool, ItemsResponse\u003cT\u003e?, Error?) -\u003e ()) where T: Mappable {"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse\u003cItemsResponse\u003cT\u003e\u003e) in"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            switch response.result {"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .success:"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if let value \u003d response.result.value {"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    let deliveryItems \u003d value"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                        print(\"[Kentico Cloud] Getting items action has succeeded. Received \\(String(describing: deliveryItems.items?.count)) items.\")"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    completionHandler(true, deliveryItems, nil)"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .failure(let error):"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    print(\"[Kentico Cloud] Getting items action has failed. Check requested URL: \\(url)\")"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                completionHandler(false, nil, error)"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func sendGetItemRequest\u003cT\u003e(url: String, completionHandler: @escaping (Bool, ItemResponse\u003cT\u003e?, Error?) -\u003e ()) where T: Mappable {"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse\u003cItemResponse\u003cT\u003e\u003e) in"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            switch response.result {"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .success:"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if let value \u003d response.result.value {"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                        print(\"[Kentico Cloud] Getting item action has succeeded.\")"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    completionHandler(true, value, nil)"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .failure(let error):"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    print(\"[Kentico Cloud] Getting items action has failed. Check requested URL: \\(url)\")"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                completionHandler(false, nil, error)"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func sendGetContentTypesRequest(url: String, completionHandler: @escaping (Bool, ContentTypesResponse?, Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse\u003cContentTypesResponse\u003e) in"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            switch response.result {"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .success:"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if let value \u003d response.result.value {"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                        print(\"[Kentico Cloud] Getting content types action has succeeded.\")"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    completionHandler(true, value, nil)"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .failure(let error):"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    print(\"[Kentico Cloud] Getting content types action has failed. Check requested URL: \\(url)\")"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                completionHandler(false, nil, error)"
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func sendGetContentTypeRequest(url: String, completionHandler: @escaping (Bool, ContentType?, Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.request(url, headers: self.headers).responseObject() { (response: DataResponse\u003cContentType\u003e) in"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            switch response.result {"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .success:"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if let value \u003d response.result.value {"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                        print(\"[Kentico Cloud] Getting content type action has succeeded.\")"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    completionHandler(true, value, nil)"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .failure(let error):"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    print(\"[Kentico Cloud] Getting content types action has failed. Check requested URL: \\(url)\")"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                completionHandler(false, nil, error)"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func sendGetTaxonomiesRequest(url: String, completionHandler: @escaping (Bool, [TaxonomyGroup]?, Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.request(url, headers: self.headers).responseArray(keyPath: \"taxonomies\") { (response: DataResponse\u003c[TaxonomyGroup]\u003e) in"
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            switch response.result {"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .success:"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if let value \u003d response.result.value {"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                        print(\"[Kentico Cloud] Getting taxonomies action has succeeded.\")"
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 300,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    completionHandler(true, value, nil)"
+      },
+      {
+        "lineNumber": 301,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 302,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .failure(let error):"
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    print(\"[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \\(url)\")"
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                completionHandler(false, [], error)"
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 310,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 311,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func sendGetTaxonomyRequest(url: String, completionHandler: @escaping (Bool, TaxonomyGroup?, Error?) -\u003e ()) {"
+      },
+      {
+        "lineNumber": 312,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        sessionManager.request(url, headers: self.headers).responseObject { (response: DataResponse\u003cTaxonomyGroup\u003e) in"
+      },
+      {
+        "lineNumber": 313,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            "
+      },
+      {
+        "lineNumber": 314,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            switch response.result {"
+      },
+      {
+        "lineNumber": 315,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .success:"
+      },
+      {
+        "lineNumber": 316,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if let value \u003d response.result.value {"
+      },
+      {
+        "lineNumber": 317,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 318,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                        print(\"[Kentico Cloud] Getting taxonomies action has succeeded.\")"
+      },
+      {
+        "lineNumber": 319,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 320,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    completionHandler(true, value, nil)"
+      },
+      {
+        "lineNumber": 321,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 322,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            case .failure(let error):"
+      },
+      {
+        "lineNumber": 323,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if self.isDebugLoggingEnabled {"
+      },
+      {
+        "lineNumber": 324,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    print(\"[Kentico Cloud] Getting taxonomies action has failed. Check requested URL: \\(url)\")"
+      },
+      {
+        "lineNumber": 325,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 326,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                completionHandler(false, nil, error)"
+      },
+      {
+        "lineNumber": 327,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 328,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 329,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 330,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 331,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getItemsRequestUrl(queryParameters: [QueryParameter]) -\u003e String {"
+      },
+      {
+        "lineNumber": 332,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 333,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 334,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 335,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let requestBuilder \u003d ItemsRequestBuilder.init(endpointUrl: endpoint, projectId: projectId, queryParameters: queryParameters)"
+      },
+      {
+        "lineNumber": 336,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 337,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return requestBuilder.getRequestUrl()"
+      },
+      {
+        "lineNumber": 338,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 339,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 340,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 341,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 342,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getItemsRequestUrl(customQuery: String) -\u003e String {"
+      },
+      {
+        "lineNumber": 343,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 344,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 345,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 346,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return \"\\(endpoint)/\\(projectId)/\\(customQuery)\""
+      },
+      {
+        "lineNumber": 347,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 348,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 349,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getItemRequestUrl(customQuery: String) -\u003e String {"
+      },
+      {
+        "lineNumber": 350,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 351,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 352,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return \"\\(endpoint)/\\(projectId)/\\(customQuery)\""
+      },
+      {
+        "lineNumber": 353,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 354,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 355,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getItemRequestUrl(itemName: String, language: String? \u003d nil) -\u003e String {"
+      },
+      {
+        "lineNumber": 356,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 357,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 358,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        var languageQueryParameter \u003d \"\""
+      },
+      {
+        "lineNumber": 359,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let language \u003d language {"
+      },
+      {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            languageQueryParameter \u003d \"?language\u003d\\(language)\""
+      },
+      {
+        "lineNumber": 361,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 362,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 363,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return \"\\(endpoint)/\\(projectId)/items/\\(itemName)\\(languageQueryParameter)\""
+      },
+      {
+        "lineNumber": 364,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 365,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 366,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getContentTypesUrl(skip: Int?, limit: Int?) -\u003e String {"
+      },
+      {
+        "lineNumber": 367,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 368,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        var requestUrl \u003d \"\\(endpoint)/\\(projectId)/types?\""
+      },
+      {
+        "lineNumber": 369,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 370,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let skip \u003d skip {"
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            requestUrl.append(\"skip\u003d\\(skip)\u0026\")"
+      },
+      {
+        "lineNumber": 372,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 373,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 374,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let limit \u003d limit {"
+      },
+      {
+        "lineNumber": 375,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            requestUrl.append(\"limit\u003d\\(limit)\u0026\")"
+      },
+      {
+        "lineNumber": 376,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 377,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 378,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Remove last ampersand or question mark."
+      },
+      {
+        "lineNumber": 379,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        requestUrl \u003d String(requestUrl.dropLast(1))"
+      },
+      {
+        "lineNumber": 380,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 381,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return requestUrl"
+      },
+      {
+        "lineNumber": 382,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getContentTypeUrl(name: String) -\u003e String {"
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return \"\\(endpoint)/\\(projectId)/types/\\(name)\""
+      },
+      {
+        "lineNumber": 387,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 388,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 389,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getTaxonomiesRequestUrl(customQuery: String?) -\u003e String {"
+      },
+      {
+        "lineNumber": 390,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 391,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 392,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return \"\\(endpoint)/\\(projectId)/\\(customQuery ?? \"taxonomies\")\""
+      },
+      {
+        "lineNumber": 393,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 394,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 395,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getTaxonomyRequestUrl(taxonomyName: String) -\u003e String {"
+      },
+      {
+        "lineNumber": 396,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let endpoint \u003d getEndpoint()"
+      },
+      {
+        "lineNumber": 397,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 398,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return \"\\(endpoint)/\\(projectId)/taxonomies/\\(taxonomyName)\""
+      },
+      {
+        "lineNumber": 399,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 400,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 401,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getEndpoint() -\u003e String {"
+      },
+      {
+        "lineNumber": 402,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 403,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        var endpoint: String?"
+      },
+      {
+        "lineNumber": 404,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 405,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Check override from property list first"
+      },
+      {
+        "lineNumber": 406,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let path \u003d Bundle.main.path(forResource: \"Info\", ofType: \"plist\") {"
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if let propertyList \u003d NSDictionary(contentsOfFile: path) {"
+      },
+      {
+        "lineNumber": 408,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                if let customEndpoint \u003d propertyList[\"KenticoCloudDeliveryEndpoint\"] {"
+      },
+      {
+        "lineNumber": 409,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    endpoint \u003d customEndpoint as? String"
+      },
+      {
+        "lineNumber": 410,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                    return endpoint!"
+      },
+      {
+        "lineNumber": 411,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 412,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 413,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 414,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 415,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // Request preview api in case there is an previewApiKey"
+      },
+      {
+        "lineNumber": 416,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if previewApiKey \u003d\u003d nil {"
+      },
+      {
+        "lineNumber": 417,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return CloudConstants.liveDeliverEndpoint"
+      },
+      {
+        "lineNumber": 418,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 419,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return CloudConstants.previewDeliverEndpoint"
+      },
+      {
+        "lineNumber": 420,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 421,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 422,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 423,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 424,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private func getHeaders() -\u003e HTTPHeaders {"
+      },
+      {
+        "lineNumber": 425,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        var headers: HTTPHeaders \u003d ["
+      },
+      {
+        "lineNumber": 426,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"Accept\": \"application/json\""
+      },
+      {
+        "lineNumber": 427,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        ]"
+      },
+      {
+        "lineNumber": 428,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 429,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let apiKey \u003d previewApiKey {"
+      },
+      {
+        "lineNumber": 430,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            headers[\"authorization\"] \u003d \"Bearer \" + apiKey"
+      },
+      {
+        "lineNumber": 431,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 432,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 433,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let apiKey \u003d secureApiKey {"
+      },
+      {
+        "lineNumber": 434,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            headers[\"authorization\"] \u003d \"Bearer \" + apiKey"
+      },
+      {
+        "lineNumber": 435,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 436,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 437,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        headers[\"X-KC-SDKID\"] \u003d \"cocoapods.org;KenticoCloud;1.0.0\""
+      },
+      {
+        "lineNumber": 438,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 439,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return headers"
+      },
+      {
+        "lineNumber": 440,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 441,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 442,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private class RetryHandler: RequestRetrier {"
+      },
+      {
+        "lineNumber": 443,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 444,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        private var attemptedRetryNumber: Int"
+      },
+      {
+        "lineNumber": 445,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        private var maxRetryAttempts: Int"
+      },
+      {
+        "lineNumber": 446,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        private var isRetryEnabled: Bool"
+      },
+      {
+        "lineNumber": 447,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 448,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 449,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         Inits a Retry Handler instance"
+      },
+      {
+        "lineNumber": 450,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 451,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         - Parameter isRetryEnabled: Flag for enabling retry policy."
+      },
+      {
+        "lineNumber": 452,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         - Parameter maxRetryAttempts: Maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 453,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         - Returns: A Retry Handler instance"
+      },
+      {
+        "lineNumber": 454,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        */"
+      },
+      {
+        "lineNumber": 455,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        public init(maxRetryAttempts: Int, isRetryEnabled: Bool) {"
+      },
+      {
+        "lineNumber": 456,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            self.attemptedRetryNumber \u003d 1"
+      },
+      {
+        "lineNumber": 457,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            self.maxRetryAttempts \u003d maxRetryAttempts"
+      },
+      {
+        "lineNumber": 458,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            self.isRetryEnabled \u003d isRetryEnabled"
+      },
+      {
+        "lineNumber": 459,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            if (maxRetryAttempts \u003c 0) {"
+      },
+      {
+        "lineNumber": 460,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                self.maxRetryAttempts \u003d 0"
+      },
+      {
+        "lineNumber": 461,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 462,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 463,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 464,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        // Protocol requirement"
+      },
+      {
+        "lineNumber": 465,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        public func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {"
+      },
+      {
+        "lineNumber": 466,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            if shouldRetry() {"
+      },
+      {
+        "lineNumber": 467,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                let waitTime \u003d (pow(2, attemptedRetryNumber + 1) as NSDecimalNumber).doubleValue * 0.1"
+      },
+      {
+        "lineNumber": 468,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                incrementRetryTimes()"
+      },
+      {
+        "lineNumber": 469,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                completion(true, waitTime)"
+      },
+      {
+        "lineNumber": 470,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 471,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                resetRetryTimes()"
+      },
+      {
+        "lineNumber": 472,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                completion(false, 0)"
+      },
+      {
+        "lineNumber": 473,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 474,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 475,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 476,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 477,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         Configures retry policy of the delivery client."
+      },
+      {
+        "lineNumber": 478,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 479,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         - Parameter isRetryEnabled: Flag for enabling retry policy."
+      },
+      {
+        "lineNumber": 480,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         - Parameter maxRetryAttempts: Maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 481,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 482,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        public func setRetryAttribute(isRetryEnabled enabled: Bool, maxRetryAttempts attempts: Int) {"
+      },
+      {
+        "lineNumber": 483,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            self.isRetryEnabled \u003d enabled"
+      },
+      {
+        "lineNumber": 484,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            self.maxRetryAttempts \u003d attempts"
+      },
+      {
+        "lineNumber": 485,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            if (attempts \u003c 0) {"
+      },
+      {
+        "lineNumber": 486,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                self.maxRetryAttempts \u003d 0"
+      },
+      {
+        "lineNumber": 487,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 488,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 489,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 490,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 491,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         Gets the maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 492,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 493,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         - Returns: maximum number of retry attempts."
+      },
+      {
+        "lineNumber": 494,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 495,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        public func getMaximumRetryNumber() -\u003e Int {"
+      },
+      {
+        "lineNumber": 496,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            return self.maxRetryAttempts"
+      },
+      {
+        "lineNumber": 497,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 498,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 499,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /**"
+      },
+      {
+        "lineNumber": 500,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         Gets whether the retry policy is enabled"
+      },
+      {
+        "lineNumber": 501,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 502,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         - Returns: the flag for enabling retry policy."
+      },
+      {
+        "lineNumber": 503,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 504,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        public func getIsRetryEnabled() -\u003e Bool {"
+      },
+      {
+        "lineNumber": 505,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            return self.isRetryEnabled"
+      },
+      {
+        "lineNumber": 506,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 507,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 508,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        private func resetRetryTimes() {"
+      },
+      {
+        "lineNumber": 509,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            attemptedRetryNumber \u003d 0"
+      },
+      {
+        "lineNumber": 510,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 511,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 512,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        private func incrementRetryTimes() {"
+      },
+      {
+        "lineNumber": 513,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            attemptedRetryNumber +\u003d 1"
+      },
+      {
+        "lineNumber": 514,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 515,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 516,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        private func shouldRetry() -\u003e Bool {"
+      },
+      {
+        "lineNumber": 517,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            return isRetryEnabled \u0026\u0026 attemptedRetryNumber \u003c\u003d maxRetryAttempts"
+      },
+      {
+        "lineNumber": 518,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 519,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 520,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 394,
+      "Adoby7": 126
+    }
+  },
+  {
+    "path": "README.md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "# Kentico Cloud Swift SDK"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo\u003dstackoverflow\u0026logoColor\u003dwhite)](https://stackoverflow.com/tags/kentico-cloud)"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[![Travis](https://travis-ci.org/Kentico/cloud-sdk-swift.svg?branch\u003dmaster)](https://travis-ci.org/Kentico/cloud-sdk-swift)"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[![CocoaPods](https://img.shields.io/cocoapods/v/KenticoCloud.svg)](https://cocoapods.org/pods/KenticoCloud)"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[![CocoaPods](https://img.shields.io/cocoapods/p/KenticoCloud.svg)](https://cocoapods.org/pods/KenticoCloud)"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Summary"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The KenticoCloud iOS SDK is a library used for retrieving content. You can use the SDK as a CocoaPod package or add it manually."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Sample app"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The repository contains sample app which demonstrates basic usage of the SDK. It displays content from a Sample Project that demonstrates Kentico Cloud features and best practices. This fully featured project contains marketing content for Dancing Goat – an imaginary chain of coffee shops. If you don\u0027t have your own Sample Project, any admin of a Kentico Cloud subscription [can generate one](https://app.kenticocloud.com/sample-project-generator). "
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003cimg src\u003d\"https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/splashScreens.png?raw\u003dtrue\" width\u003d\"212\"\u003e \u003cimg src\u003d\"https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw\u003dtrue\" width\u003d\"212\"\u003e \u003cimg src\u003d\"https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png?raw\u003dtrue\" width\u003d\"212\"\u003e \u003cimg src\u003d\"https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/locations.png?raw\u003dtrue\" width\u003d\"212\"\u003e"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Quick start"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**1. Add a pod**  "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```ruby"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "source \u0027https://github.com/CocoaPods/Specs.git\u0027"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "platform :ios, \u002712.0\u0027"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "use_frameworks!"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "target \u0027\u003cYour Target Name\u003e\u0027 do"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    pod \u0027KenticoCloud\u0027"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "end"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```bash"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "$ pod install"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**2. Create a type object** - in this example, the type object is `Article`. It represents a Content type in Kentico Cloud that the retrieved content items are based on. This content type has three elements with following codenames: `title` (a text element),`teaser_image` (an asset element) and `post_date` (a DateTime element)."
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import ObjectMapper"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class Article: Mappable {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var title: TextElement?"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var asset: AssetElement?"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var postDate: DateTimeElement?"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    required init?(map: Map){"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let mapper \u003d MapElement.init(map: map)"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        title \u003d mapper.map(elementName: \"title\", elementType: TextElement.self)"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        asset \u003d mapper.map(elementName: \"teaser_image\", elementType: AssetElement.self)"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        postDate \u003d mapper.map(elementName: \"post_date\", elementType: DateTimeElement.self)"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func mapping(map: Map) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**3. Prepare the Delivery client**"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\")"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**4. Prepare a query**"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let articlesQueryParameters \u003d QueryBuilder.params().type(article).language(\"es-ES\")"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**5. Get and use content items**"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getItems(modelType: Article.self, queryParameters: articleQueryParameters) { (isSuccess, itemsResponse, error) in"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if isSuccess {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let articles \u003d itemsResponse?.items {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // use your articles here"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let error \u003d error {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            print(error)"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Installation"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### CocoaPods"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```bash"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "$ gem install cocoapods"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "To integrate KenticoCloud into your Xcode project using CocoaPods, specify it in your `Podfile`:"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```ruby"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "source \u0027https://github.com/CocoaPods/Specs.git\u0027"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "platform :ios, \u002710.0\u0027"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "use_frameworks!"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "target \u0027\u003cYour Target Name\u003e\u0027 do"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    pod \u0027KenticoCloud\u0027"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "end"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Then, run the following command:"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```bash"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "$ pod install"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " "
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Using the DeliveryClient"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "The `DeliveryClient` class is the main class of the SDK for getting content. Using this class, you can retrieve content from your Kentico Cloud projects."
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "To create an instance of the class, you need to provide a [project ID](https://developer.kenticocloud.com/v1/docs/getting-content#section-getting-content-items):"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// Initializes an instance of the DeliveryClient client"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let cloudClient \u003d DeliveryClient.init(\"975bf280-fd91-488c-994c-2f04416e5ee3\")"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Once you create a `DeliveryClient`, you can start querying your project repository by calling methods on the client instance. See [Basic querying](#basic-items-querying) for details."
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Previewing unpublished content"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "To retrieve unpublished content, you need to create a `DeliveryClient` with both Project ID and Preview API key. Each Kentico Cloud project has its own Preview API key. "
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\", previewApiKey:\"PREVIEW_API_KEY\")"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "For more details, see [Previewing unpublished content using the Delivery API](https://developer.kenticocloud.com/docs/preview-content-via-api)."
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Getting content from secured project"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "To retrieve content from secured project, you need to create a `DeliveryClient` with both Project ID and Secure API key. "
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\", secureApiKey:\"SECURE_API_KEY\")"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "For more details, see [Securing the Delivery API](https://developer.kenticocloud.com/reference#secure-access)."
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "### Configuring retry policy"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "The client can retry getting items after it encounters errors. By default, the retry policy is enabled, and the maximum retry attempts is 5."
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "You can configure the maximum retry attempts when creating a `DeliveryClient`."
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\", isRetryEnabled: true, maxRetryAttempts: CUSTOM_MAX_ATTEMPTS_NUMBER)"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "You can also disable the retry policy."
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\", isRetryEnabled: false)"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " "
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Getting items"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Using strongly typed models"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "In order to receive strongly typed items you need to implement your item model. It\u0027s necessary to conform to `Mappable` protocol and implement mapping functionality. You can use your own mapping or our strongly typed element types."
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "- Element types mapping:"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import ObjectMapper"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class Article: Mappable {"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var title: TextElement?"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var asset: AssetElement?"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    var postDate: DateTimeElement?"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    required init?(map: Map){"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        let mapper \u003d MapElement.init(map: map)"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        title \u003d mapper.map(elementName: \"title\", elementType: TextElement.self)"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        asset \u003d mapper.map(elementName: \"teaser_image\", elementType: AssetElement.self)"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        postDate \u003d mapper.map(elementName: \"post_date\", elementType: DateTimeElement.self)"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    func mapping(map: Map) {"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " "
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " - Custom mapping:"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import ObjectMapper"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class Cafe: Mappable {"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public var city: String?"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public var street: String?"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public var country: String?"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public required init?(map: Map){"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public func mapping(map: Map) {"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        city \u003c- map[\"elements.city.value\"]"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        street \u003c- map[\"elements.street.value\"]"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        country \u003c- map[\"elements.country.value\"]"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Basic items querying "
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Once you have a `DeliveryClient` instance, you can start querying your project repository by calling methods on the instance. You need to pass your item model and query. You can create a query for a listing in two ways:"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "- creating a custom string query:"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let customQuery \u003d \"items?system.type\u003darticle\u0026order\u003delements.post_date[desc]\""
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getItems(modelType: Article.self, customQuery: customQuery) { (isSuccess, itemsResponse, error) in ..."
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " - using a query parameters array:"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```swift"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let coffeesQueryParameters \u003d QueryBuilder.params().type(contentType).language(\"es-ES\")"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters) { (isSuccess, itemsResponse, error) in ..."
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " "
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " Then you can use your obtained items in the completetion handler:"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " "
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " ```swift"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "-"
+        },
+        "content": " // Retrieves a list of all content items of certain type"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let coffeesQueryParameters \u003d QueryBuilder.params().type(\"coffee\")"
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getItems(modelType: Coffee.self, queryParameters: coffeesQueryParameters) { (isSuccess, itemsResponse, error) in"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if isSuccess {"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if let coffees \u003d itemsResponse?.items {"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                // Use your items here"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if let error \u003d error {"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                print(error)"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "You can also retrieve just a single item:"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// Retrieves a single content item"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\")"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getItem(modelType: Cafe.self, itemName: \"boston\") { (isSuccess, deliveryItem, error) in"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if isSuccess {"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let cafe \u003d deliveryItem.item {"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // Use your item here"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if let error \u003d error {"
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            print(error)"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Getting linked items"
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "You can get linked content items from `itemResponse` or `itemsResponse` object:"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\")"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getItem(modelType: Article.self, itemName: \"on_roasts\", completionHandler: { (isSuccess, itemResponse, error) in"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\tif isSuccess {"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t\tfor articleCodeName in (itemResponse?.item?.relatedArticles?.value)! {"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \t\tlet relatedArticle \u003d itemResponse?.getLinkedItems(codename: articleCodeName, type: Article.self)"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \t}"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t}"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            "
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                         "
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Getting content types"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Get one content type"
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getContentType(name: \"coffee\", completionHandler: { (isSuccess, contentType, error) in"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if !isSuccess {"
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        fail(\"Response is not successful. Error: \\(String(describing: error))\")"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if let type \u003d contentType {"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t// use content type here"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "})"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Get multiple content types"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getContentTypes(skip: 2, limit: 4, completionHandler: { (isSuccess, contentTypesResponse, error) in"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if !isSuccess {"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        fail(\"Response is not successful. Error: \\(String(describing: error))\")"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if let response \u003d contentTypesResponse {"
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\t// use content types here"
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "})"
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Getting taxonomies"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Get taxonomy group"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\")"
+      },
+      {
+        "lineNumber": 300,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getTaxonomyGroup(taxonomyGroupName: \"personas\", completionHandler: { (isSuccess, deliveryItem, error) in"
+      },
+      {
+        "lineNumber": 301,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   if isSuccess {"
+      },
+      {
+        "lineNumber": 302,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "       if let taxonomyGroup \u003d deliveryItems.item {"
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // use your taxonomy group here"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "       }"
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         if let error \u003d error {"
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "             print(error)"
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         }"
+      },
+      {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 310,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "})"
+      },
+      {
+        "lineNumber": 311,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 312,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 313,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Get all taxonomies"
+      },
+      {
+        "lineNumber": 314,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 315,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let client \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\")"
+      },
+      {
+        "lineNumber": 316,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in"
+      },
+      {
+        "lineNumber": 317,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   if isSuccess {"
+      },
+      {
+        "lineNumber": 318,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "       if let taxonomies \u003d deliveryItems?.items {"
+      },
+      {
+        "lineNumber": 319,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        // use your taxonomies here"
+      },
+      {
+        "lineNumber": 320,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "       }"
+      },
+      {
+        "lineNumber": 321,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    } else {"
+      },
+      {
+        "lineNumber": 322,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         if let error \u003d error {"
+      },
+      {
+        "lineNumber": 323,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "             print(error)"
+      },
+      {
+        "lineNumber": 324,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "         }"
+      },
+      {
+        "lineNumber": 325,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 326,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "})"
+      },
+      {
+        "lineNumber": 327,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 328,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 329,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Local Development"
+      },
+      {
+        "lineNumber": 330,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "For running SDK with sample app locally follow the next steps."
+      },
+      {
+        "lineNumber": 331,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Download the repository."
+      },
+      {
+        "lineNumber": 332,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. In terminal navigate to */Example*."
+      },
+      {
+        "lineNumber": 333,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Run `pod install` ([Cocoapods](https://cocoapods.org/) must be installed)."
+      },
+      {
+        "lineNumber": 334,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Open `KenticoCloud.xcworkspace` in XCode."
+      },
+      {
+        "lineNumber": 335,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Run."
+      },
+      {
+        "lineNumber": 336,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 337,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Debug"
+      },
+      {
+        "lineNumber": 338,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "If you want to view debug info from both clients set client\u0027s `enableDebugLogging` attribute:"
+      },
+      {
+        "lineNumber": 339,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```swift"
+      },
+      {
+        "lineNumber": 340,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "let deliveryClient \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\", enableDebugLogging \u003d true)"
+      },
+      {
+        "lineNumber": 341,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 342,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 343,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Releasing a new version of the Cocoapod package"
+      },
+      {
+        "lineNumber": 344,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Travis CI automatically builds and releases a new version of the pod when added new tag."
+      },
+      {
+        "lineNumber": 345,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 346,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Documentation"
+      },
+      {
+        "lineNumber": 347,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html)."
+      },
+      {
+        "lineNumber": 348,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 349,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Updating generated documentation"
+      },
+      {
+        "lineNumber": 350,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "We use Jazzy which is a command-line utility that generates documentation for Swift. For updating documentation perform the next steps:"
+      },
+      {
+        "lineNumber": 351,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Install Jazzy `[sudo] gem install jazzy`"
+      },
+      {
+        "lineNumber": 352,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Run `jazzy` from the root of the repository."
+      },
+      {
+        "lineNumber": 353,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Commit changes from */Docs* directory."
+      },
+      {
+        "lineNumber": 354,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 355,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Further information"
+      },
+      {
+        "lineNumber": 356,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 357,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "For more developer resources, visit the Kentico Cloud Developer Hub at \u003chttps://developer.kenticocloud.com\u003e."
+      },
+      {
+        "lineNumber": 358,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 359,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Feedback \u0026 Contributing"
+      },
+      {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 361,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Check out the [contributing](https://github.com/Kentico/cloud-sdk-swift/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions, and begin contributing."
+      },
+      {
+        "lineNumber": 362,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 363,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## License"
+      },
+      {
+        "lineNumber": 364,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 365,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "KenticoCloud Swift SDK is available under the MIT license. See the LICENSE file for more information."
+      },
+      {
+        "lineNumber": 366,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 367,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/cloud-sdk-swift?pixel)"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 349,
+      "Adoby7": 18
+    }
+  }
+]

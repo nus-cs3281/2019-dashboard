@@ -7473,9 +7473,9 @@
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                        v-bind:class\u003d\"\u0027summary-chart__ramp__slice--color\u0027 + j % 5\","
+        "content": "                        v-bind:class\u003d\"\u0027summary-chart__ramp__slice--color\u0027 + getSliceColor(slice.date)\","
       },
       {
         "lineNumber": 157,
@@ -7501,16 +7501,16 @@
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                            right: ((getSlicePos(j, user.commits.length)\\"
+        "content": "                            right: ((getSlicePos(slice.date, filterSinceDate, filterUntilDate)\\"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                                + (getSlicePos(k, slice.commitResults.length) / user.commits.length)) * 100) + \u0027%\u0027\\"
+        "content": "                                + (getCommitPos(k, slice.commitResults.length, filterSinceDate, filterUntilDate))) * 100) + \u0027%\u0027\\"
       },
       {
         "lineNumber": 162,
@@ -7578,9 +7578,9 @@
       {
         "lineNumber": 171,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "                    v-bind:class\u003d\"\u0027summary-chart__ramp__slice--color\u0027 + j % 5\","
+        "content": "                    v-bind:class\u003d\"\u0027summary-chart__ramp__slice--color\u0027 + getSliceColor(slice.date)\","
       },
       {
         "lineNumber": 172,
@@ -7606,9 +7606,9 @@
       {
         "lineNumber": 175,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                      right: (getSlicePos(j, user.commits.length) * 100) + \u0027%\u0027\\"
+        "content": "                      right: (getSlicePos(slice.date, filterSinceDate, filterUntilDate) * 100) + \u0027%\u0027\\"
       },
       {
         "lineNumber": 176,
@@ -8348,9 +8348,9 @@
     ],
     "authorContributionMap": {
       "fzdy1914": 42,
-      "emer7": 31,
-      "ongspxm": 40,
-      "-": 144,
+      "emer7": 36,
+      "ongspxm": 36,
+      "-": 143,
       "chelseyong": 23
     }
   },
@@ -12074,404 +12074,411 @@
       {
         "lineNumber": 36,
         "author": {
+          "gitId": "emer7"
+        },
+        "content": "          window.app.sinceDate \u003d data.repos[0].sinceDate;"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 38,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "          const names \u003d [];"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
         "content": "          data.repos.forEach((repo) \u003d\u003e {"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
         "content": "            const repoName \u003d `${repo.displayName}`;"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
         "content": "            window.REPOS[repoName] \u003d repo;"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
         "content": "            names.push(repoName);"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
         "content": "          });"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 44,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "          return names;"
       },
       {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        });"
-      },
-      {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "  },"
+        "content": "        });"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  },"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "  loadCommits(repoName) {"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "    return loadJSON(`${REPORT_DIR}/${repoName}/commits.json`).then((commits) \u003d\u003e {"
+        "content": "  loadCommits(repoName) {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "      const res \u003d [];"
+        "content": "    return loadJSON(`${REPORT_DIR}/${repoName}/commits.json`).then((commits) \u003d\u003e {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "      const repo \u003d window.REPOS[repoName];"
+        "content": "      const res \u003d [];"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const repo \u003d window.REPOS[repoName];"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "      Object.keys(commits.authorDisplayNameMap).forEach((author) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (author) {"
+        "content": "      Object.keys(commits.authorDisplayNameMap).forEach((author) \u003d\u003e {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "          const obj \u003d {"
+        "content": "        if (author) {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "            name: author,"
+        "content": "          const obj \u003d {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "            repoId: repoName,"
+        "content": "            name: author,"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "            variance: commits.authorContributionVariance[author],"
+        "content": "            repoId: repoName,"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "            displayName: commits.authorDisplayNameMap[author],"
+        "content": "            variance: commits.authorContributionVariance[author],"
       },
       {
         "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            displayName: commits.authorDisplayNameMap[author],"
+      },
+      {
+        "lineNumber": 60,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "            dailyCommits: commits.authorDailyContributionsMap[author],"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
         "content": "            totalCommits: commits.authorFinalContributionMap[author],"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
         "content": "            fileFormatContribution: commits.authorFileFormatContributionMap[author],"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
         "content": "          };"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
         "content": "          const searchParams \u003d ["
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 66,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "              repo.displayName,"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
         "content": "              obj.displayName, author,"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
         "content": "          ];"
       },
       {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "          obj.searchPath \u003d searchParams.join(\u0027_\u0027).toLowerCase();"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "          obj.repoPath \u003d `${repo.displayName}`;"
+        "content": "          obj.searchPath \u003d searchParams.join(\u0027_\u0027).toLowerCase();"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "          obj.repoName \u003d `${repo.displayName}`;"
+        "content": "          obj.repoPath \u003d `${repo.displayName}`;"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "          obj.location \u003d `${repo.location.location}`;"
+        "content": "          obj.repoName \u003d `${repo.displayName}`;"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          obj.location \u003d `${repo.location.location}`;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "          res.push(obj);"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "          res.push(obj);"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "        }"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      });"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "      repo.commits \u003d commits;"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "      repo.users \u003d res;"
+        "content": "      repo.commits \u003d commits;"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      repo.users \u003d res;"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "      return res;"
+        "content": ""
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "      return res;"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "  },"
+        "content": "    });"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  },"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "  loadAuthorship(repoName) {"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "    return loadJSON(`${REPORT_DIR}/${repoName}/authorship.json`)"
+        "content": "  loadAuthorship(repoName) {"
       },
       {
         "lineNumber": 87,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    return loadJSON(`${REPORT_DIR}/${repoName}/authorship.json`)"
+      },
+      {
+        "lineNumber": 88,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "        .then((files) \u003d\u003e {"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
         "content": "          window.REPOS[repoName].files \u003d files;"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 90,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "          return files;"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
         "content": "        });"
       },
       {
-        "lineNumber": 91,
+        "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
@@ -12480,7 +12487,7 @@
     ],
     "authorContributionMap": {
       "ongspxm": 9,
-      "emer7": 6,
+      "emer7": 7,
       "-": 78
     }
   },
@@ -16405,23 +16412,23 @@
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "function getIntervalDay(a, b) {"
+        "content": "const WEEK_IN_MS \u003d DAY_IN_MS * 7;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": "  const diff \u003d Date.parse(a) - Date.parse(b);"
+        "content": "function getDateStr(date) {"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": "  return diff / DAY_IN_MS;"
+        "content": "  return (new Date(date)).toISOString().split(\u0027T\u0027)[0];"
       },
       {
         "lineNumber": 17,
@@ -16435,91 +16442,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "function getDateStr(date) {"
+        "content": "function dateRounding(datestr, roundDown) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "  return (new Date(date)).toISOString().split(\u0027T\u0027)[0];"
+        "content": "  // rounding up to nearest sunday"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  const date \u003d new Date(datestr);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": "function dateRounding(datestr, roundDown) {"
+        "content": "  const day \u003d date.getUTCDay();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": "  // rounding up to nearest sunday"
+        "content": "  let datems \u003d date.getTime();"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "  const date \u003d new Date(datestr);"
+        "content": "  if (roundDown) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "  const day \u003d date.getUTCDay();"
+        "content": "    datems -\u003d day * DAY_IN_MS;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "  let datems \u003d date.getTime();"
+        "content": "  } else {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (roundDown) {"
+        "content": "    datems +\u003d (7 - day) * DAY_IN_MS;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "    datems -\u003d day * DAY_IN_MS;"
+        "content": "  }"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": "  } else {"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "    datems +\u003d (7 - day) * DAY_IN_MS;"
+        "content": "  return getDateStr(datems);"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "}"
       },
       {
         "lineNumber": 31,
@@ -16533,231 +16540,231 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  return getDateStr(datems);"
+        "content": "function addDays(dateStr, numDays) {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  const date \u003d new Date(dateStr);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  return getDateStr(date.getTime() + numDays * DAY_IN_MS);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "function addDays(dateStr, numDays) {"
+        "content": "}"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "  const date \u003d new Date(dateStr);"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "  return getDateStr(date.getTime() + numDays * DAY_IN_MS);"
+        "content": "window.vSummary \u003d {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  props: [\u0027repos\u0027],"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  template: window.$(\u0027v_summary\u0027).innerHTML,"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "window.vSummary \u003d {"
+        "content": "  data() {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "  props: [\u0027repos\u0027],"
+        "content": "    return {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "  template: window.$(\u0027v_summary\u0027).innerHTML,"
+        "content": "      filtered: [],"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "  data() {"
+        "content": "      filterSearch: \u0027\u0027,"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "    return {"
+        "content": "      filterSort: \u0027displayName\u0027,"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "      filtered: [],"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      filterSearch: \u0027\u0027,"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      filterSort: \u0027displayName\u0027,"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "-"
-        },
         "content": "      filterSortReverse: false,"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 46,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      filterGroupSelection: \u0027groupByRepos\u0027,"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
         "content": "      filterTimeFrame: \u0027day\u0027,"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
         "content": "      filterBreakdown: false,"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
         "content": "      tmpFilterSinceDate: \u0027\u0027,"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
         "content": "      tmpFilterUntilDate: \u0027\u0027,"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
         "content": "      filterSinceDate: \u0027\u0027,"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
         "content": "      filterUntilDate: \u0027\u0027,"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
         "content": "      filterHash: \u0027\u0027,"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
         "content": "      rampSize: 0.01,"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
         "content": "      minDate: \u0027\u0027,"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
         "content": "      maxDate: \u0027\u0027,"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
         "content": "      contributionBarColors: {},"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
         "content": "    };"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
         "content": "  watch: {"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
         "content": "    repos() {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.getFiltered();"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    },"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    filterSort() {"
       },
       {
         "lineNumber": 65,
@@ -16778,7 +16785,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    filterSort() {"
+        "content": "    filterSortReverse() {"
       },
       {
         "lineNumber": 68,
@@ -16797,9 +16804,9 @@
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "    filterSortReverse() {"
+        "content": "    filterTimeFrame() {"
       },
       {
         "lineNumber": 71,
@@ -16820,7 +16827,7 @@
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "    filterTimeFrame() {"
+        "content": "    filterGroupSelection() {"
       },
       {
         "lineNumber": 74,
@@ -16832,30 +16839,30 @@
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "    },"
+        "content": "      this.updateSortSelection();"
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "    filterGroupSelection() {"
+        "content": "    },"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.getFiltered();"
+        "content": "    filterBreakdown() {"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      this.updateSortSelection();"
+        "content": "      this.getFiltered();"
       },
       {
         "lineNumber": 79,
@@ -16869,315 +16876,315 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    filterBreakdown() {"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      this.getFiltered();"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    },"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "-"
-        },
         "content": "    tmpFilterSinceDate() {"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 81,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "      if (this.tmpFilterSinceDate \u0026\u0026 this.tmpFilterSinceDate \u003e\u003d this.minDate) {"
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
         "content": "        this.filterSinceDate \u003d this.tmpFilterSinceDate;"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
         "content": "        this.getFiltered();"
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
         "content": "      }"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
         "content": "    tmpFilterUntilDate() {"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 87,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "      if (this.tmpFilterUntilDate \u0026\u0026 this.tmpFilterUntilDate \u003c\u003d this.maxDate) {"
       },
       {
-        "lineNumber": 91,
+        "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
         "content": "        this.filterUntilDate \u003d this.tmpFilterUntilDate;"
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
         "content": "        this.getFiltered();"
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
         "content": "      }"
       },
       {
-        "lineNumber": 94,
+        "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 95,
+        "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
         "content": "  computed: {"
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
         "content": "    avgCommitSize() {"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
         "content": "      let totalCommits \u003d 0;"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
         "content": "      let totalCount \u003d 0;"
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
         "content": "      this.filtered.forEach((repo) \u003d\u003e {"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
         "content": "        repo.forEach((user) \u003d\u003e {"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
         "content": "          user.commits.forEach((slice) \u003d\u003e {"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
         "content": "            if (slice.insertions \u003e 0) {"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
         "content": "              totalCount +\u003d 1;"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
         "content": "              totalCommits +\u003d slice.insertions;"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
         "content": "          });"
       },
       {
-        "lineNumber": 108,
+        "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
         "content": "        });"
       },
       {
-        "lineNumber": 109,
+        "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
         "content": "      });"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
         "content": "      return totalCommits / totalCount;"
       },
       {
-        "lineNumber": 111,
+        "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
         "content": "    avgContributionSize() {"
       },
       {
-        "lineNumber": 113,
+        "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
         "content": "      let totalLines \u003d 0;"
       },
       {
-        "lineNumber": 114,
+        "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
         "content": "      let totalCount \u003d 0;"
       },
       {
-        "lineNumber": 115,
+        "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
         "content": "      this.repos.forEach((repo) \u003d\u003e {"
       },
       {
-        "lineNumber": 116,
+        "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
         "content": "        repo.users.forEach((user) \u003d\u003e {"
       },
       {
-        "lineNumber": 117,
+        "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
         "content": "          if (user.totalCommits \u003e 0) {"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
         "content": "            totalCount +\u003d 1;"
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
         "content": "            totalLines +\u003d user.totalCommits;"
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
         "content": "          }"
       },
       {
-        "lineNumber": 121,
+        "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
         "content": "        });"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
         "content": "      });"
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 120,
         "author": {
           "gitId": "ongspxm"
         },
         "content": ""
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 121,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "      return totalLines / totalCount;"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    },"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    filteredRepos() {"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      return this.filtered.filter((repo) \u003d\u003e repo.length \u003e 0);"
       },
       {
         "lineNumber": 125,
@@ -17189,198 +17196,198 @@
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "    filteredRepos() {"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      return this.filtered.filter((repo) \u003d\u003e repo.length \u003e 0);"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    },"
-      },
-      {
-        "lineNumber": 129,
-        "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
         "content": "  methods: {"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
         "content": "    // view functions //"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
         "content": "    getWidth(slice) {"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
         "content": "      if (slice.insertions \u003d\u003d\u003d 0) {"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
         "content": "        return 0;"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
         "content": "      }"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
         "content": "      const newSize \u003d 100 * (slice.insertions / this.avgCommitSize);"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
         "content": "      return Math.max(newSize * this.rampSize, 0.5);"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "    // position for commit granularity"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "    getCommitPos(i, total, sinceDate, untilDate) {"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "      return (total - i - 1) * DAY_IN_MS / total"
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "    getSlicePos(i, total) {"
+        "content": "          / (this.getTotalForPos(sinceDate, untilDate) + DAY_IN_MS);"
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "ongspxm"
-        },
-        "content": "      return (total - i - 1) / total;"
-      },
-      {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
         "content": "    },"
       },
       {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "    // position for day granularity"
+      },
+      {
         "lineNumber": 143,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "    getSliceLink(user, slice) {"
+        "content": "    getSlicePos(date, sinceDate, untilDate) {"
       },
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      const { REPOS } \u003d window;"
+        "content": "      const total \u003d this.getTotalForPos(sinceDate, untilDate);"
       },
       {
         "lineNumber": 145,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "      const untilDate \u003d this.filterTimeFrame \u003d\u003d\u003d \u0027week\u0027 ? addDays(slice.date, 6) : slice.date;"
+        "content": "      return (new Date(untilDate) - new Date(date)) / (total + DAY_IN_MS);"
       },
       {
         "lineNumber": 146,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": ""
+        "content": "    },"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      return `http://github.com/${"
+        "content": "    // get duration in miliseconds between 2 date"
       },
       {
         "lineNumber": 148,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        REPOS[user.repoId].location.organization}/${"
+        "content": "    getTotalForPos(sinceDate, untilDate) {"
       },
       {
         "lineNumber": 149,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        REPOS[user.repoId].location.repoName}/commits/${"
+        "content": "      return new Date(untilDate) - new Date(sinceDate);"
       },
       {
         "lineNumber": 150,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        REPOS[user.repoId].branch}?`"
+        "content": "    },"
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "                + `author\u003d${user.name}\u0026`"
+        "content": "    getSliceColor(date) {"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                + `since\u003d${slice.date}\u0027T\u002700:00:00+08:00\u0026`"
+        "content": "      const timeMs \u003d (new Date(date)).getTime();"
       },
       {
         "lineNumber": 153,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "                + `until\u003d${untilDate}\u0027T\u002723:59:59+08:00`;"
+        "content": "      return (timeMs / DAY_IN_MS) % 5;"
       },
       {
         "lineNumber": 154,
@@ -17394,266 +17401,266 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    getFileFormatContributionBars(fileFormatContribution) {"
+        "content": "    getSliceLink(user, slice) {"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "      let totalWidth \u003d 0;"
+        "content": "      const { REPOS } \u003d window;"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      const contributionLimit \u003d (this.avgContributionSize * 2);"
+        "content": "      const untilDate \u003d this.filterTimeFrame \u003d\u003d\u003d \u0027week\u0027 ? addDays(slice.date, 6) : slice.date;"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "      const totalBars \u003d {};"
+        "content": ""
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "      const maxLength \u003d 100;"
+        "content": "      return `http://github.com/${"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        REPOS[user.repoId].location.organization}/${"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "      Object.keys(fileFormatContribution).forEach((fileFormat) \u003d\u003e {"
+        "content": "        REPOS[user.repoId].location.repoName}/commits/${"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "        const contribution \u003d fileFormatContribution[fileFormat];"
+        "content": "        REPOS[user.repoId].branch}?`"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "        const res \u003d [];"
+        "content": "                + `author\u003d${user.name}\u0026`"
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "        let fileFormatWidth \u003d 0;"
+        "content": "                + `since\u003d${slice.date}\u0027T\u002700:00:00+08:00\u0026`"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                + `until\u003d${untilDate}\u0027T\u002723:59:59+08:00`;"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "        // compute 100% width bars"
+        "content": "    },"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "        const cnt \u003d parseInt(contribution / contributionLimit, 10);"
+        "content": "    getFileFormatContributionBars(fileFormatContribution) {"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "        for (let cntId \u003d 0; cntId \u003c cnt; cntId +\u003d 1) {"
+        "content": "      let totalWidth \u003d 0;"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "          res.push(maxLength);"
+        "content": "      const contributionLimit \u003d (this.avgContributionSize * 2);"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "          fileFormatWidth +\u003d maxLength;"
+        "content": "      const totalBars \u003d {};"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "          totalWidth +\u003d maxLength;"
+        "content": "      const maxLength \u003d 100;"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      Object.keys(fileFormatContribution).forEach((fileFormat) \u003d\u003e {"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "        // compute \u003c 100% width bars"
+        "content": "        const contribution \u003d fileFormatContribution[fileFormat];"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "        const last \u003d (contribution % contributionLimit) / contributionLimit;"
+        "content": "        const res \u003d [];"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (last !\u003d\u003d 0) {"
+        "content": "        let fileFormatWidth \u003d 0;"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "          res.push(last * maxLength);"
+        "content": ""
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "          fileFormatWidth +\u003d last * maxLength;"
+        "content": "        // compute 100% width bars"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "          totalWidth +\u003d last * maxLength;"
+        "content": "        const cnt \u003d parseInt(contribution / contributionLimit, 10);"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        for (let cntId \u003d 0; cntId \u003c cnt; cntId +\u003d 1) {"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          res.push(maxLength);"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "        // split \u003e 100% width bars into smaller bars"
+        "content": "          fileFormatWidth +\u003d maxLength;"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "        if ((totalWidth \u003e maxLength) \u0026\u0026 (totalWidth !\u003d\u003d fileFormatWidth)) {"
+        "content": "          totalWidth +\u003d maxLength;"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "          res.unshift(maxLength - (totalWidth - fileFormatWidth));"
+        "content": "        }"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "          res[res.length - 1] \u003d res[res.length - 1] - (maxLength - (totalWidth - fileFormatWidth));"
+        "content": ""
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "          totalWidth \u003d res[res.length - 1];"
+        "content": "        // compute \u003c 100% width bars"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        const last \u003d (contribution % contributionLimit) / contributionLimit;"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "        totalBars[fileFormat] \u003d res;"
+        "content": "        if (last !\u003d\u003d 0) {"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "          res.push(last * maxLength);"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          fileFormatWidth +\u003d last * maxLength;"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "      return totalBars;"
+        "content": "          totalWidth +\u003d last * maxLength;"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "        }"
       },
       {
         "lineNumber": 193,
@@ -17667,56 +17674,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    getContributionBars(totalContribution) {"
+        "content": "        // split \u003e 100% width bars into smaller bars"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "      const res \u003d [];"
+        "content": "        if ((totalWidth \u003e maxLength) \u0026\u0026 (totalWidth !\u003d\u003d fileFormatWidth)) {"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "      const contributionLimit \u003d (this.avgContributionSize * 2);"
+        "content": "          res.unshift(maxLength - (totalWidth - fileFormatWidth));"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          res[res.length - 1] \u003d res[res.length - 1] - (maxLength - (totalWidth - fileFormatWidth));"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "      const cnt \u003d parseInt(totalContribution / contributionLimit, 10);"
+        "content": "          totalWidth \u003d res[res.length - 1];"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "      for (let cntId \u003d 0; cntId \u003c cnt; cntId +\u003d 1) {"
+        "content": "        }"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "        res.push(100);"
+        "content": "        totalBars[fileFormat] \u003d res;"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      });"
       },
       {
         "lineNumber": 202,
@@ -17730,231 +17737,231 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      const last \u003d (totalContribution % contributionLimit) / contributionLimit;"
+        "content": "      return totalBars;"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (last !\u003d\u003d 0) {"
+        "content": "    },"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "        res.push(last * 100);"
+        "content": ""
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "    getContributionBars(totalContribution) {"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const res \u003d [];"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "      return res;"
+        "content": "      const contributionLimit \u003d (this.avgContributionSize * 2);"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const cnt \u003d parseInt(totalContribution / contributionLimit, 10);"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "    // model functions //"
+        "content": "      for (let cntId \u003d 0; cntId \u003c cnt; cntId +\u003d 1) {"
       },
       {
         "lineNumber": 212,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "    updateFilterSearch(evt) {"
+        "content": "        res.push(100);"
       },
       {
         "lineNumber": 213,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      this.filterSearch \u003d evt.target.value;"
+        "content": "      }"
       },
       {
         "lineNumber": 214,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "    },"
+        "content": ""
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "    setSummaryHash() {"
+        "content": "      const last \u003d (totalContribution % contributionLimit) / contributionLimit;"
       },
       {
         "lineNumber": 216,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      const { addHash, encodeHash } \u003d window;"
+        "content": "      if (last !\u003d\u003d 0) {"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        res.push(last * 100);"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "      addHash(\u0027search\u0027, this.filterSearch);"
+        "content": "      }"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "      addHash(\u0027sort\u0027, this.filterSort);"
+        "content": ""
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      return res;"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "      addHash(\u0027since\u0027, this.filterSinceDate);"
+        "content": "    },"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "      addHash(\u0027until\u0027, this.filterUntilDate);"
+        "content": ""
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "      addHash(\u0027timeframe\u0027, this.filterTimeFrame);"
+        "content": "    // model functions //"
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "    updateFilterSearch(evt) {"
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      addHash(\u0027reverse\u0027, this.filterSortReverse);"
+        "content": "      this.filterSearch \u003d evt.target.value;"
       },
       {
         "lineNumber": 226,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "ongspxm"
         },
-        "content": "      addHash(\u0027groupSelect\u0027, this.filterGroupSelection);"
+        "content": "    },"
       },
       {
         "lineNumber": 227,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      addHash(\u0027breakdown\u0027, this.filterBreakdown);"
+        "content": "    setSummaryHash() {"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "      const { addHash, encodeHash } \u003d window;"
       },
       {
         "lineNumber": 229,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      encodeHash();"
+        "content": ""
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "      addHash(\u0027search\u0027, this.filterSearch);"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "    renderFilterHash() {"
+        "content": "      addHash(\u0027sort\u0027, this.filterSort);"
       },
       {
         "lineNumber": 232,
-        "author": {
-          "gitId": "ongspxm"
-        },
-        "content": "      window.decodeHash();"
-      },
-      {
-        "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      addHash(\u0027since\u0027, this.filterSinceDate);"
+      },
+      {
         "lineNumber": 234,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      const convertBool \u003d (txt) \u003d\u003e (txt \u003d\u003d\u003d \u0027true\u0027);"
+        "content": "      addHash(\u0027until\u0027, this.filterUntilDate);"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "      const hash \u003d window.hashParams;"
+        "content": "      addHash(\u0027timeframe\u0027, this.filterTimeFrame);"
       },
       {
         "lineNumber": 236,
@@ -17968,1043 +17975,1043 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      if (hash.search) { this.filterSearch \u003d hash.search; }"
+        "content": "      addHash(\u0027reverse\u0027, this.filterSortReverse);"
       },
       {
         "lineNumber": 238,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "      if (hash.sort) { this.filterSort \u003d hash.sort; }"
+        "content": "      addHash(\u0027groupSelect\u0027, this.filterGroupSelection);"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      addHash(\u0027breakdown\u0027, this.filterBreakdown);"
       },
       {
         "lineNumber": 240,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      if (hash.timeframe) { this.filterTimeFrame \u003d hash.timeframe; }"
+        "content": ""
       },
       {
         "lineNumber": 241,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      if (hash.since) {"
+        "content": "      encodeHash();"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.tmpFilterSinceDate \u003d hash.since;"
+        "content": "    },"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "    renderFilterHash() {"
       },
       {
         "lineNumber": 244,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      if (hash.until) {"
+        "content": "      window.decodeHash();"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.tmpFilterUntilDate \u003d hash.until;"
+        "content": ""
       },
       {
         "lineNumber": 246,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      }"
+        "content": "      const convertBool \u003d (txt) \u003d\u003e (txt \u003d\u003d\u003d \u0027true\u0027);"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const hash \u003d window.hashParams;"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (hash.reverse) { this.filterSortReverse \u003d convertBool(hash.reverse); }"
+        "content": ""
       },
       {
         "lineNumber": 249,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      if (hash.groupSelect) {"
+        "content": "      if (hash.search) { this.filterSearch \u003d hash.search; }"
       },
       {
         "lineNumber": 250,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "        this.filterGroupSelection \u003d hash.groupSelect;"
+        "content": "      if (hash.sort) { this.filterSort \u003d hash.sort; }"
       },
       {
         "lineNumber": 251,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      }"
+        "content": ""
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (hash.breakdown) {"
+        "content": "      if (hash.timeframe) { this.filterTimeFrame \u003d hash.timeframe; }"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.filterBreakdown \u003d convertBool(hash.breakdown);"
+        "content": "      if (hash.since) {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        this.tmpFilterSinceDate \u003d hash.since;"
       },
       {
         "lineNumber": 255,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      window.decodeHash();"
+        "content": "      }"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "      if (hash.until) {"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        this.tmpFilterUntilDate \u003d hash.until;"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "    getDates() {"
+        "content": "      }"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (this.minDate \u0026\u0026 this.maxDate) {"
+        "content": ""
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "      if (hash.reverse) { this.filterSortReverse \u003d convertBool(hash.reverse); }"
       },
       {
         "lineNumber": 261,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "      }"
+        "content": "      if (hash.groupSelect) {"
       },
       {
         "lineNumber": 262,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": ""
+        "content": "        this.filterGroupSelection \u003d hash.groupSelect;"
       },
       {
         "lineNumber": 263,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "      let minDate \u003d \u0027\u0027;"
+        "content": "      }"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "      let maxDate \u003d \u0027\u0027;"
+        "content": "      if (hash.breakdown) {"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.filtered.forEach((repo) \u003d\u003e {"
+        "content": "        this.filterBreakdown \u003d convertBool(hash.breakdown);"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "        repo.forEach((user) \u003d\u003e {"
+        "content": "      }"
       },
       {
         "lineNumber": 267,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "          const { commits } \u003d user;"
+        "content": "      window.decodeHash();"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (commits.length) {"
+        "content": "    },"
       },
       {
         "lineNumber": 269,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "            const date1 \u003d commits[0].date;"
+        "content": ""
       },
       {
         "lineNumber": 270,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "            const date2 \u003d commits[commits.length - 1].date;"
+        "content": "    getDates() {"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!minDate || minDate \u003e date1) {"
+        "content": "      if (this.minDate \u0026\u0026 this.maxDate) {"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "              minDate \u003d date1;"
+        "content": "        return;"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "      }"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!maxDate || maxDate \u003c date2) {"
+        "content": ""
       },
       {
         "lineNumber": 275,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "              maxDate \u003d date2;"
+        "content": "      let minDate \u003d window.app.sinceDate;"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "      let maxDate \u003d \u0027\u0027;"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "      this.filtered.forEach((repo) \u003d\u003e {"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "        repo.forEach((user) \u003d\u003e {"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "          const { commits } \u003d user;"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          if (commits.length) {"
       },
       {
         "lineNumber": 281,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      if (!this.filterSinceDate) {"
+        "content": "            const date1 \u003d commits[0].date;"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "        if (!this.tmpFilterSinceDate || this.tmpFilterSinceDate \u003c minDate) {"
+        "content": "            const date2 \u003d commits[commits.length - 1].date;"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "          this.tmpFilterSinceDate \u003d minDate;"
+        "content": "            if (!minDate || minDate \u003e date1) {"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "              minDate \u003d date1;"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.filterSinceDate \u003d minDate;"
+        "content": "            if (!maxDate || maxDate \u003c date2) {"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.minDate \u003d minDate;"
+        "content": "              maxDate \u003d date2;"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "            }"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          }"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!this.filterUntilDate) {"
+        "content": "        });"
       },
       {
         "lineNumber": 291,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "        if (!this.tmpFilterUntilDate || this.tmpFilterUntilDate \u003e maxDate) {"
+        "content": "      });"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "          this.tmpFilterUntilDate \u003d maxDate;"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "      if (!this.filterSinceDate) {"
       },
       {
         "lineNumber": 294,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "        if (!this.tmpFilterSinceDate || this.tmpFilterSinceDate \u003c minDate) {"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.filterUntilDate \u003d maxDate;"
+        "content": "          this.tmpFilterSinceDate \u003d minDate;"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.maxDate \u003d maxDate;"
+        "content": "        }"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": ""
       },
       {
         "lineNumber": 298,
         "author": {
-          "gitId": "chelseyong"
+          "gitId": "-"
         },
-        "content": "      this.$emit(\u0027get-dates\u0027, [this.minDate, this.maxDate]);"
+        "content": "        this.filterSinceDate \u003d minDate;"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "        this.minDate \u003d minDate;"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "    getFiltered() {"
+        "content": "      }"
       },
       {
         "lineNumber": 301,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      this.setSummaryHash();"
+        "content": ""
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      if (!this.filterUntilDate) {"
       },
       {
         "lineNumber": 303,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      // array of array, sorted by repo"
+        "content": "        if (!this.tmpFilterUntilDate || this.tmpFilterUntilDate \u003e maxDate) {"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "      const full \u003d [];"
+        "content": "          this.tmpFilterUntilDate \u003d maxDate;"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.repos.forEach((repo) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "        const res \u003d [];"
+        "content": "        this.filterUntilDate \u003d maxDate;"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        this.maxDate \u003d maxDate;"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": "        // filtering"
+        "content": "      }"
       },
       {
         "lineNumber": 310,
         "author": {
-          "gitId": "-"
+          "gitId": "chelseyong"
         },
-        "content": "        repo.users.forEach((user) \u003d\u003e {"
+        "content": "      this.$emit(\u0027get-dates\u0027, [this.minDate, this.maxDate]);"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": "          const toDisplay \u003d this.filterSearch.toLowerCase()"
+        "content": "    },"
       },
       {
         "lineNumber": 312,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "              .split(\u0027 \u0027).filter((param) \u003d\u003e param)"
+        "content": "    getFiltered() {"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "              .map((param) \u003d\u003e user.searchPath.search(param) \u003e -1)"
+        "content": "      this.setSummaryHash();"
       },
       {
         "lineNumber": 314,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "              .reduce((curr, bool) \u003d\u003e curr || bool, false);"
+        "content": ""
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      // array of array, sorted by repo"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (!this.filterSearch || toDisplay) {"
+        "content": "      const full \u003d [];"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.getUserCommits(user);"
+        "content": ""
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (this.filterTimeFrame \u003d\u003d\u003d \u0027week\u0027) {"
+        "content": "      this.repos.forEach((repo) \u003d\u003e {"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "              this.splitCommitsWeek(user);"
+        "content": "        const res \u003d [];"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        // filtering"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "            res.push(user);"
+        "content": "        repo.users.forEach((user) \u003d\u003e {"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "          const toDisplay \u003d this.filterSearch.toLowerCase()"
       },
       {
         "lineNumber": 324,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "        });"
+        "content": "              .split(\u0027 \u0027).filter((param) \u003d\u003e param)"
       },
       {
         "lineNumber": 325,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "              .map((param) \u003d\u003e user.searchPath.search(param) \u003e -1)"
       },
       {
         "lineNumber": 326,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "        if (res.length) {"
+        "content": "              .reduce((curr, bool) \u003d\u003e curr || bool, false);"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "          full.push(res);"
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "          if (!this.filterSearch || toDisplay) {"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "            this.getUserCommits(user);"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.filtered \u003d full;"
+        "content": "            if (this.filterTimeFrame \u003d\u003d\u003d \u0027week\u0027) {"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "              this.splitCommitsWeek(user);"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.getDates();"
+        "content": "            }"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.sortFiltered();"
+        "content": ""
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "            res.push(user);"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "    processFileFormats() {"
+        "content": "          }"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "      const selectedColors \u003d [\u0027#ffe119\u0027, \u0027#4363d8\u0027, \u0027#3cb44b\u0027, \u0027#f58231\u0027, \u0027#911eb4\u0027, \u0027#46f0f0\u0027, \u0027#f032e6\u0027,"
+        "content": "        });"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u0027#bcf60c\u0027, \u0027#fabebe\u0027, \u0027#008080\u0027, \u0027#e6beff\u0027, \u0027#9a6324\u0027, \u0027#fffac8\u0027, \u0027#800000\u0027, \u0027#aaffc3\u0027, \u0027#808000\u0027, \u0027#ffd8b1\u0027,"
+        "content": ""
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u0027#000075\u0027, \u0027#808080\u0027];"
+        "content": "        if (res.length) {"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "      const colors \u003d {};"
+        "content": "          full.push(res);"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "      let i \u003d 0;"
+        "content": "        }"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      });"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.repos.forEach((repo) \u003d\u003e {"
+        "content": "      this.filtered \u003d full;"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "        const user \u003d repo.users[0];"
+        "content": ""
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "        Object.keys(user.fileFormatContribution).forEach((fileFormat) \u003d\u003e {"
+        "content": "      this.getDates();"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (!Object.prototype.hasOwnProperty.call(colors, fileFormat)) {"
+        "content": "      this.sortFiltered();"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "            colors[fileFormat] \u003d selectedColors[i];"
+        "content": "    },"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "            i \u003d (i + 1) % selectedColors.length;"
+        "content": "    processFileFormats() {"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "      const selectedColors \u003d [\u0027#ffe119\u0027, \u0027#4363d8\u0027, \u0027#3cb44b\u0027, \u0027#f58231\u0027, \u0027#911eb4\u0027, \u0027#46f0f0\u0027, \u0027#f032e6\u0027,"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "          \u0027#bcf60c\u0027, \u0027#fabebe\u0027, \u0027#008080\u0027, \u0027#e6beff\u0027, \u0027#9a6324\u0027, \u0027#fffac8\u0027, \u0027#800000\u0027, \u0027#aaffc3\u0027, \u0027#808000\u0027, \u0027#ffd8b1\u0027,"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.contributionBarColors \u003d colors;"
+        "content": "          \u0027#000075\u0027, \u0027#808080\u0027];"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "      const colors \u003d {};"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "    },"
+        "content": "      let i \u003d 0;"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "    splitCommitsWeek(user) {"
+        "content": ""
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "      const { commits } \u003d user;"
+        "content": "      this.repos.forEach((repo) \u003d\u003e {"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "      const leng \u003d commits.length;"
+        "content": "        const user \u003d repo.users[0];"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        Object.keys(user.fileFormatContribution).forEach((fileFormat) \u003d\u003e {"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "      const res \u003d [];"
+        "content": "          if (!Object.prototype.hasOwnProperty.call(colors, fileFormat)) {"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "      for (let weekId \u003d 0; weekId \u003c (leng - 1) / 7; weekId +\u003d 1) {"
+        "content": "            colors[fileFormat] \u003d selectedColors[i];"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "        const week \u003d {"
+        "content": "            i \u003d (i + 1) % selectedColors.length;"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "          insertions: 0,"
+        "content": "          }"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "          deletions: 0,"
+        "content": "        });"
       },
       {
         "lineNumber": 362,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "          date: commits[weekId * 7].date,"
+        "content": "        this.contributionBarColors \u003d colors;"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "      });"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    },"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "        for (let dayId \u003d 0; dayId \u003c 7; dayId +\u003d 1) {"
+        "content": "    splitCommitsWeek(user) {"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "          const commit \u003d commits[(weekId * 7) + dayId];"
+        "content": "      const { commits } \u003d user;"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (commit) {"
+        "content": ""
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "            week.insertions +\u003d commit.insertions;"
+        "content": "      const res \u003d [];"
       },
       {
         "lineNumber": 369,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "            week.deletions +\u003d commit.deletions;"
+        "content": ""
       },
       {
         "lineNumber": 370,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "          }"
+        "content": "      const sinceDate \u003d dateRounding(this.filterSinceDate, 1);"
       },
       {
         "lineNumber": 371,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        }"
+        "content": "      const untilDate \u003d this.filterUntilDate;"
       },
       {
         "lineNumber": 372,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
         "content": ""
       },
       {
         "lineNumber": 373,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        res.push(week);"
+        "content": "      const sinceMs \u003d (new Date(sinceDate)).getTime();"
       },
       {
         "lineNumber": 374,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      }"
+        "content": "      const untilMs \u003d (new Date(untilDate)).getTime();"
       },
       {
         "lineNumber": 375,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
         "content": ""
       },
       {
         "lineNumber": 376,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      user.commits \u003d res;"
+        "content": "      const diff \u003d Math.round(Math.abs((untilMs - sinceMs) / DAY_IN_MS));"
       },
       {
         "lineNumber": 377,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "    },"
+        "content": ""
       },
       {
         "lineNumber": 378,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "    getUserCommits(user) {"
+        "content": "      for (let weekId \u003d 0; weekId \u003c diff / 7; weekId +\u003d 1) {"
       },
       {
         "lineNumber": 379,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      user.commits \u003d [];"
+        "content": "        const startOfWeekMs \u003d sinceMs + (weekId * WEEK_IN_MS);"
       },
       {
         "lineNumber": 380,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      const userFirst \u003d user.dailyCommits[0];"
+        "content": ""
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "      const userLast \u003d user.dailyCommits[user.dailyCommits.length - 1];"
+        "content": "        const week \u003d {"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          insertions: 0,"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!userFirst) {"
+        "content": "          deletions: 0,"
       },
       {
         "lineNumber": 384,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        return null;"
+        "content": "          date: getDateStr(startOfWeekMs),"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        };"
       },
       {
         "lineNumber": 386,
@@ -19016,65 +19023,65 @@
       {
         "lineNumber": 387,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      let sinceDate \u003d this.filterSinceDate;"
+        "content": "        // commits are not contiguous, meaning there are gaps of days without"
       },
       {
         "lineNumber": 388,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "      if (!sinceDate || sinceDate \u003d\u003d\u003d \u0027undefined\u0027) {"
+        "content": "        // commits, so we are going to check each commit\u0027s date and make sure"
       },
       {
         "lineNumber": 389,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        sinceDate \u003d userFirst.date;"
+        "content": "        // it is within the duration of a week"
       },
       {
         "lineNumber": 390,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      }"
+        "content": "        while (commits.length \u003e 0"
       },
       {
         "lineNumber": 391,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": ""
+        "content": "            \u0026\u0026 (new Date(commits[0].date)).getTime() \u003c startOfWeekMs + WEEK_IN_MS) {"
       },
       {
         "lineNumber": 392,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "      let untilDate \u003d this.filterUntilDate;"
+        "content": "          const commit \u003d commits.shift();"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!untilDate) {"
+        "content": "          week.insertions +\u003d commit.insertions;"
       },
       {
         "lineNumber": 394,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "        untilDate \u003d userLast.date;"
+        "content": "          week.deletions +\u003d commit.deletions;"
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        }"
       },
       {
         "lineNumber": 396,
@@ -19088,780 +19095,738 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      if (this.filterTimeFrame \u003d\u003d\u003d \u0027week\u0027) {"
+        "content": "        res.push(week);"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "        sinceDate \u003d dateRounding(sinceDate, 1);"
+        "content": "      }"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": ""
       },
       {
         "lineNumber": 400,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      let diff \u003d getIntervalDay(userFirst.date, sinceDate);"
+        "content": "      user.commits \u003d res;"
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    },"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": "      const startMs \u003d (new Date(sinceDate)).getTime();"
+        "content": "    getUserCommits(user) {"
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "      for (let dayId \u003d 0; dayId \u003c diff; dayId +\u003d 1) {"
+        "content": "      user.commits \u003d [];"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": "        user.commits.push({"
+        "content": "      const userFirst \u003d user.dailyCommits[0];"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "          insertions: 0,"
+        "content": "      const userLast \u003d user.dailyCommits[user.dailyCommits.length - 1];"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": "          deletions: 0,"
+        "content": ""
       },
       {
         "lineNumber": 407,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "          commitResults: [],"
+        "content": "      if (!userFirst) {"
       },
       {
         "lineNumber": 408,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "          date: getDateStr(startMs + (dayId * DAY_IN_MS)),"
+        "content": "        return null;"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "      }"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": ""
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      let sinceDate \u003d this.filterSinceDate;"
       },
       {
         "lineNumber": 412,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "      user.dailyCommits.forEach((commit) \u003d\u003e {"
+        "content": "      if (!sinceDate || sinceDate \u003d\u003d\u003d \u0027undefined\u0027) {"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "        const { date } \u003d commit;"
+        "content": "        sinceDate \u003d userFirst.date;"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (date \u003e\u003d sinceDate \u0026\u0026 date \u003c\u003d untilDate) {"
+        "content": "      }"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "          user.commits.push(commit);"
+        "content": ""
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "      let untilDate \u003d this.filterUntilDate;"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "      if (!untilDate) {"
       },
       {
         "lineNumber": 418,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "        untilDate \u003d userLast.date;"
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (this.filterTimeFrame \u003d\u003d\u003d \u0027week\u0027) {"
+        "content": "      }"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "        untilDate \u003d dateRounding(untilDate);"
+        "content": ""
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      user.dailyCommits.forEach((commit) \u003d\u003e {"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "      diff \u003d getIntervalDay(untilDate, userLast.date);"
+        "content": "        const { date } \u003d commit;"
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if (date \u003e\u003d sinceDate \u0026\u0026 date \u003c\u003d untilDate) {"
       },
       {
         "lineNumber": 424,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "      const endMs \u003d (new Date(userLast.date)).getTime();"
+        "content": "          user.commits.push(commit);"
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
-        "content": "      for (let paddingId \u003d 1; paddingId \u003c diff; paddingId +\u003d 1) {"
+        "content": "        }"
       },
       {
         "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
-        "content": "        user.commits.push({"
+        "content": "      });"
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": "          insertions: 0,"
+        "content": ""
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": "          deletions: 0,"
-      },
-      {
-        "lineNumber": 429,
-        "author": {
-          "gitId": "ongspxm"
-        },
-        "content": "          commitResults: [],"
-      },
-      {
-        "lineNumber": 430,
-        "author": {
-          "gitId": "ongspxm"
-        },
-        "content": "          date: getDateStr(endMs + (paddingId * DAY_IN_MS)),"
-      },
-      {
-        "lineNumber": 431,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        });"
-      },
-      {
-        "lineNumber": 432,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      }"
-      },
-      {
-        "lineNumber": 433,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 434,
-        "author": {
-          "gitId": "-"
-        },
         "content": "      return null;"
       },
       {
-        "lineNumber": 435,
+        "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 436,
+        "lineNumber": 430,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    updateSortSelection() {"
       },
       {
-        "lineNumber": 437,
+        "lineNumber": 431,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      if (this.filterGroupSelection \u003d\u003d\u003d \u0027groupByAuthors\u0027 \u0026\u0026 this.filterSort \u003d\u003d\u003d \u0027displayName\u0027) {"
       },
       {
-        "lineNumber": 438,
+        "lineNumber": 432,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        this.filterSort \u003d \u0027searchPath\u0027;"
       },
       {
-        "lineNumber": 439,
+        "lineNumber": 433,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      } else if (this.filterGroupSelection \u003d\u003d\u003d \u0027groupByRepos\u0027 \u0026\u0026 this.filterSort \u003d\u003d\u003d \u0027searchPath\u0027) {"
       },
       {
-        "lineNumber": 440,
+        "lineNumber": 434,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        this.filterSort \u003d \u0027displayName\u0027;"
       },
       {
-        "lineNumber": 441,
+        "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
         "content": "      }"
       },
       {
-        "lineNumber": 442,
+        "lineNumber": 436,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 443,
+        "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
         "content": "    sortFiltered() {"
       },
       {
-        "lineNumber": 444,
+        "lineNumber": 438,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      let full \u003d [];"
       },
       {
-        "lineNumber": 445,
+        "lineNumber": 439,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      if (this.filterGroupSelection \u003d\u003d\u003d \u0027groupByNone\u0027) {"
       },
       {
-        "lineNumber": 446,
+        "lineNumber": 440,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        // push all repos into the same group"
       },
       {
-        "lineNumber": 447,
+        "lineNumber": 441,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        full[0] \u003d this.groupByNone(this.filtered);"
       },
       {
-        "lineNumber": 448,
+        "lineNumber": 442,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      } else if (this.filterGroupSelection \u003d\u003d\u003d \u0027groupByAuthors\u0027) {"
       },
       {
-        "lineNumber": 449,
+        "lineNumber": 443,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        full \u003d this.groupByAuthors(this.filtered);"
       },
       {
-        "lineNumber": 450,
+        "lineNumber": 444,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      } else {"
       },
       {
-        "lineNumber": 451,
+        "lineNumber": 445,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        full \u003d this.groupByRepos(this.filtered);"
       },
       {
-        "lineNumber": 452,
+        "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
         "content": "      }"
       },
       {
-        "lineNumber": 453,
+        "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 454,
+        "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
         "content": "      if (this.filterSortReverse) {"
       },
       {
-        "lineNumber": 455,
+        "lineNumber": 449,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        full.forEach((repo) \u003d\u003e repo.reverse());"
       },
       {
-        "lineNumber": 456,
+        "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
         "content": "      }"
       },
       {
-        "lineNumber": 457,
+        "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 458,
+        "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
         "content": "      this.filtered \u003d full;"
       },
       {
-        "lineNumber": 459,
+        "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 460,
+        "lineNumber": 454,
         "author": {
           "gitId": "chelseyong"
         },
         "content": ""
       },
       {
-        "lineNumber": 461,
+        "lineNumber": 455,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    groupByRepos(repos) {"
       },
       {
-        "lineNumber": 462,
+        "lineNumber": 456,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      const sortedRepos \u003d [];"
       },
       {
-        "lineNumber": 463,
+        "lineNumber": 457,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      repos.forEach((users) \u003d\u003e {"
       },
       {
-        "lineNumber": 464,
+        "lineNumber": 458,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        users.sort(window.comparator((ele) \u003d\u003e ele[this.filterSort]));"
       },
       {
-        "lineNumber": 465,
+        "lineNumber": 459,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        sortedRepos.push(users);"
       },
       {
-        "lineNumber": 466,
+        "lineNumber": 460,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      });"
       },
       {
-        "lineNumber": 467,
+        "lineNumber": 461,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      return sortedRepos;"
       },
       {
-        "lineNumber": 468,
+        "lineNumber": 462,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 469,
+        "lineNumber": 463,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    groupByNone(repos) {"
       },
       {
-        "lineNumber": 470,
+        "lineNumber": 464,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      const sortedRepos \u003d [];"
       },
       {
-        "lineNumber": 471,
+        "lineNumber": 465,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      repos.forEach((users) \u003d\u003e {"
       },
       {
-        "lineNumber": 472,
+        "lineNumber": 466,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        users.forEach((user) \u003d\u003e {"
       },
       {
-        "lineNumber": 473,
+        "lineNumber": 467,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "          sortedRepos.push(user);"
       },
       {
-        "lineNumber": 474,
+        "lineNumber": 468,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        });"
       },
       {
-        "lineNumber": 475,
+        "lineNumber": 469,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      });"
       },
       {
-        "lineNumber": 476,
+        "lineNumber": 470,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      sortedRepos.sort(window.comparator((ele) \u003d\u003e {"
       },
       {
-        "lineNumber": 477,
+        "lineNumber": 471,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        const field \u003d ele[this.filterSort];"
       },
       {
-        "lineNumber": 478,
+        "lineNumber": 472,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        return field.toLowerCase ? field.toLowerCase() : field;"
       },
       {
-        "lineNumber": 479,
+        "lineNumber": 473,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      }));"
       },
       {
-        "lineNumber": 480,
+        "lineNumber": 474,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      return sortedRepos;"
       },
       {
-        "lineNumber": 481,
+        "lineNumber": 475,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 482,
+        "lineNumber": 476,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "    groupByAuthors(repos) {"
       },
       {
-        "lineNumber": 483,
+        "lineNumber": 477,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      const authorMap \u003d {};"
       },
       {
-        "lineNumber": 484,
+        "lineNumber": 478,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      const filtered \u003d [];"
       },
       {
-        "lineNumber": 485,
+        "lineNumber": 479,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      repos.forEach((users) \u003d\u003e {"
       },
       {
-        "lineNumber": 486,
+        "lineNumber": 480,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        users.forEach((user) \u003d\u003e {"
       },
       {
-        "lineNumber": 487,
+        "lineNumber": 481,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "          if (Object.keys(authorMap).includes(user.name)) {"
       },
       {
-        "lineNumber": 488,
+        "lineNumber": 482,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "            authorMap[user.name].push(user);"
       },
       {
-        "lineNumber": 489,
+        "lineNumber": 483,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "          } else {"
       },
       {
-        "lineNumber": 490,
+        "lineNumber": 484,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "            authorMap[user.name] \u003d [user];"
       },
       {
-        "lineNumber": 491,
+        "lineNumber": 485,
         "author": {
           "gitId": "-"
         },
         "content": "          }"
       },
       {
-        "lineNumber": 492,
+        "lineNumber": 486,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        });"
       },
       {
-        "lineNumber": 493,
+        "lineNumber": 487,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      });"
       },
       {
-        "lineNumber": 494,
+        "lineNumber": 488,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 495,
+        "lineNumber": 489,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      Object.keys(authorMap).forEach((author) \u003d\u003e filtered.push(authorMap[author]));"
       },
       {
-        "lineNumber": 496,
+        "lineNumber": 490,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      filtered.sort(window.comparator((ele) \u003d\u003e {"
       },
       {
-        "lineNumber": 497,
+        "lineNumber": 491,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        const field \u003d ele[0].displayName;"
       },
       {
-        "lineNumber": 498,
+        "lineNumber": 492,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        return field.toLowerCase();"
       },
       {
-        "lineNumber": 499,
+        "lineNumber": 493,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      }));"
       },
       {
-        "lineNumber": 500,
+        "lineNumber": 494,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      return filtered;"
       },
       {
-        "lineNumber": 501,
+        "lineNumber": 495,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 502,
+        "lineNumber": 496,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 503,
+        "lineNumber": 497,
         "author": {
           "gitId": "-"
         },
         "content": "  created() {"
       },
       {
-        "lineNumber": 504,
+        "lineNumber": 498,
         "author": {
           "gitId": "-"
         },
         "content": "    this.renderFilterHash();"
       },
       {
-        "lineNumber": 505,
+        "lineNumber": 499,
         "author": {
           "gitId": "-"
         },
         "content": "    this.getFiltered();"
       },
       {
-        "lineNumber": 506,
+        "lineNumber": 500,
         "author": {
           "gitId": "-"
         },
         "content": "    this.processFileFormats();"
       },
       {
-        "lineNumber": 507,
+        "lineNumber": 501,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 508,
+        "lineNumber": 502,
         "author": {
           "gitId": "-"
         },
@@ -19869,9 +19834,9 @@
       }
     ],
     "authorContributionMap": {
-      "emer7": 1,
-      "ongspxm": 37,
-      "-": 404,
+      "emer7": 39,
+      "ongspxm": 27,
+      "-": 370,
       "chelseyong": 66
     }
   },
@@ -22631,639 +22596,639 @@
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "    /**"
+        "content": "    private static final int DAYS_IN_MS \u003d 24 * 60 * 60 * 1000;"
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "     * Returns the {@code CommitContributionSummary} generated from aggregating the {@code commitResults}."
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "    public static CommitContributionSummary aggregateCommitResults("
+        "content": "     * Returns the {@code CommitContributionSummary} generated from aggregating the {@code commitResults}."
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "            RepoConfiguration config, List\u003cCommitResult\u003e commitResults) {"
+        "content": "     */"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "        Date startDate \u003d config.getSinceDate() \u003d\u003d null ? getStartDate(commitResults) : config.getSinceDate();"
+        "content": "    public static CommitContributionSummary aggregateCommitResults("
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            RepoConfiguration config, List\u003cCommitResult\u003e commitResults) {"
       },
       {
         "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Date startDate \u003d config.getSinceDate() \u003d\u003d null ? getStartDate(commitResults) : config.getSinceDate();"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "        Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e authorDailyContributionsMap \u003d"
       },
       {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "ongspxm"
-        },
-        "content": "                getAuthorDailyContributionsMap(config.getAuthorDisplayNameMap().keySet(), commitResults, startDate);"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 32,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        Map\u003cAuthor, Float\u003e authorContributionVariance \u003d"
+        "content": "                getAuthorDailyContributionsMap(config.getAuthorDisplayNameMap().keySet(), commitResults);"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "ongspxm"
-        },
-        "content": "                calcAuthorContributionVariance(authorDailyContributionsMap);"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "        Date lastDate \u003d commitResults.size() \u003d\u003d 0 ? null"
+      },
+      {
         "lineNumber": 35,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        return new CommitContributionSummary("
+        "content": "                : getStartOfDate(commitResults.get(commitResults.size() - 1).getTime());"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "                config.getAuthorDisplayNameMap(),"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "                authorDailyContributionsMap,"
+        "content": "        Map\u003cAuthor, Float\u003e authorContributionVariance \u003d"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "                authorContributionVariance);"
+        "content": "                calcAuthorContributionVariance(authorDailyContributionsMap, startDate, lastDate);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return new CommitContributionSummary("
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static Map\u003cAuthor, Float\u003e calcAuthorContributionVariance("
+        "content": "                config.getAuthorDisplayNameMap(),"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "            Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e intervalContributionMaps) {"
+        "content": "                authorDailyContributionsMap,"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "        Map\u003cAuthor, Float\u003e result \u003d new HashMap\u003c\u003e();"
+        "content": "                authorContributionVariance);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "        for (Author author : intervalContributionMaps.keySet()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "            List\u003cAuthorDailyContribution\u003e contributions \u003d intervalContributionMaps.get(author);"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "            result.put(author, getContributionVariance(contributions));"
+        "content": "    private static Map\u003cAuthor, Float\u003e calcAuthorContributionVariance("
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        }"
+        "content": "            Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e intervalContributionMaps, Date startDate, Date lastDate) {"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "        return result;"
+        "content": "        Map\u003cAuthor, Float\u003e result \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        for (Author author : intervalContributionMaps.keySet()) {"
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "            List\u003cAuthorDailyContribution\u003e contributions \u003d intervalContributionMaps.get(author);"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "    private static float getContributionVariance(List\u003cAuthorDailyContribution\u003e contributions) {"
+        "content": "            result.put(author, getContributionVariance(contributions, startDate, lastDate));"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (contributions.size() \u003d\u003d 0) {"
+        "content": "        }"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "            return 0;"
+        "content": "        return result;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "        //get mean"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        float total \u003d 0;"
+        "content": "    private static float getContributionVariance(List\u003cAuthorDailyContribution\u003e contributions,"
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        for (AuthorDailyContribution contribution : contributions) {"
+        "content": "            Date startDate, Date lastDate) {"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "            total +\u003d contribution.getTotalContribution();"
+        "content": "        if (contributions.size() \u003d\u003d 0) {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return 0;"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "        float mean \u003d total / contributions.size();"
+        "content": "        }"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "        float variance \u003d 0;"
+        "content": "        //get mean"
       },
       {
         "lineNumber": 62,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        float total \u003d 0;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "        long totalDays \u003d (lastDate.getTime() - getStartOfDate(startDate).getTime()) / DAYS_IN_MS + 1;"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "        for (AuthorDailyContribution contribution : contributions) {"
       },
       {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            variance +\u003d Math.pow((mean - contribution.getTotalContribution()), 2);"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        return variance / contributions.size();"
-      },
-      {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            total +\u003d contribution.getTotalContribution();"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "    private static Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e getAuthorDailyContributionsMap("
+        "content": "        float mean \u003d total / totalDays;"
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "            Set\u003cAuthor\u003e authorSet, List\u003cCommitResult\u003e commitResults, Date startDate) {"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "        Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e authorDailyContributionsMap \u003d new HashMap\u003c\u003e();"
+        "content": "        float variance \u003d 0;"
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        authorSet.forEach(author -\u003e authorDailyContributionsMap.put(author, new ArrayList\u003c\u003e()));"
+        "content": "        long currentDate \u003d getStartOfDate(startDate).getTime();"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": ""
+        "content": "        int contributionIndex \u003d 0;"
       },
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        Date currentDate \u003d getStartOfDate(startDate);"
+        "content": "        for (int i \u003d 0; i \u003c totalDays; i +\u003d 1) {"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        Date nextDate \u003d getNextDayDate(currentDate);"
+        "content": "            if (contributionIndex \u003c contributions.size()"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        addDailyContributionForNewDate(authorDailyContributionsMap, currentDate);"
+        "content": "                    \u0026\u0026 currentDate \u003d\u003d contributions.get(contributionIndex).getDate().getTime()) {"
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": ""
+        "content": "                variance +\u003d Math.pow((mean - contributions.get(contributionIndex).getTotalContribution()), 2);"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        for (CommitResult commitResult : commitResults) {"
+        "content": "                contributionIndex +\u003d 1;"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "            while (nextDate.before(commitResult.getTime())) {"
+        "content": "            } else {"
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "                currentDate \u003d new Date(nextDate.getTime());"
+        "content": "                variance +\u003d Math.pow(mean, 2);"
       },
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                nextDate \u003d getNextDayDate(nextDate);"
+        "content": "            }"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                addDailyContributionForNewDate(authorDailyContributionsMap, currentDate);"
+        "content": "            currentDate +\u003d DAYS_IN_MS;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 83,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": ""
+        "content": "        return variance / totalDays;"
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "            List\u003cAuthorDailyContribution\u003e authorContributions \u003d"
+        "content": "    }"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "                    authorDailyContributionsMap.get(commitResult.getAuthor());"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "            authorContributions.get(authorContributions.size() - 1).addCommitContribution(commitResult);"
+        "content": "    private static Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e getAuthorDailyContributionsMap("
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        }"
+        "content": "            Set\u003cAuthor\u003e authorSet, List\u003cCommitResult\u003e commitResults) {"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "        Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e authorDailyContributionsMap \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "        return authorDailyContributionsMap;"
+        "content": "        authorSet.forEach(author -\u003e authorDailyContributionsMap.put(author, new ArrayList\u003c\u003e()));"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": ""
+        "content": "        Date commitStartDate \u003d null;"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "ongspxm"
         },
-        "content": "    private static void addDailyContributionForNewDate("
+        "content": "        for (CommitResult commitResult : commitResults) {"
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "            Map\u003cAuthor, List\u003cAuthorDailyContribution\u003e\u003e authorDailyContributionsMap, Date date) {"
+        "content": "            commitStartDate \u003d getStartOfDate(commitResult.getTime());"
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        authorDailyContributionsMap.values().forEach(authorDailyContributions -\u003e"
+        "content": "            Author commitAuthor \u003d commitResult.getAuthor();"
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "                authorDailyContributions.add(new AuthorDailyContribution(date)));"
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "    }"
+        "content": "            List\u003cAuthorDailyContribution\u003e authorDailyContributions \u003d authorDailyContributionsMap.get(commitAuthor);"
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
         "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "    private static Date getStartOfDate(Date current) {"
+        "content": "            if (authorDailyContributions.isEmpty()"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        Calendar cal \u003d Calendar.getInstance();"
+        "content": "                    || !authorDailyContributions.get(authorDailyContributions.size() - 1).getDate()"
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        cal.setTime(current);"
+        "content": "                            .equals(commitStartDate)) {"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        cal.set(Calendar.HOUR_OF_DAY, 0);"
+        "content": "                addDailyContributionForNewDate(authorDailyContributions, commitStartDate);"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "        cal.set(Calendar.MINUTE, 0);"
+        "content": "            }"
       },
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "        cal.set(Calendar.SECOND, 0);"
+        "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        cal.set(Calendar.MILLISECOND, 0);"
+        "content": "            authorDailyContributions.get(authorDailyContributions.size() - 1).addCommitContribution(commitResult);"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "        return cal.getTime();"
+        "content": "        }"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": ""
+        "content": "        return authorDailyContributionsMap;"
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "-"
         },
-        "content": "    private static Date getNextDayDate(Date current) {"
+        "content": "    }"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "        Calendar c \u003d Calendar.getInstance();"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "-"
+          "gitId": "ongspxm"
         },
-        "content": "        c.setTime(current);"
+        "content": "    private static void addDailyContributionForNewDate("
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "ongspxm"
+          "gitId": "emer7"
         },
-        "content": "        c.add(Calendar.DATE, 1);"
+        "content": "            List\u003cAuthorDailyContribution\u003e authorDailyContributions, Date date) {"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "        return c.getTime();"
+        "content": "        authorDailyContributions.add(new AuthorDailyContribution(date));"
       },
       {
         "lineNumber": 113,
@@ -23284,7 +23249,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    private static Date getStartDate(List\u003cCommitResult\u003e commitInfos) {"
+        "content": "    private static Date getStartOfDate(Date current) {"
       },
       {
         "lineNumber": 116,
@@ -23298,42 +23263,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        cal.set(Calendar.YEAR, 2050);"
+        "content": "        cal.setTime(current);"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "        Date min \u003d cal.getTime();"
+        "content": "        cal.set(Calendar.HOUR_OF_DAY, 0);"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!commitInfos.isEmpty()) {"
+        "content": "        cal.set(Calendar.MINUTE, 0);"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "            min \u003d commitInfos.get(0).getTime();"
+        "content": "        cal.set(Calendar.SECOND, 0);"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        cal.set(Calendar.MILLISECOND, 0);"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "        return min;"
+        "content": "        return cal.getTime();"
       },
       {
         "lineNumber": 123,
@@ -23347,12 +23312,83 @@
         "author": {
           "gitId": "-"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    private static Date getStartDate(List\u003cCommitResult\u003e commitInfos) {"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Calendar cal \u003d Calendar.getInstance();"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        cal.set(Calendar.YEAR, 2050);"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Date min \u003d cal.getTime();"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if (!commitInfos.isEmpty()) {"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            min \u003d commitInfos.get(0).getTime();"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return min;"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "ongspxm": 32,
-      "-": 92
+      "ongspxm": 13,
+      "emer7": 40,
+      "-": 81
     }
   },
   {
