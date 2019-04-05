@@ -252,14 +252,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  private model: tf.Model"
+        "content": "  private model: tf.LayersModel"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "  private intermediateModels: { [layerName: string]: tf.Model } \u003d {}"
+        "content": "  private intermediateModels: { [layerName: string]: tf.LayersModel } \u003d {}"
       },
       {
         "lineNumber": 38,
@@ -329,7 +329,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    // don\u0027t use loadModel anymore"
+        "content": "    // this is a Layers Model"
       },
       {
         "lineNumber": 48,
@@ -756,7 +756,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      let model: tf.Model"
+        "content": "      let model: tf.LayersModel"
       },
       {
         "lineNumber": 109,
@@ -854,668 +854,675 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      return model.predict(batched) as tf.Tensor2D"
+        "content": "      // return logits"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "    })"
+        "content": "      return model.predict(batched) as tf.Tensor2D"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    })"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "  /**"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "   * Classifies an image from the 5 classes returning a map of"
+        "content": "  /**"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "   * the most likely class names to their probability."
+        "content": "   * Classifies an image from the 5 classes returning a map of"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "   *"
+        "content": "   * the most likely class names to their probability."
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "   * @param img The image to classify. Can be a tensor or a DOM element image,"
+        "content": "   *"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "   * video, or canvas."
+        "content": "   * @param img The image to classify. Can be a tensor or a DOM element image,"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "   * @param topk How many top values to use. Defaults to 5"
+        "content": "   * video, or canvas."
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "   */"
+        "content": "   * @param topk How many top values to use. Defaults to 5"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "  async classify("
+        "content": "   */"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "    img:"
+        "content": "  async classify("
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "      | tf.Tensor3D"
+        "content": "    img:"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "      | ImageData"
+        "content": "      | tf.Tensor3D"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "      | HTMLImageElement"
+        "content": "      | ImageData"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "      | HTMLCanvasElement"
+        "content": "      | HTMLImageElement"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "      | HTMLVideoElement,"
+        "content": "      | HTMLCanvasElement"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "    topk \u003d 5"
+        "content": "      | HTMLVideoElement,"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "  ): Promise\u003cArray\u003c{ className: string; probability: number }\u003e\u003e {"
+        "content": "    topk \u003d 5"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "    const logits \u003d this.infer(img) as tf.Tensor2D"
+        "content": "  ): Promise\u003cArray\u003c{ className: string; probability: number }\u003e\u003e {"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const logits \u003d this.infer(img) as tf.Tensor2D"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    const classes \u003d await getTopKClasses(logits, topk)"
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const classes \u003d await getTopKClasses(logits, topk)"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "    logits.dispose()"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    logits.dispose()"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "    return classes"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    return classes"
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "emer7"
         },
-        "content": "  /**"
+        "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "emer7"
         },
-        "content": "   * Classifies a gif from the 5 classes returning a map of"
+        "content": "  /**"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "emer7"
         },
-        "content": "   * the most likely class names to their probability."
+        "content": "   * Classifies a gif from the 5 classes returning a map of"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "emer7"
         },
-        "content": "   *"
+        "content": "   * the most likely class names to their probability."
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "emer7"
         },
-        "content": "   * @param gif The gif to classify. DOM element image"
+        "content": "   *"
       },
       {
         "lineNumber": 157,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "   * @param gif The gif to classify. DOM element image"
+      },
+      {
+        "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
         "content": "   * @param config param configuration for run"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 159,
         "author": {
           "gitId": "emer7"
         },
         "content": "   */"
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 160,
         "author": {
           "gitId": "emer7"
         },
         "content": "  async classifyGif("
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 161,
         "author": {
           "gitId": "emer7"
         },
         "content": "    gif: HTMLImageElement,"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
         "content": "    config: classifyConfig \u003d { topk: 5 }"
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 163,
         "author": {
           "gitId": "emer7"
         },
         "content": "  ): Promise\u003cArray\u003cArray\u003c{ className: string; probability: number }\u003e\u003e\u003e {"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
         "content": "    let gifObj \u003d new SuperGif({ gif })"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 165,
         "author": {
           "gitId": "emer7"
         },
         "content": "    return new Promise(resolve \u003d\u003e {"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 166,
         "author": {
           "gitId": "emer7"
         },
         "content": "      gifObj.load(async () \u003d\u003e {"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 167,
         "author": {
           "gitId": "emer7"
         },
         "content": "        const arrayOfClasses \u003d []"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
         "content": "        const gifLength \u003d gifObj.get_length()"
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
         "content": "        for (let i \u003d 1; i \u003c\u003d gifLength; i++) {"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 170,
         "author": {
           "gitId": "emer7"
         },
         "content": "          gifObj.move_to(i)"
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
         "content": "          const classes \u003d await this.classify(gifObj.get_canvas(), config.topk)"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
         "content": "          // Update to onFrame"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
         "content": "          if (config.onFrame)"
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
         "content": "            config.onFrame({"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
         "content": "              index: i,"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
         "content": "              totalFrames: gifLength,"
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
         "content": "              predictions: classes"
       },
       {
-        "lineNumber": 177,
+        "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
         "content": "            })"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
         "content": "          // Store the goods"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 180,
         "author": {
           "gitId": "emer7"
         },
         "content": "          arrayOfClasses.push(classes)"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 181,
         "author": {
           "gitId": "emer7"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
         "content": "        // try to clean up"
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
         "content": "        gifObj \u003d null"
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 184,
         "author": {
           "gitId": "emer7"
         },
         "content": "        resolve(arrayOfClasses)"
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 185,
         "author": {
           "gitId": "emer7"
         },
         "content": "      })"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 186,
         "author": {
           "gitId": "emer7"
         },
         "content": "    })"
       },
       {
-        "lineNumber": 186,
+        "lineNumber": 187,
         "author": {
           "gitId": "emer7"
         },
         "content": "  }"
-      },
-      {
-        "lineNumber": 187,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "}"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "async function getTopKClasses("
+        "content": ""
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "  logits: tf.Tensor2D,"
+        "content": "async function getTopKClasses("
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "  topK: number"
+        "content": "  logits: tf.Tensor2D,"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "): Promise\u003cArray\u003c{ className: string; probability: number }\u003e\u003e {"
+        "content": "  topK: number"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "  const values \u003d await logits.data()"
+        "content": "): Promise\u003cArray\u003c{ className: string; probability: number }\u003e\u003e {"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const values \u003d await logits.data()"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "  const valuesAndIndices \u003d []"
+        "content": ""
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "  for (let i \u003d 0; i \u003c values.length; i++) {"
+        "content": "  const valuesAndIndices \u003d []"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "    valuesAndIndices.push({ value: values[i], index: i })"
+        "content": "  for (let i \u003d 0; i \u003c values.length; i++) {"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    valuesAndIndices.push({ value: values[i], index: i })"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "  valuesAndIndices.sort((a, b) \u003d\u003e {"
+        "content": "  }"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "    return b.value - a.value"
+        "content": "  valuesAndIndices.sort((a, b) \u003d\u003e {"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "  })"
+        "content": "    return b.value - a.value"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "  const topkValues \u003d new Float32Array(topK)"
+        "content": "  })"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "  const topkIndices \u003d new Int32Array(topK)"
+        "content": "  const topkValues \u003d new Float32Array(topK)"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "  for (let i \u003d 0; i \u003c topK; i++) {"
+        "content": "  const topkIndices \u003d new Int32Array(topK)"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "    topkValues[i] \u003d valuesAndIndices[i].value"
+        "content": "  for (let i \u003d 0; i \u003c topK; i++) {"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "    topkIndices[i] \u003d valuesAndIndices[i].index"
+        "content": "    topkValues[i] \u003d valuesAndIndices[i].value"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    topkIndices[i] \u003d valuesAndIndices[i].index"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "  const topClassesAndProbs \u003d []"
+        "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "  for (let i \u003d 0; i \u003c topkIndices.length; i++) {"
+        "content": "  const topClassesAndProbs \u003d []"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "    topClassesAndProbs.push({"
+        "content": "  for (let i \u003d 0; i \u003c topkIndices.length; i++) {"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "      className: NSFW_CLASSES[topkIndices[i]],"
+        "content": "    topClassesAndProbs.push({"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "      probability: topkValues[i]"
+        "content": "      className: NSFW_CLASSES[topkIndices[i]],"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "    })"
+        "content": "      probability: topkValues[i]"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    })"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "  return topClassesAndProbs"
+        "content": "  }"
       },
       {
         "lineNumber": 217,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  return topClassesAndProbs"
+      },
+      {
+        "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
@@ -1524,7 +1531,7 @@
     ],
     "authorContributionMap": {
       "emer7": 21,
-      "-": 196
+      "-": 197
     }
   },
   {
