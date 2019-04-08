@@ -1843,6 +1843,2107 @@
     }
   },
   {
+    "path": "Example/Tests/DeliveryService/ImageUrlBuilder/ImageUrlBuilder.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  ImageUrlBuilder.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  KenticoCloud_Tests"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  Created by Jiang Chunhui on 23/3/19."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  Copyright © 2019 CocoaPods. All rights reserved."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import Quick"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import Nimble"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "import KenticoCloud"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "class ImageUrlBuilderSpec: QuickSpec {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    override func spec() {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        describe(\"Build image URL\") {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            let baseUrl \u003d \"https://test_example.com/coffee/test-image.jpg\""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Empty transformation option"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with no transformation option\", {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).url"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Pixel width"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with pixel width\", {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withWidth(900).url"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?w\u003d900\""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Width ratio"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with width ratio\", {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withWidthRatio(0.4).url"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?w\u003d0.4\""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Both pixel width and width ratio"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with both pixel width and width ratio\", {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withWidth(700)"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withWidthRatio(0.2).url"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?w\u003d0.2\""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Pixel height"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with pixel height\", {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withHeight(500).url"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?h\u003d500\""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Height ratio"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with height ratio\", {"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withHeightRatio(0.3).url"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?h\u003d0.3\""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Both pixel height and height ratio"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with both pixel height and height ratio\", {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withHeightRatio(0.2)"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withHeight(700)"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?h\u003d700\""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: DPR"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with DPR value\", {"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withDpr(3.4).url"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?dpr\u003d3.4\""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Fit Mode"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with fit mode\", {"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withFitMode(.Clip).url"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?fit\u003dclip\""
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Rectangle Crop with Pixel Width and Height"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with rectangle crop with pixel size\", {"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withRectangleCrop(x: 100, y: 50, width: 700, height: 400)"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?rect\u003d100,50,700,400\""
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Rectangle Crop with Percentage Width and Height Ratio"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with rectangle crop with size ratio\", {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withRectangleCrop(x: 0.1, y: 0.2, widthRatio: 0.3, heightRatio: 0.5)"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?rect\u003d0.1,0.2,0.3,0.5\""
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Rectangle Crop followed by Focal Point"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with rectangle crop followed by focal point\", {"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"ignores focal points and only returns rectangle crop\") {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withRectangleCrop(x: 100, y: 50, width: 700, height: 400)"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withFocalPointCrop(x: 0.4, y: 0.6, z: 3)"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?rect\u003d100,50,700,400\""
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Focal Point"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with focal point\", {"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withFocalPointCrop(x: 0.4, y: 0.6, z: 2)"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?fit\u003dcrop\u0026crop\u003dfocalpoint\u0026fp-x\u003d0.4\u0026fp-y\u003d0.6\u0026fp-z\u003d2.0\""
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Focal Point followed by Rectangle Crop"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with focal point followed by rectangle crop\", {"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"removes focal points and only returns rectangle crop\") {"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withFocalPointCrop(x: 0.4, y: 0.6, z: 2)"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withRectangleCrop(x: 100, y: 50, width: 700, height: 400)"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?rect\u003d100,50,700,400\""
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Fit Mode followed by Focal Point"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with fit mode followed by focal point\", {"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"overwrites fit mode to be crop\") {"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withFitMode(.Scale)"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withFocalPointCrop(x: 0.4, y: 0.6, z: 2)"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?fit\u003dcrop\u0026crop\u003dfocalpoint\u0026fp-x\u003d0.4\u0026fp-y\u003d0.6\u0026fp-z\u003d2.0\""
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Background color with single RGB value"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with background color with single RGB\", {"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withBackgroundColor(rgbColor: 0x0C9F3E, alpha: 0xFF)"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?bg\u003dFF0C9F3E\""
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Background color with separate R, G, B."
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with background color with separate RGB\", {"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withBackgroundColor(red: 255, green: 0xDC, blue: 0, alpha: 0xFF)"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?bg\u003dFFFFDC00\""
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Image Format"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with image format\", {"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withImageFormat(.Gif)"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?fm\u003dgif\""
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Image Compression"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with image compression\", {"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withImageCompression(.Lossy)"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?lossless\u003dfalse\""
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Image Quality"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with image quality\", {"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withQuality(40)"
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?q\u003d40\""
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Auto Format"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with automatic format\", {"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withAutomaticFormat()"
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?auto\u003dformat\""
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Decimal value with trailing 0"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with decimal value with trailing 0\", {"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"removes trailing 0\") {"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withDpr(3.000000).url"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?dpr\u003d3.0\""
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Rounding the decimal value"
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with infinite decimal value\", {"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"rounds to 3 decimal places\") {"
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl).withWidthRatio(2/3).url"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?w\u003d0.667\""
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            // MARK: Combination query"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            context(\"with combined query\", {"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                it(\"returns correct URL\") {"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let actualUrl \u003d ImageUrlBuilder(baseUrl: baseUrl)"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withFitMode(.Clip)"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withWidth(300)"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withHeightRatio(0.4)"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withBackgroundColor(rgbColor: 0x330FAA)"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withImageFormat(.Png)"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withAutomaticFormat()"
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .url"
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    let expectedUrl \u003d baseUrl + \"?fit\u003dclip\u0026w\u003d300\u0026h\u003d0.4\u0026bg\u003d330FAA\u0026fm\u003dpng\u0026auto\u003dformat\""
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                    expect(actualUrl) \u003d\u003d expectedUrl"
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            })"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Adoby7": 299
+    }
+  },
+  {
     "path": "KenticoCloud/Classes/DeliveryService/DeliveryClient.swift",
     "lines": [
       {
@@ -5492,6 +7593,2338 @@
     }
   },
   {
+    "path": "KenticoCloud/Classes/DeliveryService/ImageUrlBuilder.swift",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  ImageUrlBuilder.swift"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  KenticoCloud"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//  Created by Jiang Chunhui on 20/3/19."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "//"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": " A helper class to build image transformation URL."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": " Read https://developer.kenticocloud.com/v1/reference#image-transformation before using this URL builder,"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": " because the builder will not validate the parameter."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "public class ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private let baseUrl: String"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private var imageOption: [String:String]"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    // Use the array to maintain the order of options"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private var optionKeywords: [String]"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Inits Image url builder instance."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter baseUrl: The url of the source image, which should be either jpeg, png, gif, or webp in order to apply the transformation."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with base url updated."
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public init(baseUrl url: String) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        self.baseUrl \u003d url"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        self.imageOption \u003d [:]"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        self.optionKeywords \u003d []"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     The URL of the image with transformation options."
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: The URL of the image with transformation options."
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public var url: String {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        if optionKeywords.isEmpty {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            return baseUrl"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        var option \u003d \"\""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        for optionName in optionKeywords {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            if let optionValue \u003d imageOption[optionName] {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                option +\u003d optionName + \"\u003d\" + optionValue + \"\u0026\""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        _ \u003d option.popLast()"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return baseUrl + \"?\" + option"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image url builder with fit mode parameter."
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Supported fit modes are: crop, clip, and scale."
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Fit mode works only if width, height, or both parameters are set."
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter mode: variable that indicates the image fit mode."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with fit mode option updated."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withFitMode(_ mode: ImageFitMode) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"fit\")"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"fit\"] \u003d mode.rawValue"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with absolute pixel width parameter."
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter width: The absolute pixel width of the output image. Restricted range: 1 to 8192."
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with width updated."
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withWidth(_ width: Int) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"w\")"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"w\"] \u003d width.description"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with percentage width parameter."
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter width: The percentage width of output image to input image. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with width updated."
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withWidthRatio(_ ratio: Double) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"w\")"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"w\"] \u003d formatDoubleString(ratio)"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with absolute pixel height parameter."
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter height: The absolute pixel height of the output image. Restricted range: 1 to 8192."
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with height updated."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withHeight(_ height: Int) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"h\")"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"h\"] \u003d height.description"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with percentage height parameter."
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter height: The percentage height of output image to input image. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with height updated."
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withHeightRatio(_ ratio: Double) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"h\")"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"h\"] \u003d formatDoubleString(ratio)"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with DPR."
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     DPR parameter works only if width, height, or both parameters are set."
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter dpr: The DPR value of the image. Restricted range: 0 to 5."
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with DPR updated."
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withDpr(_ dpr: Double) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"dpr\")"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"dpr\"] \u003d formatDoubleString(dpr)"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with rectangle crop."
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Incompatible with focal point."
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     If both focal point crop and rectangle crop exist, only rectangle crop will appear in URL."
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter x: Rectangle offset on the x-axis in pixels. Restricted range: 1 to 8192."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter y: Rectangle offset on the y-axis in pixels. Restricted range: 1 to 8192."
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter width: The absolute pixel width of rectangle. Restricted range: 1 to 8192."
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter height: The absolute pixel height of rectangle. Restricted range: 1 to 8192."
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with rectangle crop option updated."
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withRectangleCrop(x: Int, y: Int, width: Int, height: Int) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"rect\")"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndRemoveFocalPointParameter()"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"rect\"] \u003d x.description + \",\" + y.description + \",\" + width.description + \",\" + height.description"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with rectangle crop."
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Incompatible with focal point."
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     If both focal point crop and rectangle crop exist, only rectangle crop will appear in URL."
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter x: Rectangle offset on the x-axis in percentage. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter y: Rectangle offset on the y-axis in percentage. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter widthRatio: The width ratio of rectangle to the input image width. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter heightRatio: The height ratio of rectangle to the input image height. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with rectangle crop option updated."
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withRectangleCrop(x: Double, y: Double, widthRatio width: Double, heightRatio height: Double)"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"rect\")"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndRemoveFocalPointParameter()"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"rect\"] \u003d formatDoubleString(x) + \",\" + formatDoubleString(y) + \",\""
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            + formatDoubleString(width) + \",\" + formatDoubleString(height)"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with focal point crop."
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Fit mode will be set to \"crop\"."
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Incompatible with rect. If both focal point crop and rectangle crop exist, only rectangle crop will appear in URL."
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter x: The horizontal value of the focal point of an image. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter y: The vertical value of the focal point of an image. Restricted range: 0 to 1."
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter z: The zoom value of a focal point of an image. Recommended range: 1 to 100"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with focal point crop option updated, if rectangle parameter is not set."
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withFocalPointCrop(x: Double, y: Double, z: Double) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        if imageOption[\"rect\"] !\u003d nil {"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            return self"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"fit\")"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"crop\")"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"crop\"] \u003d \"focalpoint\u0026fp-x\u003d\" + formatDoubleString(x)"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            + \"\u0026fp-y\u003d\" + formatDoubleString(y)"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            + \"\u0026fp-z\u003d\" + formatDoubleString(z)"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self.withFitMode(ImageFitMode.Crop)"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with background color option."
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter rgbColor: an integer represents the color in RGB format. Restricted range: 0x000000 to 0xFFFFFF."
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter alpha: (Optional) an integer represents the color\u0027s alpha transparency. Restricted range: 0x00 to 0xFF."
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with background color option updated."
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withBackgroundColor(rgbColor rgb: Int, alpha a: Int? \u003d nil) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"bg\")"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self.withBackgroundColor(red: (rgb \u003e\u003e 16) \u0026 0xFF,"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                                        green: (rgb \u003e\u003e 8) \u0026 0xFF,"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                                        blue: rgb \u0026 0xFF,"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                                        alpha: a)"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image builder with background color option."
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter red: an integer represents the red value of color. Restricted range: 0x00 to 0xFF."
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter green: an integer represents the green value of color. Restricted range: 0x00 to 0xFF."
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter blue: an integer represents the blue value of color. Restricted range: 0x00 to 0xFF."
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter alpha: (Optional) an integer represents the color\u0027s alpha transparency. Restricted range: 0x00 to 0xFF."
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with background color option updated."
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withBackgroundColor(red r: Int, green g: Int, blue b: Int, alpha a: Int? \u003d nil) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"bg\")"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        var color \u003d String(format: \"%02X%02X%02X\", r, g, b)"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        if let alphaValue \u003d a {"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            color \u003d String(format: \"%02X\", alphaValue) + color"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"bg\"] \u003d color"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image url builder with image format parameter."
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Supported formats are: gif, png, png8, jpg, pjpg, and webp."
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     If no format parameter present, the output image format will be same as input one."
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter format: variable that indicates the output image format."
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with format option updated."
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withImageFormat(_ format: ImageFormat) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"fm\")"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"fm\"] \u003d format.rawValue"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image url builder with the compression parameter."
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     The compression works only if the output image format has been set to WebP."
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter compression: variable that indicates whether the compression is lossy or lossless."
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with compression option updated."
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withImageCompression(_ compression: ImageCompression) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"lossless\")"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"lossless\"] \u003d compression.rawValue"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image url builder with the quality parameter."
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Quality parameter works only if the output image format is either jpg, pjpg, or WebP."
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Parameter quality: the compression level for lossy file-formatted images. Restricted range: 0 to 100."
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with quality option updated."
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withQuality(_ quality: Int) -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"q\")"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"q\"] \u003d quality.description"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     Updates the image url builder by enabling automatic delivery of WebP format images."
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     - Returns: Instance of the ImageUrlBuilder with automatic format option updated."
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public func withAutomaticFormat() -\u003e ImageUrlBuilder {"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        checkAndUpdateOptionKeywords(\"auto\")"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        imageOption[\"auto\"] \u003d \"format\""
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return self"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private func checkAndRemoveFocalPointParameter() {"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        if imageOption[\"crop\"] !\u003d nil {"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            imageOption.removeValue(forKey: \"fit\")"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            imageOption.removeValue(forKey: \"crop\")"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private func checkAndUpdateOptionKeywords(_ option: String) {"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        if !optionKeywords.contains(option) {"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "            optionKeywords.append(option)"
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    private func formatDoubleString(_ value: Double) -\u003e String {"
+      },
+      {
+        "lineNumber": 288,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        // Round the double value to 3 decimal places to avoid infinite decimal."
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        let roundedValue \u003d (value * 1000).rounded() / 1000"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        return roundedValue.description"
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 292,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 293,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     The image compression option."
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    */"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public enum ImageCompression: String {"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** Compress the image */"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Lossless \u003d \"true\""
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** Not compress the image */"
+      },
+      {
+        "lineNumber": 300,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Lossy \u003d \"false\""
+      },
+      {
+        "lineNumber": 301,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 302,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     The image format option."
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public enum ImageFormat: String {"
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The gif format */"
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Gif \u003d \"gif\""
+      },
+      {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The jpg format */"
+      },
+      {
+        "lineNumber": 310,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Jpg \u003d \"jpg\""
+      },
+      {
+        "lineNumber": 311,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The png format */"
+      },
+      {
+        "lineNumber": 312,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Png \u003d \"png\""
+      },
+      {
+        "lineNumber": 313,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The png8 format */"
+      },
+      {
+        "lineNumber": 314,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Png8 \u003d \"png8\""
+      },
+      {
+        "lineNumber": 315,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The pjpg format */"
+      },
+      {
+        "lineNumber": 316,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Pjpg \u003d \"pjpg\""
+      },
+      {
+        "lineNumber": 317,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The webp format */"
+      },
+      {
+        "lineNumber": 318,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Webp \u003d \"webp\""
+      },
+      {
+        "lineNumber": 319,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 320,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 321,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 322,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     The image fit mode option."
+      },
+      {
+        "lineNumber": 323,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 324,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    public enum ImageFitMode: String {"
+      },
+      {
+        "lineNumber": 325,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The clip fit mode*/"
+      },
+      {
+        "lineNumber": 326,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Clip \u003d \"clip\""
+      },
+      {
+        "lineNumber": 327,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The crop fit mode*/"
+      },
+      {
+        "lineNumber": 328,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Crop \u003d \"crop\""
+      },
+      {
+        "lineNumber": 329,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        /** The scale fit mode*/"
+      },
+      {
+        "lineNumber": 330,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "        case Scale \u003d \"scale\""
+      },
+      {
+        "lineNumber": 331,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 332,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Adoby7": 332
+    }
+  },
+  {
     "path": "README.md",
     "lines": [
       {
@@ -7793,140 +12226,140 @@
       {
         "lineNumber": 329,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "## Local Development"
+        "content": "## Use image transformation"
       },
       {
         "lineNumber": 330,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "For running SDK with sample app locally follow the next steps."
+        "content": "Kentico Cloud supports image transformation by using URL parameters. "
       },
       {
         "lineNumber": 331,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "1. Download the repository."
+        "content": "A helper class is provided to create the URL conveniently."
       },
       {
         "lineNumber": 332,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "1. In terminal navigate to */Example*."
+        "content": "However, read [this documentation](https://developer.kenticocloud.com/v1/reference#image-transformation) to understand the restriction of parameters before using the helper class, as the helper class does not validate the input parameter."
       },
       {
         "lineNumber": 333,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "1. Run `pod install` ([Cocoapods](https://cocoapods.org/) must be installed)."
+        "content": ""
       },
       {
         "lineNumber": 334,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "1. Open `KenticoCloud.xcworkspace` in XCode."
+        "content": ""
       },
       {
         "lineNumber": 335,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "1. Run."
+        "content": "Here is a sample usage:"
       },
       {
         "lineNumber": 336,
         "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 337,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "## Debug"
-      },
-      {
-        "lineNumber": 338,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "If you want to view debug info from both clients set client\u0027s `enableDebugLogging` attribute:"
-      },
-      {
-        "lineNumber": 339,
-        "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
         "content": "```swift"
       },
       {
+        "lineNumber": 337,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "let originalUrl \u003d \"https://example.com/sample-image.jpg\""
+      },
+      {
+        "lineNumber": 338,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "let transformedUrl \u003d ImageUrlBuilder(baseUrl: originalUrl)"
+      },
+      {
+        "lineNumber": 339,
+        "author": {
+          "gitId": "Adoby7"
+        },
+        "content": "                        .withWidth(300)"
+      },
+      {
         "lineNumber": 340,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "let deliveryClient \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\", enableDebugLogging \u003d true)"
+        "content": "                        .withHeight(500)"
       },
       {
         "lineNumber": 341,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "```"
+        "content": "                        .withFitMode(.Clip)"
       },
       {
         "lineNumber": 342,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": ""
+        "content": "                        .withDpr(3)"
       },
       {
         "lineNumber": 343,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "## Releasing a new version of the Cocoapod package"
+        "content": "                        .withBackGroundColor(rgbColor: 0x330FAA)"
       },
       {
         "lineNumber": 344,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "Travis CI automatically builds and releases a new version of the pod when added new tag."
+        "content": "                        .withFormat(.png)"
       },
       {
         "lineNumber": 345,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": ""
+        "content": "                        .url"
       },
       {
         "lineNumber": 346,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "## Documentation"
+        "content": "// transformedUrl \u003d https://example.com/sample-image.jpg?w\u003d300\u0026h\u003d500\u0026fit\u003dclip\u0026dpr\u003d3.0\u0026bg\u003d330FAA\u0026fm\u003dpng"
       },
       {
         "lineNumber": 347,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
-        "content": "You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html)."
+        "content": "```"
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "-"
+          "gitId": "Adoby7"
         },
         "content": ""
       },
@@ -7935,49 +12368,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": "## Updating generated documentation"
+        "content": "## Local Development"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "We use Jazzy which is a command-line utility that generates documentation for Swift. For updating documentation perform the next steps:"
+        "content": "For running SDK with sample app locally follow the next steps."
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "1. Install Jazzy `[sudo] gem install jazzy`"
+        "content": "1. Download the repository."
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "1. Run `jazzy` from the root of the repository."
+        "content": "1. In terminal navigate to */Example*."
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "1. Commit changes from */Docs* directory."
+        "content": "1. Run `pod install` ([Cocoapods](https://cocoapods.org/) must be installed)."
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "1. Open `KenticoCloud.xcworkspace` in XCode."
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "## Further information"
+        "content": "1. Run."
       },
       {
         "lineNumber": 356,
@@ -7991,35 +12424,35 @@
         "author": {
           "gitId": "-"
         },
-        "content": "For more developer resources, visit the Kentico Cloud Developer Hub at \u003chttps://developer.kenticocloud.com\u003e."
+        "content": "## Debug"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "If you want to view debug info from both clients set client\u0027s `enableDebugLogging` attribute:"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "## Feedback \u0026 Contributing"
+        "content": "```swift"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "let deliveryClient \u003d DeliveryClient.init(projectId: \"YOUR_PROJECT_ID\", enableDebugLogging \u003d true)"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "Check out the [contributing](https://github.com/Kentico/cloud-sdk-swift/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions, and begin contributing."
+        "content": "```"
       },
       {
         "lineNumber": 362,
@@ -8033,31 +12466,171 @@
         "author": {
           "gitId": "-"
         },
-        "content": "## License"
+        "content": "## Releasing a new version of the Cocoapod package"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Travis CI automatically builds and releases a new version of the pod when added new tag."
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "KenticoCloud Swift SDK is available under the MIT license. See the LICENSE file for more information."
+        "content": ""
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "## Documentation"
       },
       {
         "lineNumber": 367,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html)."
+      },
+      {
+        "lineNumber": 368,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 369,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Updating generated documentation"
+      },
+      {
+        "lineNumber": 370,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "We use Jazzy which is a command-line utility that generates documentation for Swift. For updating documentation perform the next steps:"
+      },
+      {
+        "lineNumber": 371,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Install Jazzy `[sudo] gem install jazzy`"
+      },
+      {
+        "lineNumber": 372,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Run `jazzy` from the root of the repository."
+      },
+      {
+        "lineNumber": 373,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "1. Commit changes from */Docs* directory."
+      },
+      {
+        "lineNumber": 374,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 375,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Further information"
+      },
+      {
+        "lineNumber": 376,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 377,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "For more developer resources, visit the Kentico Cloud Developer Hub at \u003chttps://developer.kenticocloud.com\u003e."
+      },
+      {
+        "lineNumber": 378,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 379,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Feedback \u0026 Contributing"
+      },
+      {
+        "lineNumber": 380,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 381,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Check out the [contributing](https://github.com/Kentico/cloud-sdk-swift/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions, and begin contributing."
+      },
+      {
+        "lineNumber": 382,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## License"
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "KenticoCloud Swift SDK is available under the MIT license. See the LICENSE file for more information."
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
@@ -8066,7 +12639,7 @@
     ],
     "authorContributionMap": {
       "-": 349,
-      "Adoby7": 18
+      "Adoby7": 38
     }
   }
 ]
