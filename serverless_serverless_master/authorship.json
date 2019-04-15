@@ -742,35 +742,35 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  loadEnvVars() {"
+        "content": "  getConfiguredEnvVars() {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "    const lambdaName \u003d this.options.functionObj.name;"
+        "content": "    const providerEnvVars \u003d this.serverless.service.provider.environment || {};"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "    const memorySize \u003d Number(this.options.functionObj.memorySize)"
+        "content": "    const functionEnvVars \u003d this.options.functionObj.environment || {};"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "      || Number(this.serverless.service.provider.memorySize)"
+        "content": "    return _.merge(providerEnvVars, functionEnvVars);"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "      || 1024;"
+        "content": "  }"
       },
       {
         "lineNumber": 111,
@@ -784,140 +784,140 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    const lambdaDefaultEnvVars \u003d {"
+        "content": "  loadEnvVars() {"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "      LANG: \u0027en_US.UTF-8\u0027,"
+        "content": "    const lambdaName \u003d this.options.functionObj.name;"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "      LD_LIBRARY_PATH: \u0027/usr/local/lib64/node-v4.3.x/lib:/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib\u0027, // eslint-disable-line max-len"
+        "content": "    const memorySize \u003d Number(this.options.functionObj.memorySize)"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "      LAMBDA_TASK_ROOT: \u0027/var/task\u0027,"
+        "content": "      || Number(this.serverless.service.provider.memorySize)"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "      LAMBDA_RUNTIME_DIR: \u0027/var/runtime\u0027,"
+        "content": "      || 1024;"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "      AWS_REGION: this.provider.getRegion(),"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "      AWS_DEFAULT_REGION: this.provider.getRegion(),"
+        "content": "    const lambdaDefaultEnvVars \u003d {"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "      AWS_LAMBDA_LOG_GROUP_NAME: this.provider.naming.getLogGroupName(lambdaName),"
+        "content": "      LANG: \u0027en_US.UTF-8\u0027,"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "      AWS_LAMBDA_LOG_STREAM_NAME: \u00272016/12/02/[$LATEST]f77ff5e4026c45bda9a9ebcec6bc9cad\u0027,"
+        "content": "      LD_LIBRARY_PATH: \u0027/usr/local/lib64/node-v4.3.x/lib:/lib64:/usr/lib64:/var/runtime:/var/runtime/lib:/var/task:/var/task/lib\u0027, // eslint-disable-line max-len"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "      AWS_LAMBDA_FUNCTION_NAME: lambdaName,"
+        "content": "      LAMBDA_TASK_ROOT: \u0027/var/task\u0027,"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "      AWS_LAMBDA_FUNCTION_MEMORY_SIZE: memorySize,"
+        "content": "      LAMBDA_RUNTIME_DIR: \u0027/var/runtime\u0027,"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "      AWS_LAMBDA_FUNCTION_VERSION: \u0027$LATEST\u0027,"
+        "content": "      AWS_REGION: this.provider.getRegion(),"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "      NODE_PATH: \u0027/var/runtime:/var/task:/var/runtime/node_modules\u0027,"
+        "content": "      AWS_DEFAULT_REGION: this.provider.getRegion(),"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": "      AWS_LAMBDA_LOG_GROUP_NAME: this.provider.naming.getLogGroupName(lambdaName),"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      AWS_LAMBDA_LOG_STREAM_NAME: \u00272016/12/02/[$LATEST]f77ff5e4026c45bda9a9ebcec6bc9cad\u0027,"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "    // profile override from config"
+        "content": "      AWS_LAMBDA_FUNCTION_NAME: lambdaName,"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "    const profileOverride \u003d this.provider.getProfile();"
+        "content": "      AWS_LAMBDA_FUNCTION_MEMORY_SIZE: memorySize,"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (profileOverride) {"
+        "content": "      AWS_LAMBDA_FUNCTION_VERSION: \u0027$LATEST\u0027,"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "      lambdaDefaultEnvVars.AWS_PROFILE \u003d profileOverride;"
+        "content": "      NODE_PATH: \u0027/var/runtime:/var/task:/var/runtime/node_modules\u0027,"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    };"
       },
       {
         "lineNumber": 132,
@@ -931,49 +931,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    const providerEnvVars \u003d this.serverless.service.provider.environment || {};"
+        "content": "    // profile override from config"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "    const functionEnvVars \u003d this.options.functionObj.environment || {};"
+        "content": "    const profileOverride \u003d this.provider.getProfile();"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if (profileOverride) {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "    _.merge(process.env, lambdaDefaultEnvVars, providerEnvVars, functionEnvVars);"
+        "content": "      lambdaDefaultEnvVars.AWS_PROFILE \u003d profileOverride;"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "    return BbPromise.resolve();"
+        "content": ""
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    const configuredEnvVars \u003d this.getConfiguredEnvVars();"
       },
       {
         "lineNumber": 140,
@@ -987,588 +987,588 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  invokeLocal() {"
+        "content": "    _.merge(process.env, lambdaDefaultEnvVars, configuredEnvVars);"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "    const runtime \u003d this.getRuntime();"
+        "content": ""
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "    const handler \u003d this.options.functionObj.handler;"
+        "content": "    return BbPromise.resolve();"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (this.options.docker) {"
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "      return this.invokeLocalDocker();"
+        "content": "  invokeLocal() {"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    const runtime \u003d this.getRuntime();"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const handler \u003d this.options.functionObj.handler;"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (runtime.startsWith(\u0027nodejs\u0027)) {"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerPath \u003d handler.split(\u0027.\u0027)[0];"
+        "content": "    if (this.options.docker) {"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerName \u003d handler.split(\u0027.\u0027)[1];"
+        "content": "      return this.invokeLocalDocker();"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "      return this.invokeLocalNodeJs("
+        "content": "    }"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerPath,"
+        "content": ""
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerName,"
+        "content": "    if (runtime.startsWith(\u0027nodejs\u0027)) {"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.data,"
+        "content": "      const handlerPath \u003d handler.split(\u0027.\u0027)[0];"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.context);"
+        "content": "      const handlerName \u003d handler.split(\u0027.\u0027)[1];"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      return this.invokeLocalNodeJs("
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        handlerPath,"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (_.includes([\u0027python2.7\u0027, \u0027python3.6\u0027, \u0027python3.7\u0027], runtime)) {"
+        "content": "        handlerName,"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerComponents \u003d handler.split(/\\./);"
+        "content": "        this.options.data,"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerPath \u003d handlerComponents.slice(0, -1).join(\u0027.\u0027);"
+        "content": "        this.options.context);"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerName \u003d handlerComponents.pop();"
+        "content": "    }"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "      return this.invokeLocalPython("
+        "content": ""
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "        process.platform \u003d\u003d\u003d \u0027win32\u0027 ? \u0027python.exe\u0027 : runtime,"
+        "content": "    if (_.includes([\u0027python2.7\u0027, \u0027python3.6\u0027, \u0027python3.7\u0027], runtime)) {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerPath,"
+        "content": "      const handlerComponents \u003d handler.split(/\\./);"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerName,"
+        "content": "      const handlerPath \u003d handlerComponents.slice(0, -1).join(\u0027.\u0027);"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.data,"
+        "content": "      const handlerName \u003d handlerComponents.pop();"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.context);"
+        "content": "      return this.invokeLocalPython("
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        process.platform \u003d\u003d\u003d \u0027win32\u0027 ? \u0027python.exe\u0027 : runtime,"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        handlerPath,"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (runtime \u003d\u003d\u003d \u0027java8\u0027) {"
+        "content": "        handlerName,"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "      const className \u003d handler.split(\u0027::\u0027)[0];"
+        "content": "        this.options.data,"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerName \u003d handler.split(\u0027::\u0027)[1] || \u0027handleRequest\u0027;"
+        "content": "        this.options.context);"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "      return this.invokeLocalJava("
+        "content": "    }"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027java\u0027,"
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "        className,"
+        "content": "    if (runtime \u003d\u003d\u003d \u0027java8\u0027) {"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerName,"
+        "content": "      const className \u003d handler.split(\u0027::\u0027)[0];"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.serverless.service.package.artifact,"
+        "content": "      const handlerName \u003d handler.split(\u0027::\u0027)[1] || \u0027handleRequest\u0027;"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.data,"
+        "content": "      return this.invokeLocalJava("
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.context);"
+        "content": "        \u0027java\u0027,"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        className,"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        handlerName,"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (runtime \u003d\u003d\u003d \u0027ruby2.5\u0027) {"
+        "content": "        this.serverless.service.package.artifact,"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerComponents \u003d handler.split(/\\./);"
+        "content": "        this.options.data,"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerPath \u003d handlerComponents[0];"
+        "content": "        this.options.context);"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlerName \u003d handlerComponents.slice(1).join(\u0027.\u0027);"
+        "content": "    }"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "      return this.invokeLocalRuby("
+        "content": ""
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "        process.platform \u003d\u003d\u003d \u0027win32\u0027 ? \u0027ruby.exe\u0027 : \u0027ruby\u0027,"
+        "content": "    if (runtime \u003d\u003d\u003d \u0027ruby2.5\u0027) {"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerPath,"
+        "content": "      const handlerComponents \u003d handler.split(/\\./);"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerName,"
+        "content": "      const handlerPath \u003d handlerComponents[0];"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.data,"
+        "content": "      const handlerName \u003d handlerComponents.slice(1).join(\u0027.\u0027);"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.context);"
+        "content": "      return this.invokeLocalRuby("
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        process.platform \u003d\u003d\u003d \u0027win32\u0027 ? \u0027ruby.exe\u0027 : \u0027ruby\u0027,"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        handlerPath,"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "    return this.invokeLocalDocker();"
+        "content": "        handlerName,"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "        this.options.data,"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        this.options.context);"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "  checkDockerDaemonStatus() {"
+        "content": "    }"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027version\u0027]);"
+        "content": "    return this.invokeLocalDocker();"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e {"
+        "content": "  }"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (error) {"
+        "content": ""
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "          reject(\u0027Please start the Docker daemon to use the invoke local Docker integration.\u0027);"
+        "content": "  checkDockerDaemonStatus() {"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "        resolve();"
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027version\u0027]);"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e {"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "        if (error) {"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "          reject(\u0027Please start the Docker daemon to use the invoke local Docker integration.\u0027);"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "  checkDockerImage() {"
+        "content": "        resolve();"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "    const runtime \u003d this.getRuntime();"
+        "content": "      });"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    });"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+        "content": "  }"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027images\u0027, \u0027-q\u0027, `lambci/lambda:${runtime}`]);"
+        "content": ""
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "      let stdout \u003d \u0027\u0027;"
+        "content": "  checkDockerImage() {"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "      docker.stdout.on(\u0027data\u0027, (buf) \u003d\u003e { stdout +\u003d buf.toString(); });"
+        "content": "    const runtime \u003d this.getRuntime();"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(Boolean(stdout.trim()))));"
+        "content": ""
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027images\u0027, \u0027-q\u0027, `lambci/lambda:${runtime}`]);"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      let stdout \u003d \u0027\u0027;"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "  pullDockerImage() {"
+        "content": "      docker.stdout.on(\u0027data\u0027, (buf) \u003d\u003e { stdout +\u003d buf.toString(); });"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "    const runtime \u003d this.getRuntime();"
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(Boolean(stdout.trim()))));"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    });"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.serverless.cli.log(\u0027Downloading base Docker image...\u0027);"
+        "content": "  }"
       },
       {
         "lineNumber": 225,
@@ -1582,1155 +1582,1155 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+        "content": "  pullDockerImage() {"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027pull\u0027, `lambci/lambda:${runtime}`]);"
+        "content": "    const runtime \u003d this.getRuntime();"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve()));"
+        "content": ""
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "    this.serverless.cli.log(\u0027Downloading base Docker image...\u0027);"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": ""
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "  getLayerPaths() {"
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027pull\u0027, `lambci/lambda:${runtime}`]);"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "    const layers \u003d _.mapKeys("
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve()));"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.service.layers,"
+        "content": "    });"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "      (value, key) \u003d\u003e this.provider.naming.getLambdaLayerLogicalId(key)"
+        "content": "  }"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": ""
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  getLayerPaths() {"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "    return BbPromise.all("
+        "content": "    const layers \u003d _.mapKeys("
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "      (this.options.functionObj.layers || this.serverless.service.provider.layers || [])"
+        "content": "      this.serverless.service.layers,"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "        .map(layer \u003d\u003e {"
+        "content": "      (value, key) \u003d\u003e this.provider.naming.getLambdaLayerLogicalId(key)"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (layer.Ref) {"
+        "content": "    );"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "            return layers[layer.Ref].path;"
+        "content": ""
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "    return BbPromise.all("
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "          const arnParts \u003d layer.split(\u0027:\u0027);"
+        "content": "      (this.options.functionObj.layers || this.serverless.service.provider.layers || [])"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "          const layerArn \u003d arnParts.slice(0, -1).join(\u0027:\u0027);"
+        "content": "        .map(layer \u003d\u003e {"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "          const layerVersion \u003d Number(arnParts.slice(-1)[0]);"
+        "content": "          if (layer.Ref) {"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "          const layerContentsPath \u003d path.join("
+        "content": "            return layers[layer.Ref].path;"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u0027.serverless\u0027, \u0027layers\u0027, arnParts[6], arnParts[7]);"
+        "content": "          }"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "          const layerContentsCachePath \u003d path.join("
+        "content": "          const arnParts \u003d layer.split(\u0027:\u0027);"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "            cachePath, \u0027layers\u0027, arnParts[6], arnParts[7]);"
+        "content": "          const layerArn \u003d arnParts.slice(0, -1).join(\u0027:\u0027);"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (fs.existsSync(layerContentsPath)) {"
+        "content": "          const layerVersion \u003d Number(arnParts.slice(-1)[0]);"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "            return layerContentsPath;"
+        "content": "          const layerContentsPath \u003d path.join("
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "            \u0027.serverless\u0027, \u0027layers\u0027, arnParts[6], arnParts[7]);"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "          let downloadPromise \u003d BbPromise.resolve();"
+        "content": "          const layerContentsCachePath \u003d path.join("
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (!fs.existsSync(layerContentsCachePath)) {"
+        "content": "            cachePath, \u0027layers\u0027, arnParts[6], arnParts[7]);"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.serverless.cli.log(`Downloading layer ${layer}...`);"
+        "content": "          if (fs.existsSync(layerContentsPath)) {"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "            mkdirp.sync(path.join(layerContentsCachePath));"
+        "content": "            return layerContentsPath;"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "            downloadPromise \u003d this.provider.request("
+        "content": "          }"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027Lambda\u0027, \u0027getLayerVersion\u0027, { LayerName: layerArn, VersionNumber: layerVersion })"
+        "content": "          let downloadPromise \u003d BbPromise.resolve();"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "              .then(layerInfo \u003d\u003e download("
+        "content": "          if (!fs.existsSync(layerContentsCachePath)) {"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "                layerInfo.Content.Location,"
+        "content": "            this.serverless.cli.log(`Downloading layer ${layer}...`);"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "                layerContentsCachePath,"
+        "content": "            mkdirp.sync(path.join(layerContentsCachePath));"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "                { extract: true }));"
+        "content": "            downloadPromise \u003d this.provider.request("
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "              \u0027Lambda\u0027, \u0027getLayerVersion\u0027, { LayerName: layerArn, VersionNumber: layerVersion })"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "          return downloadPromise"
+        "content": "              .then(layerInfo \u003d\u003e download("
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "            .then(() \u003d\u003e fse.copySync(layerContentsCachePath, layerContentsPath))"
+        "content": "                layerInfo.Content.Location,"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "            .then(() \u003d\u003e layerContentsPath);"
+        "content": "                layerContentsCachePath,"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "        }));"
+        "content": "                { extract: true }));"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "          }"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          return downloadPromise"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "  buildDockerImage(layerPaths) {"
+        "content": "            .then(() \u003d\u003e fse.copySync(layerContentsCachePath, layerContentsPath))"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "    const runtime \u003d this.getRuntime();"
+        "content": "            .then(() \u003d\u003e layerContentsPath);"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }));"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "    const imageName \u003d \u0027sls-docker\u0027;"
+        "content": ""
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  buildDockerImage(layerPaths) {"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
+        "content": "    const runtime \u003d this.getRuntime();"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "      let dockerfile \u003d `FROM lambci/lambda:${runtime}`;"
+        "content": ""
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "      for (const layerPath of layerPaths) {"
+        "content": ""
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "        dockerfile +\u003d `\\nADD --chown\u003dsbx_user1051:495 ${layerPath} /opt`;"
+        "content": "    const imageName \u003d \u0027sls-docker\u0027;"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": ""
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(path.join(\u0027.serverless\u0027, \u0027invokeLocal\u0027));"
+        "content": "    return new BbPromise((resolve, reject) \u003d\u003e {"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "      const dockerfilePath \u003d path.join(\u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027Dockerfile\u0027);"
+        "content": "      let dockerfile \u003d `FROM lambci/lambda:${runtime}`;"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.writeFileSync(dockerfilePath, dockerfile);"
+        "content": "      for (const layerPath of layerPaths) {"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.cli.log(\u0027Building Docker image...\u0027);"
+        "content": "        dockerfile +\u003d `\\nADD --chown\u003dsbx_user1051:495 ${layerPath} /opt`;"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027build\u0027, \u0027-t\u0027, imageName,"
+        "content": "      }"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": "        `${this.serverless.config.servicePath}`, \u0027-f\u0027, dockerfilePath]);"
+        "content": "      mkdirp.sync(path.join(\u0027.serverless\u0027, \u0027invokeLocal\u0027));"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(imageName)));"
+        "content": "      const dockerfilePath \u003d path.join(\u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027Dockerfile\u0027);"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "      fs.writeFileSync(dockerfilePath, dockerfile);"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "      this.serverless.cli.log(\u0027Building Docker image...\u0027);"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const docker \u003d spawn(\u0027docker\u0027, [\u0027build\u0027, \u0027-t\u0027, imageName,"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "  extractArtifact() {"
+        "content": "        `${this.serverless.config.servicePath}`, \u0027-f\u0027, dockerfilePath]);"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "    const artifact \u003d _.get(this.options.functionObj, \u0027package.artifact\u0027, _.get("
+        "content": "      docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(imageName)));"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.service, \u0027package.artifact\u0027"
+        "content": "    });"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "    ));"
+        "content": "  }"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (!artifact) {"
+        "content": ""
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "      return this.serverless.config.servicePath;"
+        "content": "  extractArtifact() {"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    const artifact \u003d _.get(this.options.functionObj, \u0027package.artifact\u0027, _.get("
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": "    return fs.readFileAsync(artifact)"
+        "content": "      this.serverless.service, \u0027package.artifact\u0027"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then(jszip.loadAsync)"
+        "content": "    ));"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then(zip \u003d\u003e BbPromise.all("
+        "content": "    if (!artifact) {"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "        Object.keys(zip.files)"
+        "content": "      return this.serverless.config.servicePath;"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "          .map(filename \u003d\u003e zip.files[filename].async(\u0027nodebuffer\u0027).then(fileData \u003d\u003e {"
+        "content": "    }"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (filename.endsWith(path.sep)) {"
+        "content": "    return fs.readFileAsync(artifact)"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": "              return BbPromise.resolve();"
+        "content": "      .then(jszip.loadAsync)"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "      .then(zip \u003d\u003e BbPromise.all("
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "            mkdirp.sync(path.join("
+        "content": "        Object.keys(zip.files)"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027, path.dirname(filename)));"
+        "content": "          .map(filename \u003d\u003e zip.files[filename].async(\u0027nodebuffer\u0027).then(fileData \u003d\u003e {"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": "            return fs.writeFileAsync(path.join("
+        "content": "            if (filename.endsWith(path.sep)) {"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027, filename), fileData, {"
+        "content": "              return BbPromise.resolve();"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": "                mode: zip.files[filename].unixPermissions,"
+        "content": "            }"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": "              });"
+        "content": "            mkdirp.sync(path.join("
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": "          }))))"
+        "content": "              \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027, path.dirname(filename)));"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then(() \u003d\u003e path.join("
+        "content": "            return fs.writeFileAsync(path.join("
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.serverless.config.servicePath, \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027));"
+        "content": "              \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027, filename), fileData, {"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "                mode: zip.files[filename].unixPermissions,"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "              });"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          }))))"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "  invokeLocalDocker() {"
+        "content": "      .then(() \u003d\u003e path.join("
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "    const handler \u003d this.options.functionObj.handler;"
+        "content": "        this.serverless.config.servicePath, \u0027.serverless\u0027, \u0027invokeLocal\u0027, \u0027artifact\u0027));"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "    return this.serverless.pluginManager.spawn(\u0027package\u0027).then(() \u003d\u003e"
+        "content": ""
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "      BbPromise.all(["
+        "content": "  getEnvVarsFromOptions() {"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.checkDockerDaemonStatus(),"
+        "content": "    const envVarsFromOptions \u003d {};"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.checkDockerImage().then(exists \u003d\u003e (exists ? {} : this.pullDockerImage())),"
+        "content": "    // Get the env vars from command line options in the form of --env KEY\u003dvalue"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.getLayerPaths().then(layerPaths \u003d\u003e this.buildDockerImage(layerPaths)),"
+        "content": "    _.concat(this.options.env || [])"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.extractArtifact(),"
+        "content": "    .forEach(itm \u003d\u003e {"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "      ])"
+        "content": "      const splitItm \u003d _.split(itm, \u0027\u003d\u0027);"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "        .then((results) \u003d\u003e new BbPromise((resolve, reject) \u003d\u003e {"
+        "content": "      envVarsFromOptions[splitItm[0]] \u003d splitItm.slice(1, splitItm.length).join(\u0027\u003d\u0027) || \u0027\u0027;"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "          const imageName \u003d results[2];"
+        "content": "    });"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "          const artifactPath \u003d results[3];"
+        "content": "    return envVarsFromOptions;"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "          const dockerArgsFromOptions \u003d this.getDockerArgsFromOptions();"
+        "content": "  }"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "          const dockerArgs \u003d _.concat(["
+        "content": ""
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u0027run\u0027, \u0027--rm\u0027, \u0027-v\u0027, `${artifactPath}:/var/task`,"
+        "content": "  invokeLocalDocker() {"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "          ], dockerArgsFromOptions, ["
+        "content": "    const handler \u003d this.options.functionObj.handler;"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "            imageName, handler, JSON.stringify(this.options.data),"
+        "content": ""
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "          ]);"
+        "content": "    return this.serverless.pluginManager.spawn(\u0027package\u0027).then(() \u003d\u003e"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "          const docker \u003d spawn(\u0027docker\u0027, dockerArgs);"
+        "content": "      BbPromise.all(["
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "          docker.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "        this.checkDockerDaemonStatus(),"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "          docker.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "        this.checkDockerImage().then(exists \u003d\u003e (exists ? {} : this.pullDockerImage())),"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "          docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(imageName)));"
+        "content": "        this.getLayerPaths().then(layerPaths \u003d\u003e this.buildDockerImage(layerPaths)),"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "        }))"
+        "content": "        this.extractArtifact(),"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": "      ])"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "        .then((results) \u003d\u003e new BbPromise((resolve, reject) \u003d\u003e {"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          const imageName \u003d results[2];"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "  getDockerArgsFromOptions() {"
+        "content": "          const artifactPath \u003d results[3];"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "    const dockerArgOptions \u003d this.options[\u0027docker-arg\u0027];"
+        "content": "          const configuredEnvVars \u003d this.getConfiguredEnvVars();"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "    const dockerArgsFromOptions \u003d _.flatMap(_.concat(dockerArgOptions || []), (dockerArgOption) \u003d\u003e {"
+        "content": "          const envVarsFromOptions \u003d this.getEnvVarsFromOptions();"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "      const splitItems \u003d dockerArgOption.split(\u0027 \u0027);"
+        "content": "          const envVars \u003d _.merge(configuredEnvVars, envVarsFromOptions);"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "      return [splitItems[0], splitItems.slice(1).join(\u0027 \u0027)];"
+        "content": "          const envVarsDockerArgs \u003d _.flatMap(envVars,"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "            (value, key) \u003d\u003e [\u0027--env\u0027, `${key}\u003d${value}`]"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "    return dockerArgsFromOptions;"
+        "content": "          );"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "          const dockerArgsFromOptions \u003d this.getDockerArgsFromOptions();"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          const dockerArgs \u003d _.concat(["
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "  invokeLocalPython(runtime, handlerPath, handlerName, event, context) {"
+        "content": "            \u0027run\u0027, \u0027--rm\u0027, \u0027-v\u0027, `${artifactPath}:/var/task`,"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": "    const input \u003d JSON.stringify({"
+        "content": "          ], envVarsDockerArgs, dockerArgsFromOptions, ["
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "      event: event || {},"
+        "content": "            imageName, handler, JSON.stringify(this.options.data),"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "      context: Object.assign("
+        "content": "          ]);"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "          const docker \u003d spawn(\u0027docker\u0027, dockerArgs);"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "          name: this.options.functionObj.name,"
+        "content": "          docker.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "          version: \u0027LATEST\u0027,"
+        "content": "          docker.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "          logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
+        "content": "          docker.on(\u0027exit\u0027, error \u003d\u003e (error ? reject(error) : resolve(imageName)));"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "          timeout: Number(this.options.functionObj.timeout)"
+        "content": "        }))"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": "            || Number(this.serverless.service.provider.timeout)"
+        "content": "    );"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "            || 6,"
+        "content": "  }"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "        },"
+        "content": ""
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "        context"
+        "content": "  getDockerArgsFromOptions() {"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "      ),"
+        "content": "    const dockerArgOptions \u003d this.options[\u0027docker-arg\u0027];"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "    const dockerArgsFromOptions \u003d _.flatMap(_.concat(dockerArgOptions || []), (dockerArgOption) \u003d\u003e {"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const splitItems \u003d dockerArgOption.split(\u0027 \u0027);"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (process.env.VIRTUAL_ENV) {"
+        "content": "      return [splitItems[0], splitItems.slice(1).join(\u0027 \u0027)];"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": "      const runtimeDir \u003d os.platform() \u003d\u003d\u003d \u0027win32\u0027 ? \u0027Scripts\u0027 : \u0027bin\u0027;"
+        "content": "    });"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": "      process.env.PATH \u003d ["
+        "content": "    return dockerArgsFromOptions;"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": "        path.join(process.env.VIRTUAL_ENV, runtimeDir),"
+        "content": "  }"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": "        path.delimiter,"
+        "content": ""
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": "        process.env.PATH,"
+        "content": "  invokeLocalPython(runtime, handlerPath, handlerName, event, context) {"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "      ].join(\u0027\u0027);"
+        "content": "    const input \u003d JSON.stringify({"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      event: event || {},"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      context: Object.assign("
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise(resolve \u003d\u003e {"
+        "content": "        {"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "      const python \u003d spawn(runtime.split(\u0027.\u0027)[0],"
+        "content": "          name: this.options.functionObj.name,"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "        [\u0027-u\u0027, path.join(__dirname, \u0027invoke.py\u0027), handlerPath, handlerName],"
+        "content": "          version: \u0027LATEST\u0027,"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "        { env: process.env }, { shell: true });"
+        "content": "          logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": "      python.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "          timeout: Number(this.options.functionObj.timeout)"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "      python.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "            || Number(this.serverless.service.provider.timeout)"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": "      python.stdin.write(input);"
+        "content": "            || 6,"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": "      python.stdin.end();"
+        "content": "        },"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "      python.on(\u0027close\u0027, () \u003d\u003e resolve());"
+        "content": "        context"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "      ),"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    });"
       },
       {
         "lineNumber": 391,
@@ -2744,441 +2744,441 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  callJavaBridge(artifactPath, className, handlerName, input) {"
+        "content": "    if (process.env.VIRTUAL_ENV) {"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise((resolve) \u003d\u003e fs.statAsync(artifactPath).then(() \u003d\u003e {"
+        "content": "      const runtimeDir \u003d os.platform() \u003d\u003d\u003d \u0027win32\u0027 ? \u0027Scripts\u0027 : \u0027bin\u0027;"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "      const java \u003d spawn(\u0027java\u0027, ["
+        "content": "      process.env.PATH \u003d ["
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "        `-DartifactPath\u003d${artifactPath}`,"
+        "content": "        path.join(process.env.VIRTUAL_ENV, runtimeDir),"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": "        `-DclassName\u003d${className}`,"
+        "content": "        path.delimiter,"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "        `-DhandlerName\u003d${handlerName}`,"
+        "content": "        process.env.PATH,"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027-jar\u0027,"
+        "content": "      ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "        path.join(__dirname, \u0027java\u0027, \u0027target\u0027, \u0027invoke-bridge-1.0.1.jar\u0027),"
+        "content": "    }"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": "      ], { shell: true });"
+        "content": ""
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    return new BbPromise(resolve \u003d\u003e {"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.cli.log(["
+        "content": "      const python \u003d spawn(runtime.split(\u0027.\u0027)[0],"
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027In order to get human-readable output,\u0027,"
+        "content": "        [\u0027-u\u0027, path.join(__dirname, \u0027invoke.py\u0027), handlerPath, handlerName],"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027 please implement \"toString()\" method of your \"ApiGatewayResponse\" object.\u0027,"
+        "content": "        { env: process.env }, { shell: true });"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "      ].join(\u0027\u0027));"
+        "content": "      python.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      python.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "      java.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "      python.stdin.write(input);"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "-"
         },
-        "content": "      java.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "      python.stdin.end();"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": "      java.stdin.write(input);"
+        "content": "      python.on(\u0027close\u0027, () \u003d\u003e resolve());"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "      java.stdin.end();"
+        "content": "    });"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "      java.on(\u0027close\u0027, () \u003d\u003e resolve());"
+        "content": "  }"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": "    }).catch(() \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "      throw new Error(`Artifact ${artifactPath} doesn\u0027t exists, please compile it first.`);"
+        "content": "  callJavaBridge(artifactPath, className, handlerName, input) {"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": "    }));"
+        "content": "    return new BbPromise((resolve) \u003d\u003e fs.statAsync(artifactPath).then(() \u003d\u003e {"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "      const java \u003d spawn(\u0027java\u0027, ["
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        `-DartifactPath\u003d${artifactPath}`,"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "  invokeLocalJava(runtime, className, handlerName, artifactPath, event, customContext) {"
+        "content": "        `-DclassName\u003d${className}`,"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
-        "content": "    const timeout \u003d Number(this.options.functionObj.timeout)"
+        "content": "        `-DhandlerName\u003d${handlerName}`,"
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "      || Number(this.serverless.service.provider.timeout)"
+        "content": "        \u0027-jar\u0027,"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "      || 6;"
+        "content": "        path.join(__dirname, \u0027java\u0027, \u0027target\u0027, \u0027invoke-bridge-1.0.1.jar\u0027),"
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
-        "content": "    const context \u003d {"
+        "content": "      ], { shell: true });"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
-        "content": "      name: this.options.functionObj.name,"
+        "content": ""
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
-        "content": "      version: \u0027LATEST\u0027,"
+        "content": "      this.serverless.cli.log(["
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
-        "content": "      logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
+        "content": "        \u0027In order to get human-readable output,\u0027,"
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
-        "content": "      timeout,"
+        "content": "        \u0027 please implement \"toString()\" method of your \"ApiGatewayResponse\" object.\u0027,"
       },
       {
         "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": "      ].join(\u0027\u0027));"
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": "    const input \u003d JSON.stringify({"
+        "content": ""
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": "      event: event || {},"
+        "content": "      java.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": "      context: customContext || context,"
+        "content": "      java.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "      java.stdin.write(input);"
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      java.stdin.end();"
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": "    const javaBridgePath \u003d path.join(__dirname, \u0027java\u0027);"
+        "content": "      java.on(\u0027close\u0027, () \u003d\u003e resolve());"
       },
       {
         "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
-        "content": "    const executablePath \u003d path.join(javaBridgePath, \u0027target\u0027);"
+        "content": "    }).catch(() \u003d\u003e {"
       },
       {
         "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      throw new Error(`Artifact ${artifactPath} doesn\u0027t exists, please compile it first.`);"
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise(resolve \u003d\u003e fs.statAsync(executablePath)"
+        "content": "    }));"
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then(() \u003d\u003e this.callJavaBridge(artifactPath, className, handlerName, input))"
+        "content": "  }"
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then(resolve)"
+        "content": ""
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
-        "content": "      .catch(() \u003d\u003e {"
+        "content": "  invokeLocalJava(runtime, className, handlerName, artifactPath, event, customContext) {"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
-        "content": "        const mvn \u003d spawn(\u0027mvn\u0027, ["
+        "content": "    const timeout \u003d Number(this.options.functionObj.timeout)"
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u0027package\u0027,"
+        "content": "      || Number(this.serverless.service.provider.timeout)"
       },
       {
         "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u0027-f\u0027,"
+        "content": "      || 6;"
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": "          path.join(javaBridgePath, \u0027pom.xml\u0027),"
+        "content": "    const context \u003d {"
       },
       {
         "lineNumber": 443,
         "author": {
           "gitId": "-"
         },
-        "content": "        ], { shell: true });"
+        "content": "      name: this.options.functionObj.name,"
       },
       {
         "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      version: \u0027LATEST\u0027,"
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.serverless.cli"
+        "content": "      logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
-        "content": "          .log(\u0027Building Java bridge, first invocation might take a bit longer.\u0027);"
+        "content": "      timeout,"
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    };"
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
-        "content": "        mvn.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(`mvn - ${buf.toString()}`));"
+        "content": "    const input \u003d JSON.stringify({"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
-        "content": "        mvn.stdin.end();"
+        "content": "      event: event || {},"
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      context: customContext || context,"
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
-        "content": "        mvn.on(\u0027close\u0027, () \u003d\u003e this.callJavaBridge(artifactPath, className, handlerName, input)"
+        "content": "    });"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
-        "content": "          .then(resolve));"
+        "content": ""
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
-        "content": "      }));"
+        "content": "    const javaBridgePath \u003d path.join(__dirname, \u0027java\u0027);"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    const executablePath \u003d path.join(javaBridgePath, \u0027target\u0027);"
       },
       {
         "lineNumber": 455,
@@ -3192,861 +3192,861 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  invokeLocalRuby(runtime, handlerPath, handlerName, event, context) {"
+        "content": "    return new BbPromise(resolve \u003d\u003e fs.statAsync(executablePath)"
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "-"
         },
-        "content": "    const input \u003d JSON.stringify({"
+        "content": "      .then(() \u003d\u003e this.callJavaBridge(artifactPath, className, handlerName, input))"
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": "      event: event || {},"
+        "content": "      .then(resolve)"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": "      context,"
+        "content": "      .catch(() \u003d\u003e {"
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "        const mvn \u003d spawn(\u0027mvn\u0027, ["
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          \u0027package\u0027,"
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise(resolve \u003d\u003e {"
+        "content": "          \u0027-f\u0027,"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": "      const ruby \u003d spawn(runtime,"
+        "content": "          path.join(javaBridgePath, \u0027pom.xml\u0027),"
       },
       {
         "lineNumber": 464,
         "author": {
           "gitId": "-"
         },
-        "content": "        [path.join(__dirname, \u0027invoke.rb\u0027), handlerPath, handlerName],"
+        "content": "        ], { shell: true });"
       },
       {
         "lineNumber": 465,
         "author": {
           "gitId": "-"
         },
-        "content": "        { env: process.env }, { shell: true });"
+        "content": ""
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
-        "content": "      ruby.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "        this.serverless.cli"
       },
       {
         "lineNumber": 467,
         "author": {
           "gitId": "-"
         },
-        "content": "      ruby.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
+        "content": "          .log(\u0027Building Java bridge, first invocation might take a bit longer.\u0027);"
       },
       {
         "lineNumber": 468,
         "author": {
           "gitId": "-"
         },
-        "content": "      ruby.stdin.write(input);"
+        "content": ""
       },
       {
         "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
-        "content": "      ruby.stdin.end();"
+        "content": "        mvn.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(`mvn - ${buf.toString()}`));"
       },
       {
         "lineNumber": 470,
         "author": {
           "gitId": "-"
         },
-        "content": "      ruby.on(\u0027close\u0027, () \u003d\u003e resolve());"
+        "content": "        mvn.stdin.end();"
       },
       {
         "lineNumber": 471,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": ""
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "        mvn.on(\u0027close\u0027, () \u003d\u003e this.callJavaBridge(artifactPath, className, handlerName, input)"
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          .then(resolve));"
       },
       {
         "lineNumber": 474,
         "author": {
           "gitId": "-"
         },
-        "content": "  invokeLocalNodeJs(handlerPath, handlerName, event, customContext) {"
+        "content": "      }));"
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "-"
         },
-        "content": "    let lambda;"
+        "content": "  }"
       },
       {
         "lineNumber": 476,
         "author": {
           "gitId": "-"
         },
-        "content": "    let pathToHandler;"
+        "content": ""
       },
       {
         "lineNumber": 477,
         "author": {
           "gitId": "-"
         },
-        "content": "    let hasResponded \u003d false;"
+        "content": "  invokeLocalRuby(runtime, handlerPath, handlerName, event, context) {"
       },
       {
         "lineNumber": 478,
         "author": {
           "gitId": "-"
         },
-        "content": "    try {"
+        "content": "    const input \u003d JSON.stringify({"
       },
       {
         "lineNumber": 479,
         "author": {
           "gitId": "-"
         },
-        "content": "      /*"
+        "content": "      event: event || {},"
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "-"
         },
-        "content": "       * we need require() here to load the handler from the file system"
+        "content": "      context,"
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "-"
         },
-        "content": "       * which the user has to supply by passing the function name"
+        "content": "    });"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "-"
         },
-        "content": "       */"
+        "content": ""
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "-"
         },
-        "content": "      pathToHandler \u003d path.join("
+        "content": "    return new BbPromise(resolve \u003d\u003e {"
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.serverless.config.servicePath,"
+        "content": "      const ruby \u003d spawn(runtime,"
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.extraServicePath || \u0027\u0027,"
+        "content": "        [path.join(__dirname, \u0027invoke.rb\u0027), handlerPath, handlerName],"
       },
       {
         "lineNumber": 486,
         "author": {
           "gitId": "-"
         },
-        "content": "        handlerPath"
+        "content": "        { env: process.env }, { shell: true });"
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "-"
         },
-        "content": "      );"
+        "content": "      ruby.stdout.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "-"
         },
-        "content": "      const handlersContainer \u003d require( // eslint-disable-line global-require"
+        "content": "      ruby.stderr.on(\u0027data\u0027, (buf) \u003d\u003e this.serverless.cli.consoleLog(buf.toString()));"
       },
       {
         "lineNumber": 489,
         "author": {
           "gitId": "-"
         },
-        "content": "        pathToHandler"
+        "content": "      ruby.stdin.write(input);"
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "-"
         },
-        "content": "      );"
+        "content": "      ruby.stdin.end();"
       },
       {
         "lineNumber": 491,
         "author": {
           "gitId": "-"
         },
-        "content": "      lambda \u003d handlersContainer[handlerName];"
+        "content": "      ruby.on(\u0027close\u0027, () \u003d\u003e resolve());"
       },
       {
         "lineNumber": 492,
         "author": {
           "gitId": "-"
         },
-        "content": "    } catch (error) {"
+        "content": "    });"
       },
       {
         "lineNumber": 493,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.cli.consoleLog(chalk.red(inspect(error)));"
+        "content": "  }"
       },
       {
         "lineNumber": 494,
         "author": {
           "gitId": "-"
         },
-        "content": "      throw new Error(`Exception encountered when loading ${pathToHandler}`);"
+        "content": ""
       },
       {
         "lineNumber": 495,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "  invokeLocalNodeJs(handlerPath, handlerName, event, customContext) {"
       },
       {
         "lineNumber": 496,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    let lambda;"
       },
       {
         "lineNumber": 497,
         "author": {
           "gitId": "-"
         },
-        "content": "    function handleError(err) {"
+        "content": "    let pathToHandler;"
       },
       {
         "lineNumber": 498,
         "author": {
           "gitId": "-"
         },
-        "content": "      let errorResult;"
+        "content": "    let hasResponded \u003d false;"
       },
       {
         "lineNumber": 499,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (err instanceof Error) {"
+        "content": "    try {"
       },
       {
         "lineNumber": 500,
         "author": {
           "gitId": "-"
         },
-        "content": "        errorResult \u003d {"
+        "content": "      /*"
       },
       {
         "lineNumber": 501,
         "author": {
           "gitId": "-"
         },
-        "content": "          errorMessage: err.message,"
+        "content": "       * we need require() here to load the handler from the file system"
       },
       {
         "lineNumber": 502,
         "author": {
           "gitId": "-"
         },
-        "content": "          errorType: err.constructor.name,"
+        "content": "       * which the user has to supply by passing the function name"
       },
       {
         "lineNumber": 503,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "          stackTrace: err.stack.split(\u0027\\n\u0027),"
+        "content": "       */"
       },
       {
         "lineNumber": 504,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "      pathToHandler \u003d path.join("
       },
       {
         "lineNumber": 505,
         "author": {
           "gitId": "-"
         },
-        "content": "      } else {"
+        "content": "        this.serverless.config.servicePath,"
       },
       {
         "lineNumber": 506,
         "author": {
           "gitId": "-"
         },
-        "content": "        errorResult \u003d {"
+        "content": "        this.options.extraServicePath || \u0027\u0027,"
       },
       {
         "lineNumber": 507,
         "author": {
           "gitId": "-"
         },
-        "content": "          errorMessage: err,"
+        "content": "        handlerPath"
       },
       {
         "lineNumber": 508,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "      );"
       },
       {
         "lineNumber": 509,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      const handlersContainer \u003d require( // eslint-disable-line global-require"
       },
       {
         "lineNumber": 510,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        pathToHandler"
       },
       {
         "lineNumber": 511,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.cli.consoleLog(chalk.red(JSON.stringify(errorResult, null, 4)));"
+        "content": "      );"
       },
       {
         "lineNumber": 512,
         "author": {
           "gitId": "-"
         },
-        "content": "      process.exitCode \u003d 1;"
+        "content": "      lambda \u003d handlersContainer[handlerName];"
       },
       {
         "lineNumber": 513,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    } catch (error) {"
       },
       {
         "lineNumber": 514,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      this.serverless.cli.consoleLog(chalk.red(inspect(error)));"
       },
       {
         "lineNumber": 515,
         "author": {
           "gitId": "-"
         },
-        "content": "    function handleResult(result) {"
+        "content": "      throw new Error(`Exception encountered when loading ${pathToHandler}`);"
       },
       {
         "lineNumber": 516,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (result instanceof Error) {"
+        "content": "    }"
       },
       {
         "lineNumber": 517,
         "author": {
           "gitId": "-"
         },
-        "content": "        handleError.call(this, result);"
+        "content": ""
       },
       {
         "lineNumber": 518,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "    function handleError(err) {"
       },
       {
         "lineNumber": 519,
         "author": {
           "gitId": "-"
         },
-        "content": "      } else if (result.headers \u0026\u0026 result.headers[\u0027Content-Type\u0027] \u003d\u003d\u003d \u0027application/json\u0027) {"
+        "content": "      let errorResult;"
       },
       {
         "lineNumber": 520,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (result.body) {"
+        "content": "      if (err instanceof Error) {"
       },
       {
         "lineNumber": 521,
         "author": {
           "gitId": "-"
         },
-        "content": "          try {"
+        "content": "        errorResult \u003d {"
       },
       {
         "lineNumber": 522,
         "author": {
           "gitId": "-"
         },
-        "content": "            Object.assign(result, {"
+        "content": "          errorMessage: err.message,"
       },
       {
         "lineNumber": 523,
         "author": {
           "gitId": "-"
         },
-        "content": "              body: JSON.parse(result.body),"
+        "content": "          errorType: err.constructor.name,"
       },
       {
         "lineNumber": 524,
         "author": {
-          "gitId": "-"
+          "gitId": "Xenonym"
         },
-        "content": "            });"
+        "content": "          stackTrace: err.stack.split(\u0027\\n\u0027),"
       },
       {
         "lineNumber": 525,
         "author": {
           "gitId": "-"
         },
-        "content": "          } catch (e) {"
+        "content": "        };"
       },
       {
         "lineNumber": 526,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw new Error(\u0027Content-Type of response is application/json but body is not json\u0027);"
+        "content": "      } else {"
       },
       {
         "lineNumber": 527,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "        errorResult \u003d {"
       },
       {
         "lineNumber": 528,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "          errorMessage: err,"
       },
       {
         "lineNumber": 529,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        };"
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      }"
       },
       {
         "lineNumber": 531,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.cli.consoleLog(JSON.stringify(result, null, 4));"
+        "content": ""
       },
       {
         "lineNumber": 532,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      this.serverless.cli.consoleLog(chalk.red(JSON.stringify(errorResult, null, 4)));"
       },
       {
         "lineNumber": 533,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      process.exitCode \u003d 1;"
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "-"
         },
-        "content": "    return new BbPromise((resolve) \u003d\u003e {"
+        "content": "    }"
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "-"
         },
-        "content": "      const callback \u003d (err, result) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!hasResponded) {"
+        "content": "    function handleResult(result) {"
       },
       {
         "lineNumber": 537,
         "author": {
           "gitId": "-"
         },
-        "content": "          hasResponded \u003d true;"
+        "content": "      if (result instanceof Error) {"
       },
       {
         "lineNumber": 538,
         "author": {
           "gitId": "-"
         },
-        "content": "          if (err) {"
+        "content": "        handleError.call(this, result);"
       },
       {
         "lineNumber": 539,
         "author": {
           "gitId": "-"
         },
-        "content": "            handleError.call(this, err);"
+        "content": "        return;"
       },
       {
         "lineNumber": 540,
         "author": {
           "gitId": "-"
         },
-        "content": "          } else if (result) {"
+        "content": "      } else if (result.headers \u0026\u0026 result.headers[\u0027Content-Type\u0027] \u003d\u003d\u003d \u0027application/json\u0027) {"
       },
       {
         "lineNumber": 541,
         "author": {
           "gitId": "-"
         },
-        "content": "            handleResult.call(this, result);"
+        "content": "        if (result.body) {"
       },
       {
         "lineNumber": 542,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "          try {"
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            Object.assign(result, {"
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "-"
         },
-        "content": "        resolve();"
+        "content": "              body: JSON.parse(result.body),"
       },
       {
         "lineNumber": 545,
         "author": {
           "gitId": "-"
         },
-        "content": "      };"
+        "content": "            });"
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          } catch (e) {"
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "-"
         },
-        "content": "      const startTime \u003d new Date();"
+        "content": "            throw new Error(\u0027Content-Type of response is application/json but body is not json\u0027);"
       },
       {
         "lineNumber": 548,
         "author": {
           "gitId": "-"
         },
-        "content": "      const timeout \u003d Number(this.options.functionObj.timeout)"
+        "content": "          }"
       },
       {
         "lineNumber": 549,
         "author": {
           "gitId": "-"
         },
-        "content": "        || Number(this.serverless.service.provider.timeout)"
+        "content": "        }"
       },
       {
         "lineNumber": 550,
         "author": {
           "gitId": "-"
         },
-        "content": "        || 6;"
+        "content": "      }"
       },
       {
         "lineNumber": 551,
         "author": {
           "gitId": "-"
         },
-        "content": "      let context \u003d {"
+        "content": ""
       },
       {
         "lineNumber": 552,
         "author": {
           "gitId": "-"
         },
-        "content": "        awsRequestId: \u0027id\u0027,"
+        "content": "      this.serverless.cli.consoleLog(JSON.stringify(result, null, 4));"
       },
       {
         "lineNumber": 553,
         "author": {
           "gitId": "-"
         },
-        "content": "        invokeid: \u0027id\u0027,"
+        "content": "    }"
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "-"
         },
-        "content": "        logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
+        "content": ""
       },
       {
         "lineNumber": 555,
         "author": {
           "gitId": "-"
         },
-        "content": "        logStreamName: \u00272015/09/22/[HEAD]13370a84ca4ed8b77c427af260\u0027,"
+        "content": "    return new BbPromise((resolve) \u003d\u003e {"
       },
       {
         "lineNumber": 556,
         "author": {
           "gitId": "-"
         },
-        "content": "        functionVersion: \u0027HEAD\u0027,"
+        "content": "      const callback \u003d (err, result) \u003d\u003e {"
       },
       {
         "lineNumber": 557,
         "author": {
           "gitId": "-"
         },
-        "content": "        isDefaultFunctionVersion: true,"
+        "content": "        if (!hasResponded) {"
       },
       {
         "lineNumber": 558,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          hasResponded \u003d true;"
       },
       {
         "lineNumber": 559,
         "author": {
           "gitId": "-"
         },
-        "content": "        functionName: this.options.functionObj.name,"
+        "content": "          if (err) {"
       },
       {
         "lineNumber": 560,
         "author": {
           "gitId": "-"
         },
-        "content": "        memoryLimitInMB: \u00271024\u0027,"
+        "content": "            handleError.call(this, err);"
       },
       {
         "lineNumber": 561,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          } else if (result) {"
       },
       {
         "lineNumber": 562,
         "author": {
           "gitId": "-"
         },
-        "content": "        succeed(result) {"
+        "content": "            handleResult.call(this, result);"
       },
       {
         "lineNumber": 563,
         "author": {
           "gitId": "-"
         },
-        "content": "          return callback(null, result);"
+        "content": "          }"
       },
       {
         "lineNumber": 564,
         "author": {
           "gitId": "-"
         },
-        "content": "        },"
+        "content": "        }"
       },
       {
         "lineNumber": 565,
         "author": {
           "gitId": "-"
         },
-        "content": "        fail(error) {"
+        "content": "        resolve();"
       },
       {
         "lineNumber": 566,
         "author": {
           "gitId": "-"
         },
-        "content": "          return callback(error);"
+        "content": "      };"
       },
       {
         "lineNumber": 567,
         "author": {
           "gitId": "-"
         },
-        "content": "        },"
+        "content": ""
       },
       {
         "lineNumber": 568,
         "author": {
           "gitId": "-"
         },
-        "content": "        done(error, result) {"
+        "content": "      const startTime \u003d new Date();"
       },
       {
         "lineNumber": 569,
         "author": {
           "gitId": "-"
         },
-        "content": "          return callback(error, result);"
+        "content": "      const timeout \u003d Number(this.options.functionObj.timeout)"
       },
       {
         "lineNumber": 570,
         "author": {
           "gitId": "-"
         },
-        "content": "        },"
+        "content": "        || Number(this.serverless.service.provider.timeout)"
       },
       {
         "lineNumber": 571,
         "author": {
           "gitId": "-"
         },
-        "content": "        getRemainingTimeInMillis() {"
+        "content": "        || 6;"
       },
       {
         "lineNumber": 572,
         "author": {
           "gitId": "-"
         },
-        "content": "          return Math.max((timeout * 1000) - ((new Date()).valueOf() - startTime.valueOf()), 0);"
+        "content": "      let context \u003d {"
       },
       {
         "lineNumber": 573,
         "author": {
           "gitId": "-"
         },
-        "content": "        },"
+        "content": "        awsRequestId: \u0027id\u0027,"
       },
       {
         "lineNumber": 574,
         "author": {
           "gitId": "-"
         },
-        "content": "      };"
+        "content": "        invokeid: \u0027id\u0027,"
       },
       {
         "lineNumber": 575,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        logGroupName: this.provider.naming.getLogGroupName(this.options.functionObj.name),"
       },
       {
         "lineNumber": 576,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (customContext) {"
+        "content": "        logStreamName: \u00272015/09/22/[HEAD]13370a84ca4ed8b77c427af260\u0027,"
       },
       {
         "lineNumber": 577,
         "author": {
           "gitId": "-"
         },
-        "content": "        context \u003d customContext;"
+        "content": "        functionVersion: \u0027HEAD\u0027,"
       },
       {
         "lineNumber": 578,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        isDefaultFunctionVersion: true,"
       },
       {
         "lineNumber": 579,
@@ -4060,101 +4060,248 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      const maybeThennable \u003d lambda(event, context, callback);"
+        "content": "        functionName: this.options.functionObj.name,"
       },
       {
         "lineNumber": 581,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!_.isUndefined(maybeThennable)) {"
+        "content": "        memoryLimitInMB: \u00271024\u0027,"
       },
       {
         "lineNumber": 582,
         "author": {
           "gitId": "-"
         },
-        "content": "        return BbPromise.resolve(maybeThennable)"
+        "content": ""
       },
       {
         "lineNumber": 583,
         "author": {
           "gitId": "-"
         },
-        "content": "          .then("
+        "content": "        succeed(result) {"
       },
       {
         "lineNumber": 584,
         "author": {
           "gitId": "-"
         },
-        "content": "            callback.bind(this, null),"
+        "content": "          return callback(null, result);"
       },
       {
         "lineNumber": 585,
         "author": {
           "gitId": "-"
         },
-        "content": "            callback.bind(this)"
+        "content": "        },"
       },
       {
         "lineNumber": 586,
         "author": {
           "gitId": "-"
         },
-        "content": "          );"
+        "content": "        fail(error) {"
       },
       {
         "lineNumber": 587,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "          return callback(error);"
       },
       {
         "lineNumber": 588,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        },"
       },
       {
         "lineNumber": 589,
         "author": {
           "gitId": "-"
         },
-        "content": "      return maybeThennable;"
+        "content": "        done(error, result) {"
       },
       {
         "lineNumber": 590,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "          return callback(error, result);"
       },
       {
         "lineNumber": 591,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "        },"
       },
       {
         "lineNumber": 592,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "        getRemainingTimeInMillis() {"
       },
       {
         "lineNumber": 593,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          return Math.max((timeout * 1000) - ((new Date()).valueOf() - startTime.valueOf()), 0);"
       },
       {
         "lineNumber": 594,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        },"
+      },
+      {
+        "lineNumber": 595,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      };"
+      },
+      {
+        "lineNumber": 596,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 597,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (customContext) {"
+      },
+      {
+        "lineNumber": 598,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        context \u003d customContext;"
+      },
+      {
+        "lineNumber": 599,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 600,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 601,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const maybeThennable \u003d lambda(event, context, callback);"
+      },
+      {
+        "lineNumber": 602,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      if (!_.isUndefined(maybeThennable)) {"
+      },
+      {
+        "lineNumber": 603,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return BbPromise.resolve(maybeThennable)"
+      },
+      {
+        "lineNumber": 604,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          .then("
+      },
+      {
+        "lineNumber": 605,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            callback.bind(this, null),"
+      },
+      {
+        "lineNumber": 606,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            callback.bind(this)"
+      },
+      {
+        "lineNumber": 607,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          );"
+      },
+      {
+        "lineNumber": 608,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 609,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 610,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      return maybeThennable;"
+      },
+      {
+        "lineNumber": 611,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 612,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 613,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 614,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 615,
         "author": {
           "gitId": "-"
         },
@@ -4163,7 +4310,7 @@
     ],
     "authorContributionMap": {
       "Xenonym": 1,
-      "-": 593
+      "-": 614
     }
   },
   {
