@@ -3404,483 +3404,483 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                || bracePolicy \u003d\u003d RightCurlyOption.ALONE_OR_SINGLELINE"
+        "content": "                || (bracePolicy \u003d\u003d RightCurlyOption.ALONE_OR_SINGLELINE"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 shouldBeAloneOnLineWithAloneOrSinglelineOption(details, targetSrcLine)"
+        "content": "                    || details.shouldCheckLastRcurly)"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "                || details.shouldCheckLastRcurly"
+        "content": "                    \u0026\u0026 shouldBeAloneOnLineWithNotAloneOption(details, targetSrcLine);"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u0026\u0026 details.rcurly.getLineNo() \u003d\u003d details.nextToken.getLineNo();"
+        "content": "    }"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * Whether right curly should be alone on line when ALONE option is used."
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Whether right curly should be alone on line when ALONE option is used."
+        "content": "     * @param details details for validation."
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param details details for validation."
+        "content": "     * @param targetSrcLine A string with contents of rcurly\u0027s line"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param targetSrcLine A string with contents of rcurly\u0027s line"
+        "content": "     * @return true, if right curly should be alone on line when ALONE option is used."
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return true, if right curly should be alone on line when ALONE option is used."
+        "content": "     */"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    private static boolean shouldBeAloneOnLineWithAloneOption(Details details,"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static boolean shouldBeAloneOnLineWithAloneOption(Details details,"
-      },
-      {
-        "lineNumber": 238,
-        "author": {
-          "gitId": "-"
-        },
         "content": "                                                              String targetSrcLine) {"
       },
       {
-        "lineNumber": 239,
+        "lineNumber": 238,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "        return !isAloneOnLine(details, targetSrcLine);"
       },
       {
-        "lineNumber": 240,
+        "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * Whether right curly should be alone on line when ALONE_OR_SINGLELINE or SAME option is used."
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Whether right curly should be alone on line when ALONE_OR_SINGLELINE option is used."
+        "content": "     * @param details details for validation."
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param details details for validation."
+        "content": "     * @param targetSrcLine A string with contents of rcurly\u0027s line"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param targetSrcLine A string with contents of rcurly\u0027s line"
+        "content": "     * @return true, if right curly should be alone on line"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return true, if right curly should be alone on line"
+        "content": "     *         when ALONE_OR_SINGLELINE or SAME option is used."
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "     *         when ALONE_OR_SINGLELINE option is used."
+        "content": "     */"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    private static boolean shouldBeAloneOnLineWithNotAloneOption(Details details,"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static boolean shouldBeAloneOnLineWithAloneOrSinglelineOption(Details details,"
+        "content": "                                                                 String targetSrcLine) {"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                          String targetSrcLine) {"
+        "content": "        return shouldBeAloneOnLineWithAloneOption(details, targetSrcLine)"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "        return !isAloneOnLine(details, targetSrcLine)"
+        "content": "                \u0026\u0026 !isSingleLineBlock(details);"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 !isSingleLineBlock(details)"
+        "content": "    }"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 !isEmptyBody(details.lcurly);"
+        "content": ""
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Checks whether right curly is alone on a line."
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * @param details for validation."
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Checks whether right curly is alone on a line."
+        "content": "     * @param targetSrcLine A string with contents of rcurly\u0027s line"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param details for validation."
+        "content": "     * @return true if right curly is alone on a line."
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param targetSrcLine A string with contents of rcurly\u0027s line"
+        "content": "     */"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return true if right curly is alone on a line."
+        "content": "    private static boolean isAloneOnLine(Details details, String targetSrcLine) {"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        final DetailAST rcurly \u003d details.rcurly;"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static boolean isAloneOnLine(Details details, String targetSrcLine) {"
+        "content": "        final DetailAST nextToken \u003d details.nextToken;"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DetailAST rcurly \u003d details.rcurly;"
+        "content": "        return (rcurly.getLineNo() !\u003d nextToken.getLineNo() || skipDoubleBraceInstInit(details))"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DetailAST nextToken \u003d details.nextToken;"
+        "content": "                \u0026\u0026 CommonUtil.hasWhitespaceBefore(details.rcurly.getColumnNo(), targetSrcLine);"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "        return (rcurly.getLineNo() !\u003d nextToken.getLineNo() || skipDoubleBraceInstInit(details))"
+        "content": "    }"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 CommonUtil.hasWhitespaceBefore(details.rcurly.getColumnNo(), targetSrcLine);"
+        "content": ""
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * This method determines if the double brace initialization should be skipped over by the"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * check. Double brace initializations are treated differently. The corresponding inner"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "     * This method determines if the double brace initialization should be skipped over by the"
+        "content": "     * rcurly is treated as if it was alone on line even when it may be followed by another"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "     * check. Double brace initializations are treated differently. The corresponding inner"
+        "content": "     * rcurly and a semi, raising no violations."
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "     * rcurly is treated as if it was alone on line even when it may be followed by another"
+        "content": "     * \u003ci\u003ePlease do note though that the line should not contain anything other than the following"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "     * rcurly and a semi, raising no violations."
+        "content": "     * right curly and the semi following it or else violations will be raised.\u003c/i\u003e"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "     * \u003ci\u003ePlease do note though that the line should not contain anything other than the following"
+        "content": "     * Only the kind of double brace initializations shown in the following example code will be"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "     * right curly and the semi following it or else violations will be raised.\u003c/i\u003e"
+        "content": "     * skipped over:\u003cbr\u003e"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Only the kind of double brace initializations shown in the following example code will be"
+        "content": "     * \u003cpre\u003e"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "     * skipped over:\u003cbr\u003e"
+        "content": "     *     {@code Map\u003cString, String\u003e map \u003d new LinkedHashMap\u003c\u003e() {{"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "     * \u003cpre\u003e"
+        "content": "     *           put(\"alpha\", \"man\");"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "     *     {@code Map\u003cString, String\u003e map \u003d new LinkedHashMap\u003c\u003e() {{"
+        "content": "     *       }}; // no violation}"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "     *           put(\"alpha\", \"man\");"
+        "content": "     * \u003c/pre\u003e"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": "     *       }}; // no violation}"
+        "content": "     *"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "     * \u003c/pre\u003e"
+        "content": "     * @param details {@link Details} object containing the details relevant to the rcurly"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": "     * @return if the double brace initialization rcurly should be skipped over by the check"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param details {@link Details} object containing the details relevant to the rcurly"
+        "content": "     */"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return if the double brace initialization rcurly should be skipped over by the check"
+        "content": "    private static boolean skipDoubleBraceInstInit(Details details) {"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        final DetailAST rcurly \u003d details.rcurly;"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static boolean skipDoubleBraceInstInit(Details details) {"
+        "content": "        final DetailAST tokenAfterNextToken \u003d Details.getNextToken(details.nextToken);"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DetailAST rcurly \u003d details.rcurly;"
+        "content": "        return rcurly.getParent().getParent().getType() \u003d\u003d TokenTypes.INSTANCE_INIT"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DetailAST tokenAfterNextToken \u003d Details.getNextToken(details.nextToken);"
+        "content": "                \u0026\u0026 details.nextToken.getType() \u003d\u003d TokenTypes.RCURLY"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "        return rcurly.getParent().getParent().getType() \u003d\u003d TokenTypes.INSTANCE_INIT"
+        "content": "                \u0026\u0026 tokenAfterNextToken.getType() \u003d\u003d TokenTypes.SEMI"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 details.nextToken.getType() \u003d\u003d TokenTypes.RCURLY"
+        "content": "                \u0026\u0026 rcurly.getLineNo() !\u003d Details.getNextToken(tokenAfterNextToken).getLineNo();"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 tokenAfterNextToken.getType() \u003d\u003d TokenTypes.SEMI"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 rcurly.getLineNo() !\u003d Details.getNextToken(tokenAfterNextToken).getLineNo();"
+        "content": "    }"
       },
       {
         "lineNumber": 294,
@@ -3894,1253 +3894,1253 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Checks whether block has a single-line format."
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * @param details for validation."
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Checks whether block has a single-line format."
+        "content": "     * @return true if block has single-line format."
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param details for validation."
+        "content": "     */"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return true if block has single-line format."
+        "content": "    private static boolean isSingleLineBlock(Details details) {"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        final DetailAST rcurly \u003d details.rcurly;"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static boolean isSingleLineBlock(Details details) {"
+        "content": "        final DetailAST lcurly \u003d details.lcurly;"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DetailAST rcurly \u003d details.rcurly;"
+        "content": "        DetailAST nextToken \u003d details.nextToken;"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DetailAST lcurly \u003d details.lcurly;"
+        "content": "        while (nextToken.getType() \u003d\u003d TokenTypes.LITERAL_ELSE) {"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": "        DetailAST nextToken \u003d details.nextToken;"
+        "content": "            nextToken \u003d Details.getNextToken(nextToken);"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": "        while (nextToken.getType() \u003d\u003d TokenTypes.LITERAL_ELSE) {"
+        "content": "        }"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "            nextToken \u003d Details.getNextToken(nextToken);"
+        "content": "        if (nextToken.getType() \u003d\u003d TokenTypes.DO_WHILE) {"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            final DetailAST doWhileSemi \u003d nextToken.getParent().getLastChild();"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (nextToken.getType() \u003d\u003d TokenTypes.DO_WHILE) {"
+        "content": "            nextToken \u003d Details.getNextToken(doWhileSemi);"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
-        "content": "            final DetailAST doWhileSemi \u003d nextToken.getParent().getLastChild();"
+        "content": "        }"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": "            nextToken \u003d Details.getNextToken(doWhileSemi);"
+        "content": "        return rcurly.getLineNo() \u003d\u003d lcurly.getLineNo()"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                \u0026\u0026 rcurly.getLineNo() !\u003d nextToken.getLineNo();"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": "        return rcurly.getLineNo() \u003d\u003d lcurly.getLineNo()"
+        "content": "    }"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0026\u0026 rcurly.getLineNo() !\u003d nextToken.getLineNo();"
+        "content": ""
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     * Checks if right curly has line break before."
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "     * @param rightCurly right curly token."
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Checks if definition body is empty."
+        "content": "     * @return true, if right curly has line break before."
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param lcurly left curly."
+        "content": "     */"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return true if definition body is empty."
+        "content": "    private static boolean hasLineBreakBefore(DetailAST rightCurly) {"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        DetailAST previousToken \u003d rightCurly.getPreviousSibling();"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static boolean isEmptyBody(DetailAST lcurly) {"
+        "content": "        if (previousToken \u003d\u003d null) {"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "        boolean result \u003d false;"
+        "content": "            previousToken \u003d rightCurly.getParent();"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (lcurly.getParent().getType() \u003d\u003d TokenTypes.OBJBLOCK) {"
+        "content": "        }"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (lcurly.getNextSibling().getType() \u003d\u003d TokenTypes.RCURLY) {"
+        "content": "        return rightCurly.getLineNo() !\u003d previousToken.getLineNo();"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "                result \u003d true;"
+        "content": "    }"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    /**"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "        else if (lcurly.getFirstChild().getType() \u003d\u003d TokenTypes.RCURLY) {"
+        "content": "     * Structure that contains all details for validation."
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "            result \u003d true;"
+        "content": "     */"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    private static final class Details {"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "        return result;"
+        "content": ""
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        /** Right curly. */"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private final DetailAST rcurly;"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        /** Left curly. */"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Checks if right curly has line break before."
+        "content": "        private final DetailAST lcurly;"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @param rightCurly right curly token."
+        "content": "        /** Next token. */"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return true, if right curly has line break before."
+        "content": "        private final DetailAST nextToken;"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "        /** Should check last right curly. */"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static boolean hasLineBreakBefore(DetailAST rightCurly) {"
+        "content": "        private final boolean shouldCheckLastRcurly;"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DetailAST previousToken \u003d rightCurly.getPreviousSibling();"
+        "content": ""
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "        return previousToken \u003d\u003d null"
+        "content": "        /**"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "                || rightCurly.getLineNo() !\u003d previousToken.getLineNo();"
+        "content": "         * Constructor."
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "         * @param lcurly the lcurly of the token whose details are being collected"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "         * @param rcurly the rcurly of the token whose details are being collected"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "         * @param nextToken the token after the token whose details are being collected"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Structure that contains all details for validation."
+        "content": "         * @param shouldCheckLastRcurly boolean value to determine if to check last rcurly"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "         */"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "    private static final class Details {"
+        "content": "        private Details(DetailAST lcurly, DetailAST rcurly,"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        DetailAST nextToken, boolean shouldCheckLastRcurly) {"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "        /** Right curly. */"
+        "content": "            this.lcurly \u003d lcurly;"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "        private final DetailAST rcurly;"
+        "content": "            this.rcurly \u003d rcurly;"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "        /** Left curly. */"
+        "content": "            this.nextToken \u003d nextToken;"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "        private final DetailAST lcurly;"
+        "content": "            this.shouldCheckLastRcurly \u003d shouldCheckLastRcurly;"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "        /** Next token. */"
+        "content": "        }"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": "        private final DetailAST nextToken;"
+        "content": ""
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "        /** Should check last right curly. */"
+        "content": "        /**"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "        private final boolean shouldCheckLastRcurly;"
+        "content": "         * Collects validation Details."
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "         * @param ast a {@code DetailAST} value"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": "         * @return object containing all details to make a validation"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Constructor."
+        "content": "         */"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param lcurly the lcurly of the token whose details are being collected"
+        "content": "        private static Details getDetails(DetailAST ast) {"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param rcurly the rcurly of the token whose details are being collected"
+        "content": "            final Details details;"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param nextToken the token after the token whose details are being collected"
+        "content": "            switch (ast.getType()) {"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param shouldCheckLastRcurly boolean value to determine if to check last rcurly"
+        "content": "                case TokenTypes.LITERAL_TRY:"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "                case TokenTypes.LITERAL_CATCH:"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "        private Details(DetailAST lcurly, DetailAST rcurly,"
+        "content": "                case TokenTypes.LITERAL_FINALLY:"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "                        DetailAST nextToken, boolean shouldCheckLastRcurly) {"
+        "content": "                    details \u003d getDetailsForTryCatchFinally(ast);"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.lcurly \u003d lcurly;"
+        "content": "                    break;"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.rcurly \u003d rcurly;"
+        "content": "                case TokenTypes.LITERAL_IF:"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.nextToken \u003d nextToken;"
+        "content": "                case TokenTypes.LITERAL_ELSE:"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.shouldCheckLastRcurly \u003d shouldCheckLastRcurly;"
+        "content": "                    details \u003d getDetailsForIfElse(ast);"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    break;"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                case TokenTypes.LITERAL_DO:"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": "                case TokenTypes.LITERAL_WHILE:"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Collects validation Details."
+        "content": "                case TokenTypes.LITERAL_FOR:"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param ast a {@code DetailAST} value"
+        "content": "                    details \u003d getDetailsForLoops(ast);"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @return object containing all details to make a validation"
+        "content": "                    break;"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "                default:"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": "        private static Details getDetails(DetailAST ast) {"
+        "content": "                    details \u003d getDetailsForOthers(ast);"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "            final Details details;"
+        "content": "                    break;"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "            switch (ast.getType()) {"
+        "content": "            }"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_TRY:"
+        "content": "            return details;"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_CATCH:"
+        "content": "        }"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_FINALLY:"
+        "content": ""
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": "                    details \u003d getDetailsForTryCatchFinally(ast);"
+        "content": "        /**"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": "                    break;"
+        "content": "         * Collects validation details for LITERAL_TRY, LITERAL_CATCH, and LITERAL_FINALLY."
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_IF:"
+        "content": "         * @param ast a {@code DetailAST} value"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_ELSE:"
+        "content": "         * @return object containing all details to make a validation"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": "                    details \u003d getDetailsForIfElse(ast);"
+        "content": "         */"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "                    break;"
+        "content": "        private static Details getDetailsForTryCatchFinally(DetailAST ast) {"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_DO:"
+        "content": "            final boolean shouldCheckLastRcurly;"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_WHILE:"
+        "content": "            final DetailAST lcurly;"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "                case TokenTypes.LITERAL_FOR:"
+        "content": "            DetailAST nextToken;"
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "                    details \u003d getDetailsForLoops(ast);"
+        "content": "            final int tokenType \u003d ast.getType();"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": "                    break;"
+        "content": "            if (tokenType \u003d\u003d TokenTypes.LITERAL_TRY) {"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "                default:"
+        "content": "                if (ast.getFirstChild().getType() \u003d\u003d TokenTypes.RESOURCE_SPECIFICATION) {"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "                    details \u003d getDetailsForOthers(ast);"
+        "content": "                    lcurly \u003d ast.getFirstChild().getNextSibling();"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "                    break;"
+        "content": "                }"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                else {"
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": "            return details;"
+        "content": "                    lcurly \u003d ast.getFirstChild();"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                }"
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                nextToken \u003d lcurly.getNextSibling();"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": ""
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Collects validation details for LITERAL_TRY, LITERAL_CATCH, and LITERAL_FINALLY."
+        "content": "                if (nextToken \u003d\u003d null) {"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param ast a {@code DetailAST} value"
+        "content": "                    shouldCheckLastRcurly \u003d true;"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @return object containing all details to make a validation"
+        "content": "                    nextToken \u003d getNextToken(ast);"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "                }"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": "        private static Details getDetailsForTryCatchFinally(DetailAST ast) {"
+        "content": "                else {"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "            boolean shouldCheckLastRcurly \u003d false;"
+        "content": "                    shouldCheckLastRcurly \u003d false;"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "            final DetailAST rcurly;"
+        "content": "                }"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": "            final DetailAST lcurly;"
+        "content": "            }"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "            DetailAST nextToken;"
+        "content": "            else if (tokenType \u003d\u003d TokenTypes.LITERAL_CATCH) {"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": "            final int tokenType \u003d ast.getType();"
+        "content": "                nextToken \u003d ast.getNextSibling();"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (tokenType \u003d\u003d TokenTypes.LITERAL_TRY) {"
+        "content": "                lcurly \u003d ast.getLastChild();"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (ast.getFirstChild().getType() \u003d\u003d TokenTypes.RESOURCE_SPECIFICATION) {"
+        "content": "                if (nextToken \u003d\u003d null) {"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "                    lcurly \u003d ast.getFirstChild().getNextSibling();"
+        "content": "                    shouldCheckLastRcurly \u003d true;"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    nextToken \u003d getNextToken(ast);"
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "                else {"
+        "content": "                }"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "                    lcurly \u003d ast.getFirstChild();"
+        "content": "                else {"
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    shouldCheckLastRcurly \u003d false;"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
-        "content": "                nextToken \u003d lcurly.getNextSibling();"
+        "content": "                }"
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
-        "content": "                rcurly \u003d lcurly.getLastChild();"
+        "content": "            }"
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            else {"
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (nextToken \u003d\u003d null) {"
+        "content": "                shouldCheckLastRcurly \u003d true;"
       },
       {
         "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
-        "content": "                    shouldCheckLastRcurly \u003d true;"
+        "content": "                nextToken \u003d getNextToken(ast);"
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": "                    nextToken \u003d getNextToken(ast);"
+        "content": "                lcurly \u003d ast.getFirstChild();"
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            }"
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            final DetailAST rcurly \u003d lcurly.getLastChild();"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
-        "content": "            else if (tokenType \u003d\u003d TokenTypes.LITERAL_CATCH) {"
+        "content": "            return new Details(lcurly, rcurly, nextToken, shouldCheckLastRcurly);"
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": "                nextToken \u003d ast.getNextSibling();"
+        "content": "        }"
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": "                lcurly \u003d ast.getLastChild();"
+        "content": ""
       },
       {
         "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
-        "content": "                rcurly \u003d lcurly.getLastChild();"
+        "content": "        /**"
       },
       {
         "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (nextToken \u003d\u003d null) {"
+        "content": "         * Collects validation details for LITERAL_IF and LITERAL_ELSE."
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": "                    shouldCheckLastRcurly \u003d true;"
+        "content": "         * @param ast a {@code DetailAST} value"
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
-        "content": "                    nextToken \u003d getNextToken(ast);"
+        "content": "         * @return object containing all details to make a validation"
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "         */"
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        private static Details getDetailsForIfElse(DetailAST ast) {"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
-        "content": "            else {"
+        "content": "            final boolean shouldCheckLastRcurly;"
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
-        "content": "                shouldCheckLastRcurly \u003d true;"
+        "content": "            final DetailAST lcurly;"
       },
       {
         "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
-        "content": "                nextToken \u003d getNextToken(ast);"
+        "content": "            DetailAST nextToken;"
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": "                lcurly \u003d ast.getFirstChild();"
+        "content": "            final int tokenType \u003d ast.getType();"
       },
       {
         "lineNumber": 443,
         "author": {
           "gitId": "-"
         },
-        "content": "                rcurly \u003d lcurly.getLastChild();"
+        "content": "            if (tokenType \u003d\u003d TokenTypes.LITERAL_IF) {"
       },
       {
         "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                nextToken \u003d ast.findFirstToken(TokenTypes.LITERAL_ELSE);"
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new Details(lcurly, rcurly, nextToken, shouldCheckLastRcurly);"
+        "content": "                if (nextToken \u003d\u003d null) {"
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    shouldCheckLastRcurly \u003d true;"
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    nextToken \u003d getNextToken(ast);"
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": "                    lcurly \u003d ast.getLastChild();"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Collects validation details for LITERAL_IF and LITERAL_ELSE."
+        "content": "                }"
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param ast a {@code DetailAST} value"
+        "content": "                else {"
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @return object containing all details to make a validation"
+        "content": "                    shouldCheckLastRcurly \u003d false;"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "                    lcurly \u003d nextToken.getPreviousSibling();"
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
-        "content": "        private static Details getDetailsForIfElse(DetailAST ast) {"
+        "content": "                }"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
-        "content": "            boolean shouldCheckLastRcurly \u003d false;"
+        "content": "            }"
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "-"
         },
-        "content": "            final DetailAST lcurly;"
+        "content": "            else {"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "-"
         },
-        "content": "            DetailAST nextToken;"
+        "content": "                shouldCheckLastRcurly \u003d true;"
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "-"
         },
-        "content": "            final int tokenType \u003d ast.getType();"
+        "content": "                nextToken \u003d getNextToken(ast);"
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (tokenType \u003d\u003d TokenTypes.LITERAL_IF) {"
+        "content": "                lcurly \u003d ast.getFirstChild();"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": "                nextToken \u003d ast.findFirstToken(TokenTypes.LITERAL_ELSE);"
+        "content": "            }"
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (nextToken \u003d\u003d null) {"
+        "content": "            DetailAST rcurly \u003d null;"
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "-"
         },
-        "content": "                    shouldCheckLastRcurly \u003d true;"
+        "content": "            if (lcurly.getType() \u003d\u003d TokenTypes.SLIST) {"
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "-"
         },
-        "content": "                    nextToken \u003d getNextToken(ast);"
+        "content": "                rcurly \u003d lcurly.getLastChild();"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": "                    lcurly \u003d ast.getLastChild();"
+        "content": "            }"
       },
       {
         "lineNumber": 464,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            return new Details(lcurly, rcurly, nextToken, shouldCheckLastRcurly);"
       },
       {
         "lineNumber": 465,
         "author": {
           "gitId": "-"
         },
-        "content": "                else {"
+        "content": "        }"
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
-        "content": "                    lcurly \u003d nextToken.getPreviousSibling();"
+        "content": ""
       },
       {
         "lineNumber": 467,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "        /**"
       },
       {
         "lineNumber": 468,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "         * Collects validation details for CLASS_DEF, METHOD DEF, CTOR_DEF, STATIC_INIT, and"
       },
       {
         "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
-        "content": "            else {"
+        "content": "         * INSTANCE_INIT."
       },
       {
         "lineNumber": 470,
         "author": {
           "gitId": "-"
         },
-        "content": "                shouldCheckLastRcurly \u003d true;"
+        "content": "         * @param ast a {@code DetailAST} value"
       },
       {
         "lineNumber": 471,
         "author": {
           "gitId": "-"
         },
-        "content": "                nextToken \u003d getNextToken(ast);"
+        "content": "         * @return an object containing all details to make a validation"
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "-"
         },
-        "content": "                lcurly \u003d ast.getFirstChild();"
+        "content": "         */"
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        private static Details getDetailsForOthers(DetailAST ast) {"
       },
       {
         "lineNumber": 474,
@@ -5154,591 +5154,514 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            if (lcurly.getType() \u003d\u003d TokenTypes.SLIST) {"
+        "content": "            final DetailAST lcurly;"
       },
       {
         "lineNumber": 476,
         "author": {
           "gitId": "-"
         },
-        "content": "                rcurly \u003d lcurly.getLastChild();"
+        "content": "            final int tokenType \u003d ast.getType();"
       },
       {
         "lineNumber": 477,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            if (tokenType \u003d\u003d TokenTypes.CLASS_DEF) {"
       },
       {
         "lineNumber": 478,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new Details(lcurly, rcurly, nextToken, shouldCheckLastRcurly);"
+        "content": "                final DetailAST child \u003d ast.getLastChild();"
       },
       {
         "lineNumber": 479,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                lcurly \u003d child.getFirstChild();"
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                rcurly \u003d child.getLastChild();"
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": "            }"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Collects validation details for CLASS_DEF, METHOD DEF, CTOR_DEF, STATIC_INIT, and"
+        "content": "            else {"
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "-"
         },
-        "content": "         * INSTANCE_INIT."
+        "content": "                lcurly \u003d ast.findFirstToken(TokenTypes.SLIST);"
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param ast a {@code DetailAST} value"
+        "content": "                if (lcurly !\u003d null) {"
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @return an object containing all details to make a validation"
+        "content": "                    // SLIST could be absent if method is abstract"
       },
       {
         "lineNumber": 486,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "                    rcurly \u003d lcurly.getLastChild();"
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "-"
         },
-        "content": "        private static Details getDetailsForOthers(DetailAST ast) {"
+        "content": "                }"
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "-"
         },
-        "content": "            DetailAST rcurly \u003d null;"
+        "content": "            }"
       },
       {
         "lineNumber": 489,
         "author": {
           "gitId": "-"
         },
-        "content": "            final DetailAST lcurly;"
+        "content": "            return new Details(lcurly, rcurly, getNextToken(ast), true);"
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "-"
         },
-        "content": "            final int tokenType \u003d ast.getType();"
+        "content": "        }"
       },
       {
         "lineNumber": 491,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (tokenType \u003d\u003d TokenTypes.CLASS_DEF) {"
+        "content": ""
       },
       {
         "lineNumber": 492,
         "author": {
           "gitId": "-"
         },
-        "content": "                final DetailAST child \u003d ast.getLastChild();"
+        "content": "        /**"
       },
       {
         "lineNumber": 493,
         "author": {
           "gitId": "-"
         },
-        "content": "                lcurly \u003d child.getFirstChild();"
+        "content": "         * Collects validation details for loops\u0027 tokens."
       },
       {
         "lineNumber": 494,
         "author": {
           "gitId": "-"
         },
-        "content": "                rcurly \u003d child.getLastChild();"
+        "content": "         * @param ast a {@code DetailAST} value"
       },
       {
         "lineNumber": 495,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "         * @return an object containing all details to make a validation"
       },
       {
         "lineNumber": 496,
         "author": {
           "gitId": "-"
         },
-        "content": "            else {"
+        "content": "         */"
       },
       {
         "lineNumber": 497,
         "author": {
           "gitId": "-"
         },
-        "content": "                lcurly \u003d ast.findFirstToken(TokenTypes.SLIST);"
+        "content": "        private static Details getDetailsForLoops(DetailAST ast) {"
       },
       {
         "lineNumber": 498,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (lcurly !\u003d null) {"
+        "content": "            DetailAST rcurly \u003d null;"
       },
       {
         "lineNumber": 499,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // SLIST could be absent if method is abstract"
+        "content": "            final DetailAST lcurly;"
       },
       {
         "lineNumber": 500,
         "author": {
           "gitId": "-"
         },
-        "content": "                    rcurly \u003d lcurly.getLastChild();"
+        "content": "            final DetailAST nextToken;"
       },
       {
         "lineNumber": 501,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            final int tokenType \u003d ast.getType();"
       },
       {
         "lineNumber": 502,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            final boolean shouldCheckLastRcurly;"
       },
       {
         "lineNumber": 503,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new Details(lcurly, rcurly, getNextToken(ast), false);"
+        "content": "            if (tokenType \u003d\u003d TokenTypes.LITERAL_DO) {"
       },
       {
         "lineNumber": 504,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                shouldCheckLastRcurly \u003d false;"
       },
       {
         "lineNumber": 505,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                nextToken \u003d ast.findFirstToken(TokenTypes.DO_WHILE);"
       },
       {
         "lineNumber": 506,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": "                lcurly \u003d ast.findFirstToken(TokenTypes.SLIST);"
       },
       {
         "lineNumber": 507,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Collects validation details for loops\u0027 tokens."
+        "content": "                if (lcurly !\u003d null) {"
       },
       {
         "lineNumber": 508,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param ast a {@code DetailAST} value"
+        "content": "                    rcurly \u003d lcurly.getLastChild();"
       },
       {
         "lineNumber": 509,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @return an object containing all details to make a validation"
+        "content": "                }"
       },
       {
         "lineNumber": 510,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "            }"
       },
       {
         "lineNumber": 511,
         "author": {
           "gitId": "-"
         },
-        "content": "        private static Details getDetailsForLoops(DetailAST ast) {"
+        "content": "            else {"
       },
       {
         "lineNumber": 512,
         "author": {
           "gitId": "-"
         },
-        "content": "            DetailAST rcurly \u003d null;"
+        "content": "                shouldCheckLastRcurly \u003d true;"
       },
       {
         "lineNumber": 513,
         "author": {
           "gitId": "-"
         },
-        "content": "            final DetailAST lcurly;"
+        "content": "                lcurly \u003d ast.findFirstToken(TokenTypes.SLIST);"
       },
       {
         "lineNumber": 514,
         "author": {
           "gitId": "-"
         },
-        "content": "            final DetailAST nextToken;"
+        "content": "                if (lcurly !\u003d null) {"
       },
       {
         "lineNumber": 515,
         "author": {
           "gitId": "-"
         },
-        "content": "            final int tokenType \u003d ast.getType();"
+        "content": "                    // SLIST could be absent in code like \"while(true);\""
       },
       {
         "lineNumber": 516,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (tokenType \u003d\u003d TokenTypes.LITERAL_DO) {"
+        "content": "                    rcurly \u003d lcurly.getLastChild();"
       },
       {
         "lineNumber": 517,
         "author": {
           "gitId": "-"
         },
-        "content": "                nextToken \u003d ast.findFirstToken(TokenTypes.DO_WHILE);"
+        "content": "                }"
       },
       {
         "lineNumber": 518,
         "author": {
           "gitId": "-"
         },
-        "content": "                lcurly \u003d ast.findFirstToken(TokenTypes.SLIST);"
+        "content": "                nextToken \u003d getNextToken(ast);"
       },
       {
         "lineNumber": 519,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (lcurly !\u003d null) {"
+        "content": "            }"
       },
       {
         "lineNumber": 520,
         "author": {
           "gitId": "-"
         },
-        "content": "                    rcurly \u003d lcurly.getLastChild();"
+        "content": "            return new Details(lcurly, rcurly, nextToken, shouldCheckLastRcurly);"
       },
       {
         "lineNumber": 521,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "        }"
       },
       {
         "lineNumber": 522,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 523,
         "author": {
           "gitId": "-"
         },
-        "content": "            else {"
+        "content": "        /**"
       },
       {
         "lineNumber": 524,
         "author": {
           "gitId": "-"
         },
-        "content": "                lcurly \u003d ast.findFirstToken(TokenTypes.SLIST);"
+        "content": "         * Finds next token after the given one."
       },
       {
         "lineNumber": 525,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (lcurly !\u003d null) {"
+        "content": "         * @param ast the given node."
       },
       {
         "lineNumber": 526,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // SLIST could be absent in code like \"while(true);\""
+        "content": "         * @return the token which represents next lexical item."
       },
       {
         "lineNumber": 527,
         "author": {
           "gitId": "-"
         },
-        "content": "                    rcurly \u003d lcurly.getLastChild();"
+        "content": "         */"
       },
       {
         "lineNumber": 528,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "        private static DetailAST getNextToken(DetailAST ast) {"
       },
       {
         "lineNumber": 529,
         "author": {
           "gitId": "-"
         },
-        "content": "                nextToken \u003d getNextToken(ast);"
+        "content": "            DetailAST next \u003d null;"
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            DetailAST parent \u003d ast;"
       },
       {
         "lineNumber": 531,
         "author": {
           "gitId": "-"
         },
-        "content": "            return new Details(lcurly, rcurly, nextToken, false);"
+        "content": "            while (next \u003d\u003d null \u0026\u0026 parent !\u003d null) {"
       },
       {
         "lineNumber": 532,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                next \u003d parent.getNextSibling();"
       },
       {
         "lineNumber": 533,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                parent \u003d parent.getParent();"
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "-"
         },
-        "content": "        /**"
+        "content": "            }"
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "-"
         },
-        "content": "         * Finds next token after the given one."
+        "content": "            if (next \u003d\u003d null) {"
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @param ast the given node."
+        "content": "                // a DetailAST object with DetailAST#NOT_INITIALIZED for line and column numbers"
       },
       {
         "lineNumber": 537,
         "author": {
           "gitId": "-"
         },
-        "content": "         * @return the token which represents next lexical item."
+        "content": "                // that no \u0027actual\u0027 DetailAST objects can have."
       },
       {
         "lineNumber": 538,
         "author": {
           "gitId": "-"
         },
-        "content": "         */"
+        "content": "                next \u003d new DetailAST();"
       },
       {
         "lineNumber": 539,
         "author": {
           "gitId": "-"
         },
-        "content": "        private static DetailAST getNextToken(DetailAST ast) {"
+        "content": "            }"
       },
       {
         "lineNumber": 540,
         "author": {
           "gitId": "-"
         },
-        "content": "            DetailAST next \u003d null;"
+        "content": "            else {"
       },
       {
         "lineNumber": 541,
         "author": {
           "gitId": "-"
         },
-        "content": "            DetailAST parent \u003d ast;"
+        "content": "                next \u003d CheckUtil.getFirstNode(next);"
       },
       {
         "lineNumber": 542,
         "author": {
           "gitId": "-"
         },
-        "content": "            while (next \u003d\u003d null \u0026\u0026 parent !\u003d null) {"
+        "content": "            }"
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "-"
         },
-        "content": "                next \u003d parent.getNextSibling();"
+        "content": "            return next;"
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "-"
         },
-        "content": "                parent \u003d parent.getParent();"
+        "content": "        }"
       },
       {
         "lineNumber": 545,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (next \u003d\u003d null) {"
+        "content": "    }"
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "-"
         },
-        "content": "                // a DetailAST object with DetailAST#NOT_INITIALIZED for line and column numbers"
+        "content": ""
       },
       {
         "lineNumber": 548,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                // that no \u0027actual\u0027 DetailAST objects can have."
-      },
-      {
-        "lineNumber": 549,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                next \u003d new DetailAST();"
-      },
-      {
-        "lineNumber": 550,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 551,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            else {"
-      },
-      {
-        "lineNumber": 552,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                next \u003d CheckUtil.getFirstNode(next);"
-      },
-      {
-        "lineNumber": 553,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 554,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            return next;"
-      },
-      {
-        "lineNumber": 555,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 556,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 557,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 558,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 559,
         "author": {
           "gitId": "-"
         },
@@ -5747,7 +5670,7 @@
     ],
     "authorContributionMap": {
       "fzdy1914": 1,
-      "-": 558
+      "-": 547
     }
   },
   {
@@ -9731,1631 +9654,1631 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"25:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
+        "content": "                + \"LITERAL_IF, LITERAL_ELSE, LITERAL_FOR, LITERAL_WHILE, LITERAL_DO\");"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"28:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"40:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+        "content": "            \"25:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"44:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+        "content": "            \"28:17: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 17),"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_BREAK_BEFORE, \"}\", 27),"
+        "content": "            \"40:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "            \"44:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_BREAK_BEFORE, \"}\", 27),"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            \"188:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            \"189:53: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 53),"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        };"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testSameOmitOneLiners() throws Exception {"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    }"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+        "content": ""
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyNameForOneLiners.java\"), expected);"
+        "content": "    public void testSameOmitOneLiners() throws Exception {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testAlone() throws Exception {"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyNameForOneLiners.java\"), expected);"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+        "content": "    public void testSameDoesNotComplainForNonMultilineConstructs() throws Exception {"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"97:72: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 72),"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_DO, LITERAL_FOR, LITERAL_WHILE, STATIC_INIT,\""
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                + \"INSTANCE_INIT, CLASS_DEF, METHOD_DEF, CTOR_DEF\");"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlySame.java\"), expected);"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testNewLine() throws Exception {"
+        "content": "    }"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "    @Test"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, CTOR_DEF\");"
+        "content": "    public void testAlone() throws Exception {"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"111:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"111:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"122:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+        "content": "                + \"LITERAL_IF, LITERAL_ELSE, LITERAL_FOR, LITERAL_WHILE, LITERAL_DO\");"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"122:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"136:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+        "content": "            \"56:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"136:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
       },
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "            \"144:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "            \"97:72: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 72),"
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "            \"149:45: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 45),"
+        "content": "            \"173:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "            \"152:20: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 20),"
+        "content": "            \"175:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "            \"177:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+        "content": "            \"178:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            \"183:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            \"188:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "            \"189:53: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 53),"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testShouldStartLine() throws Exception {"
+        "content": "        };"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "    }"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+        "content": "    @Test"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"97:72: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 72),"
+        "content": "    public void testNewLine() throws Exception {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, CTOR_DEF\");"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "            \"111:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testShouldStartLine2() throws Exception {"
+        "content": "            \"111:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "            \"122:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+        "content": "            \"122:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF\");"
+        "content": "            \"136:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            \"136:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "            \"111:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+        "content": "            \"144:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "            \"122:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+        "content": "            \"149:45: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 45),"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "            \"122:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+        "content": "            \"152:20: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 20),"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"136:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+        "content": "        };"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"136:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "    }"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void testShouldStartLine2() throws Exception {"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testMethodCtorNamedClassClosingBrace() throws Exception {"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF\");"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            \"111:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"93:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+        "content": "            \"122:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"97:72: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 72),"
+        "content": "            \"122:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "            \"136:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
+        "content": "            \"136:6: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 6),"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        };"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLeft.java\"), expected);"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testForceLineBreakBefore() throws Exception {"
+        "content": ""
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "    public void testForceLineBreakBefore() throws Exception {"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_FOR,\""
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "                + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_FOR,\""
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"35:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
+        "content": "                + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
       },
       {
         "lineNumber": 162,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "            \"38:17: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 17),"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"41:71: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 71),"
+        "content": "            \"35:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "            \"43:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
+        "content": "            \"38:17: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 17),"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"47:25: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 25),"
+        "content": "            \"41:71: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 71),"
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "        };"
+        "content": "            \"43:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLineBreakBefore.java\"), expected);"
+        "content": "            \"47:25: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 25),"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        };"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLineBreakBefore.java\"), expected);"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testForceLineBreakBefore2() throws Exception {"
+        "content": ""
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+        "content": "    public void testForceLineBreakBefore2() throws Exception {"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLineBreakBefore.java\"), expected);"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyLineBreakBefore.java\"), expected);"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testNullPointerException() throws Exception {"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "    public void testNullPointerException() throws Exception {"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyEmptyAbstractMethod.java\"), expected);"
+        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyEmptyAbstractMethod.java\"), expected);"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testWithAnnotations() throws Exception {"
+        "content": ""
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "    public void testWithAnnotations() throws Exception {"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "            + \"LITERAL_IF, LITERAL_ELSE, CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            + \"LITERAL_IF, LITERAL_ELSE, CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"8:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"11:65: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 65),"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"22:46: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 46),"
+        "content": "            \"8:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"26:31: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 31),"
+        "content": "            \"11:65: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 65),"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"29:35: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 35),"
+        "content": "            \"22:46: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 46),"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"32:36: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 36),"
+        "content": "            \"26:31: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 31),"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"38:73: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 73),"
+        "content": "            \"29:35: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 35),"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"40:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "            \"32:36: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 36),"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"45:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+        "content": "            \"38:73: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 73),"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"47:88: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 88),"
+        "content": "            \"40:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"50:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+        "content": "            \"45:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"53:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+        "content": "            \"47:88: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 88),"
       },
       {
         "lineNumber": 207,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "            \"56:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
+        "content": "            \"50:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"60:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
+        "content": "            \"53:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "            \"61:31: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 31),"
+        "content": "            \"56:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"67:62: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 62),"
+        "content": "            \"60:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
       },
       {
         "lineNumber": 211,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "            \"76:28: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 28),"
+        "content": "            \"61:31: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 31),"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"78:21: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 21),"
+        "content": "            \"67:62: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 62),"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"80:20: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 20),"
+        "content": "            \"76:28: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 28),"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"82:14: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 14),"
+        "content": "            \"78:21: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 21),"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"93:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+        "content": "            \"80:20: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 20),"
       },
       {
         "lineNumber": 216,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "            \"94:20: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 20),"
+        "content": "            \"82:14: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 14),"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"103:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
+        "content": "            \"93:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "            \"103:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
+        "content": "            \"94:20: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 20),"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"107:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
+        "content": "            \"103:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "            \"107:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
+        "content": "            \"103:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"111:40: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 40),"
+        "content": "            \"107:29: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 29),"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "fzdy1914"
         },
-        "content": "            \"111:88: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 88),"
+        "content": "            \"107:38: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 38),"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"114:18: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 18),"
+        "content": "            \"111:40: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 40),"
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "            \"118:23: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 23),"
+        "content": "            \"111:88: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 88),"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"121:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "            \"114:18: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 18),"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"123:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+        "content": "            \"118:23: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 23),"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"127:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+        "content": "            \"121:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"136:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"123:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"138:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"127:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"138:33: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 33),"
+        "content": "            \"136:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"150:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+        "content": "            \"138:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"151:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+        "content": "            \"138:33: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 33),"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"151:74: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 74),"
+        "content": "            \"150:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"152:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+        "content": "            \"151:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"153:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
+        "content": "            \"151:74: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 74),"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"153:74: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 74),"
+        "content": "            \"152:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"159:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "            \"153:58: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 58),"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"166:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "            \"153:74: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 74),"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"181:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"159:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"188:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"166:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"188:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+        "content": "            \"181:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"197:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"188:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"197:10: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 10),"
+        "content": "            \"188:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"201:54: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 54),"
+        "content": "            \"197:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"201:55: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 55),"
+        "content": "            \"197:10: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 10),"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"204:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+        "content": "            \"201:54: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 54),"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"204:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
+        "content": "            \"201:55: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 55),"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"204:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+        "content": "            \"204:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"208:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
+        "content": "            \"204:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"216:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+        "content": "            \"204:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "            \"208:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAnnotations.java\"), expected);"
+        "content": "            \"216:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        };"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAnnotations.java\"), expected);"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testAloneOrSingleLine() throws Exception {"
+        "content": ""
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+        "content": "    public void testAloneOrSingleLine() throws Exception {"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "            + \"LITERAL_IF, LITERAL_ELSE, CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, \""
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            + \"LITERAL_IF, LITERAL_ELSE, CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, \""
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"60:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+        "content": "            + \"LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT\");"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"74:42: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 42),"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"77:18: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 18),"
+        "content": "            \"60:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"85:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+        "content": "            \"74:42: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 42),"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"89:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+        "content": "            \"77:18: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 18),"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"97:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"85:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"99:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"89:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"110:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+        "content": "            \"97:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"111:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+        "content": "            \"99:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"111:93: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 93),"
+        "content": "            \"110:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"112:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+        "content": "            \"111:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"113:64: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 64),"
+        "content": "            \"111:93: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 93),"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"113:80: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 80),"
+        "content": "            \"112:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"119:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "            \"113:64: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 64),"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"126:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "            \"113:80: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 80),"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"141:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"119:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"148:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"126:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"148:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+        "content": "            \"141:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"157:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "            \"148:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"157:10: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 10),"
+        "content": "            \"148:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"161:54: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 54),"
+        "content": "            \"157:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"161:55: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 55),"
+        "content": "            \"157:10: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 10),"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"164:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
+        "content": "            \"161:54: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 54),"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"164:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
+        "content": "            \"161:55: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 55),"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"168:80: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 80),"
+        "content": "            \"164:75: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 75),"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"164:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
+        "content": "            \"164:76: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 76),"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"176:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+        "content": "            \"168:80: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 80),"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"182:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
+        "content": "            \"164:77: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 77),"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"185:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
+        "content": "            \"176:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"188:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
+        "content": "            \"182:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "            \"185:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAloneOrSingleline.java\"), expected);"
+        "content": "            \"188:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            \"194:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            \"196:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "            \"198:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testCatchWithoutFinally() throws Exception {"
+        "content": "            \"199:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "            \"204:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            \"209:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"15:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+        "content": "            \"210:53: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 53),"
       },
       {
         "lineNumber": 302,
@@ -11369,7 +11292,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAloneOrSingleline.java\"), expected);"
       },
       {
         "lineNumber": 304,
@@ -11397,7 +11320,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testSingleLineClass() throws Exception {"
+        "content": "    public void testCatchWithoutFinally() throws Exception {"
       },
       {
         "lineNumber": 308,
@@ -11411,784 +11334,784 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF\");"
+        "content": "            \"15:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "        };"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"24:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "    }"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
+        "content": ""
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void testSingleLineClass() throws Exception {"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testInvalidOption() throws Exception {"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF\");"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", \"invalid_option\");"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            \"24:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": "        };"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "            final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "            verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
+        "content": ""
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "            fail(\"exception expected\");"
+        "content": "    @Test"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    public void testInvalidOption() throws Exception {"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "        catch (CheckstyleException ex) {"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "            assertEquals(\"Invalid exception message\","
+        "content": "        checkConfig.addAttribute(\"option\", \"invalid_option\");"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "                \"cannot initialize module com.puppycrawl.tools.checkstyle.TreeWalker - \""
+        "content": ""
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "                    + \"cannot initialize module com.puppycrawl.tools.checkstyle.checks.\""
+        "content": "        try {"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "                    + \"blocks.RightCurlyCheck - \""
+        "content": "            final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "                    + \"Cannot set property \u0027option\u0027 to \u0027invalid_option\u0027\","
+        "content": ""
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "                ex.getMessage());"
+        "content": "            verify(checkConfig, getPath(\"InputRightCurly.java\"), expected);"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            fail(\"exception expected\");"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        catch (CheckstyleException ex) {"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "            assertEquals(\"Invalid exception message\","
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testRightCurlySameAndLiteralDo() throws Exception {"
+        "content": "                \"cannot initialize module com.puppycrawl.tools.checkstyle.TreeWalker - \""
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "                    + \"cannot initialize module com.puppycrawl.tools.checkstyle.checks.\""
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+        "content": "                    + \"blocks.RightCurlyCheck - \""
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_DO\");"
+        "content": "                    + \"Cannot set property \u0027option\u0027 to \u0027invalid_option\u0027\","
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "                ex.getMessage());"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"62:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
+        "content": "        }"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"67:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
+        "content": "    }"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"83:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
+        "content": ""
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "    @Test"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyDoWhile.java\"), expected);"
+        "content": "    public void testRightCurlySameAndLiteralDo() throws Exception {"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"LITERAL_DO\");"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testTryWithResourceSame() throws Exception {"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "            \"62:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+        "content": "            \"67:13: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 13),"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            \"83:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"11:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
+        "content": "        };"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"24:67: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 67),"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyDoWhile.java\"), expected);"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_BREAK_BEFORE, \"}\", 15),"
+        "content": "    }"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+        "content": ""
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "    @Test"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
+        "content": "    public void testTryWithResourceSame() throws Exception {"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testTryWithResourceAlone() throws Exception {"
+        "content": "            \"11:9: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 9),"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "            \"24:67: \" + getCheckMessage(MSG_KEY_LINE_SAME, \"}\", 67),"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_BREAK_BEFORE, \"}\", 15),"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"19:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "        };"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"24:67: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 67),"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"25:35: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 35),"
+        "content": "    }"
       },
       {
         "lineNumber": 372,
         "author": {
-          "gitId": "fzdy1914"
+          "gitId": "-"
         },
-        "content": "            \"27:64: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 64),"
+        "content": ""
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"27:92: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 92),"
+        "content": "    @Test"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"33:67: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 67),"
+        "content": "    public void testTryWithResourceAlone() throws Exception {"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
+        "content": "            \"19:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            \"24:67: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 67),"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            \"25:35: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 35),"
       },
       {
         "lineNumber": 381,
         "author": {
-          "gitId": "-"
+          "gitId": "fzdy1914"
         },
-        "content": "    @Test"
+        "content": "            \"27:64: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 64),"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testTryWithResourceAloneSingle() throws Exception {"
+        "content": "            \"27:92: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 92),"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "            \"33:67: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 67),"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"19:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "        };"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
+        "content": "    }"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": ""
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    public void testTryWithResourceAloneSingle() throws Exception {"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testBracePolicyAloneAndSinglelineIfBlocks() throws Exception {"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "            \"19:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "            \"27:64: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 64),"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "            \"35:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"5:32: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 32),"
+        "content": "            \"37:13: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 13),"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"7:45: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 45),"
+        "content": "        };"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"7:47: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 47),"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyTryResource.java\"), expected);"
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "    }"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlySinglelineIfBlocks.java\"), expected);"
+        "content": ""
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    @Test"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void testBracePolicyAloneAndSinglelineIfBlocks() throws Exception {"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testRightCurlyIsAloneLambda() throws Exception {"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "            \"5:32: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 32),"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+        "content": "            \"7:45: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 45),"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAloneLambda.java\"), expected);"
+        "content": "            \"7:47: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 47),"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        };"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlySinglelineIfBlocks.java\"), expected);"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testRightCurlyIsAloneOrSinglelineLambda() throws Exception {"
+        "content": ""
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\","
+        "content": "    public void testRightCurlyIsAloneLambda() throws Exception {"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "            RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig,"
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "            getPath(\"InputRightCurlyAloneOrSinglelineLambda.java\"), expected);"
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAloneLambda.java\"), expected);"
       },
       {
         "lineNumber": 421,
@@ -12216,7 +12139,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testRightCurlyIsSameLambda() throws Exception {"
+        "content": "    public void testRightCurlyIsAloneOrSinglelineLambda() throws Exception {"
       },
       {
         "lineNumber": 425,
@@ -12230,381 +12153,458 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
+        "content": "        checkConfig.addAttribute(\"option\","
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
+        "content": "            RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig,"
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": "            getPath(\"InputRightCurlySameLambda.java\"), expected);"
+        "content": "        verify(checkConfig,"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            getPath(\"InputRightCurlyAloneOrSinglelineLambda.java\"), expected);"
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void testOptionAlone() throws Exception {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+        "content": "    public void testRightCurlyIsSameLambda() throws Exception {"
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, LITERAL_IF, LITERAL_ELSE, \""
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.SAME.toString());"
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
-        "content": "                + \"LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, STATIC_INIT, INSTANCE_INIT\");"
+        "content": "        final String[] expected \u003d CommonUtil.EMPTY_STRING_ARRAY;"
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
-        "content": "        final String[] expected \u003d {"
+        "content": "        verify(checkConfig,"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"7:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
+        "content": "            getPath(\"InputRightCurlySameLambda.java\"), expected);"
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"8:21: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 21),"
+        "content": "    }"
       },
       {
         "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"12:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+        "content": ""
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"21:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "    @Test"
       },
       {
         "lineNumber": 443,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"38:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+        "content": "    public void testOptionAlone() throws Exception {"
       },
       {
         "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"42:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"45:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE.toString());"
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"47:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, LITERAL_IF, LITERAL_ELSE, \""
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"49:17: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 17),"
+        "content": "                + \"LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, STATIC_INIT, INSTANCE_INIT\");"
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"51:53: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 53),"
+        "content": "        final String[] expected \u003d {"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"53:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+        "content": "            \"7:15: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 15),"
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"53:52: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 52),"
+        "content": "            \"8:21: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 21),"
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"61:42: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 42),"
+        "content": "            \"12:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"63:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
+        "content": "            \"21:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
-        "content": "            \"67:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
-      },
-      {
-        "lineNumber": 454,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "            \"74:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
-      },
-      {
-        "lineNumber": 455,
-        "author": {
-          "gitId": "fzdy1914"
-        },
-        "content": "            \"74:11: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 11),"
-      },
-      {
-        "lineNumber": 456,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        };"
-      },
-      {
-        "lineNumber": 457,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAlone.java\"),"
-      },
-      {
-        "lineNumber": 458,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                expected);"
-      },
-      {
-        "lineNumber": 459,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 460,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 461,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 462,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    public void testOptionAloneOrSingleLine() throws Exception {"
-      },
-      {
-        "lineNumber": 463,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
-      },
-      {
-        "lineNumber": 464,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
-      },
-      {
-        "lineNumber": 465,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, LITERAL_IF, LITERAL_ELSE, \""
-      },
-      {
-        "lineNumber": 466,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                + \"LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, STATIC_INIT, INSTANCE_INIT\");"
-      },
-      {
-        "lineNumber": 467,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        final String[] expected \u003d {"
-      },
-      {
-        "lineNumber": 468,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            \"12:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
-      },
-      {
-        "lineNumber": 469,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            \"21:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
-      },
-      {
-        "lineNumber": 470,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            \"29:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
-      },
-      {
-        "lineNumber": 471,
-        "author": {
-          "gitId": "-"
-        },
         "content": "            \"38:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
       },
       {
-        "lineNumber": 472,
+        "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
         "content": "            \"42:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
       },
       {
-        "lineNumber": 473,
+        "lineNumber": 455,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"45:30: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 30),"
+      },
+      {
+        "lineNumber": 456,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"47:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 457,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"49:17: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 17),"
+      },
+      {
+        "lineNumber": 458,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"51:53: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 53),"
+      },
+      {
+        "lineNumber": 459,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"53:27: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 27),"
+      },
+      {
+        "lineNumber": 460,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"53:52: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 52),"
+      },
+      {
+        "lineNumber": 461,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"61:42: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 42),"
+      },
+      {
+        "lineNumber": 462,
         "author": {
           "gitId": "-"
         },
         "content": "            \"63:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
       },
       {
-        "lineNumber": 474,
+        "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
         "content": "            \"67:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
       },
       {
-        "lineNumber": 475,
+        "lineNumber": 464,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "            \"74:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 465,
+        "author": {
+          "gitId": "fzdy1914"
+        },
+        "content": "            \"74:11: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 11),"
+      },
+      {
+        "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
         "content": "        };"
       },
       {
-        "lineNumber": 476,
+        "lineNumber": 467,
         "author": {
           "gitId": "-"
         },
-        "content": "        verify(checkConfig, getPath("
+        "content": "        verify(checkConfig, getPath(\"InputRightCurlyAlone.java\"),"
       },
       {
-        "lineNumber": 477,
+        "lineNumber": 468,
         "author": {
           "gitId": "-"
         },
-        "content": "                \"InputRightCurlyAloneOrSingleLine2.java\"), expected);"
+        "content": "                expected);"
       },
       {
-        "lineNumber": 478,
+        "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 479,
+        "lineNumber": 470,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 471,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 472,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void testOptionAloneOrSingleLine() throws Exception {"
+      },
+      {
+        "lineNumber": 473,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final DefaultConfiguration checkConfig \u003d createModuleConfig(RightCurlyCheck.class);"
+      },
+      {
+        "lineNumber": 474,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"option\", RightCurlyOption.ALONE_OR_SINGLELINE.toString());"
+      },
+      {
+        "lineNumber": 475,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        checkConfig.addAttribute(\"tokens\", \"CLASS_DEF, METHOD_DEF, LITERAL_IF, LITERAL_ELSE, \""
+      },
+      {
+        "lineNumber": 476,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, STATIC_INIT, INSTANCE_INIT\");"
+      },
+      {
+        "lineNumber": 477,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        final String[] expected \u003d {"
+      },
+      {
+        "lineNumber": 478,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"12:26: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 26),"
+      },
+      {
+        "lineNumber": 479,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"21:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
         "lineNumber": 480,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"29:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 481,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"38:9: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 9),"
+      },
+      {
+        "lineNumber": 482,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"42:37: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 37),"
+      },
+      {
+        "lineNumber": 483,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"63:43: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 43),"
+      },
+      {
+        "lineNumber": 484,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"67:5: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 5),"
+      },
+      {
+        "lineNumber": 485,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            \"71:24: \" + getCheckMessage(MSG_KEY_LINE_ALONE, \"}\", 24),"
+      },
+      {
+        "lineNumber": 486,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        };"
+      },
+      {
+        "lineNumber": 487,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        verify(checkConfig, getPath("
+      },
+      {
+        "lineNumber": 488,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                \"InputRightCurlyAloneOrSingleLine2.java\"), expected);"
+      },
+      {
+        "lineNumber": 489,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 490,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 491,
         "author": {
           "gitId": "-"
         },
@@ -12613,7 +12613,7 @@
     ],
     "authorContributionMap": {
       "fzdy1914": 14,
-      "-": 466
+      "-": 477
     }
   },
   {
@@ -16410,12 +16410,159 @@
         "author": {
           "gitId": "-"
         },
+        "content": "    public void emptyBlocks() {"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // comment"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } catch (RuntimeException e) { // violation except for SAME"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            new Object();"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } catch (Exception e) { // violation except for SAME"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // comment"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } catch (Throwable e) { // violation except for SAME"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } finally { // violation except for SAME"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            // comment"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        do {"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        } while (true); // violation except for SAME"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void codeAfterLastRightCurly() {"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        while (new Object().equals(new Object())) {"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }; // violation"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        for (int i \u003d 0; i \u003c 1; i++) { new Object(); }; // violation"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "-"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
       "fzdy1914": 3,
-      "-": 167
+      "-": 188
     }
   },
   {
