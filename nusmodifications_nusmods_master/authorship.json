@@ -24552,752 +24552,766 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  ssgf: boolean; // SkillsFuture Funded"
+        "content": "  grsu: boolean;"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "  sfs: boolean; // SkillsFuture series"
+        "content": "  ssgf: boolean; // SkillsFuture Funded"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "  lab: boolean; // Lab based"
+        "content": "  sfs: boolean; // SkillsFuture series"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "  ism: boolean; // Independent study"
+        "content": "  lab: boolean; // Lab based"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "  urop: boolean; // Undergraduate Research Opportunities Program"
+        "content": "  ism: boolean; // Independent study"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "  fyp: boolean; // Honours / Final Year Project"
+        "content": "  urop: boolean; // Undergraduate Research Opportunities Program"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "};"
+        "content": "  fyp: boolean; // Honours / Final Year Project"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "};"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "export type NUSModuleAttributes \u003d Partial\u003cAttributeMap\u003e;"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "export type NUSModuleAttributes \u003d Partial\u003cAttributeMap\u003e;"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "export const attributeDescription: { [key in keyof AttributeMap]: string } \u003d {"
+        "content": ""
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "  year: \u0027Year long module\u0027,"
+        "content": "export const attributeDescription: { [key in keyof AttributeMap]: string } \u003d {"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "  su: \u0027Has S/U option\u0027,"
+        "content": "  year: \u0027Year long module\u0027,"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "  ssgf: \u0027SkillsFuture funded\u0027,"
+        "content": "  su: \u0027Has undergraduate S/U option\u0027,"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "  sfs: \u0027SkillsFuture series\u0027,"
+        "content": "  grsu: \u0027Has graduate S/U option\u0027,"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "  lab: \u0027Lab based module\u0027,"
+        "content": "  ssgf: \u0027SkillsFuture funded\u0027,"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "  ism: \u0027Independent study module\u0027,"
+        "content": "  sfs: \u0027SkillsFuture series\u0027,"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "  urop: \u0027Undergraduate Research Opportunities Program\u0027,"
+        "content": "  lab: \u0027Lab based module\u0027,"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "  fyp: \u0027Honours / Final Year Project\u0027,"
+        "content": "  ism: \u0027Independent study module\u0027,"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "};"
+        "content": "  urop: \u0027Undergraduate Research Opportunities Program\u0027,"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  fyp: \u0027Honours / Final Year Project\u0027,"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "// RawLesson is a lesson time slot obtained from the API."
+        "content": "};"
       },
       {
         "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "// RawLesson is a lesson time slot obtained from the API."
+      },
+      {
+        "lineNumber": 120,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "// Lessons do not implement a modifiable interface."
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 121,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "// They have to be injected in before using in the timetable."
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
         "content": "// Usually ModuleCode and ModuleTitle has to be injected in before using in the timetable."
       },
       {
-        "lineNumber": 121,
+        "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
         "content": "export type RawLesson \u003d Readonly\u003c{"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
         "content": "  classNo: ClassNo;"
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
         "content": "  day: DayText;"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
         "content": "  startTime: StartTime;"
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
         "content": "  endTime: EndTime;"
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
         "content": "  lessonType: LessonType;"
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
         "content": "  venue: Venue;"
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
         "content": "  weeks: Weeks;"
       },
       {
-        "lineNumber": 129,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "}\u003e;"
-      },
-      {
-        "lineNumber": 130,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "// Semester-specific information of a module."
+        "content": "}\u003e;"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "export type SemesterData \u003d {"
+        "content": ""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "  semester: Semester;"
+        "content": "// Semester-specific information of a module."
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "  timetable: ReadonlyArray\u003cRawLesson\u003e;"
+        "content": "export type SemesterData \u003d {"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  semester: Semester;"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Exam"
+        "content": "  timetable: ReadonlyArray\u003cRawLesson\u003e;"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "  examDate?: string;"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "  examDuration?: number;"
+        "content": "  // Exam"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "};"
+        "content": "  examDate?: string;"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  examDuration?: number;"
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "// This format is returned from the module list endpoint."
+        "content": "};"
       },
       {
         "lineNumber": 142,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "export type ModuleCondensed \u003d Readonly\u003c{"
+        "content": ""
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "  moduleCode: ModuleCode;"
+        "content": "// This format is returned from the module list endpoint."
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "  title: ModuleTitle;"
+        "content": "export type ModuleCondensed \u003d Readonly\u003c{"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "  semesters: ReadonlyArray\u003cnumber\u003e;"
+        "content": "  moduleCode: ModuleCode;"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "}\u003e;"
+        "content": "  title: ModuleTitle;"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "-"
+          "gitId": "amrut-prabhu"
         },
-        "content": ""
+        "content": "  semesters: ReadonlyArray\u003cnumber\u003e;"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "// This format is returned from the module information endpoint"
+        "content": "}\u003e;"
       },
       {
         "lineNumber": 149,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "// Subset of Module object that contains the properties that are needed for module search"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "export type ModuleInformation \u003d Readonly\u003c{"
+        "content": "// This format is returned from the module information endpoint"
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "-"
+          "gitId": "amrut-prabhu"
         },
-        "content": "  // Basic info"
+        "content": "// Subset of Module object that contains the properties that are needed for module search"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "-"
+          "gitId": "amrut-prabhu"
         },
-        "content": "  moduleCode: ModuleCode;"
+        "content": "export type ModuleInformation \u003d Readonly\u003c{"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "  title: ModuleTitle;"
+        "content": "  // Basic info"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  moduleCode: ModuleCode;"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Additional info"
+        "content": "  title: ModuleTitle;"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "  description?: string;"
+        "content": ""
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "  moduleCredit: string;"
+        "content": "  // Additional info"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "  department: Department;"
+        "content": "  description?: string;"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "  faculty: Faculty;"
+        "content": "  moduleCredit: string;"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "  workload?: Workload;"
+        "content": "  department: Department;"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "  aliases?: ModuleCode[];"
+        "content": "  faculty: Faculty;"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "  attributes?: NUSModuleAttributes;"
+        "content": "  workload?: Workload;"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  aliases?: ModuleCode[];"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Requsites"
+        "content": "  attributes?: NUSModuleAttributes;"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "  prerequisite?: string;"
+        "content": ""
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "  corequisite?: string;"
+        "content": "  // Requsites"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "  preclusion?: string;"
+        "content": "  prerequisite?: string;"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 169,
-        "author": {
-          "gitId": "amrut-prabhu"
-        },
-        "content": "  // Condensed semester info"
-      },
-      {
-        "lineNumber": 170,
-        "author": {
-          "gitId": "amrut-prabhu"
-        },
-        "content": "  semesterData: ReadonlyArray\u003cSemesterDataCondensed\u003e;"
-      },
-      {
-        "lineNumber": 171,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 172,
-        "author": {
-          "gitId": "amrut-prabhu"
-        },
-        "content": "  // Requisite tree is not returned to save space"
-      },
-      {
-        "lineNumber": 173,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "}\u003e;"
-      },
-      {
-        "lineNumber": 174,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 175,
-        "author": {
-          "gitId": "amrut-prabhu"
-        },
-        "content": "// Information for a module for a particular academic year."
-      },
-      {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "amrut-prabhu"
-        },
-        "content": "export type Module \u003d {"
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "amrut-prabhu"
-        },
-        "content": "  acadYear: AcadYear;"
-      },
-      {
-        "lineNumber": 178,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  // Basic info"
-      },
-      {
-        "lineNumber": 180,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  moduleCode: ModuleCode;"
-      },
-      {
-        "lineNumber": 181,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  title: ModuleTitle;"
-      },
-      {
-        "lineNumber": 182,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 183,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  // Additional info"
-      },
-      {
-        "lineNumber": 184,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  description?: string;"
-      },
-      {
-        "lineNumber": 185,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  moduleCredit: string;"
-      },
-      {
-        "lineNumber": 186,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  department: Department;"
-      },
-      {
-        "lineNumber": 187,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  faculty: Faculty;"
-      },
-      {
-        "lineNumber": 188,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  workload?: Workload;"
-      },
-      {
-        "lineNumber": 189,
-        "author": {
-          "gitId": "amrut-prabhu"
-        },
-        "content": "  aliases?: ModuleCode[];"
-      },
-      {
-        "lineNumber": 190,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  attributes?: NUSModuleAttributes;"
-      },
-      {
-        "lineNumber": 191,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 192,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  // Requsites"
-      },
-      {
-        "lineNumber": 193,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  prerequisite?: string;"
-      },
-      {
-        "lineNumber": 194,
-        "author": {
-          "gitId": "-"
-        },
         "content": "  corequisite?: string;"
       },
       {
-        "lineNumber": 195,
+        "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
         "content": "  preclusion?: string;"
       },
       {
-        "lineNumber": 196,
+        "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "amrut-prabhu"
+        },
+        "content": "  // Condensed semester info"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "amrut-prabhu"
+        },
+        "content": "  semesterData: ReadonlyArray\u003cSemesterDataCondensed\u003e;"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "amrut-prabhu"
+        },
+        "content": "  // Requisite tree is not returned to save space"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}\u003e;"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "amrut-prabhu"
+        },
+        "content": "// Information for a module for a particular academic year."
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "amrut-prabhu"
+        },
+        "content": "export type Module \u003d {"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "amrut-prabhu"
+        },
+        "content": "  acadYear: AcadYear;"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // Basic info"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  moduleCode: ModuleCode;"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  title: ModuleTitle;"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // Additional info"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  description?: string;"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  moduleCredit: string;"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  department: Department;"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  faculty: Faculty;"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  workload?: Workload;"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "amrut-prabhu"
+        },
+        "content": "  aliases?: ModuleCode[];"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  attributes?: NUSModuleAttributes;"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  // Requsites"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  prerequisite?: string;"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  corequisite?: string;"
+      },
+      {
         "lineNumber": 197,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  preclusion?: string;"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 199,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "  // Semester data"
       },
       {
-        "lineNumber": 198,
+        "lineNumber": 200,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "  semesterData: ReadonlyArray\u003cSemesterData\u003e;"
       },
       {
-        "lineNumber": 199,
+        "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 200,
+        "lineNumber": 202,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "  // Requisites"
       },
       {
-        "lineNumber": 201,
+        "lineNumber": 203,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "  prereqTree?: PrereqTree;"
       },
       {
-        "lineNumber": 202,
+        "lineNumber": 204,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "  fulfillRequirements?: ReadonlyArray\u003cModuleCode\u003e;"
       },
       {
-        "lineNumber": 203,
+        "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
@@ -25306,7 +25320,7 @@
     ],
     "authorContributionMap": {
       "amrut-prabhu": 60,
-      "-": 143
+      "-": 145
     }
   },
   {
