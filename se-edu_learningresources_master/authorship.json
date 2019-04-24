@@ -721,40 +721,47 @@
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "-"
+          "gitId": "ChooJeremy"
         },
-        "content": "    * [SQL Injection]({{baseUrl}}/contents/security/sqlInjection.html)"
+        "content": "    * [Password Storage]({{baseUrl}}/contents/security/passwordStorage.html)"
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "junming403"
+          "gitId": "-"
         },
-        "content": "  * Shell"
+        "content": "    * [SQL Injection]({{baseUrl}}/contents/security/sqlInjection.html)"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "junming403"
         },
-        "content": "    * [bash]({{baseUrl}}/contents/shells/bash.html)"
+        "content": "  * Shell"
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "-"
+          "gitId": "junming403"
         },
-        "content": ""
+        "content": "    * [bash]({{baseUrl}}/contents/shells/bash.html)"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/navigation\u003e"
+        "content": ""
       },
       {
         "lineNumber": 96,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "\u003c/navigation\u003e"
+      },
+      {
+        "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
@@ -770,6 +777,7 @@
       "-": 80,
       "sijie123": 1,
       "luyangkenneth": 1,
+      "ChooJeremy": 1,
       "RonakLakhotia": 1,
       "rrtheonlyone": 1,
       "junming403": 2,
@@ -26868,6 +26876,1029 @@
     "authorContributionMap": {
       "fzdy1914": 225,
       "-": 1
+    }
+  },
+  {
+    "path": "contents/security/passwordStorage.md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cfrontmatter\u003e"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  title: Introduction to Password Storage"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  header: pagetop.md"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  footer: footer.md"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  head: head.md"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  siteNav: mainNav.md"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  pageNav: 3"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/frontmatter\u003e"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cdiv class\u003d\"website-content\"\u003e"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "{{ booktitle | safe }}"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "# Introduction to Password Storage"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "**Author: [Jeremy Choo](https://github.com/ChooJeremy)** \u003cbr\u003e"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Reviewers: [Amrut Prabhu](https://github.com/amrut-prabhu), [Marvin Chin](https://github.com/marvinchin), [Tan Zhen Yong](https://github.com/Xenonym), [Wang Junming](https://github.com/junming403)"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "## Overview"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Many software applications use a username and password combination as user account credentials for authentication. Obviously, it is not a good idea for the software to store these credentials as \u003ctrigger for\u003d\"pop:plaintext\"\u003eplain text\u003c/trigger\u003e because if someone else were to gain access to them either lawfully (e.g., an employee who has access to the data) or unlawfully (e.g., someone hacking into the data storage), that person can use those credentials directly to impersonate the account owner. This article explains some techniques that can be used to store user credentials more securely:"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "- Encryption"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "- Hashing"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "- Salting"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cpopover id\u003d\"pop:plaintext\" title\u003d\"_Plaintext_ refers to unencrypted information\" placement\u003d\"top\"\u003e"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003cdiv slot\u003d\"content\"\u003e"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "It is a cryptography term generally referring to text before encyption or after decrypting it. Another term for it is cleartext."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003c/div\u003e"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/popover\u003e"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "## Encryption"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "_Encryption_ is the process of converting plaintext into \u003ctrigger for\u003d\"pop:ciphertext\"\u003eciphertext\u003c/trigger\u003e along with an \u003ctrigger for\u003d\"pop:encrypt-key\"\u003eencryption key\u003c/trigger\u003e. To \u003ctooltip content\u003d\"The opposite of encryption\"\u003edecrypt\u003c/tooltip\u003e the message, a \u003ctrigger for\u003d\"pop:decrypt-key\"\u003edecryption key\u003c/trigger\u003e is required to convert the ciphertext back into it\u0027s original plaintext for it to be read. This process is called _decryption_. Without the decryption key, the ciphertext is simply a bunch of meaningless data. There are two main types of \u003ctooltip content\u003d\"When you choose to encrypt data, you must choose a specific algorithm to encrypt with. There are many, such as AES, DES and RSA\"\u003eencryption algorithms\u003c/tooltip\u003e: _Symmetric key algorithms_, where encryption and decryption keys are identical or closely related, and _Asymmetric key algorithms_, where encryption and decryption keys are different."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cpopover id\u003d\"pop:ciphertext\" title\u003d\"_Ciphertext_ refers to encrypted information\" placement\u003d\"top\"\u003e"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003cdiv slot\u003d\"content\"\u003e"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "It is a cryptography term generally referring to data after encrypting it."
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003c/div\u003e"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/popover\u003e"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cpopover id\u003d\"pop:decrypt-key\" title\u003d\"All decryption algorithms require a _decryption key_\" placement\u003d\"top\"\u003e"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003cdiv slot\u003d\"content\"\u003e"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Without this decryption key, decryption cannot be performed. Only the intended recipient of the data should have the decryption key."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003c/div\u003e"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/popover\u003e"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "One common example of encryption is the use of shifting each letter of the alphabet to the left or right by a number of positions. This is known as the _Caesar cipher_ For example, if we chose to shift all the letters by 3, then the encryption key (and decryption key) for this algorithm would be 3. This would result in the following encryption algorithm:"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Plaintext:  ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Ciphertext: DEFGHIJKLMNOPQRSTUVWXYZABC"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "```"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "This would mean that encrypting the message `I love you` would result in `L oryh brx`"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Naturally, this isn\u0027t a very good encryption method because even if one doesn\u0027t know the decryption key, the method can be easily \u003ctrigger for\u003d\"pop:brute\"\u003ebrute forced\u003c/trigger\u003e by trying all \u003ctooltip content\u003d\"25 combinations because shifting by 26 simply results in the ciphertext being identical to the plaintext\"\u003e25\u003c/tooltip\u003e possible combinations and seeing if any of the results in a readable message. "
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cpopover id\u003d\"pop:brute\" title\u003d\"A brute force attack is an attack where all possible combinations are tested to see if they work.\" placement\u003d\"top\"\u003e"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003cdiv slot\u003d\"content\"\u003e"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": " A brute force attack usually takes very long to carry out."
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003c/div\u003e"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/popover\u003e"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Another encryption method is the _Pigpen Cipher_, where letters are \u003ctooltip content\u003d\"Substitution is a common technique in encrypting data by converting all instances of one letter to something else\"\u003esubstituted\u003c/tooltip\u003e with symbols. The encryption key usually looks something like this:"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "![Pigpen Cipher diagram](passwordStorage/pigpen.png \"The Pigpen cipher substitution\") "
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "In this case, each letter is substituted with a symbol that matches the exterior walls of where that letter is. For example, the letter `W` would be encrypted to the symbol ![W](passwordStorage/W.png \"Pigpen cipher substitution for W\") . If the letter is located on the right side instead, then a dot is placed in the middle of the symbol to indicate that it refers to the right letter instead of the one on the left. For example, the letter P would be encrypted to the symbol ![P](passwordStorage/P.png \"Pigpen cipher substitution for P\")"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Naturally, the decryption key would be the encryption key itself, as it can be re-used to decrypt the ciphertext. Compared to the Caesar cipher, The Pigpen cipher is more resilient to brute force attacks if one doesn\u0027t know the decryption key, as it could result in one trying all possible substitution for each symbol. "
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "I had a secret agent send me information about the secret ingredient of Mick\u0027s cheeseburgers earlier, as they were delicious and I found myself constantly eating it. I suspect it\u0027s some addictive substance to make customers keep coming back for more. To ensure that Mick didn\u0027t know their secret ingredient was being leaked, I had my agent send it in Pigpen cipher:"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "![Cheese](passwordStorage/cheese.png \"Secret ingredient of Mick\u0027s cheeseburgers\") "
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Encryption might seem like a good idea because the ciphertext is meaningless without the decryption key, which prevents all of the problems with storing the data directly in plaintext. However, because encryption is \u003ctooltip content\u003d\"If a function is reversible, and it converts from x to y, then it can also convert from y back to x\"\u003e reversible\u003c/tooltip\u003e, it is always possible to regain the original password from the ciphertext. Since the password is encrypted, the decryption key must also be stored somewhere. This means that if someone manages to hack into the application and read the encrypted passwords, it is also likely that they will be able to read the decryption key. With the decryption key, they will be able to decrypt all the passwords and read them anyway. This makes encryption unsuitable for password storage."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cpopover id\u003d\"pop:encrypt-key\" title\u003d\"All encryption algorithms require an _encryption key_\" placement\u003d\"top\"\u003e"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003cdiv slot\u003d\"content\"\u003e"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "The key is usually randomly generated text that is used to encrypt the original data."
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003c/div\u003e"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/popover\u003e"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "## Hashing"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "_Hashing_ is a \u003ctooltip content\u003d\"A one way function is a function that is easy to compute the result of, but whose results are difficult to reverse back to the original input\"\u003eone-way\u003c/tooltip\u003e function that transforms a set of data into another set of data. Unlike encryption, when hashing is done, information that describes the original set of data is lost irrevocably in the process. This means that it is impossible to recover the original input from the \u003ctooltip content\u003d\"A hash is the output of a hashing algorithm\"\u003ehash."
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cpopover id\u003d\"pop:hashing-algo\" title\u003d\"A _hashing algorithm_ is a specific type of operation that hashes the input\" placement\u003d\"top\"\u003e"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003cdiv slot\u003d\"content\"\u003e"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Different types of hashing algorithms will result in different output."
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "  \u003c/div\u003e"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/popover\u003e"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Some examples of cryptographic \u003ctrigger for\u003d\"pop:hashing-algo\"\u003ehashing algorithms\u003c/trigger\u003e are [MD5](https://www.quora.com/How-does-the-MD5-algorithm-work) and [SHA1](https://deadhacker.com/2006/02/21/sha-1-illustrated/). However, when you perform hashing for passwords, you should use password hashing algorithms (such as [Argon2](https://github.com/P-H-C/phc-winner-argon2), [SCrypt](https://passlib.readthedocs.io/en/stable/lib/passlib.hash.scrypt.html) and [bcrypt](https://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage)). The main difference between these are that password hashing algorithms are designed to be slow to prevent brute force attacks, unlike cryptographic hashing algorithms which are built for speed. Despite that, if you plan on learning more about hashing algorithms, we recommend starting with MD5 and SHA1, as they are easier algorithms to learn about."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "For example, a simple hashing algorithm that acts on numbers could add up all the digits in that number. This would mean hashing the number `1013` would result in 1+0+1+3 \u003d `5`. Hashing the number `761` would result in `14`. Note that after hashing the number, there is no way to regain back the original number - data about the original number (such as number and position of digits) have been irrevocably lost in the process. Additionally, many different numbers could result in the same hash. For example, the numbers `101` and `20` both result in the hash of `2`. This is called a _hash collision_. A good hashing algorithm attempts to minimize the amount of hash collisions such that the probability of it happening is close to 0. In the case of the MD5 algorithm, the probability of a hash collision given any two inputs is 1 in 2\u003csup\u003e128\u003c/sup\u003e which is 1 in 340,282,366,920,938,463,463,374,607,431,768,211,456."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "### Why isn\u0027t hashing enough?"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "A _[rainbow table](https://en.wikipedia.org/wiki/Rainbow_table)_ is a precomputed table of hashes for some set of passwords. Basically, people build huge tables of hashes wherein the plaintext is already known, so that attempting to crack hashes becomes a simple problem of looking up the hash in the table and its corresponding value, instead of attempting to reverse the hash. Through this method, it is very easy to crack simple hashes by simply doing a lookup."
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "An example of a service that provides this is [Crackstation](https://crackstation.net/)."
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Since attacks like rainbow tables exist, passwords need another layer of security."
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "## Salting"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "_Salting_ refers to appending a string of text, unique to each user, to their password before hashing them. Since each user has a unique salt, this makes rainbow tables ineffective, as the majority of the precomputed hashes won\u0027t even contain the salt, so they wouldn\u0027t even matter anyway! In this way, the salt forces the attacker to recompute the rainbow table for each password in order to be able to effectively use it. This effectively converts the attack to brute force, as each hash must be recomputed for each possible password. Additionally, the computed rainbow table would only be useful for that specific user, as each user would have a different salt. It could take years before a password is cracked!"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Note that the salt should be randomly generated, as opposed to choosing a static value that is different for every user. For example, if an application used the username of the user as the salt, then attackers can pre-generate rainbow tables for common usernames, causing users with common username to be vulnerable to a rainbow table attack, even with salt applied to their passwords."
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Thus, the way to store passwords properly is to use a _salted hash_ - take the user\u0027s password, append some data to it, and hash the result. That hash is the user\u0027s hashed password. When the user attempts to log in again, perform the same procedure again. If the hash matches, then you know that the user is who he says he is, even if you don\u0027t actually know the original password that the user provided. "
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "One question that is commonly asked by developers is where to store the salt. The salt can be stored in plaintext, along with the user in the database. Since the goal of the salt is only to prevent precomputed rainbow tables from being used, it doesn\u0027t need to be encrypted in the database."
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Many good password hashing algorithms today have built-in salts, such as [Argon2](https://github.com/P-H-C/phc-winner-argon2), [SCrypt](https://passlib.readthedocs.io/en/stable/lib/passlib.hash.scrypt.html) and [bcrypt](https://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage). A good password hashing algorithm or library will salt automatically."
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "### What if there is a server breach?"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "A common question asked by developers is how much all of these security measures actually matter. After all, if an attacker has gained access to the entire application, does it matter if passwords are stored in plaintext or not?"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "If an attacker has already gained access to the entire application, then he already has all the information that he could possibly want from the server. He would have access to all of the application\u0027s data, including data from users or from any analytics software that might be running. However, by adding salt and hashing passwords, the attacker still doesn\u0027t know customer\u0027s passwords and could take years to find out. Otherwise, since 59% of people use the same password across multiple sites \u003csup\u003e[source](https://securityboulevard.com/2018/05/59-of-people-use-the-same-password-everywhere-poll-finds/)\u003c/sup\u003e, the attacker could quickly try other websites such as banks to attempt to break into those accounts, which can potentially yield great returns in terms of information and/or money."
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Additionally, when a user signed up on your website and provided you a password, they implicitly trusted you to keep that information safe and secure for them. In a sense, you do have a responsibility to keep their passwords secure. By doing proper password storage, if your servers ever get breached, you can assure your customers that their passwords are properly secured, and still maintain some of their trust in you."
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "## Getting started"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003cbox type\u003d\"danger\"\u003e"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "It is far too easy to screw up and make a mistake. Instead, use one of the free libraries that provide a crypto function that has already been well-tested by the community. \u003cb\u003eDo not write your own crypto library.\u003c/b\u003e"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/box\u003e"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "Here are some libraries you can use to implement password storage:"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "* PHP: [password_hash](https://secure.php.net/manual/en/function.password-hash.php)"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "* Java: [SecretKeyFactory](https://www.owasp.org/index.php/Hashing_Java) "
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "* Python: [PassLib](https://passlib.readthedocs.io/en/stable/narr/hash-tutorial.html)"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "* JavaScript: [bcrypt](https://www.npmjs.com/package/bcrypt)"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "## Other resources"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "* [Secure Salted Password Hashing - How to do it properly](https://crackstation.net/hashing-security.htm) is an excellent resource that explains how to perform salted password hashing correctly, including links to other good libraries and what else can be done."
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "* [Awesome Cryptography](https://github.com/sobolevn/awesome-cryptography) is a curated list of resources on cryptographic algorithms - articles, blogs, books, libraries and more."
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "ChooJeremy"
+        },
+        "content": "\u003c/div\u003e"
+      }
+    ],
+    "authorContributionMap": {
+      "ChooJeremy": 145
     }
   },
   {

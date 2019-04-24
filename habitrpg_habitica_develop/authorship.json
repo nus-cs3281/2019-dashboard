@@ -6856,9 +6856,9 @@
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "ChesterSng"
+          "gitId": "-"
         },
-        "content": "    if (!user.auth.local.hashed_password) throw new NotAuthorized(res.t(\u0027invalidLoginCredentialsLong\u0027));"
+        "content": "    if (!user || !user.auth.local.hashed_password) throw new NotAuthorized(res.t(\u0027invalidLoginCredentialsLong\u0027));"
       },
       {
         "lineNumber": 103,
@@ -9263,8 +9263,8 @@
       }
     ],
     "authorContributionMap": {
-      "ChesterSng": 3,
-      "-": 442
+      "ChesterSng": 2,
+      "-": 443
     }
   },
   {
