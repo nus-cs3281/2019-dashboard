@@ -81190,661 +81190,654 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    type: \u0027button\u0027,"
+        "content": "    className: classnames(\u0027btn btn-block\u0027, {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "    className: classnames(\u0027btn btn-block\u0027, {"
+        "content": "      \u0027btn-outline-secondary\u0027: disabled,"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u0027btn-outline-secondary\u0027: disabled,"
+        "content": "      \u0027btn-outline-primary\u0027: !selected \u0026\u0026 !disabled,"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u0027btn-outline-primary\u0027: !selected \u0026\u0026 !disabled,"
+        "content": "      \u0027btn-primary\u0027: selected,"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u0027btn-primary\u0027: selected,"
+        "content": "    }),"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "    }),"
+        "content": "  };"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": "}"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "export function PlannerSettingsComponent(props: Props) {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "export function PlannerSettingsComponent(props: Props) {"
+        "content": "  const matriculationLabels \u003d getYearLabels(MIN_YEARS, MAX_YEARS).reverse();"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "  const matriculationLabels \u003d getYearLabels(MIN_YEARS, MAX_YEARS).reverse();"
+        "content": "  const graduationLabels \u003d getYearLabels(0, GRADUATE_IN);"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "  const graduationLabels \u003d getYearLabels(0, GRADUATE_IN);"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  return ("
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "  return ("
+        "content": "    \u003cdiv className\u003d{styles.settings}\u003e"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003cdiv className\u003d{styles.settings}\u003e"
+        "content": "      \u003csection\u003e"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003csection\u003e"
+        "content": "        \u003ch2 className\u003d{styles.label}\u003eMatriculated in\u003c/h2\u003e"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003ch2 className\u003d{styles.label}\u003eMatriculated in\u003c/h2\u003e"
+        "content": "        \u003cul className\u003d{styles.years}\u003e"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cul className\u003d{styles.years}\u003e"
+        "content": "          {matriculationLabels.map((year, i) \u003d\u003e {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "          {matriculationLabels.map((year, i) \u003d\u003e {"
+        "content": "            const offset \u003d i - MAX_YEARS;"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "            const offset \u003d i - MAX_YEARS;"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            return ("
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "            return ("
+        "content": "              \u003cli key\u003d{year}\u003e"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cli key\u003d{year}\u003e"
+        "content": "                \u003cbutton"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u003cbutton"
+        "content": "                  type\u003d\"button\""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "                  type\u003d\"button\""
+        "content": "                  onClick\u003d{() \u003d\u003e props.setMinYear(year)}"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "                  onClick\u003d{() \u003d\u003e props.setMinYear(year)}"
+        "content": "                  {...buttonProps(props.minYear \u003d\u003d\u003d year, year \u003e props.maxYear)}"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "                  {...buttonProps(props.minYear \u003d\u003d\u003d year, year \u003e props.maxYear)}"
+        "content": "                \u003e"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u003e"
+        "content": "                  AY{acadYearLabel(year)}"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "                  AY{acadYearLabel(year)}"
+        "content": "                  \u003cspan className\u003d{styles.subtitle}\u003e"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "                  \u003cspan className\u003d{styles.subtitle}\u003e"
+        "content": "                    ("
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "                    ("
+        "content": "                    {offset \u003e\u003d 0"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "                    {offset \u003e\u003d 0"
+        "content": "                      ? `currently year ${offset + 1}`"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "                      ? `currently year ${offset + 1}`"
+        "content": "                      : graduationLabel(-offset).toLowerCase()}"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "                      : graduationLabel(-offset).toLowerCase()}"
+        "content": "                    )"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "                    )"
+        "content": "                  \u003c/span\u003e"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "                  \u003c/span\u003e"
+        "content": "                \u003c/button\u003e"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u003c/button\u003e"
+        "content": "              \u003c/li\u003e"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003c/li\u003e"
+        "content": "            );"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "            );"
+        "content": "          })}"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "          })}"
+        "content": "        \u003c/ul\u003e"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/ul\u003e"
+        "content": "      \u003c/section\u003e"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/section\u003e"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      \u003csection\u003e"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003csection\u003e"
+        "content": "        \u003ch2 className\u003d{styles.label}\u003eGraduating\u003c/h2\u003e"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003ch2 className\u003d{styles.label}\u003eGraduating\u003c/h2\u003e"
+        "content": "        \u003cul className\u003d{styles.years}\u003e"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cul className\u003d{styles.years}\u003e"
+        "content": "          {graduationLabels.map((year, offset) \u003d\u003e ("
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "          {graduationLabels.map((year, offset) \u003d\u003e ("
+        "content": "            \u003cli key\u003d{year}\u003e"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cli key\u003d{year}\u003e"
+        "content": "              \u003cbutton"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cbutton"
+        "content": "                type\u003d\"button\""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "                type\u003d\"button\""
+        "content": "                onClick\u003d{() \u003d\u003e props.setMaxYear(year)}"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "                onClick\u003d{() \u003d\u003e props.setMaxYear(year)}"
+        "content": "                {...buttonProps(props.maxYear \u003d\u003d\u003d year, year \u003c props.minYear)}"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "                {...buttonProps(props.maxYear \u003d\u003d\u003d year, year \u003c props.minYear)}"
+        "content": "              \u003e"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003e"
+        "content": "                {graduationLabel(offset)}"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "                {graduationLabel(offset)}"
+        "content": "                \u003cspan className\u003d{styles.subtitle}\u003e(AY{acadYearLabel(year)})\u003c/span\u003e"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u003cspan className\u003d{styles.subtitle}\u003e(AY{acadYearLabel(year)})\u003c/span\u003e"
+        "content": "              \u003c/button\u003e"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003c/button\u003e"
+        "content": "            \u003c/li\u003e"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c/li\u003e"
+        "content": "          ))}"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "          ))}"
+        "content": "        \u003c/ul\u003e"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/ul\u003e"
+        "content": "      \u003c/section\u003e"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/section\u003e"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      \u003csection className\u003d{styles.toggleSection}\u003e"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003csection className\u003d{styles.toggleSection}\u003e"
+        "content": "        \u003cdiv\u003e"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cdiv\u003e"
+        "content": "          \u003ch2 className\u003d{styles.label}\u003eTaking iBLOCs\u003c/h2\u003e"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003ch2 className\u003d{styles.label}\u003eTaking iBLOCs\u003c/h2\u003e"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          \u003cp\u003e"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cp\u003e"
+        "content": "            \u003cExternalLink href\u003d\"http://www.nus.edu.sg/ibloc/iBLOC.html\"\u003eiBLOCs\u003c/ExternalLink\u003e is a"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d\"http://www.nus.edu.sg/ibloc/iBLOC.html\"\u003eiBLOCs\u003c/ExternalLink\u003e is a"
+        "content": "            program that allow full-time NSmen to read some modules before matriculating."
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "            program that allow full-time NSmen to read some modules before matriculating."
+        "content": "          \u003c/p\u003e"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/p\u003e"
+        "content": "        \u003c/div\u003e"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/div\u003e"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        \u003cToggle"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cToggle"
+        "content": "          labels\u003d{TOGGLE_LABELS}"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "          labels\u003d{TOGGLE_LABELS}"
+        "content": "          isOn\u003d{props.iblocs}"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "          isOn\u003d{props.iblocs}"
+        "content": "          onChange\u003d{(checked) \u003d\u003e props.setIBLOCs(checked)}"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "          onChange\u003d{(checked) \u003d\u003e props.setIBLOCs(checked)}"
+        "content": "        /\u003e"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "        /\u003e"
+        "content": "      \u003c/section\u003e"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/section\u003e"
+        "content": "    \u003c/div\u003e"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003c/div\u003e"
+        "content": "  );"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "  );"
+        "content": "}"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "const PlannerSettings \u003d connect("
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "const PlannerSettings \u003d connect("
+        "content": "  (state: State) \u003d\u003e ({"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "  (state: State) \u003d\u003e ({"
+        "content": "    minYear: state.planner.minYear,"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "    minYear: state.planner.minYear,"
+        "content": "    maxYear: state.planner.maxYear,"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "    maxYear: state.planner.maxYear,"
+        "content": "    iblocs: state.planner.iblocs,"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "    iblocs: state.planner.iblocs,"
+        "content": "  }),"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "  }),"
+        "content": "  {"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "  {"
+        "content": "    setMaxYear: setPlannerMaxYear,"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "    setMaxYear: setPlannerMaxYear,"
+        "content": "    setMinYear: setPlannerMinYear,"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "    setMinYear: setPlannerMinYear,"
+        "content": "    setIBLOCs: setPlannerIBLOCs,"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "    setIBLOCs: setPlannerIBLOCs,"
+        "content": "  },"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "  },"
+        "content": ")(PlannerSettingsComponent);"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": ")(PlannerSettingsComponent);"
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "-"
-        },
         "content": ""
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
@@ -81853,7 +81846,7 @@
     ],
     "authorContributionMap": {
       "amrut-prabhu": 1,
-      "-": 141
+      "-": 140
     }
   },
   {
