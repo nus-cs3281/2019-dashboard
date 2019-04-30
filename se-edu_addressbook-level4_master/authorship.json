@@ -371,1144 +371,1137 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    testImplementation group: \u0027org.testfx\u0027, name: \u0027testfx-junit\u0027, version: testFxVersion"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    testImplementation group: \u0027org.junit.jupiter\u0027, name: \u0027junit-jupiter-api\u0027, version: jUnitVersion"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "    testImplementation group: \u0027org.junit.jupiter\u0027, name: \u0027junit-jupiter-api\u0027, version: jUnitVersion"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    testRuntimeOnly group: \u0027org.testfx\u0027, name: \u0027openjfx-monocle\u0027, version: \u00278u76-b04\u0027"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "    testRuntimeOnly group: \u0027org.testfx\u0027, name: \u0027openjfx-monocle\u0027, version: \u00278u76-b04\u0027"
+        "content": "    testRuntimeOnly group:\u0027org.junit.vintage\u0027, name:\u0027junit-vintage-engine\u0027, version: jUnitVersion"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "    testRuntimeOnly group:\u0027org.junit.vintage\u0027, name:\u0027junit-vintage-engine\u0027, version: jUnitVersion"
+        "content": "    testRuntimeOnly group: \u0027org.junit.jupiter\u0027, name: \u0027junit-jupiter-engine\u0027, version: jUnitVersion"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "    testRuntimeOnly group: \u0027org.junit.jupiter\u0027, name: \u0027junit-jupiter-engine\u0027, version: jUnitVersion"
+        "content": "}"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "shadowJar {"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "shadowJar {"
+        "content": "    archiveName \u003d \u0027addressbook.jar\u0027"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "    archiveName \u003d \u0027addressbook.jar\u0027"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    destinationDir \u003d file(\"${buildDir}/jar/\")"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "    destinationDir \u003d file(\"${buildDir}/jar/\")"
+        "content": "}"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "-"
-        },
         "content": "task coverage(type: JacocoReport) {"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 68,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "    sourceDirectories.from files(sourceSets.main.allSource.srcDirs)"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 69,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "    classDirectories.from files(sourceSets.main.output)"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 70,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "    executionData.from files(jacocoTestReport.executionData)"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
         "content": "    afterEvaluate {"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 72,
         "author": {
           "gitId": "fzdy1914"
         },
         "content": "        classDirectories.from files(classDirectories.files.collect {"
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
         "content": "            fileTree(dir: it, exclude: [\u0027**/*.jar\u0027])"
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
         "content": "        })"
       },
       {
-        "lineNumber": 76,
+        "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 77,
+        "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
         "content": "    reports {"
       },
       {
-        "lineNumber": 78,
+        "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
         "content": "        html.enabled \u003d true"
       },
       {
-        "lineNumber": 79,
+        "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
         "content": "        xml.enabled \u003d true"
       },
       {
-        "lineNumber": 80,
+        "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "coveralls {"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "coveralls {"
+        "content": "    sourceDirs \u003d sourceSets.main.allSource.srcDirs.absolutePath"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "    sourceDirs \u003d sourceSets.main.allSource.srcDirs.absolutePath"
+        "content": "    jacocoReportPath \u003d \"${buildDir}/reports/jacoco/coverage/coverage.xml\""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "    jacocoReportPath \u003d \"${buildDir}/reports/jacoco/coverage/coverage.xml\""
+        "content": "}"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "tasks.coveralls {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "tasks.coveralls {"
+        "content": "    dependsOn coverage"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "    dependsOn coverage"
+        "content": "    onlyIf { System.env.\u0027CI\u0027 }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "    onlyIf { System.env.\u0027CI\u0027 }"
+        "content": "}"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "task(guiTests)"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "task(guiTests)"
+        "content": "task(nonGuiTests)"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "task(nonGuiTests)"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// Run `test` task if `guiTests` or `nonGuiTests` is specified"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "// Run `test` task if `guiTests` or `nonGuiTests` is specified"
+        "content": "guiTests.dependsOn test"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "guiTests.dependsOn test"
+        "content": "nonGuiTests.dependsOn test"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "nonGuiTests.dependsOn test"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "task(allTests)"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "task(allTests)"
+        "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// `allTests` implies both `guiTests` and `nonGuiTests`"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "// `allTests` implies both `guiTests` and `nonGuiTests`"
+        "content": "allTests.dependsOn guiTests"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "allTests.dependsOn guiTests"
+        "content": "allTests.dependsOn nonGuiTests"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "allTests.dependsOn nonGuiTests"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "test {"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "test {"
+        "content": "    systemProperty \u0027testfx.setup.timeout\u0027, \u002760000\u0027"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "    systemProperty \u0027testfx.setup.timeout\u0027, \u002760000\u0027"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    testLogging {"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "    testLogging {"
+        "content": "        events TestLogEvent.FAILED, TestLogEvent.SKIPPED"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "        events TestLogEvent.FAILED, TestLogEvent.SKIPPED"
+        "content": ""
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        // Prints the currently running test\u0027s name in the CI\u0027s build log,"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Prints the currently running test\u0027s name in the CI\u0027s build log,"
+        "content": "        // so that we can check if tests are being silently skipped or"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "        // so that we can check if tests are being silently skipped or"
+        "content": "        // stalling the build."
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "        // stalling the build."
+        "content": "        if (System.env.\u0027CI\u0027) {"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (System.env.\u0027CI\u0027) {"
+        "content": "            events \u003c\u003c TestLogEvent.STARTED"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "            events \u003c\u003c TestLogEvent.STARTED"
+        "content": "        }"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    jacoco {"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "    jacoco {"
+        "content": "        destinationFile \u003d new File(\"${buildDir}/jacoco/test.exec\")"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "        destinationFile \u003d new File(\"${buildDir}/jacoco/test.exec\")"
+        "content": "    }"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    doFirst {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "    doFirst {"
+        "content": "        boolean runGuiTests \u003d gradle.taskGraph.hasTask(guiTests)"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "        boolean runGuiTests \u003d gradle.taskGraph.hasTask(guiTests)"
+        "content": "        boolean runNonGuiTests \u003d gradle.taskGraph.hasTask(nonGuiTests)"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "        boolean runNonGuiTests \u003d gradle.taskGraph.hasTask(nonGuiTests)"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if (!runGuiTests \u0026\u0026 !runNonGuiTests) {"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!runGuiTests \u0026\u0026 !runNonGuiTests) {"
+        "content": "            runGuiTests \u003d true"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "            runGuiTests \u003d true"
+        "content": "            runNonGuiTests \u003d true"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "            runNonGuiTests \u003d true"
+        "content": "        }"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if (runNonGuiTests) {"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (runNonGuiTests) {"
+        "content": "            test.include \u0027seedu/address/**\u0027"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "            test.include \u0027seedu/address/**\u0027"
+        "content": "        }"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if (runGuiTests) {"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (runGuiTests) {"
+        "content": "            test.include \u0027systemtests/**\u0027"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "            test.include \u0027systemtests/**\u0027"
+        "content": "            test.include \u0027seedu/address/ui/**\u0027"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "            test.include \u0027seedu/address/ui/**\u0027"
+        "content": "        }"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if (!runGuiTests) {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!runGuiTests) {"
+        "content": "            test.exclude \u0027seedu/address/ui/**\u0027"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "            test.exclude \u0027seedu/address/ui/**\u0027"
+        "content": "        }"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "task headless {"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "task headless {"
+        "content": "    doLast {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "    doLast {"
+        "content": "        println \u0027Setting headless mode properties.\u0027"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "        println \u0027Setting headless mode properties.\u0027"
+        "content": "        test {"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "        test {"
+        "content": "            systemProperties \u003d ["
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "            systemProperties \u003d ["
+        "content": "                \u0027testfx.robot\u0027: \u0027glass\u0027,"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0027testfx.robot\u0027: \u0027glass\u0027,"
+        "content": "                \u0027testfx.headless\u0027: \u0027true\u0027,"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0027testfx.headless\u0027: \u0027true\u0027,"
+        "content": "                \u0027prism.order\u0027: \u0027sw\u0027,"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0027prism.order\u0027: \u0027sw\u0027,"
+        "content": "                \u0027prism.text\u0027: \u0027t2k\u0027,"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u0027prism.text\u0027: \u0027t2k\u0027,"
+        "content": "            ]"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "            ]"
+        "content": "        }"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// Makes sure that headless properties are set before running tests"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "// Makes sure that headless properties are set before running tests"
+        "content": "test.mustRunAfter headless"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "test.mustRunAfter headless"
+        "content": ""
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "asciidoctor {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "asciidoctor {"
+        "content": "    backends \u0027html5\u0027"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "    backends \u0027html5\u0027"
+        "content": "    sourceDir \u0027docs\u0027"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "    sourceDir \u0027docs\u0027"
+        "content": "    outputDir \"${buildDir}/docs\""
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "    outputDir \"${buildDir}/docs\""
+        "content": ""
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    options \u003d ["
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "    options \u003d ["
+        "content": "        template_dirs: [file(\"${sourceDir}/templates\")],"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "        template_dirs: [file(\"${sourceDir}/templates\")],"
+        "content": "    ]"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "    ]"
+        "content": ""
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    attributes \u003d ["
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "    attributes \u003d ["
+        "content": "        linkcss: true,"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "        linkcss: true,"
+        "content": "        stylesheet: \u0027gh-pages.css\u0027,"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "        stylesheet: \u0027gh-pages.css\u0027,"
+        "content": "        \u0027source-highlighter\u0027: \u0027coderay\u0027,"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027source-highlighter\u0027: \u0027coderay\u0027,"
+        "content": "        icons: \u0027font\u0027,"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "        icons: \u0027font\u0027,"
+        "content": "        experimental: true,"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "        experimental: true,"
+        "content": "        sectlinks: true,"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "        sectlinks: true,"
+        "content": "        idprefix: \u0027\u0027,  // for compatibility with GitHub preview"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "        idprefix: \u0027\u0027,  // for compatibility with GitHub preview"
+        "content": "        idseparator: \u0027-\u0027,"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "        idseparator: \u0027-\u0027,"
+        "content": "        \u0027site-root\u0027: \"${sourceDir}\",  // must be the same as sourceDir, do not modify"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027site-root\u0027: \"${sourceDir}\",  // must be the same as sourceDir, do not modify"
+        "content": "        \u0027site-name\u0027: \u0027AddressBook-Level4\u0027,"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027site-name\u0027: \u0027AddressBook-Level4\u0027,"
+        "content": "        \u0027site-githuburl\u0027: \u0027https://github.com/se-edu/addressbook-level4\u0027,"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027site-githuburl\u0027: \u0027https://github.com/se-edu/addressbook-level4\u0027,"
+        "content": "        \u0027site-seedu\u0027: true,  // delete this line if your project is not a fork (not a SE-EDU project)"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027site-seedu\u0027: true,  // delete this line if your project is not a fork (not a SE-EDU project)"
+        "content": "    ]"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "    ]"
+        "content": ""
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    options[\u0027template_dirs\u0027].each {"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "    options[\u0027template_dirs\u0027].each {"
+        "content": "        inputs.files fileTree(it)"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        inputs.files fileTree(it)"
+        "content": "    }"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// Copies stylesheets into the directory containing generated HTML files as"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "// Copies stylesheets into the directory containing generated HTML files as"
+        "content": "// Asciidoctor does not copy linked CSS files to the output directory when rendering."
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "// Asciidoctor does not copy linked CSS files to the output directory when rendering."
+        "content": "// This is needed for linked stylesheets and embedded stylesheets which import other files."
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "// This is needed for linked stylesheets and embedded stylesheets which import other files."
+        "content": "task copyStylesheets(type: Copy) {"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "task copyStylesheets(type: Copy) {"
+        "content": "    from \"${asciidoctor.sourceDir}/stylesheets\""
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "    from \"${asciidoctor.sourceDir}/stylesheets\""
+        "content": "    into \"${asciidoctor.outputDir}/html5/stylesheets\""
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "    into \"${asciidoctor.outputDir}/html5/stylesheets\""
+        "content": "}"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "asciidoctor.dependsOn copyStylesheets"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "asciidoctor.dependsOn copyStylesheets"
+        "content": ""
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "task deployOfflineDocs(type: Copy) {"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "task deployOfflineDocs(type: Copy) {"
+        "content": "    into(\u0027src/main/resources/docs\u0027)"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "    into(\u0027src/main/resources/docs\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    from (\"${asciidoctor.outputDir}/html5\") {"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "    from (\"${asciidoctor.outputDir}/html5\") {"
+        "content": "        include \u0027stylesheets/*\u0027"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "        include \u0027stylesheets/*\u0027"
+        "content": "        include \u0027images/*\u0027"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "        include \u0027images/*\u0027"
+        "content": "        include \u0027HelpWindow.html\u0027"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "        include \u0027HelpWindow.html\u0027"
+        "content": "    }"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "deployOfflineDocs.dependsOn asciidoctor"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "deployOfflineDocs.dependsOn asciidoctor"
+        "content": "processResources.dependsOn deployOfflineDocs"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "processResources.dependsOn deployOfflineDocs"
-      },
-      {
-        "lineNumber": 215,
-        "author": {
-          "gitId": "-"
-        },
         "content": ""
       },
       {
-        "lineNumber": 216,
+        "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
@@ -1517,7 +1510,7 @@
     ],
     "authorContributionMap": {
       "fzdy1914": 7,
-      "-": 209
+      "-": 208
     }
   },
   {
