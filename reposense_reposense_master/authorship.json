@@ -6530,6 +6530,323 @@
     }
   },
   {
+    "path": "frontend/cypress/tests/codeView_toolBar_searchBox.js",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "describe(\u0027search bar\u0027, () \u003d\u003e {"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  it(\u0027non-existent author shows no result\u0027, () \u003d\u003e {"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    cy.get(\u0027#tabs-wrapper .tab-close\u0027).click();"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    cy.get(\u0027#summary-wrapper input[type\u003dtext]\u0027)"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .type(\u0027abcdef\u0027)"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .type(\u0027{enter}\u0027);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    Cypress.wait();"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // Enter does not work. Related issue: https://github.com/cypress-io/cypress/issues/3405"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // Let\u0027s manually submit form"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    cy.get(\u0027#summary-wrapper form.summary-picker\u0027)"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .submit();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    Cypress.wait();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    cy.get(\u0027#summary-wrapper #summary-charts\u0027).then(($ele) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const content \u003d $ele.html();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      expect(content).to.be.empty;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  });"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  it(\u0027unique author shows one result\u0027, () \u003d\u003e {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    cy.get(\u0027#tabs-wrapper .tab-close\u0027).click();"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    cy.get(\u0027#summary-wrapper input[type\u003dtext]\u0027)"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .type(\u0027Yong Hao TENG\u0027)"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .type(\u0027{enter}\u0027);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    Cypress.wait();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // Enter does not work. Related issue: https://github.com/cypress-io/cypress/issues/3405"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    // Let\u0027s manually submit form"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    cy.get(\u0027#summary-wrapper form.summary-picker\u0027)"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        .submit();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    Cypress.wait();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    cy.get(\u0027#summary-wrapper #summary-charts\u0027).then(($ele) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      const children \u003d $ele.children().length;"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      expect(children).to.equal(1);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  });"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "});"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 42,
+      "chelseyong": 2
+    }
+  },
+  {
     "path": "frontend/src/index.jade",
     "lines": [
       {
@@ -7160,28 +7477,28 @@
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "                option(value\u003d\"totalCommits\", v-if\u003d\"filterGroupSelection \u003d\u003d\u003d \u0027groupByNone\u0027\") \u0026uarr; contribution"
+        "content": "                option(value\u003d\"totalCommits\") \u0026uarr; contribution"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "                option(value\u003d\"totalCommits dsc\", v-if\u003d\"filterGroupSelection \u003d\u003d\u003d \u0027groupByNone\u0027\") \u0026darr; contribution"
+        "content": "                option(value\u003d\"totalCommits dsc\") \u0026darr; contribution"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "                option(value\u003d\"variance\", v-if\u003d\"filterGroupSelection \u003d\u003d\u003d \u0027groupByNone\u0027\") \u0026uarr; variance"
+        "content": "                option(value\u003d\"variance\") \u0026uarr; variance"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "                option(value\u003d\"variance dsc\", v-if\u003d\"filterGroupSelection \u003d\u003d\u003d \u0027groupByNone\u0027\") \u0026darr; variance"
+        "content": "                option(value\u003d\"variance dsc\") \u0026darr; variance"
       },
       {
         "lineNumber": 94,
@@ -19755,7 +20072,7 @@
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        if (this.sortingOption !\u003d\u003d \u0027name\u0027) {"
+        "content": "        if (this.sortingOption \u003d\u003d\u003d \u0027searchPath\u0027) {"
       },
       {
         "lineNumber": 441,
@@ -19804,7 +20121,7 @@
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        if (this.sortingOption !\u003d\u003d \u0027searchPath\u0027) {"
+        "content": "        if (this.sortingOption \u003d\u003d\u003d \u0027name\u0027) {"
       },
       {
         "lineNumber": 448,
@@ -20077,367 +20394,465 @@
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      sortedRepos.sort(window.comparator((repo) \u003d\u003e repo[0][this.sortingOption]));"
+        "content": "      sortedRepos.sort(window.comparator((repo) \u003d\u003e {"
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      if (this.isSortingDsc) {"
+        "content": "        if (this.sortingOption \u003d\u003d\u003d \u0027totalCommits\u0027 || this.sortingOption \u003d\u003d\u003d \u0027variance\u0027) {"
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        sortedRepos.reverse();"
+        "content": "          return repo.reduce(this.getGroupCommitsVariance, 0);"
       },
       {
         "lineNumber": 489,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      }"
-      },
-      {
-        "lineNumber": 490,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      return sortedRepos;"
-      },
-      {
-        "lineNumber": 491,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "    },"
-      },
-      {
-        "lineNumber": 492,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "    groupByNone(repos) {"
-      },
-      {
-        "lineNumber": 493,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      const sortedRepos \u003d [];"
-      },
-      {
-        "lineNumber": 494,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      repos.forEach((users) \u003d\u003e {"
-      },
-      {
-        "lineNumber": 495,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "        users.forEach((user) \u003d\u003e {"
-      },
-      {
-        "lineNumber": 496,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "          sortedRepos.push(user);"
-      },
-      {
-        "lineNumber": 497,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "        });"
-      },
-      {
-        "lineNumber": 498,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      });"
-      },
-      {
-        "lineNumber": 499,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      sortedRepos.sort(window.comparator((ele) \u003d\u003e ele[this.sortingOption]));"
-      },
-      {
-        "lineNumber": 500,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      if (this.isSortingDsc) {"
-      },
-      {
-        "lineNumber": 501,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "        sortedRepos.reverse();"
-      },
-      {
-        "lineNumber": 502,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      }"
-      },
-      {
-        "lineNumber": 503,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 504,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      return sortedRepos;"
-      },
-      {
-        "lineNumber": 505,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "    },"
-      },
-      {
-        "lineNumber": 506,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "    groupByAuthors(repos) {"
-      },
-      {
-        "lineNumber": 507,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      const authorMap \u003d {};"
-      },
-      {
-        "lineNumber": 508,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      const filtered \u003d [];"
-      },
-      {
-        "lineNumber": 509,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      repos.forEach((users) \u003d\u003e {"
-      },
-      {
-        "lineNumber": 510,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "        users.forEach((user) \u003d\u003e {"
-      },
-      {
-        "lineNumber": 511,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "          if (Object.keys(authorMap).includes(user.name)) {"
-      },
-      {
-        "lineNumber": 512,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "            authorMap[user.name].push(user);"
-      },
-      {
-        "lineNumber": 513,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "          } else {"
-      },
-      {
-        "lineNumber": 514,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "            authorMap[user.name] \u003d [user];"
-      },
-      {
-        "lineNumber": 515,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "          }"
-      },
-      {
-        "lineNumber": 516,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "        });"
-      },
-      {
-        "lineNumber": 517,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      });"
-      },
-      {
-        "lineNumber": 518,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      Object.keys(authorMap).forEach((author) \u003d\u003e {"
-      },
-      {
-        "lineNumber": 519,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "        authorMap[author].sort(window.comparator((repo) \u003d\u003e repo[this.sortingWithinOption]));"
-      },
-      {
-        "lineNumber": 520,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "        if (this.isSortingWithinDsc) {"
-      },
-      {
-        "lineNumber": 521,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "          authorMap[author].reverse();"
-      },
-      {
-        "lineNumber": 522,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 523,
+        "lineNumber": 490,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        filtered.push(authorMap[author]);"
+        "content": "        return repo[0][this.sortingOption];"
       },
       {
-        "lineNumber": 524,
+        "lineNumber": 491,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "      });"
+        "content": "      }));"
       },
       {
-        "lineNumber": 525,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 526,
-        "author": {
-          "gitId": "chelseyong"
-        },
-        "content": "      filtered.sort(window.comparator((ele) \u003d\u003e ele[0][this.sortingOption]));"
-      },
-      {
-        "lineNumber": 527,
+        "lineNumber": 492,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      if (this.isSortingDsc) {"
       },
       {
-        "lineNumber": 528,
+        "lineNumber": 493,
         "author": {
           "gitId": "chelseyong"
         },
-        "content": "        filtered.reverse();"
+        "content": "        sortedRepos.reverse();"
       },
       {
-        "lineNumber": 529,
+        "lineNumber": 494,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      }"
       },
       {
+        "lineNumber": 495,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      return sortedRepos;"
+      },
+      {
+        "lineNumber": 496,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    },"
+      },
+      {
+        "lineNumber": 497,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    groupByNone(repos) {"
+      },
+      {
+        "lineNumber": 498,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      const sortedRepos \u003d [];"
+      },
+      {
+        "lineNumber": 499,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      repos.forEach((users) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 500,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        users.forEach((user) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 501,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "          sortedRepos.push(user);"
+      },
+      {
+        "lineNumber": 502,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 503,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      });"
+      },
+      {
+        "lineNumber": 504,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      sortedRepos.sort(window.comparator((ele) \u003d\u003e ele[this.sortingOption]));"
+      },
+      {
+        "lineNumber": 505,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      if (this.isSortingDsc) {"
+      },
+      {
+        "lineNumber": 506,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        sortedRepos.reverse();"
+      },
+      {
+        "lineNumber": 507,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 508,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 509,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      return sortedRepos;"
+      },
+      {
+        "lineNumber": 510,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    },"
+      },
+      {
+        "lineNumber": 511,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    groupByAuthors(repos) {"
+      },
+      {
+        "lineNumber": 512,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      const authorMap \u003d {};"
+      },
+      {
+        "lineNumber": 513,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      const filtered \u003d [];"
+      },
+      {
+        "lineNumber": 514,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      repos.forEach((users) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 515,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        users.forEach((user) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 516,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "          if (Object.keys(authorMap).includes(user.name)) {"
+      },
+      {
+        "lineNumber": 517,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "            authorMap[user.name].push(user);"
+      },
+      {
+        "lineNumber": 518,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "          } else {"
+      },
+      {
+        "lineNumber": 519,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "            authorMap[user.name] \u003d [user];"
+      },
+      {
+        "lineNumber": 520,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          }"
+      },
+      {
+        "lineNumber": 521,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 522,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      });"
+      },
+      {
+        "lineNumber": 523,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      Object.keys(authorMap).forEach((author) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 524,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        authorMap[author].sort(window.comparator((repo) \u003d\u003e repo[this.sortingWithinOption]));"
+      },
+      {
+        "lineNumber": 525,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        if (this.isSortingWithinDsc) {"
+      },
+      {
+        "lineNumber": 526,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "          authorMap[author].reverse();"
+      },
+      {
+        "lineNumber": 527,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 528,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        filtered.push(authorMap[author]);"
+      },
+      {
+        "lineNumber": 529,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      });"
+      },
+      {
         "lineNumber": 530,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 531,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      filtered.sort(window.comparator((author) \u003d\u003e {"
+      },
+      {
+        "lineNumber": 532,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        if (this.sortingOption \u003d\u003d\u003d \u0027totalCommits\u0027 || this.sortingOption \u003d\u003d\u003d \u0027variance\u0027) {"
+      },
+      {
+        "lineNumber": 533,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "          return author.reduce(this.getGroupCommitsVariance, 0);"
+      },
+      {
+        "lineNumber": 534,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 535,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        return author[0][this.sortingOption];"
+      },
+      {
+        "lineNumber": 536,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      }));"
+      },
+      {
+        "lineNumber": 537,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      if (this.isSortingDsc) {"
+      },
+      {
+        "lineNumber": 538,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "        filtered.reverse();"
+      },
+      {
+        "lineNumber": 539,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      }"
+      },
+      {
+        "lineNumber": 540,
         "author": {
           "gitId": "chelseyong"
         },
         "content": "      return filtered;"
       },
       {
-        "lineNumber": 531,
+        "lineNumber": 541,
         "author": {
           "gitId": "-"
         },
         "content": "    },"
       },
       {
-        "lineNumber": 532,
+        "lineNumber": 542,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 543,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "    getGroupCommitsVariance(total, group) {"
+      },
+      {
+        "lineNumber": 544,
+        "author": {
+          "gitId": "chelseyong"
+        },
+        "content": "      return total + group[this.sortingOption];"
+      },
+      {
+        "lineNumber": 545,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    },"
+      },
+      {
+        "lineNumber": 546,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 533,
+        "lineNumber": 547,
         "author": {
           "gitId": "-"
         },
         "content": "  created() {"
       },
       {
-        "lineNumber": 534,
+        "lineNumber": 548,
         "author": {
           "gitId": "-"
         },
         "content": "    this.renderFilterHash();"
       },
       {
-        "lineNumber": 535,
+        "lineNumber": 549,
         "author": {
           "gitId": "-"
         },
         "content": "    this.getFiltered();"
       },
       {
-        "lineNumber": 536,
+        "lineNumber": 550,
         "author": {
           "gitId": "-"
         },
         "content": "    this.processFileFormats();"
       },
       {
-        "lineNumber": 537,
+        "lineNumber": 551,
         "author": {
           "gitId": "-"
         },
         "content": "  },"
       },
       {
-        "lineNumber": 538,
+        "lineNumber": 552,
         "author": {
           "gitId": "-"
         },
@@ -20447,8 +20862,8 @@
     "authorContributionMap": {
       "emer7": 40,
       "ongspxm": 26,
-      "chelseyong": 114,
-      "-": 358
+      "chelseyong": 126,
+      "-": 360
     }
   },
   {
