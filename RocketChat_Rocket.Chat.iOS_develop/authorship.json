@@ -6815,539 +6815,539 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            guard"
+        "content": "            guard let threadIdentifier \u003d threadIdentifier else { return }"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "                let threadIdentifier \u003d threadIdentifier,"
+        "content": "            guard let message \u003d Message.find(withIdentifier: threadIdentifier) else {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "                let message \u003d Message.find(withIdentifier: threadIdentifier)"
+        "content": "                let realm \u003d Realm.current"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "            else {"
+        "content": "                API.current()?.fetch(GetMessageRequest(msgId: threadIdentifier), completion: { [weak self] response in"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "                return"
+        "content": "                    switch response {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    case .resource(let resource):"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        if let message \u003d resource.message {"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "            chatTitleView?.mainThreadMessage \u003d message.unmanaged"
+        "content": "                            realm?.execute({ realm in"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                realm.add(message, update: true)"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "            viewModel.onRequestingDataChanged \u003d { [weak self] requesting in"
+        "content": "                            })"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "                self?.chatTitleView?.updateConnectionState(isRequestingMessages: requesting \u003d\u003d .initialRequest)"
+        "content": "                        }"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        self?.threadIdentifier \u003d threadIdentifier"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "            viewModel.threadIdentifier \u003d threadIdentifier"
+        "content": "                    default:"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        break"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let subscription \u003d Subscription.find(rid: message.rid)?.unmanaged {"
+        "content": "                    }"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "                viewSubscriptionModel.subscription \u003d subscription"
+        "content": "                })"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "                unmanagedSubscription \u003d subscription"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                return"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "            updateEmptyState()"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            chatTitleView?.mainThreadMessage \u003d message.unmanaged"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            viewModel.onRequestingDataChanged \u003d { [weak self] requesting in"
       },
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "    lazy var announcementBannerView: UIView \u003d {"
+        "content": "                self?.chatTitleView?.updateConnectionState(isRequestingMessages: requesting \u003d\u003d .initialRequest)"
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        let announcementBannerView \u003d ChatAnnouncementView()"
+        "content": "            }"
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        announcementBannerView.subscription \u003d subscription?.unmanaged"
+        "content": ""
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        return announcementBannerView"
+        "content": "            viewModel.threadIdentifier \u003d threadIdentifier"
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "    }()"
+        "content": ""
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "            if let subscription \u003d Subscription.find(rid: message.rid)?.unmanaged {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "    private let buttonScrollToBottomSize \u003d CGFloat(70)"
+        "content": "                viewSubscriptionModel.subscription \u003d subscription"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "    var keyboardHeight: CGFloat \u003d 0"
+        "content": "                unmanagedSubscription \u003d subscription"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "    var buttonScrollToBottomConstraint: NSLayoutConstraint!"
+        "content": "            }"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "    var buttonScrollToBottomLayerY: CGFloat {"
+        "content": ""
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "        return -composerView.layer.bounds.height - buttonScrollToBottomSize / 2 - collectionView.layoutMargins.top - keyboardHeight"
+        "content": "            updateEmptyState()"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "    var buttonScrollToBottomY: CGFloat {"
+        "content": "    }"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "        return -composerView.intrinsicContentSize.height - collectionView.layoutMargins.top - keyboardHeight"
+        "content": ""
       },
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "    }"
+        "content": "    lazy var announcementBannerView: UIView \u003d {"
       },
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": ""
+        "content": "        let announcementBannerView \u003d ChatAnnouncementView()"
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "    lazy var buttonScrollToBottom: UIButton \u003d {"
+        "content": "        announcementBannerView.subscription \u003d subscription?.unmanaged"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        let button \u003d UIButton()"
+        "content": "        return announcementBannerView"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        button.frame \u003d CGRect(x: .greatestFiniteMagnitude, y: .greatestFiniteMagnitude, width: buttonScrollToBottomSize, height: buttonScrollToBottomSize)"
+        "content": "    }()"
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        button.setImage(UIImage(named: \"Float Button light\"), for: .normal)"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "        button.addTarget(self, action: #selector(buttonScrollToBottomDidPressed), for: .touchUpInside)"
+        "content": "    private let buttonScrollToBottomSize \u003d CGFloat(70)"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "        return button"
+        "content": "    var keyboardHeight: CGFloat \u003d 0"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "    }()"
+        "content": "    var buttonScrollToBottomConstraint: NSLayoutConstraint!"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    var buttonScrollToBottomLayerY: CGFloat {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "    var isScrollingToBottom: Bool \u003d false"
+        "content": "        return -composerView.layer.bounds.height - buttonScrollToBottomSize / 2 - collectionView.layoutMargins.top - keyboardHeight"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "    var scrollToBottomButtonIsVisible: Bool \u003d false"
+        "content": "    }"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    var buttonScrollToBottomY: CGFloat {"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    lazy var screenSize \u003d view.frame.size"
+        "content": "        return -composerView.intrinsicContentSize.height - collectionView.layoutMargins.top - keyboardHeight"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "    var isInLandscape: Bool {"
+        "content": "    }"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "        return screenSize.width / screenSize.height \u003e 1 \u0026\u0026 UIDevice.current.userInterfaceIdiom \u003d\u003d .phone"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    lazy var buttonScrollToBottom: UIButton \u003d {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        let button \u003d UIButton()"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "    deinit {"
+        "content": "        button.frame \u003d CGRect(x: .greatestFiniteMagnitude, y: .greatestFiniteMagnitude, width: buttonScrollToBottomSize, height: buttonScrollToBottomSize)"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "        NotificationCenter.default.removeObserver(self)"
+        "content": "        button.setImage(UIImage(named: \"Float Button light\"), for: .normal)"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "        SocketManager.removeConnectionHandler(token: socketHandlerToken)"
+        "content": "        button.addTarget(self, action: #selector(buttonScrollToBottomDidPressed), for: .touchUpInside)"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return button"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewModel.destroy()"
+        "content": "    }()"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewSubscriptionModel.destroy()"
+        "content": ""
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    var isScrollingToBottom: Bool \u003d false"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    var scrollToBottomButtonIsVisible: Bool \u003d false"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "    var allowResignFirstResponder \u003d true"
+        "content": ""
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "    override var canResignFirstResponder: Bool {"
+        "content": "    lazy var screenSize \u003d view.frame.size"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "        return allowResignFirstResponder"
+        "content": "    var isInLandscape: Bool {"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return screenSize.width / screenSize.height \u003e 1 \u0026\u0026 UIDevice.current.userInterfaceIdiom \u003d\u003d .phone"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func viewDidLoad() {"
+        "content": ""
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "        super.viewDidLoad()"
+        "content": "    deinit {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        NotificationCenter.default.removeObserver(self)"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "        setupTitleView()"
+        "content": "        SocketManager.removeConnectionHandler(token: socketHandlerToken)"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "        updateEmptyState()"
+        "content": ""
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "        updateNavigationBarButtons()"
+        "content": "        viewModel.destroy()"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        viewSubscriptionModel.destroy()"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "        SocketManager.addConnectionHandler(token: socketHandlerToken, handler: self)"
+        "content": "    }"
       },
       {
         "lineNumber": 171,
@@ -7361,28 +7361,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        ThemeManager.addObserver(self)"
+        "content": "    var allowResignFirstResponder \u003d true"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "        ThemeManager.addObserver(composerView)"
+        "content": "    override var canResignFirstResponder: Bool {"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return allowResignFirstResponder"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "        composerView.delegate \u003d self"
+        "content": "    }"
       },
       {
         "lineNumber": 176,
@@ -7396,42 +7396,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        registerCells()"
+        "content": "    override func viewDidLoad() {"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "        setupScrollToBottom()"
+        "content": "        super.viewDidLoad()"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "        setupKeyboardNotifications()"
+        "content": ""
       },
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        setupAnnouncementBanner()"
+        "content": "        setupTitleView()"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "        setupSubscriptionViewModel()"
+        "content": "        updateEmptyState()"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "        setupMessagesViewModel()"
+        "content": "        updateNavigationBarButtons()"
       },
       {
         "lineNumber": 183,
@@ -7445,28 +7445,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        composerViewModel.getRecentSenders \u003d { [weak self] in"
+        "content": "        SocketManager.addConnectionHandler(token: socketHandlerToken, handler: self)"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "            guard let self \u003d self else {"
+        "content": ""
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "                return []"
+        "content": "        ThemeManager.addObserver(self)"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        ThemeManager.addObserver(composerView)"
       },
       {
         "lineNumber": 188,
@@ -7480,147 +7480,147 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            return self.viewModel.recentSenders"
+        "content": "        composerView.delegate \u003d self"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        registerCells()"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "        startTypingHandler()"
+        "content": "        setupScrollToBottom()"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "        startDraftMessage()"
+        "content": "        setupKeyboardNotifications()"
       },
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        updateJoinedView()"
+        "content": "        setupAnnouncementBanner()"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        setupSubscriptionViewModel()"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        setupMessagesViewModel()"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func viewDidAppear(_ animated: Bool) {"
+        "content": ""
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "        super.viewDidAppear(animated)"
+        "content": "        composerViewModel.getRecentSenders \u003d { [weak self] in"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "        markAsRead()"
+        "content": "            guard let self \u003d self else {"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "        becomeFirstResponder()"
+        "content": "                return []"
       },
       {
         "lineNumber": 201,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        updateAnnouncementBanner()"
+        "content": "            }"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            return self.viewModel.recentSenders"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {"
+        "content": "        }"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "        let visibleIndexPaths \u003d collectionView.indexPathsForVisibleItems"
+        "content": ""
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "        let topIndexPath \u003d visibleIndexPaths.sorted().last"
+        "content": "        startTypingHandler()"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        startDraftMessage()"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "        screenSize \u003d size"
+        "content": "        updateJoinedView()"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "        let shouldResetScrollToBottom \u003d scrollToBottomButtonIsVisible"
+        "content": "    }"
       },
       {
         "lineNumber": 210,
@@ -7634,91 +7634,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        coordinator.animate(alongsideTransition: { [weak self] _ in"
+        "content": "    override func viewDidAppear(_ animated: Bool) {"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "            self?.viewSizingModel.clearCache()"
+        "content": "        super.viewDidAppear(animated)"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "            self?.collectionView.reloadData()"
+        "content": "        markAsRead()"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "        }, completion: { [weak self] _ in"
+        "content": "        becomeFirstResponder()"
       },
       {
         "lineNumber": 215,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            guard let self \u003d self else {"
+        "content": "        updateAnnouncementBanner()"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "                return"
+        "content": "    }"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "            if shouldResetScrollToBottom {"
+        "content": "        let visibleIndexPaths \u003d collectionView.indexPathsForVisibleItems"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": "                if self.scrollToBottomButtonIsVisible {"
+        "content": "        let topIndexPath \u003d visibleIndexPaths.sorted().last"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "                    self.showScrollToBottom(forceUpdate: true)"
+        "content": ""
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "        screenSize \u003d size"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        let shouldResetScrollToBottom \u003d scrollToBottomButtonIsVisible"
       },
       {
         "lineNumber": 224,
@@ -7732,133 +7732,133 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            if let indexPath \u003d topIndexPath {"
+        "content": "        coordinator.animate(alongsideTransition: { [weak self] _ in"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: false)"
+        "content": "            self?.viewSizingModel.clearCache()"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            self?.collectionView.reloadData()"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "        })"
+        "content": "        }, completion: { [weak self] _ in"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            guard let self \u003d self else {"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                return"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func viewDidLayoutSubviews() {"
+        "content": "            }"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "        super.viewDidLayoutSubviews()"
+        "content": ""
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "        updateEmptyStateFrame()"
+        "content": "            if shouldResetScrollToBottom {"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                if self.scrollToBottomButtonIsVisible {"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    self.showScrollToBottom(forceUpdate: true)"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {"
+        "content": "                }"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "        if segue.identifier \u003d\u003d \"Channel Actions\", let nav \u003d segue.destination as? UINavigationController {"
+        "content": "            }"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let controller \u003d nav.viewControllers.first as? ChannelActionsViewController {"
+        "content": ""
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "                if let subscription \u003d self.unmanagedSubscription?.managedObject {"
+        "content": "            if let indexPath \u003d topIndexPath {"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "                    controller.subscription \u003d subscription"
+        "content": "                self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: false)"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            }"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        })"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 244,
@@ -7872,266 +7872,266 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        if segue.identifier \u003d\u003d \"Threads\" {"
+        "content": "    override func viewDidLayoutSubviews() {"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let controller \u003d segue.destination as? ThreadsViewController {"
+        "content": "        super.viewDidLayoutSubviews()"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "                controller.viewModel.subscription \u003d subscription.unmanaged"
+        "content": "        updateEmptyStateFrame()"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "    }"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if segue.identifier \u003d\u003d \"Channel Actions\", let nav \u003d segue.destination as? UINavigationController {"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Notifications"
+        "content": "            if let controller \u003d nav.viewControllers.first as? ChannelActionsViewController {"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if let subscription \u003d self.unmanagedSubscription?.managedObject {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "    private func setupKeyboardNotifications() {"
+        "content": "                    controller.subscription \u003d subscription"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "        NotificationCenter.default.addObserver("
+        "content": "                }"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "            self,"
+        "content": "            }"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "            selector: #selector(keyboardWillShow(_:)),"
+        "content": "        }"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "            name: UIResponder.keyboardWillShowNotification,"
+        "content": ""
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "            object: nil"
+        "content": "        if segue.identifier \u003d\u003d \"Threads\" {"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "        )"
+        "content": "            if let controller \u003d segue.destination as? ThreadsViewController {"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                controller.viewModel.subscription \u003d subscription.unmanaged"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "        NotificationCenter.default.addObserver("
+        "content": "            }"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "            self,"
+        "content": "        }"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "            selector: #selector(keyboardWillHide(_:)),"
+        "content": "    }"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "            name: UIResponder.keyboardWillHideNotification,"
+        "content": ""
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "            object: nil"
+        "content": "    // MARK: Notifications"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "        )"
+        "content": ""
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    private func setupKeyboardNotifications() {"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        NotificationCenter.default.addObserver("
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: View Models"
+        "content": "            self,"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            selector: #selector(keyboardWillShow(_:)),"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "    private func setupSubscriptionViewModel() {"
+        "content": "            name: UIResponder.keyboardWillShowNotification,"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewSubscriptionModel.onTypingChanged \u003d { [weak self] usernames in"
+        "content": "            object: nil"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "            DispatchQueue.main.async {"
+        "content": "        )"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "                self?.chatTitleView?.updateTypingStatus(usernames: usernames)"
+        "content": ""
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        NotificationCenter.default.addObserver("
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            self,"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            selector: #selector(keyboardWillHide(_:)),"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewSubscriptionModel.onDataChanged \u003d { [weak self] in"
+        "content": "            name: UIResponder.keyboardWillHideNotification,"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "            guard let self \u003d self else { return }"
+        "content": "            object: nil"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.chatTitleView?.subscription \u003d self.viewSubscriptionModel.subscription"
+        "content": "        )"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.updateJoinedView()"
+        "content": "    }"
       },
       {
         "lineNumber": 283,
@@ -8145,91 +8145,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            if self.viewSubscriptionModel.subscription?.managedObject \u003d\u003d nil {"
+        "content": "    // MARK: View Models"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.navigationController?.popToRootViewController(animated: true)"
+        "content": ""
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.subscription \u003d nil"
+        "content": "    private func setupSubscriptionViewModel() {"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        viewSubscriptionModel.onTypingChanged \u003d { [weak self] usernames in"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            DispatchQueue.main.async {"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                self?.chatTitleView?.updateTypingStatus(usernames: usernames)"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": "    private func setupMessagesViewModel() {"
+        "content": "        }"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "        dataUpdateDelegate \u003d self"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewModel.controllerContext \u003d self"
+        "content": "        viewSubscriptionModel.onDataChanged \u003d { [weak self] in"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewModel.onDataChanged \u003d { [weak self] in"
+        "content": "            guard let self \u003d self else { return }"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "            guard let self \u003d self else { return }"
+        "content": "            self.chatTitleView?.subscription \u003d self.viewSubscriptionModel.subscription"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "            Log.debug(\"[VIEW MODEL] dataChanged with \\(self.viewModel.dataNormalized.count) values.\")"
+        "content": "            self.updateJoinedView()"
       },
       {
         "lineNumber": 297,
@@ -8243,91 +8243,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            // If first item is the header (list is empty) then we don\u0027t use the inverted mode"
+        "content": "            if self.viewSubscriptionModel.subscription?.managedObject \u003d\u003d nil {"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": "            // because we want the header to appear in the bottom."
+        "content": "                self.navigationController?.popToRootViewController(animated: true)"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "            let first \u003d self.viewModel.dataNormalized.first"
+        "content": "                self.subscription \u003d nil"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": "            if first?.model.differenceIdentifier \u003d\u003d AnyHashable(HeaderChatItem.globalIdentifier) {"
+        "content": "            }"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.isInverted \u003d false"
+        "content": "        }"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "    }"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.isInverted \u003d true"
+        "content": ""
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "    private func setupMessagesViewModel() {"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        dataUpdateDelegate \u003d self"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "            // Update dataset with the new data normalized"
+        "content": "        viewModel.controllerContext \u003d self"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.updateData(with: self.viewModel.dataNormalized)"
+        "content": "        viewModel.onDataChanged \u003d { [weak self] in"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.markAsRead()"
+        "content": "            guard let self \u003d self else { return }"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            Log.debug(\"[VIEW MODEL] dataChanged with \\(self.viewModel.dataNormalized.count) values.\")"
       },
       {
         "lineNumber": 311,
@@ -8341,812 +8341,812 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            // If first item is the header (list is empty) then we don\u0027t use the inverted mode"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // because we want the header to appear in the bottom."
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Cells"
+        "content": "            let first \u003d self.viewModel.dataNormalized.first"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if first?.model.differenceIdentifier \u003d\u003d AnyHashable(HeaderChatItem.globalIdentifier) {"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "    private func registerCells() {"
+        "content": "                self.isInverted \u003d false"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "        let collectionViewCells: [NibCellIndentifier] \u003d ["
+        "content": "            } else {"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: BasicMessageCell.nib, cellIdentifier: BasicMessageCell.identifier),"
+        "content": "                self.isInverted \u003d true"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: SequentialMessageCell.nib, cellIdentifier: SequentialMessageCell.identifier),"
+        "content": "            }"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: LoaderCell.nib, cellIdentifier: LoaderCell.identifier),"
+        "content": ""
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: DateSeparatorCell.nib, cellIdentifier: DateSeparatorCell.identifier),"
+        "content": "            // Update dataset with the new data normalized"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: UnreadMarkerCell.nib, cellIdentifier: UnreadMarkerCell.identifier),"
+        "content": "            self.updateData(with: self.viewModel.dataNormalized)"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: AudioCell.nib, cellIdentifier: AudioCell.identifier),"
+        "content": "            self.markAsRead()"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: AudioMessageCell.nib, cellIdentifier: AudioMessageCell.identifier),"
+        "content": "        }"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: VideoCell.nib, cellIdentifier: VideoCell.identifier),"
+        "content": ""
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: VideoMessageCell.nib, cellIdentifier: VideoMessageCell.identifier),"
+        "content": "    }"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: ReactionsCell.nib, cellIdentifier: ReactionsCell.identifier),"
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: FileCell.nib, cellIdentifier: FileCell.identifier),"
+        "content": "    // MARK: Cells"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: FileMessageCell.nib, cellIdentifier: FileMessageCell.identifier),"
+        "content": ""
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: TextAttachmentCell.nib, cellIdentifier: TextAttachmentCell.identifier),"
+        "content": "    private func registerCells() {"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: TextAttachmentMessageCell.nib, cellIdentifier: TextAttachmentMessageCell.identifier),"
+        "content": "        let collectionViewCells: [NibCellIndentifier] \u003d ["
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: ImageCell.nib, cellIdentifier: ImageCell.identifier),"
+        "content": "            (nib: BasicMessageCell.nib, cellIdentifier: BasicMessageCell.identifier),"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: ImageMessageCell.nib, cellIdentifier: ImageMessageCell.identifier),"
+        "content": "            (nib: SequentialMessageCell.nib, cellIdentifier: SequentialMessageCell.identifier),"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: QuoteCell.nib, cellIdentifier: QuoteCell.identifier),"
+        "content": "            (nib: LoaderCell.nib, cellIdentifier: LoaderCell.identifier),"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: QuoteMessageCell.nib, cellIdentifier: QuoteMessageCell.identifier),"
+        "content": "            (nib: DateSeparatorCell.nib, cellIdentifier: DateSeparatorCell.identifier),"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: MessageURLCell.nib, cellIdentifier: MessageURLCell.identifier),"
+        "content": "            (nib: UnreadMarkerCell.nib, cellIdentifier: UnreadMarkerCell.identifier),"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: MessageActionsCell.nib, cellIdentifier: MessageActionsCell.identifier),"
+        "content": "            (nib: AudioCell.nib, cellIdentifier: AudioCell.identifier),"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: MessageVideoCallCell.nib, cellIdentifier: MessageVideoCallCell.identifier),"
+        "content": "            (nib: AudioMessageCell.nib, cellIdentifier: AudioMessageCell.identifier),"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: MessageDiscussionCell.nib, cellIdentifier: MessageDiscussionCell.identifier),"
+        "content": "            (nib: VideoCell.nib, cellIdentifier: VideoCell.identifier),"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: MessageMainThreadCell.nib, cellIdentifier: MessageMainThreadCell.identifier),"
+        "content": "            (nib: VideoMessageCell.nib, cellIdentifier: VideoMessageCell.identifier),"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: ThreadReplyCollapsedCell.nib, cellIdentifier: ThreadReplyCollapsedCell.identifier),"
+        "content": "            (nib: ReactionsCell.nib, cellIdentifier: ReactionsCell.identifier),"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "            (nib: HeaderCell.nib, cellIdentifier: HeaderCell.identifier)"
+        "content": "            (nib: FileCell.nib, cellIdentifier: FileCell.identifier),"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "        ]"
+        "content": "            (nib: FileMessageCell.nib, cellIdentifier: FileMessageCell.identifier),"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            (nib: TextAttachmentCell.nib, cellIdentifier: TextAttachmentCell.identifier),"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": "        collectionViewCells.forEach {"
+        "content": "            (nib: TextAttachmentMessageCell.nib, cellIdentifier: TextAttachmentMessageCell.identifier),"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "            collectionView?.register($0.nib, forCellWithReuseIdentifier: $0.cellIdentifier)"
+        "content": "            (nib: ImageCell.nib, cellIdentifier: ImageCell.identifier),"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            (nib: ImageMessageCell.nib, cellIdentifier: ImageMessageCell.identifier),"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            (nib: QuoteCell.nib, cellIdentifier: QuoteCell.identifier),"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            (nib: QuoteMessageCell.nib, cellIdentifier: QuoteMessageCell.identifier),"
       },
       {
         "lineNumber": 350,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "    // MARK: Announcement"
+        "content": "            (nib: MessageURLCell.nib, cellIdentifier: MessageURLCell.identifier),"
       },
       {
         "lineNumber": 351,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "            (nib: MessageActionsCell.nib, cellIdentifier: MessageActionsCell.identifier),"
       },
       {
         "lineNumber": 352,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "    func setupAnnouncementBanner() {"
+        "content": "            (nib: MessageVideoCallCell.nib, cellIdentifier: MessageVideoCallCell.identifier),"
       },
       {
         "lineNumber": 353,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        // Start as invisible first, alpha will be set to 1 if a valid announcement is fetched"
+        "content": "            (nib: MessageDiscussionCell.nib, cellIdentifier: MessageDiscussionCell.identifier),"
       },
       {
         "lineNumber": 354,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        announcementBannerView.alpha \u003d 0"
+        "content": "            (nib: MessageMainThreadCell.nib, cellIdentifier: MessageMainThreadCell.identifier),"
       },
       {
         "lineNumber": 355,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "            (nib: ThreadReplyCollapsedCell.nib, cellIdentifier: ThreadReplyCollapsedCell.identifier),"
       },
       {
         "lineNumber": 356,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        view.addSubview(announcementBannerView)"
+        "content": "            (nib: HeaderCell.nib, cellIdentifier: HeaderCell.identifier)"
       },
       {
         "lineNumber": 357,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        view.bringSubviewToFront(announcementBannerView)"
+        "content": "        ]"
       },
       {
         "lineNumber": 358,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        NSLayoutConstraint.activate(["
+        "content": ""
       },
       {
         "lineNumber": 359,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "            announcementBannerView.topAnchor.constraint(equalTo: view.topAnchor),"
+        "content": "        collectionViewCells.forEach {"
       },
       {
         "lineNumber": 360,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "            announcementBannerView.leftAnchor.constraint(equalTo: view.leftAnchor),"
+        "content": "            collectionView?.register($0.nib, forCellWithReuseIdentifier: $0.cellIdentifier)"
       },
       {
         "lineNumber": 361,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "            announcementBannerView.rightAnchor.constraint(equalTo: view.rightAnchor),"
+        "content": "        }"
       },
       {
         "lineNumber": 362,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "            announcementBannerView.heightAnchor.constraint(equalToConstant: 50)"
+        "content": "    }"
       },
       {
         "lineNumber": 363,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        ])"
+        "content": ""
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "blewjy"
         },
-        "content": ""
+        "content": "    // MARK: Announcement"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "        announcementBannerView.applyTheme()"
+        "content": ""
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "    }"
+        "content": "    func setupAnnouncementBanner() {"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "blewjy"
         },
-        "content": ""
+        "content": "        // Start as invisible first, alpha will be set to 1 if a valid announcement is fetched"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "    func updateAnnouncementBanner() {"
+        "content": "        announcementBannerView.alpha \u003d 0"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "        guard let announcement \u003d subscription?.unmanaged?.roomAnnouncement else { return }"
+        "content": ""
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "        let hasAnnouncement \u003d announcement \u003d\u003d \"\" ? false : true"
+        "content": "        view.addSubview(announcementBannerView)"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "blewjy"
         },
-        "content": ""
+        "content": "        view.bringSubviewToFront(announcementBannerView)"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "        if hasAnnouncement {"
+        "content": "        NSLayoutConstraint.activate(["
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            announcementBannerView.alpha \u003d 1"
+        "content": "            announcementBannerView.topAnchor.constraint(equalTo: view.topAnchor),"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "        } else {"
+        "content": "            announcementBannerView.leftAnchor.constraint(equalTo: view.leftAnchor),"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "            announcementBannerView.alpha \u003d 0"
+        "content": "            announcementBannerView.rightAnchor.constraint(equalTo: view.rightAnchor),"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "        }"
+        "content": "            announcementBannerView.heightAnchor.constraint(equalToConstant: 50)"
       },
       {
         "lineNumber": 377,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "    }"
+        "content": "        ])"
       },
       {
         "lineNumber": 378,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
         "content": ""
       },
       {
         "lineNumber": 379,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "    // MARK: Scroll to Bottom"
+        "content": "        announcementBannerView.applyTheme()"
       },
       {
         "lineNumber": 380,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 381,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "    func setupScrollToBottom() {"
+        "content": ""
       },
       {
         "lineNumber": 382,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        buttonScrollToBottom.translatesAutoresizingMaskIntoConstraints \u003d false"
+        "content": "    func updateAnnouncementBanner() {"
       },
       {
         "lineNumber": 383,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        view.addSubview(buttonScrollToBottom)"
+        "content": "        guard let announcement \u003d subscription?.unmanaged?.roomAnnouncement else { return }"
       },
       {
         "lineNumber": 384,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        view.bringSubviewToFront(buttonScrollToBottom)"
+        "content": "        let hasAnnouncement \u003d announcement \u003d\u003d \"\" ? false : true"
       },
       {
         "lineNumber": 385,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        buttonScrollToBottomConstraint \u003d buttonScrollToBottom.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50)"
+        "content": ""
       },
       {
         "lineNumber": 386,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "        NSLayoutConstraint.activate(["
+        "content": "        if hasAnnouncement {"
       },
       {
         "lineNumber": 387,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            buttonScrollToBottom.heightAnchor.constraint(equalToConstant: buttonScrollToBottomSize),"
+        "content": "            announcementBannerView.alpha \u003d 1"
       },
       {
         "lineNumber": 388,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            buttonScrollToBottom.widthAnchor.constraint(equalToConstant: buttonScrollToBottomSize),"
+        "content": "        } else {"
       },
       {
         "lineNumber": 389,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            buttonScrollToBottomConstraint,"
+        "content": "            announcementBannerView.alpha \u003d 0"
       },
       {
         "lineNumber": 390,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            buttonScrollToBottom.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15)"
+        "content": "        }"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "        ])"
+        "content": "    }"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: Scroll to Bottom"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "    func showScrollToBottom(forceUpdate: Bool \u003d false) {"
+        "content": ""
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "        let isScrollToBottomVisible \u003d forceUpdate ? false : scrollToBottomButtonIsVisible"
+        "content": "    func setupScrollToBottom() {"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard !isScrollToBottomVisible, !isScrollingToBottom else {"
+        "content": "        buttonScrollToBottom.translatesAutoresizingMaskIntoConstraints \u003d false"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "            return"
+        "content": "        view.addSubview(buttonScrollToBottom)"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        view.bringSubviewToFront(buttonScrollToBottom)"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        buttonScrollToBottomConstraint \u003d buttonScrollToBottom.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50)"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": "        isScrollingToBottom \u003d true"
+        "content": "        NSLayoutConstraint.activate(["
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.begin()"
+        "content": "            buttonScrollToBottom.heightAnchor.constraint(equalToConstant: buttonScrollToBottomSize),"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.setAnimationDuration(0.25)"
+        "content": "            buttonScrollToBottom.widthAnchor.constraint(equalToConstant: buttonScrollToBottomSize),"
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))"
+        "content": "            buttonScrollToBottomConstraint,"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.setCompletionBlock {"
+        "content": "            buttonScrollToBottom.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15)"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.buttonScrollToBottomConstraint.constant \u003d self.buttonScrollToBottomY"
+        "content": "        ])"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.scrollToBottomButtonIsVisible \u003d true"
+        "content": "    }"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.isScrollingToBottom \u003d false"
+        "content": ""
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    func showScrollToBottom(forceUpdate: Bool \u003d false) {"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        let isScrollToBottomVisible \u003d forceUpdate ? false : scrollToBottomButtonIsVisible"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "        var fromPosition \u003d buttonScrollToBottom.layer.position"
+        "content": "        guard !isScrollToBottomVisible, !isScrollingToBottom else {"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "        fromPosition.y -\u003d keyboardHeight"
+        "content": "            return"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": "        var position \u003d buttonScrollToBottom.layer.position"
+        "content": "        }"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "        position.y \u003d collectionView.bounds.height + buttonScrollToBottomLayerY"
+        "content": ""
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        isScrollingToBottom \u003d true"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "        let positionAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.position))"
+        "content": "        CATransaction.begin()"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": "        positionAnimation.fromValue \u003d fromPosition"
+        "content": "        CATransaction.setAnimationDuration(0.25)"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "        positionAnimation.toValue \u003d position"
+        "content": "        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        CATransaction.setCompletionBlock {"
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.position \u003d position"
+        "content": "            self.buttonScrollToBottomConstraint.constant \u003d self.buttonScrollToBottomY"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.add(positionAnimation, forKey: #keyPath(CALayer.position))"
+        "content": "            self.scrollToBottomButtonIsVisible \u003d true"
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            self.isScrollingToBottom \u003d false"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
-        "content": "        let alphaAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.opacity))"
+        "content": "        }"
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
-        "content": "        alphaAnimation.fromValue \u003d 0"
+        "content": ""
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
-        "content": "        alphaAnimation.toValue \u003d 1"
+        "content": "        var fromPosition \u003d buttonScrollToBottom.layer.position"
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        fromPosition.y -\u003d keyboardHeight"
       },
       {
         "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.opacity \u003d 1"
+        "content": "        var position \u003d buttonScrollToBottom.layer.position"
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.add(alphaAnimation, forKey: #keyPath(CALayer.opacity))"
+        "content": "        position.y \u003d collectionView.bounds.height + buttonScrollToBottomLayerY"
       },
       {
         "lineNumber": 428,
@@ -9160,224 +9160,224 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.commit()"
+        "content": "        let positionAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.position))"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        positionAnimation.fromValue \u003d fromPosition"
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        positionAnimation.toValue \u003d position"
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": "    func hideScrollToBottom(forceUpdate: Bool \u003d false) {"
+        "content": ""
       },
       {
         "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
-        "content": "        let isScrollToBottomVisible \u003d forceUpdate ? true : scrollToBottomButtonIsVisible"
+        "content": "        buttonScrollToBottom.layer.position \u003d position"
       },
       {
         "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard isScrollToBottomVisible, !isScrollingToBottom else {"
+        "content": "        buttonScrollToBottom.layer.add(positionAnimation, forKey: #keyPath(CALayer.position))"
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": "            return"
+        "content": ""
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        let alphaAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.opacity))"
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        alphaAnimation.fromValue \u003d 0"
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
-        "content": "        isScrollingToBottom \u003d true"
+        "content": "        alphaAnimation.toValue \u003d 1"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.begin()"
+        "content": ""
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.setAnimationDuration(0.25)"
+        "content": "        buttonScrollToBottom.layer.opacity \u003d 1"
       },
       {
         "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))"
+        "content": "        buttonScrollToBottom.layer.add(alphaAnimation, forKey: #keyPath(CALayer.opacity))"
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.setCompletionBlock {"
+        "content": ""
       },
       {
         "lineNumber": 443,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.buttonScrollToBottomConstraint.constant \u003d 200"
+        "content": "        CATransaction.commit()"
       },
       {
         "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.scrollToBottomButtonIsVisible \u003d false"
+        "content": "    }"
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.isScrollingToBottom \u003d false"
+        "content": ""
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    func hideScrollToBottom(forceUpdate: Bool \u003d false) {"
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        let isScrollToBottomVisible \u003d forceUpdate ? true : scrollToBottomButtonIsVisible"
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
-        "content": "        var position \u003d buttonScrollToBottom.layer.position"
+        "content": "        guard isScrollToBottomVisible, !isScrollingToBottom else {"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
-        "content": "        position.y \u003d collectionView.bounds.height + 200"
+        "content": "            return"
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
-        "content": "        let positionAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.position))"
+        "content": ""
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
-        "content": "        positionAnimation.fromValue \u003d buttonScrollToBottom.layer.position"
+        "content": "        isScrollingToBottom \u003d true"
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
-        "content": "        positionAnimation.toValue \u003d position"
+        "content": "        CATransaction.begin()"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        CATransaction.setAnimationDuration(0.25)"
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.position \u003d position"
+        "content": "        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.add(positionAnimation, forKey: #keyPath(CALayer.position))"
+        "content": "        CATransaction.setCompletionBlock {"
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            self.buttonScrollToBottomConstraint.constant \u003d 200"
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": "        let alphaAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.opacity))"
+        "content": "            self.scrollToBottomButtonIsVisible \u003d false"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": "        alphaAnimation.fromValue \u003d 1"
+        "content": "            self.isScrollingToBottom \u003d false"
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "-"
         },
-        "content": "        alphaAnimation.toValue \u003d 0"
+        "content": "        }"
       },
       {
         "lineNumber": 461,
@@ -9391,14 +9391,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.opacity \u003d 0"
+        "content": "        var position \u003d buttonScrollToBottom.layer.position"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.layer.add(alphaAnimation, forKey: #keyPath(CALayer.opacity))"
+        "content": "        position.y \u003d collectionView.bounds.height + 200"
       },
       {
         "lineNumber": 464,
@@ -9412,91 +9412,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        CATransaction.commit()"
+        "content": "        let positionAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.position))"
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        positionAnimation.fromValue \u003d buttonScrollToBottom.layer.position"
       },
       {
         "lineNumber": 467,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        positionAnimation.toValue \u003d position"
       },
       {
         "lineNumber": 468,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func keyboardWillShow(_ notification: Notification) {"
+        "content": ""
       },
       {
         "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let keyboardFrame \u003d notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {"
+        "content": "        buttonScrollToBottom.layer.position \u003d position"
       },
       {
         "lineNumber": 470,
         "author": {
           "gitId": "-"
         },
-        "content": "            let keyboardRectangle \u003d keyboardFrame.cgRectValue"
+        "content": "        buttonScrollToBottom.layer.add(positionAnimation, forKey: #keyPath(CALayer.position))"
       },
       {
         "lineNumber": 471,
         "author": {
           "gitId": "-"
         },
-        "content": "            keyboardHeight \u003d keyboardRectangle.height - composerView.intrinsicContentSize.height"
+        "content": ""
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        let alphaAnimation \u003d CABasicAnimation(keyPath: #keyPath(CALayer.opacity))"
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "-"
         },
-        "content": "            if scrollToBottomButtonIsVisible {"
+        "content": "        alphaAnimation.fromValue \u003d 1"
       },
       {
         "lineNumber": 474,
         "author": {
           "gitId": "-"
         },
-        "content": "                showScrollToBottom(forceUpdate: true)"
+        "content": "        alphaAnimation.toValue \u003d 0"
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 476,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        buttonScrollToBottom.layer.opacity \u003d 0"
       },
       {
         "lineNumber": 477,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        buttonScrollToBottom.layer.add(alphaAnimation, forKey: #keyPath(CALayer.opacity))"
       },
       {
         "lineNumber": 478,
@@ -9510,287 +9510,287 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    override func keyboardWillHide(_ notification: Notification) {"
+        "content": "        CATransaction.commit()"
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "-"
         },
-        "content": "        keyboardHeight \u003d 0"
+        "content": "    }"
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "-"
         },
-        "content": "        if scrollToBottomButtonIsVisible {"
+        "content": ""
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "-"
         },
-        "content": "            showScrollToBottom(forceUpdate: true)"
+        "content": "    override func keyboardWillShow(_ notification: Notification) {"
       },
       {
         "lineNumber": 483,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if let keyboardFrame \u003d notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {"
       },
       {
         "lineNumber": 484,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            let keyboardRectangle \u003d keyboardFrame.cgRectValue"
       },
       {
         "lineNumber": 485,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            keyboardHeight \u003d keyboardRectangle.height - composerView.intrinsicContentSize.height"
       },
       {
         "lineNumber": 486,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Pagination"
+        "content": ""
       },
       {
         "lineNumber": 487,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if scrollToBottomButtonIsVisible {"
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "-"
         },
-        "content": "    func loadNextPageIfNeeded() {"
+        "content": "                showScrollToBottom(forceUpdate: true)"
       },
       {
         "lineNumber": 489,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard let collectionView \u003d collectionView else { return }"
+        "content": "            }"
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 491,
         "author": {
           "gitId": "-"
         },
-        "content": "        let bottomEdge \u003d collectionView.contentOffset.y + collectionView.frame.size.height"
+        "content": "    }"
       },
       {
         "lineNumber": 492,
         "author": {
           "gitId": "-"
         },
-        "content": "        if bottomEdge \u003e\u003d collectionView.contentSize.height - 200 {"
+        "content": ""
       },
       {
         "lineNumber": 493,
         "author": {
           "gitId": "-"
         },
-        "content": "            if viewModel.threadIdentifier !\u003d nil {"
+        "content": "    override func keyboardWillHide(_ notification: Notification) {"
       },
       {
         "lineNumber": 494,
         "author": {
           "gitId": "-"
         },
-        "content": "                viewModel.fetchThreadMessages(from: viewModel.oldestMessageDateFromRemote)"
+        "content": "        keyboardHeight \u003d 0"
       },
       {
         "lineNumber": 495,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "        if scrollToBottomButtonIsVisible {"
       },
       {
         "lineNumber": 496,
         "author": {
           "gitId": "-"
         },
-        "content": "                viewModel.fetchMessages(from: viewModel.oldestMessageDateFromRemote)"
+        "content": "            showScrollToBottom(forceUpdate: true)"
       },
       {
         "lineNumber": 497,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 498,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 499,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 500,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: Pagination"
       },
       {
         "lineNumber": 501,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: TitleView"
+        "content": ""
       },
       {
         "lineNumber": 502,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func loadNextPageIfNeeded() {"
       },
       {
         "lineNumber": 503,
         "author": {
           "gitId": "-"
         },
-        "content": "    private func setupTitleView() {"
+        "content": "        guard let collectionView \u003d collectionView else { return }"
       },
       {
         "lineNumber": 504,
         "author": {
           "gitId": "-"
         },
-        "content": "        let view \u003d ChatTitleView.instantiateFromNib()"
+        "content": ""
       },
       {
         "lineNumber": 505,
         "author": {
           "gitId": "-"
         },
-        "content": "        view?.subscription \u003d unmanagedSubscription"
+        "content": "        let bottomEdge \u003d collectionView.contentOffset.y + collectionView.frame.size.height"
       },
       {
         "lineNumber": 506,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if bottomEdge \u003e\u003d collectionView.contentSize.height - 200 {"
       },
       {
         "lineNumber": 507,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let thread \u003d viewModel.threadIdentifier {"
+        "content": "            if viewModel.threadIdentifier !\u003d nil {"
       },
       {
         "lineNumber": 508,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let message \u003d Message.find(withIdentifier: thread)?.unmanaged {"
+        "content": "                viewModel.fetchThreadMessages(from: viewModel.oldestMessageDateFromRemote)"
       },
       {
         "lineNumber": 509,
         "author": {
           "gitId": "-"
         },
-        "content": "                view?.mainThreadMessage \u003d message"
+        "content": "            } else {"
       },
       {
         "lineNumber": 510,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                viewModel.fetchMessages(from: viewModel.oldestMessageDateFromRemote)"
       },
       {
         "lineNumber": 511,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 512,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 513,
         "author": {
           "gitId": "-"
         },
-        "content": "        view?.delegate \u003d self"
+        "content": "    }"
       },
       {
         "lineNumber": 514,
         "author": {
           "gitId": "-"
         },
-        "content": "        navigationItem.titleView \u003d view"
+        "content": ""
       },
       {
         "lineNumber": 515,
         "author": {
           "gitId": "-"
         },
-        "content": "        chatTitleView \u003d view"
+        "content": "    // MARK: TitleView"
       },
       {
         "lineNumber": 516,
         "author": {
           "gitId": "-"
         },
-        "content": "        chatTitleView?.applyTheme()"
+        "content": ""
       },
       {
         "lineNumber": 517,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    private func setupTitleView() {"
       },
       {
         "lineNumber": 518,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        let view \u003d ChatTitleView.instantiateFromNib()"
       },
       {
         "lineNumber": 519,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Navigation Buttons"
+        "content": "        view?.subscription \u003d unmanagedSubscription"
       },
       {
         "lineNumber": 520,
@@ -9804,238 +9804,238 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    private func updateNavigationBarButtons() {"
+        "content": "        if let thread \u003d viewModel.threadIdentifier {"
       },
       {
         "lineNumber": 522,
         "author": {
           "gitId": "-"
         },
-        "content": "        if subscription !\u003d nil {"
+        "content": "            if let message \u003d Message.find(withIdentifier: thread)?.unmanaged {"
       },
       {
         "lineNumber": 523,
         "author": {
           "gitId": "-"
         },
-        "content": "            let search \u003d UIBarButtonItem("
+        "content": "                view?.mainThreadMessage \u003d message"
       },
       {
         "lineNumber": 524,
         "author": {
           "gitId": "-"
         },
-        "content": "                image: UIImage(named: \"Search\"),"
+        "content": "            }"
       },
       {
         "lineNumber": 525,
         "author": {
           "gitId": "-"
         },
-        "content": "                style: .done,"
+        "content": "        }"
       },
       {
         "lineNumber": 526,
         "author": {
           "gitId": "-"
         },
-        "content": "                target: self,"
+        "content": ""
       },
       {
         "lineNumber": 527,
         "author": {
           "gitId": "-"
         },
-        "content": "                action: #selector(showSearchMessages)"
+        "content": "        view?.delegate \u003d self"
       },
       {
         "lineNumber": 528,
         "author": {
           "gitId": "-"
         },
-        "content": "            )"
+        "content": "        navigationItem.titleView \u003d view"
       },
       {
         "lineNumber": 529,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        chatTitleView \u003d view"
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "-"
         },
-        "content": "            let threads \u003d UIBarButtonItem("
+        "content": "        chatTitleView?.applyTheme()"
       },
       {
         "lineNumber": 531,
         "author": {
           "gitId": "-"
         },
-        "content": "                image: UIImage(named: \"Threads\"),"
+        "content": "    }"
       },
       {
         "lineNumber": 532,
         "author": {
           "gitId": "-"
         },
-        "content": "                style: .done,"
+        "content": ""
       },
       {
         "lineNumber": 533,
         "author": {
           "gitId": "-"
         },
-        "content": "                target: self,"
+        "content": "    // MARK: Navigation Buttons"
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "-"
         },
-        "content": "                action: #selector(buttonThreadsDidPressed)"
+        "content": ""
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "-"
         },
-        "content": "            )"
+        "content": "    private func updateNavigationBarButtons() {"
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if subscription !\u003d nil {"
       },
       {
         "lineNumber": 537,
         "author": {
           "gitId": "-"
         },
-        "content": "            navigationItem.rightBarButtonItems \u003d [search, threads]"
+        "content": "            let search \u003d UIBarButtonItem("
       },
       {
         "lineNumber": 538,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "                image: UIImage(named: \"Search\"),"
       },
       {
         "lineNumber": 539,
         "author": {
           "gitId": "-"
         },
-        "content": "            navigationItem.rightBarButtonItem \u003d nil"
+        "content": "                style: .done,"
       },
       {
         "lineNumber": 540,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                target: self,"
       },
       {
         "lineNumber": 541,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                action: #selector(showSearchMessages)"
       },
       {
         "lineNumber": 542,
         "author": {
           "gitId": "-"
         },
-        "content": "        navigationItem.backBarButtonItem \u003d UIBarButtonItem("
+        "content": "            )"
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "-"
         },
-        "content": "            title: \"\","
+        "content": ""
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "-"
         },
-        "content": "            style: .plain,"
+        "content": "            let threads \u003d UIBarButtonItem("
       },
       {
         "lineNumber": 545,
         "author": {
           "gitId": "-"
         },
-        "content": "            target: nil,"
+        "content": "                image: UIImage(named: \"Threads\"),"
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "-"
         },
-        "content": "            action: nil"
+        "content": "                style: .done,"
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "-"
         },
-        "content": "        )"
+        "content": "                target: self,"
       },
       {
         "lineNumber": 548,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                action: #selector(buttonThreadsDidPressed)"
       },
       {
         "lineNumber": 549,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            )"
       },
       {
         "lineNumber": 550,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: IBAction"
+        "content": ""
       },
       {
         "lineNumber": 551,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            navigationItem.rightBarButtonItems \u003d [search, threads]"
       },
       {
         "lineNumber": 552,
         "author": {
           "gitId": "-"
         },
-        "content": "    @objc func buttonThreadsDidPressed() {"
+        "content": "        } else {"
       },
       {
         "lineNumber": 553,
         "author": {
           "gitId": "-"
         },
-        "content": "        performSegue(withIdentifier: \"Threads\", sender: nil)"
+        "content": "            navigationItem.rightBarButtonItem \u003d nil"
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 555,
@@ -10049,63 +10049,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    @objc func buttonScrollToBottomDidPressed() {"
+        "content": "        navigationItem.backBarButtonItem \u003d UIBarButtonItem("
       },
       {
         "lineNumber": 557,
         "author": {
           "gitId": "-"
         },
-        "content": "        scrollToBottom(true)"
+        "content": "            title: \"\","
       },
       {
         "lineNumber": 558,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            style: .plain,"
       },
       {
         "lineNumber": 559,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            target: nil,"
       },
       {
         "lineNumber": 560,
         "author": {
           "gitId": "-"
         },
-        "content": "    @objc internal func scrollToBottom(_ animated: Bool \u003d false) {"
+        "content": "            action: nil"
       },
       {
         "lineNumber": 561,
         "author": {
           "gitId": "-"
         },
-        "content": "        let offset \u003d CGPoint(x: 0, y: -composerView.frame.height - keyboardHeight)"
+        "content": "        )"
       },
       {
         "lineNumber": 562,
         "author": {
           "gitId": "-"
         },
-        "content": "        collectionView.setContentOffset(offset, animated: animated)"
+        "content": "    }"
       },
       {
         "lineNumber": 563,
         "author": {
           "gitId": "-"
         },
-        "content": "        hideScrollToBottom()"
+        "content": ""
       },
       {
         "lineNumber": 564,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    // MARK: IBAction"
       },
       {
         "lineNumber": 565,
@@ -10119,154 +10119,154 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    internal func resetScrollToBottomButtonPosition() {"
+        "content": "    @objc func buttonThreadsDidPressed() {"
       },
       {
         "lineNumber": 567,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard !isScrollingToBottom else { return }"
+        "content": "        performSegue(withIdentifier: \"Threads\", sender: nil)"
       },
       {
         "lineNumber": 568,
         "author": {
           "gitId": "-"
         },
-        "content": "        if !chatLogIsAtBottom() {"
+        "content": "    }"
       },
       {
         "lineNumber": 569,
         "author": {
           "gitId": "-"
         },
-        "content": "            showScrollToBottom()"
+        "content": ""
       },
       {
         "lineNumber": 570,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "    @objc func buttonScrollToBottomDidPressed() {"
       },
       {
         "lineNumber": 571,
         "author": {
           "gitId": "-"
         },
-        "content": "            hideScrollToBottom()"
+        "content": "        scrollToBottom(true)"
       },
       {
         "lineNumber": 572,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 573,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 574,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    @objc internal func scrollToBottom(_ animated: Bool \u003d false) {"
       },
       {
         "lineNumber": 575,
         "author": {
           "gitId": "-"
         },
-        "content": "    private func chatLogIsAtBottom() -\u003e Bool {"
+        "content": "        let offset \u003d CGPoint(x: 0, y: -composerView.frame.height - keyboardHeight)"
       },
       {
         "lineNumber": 576,
         "author": {
           "gitId": "-"
         },
-        "content": "        return (collectionView.contentOffset.y + keyboardHeight) \u003c\u003d -composerView.frame.height"
+        "content": "        collectionView.setContentOffset(offset, animated: animated)"
       },
       {
         "lineNumber": 577,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        hideScrollToBottom()"
       },
       {
         "lineNumber": 578,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 579,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Reading Status"
+        "content": ""
       },
       {
         "lineNumber": 580,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    internal func resetScrollToBottomButtonPosition() {"
       },
       {
         "lineNumber": 581,
         "author": {
           "gitId": "-"
         },
-        "content": "    private func markAsRead() {"
+        "content": "        guard !isScrollingToBottom else { return }"
       },
       {
         "lineNumber": 582,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard"
+        "content": "        if !chatLogIsAtBottom() {"
       },
       {
         "lineNumber": 583,
         "author": {
           "gitId": "-"
         },
-        "content": "            let subscription \u003d unmanagedSubscription,"
+        "content": "            showScrollToBottom()"
       },
       {
         "lineNumber": 584,
         "author": {
           "gitId": "-"
         },
-        "content": "            subscription.alert || subscription.unread \u003e 0"
+        "content": "        } else {"
       },
       {
         "lineNumber": 585,
         "author": {
           "gitId": "-"
         },
-        "content": "        else {"
+        "content": "            hideScrollToBottom()"
       },
       {
         "lineNumber": 586,
         "author": {
           "gitId": "-"
         },
-        "content": "            return"
+        "content": "        }"
       },
       {
         "lineNumber": 587,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 588,
@@ -10280,217 +10280,217 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        API.current()?.client(SubscriptionsClient.self).markAsRead(subscription: subscription)"
+        "content": "    private func chatLogIsAtBottom() -\u003e Bool {"
       },
       {
         "lineNumber": 590,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return (collectionView.contentOffset.y + keyboardHeight) \u003c\u003d -composerView.frame.height"
       },
       {
         "lineNumber": 591,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 592,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Sizing"
+        "content": ""
       },
       {
         "lineNumber": 593,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: Reading Status"
       },
       {
         "lineNumber": 594,
         "author": {
           "gitId": "-"
         },
-        "content": "    func messageWidth() -\u003e CGFloat {"
+        "content": ""
       },
       {
         "lineNumber": 595,
         "author": {
           "gitId": "-"
         },
-        "content": "        var horizontalMargins: CGFloat"
+        "content": "    private func markAsRead() {"
       },
       {
         "lineNumber": 596,
         "author": {
           "gitId": "-"
         },
-        "content": "        if isInLandscape {"
+        "content": "        guard"
       },
       {
         "lineNumber": 597,
         "author": {
           "gitId": "-"
         },
-        "content": "            horizontalMargins \u003d collectionView.adjustedContentInset.top + collectionView.adjustedContentInset.bottom"
+        "content": "            let subscription \u003d unmanagedSubscription,"
       },
       {
         "lineNumber": 598,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "            subscription.alert || subscription.unread \u003e 0"
       },
       {
         "lineNumber": 599,
         "author": {
           "gitId": "-"
         },
-        "content": "            horizontalMargins \u003d 0"
+        "content": "        else {"
       },
       {
         "lineNumber": 600,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return"
       },
       {
         "lineNumber": 601,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 602,
         "author": {
           "gitId": "-"
         },
-        "content": "        return screenSize.width - horizontalMargins"
+        "content": ""
       },
       {
         "lineNumber": 603,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        API.current()?.client(SubscriptionsClient.self).markAsRead(subscription: subscription)"
       },
       {
         "lineNumber": 604,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 605,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 606,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: Sizing"
       },
       {
         "lineNumber": 607,
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController {"
+        "content": ""
       },
       {
         "lineNumber": 608,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func messageWidth() -\u003e CGFloat {"
       },
       {
         "lineNumber": 609,
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -\u003e CGFloat {"
+        "content": "        var horizontalMargins: CGFloat"
       },
       {
         "lineNumber": 610,
         "author": {
           "gitId": "-"
         },
-        "content": "        return 0"
+        "content": "        if isInLandscape {"
       },
       {
         "lineNumber": 611,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            horizontalMargins \u003d collectionView.adjustedContentInset.top + collectionView.adjustedContentInset.bottom"
       },
       {
         "lineNumber": 612,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        } else {"
       },
       {
         "lineNumber": 613,
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -\u003e CGFloat {"
+        "content": "            horizontalMargins \u003d 0"
       },
       {
         "lineNumber": 614,
         "author": {
           "gitId": "-"
         },
-        "content": "        return 0"
+        "content": "        }"
       },
       {
         "lineNumber": 615,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 616,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return screenSize.width - horizontalMargins"
       },
       {
         "lineNumber": 617,
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -\u003e UIEdgeInsets {"
+        "content": "    }"
       },
       {
         "lineNumber": 618,
         "author": {
           "gitId": "-"
         },
-        "content": "        return .zero"
+        "content": ""
       },
       {
         "lineNumber": 619,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 620,
@@ -10504,350 +10504,350 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -\u003e CGSize {"
+        "content": "extension MessagesViewController {"
       },
       {
         "lineNumber": 622,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard let item \u003d viewModel.item(for: indexPath) else {"
+        "content": ""
       },
       {
         "lineNumber": 623,
         "author": {
           "gitId": "-"
         },
-        "content": "            return .zero"
+        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -\u003e CGFloat {"
       },
       {
         "lineNumber": 624,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        return 0"
       },
       {
         "lineNumber": 625,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 626,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let size \u003d viewSizingModel.size(for: item.differenceIdentifier) {"
+        "content": ""
       },
       {
         "lineNumber": 627,
         "author": {
           "gitId": "-"
         },
-        "content": "            return size"
+        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -\u003e CGFloat {"
       },
       {
         "lineNumber": 628,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "        return 0"
       },
       {
         "lineNumber": 629,
         "author": {
           "gitId": "-"
         },
-        "content": "            let identifier \u003d item.relatedReuseIdentifier"
+        "content": "    }"
       },
       {
         "lineNumber": 630,
         "author": {
           "gitId": "-"
         },
-        "content": "            var sizingCell: Any?"
+        "content": ""
       },
       {
         "lineNumber": 631,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -\u003e UIEdgeInsets {"
       },
       {
         "lineNumber": 632,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let cachedSizingCell \u003d viewSizingModel.view(for: identifier) as? SizingCell {"
+        "content": "        return .zero"
       },
       {
         "lineNumber": 633,
         "author": {
           "gitId": "-"
         },
-        "content": "                sizingCell \u003d cachedSizingCell"
+        "content": "    }"
       },
       {
         "lineNumber": 634,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": ""
       },
       {
         "lineNumber": 635,
         "author": {
           "gitId": "-"
         },
-        "content": "                sizingCell \u003d UINib(nibName: identifier, bundle: nil).instantiate() as? SizingCell"
+        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -\u003e CGSize {"
       },
       {
         "lineNumber": 636,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        guard let item \u003d viewModel.item(for: indexPath) else {"
       },
       {
         "lineNumber": 637,
         "author": {
           "gitId": "-"
         },
-        "content": "                if let sizingCell \u003d sizingCell {"
+        "content": "            return .zero"
       },
       {
         "lineNumber": 638,
         "author": {
           "gitId": "-"
         },
-        "content": "                    viewSizingModel.set(view: sizingCell, for: identifier)"
+        "content": "        }"
       },
       {
         "lineNumber": 639,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 640,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        if let size \u003d viewSizingModel.size(for: item.differenceIdentifier) {"
       },
       {
         "lineNumber": 641,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            return size"
       },
       {
         "lineNumber": 642,
         "author": {
           "gitId": "-"
         },
-        "content": "            guard let cell \u003d sizingCell as? SizingCell else {"
+        "content": "        } else {"
       },
       {
         "lineNumber": 643,
         "author": {
           "gitId": "-"
         },
-        "content": "                fatalError(\"\"\""
+        "content": "            let identifier \u003d item.relatedReuseIdentifier"
       },
       {
         "lineNumber": 644,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Failed to reference sizing cell instance. Please,"
+        "content": "            var sizingCell: Any?"
       },
       {
         "lineNumber": 645,
         "author": {
           "gitId": "-"
         },
-        "content": "                    check the relatedReuseIdentifier and make sure all"
+        "content": ""
       },
       {
         "lineNumber": 646,
         "author": {
           "gitId": "-"
         },
-        "content": "                    the chat components conform to SizingCell protocol"
+        "content": "            if let cachedSizingCell \u003d viewSizingModel.view(for: identifier) as? SizingCell {"
       },
       {
         "lineNumber": 647,
         "author": {
           "gitId": "-"
         },
-        "content": "                \"\"\")"
+        "content": "                sizingCell \u003d cachedSizingCell"
       },
       {
         "lineNumber": 648,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            } else {"
       },
       {
         "lineNumber": 649,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                sizingCell \u003d UINib(nibName: identifier, bundle: nil).instantiate() as? SizingCell"
       },
       {
         "lineNumber": 650,
         "author": {
           "gitId": "-"
         },
-        "content": "            let cellWidth \u003d messageWidth()"
+        "content": ""
       },
       {
         "lineNumber": 651,
         "author": {
           "gitId": "-"
         },
-        "content": "            var size \u003d type(of: cell).size(for: item, with: cellWidth)"
+        "content": "                if let sizingCell \u003d sizingCell {"
       },
       {
         "lineNumber": 652,
         "author": {
           "gitId": "-"
         },
-        "content": "            size \u003d CGSize(width: cellWidth, height: size.height)"
+        "content": "                    viewSizingModel.set(view: sizingCell, for: identifier)"
       },
       {
         "lineNumber": 653,
         "author": {
           "gitId": "-"
         },
-        "content": "            viewSizingModel.set(size: size, for: item.differenceIdentifier)"
+        "content": "                }"
       },
       {
         "lineNumber": 654,
         "author": {
           "gitId": "-"
         },
-        "content": "            return size"
+        "content": "            }"
       },
       {
         "lineNumber": 655,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 656,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            guard let cell \u003d sizingCell as? SizingCell else {"
       },
       {
         "lineNumber": 657,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                fatalError(\"\"\""
       },
       {
         "lineNumber": 658,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "                    Failed to reference sizing cell instance. Please,"
       },
       {
         "lineNumber": 659,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    check the relatedReuseIdentifier and make sure all"
       },
       {
         "lineNumber": 660,
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController: ChatDataUpdateDelegate {"
+        "content": "                    the chat components conform to SizingCell protocol"
       },
       {
         "lineNumber": 661,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                \"\"\")"
       },
       {
         "lineNumber": 662,
         "author": {
           "gitId": "-"
         },
-        "content": "    func didUpdateChatData(newData: [AnyChatSection], updatedItems: [AnyHashable]) {"
+        "content": "            }"
       },
       {
         "lineNumber": 663,
         "author": {
           "gitId": "-"
         },
-        "content": "        updatedItems.forEach { viewSizingModel.invalidateLayout(for: $0) }"
+        "content": ""
       },
       {
         "lineNumber": 664,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewModel.data \u003d newData"
+        "content": "            let cellWidth \u003d messageWidth()"
       },
       {
         "lineNumber": 665,
         "author": {
           "gitId": "-"
         },
-        "content": "        viewModel.updateData(shouldUpdateUI: false)"
+        "content": "            var size \u003d type(of: cell).size(for: item, with: cellWidth)"
       },
       {
         "lineNumber": 666,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            size \u003d CGSize(width: cellWidth, height: size.height)"
       },
       {
         "lineNumber": 667,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            viewSizingModel.set(size: size, for: item.differenceIdentifier)"
       },
       {
         "lineNumber": 668,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "            return size"
       },
       {
         "lineNumber": 669,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 670,
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController {"
+        "content": "    }"
       },
       {
         "lineNumber": 671,
@@ -10861,63 +10861,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    override func scrollViewDidScroll(_ scrollView: UIScrollView) {"
+        "content": "}"
       },
       {
         "lineNumber": 673,
         "author": {
           "gitId": "-"
         },
-        "content": "        if scrollView.isDragging {"
+        "content": ""
       },
       {
         "lineNumber": 674,
         "author": {
           "gitId": "-"
         },
-        "content": "            resetScrollToBottomButtonPosition()"
+        "content": "extension MessagesViewController: ChatDataUpdateDelegate {"
       },
       {
         "lineNumber": 675,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 676,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func didUpdateChatData(newData: [AnyChatSection], updatedItems: [AnyHashable]) {"
       },
       {
         "lineNumber": 677,
         "author": {
           "gitId": "-"
         },
-        "content": "        loadNextPageIfNeeded()"
+        "content": "        updatedItems.forEach { viewSizingModel.invalidateLayout(for: $0) }"
       },
       {
         "lineNumber": 678,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        viewModel.data \u003d newData"
       },
       {
         "lineNumber": 679,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        viewModel.updateData(shouldUpdateUI: false)"
       },
       {
         "lineNumber": 680,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    }"
       },
       {
         "lineNumber": 681,
@@ -10931,7 +10931,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController: UIDocumentInteractionControllerDelegate {"
+        "content": "}"
       },
       {
         "lineNumber": 683,
@@ -10945,77 +10945,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -\u003e UIViewController {"
+        "content": "extension MessagesViewController {"
       },
       {
         "lineNumber": 685,
         "author": {
           "gitId": "-"
         },
-        "content": "        return self"
+        "content": ""
       },
       {
         "lineNumber": 686,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    override func scrollViewDidScroll(_ scrollView: UIScrollView) {"
       },
       {
         "lineNumber": 687,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if scrollView.isDragging {"
       },
       {
         "lineNumber": 688,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "            resetScrollToBottomButtonPosition()"
       },
       {
         "lineNumber": 689,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 690,
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController: UserActionSheetPresenter {"
+        "content": ""
       },
       {
         "lineNumber": 691,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        loadNextPageIfNeeded()"
       },
       {
         "lineNumber": 692,
         "author": {
           "gitId": "-"
         },
-        "content": "    func presentActionSheetForUser(_ user: User, source: (view: UIView?, rect: CGRect?)?) {"
+        "content": "    }"
       },
       {
         "lineNumber": 693,
         "author": {
           "gitId": "-"
         },
-        "content": "        presentActionSheetForUser(user, subscription: subscription, source: source)"
+        "content": ""
       },
       {
         "lineNumber": 694,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 695,
@@ -11029,7 +11029,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "extension MessagesViewController: UIDocumentInteractionControllerDelegate {"
       },
       {
         "lineNumber": 697,
@@ -11043,77 +11043,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController: ChatTitleViewProtocol {"
+        "content": "    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -\u003e UIViewController {"
       },
       {
         "lineNumber": 699,
         "author": {
           "gitId": "-"
         },
-        "content": "    func titleViewChannelButtonPressed() {"
+        "content": "        return self"
       },
       {
         "lineNumber": 700,
         "author": {
           "gitId": "-"
         },
-        "content": "        performSegue(withIdentifier: \"Channel Actions\", sender: nil)"
+        "content": "    }"
       },
       {
         "lineNumber": 701,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 702,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 703,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 704,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "extension MessagesViewController: UserActionSheetPresenter {"
       },
       {
         "lineNumber": 705,
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController {"
+        "content": ""
       },
       {
         "lineNumber": 706,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func presentActionSheetForUser(_ user: User, source: (view: UIView?, rect: CGRect?)?) {"
       },
       {
         "lineNumber": 707,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func applyTheme() {"
+        "content": "        presentActionSheetForUser(user, subscription: subscription, source: source)"
       },
       {
         "lineNumber": 708,
         "author": {
           "gitId": "-"
         },
-        "content": "        super.applyTheme()"
+        "content": "    }"
       },
       {
         "lineNumber": 709,
@@ -11127,56 +11127,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        guard let theme \u003d view.theme else { return }"
+        "content": "}"
       },
       {
         "lineNumber": 711,
         "author": {
           "gitId": "-"
         },
-        "content": "        let themeName \u003d ThemeManager.themes.first { $0.theme \u003d\u003d theme }?.title"
+        "content": ""
       },
       {
         "lineNumber": 712,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "extension MessagesViewController: ChatTitleViewProtocol {"
       },
       {
         "lineNumber": 713,
         "author": {
           "gitId": "-"
         },
-        "content": "        let scrollToBottomImageName \u003d \"Float Button \" + (themeName ?? \"light\")"
+        "content": "    func titleViewChannelButtonPressed() {"
       },
       {
         "lineNumber": 714,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonScrollToBottom.setImage(UIImage(named: scrollToBottomImageName), for: .normal)"
+        "content": "        performSegue(withIdentifier: \"Channel Actions\", sender: nil)"
       },
       {
         "lineNumber": 715,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 716,
         "author": {
           "gitId": "-"
         },
-        "content": "        emptyStateImageView?.image \u003d UIImage(named: \"Empty State \\(themeName ?? \"light\")\")"
+        "content": ""
       },
       {
         "lineNumber": 717,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 718,
@@ -11190,7 +11190,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "extension MessagesViewController {"
       },
       {
         "lineNumber": 720,
@@ -11204,35 +11204,35 @@
         "author": {
           "gitId": "-"
         },
-        "content": "extension MessagesViewController: SocketConnectionHandler {"
+        "content": "    override func applyTheme() {"
       },
       {
         "lineNumber": 722,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        super.applyTheme()"
       },
       {
         "lineNumber": 723,
         "author": {
           "gitId": "-"
         },
-        "content": "    func socketDidChangeState(state: SocketConnectionState) {"
+        "content": ""
       },
       {
         "lineNumber": 724,
         "author": {
           "gitId": "-"
         },
-        "content": "        Log.debug(\"[ChatViewController] socketDidChangeState: \\(state)\")"
+        "content": "        guard let theme \u003d view.theme else { return }"
       },
       {
         "lineNumber": 725,
         "author": {
           "gitId": "-"
         },
-        "content": "        chatTitleView?.state \u003d state"
+        "content": "        let themeName \u003d ThemeManager.themes.first { $0.theme \u003d\u003d theme }?.title"
       },
       {
         "lineNumber": 726,
@@ -11246,14 +11246,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        if state \u003d\u003d .connected {"
+        "content": "        let scrollToBottomImageName \u003d \"Float Button \" + (themeName ?? \"light\")"
       },
       {
         "lineNumber": 728,
         "author": {
           "gitId": "-"
         },
-        "content": "            viewModel.requestingData \u003d .none"
+        "content": "        buttonScrollToBottom.setImage(UIImage(named: scrollToBottomImageName), for: .normal)"
       },
       {
         "lineNumber": 729,
@@ -11267,59 +11267,157 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            if viewModel.threadIdentifier !\u003d nil {"
+        "content": "        emptyStateImageView?.image \u003d UIImage(named: \"Empty State \\(themeName ?? \"light\")\")"
       },
       {
         "lineNumber": 731,
         "author": {
           "gitId": "-"
         },
-        "content": "                viewModel.fetchThreadMessages(from: nil)"
+        "content": "    }"
       },
       {
         "lineNumber": 732,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": ""
       },
       {
         "lineNumber": 733,
         "author": {
           "gitId": "-"
         },
-        "content": "                viewModel.fetchMessages(from: nil)"
+        "content": "}"
       },
       {
         "lineNumber": 734,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 735,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "extension MessagesViewController: SocketConnectionHandler {"
       },
       {
         "lineNumber": 736,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 737,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func socketDidChangeState(state: SocketConnectionState) {"
       },
       {
         "lineNumber": 738,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Log.debug(\"[ChatViewController] socketDidChangeState: \\(state)\")"
+      },
+      {
+        "lineNumber": 739,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        chatTitleView?.state \u003d state"
+      },
+      {
+        "lineNumber": 740,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 741,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        if state \u003d\u003d .connected {"
+      },
+      {
+        "lineNumber": 742,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            viewModel.requestingData \u003d .none"
+      },
+      {
+        "lineNumber": 743,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 744,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            if viewModel.threadIdentifier !\u003d nil {"
+      },
+      {
+        "lineNumber": 745,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                viewModel.fetchThreadMessages(from: nil)"
+      },
+      {
+        "lineNumber": 746,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 747,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                viewModel.fetchMessages(from: nil)"
+      },
+      {
+        "lineNumber": 748,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 749,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 750,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 751,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 752,
         "author": {
           "gitId": "-"
         },
@@ -11328,7 +11426,7 @@
     ],
     "authorContributionMap": {
       "blewjy": 35,
-      "-": 703
+      "-": 717
     }
   },
   {
