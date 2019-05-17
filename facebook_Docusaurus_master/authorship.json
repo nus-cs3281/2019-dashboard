@@ -5013,329 +5013,329 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  require(\u0027../write-translations.js\u0027);"
+        "content": "  const commander \u003d require(\u0027commander\u0027);"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "-"
         },
-        "content": "  const metadataUtils \u003d require(\u0027./metadataUtils\u0027);"
+        "content": "  commander"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "-"
         },
-        "content": "  const blog \u003d require(\u0027./blog\u0027);"
+        "content": "    .option(\u0027--skip-image-compression\u0027)"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
-        "content": "  const docs \u003d require(\u0027./docs\u0027);"
+        "content": "    .option(\u0027--skip-next-release\u0027)"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
-        "content": "  const CWD \u003d process.cwd();"
+        "content": "    .parse(process.argv);"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "-"
         },
-        "content": "  const fs \u003d require(\u0027fs-extra\u0027);"
+        "content": "  require(\u0027../write-translations.js\u0027);"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "-"
         },
-        "content": "  const readMetadata \u003d require(\u0027./readMetadata.js\u0027);"
+        "content": "  const metadataUtils \u003d require(\u0027./metadataUtils\u0027);"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": "  const path \u003d require(\u0027path\u0027);"
+        "content": "  const blog \u003d require(\u0027./blog\u0027);"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "  const {minifyCss, isSeparateCss, autoPrefixCss} \u003d require(\u0027./utils\u0027);"
+        "content": "  const docs \u003d require(\u0027./docs\u0027);"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": "  const React \u003d require(\u0027react\u0027);"
+        "content": "  const CWD \u003d process.cwd();"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "  const mkdirp \u003d require(\u0027mkdirp\u0027);"
+        "content": "  const fs \u003d require(\u0027fs-extra\u0027);"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": "  const glob \u003d require(\u0027glob\u0027);"
+        "content": "  const readMetadata \u003d require(\u0027./readMetadata.js\u0027);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": "  const chalk \u003d require(\u0027chalk\u0027);"
+        "content": "  const path \u003d require(\u0027path\u0027);"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": "  const Site \u003d require(\u0027../core/Site.js\u0027);"
+        "content": "  const {minifyCss, isSeparateCss, autoPrefixCss} \u003d require(\u0027./utils\u0027);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "  const env \u003d require(\u0027./env.js\u0027);"
+        "content": "  const React \u003d require(\u0027react\u0027);"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "  const loadConfig \u003d require(\u0027./config.js\u0027);"
+        "content": "  const mkdirp \u003d require(\u0027mkdirp\u0027);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "  const siteConfig \u003d loadConfig(`${CWD}/siteConfig.js`);"
+        "content": "  const glob \u003d require(\u0027glob\u0027);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "  const translate \u003d require(\u0027./translate.js\u0027);"
+        "content": "  const chalk \u003d require(\u0027chalk\u0027);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "  const feed \u003d require(\u0027./feed.js\u0027);"
+        "content": "  const Site \u003d require(\u0027../core/Site.js\u0027);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": "  const sitemap \u003d require(\u0027./sitemap.js\u0027);"
+        "content": "  const env \u003d require(\u0027./env.js\u0027);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "  const join \u003d path.join;"
+        "content": "  const loadConfig \u003d require(\u0027./config.js\u0027);"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "  const sep \u003d path.sep;"
+        "content": "  const siteConfig \u003d loadConfig(`${CWD}/siteConfig.js`);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "  const escapeStringRegexp \u003d require(\u0027escape-string-regexp\u0027);"
+        "content": "  const translate \u003d require(\u0027./translate.js\u0027);"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "  const {renderToStaticMarkupWithDoctype} \u003d require(\u0027./renderUtils\u0027);"
+        "content": "  const feed \u003d require(\u0027./feed.js\u0027);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "  const commander \u003d require(\u0027commander\u0027);"
+        "content": "  const sitemap \u003d require(\u0027./sitemap.js\u0027);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "  const imagemin \u003d require(\u0027imagemin\u0027);"
+        "content": "  const join \u003d path.join;"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "  const imageminJpegtran \u003d require(\u0027imagemin-jpegtran\u0027);"
+        "content": "  const sep \u003d path.sep;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "  const imageminOptipng \u003d require(\u0027imagemin-optipng\u0027);"
+        "content": "  const escapeStringRegexp \u003d require(\u0027escape-string-regexp\u0027);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "  const imageminSvgo \u003d require(\u0027imagemin-svgo\u0027);"
+        "content": "  const {renderToStaticMarkupWithDoctype} \u003d require(\u0027./renderUtils\u0027);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "  const imageminGifsicle \u003d require(\u0027imagemin-gifsicle\u0027);"
+        "content": "  const imagemin \u003d require(\u0027imagemin\u0027);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const imageminJpegtran \u003d require(\u0027imagemin-jpegtran\u0027);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "  commander.option(\u0027--skip-image-compression\u0027).parse(process.argv);"
+        "content": "  const imageminOptipng \u003d require(\u0027imagemin-optipng\u0027);"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const imageminSvgo \u003d require(\u0027imagemin-svgo\u0027);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "  // create the folder path for a file if it does not exist, then write the file"
+        "content": "  const imageminGifsicle \u003d require(\u0027imagemin-gifsicle\u0027);"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "  function writeFileAndCreateFolder(file, content) {"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "    mkdirp.sync(path.dirname(file));"
+        "content": "  // create the folder path for a file if it does not exist, then write the file"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "    fs.writeFileSync(file, content);"
+        "content": "  function writeFileAndCreateFolder(file, content) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    mkdirp.sync(path.dirname(file));"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "    // build extra file for extension-less url if \"cleanUrl\" siteConfig is true"
+        "content": "    fs.writeFileSync(file, content);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (siteConfig.cleanUrl \u0026\u0026 file.indexOf(\u0027index.html\u0027) \u003d\u003d\u003d -1) {"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "      const extraFile \u003d file.replace(/\\.html$/, \u0027/index.html\u0027);"
+        "content": "    // build extra file for extension-less url if \"cleanUrl\" siteConfig is true"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(path.dirname(extraFile));"
+        "content": "    if (siteConfig.cleanUrl \u0026\u0026 file.indexOf(\u0027index.html\u0027) \u003d\u003d\u003d -1) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.writeFileSync(extraFile, content);"
+        "content": "      const extraFile \u003d file.replace(/\\.html$/, \u0027/index.html\u0027);"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      mkdirp.sync(path.dirname(extraFile));"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "      fs.writeFileSync(extraFile, content);"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "  console.log(\u0027generate.js triggered...\u0027);"
+        "content": "  }"
       },
       {
         "lineNumber": 56,
@@ -5349,1771 +5349,1771 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  readMetadata.generateMetadataDocs();"
+        "content": "  console.log(\u0027generate.js triggered...\u0027);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "  const Metadata \u003d require(\u0027../core/metadata.js\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  readMetadata.generateMetadataDocs();"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "  // TODO: what if the project is a github org page? We should not use"
+        "content": "  const Metadata \u003d require(\u0027../core/metadata.js\u0027);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "  // siteConfig.projectName in this case. Otherwise a GitHub org doc URL would"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "  // look weird: https://myorg.github.io/myorg/docs"
+        "content": "  // TODO: what if the project is a github org page? We should not use"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  // siteConfig.projectName in this case. Otherwise a GitHub org doc URL would"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "  // TODO: siteConfig.projectName is a misnomer. The actual project name is"
+        "content": "  // look weird: https://myorg.github.io/myorg/docs"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "  // `title`. `projectName` is only used to generate a folder, which isn\u0027t"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "  // needed when the project\u0027s a GitHub org page"
+        "content": "  // TODO: siteConfig.projectName is a misnomer. The actual project name is"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  // `title`. `projectName` is only used to generate a folder, which isn\u0027t"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "  const buildDir \u003d join(CWD, \u0027build\u0027, siteConfig.projectName);"
+        "content": "  // needed when the project\u0027s a GitHub org page"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "  fs.removeSync(join(CWD, \u0027build\u0027));"
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const buildDir \u003d join(CWD, \u0027build\u0027, siteConfig.projectName);"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "  // create html files for all docs by going through all doc ids"
+        "content": "  fs.removeSync(join(CWD, \u0027build\u0027));"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "  const mdToHtml \u003d metadataUtils.mdToHtml(Metadata, siteConfig);"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "  Object.keys(Metadata).forEach(id \u003d\u003e {"
+        "content": "  // create html files for all docs by going through all doc ids"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "    const metadata \u003d Metadata[id];"
+        "content": "  const mdToHtml \u003d metadataUtils.mdToHtml(Metadata, siteConfig);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "    const file \u003d docs.getFile(metadata);"
+        "content": "  Object.keys(Metadata).forEach(id \u003d\u003e {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (!file) {"
+        "content": "    const metadata \u003d Metadata[id];"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "      return;"
+        "content": "    const file \u003d docs.getFile(metadata);"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    if (!file) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "    const rawContent \u003d metadataUtils.extractMetadata(file).rawContent;"
+        "content": "      return;"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "    const str \u003d docs.getMarkup(rawContent, mdToHtml, metadata);"
+        "content": "    }"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "    const targetFile \u003d join(buildDir, metadata.permalink);"
+        "content": "    const rawContent \u003d metadataUtils.extractMetadata(file).rawContent;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "    writeFileAndCreateFolder(targetFile, str);"
+        "content": "    const str \u003d docs.getMarkup(rawContent, mdToHtml, metadata);"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const targetFile \u003d join(buildDir, metadata.permalink);"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "    // generate english page redirects when languages are enabled"
+        "content": "    writeFileAndCreateFolder(targetFile, str);"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "    const redirectMarkup \u003d docs.getRedirectMarkup(metadata);"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (!redirectMarkup) {"
+        "content": "    // generate english page redirects when languages are enabled"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "      return;"
+        "content": "    const redirectMarkup \u003d docs.getRedirectMarkup(metadata);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    if (!redirectMarkup) {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "    const docsPart \u003d `${siteConfig.docsUrl ? `${siteConfig.docsUrl}/` : \u0027\u0027}`;"
+        "content": "      return;"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "    const redirectFile \u003d join("
+        "content": "    }"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "      buildDir,"
+        "content": "    const docsPart \u003d `${siteConfig.docsUrl ? `${siteConfig.docsUrl}/` : \u0027\u0027}`;"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "      metadata.permalink.replace("
+        "content": "    const redirectFile \u003d join("
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "        new RegExp(`^${docsPart}en`),"
+        "content": "      buildDir,"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "        siteConfig.docsUrl,"
+        "content": "      metadata.permalink.replace("
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "      ),"
+        "content": "        new RegExp(`^${docsPart}en`),"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": "        siteConfig.docsUrl,"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "    writeFileAndCreateFolder(redirectFile, redirectMarkup);"
+        "content": "      ),"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "  });"
+        "content": "    );"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    writeFileAndCreateFolder(redirectFile, redirectMarkup);"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "  // copy docs assets if they exist"
+        "content": "  });"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (fs.existsSync(join(CWD, \u0027..\u0027, readMetadata.getDocsPath(), \u0027assets\u0027))) {"
+        "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "    fs.copySync("
+        "content": "  // copy docs assets if they exist"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "      join(CWD, \u0027..\u0027, readMetadata.getDocsPath(), \u0027assets\u0027),"
+        "content": "  if (fs.existsSync(join(CWD, \u0027..\u0027, readMetadata.getDocsPath(), \u0027assets\u0027))) {"
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "marvinchin"
+          "gitId": "-"
         },
-        "content": "      join(buildDir, siteConfig.docsUrl, \u0027assets\u0027),"
+        "content": "    fs.copySync("
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": "      join(CWD, \u0027..\u0027, readMetadata.getDocsPath(), \u0027assets\u0027),"
       },
       {
         "lineNumber": 106,
         "author": {
-          "gitId": "-"
+          "gitId": "marvinchin"
         },
-        "content": "  }"
+        "content": "      join(buildDir, siteConfig.docsUrl, \u0027assets\u0027),"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    );"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "  // create html files for all blog posts (each article)"
+        "content": "  }"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (fs.existsSync(join(__dirname, \u0027..\u0027, \u0027core\u0027, \u0027MetadataBlog.js\u0027))) {"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "    fs.removeSync(join(__dirname, \u0027..\u0027, \u0027core\u0027, \u0027MetadataBlog.js\u0027));"
+        "content": "  // create html files for all blog posts (each article)"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "  if (fs.existsSync(join(__dirname, \u0027..\u0027, \u0027core\u0027, \u0027MetadataBlog.js\u0027))) {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "  readMetadata.generateMetadataBlog();"
+        "content": "    fs.removeSync(join(__dirname, \u0027..\u0027, \u0027core\u0027, \u0027MetadataBlog.js\u0027));"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "  const MetadataBlog \u003d require(\u0027../core/MetadataBlog.js\u0027);"
+        "content": "  }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  readMetadata.generateMetadataBlog();"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "  let files \u003d glob.sync(join(CWD, \u0027blog\u0027, \u0027**\u0027, \u0027*.*\u0027));"
+        "content": "  const MetadataBlog \u003d require(\u0027../core/MetadataBlog.js\u0027);"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "  files"
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "    .sort()"
+        "content": "  let files \u003d glob.sync(join(CWD, \u0027blog\u0027, \u0027**\u0027, \u0027*.*\u0027));"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "    .reverse()"
+        "content": "  files"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "    .forEach(file \u003d\u003e {"
+        "content": "    .sort()"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "      // Why normalize? In case we are on Windows."
+        "content": "    .reverse()"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "      // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
+        "content": "    .forEach(file \u003d\u003e {"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "      const normalizedFile \u003d path.normalize(file);"
+        "content": "      // Why normalize? In case we are on Windows."
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "      const extension \u003d path.extname(normalizedFile);"
+        "content": "      // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (extension !\u003d\u003d \u0027.md\u0027 \u0026\u0026 extension !\u003d\u003d \u0027.markdown\u0027) {"
+        "content": "      const normalizedFile \u003d path.normalize(file);"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "      const extension \u003d path.extname(normalizedFile);"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      if (extension !\u003d\u003d \u0027.md\u0027 \u0026\u0026 extension !\u003d\u003d \u0027.markdown\u0027) {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "      const urlPath \u003d blog.fileToUrl(normalizedFile);"
+        "content": "        return;"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "      const blogPost \u003d blog.getPostMarkup(normalizedFile, siteConfig);"
+        "content": "      }"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!blogPost) {"
+        "content": "      const urlPath \u003d blog.fileToUrl(normalizedFile);"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "      const blogPost \u003d blog.getPostMarkup(normalizedFile, siteConfig);"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      if (!blogPost) {"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "      const targetFile \u003d join(buildDir, \u0027blog\u0027, urlPath);"
+        "content": "        return;"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "      writeFileAndCreateFolder(targetFile, blogPost);"
+        "content": "      }"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "      const targetFile \u003d join(buildDir, \u0027blog\u0027, urlPath);"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      writeFileAndCreateFolder(targetFile, blogPost);"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "  // create html files for all blog pages (collections of article previews)"
+        "content": "    });"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "  const blogPages \u003d blog.getPagesMarkup(MetadataBlog.length, siteConfig);"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "  Object.keys(blogPages).forEach(pagePath \u003d\u003e {"
+        "content": "  // create html files for all blog pages (collections of article previews)"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "    const targetFile \u003d join(buildDir, \u0027blog\u0027, pagePath);"
+        "content": "  const blogPages \u003d blog.getPagesMarkup(MetadataBlog.length, siteConfig);"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "    writeFileAndCreateFolder(targetFile, blogPages[pagePath]);"
+        "content": "  Object.keys(blogPages).forEach(pagePath \u003d\u003e {"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "  });"
+        "content": "    const targetFile \u003d join(buildDir, \u0027blog\u0027, pagePath);"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    writeFileAndCreateFolder(targetFile, blogPages[pagePath]);"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "  // create rss files for all blog pages, if there are any blog files"
+        "content": "  });"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (MetadataBlog.length \u003e 0) {"
+        "content": ""
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    let targetFile \u003d join(buildDir, \u0027blog\u0027, \u0027feed.xml\u0027);"
+        "content": "  // create rss files for all blog pages, if there are any blog files"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "    writeFileAndCreateFolder(targetFile, feed());"
+        "content": "  if (MetadataBlog.length \u003e 0) {"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "    targetFile \u003d join(buildDir, \u0027blog\u0027, \u0027atom.xml\u0027);"
+        "content": "    let targetFile \u003d join(buildDir, \u0027blog\u0027, \u0027feed.xml\u0027);"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "    writeFileAndCreateFolder(targetFile, feed(\u0027atom\u0027));"
+        "content": "    writeFileAndCreateFolder(targetFile, feed());"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    targetFile \u003d join(buildDir, \u0027blog\u0027, \u0027atom.xml\u0027);"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    writeFileAndCreateFolder(targetFile, feed(\u0027atom\u0027));"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "  // create sitemap"
+        "content": "  }"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (MetadataBlog.length \u003e 0 || Object.keys(Metadata).length \u003e 0) {"
+        "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "    sitemap((err, xml) \u003d\u003e {"
+        "content": "  // create sitemap"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!err) {"
+        "content": "  if (MetadataBlog.length \u003e 0 || Object.keys(Metadata).length \u003e 0) {"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "        const targetFile \u003d join(buildDir, \u0027sitemap.xml\u0027);"
+        "content": "    sitemap((err, xml) \u003d\u003e {"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "        writeFileAndCreateFolder(targetFile, xml);"
+        "content": "      if (!err) {"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "        const targetFile \u003d join(buildDir, \u0027sitemap.xml\u0027);"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "        writeFileAndCreateFolder(targetFile, xml);"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "      }"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    });"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "  // copy blog assets if they exist"
+        "content": "  }"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (fs.existsSync(join(CWD, \u0027blog\u0027, \u0027assets\u0027))) {"
+        "content": ""
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "    fs.copySync(join(CWD, \u0027blog\u0027, \u0027assets\u0027), join(buildDir, \u0027blog\u0027, \u0027assets\u0027));"
+        "content": "  // copy blog assets if they exist"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "  if (fs.existsSync(join(CWD, \u0027blog\u0027, \u0027assets\u0027))) {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    fs.copySync(join(CWD, \u0027blog\u0027, \u0027assets\u0027), join(buildDir, \u0027blog\u0027, \u0027assets\u0027));"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "  // copy all static files from docusaurus"
+        "content": "  }"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "  const libStaticDir \u003d join(__dirname, \u0027..\u0027, \u0027static\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "  files \u003d glob.sync(join(libStaticDir, \u0027**\u0027));"
+        "content": "  // copy all static files from docusaurus"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "  files.forEach(file \u003d\u003e {"
+        "content": "  const libStaticDir \u003d join(__dirname, \u0027..\u0027, \u0027static\u0027);"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Why normalize? In case we are on Windows."
+        "content": "  files \u003d glob.sync(join(libStaticDir, \u0027**\u0027));"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
+        "content": "  files.forEach(file \u003d\u003e {"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "    const targetFile \u003d path.normalize(file).replace(libStaticDir, buildDir);"
+        "content": "    // Why normalize? In case we are on Windows."
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "    // parse css files to replace colors according to siteConfig"
+        "content": "    // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (file.match(/\\.css$/)) {"
+        "content": "    const targetFile \u003d path.normalize(file).replace(libStaticDir, buildDir);"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "      let cssContent \u003d fs.readFileSync(file, \u0027utf8\u0027);"
+        "content": "    // parse css files to replace colors according to siteConfig"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if (file.match(/\\.css$/)) {"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "      if ("
+        "content": "      let cssContent \u003d fs.readFileSync(file, \u0027utf8\u0027);"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "        !siteConfig.colors ||"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "        !siteConfig.colors.primaryColor ||"
+        "content": "      if ("
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "        !siteConfig.colors.secondaryColor"
+        "content": "        !siteConfig.colors ||"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "      ) {"
+        "content": "        !siteConfig.colors.primaryColor ||"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "        console.error("
+        "content": "        !siteConfig.colors.secondaryColor"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "          `${chalk.yellow("
+        "content": "      ) {"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u0027Missing color configuration.\u0027,"
+        "content": "        console.error("
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "          )} Make sure siteConfig.colors includes primaryColor and secondaryColor fields.`,"
+        "content": "          `${chalk.yellow("
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "        );"
+        "content": "            \u0027Missing color configuration.\u0027,"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "          )} Make sure siteConfig.colors includes primaryColor and secondaryColor fields.`,"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        );"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "      Object.keys(siteConfig.colors).forEach(key \u003d\u003e {"
+        "content": "      }"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        const color \u003d siteConfig.colors[key];"
+        "content": ""
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "        cssContent \u003d cssContent.replace(new RegExp(`\\\\$${key}`, \u0027g\u0027), color);"
+        "content": "      Object.keys(siteConfig.colors).forEach(key \u003d\u003e {"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "        const color \u003d siteConfig.colors[key];"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        cssContent \u003d cssContent.replace(new RegExp(`\\\\$${key}`, \u0027g\u0027), color);"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (siteConfig.fonts) {"
+        "content": "      });"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "        Object.keys(siteConfig.fonts).forEach(key \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "          const fontString \u003d siteConfig.fonts[key]"
+        "content": "      if (siteConfig.fonts) {"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "            .map(font \u003d\u003e `\"${font}\"`)"
+        "content": "        Object.keys(siteConfig.fonts).forEach(key \u003d\u003e {"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "            .join(\u0027, \u0027);"
+        "content": "          const fontString \u003d siteConfig.fonts[key]"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "          cssContent \u003d cssContent.replace("
+        "content": "            .map(font \u003d\u003e `\"${font}\"`)"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "            new RegExp(`\\\\$${key}`, \u0027g\u0027),"
+        "content": "            .join(\u0027, \u0027);"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "            fontString,"
+        "content": "          cssContent \u003d cssContent.replace("
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "          );"
+        "content": "            new RegExp(`\\\\$${key}`, \u0027g\u0027),"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "            fontString,"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "          );"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        });"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(path.dirname(targetFile));"
+        "content": "      }"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.writeFileSync(targetFile, cssContent);"
+        "content": ""
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if (!fs.lstatSync(file).isDirectory()) {"
+        "content": "      mkdirp.sync(path.dirname(targetFile));"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(path.dirname(targetFile));"
+        "content": "      fs.writeFileSync(targetFile, cssContent);"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.copySync(file, targetFile);"
+        "content": "    } else if (!fs.lstatSync(file).isDirectory()) {"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      mkdirp.sync(path.dirname(targetFile));"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "  });"
+        "content": "      fs.copySync(file, targetFile);"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Copy all static files from user."
+        "content": "  });"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "  const userStaticDir \u003d join(CWD, \u0027static\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "  files \u003d glob.sync(join(userStaticDir, \u0027**\u0027), {dot: true});"
+        "content": "  // Copy all static files from user."
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "  files.forEach(file \u003d\u003e {"
+        "content": "  const userStaticDir \u003d join(CWD, \u0027static\u0027);"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Why normalize? In case we are on Windows."
+        "content": "  files \u003d glob.sync(join(userStaticDir, \u0027**\u0027), {dot: true});"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
+        "content": "  files.forEach(file \u003d\u003e {"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": "    const normalizedFile \u003d path.normalize(file);"
+        "content": "    // Why normalize? In case we are on Windows."
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "    // parse css files to replace colors and fonts according to siteConfig"
+        "content": "    // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "    if ("
+        "content": "    const normalizedFile \u003d path.normalize(file);"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "      normalizedFile.match(/\\.css$/) \u0026\u0026"
+        "content": "    // parse css files to replace colors and fonts according to siteConfig"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "      !isSeparateCss(normalizedFile, siteConfig.separateCss)"
+        "content": "    if ("
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": "    ) {"
+        "content": "      normalizedFile.match(/\\.css$/) \u0026\u0026"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "      const mainCss \u003d join(buildDir, \u0027css\u0027, \u0027main.css\u0027);"
+        "content": "      !isSeparateCss(normalizedFile, siteConfig.separateCss)"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "      let cssContent \u003d fs.readFileSync(normalizedFile, \u0027utf8\u0027);"
+        "content": "    ) {"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "      cssContent \u003d `${fs.readFileSync(mainCss, \u0027utf8\u0027)}\\n${cssContent}`;"
+        "content": "      const mainCss \u003d join(buildDir, \u0027css\u0027, \u0027main.css\u0027);"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      let cssContent \u003d fs.readFileSync(normalizedFile, \u0027utf8\u0027);"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "      Object.keys(siteConfig.colors).forEach(key \u003d\u003e {"
+        "content": "      cssContent \u003d `${fs.readFileSync(mainCss, \u0027utf8\u0027)}\\n${cssContent}`;"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "        const color \u003d siteConfig.colors[key];"
+        "content": ""
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "        cssContent \u003d cssContent.replace(new RegExp(`\\\\$${key}`, \u0027g\u0027), color);"
+        "content": "      Object.keys(siteConfig.colors).forEach(key \u003d\u003e {"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "        const color \u003d siteConfig.colors[key];"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        cssContent \u003d cssContent.replace(new RegExp(`\\\\$${key}`, \u0027g\u0027), color);"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (siteConfig.fonts) {"
+        "content": "      });"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "        Object.keys(siteConfig.fonts).forEach(key \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "          const fontString \u003d siteConfig.fonts[key]"
+        "content": "      if (siteConfig.fonts) {"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "            .map(font \u003d\u003e `\"${font}\"`)"
+        "content": "        Object.keys(siteConfig.fonts).forEach(key \u003d\u003e {"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "            .join(\u0027, \u0027);"
+        "content": "          const fontString \u003d siteConfig.fonts[key]"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "          cssContent \u003d cssContent.replace("
+        "content": "            .map(font \u003d\u003e `\"${font}\"`)"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "            new RegExp(`\\\\$${key}`, \u0027g\u0027),"
+        "content": "            .join(\u0027, \u0027);"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "            fontString,"
+        "content": "          cssContent \u003d cssContent.replace("
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "          );"
+        "content": "            new RegExp(`\\\\$${key}`, \u0027g\u0027),"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "            fontString,"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "          );"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        });"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.writeFileSync(mainCss, cssContent);"
+        "content": "      }"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if ("
+        "content": ""
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "      normalizedFile.match(/\\.png$|.jpg$|.svg$|.gif$/) \u0026\u0026"
+        "content": "      fs.writeFileSync(mainCss, cssContent);"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "      !commander.skipImageCompression"
+        "content": "    } else if ("
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "    ) {"
+        "content": "      normalizedFile.match(/\\.png$|.jpg$|.svg$|.gif$/) \u0026\u0026"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "      const parts \u003d normalizedFile.split(`${sep}static${sep}`);"
+        "content": "      !commander.skipImageCompression"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "      const targetFile \u003d join(buildDir, parts[1]);"
+        "content": "    ) {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "      const targetDirectory \u003d path.dirname(targetFile);"
+        "content": "      const parts \u003d normalizedFile.split(`${sep}static${sep}`);"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(targetDirectory);"
+        "content": "      const targetFile \u003d join(buildDir, parts[1]);"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "      imagemin([normalizedFile], targetDirectory, {"
+        "content": "      const targetDirectory \u003d path.dirname(targetFile);"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "        use: ["
+        "content": "      mkdirp.sync(targetDirectory);"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "          imageminOptipng(),"
+        "content": "      imagemin([normalizedFile], targetDirectory, {"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "          imageminJpegtran(),"
+        "content": "        use: ["
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "          imageminSvgo({"
+        "content": "          imageminOptipng(),"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "            plugins: [{removeViewBox: false}],"
+        "content": "          imageminJpegtran(),"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "          }),"
+        "content": "          imageminSvgo({"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "          imageminGifsicle(),"
+        "content": "            plugins: [{removeViewBox: false}],"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "        ],"
+        "content": "          }),"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "      }).catch(error \u003d\u003e {"
+        "content": "          imageminGifsicle(),"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "        // if image compression fail, just copy it as it is"
+        "content": "        ],"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "        console.error(error);"
+        "content": "      }).catch(error \u003d\u003e {"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "        fs.copySync(normalizedFile, targetFile);"
+        "content": "        // if image compression fail, just copy it as it is"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "        console.error(error);"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if (!fs.lstatSync(normalizedFile).isDirectory()) {"
+        "content": "        fs.copySync(normalizedFile, targetFile);"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "      const targetFile \u003d normalizedFile.replace(userStaticDir, buildDir);"
+        "content": "      });"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(path.dirname(targetFile));"
+        "content": "    } else if (!fs.lstatSync(normalizedFile).isDirectory()) {"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.copySync(normalizedFile, targetFile);"
+        "content": "      const targetFile \u003d normalizedFile.replace(userStaticDir, buildDir);"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      mkdirp.sync(path.dirname(targetFile));"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "  });"
+        "content": "      fs.copySync(normalizedFile, targetFile);"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Use cssnano to minify the final combined CSS."
+        "content": "  });"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Use autoprefixer to add vendor prefixes"
+        "content": ""
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "  const mainCss \u003d join(buildDir, \u0027css\u0027, \u0027main.css\u0027);"
+        "content": "  // Use cssnano to minify the final combined CSS."
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "  const cssContent \u003d fs.readFileSync(mainCss, \u0027utf8\u0027);"
+        "content": "  // Use autoprefixer to add vendor prefixes"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": "  const minifiedCSS \u003d await minifyCss(cssContent);"
+        "content": "  const mainCss \u003d join(buildDir, \u0027css\u0027, \u0027main.css\u0027);"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "  const css \u003d await autoPrefixCss(minifiedCSS);"
+        "content": "  const cssContent \u003d fs.readFileSync(mainCss, \u0027utf8\u0027);"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "  fs.writeFileSync(mainCss, css);"
+        "content": "  const minifiedCSS \u003d await minifyCss(cssContent);"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const css \u003d await autoPrefixCss(minifiedCSS);"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": "  // compile/copy pages from user"
+        "content": "  fs.writeFileSync(mainCss, css);"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "  const enabledLanguages \u003d env.translation"
+        "content": ""
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": "    .enabledLanguages()"
+        "content": "  // compile/copy pages from user"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "    .map(lang \u003d\u003e lang.tag);"
+        "content": "  const enabledLanguages \u003d env.translation"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": "  const userPagesDir \u003d join(CWD, \u0027pages\u0027);"
+        "content": "    .enabledLanguages()"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "  files \u003d glob.sync(join(userPagesDir, \u0027**\u0027));"
+        "content": "    .map(lang \u003d\u003e lang.tag);"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": "  files.forEach(file \u003d\u003e {"
+        "content": "  const userPagesDir \u003d join(CWD, \u0027pages\u0027);"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Why normalize? In case we are on Windows."
+        "content": "  files \u003d glob.sync(join(userPagesDir, \u0027**\u0027));"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
+        "content": "  files.forEach(file \u003d\u003e {"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "    const normalizedFile \u003d path.normalize(file);"
+        "content": "    // Why normalize? In case we are on Windows."
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "    const relativeFile \u003d normalizedFile.replace(userPagesDir, \u0027\u0027);"
+        "content": "    // Remember the nuance of glob: https://www.npmjs.com/package/glob#windows"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "    // render .js files to strings"
+        "content": "    const normalizedFile \u003d path.normalize(file);"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (normalizedFile.match(/\\.js$/)) {"
+        "content": "    const relativeFile \u003d normalizedFile.replace(userPagesDir, \u0027\u0027);"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": "      const pageID \u003d path.basename(normalizedFile, \u0027.js\u0027);"
+        "content": "    // render .js files to strings"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if (normalizedFile.match(/\\.js$/)) {"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "      // make temp file for sake of require paths"
+        "content": "      const pageID \u003d path.basename(normalizedFile, \u0027.js\u0027);"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": "      let tempFile \u003d join(__dirname, \u0027..\u0027, \u0027pages\u0027, relativeFile);"
+        "content": ""
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "      tempFile \u003d tempFile.replace("
+        "content": "      // make temp file for sake of require paths"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "        path.basename(normalizedFile),"
+        "content": "      let tempFile \u003d join(__dirname, \u0027..\u0027, \u0027pages\u0027, relativeFile);"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "        `temp${path.basename(normalizedFile)}`,"
+        "content": "      tempFile \u003d tempFile.replace("
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": "      );"
+        "content": "        path.basename(normalizedFile),"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(path.dirname(tempFile));"
+        "content": "        `temp${path.basename(normalizedFile)}`,"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.copySync(normalizedFile, tempFile);"
+        "content": "      );"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      mkdirp.sync(path.dirname(tempFile));"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": "      const ReactComp \u003d require(tempFile);"
+        "content": "      fs.copySync(normalizedFile, tempFile);"
       },
       {
         "lineNumber": 310,
@@ -7127,745 +7127,759 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      let targetFile \u003d join(buildDir, relativeFile);"
+        "content": "      const ReactComp \u003d require(tempFile);"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": "      targetFile \u003d targetFile.replace(/\\.js$/, \u0027.html\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      let targetFile \u003d join(buildDir, relativeFile);"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "      const regexLang \u003d new RegExp("
+        "content": "      targetFile \u003d targetFile.replace(/\\.js$/, \u0027.html\u0027);"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "        `${escapeStringRegexp(`${userPagesDir}${sep}`)}(.*)${escapeStringRegexp("
+        "content": ""
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "          sep,"
+        "content": "      const regexLang \u003d new RegExp("
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "        )}`,"
+        "content": "        `${escapeStringRegexp(`${userPagesDir}${sep}`)}(.*)${escapeStringRegexp("
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "      );"
+        "content": "          sep,"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "      const match \u003d regexLang.exec(normalizedFile);"
+        "content": "        )}`,"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "      const langParts \u003d match[1].split(sep);"
+        "content": "      );"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (langParts.indexOf(\u0027en\u0027) !\u003d\u003d -1) {"
+        "content": "      const match \u003d regexLang.exec(normalizedFile);"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Copy and compile a page for each enabled language from the English file."
+        "content": "      const langParts \u003d match[1].split(sep);"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "        for (let i \u003d 0; i \u003c enabledLanguages.length; i++) {"
+        "content": "      if (langParts.indexOf(\u0027en\u0027) !\u003d\u003d -1) {"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "          const language \u003d enabledLanguages[i];"
+        "content": "        // Copy and compile a page for each enabled language from the English file."
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "          // Skip conversion from English file if a file exists for this language."
+        "content": "        for (let i \u003d 0; i \u003c enabledLanguages.length; i++) {"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "          if ("
+        "content": "          const language \u003d enabledLanguages[i];"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "            language \u003d\u003d\u003d \u0027en\u0027 ||"
+        "content": "          // Skip conversion from English file if a file exists for this language."
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "            !fs.existsSync("
+        "content": "          if ("
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "              normalizedFile.replace(`${sep}en${sep}`, sep + language + sep),"
+        "content": "            language \u003d\u003d\u003d \u0027en\u0027 ||"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "            )"
+        "content": "            !fs.existsSync("
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "          ) {"
+        "content": "              normalizedFile.replace(`${sep}en${sep}`, sep + language + sep),"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "            translate.setLanguage(language);"
+        "content": "            )"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "            const str \u003d renderToStaticMarkupWithDoctype("
+        "content": "          ) {"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cSite"
+        "content": "            translate.setLanguage(language);"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "                language\u003d{language}"
+        "content": "            const str \u003d renderToStaticMarkupWithDoctype("
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "                config\u003d{siteConfig}"
+        "content": "              \u003cSite"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "                title\u003d{ReactComp.title}"
+        "content": "                language\u003d{language}"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "                description\u003d{ReactComp.description}"
+        "content": "                config\u003d{siteConfig}"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "                metadata\u003d{{id: pageID}}\u003e"
+        "content": "                title\u003d{ReactComp.title}"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u003cReactComp config\u003d{siteConfig} language\u003d{language} /\u003e"
+        "content": "                description\u003d{ReactComp.description}"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003c/Site\u003e,"
+        "content": "                metadata\u003d{{id: pageID}}\u003e"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "            );"
+        "content": "                \u003cReactComp config\u003d{siteConfig} language\u003d{language} /\u003e"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "            writeFileAndCreateFolder("
+        "content": "              \u003c/Site\u003e,"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "              // TODO: use path functions"
+        "content": "            );"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": "              targetFile.replace(`${sep}en${sep}`, sep + language + sep),"
+        "content": "            writeFileAndCreateFolder("
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "              str,"
+        "content": "              // TODO: use path functions"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "            );"
+        "content": "              targetFile.replace(`${sep}en${sep}`, sep + language + sep),"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "              str,"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            );"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          }"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "        // write to base level"
+        "content": "        }"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "        const language \u003d env.translation.enabled ? \u0027en\u0027 : \u0027\u0027;"
+        "content": ""
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "        translate.setLanguage(language);"
+        "content": "        // write to base level"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "        const str \u003d renderToStaticMarkupWithDoctype("
+        "content": "        const language \u003d env.translation.enabled ? \u0027en\u0027 : \u0027\u0027;"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cSite"
+        "content": "        translate.setLanguage(language);"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": "            title\u003d{ReactComp.title}"
+        "content": "        const str \u003d renderToStaticMarkupWithDoctype("
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "            language\u003d{language}"
+        "content": "          \u003cSite"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "            config\u003d{siteConfig}"
+        "content": "            title\u003d{ReactComp.title}"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "            description\u003d{ReactComp.description}"
+        "content": "            language\u003d{language}"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "            metadata\u003d{{id: pageID}}\u003e"
+        "content": "            config\u003d{siteConfig}"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cReactComp config\u003d{siteConfig} language\u003d{language} /\u003e"
+        "content": "            description\u003d{ReactComp.description}"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/Site\u003e,"
+        "content": "            metadata\u003d{{id: pageID}}\u003e"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "        );"
+        "content": "            \u003cReactComp config\u003d{siteConfig} language\u003d{language} /\u003e"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": "        writeFileAndCreateFolder("
+        "content": "          \u003c/Site\u003e,"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "          targetFile.replace(`${sep}en${sep}`, sep),"
+        "content": "        );"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "          str,"
+        "content": "        writeFileAndCreateFolder("
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "        );"
+        "content": "          targetFile.replace(`${sep}en${sep}`, sep),"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "      } else {"
+        "content": "          str,"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "        // allow for rendering of other files not in pages/en folder"
+        "content": "        );"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": "        const language \u003d env.translation.enabled ? \u0027en\u0027 : \u0027\u0027;"
+        "content": "      } else {"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": "        translate.setLanguage(language);"
+        "content": "        // allow for rendering of other files not in pages/en folder"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": "        const str \u003d renderToStaticMarkupWithDoctype("
+        "content": "        const language \u003d env.translation.enabled ? \u0027en\u0027 : \u0027\u0027;"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cSite"
+        "content": "        translate.setLanguage(language);"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": "            title\u003d{ReactComp.title}"
+        "content": "        const str \u003d renderToStaticMarkupWithDoctype("
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": "            language\u003d{language}"
+        "content": "          \u003cSite"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": "            config\u003d{siteConfig}"
+        "content": "            title\u003d{ReactComp.title}"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "            description\u003d{ReactComp.description}"
+        "content": "            language\u003d{language}"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "            metadata\u003d{{id: pageID}}\u003e"
+        "content": "            config\u003d{siteConfig}"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cReactComp config\u003d{siteConfig} language\u003d{language} /\u003e"
+        "content": "            description\u003d{ReactComp.description}"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/Site\u003e,"
+        "content": "            metadata\u003d{{id: pageID}}\u003e"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "        );"
+        "content": "            \u003cReactComp config\u003d{siteConfig} language\u003d{language} /\u003e"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "        writeFileAndCreateFolder("
+        "content": "          \u003c/Site\u003e,"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "          targetFile.replace(`${sep}en${sep}`, sep),"
+        "content": "        );"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": "          str,"
+        "content": "        writeFileAndCreateFolder("
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "        );"
+        "content": "          targetFile.replace(`${sep}en${sep}`, sep),"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "          str,"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.removeSync(tempFile);"
+        "content": "        );"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if (siteConfig.wrapPagesHTML \u0026\u0026 normalizedFile.match(/\\.html$/)) {"
+        "content": "      }"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": "      const pageID \u003d path.basename(normalizedFile, \u0027.html\u0027);"
+        "content": "      fs.removeSync(tempFile);"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": "      const targetFile \u003d join(buildDir, relativeFile);"
+        "content": "    } else if (siteConfig.wrapPagesHTML \u0026\u0026 normalizedFile.match(/\\.html$/)) {"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "      const str \u003d renderToStaticMarkupWithDoctype("
+        "content": "      const pageID \u003d path.basename(normalizedFile, \u0027.html\u0027);"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cSite language\u003d\"en\" config\u003d{siteConfig} metadata\u003d{{id: pageID}}\u003e"
+        "content": "      const targetFile \u003d join(buildDir, relativeFile);"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cdiv"
+        "content": "      const str \u003d renderToStaticMarkupWithDoctype("
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "            dangerouslySetInnerHTML\u003d{{"
+        "content": "        \u003cSite language\u003d\"en\" config\u003d{siteConfig} metadata\u003d{{id: pageID}}\u003e"
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "              __html: fs.readFileSync(normalizedFile, {encoding: \u0027utf8\u0027}),"
+        "content": "          \u003cdiv"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": "            }}"
+        "content": "            dangerouslySetInnerHTML\u003d{{"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "          /\u003e"
+        "content": "              __html: fs.readFileSync(normalizedFile, {encoding: \u0027utf8\u0027}),"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/Site\u003e,"
+        "content": "            }}"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "      );"
+        "content": "          /\u003e"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        \u003c/Site\u003e,"
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": "      writeFileAndCreateFolder(targetFile, str);"
+        "content": "      );"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if (!fs.lstatSync(normalizedFile).isDirectory()) {"
+        "content": ""
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "      // copy other non .js files"
+        "content": "      writeFileAndCreateFolder(targetFile, str);"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": "      const targetFile \u003d join(buildDir, relativeFile);"
+        "content": "    } else if (!fs.lstatSync(normalizedFile).isDirectory()) {"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "      mkdirp.sync(path.dirname(targetFile));"
+        "content": "      // copy other non .js files"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": "      fs.copySync(normalizedFile, targetFile);"
+        "content": "      const targetFile \u003d join(buildDir, relativeFile);"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      mkdirp.sync(path.dirname(targetFile));"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "-"
         },
-        "content": "  });"
+        "content": "      fs.copySync(normalizedFile, targetFile);"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Generate CNAME file if a custom domain is specified in siteConfig"
+        "content": "  });"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (siteConfig.cname) {"
+        "content": ""
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": "    const targetFile \u003d join(buildDir, \u0027CNAME\u0027);"
+        "content": "  // Generate CNAME file if a custom domain is specified in siteConfig"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "    fs.writeFileSync(targetFile, siteConfig.cname);"
+        "content": "  if (siteConfig.cname) {"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    const targetFile \u003d join(buildDir, \u0027CNAME\u0027);"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    fs.writeFileSync(targetFile, siteConfig.cname);"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 417,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 418,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
@@ -7874,7 +7888,7 @@
     ],
     "authorContributionMap": {
       "marvinchin": 1,
-      "-": 416
+      "-": 418
     }
   },
   {

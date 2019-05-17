@@ -111290,2331 +111290,2331 @@
         "author": {
           "gitId": "-"
         },
-        "content": "import Announcements from \u0027views/components/notfications/Announcements\u0027;"
+        "content": "import { getSemesterTimetable } from \u0027reducers/timetables\u0027;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "import { getSemesterTimetable } from \u0027reducers/timetables\u0027;"
+        "content": "import ExternalLink from \u0027views/components/ExternalLink\u0027;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "import ExternalLink from \u0027views/components/ExternalLink\u0027;"
+        "content": "import * as weatherAPI from \u0027apis/weather\u0027;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "import * as weatherAPI from \u0027apis/weather\u0027;"
+        "content": "import config from \u0027config\u0027;"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "import config from \u0027config\u0027;"
+        "content": "import withTimer, { TimerData } from \u0027views/hocs/withTimer\u0027;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "import withTimer, { TimerData } from \u0027views/hocs/withTimer\u0027;"
+        "content": "import makeResponsive from \u0027views/hocs/makeResponsive\u0027;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "import makeResponsive from \u0027views/hocs/makeResponsive\u0027;"
+        "content": "import NoFooter from \u0027views/layout/NoFooter\u0027;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "import NoFooter from \u0027views/layout/NoFooter\u0027;"
+        "content": "import MapContext from \u0027views/components/map/MapContext\u0027;"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "import MapContext from \u0027views/components/map/MapContext\u0027;"
+        "content": "import { formatTime, getDayIndex } from \u0027utils/timify\u0027;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "import { formatTime, getDayIndex } from \u0027utils/timify\u0027;"
+        "content": "import { breakpointUp } from \u0027utils/css\u0027;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "import { breakpointUp } from \u0027utils/css\u0027;"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "-"
-        },
         "content": "import { EMPTY_ARRAY } from \u0027types/utils\u0027;"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 42,
         "author": {
           "gitId": "amrut-prabhu"
         },
         "content": "import { State as StoreState } from \u0027types/state\u0027;"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
         "content": "import DayEvents from \u0027../DayEvents\u0027;"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
         "content": "import DayHeader from \u0027../DayHeader\u0027;"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
         "content": "import EmptyLessonGroup from \u0027../EmptyLessonGroup\u0027;"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
         "content": "import BeforeLessonCard from \u0027../BeforeLessonCard\u0027;"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
         "content": "import EventMap from \u0027../EventMap\u0027;"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
         "content": "import styles from \u0027./TodayContainer.scss\u0027;"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
         "content": "// Map the semester property from AcadWeekInfo to semester number"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
         "content": "const semesterNameMap: Record\u003cstring, number\u003e \u003d {"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
         "content": "  \u0027Semester 1\u0027: 1,"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
         "content": "  \u0027Semester 2\u0027: 2,"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
         "content": "  \u0027Special Sem 1\u0027: 3,"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
         "content": "  \u0027Special Sem 2\u0027: 4,"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
         "content": "};"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "export type OwnProps \u003d TimerData;"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "export type OwnProps \u003d TimerData;"
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "export type Props \u003d OwnProps \u0026"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "export type Props \u003d OwnProps \u0026"
+        "content": "  Readonly\u003c{"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "  Readonly\u003c{"
+        "content": "    timetableWithLessons: SemTimetableConfigWithLessons;"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "    timetableWithLessons: SemTimetableConfigWithLessons;"
+        "content": "    colors: ColorMapping;"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "    colors: ColorMapping;"
+        "content": "    matchBreakpoint: boolean;"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "    matchBreakpoint: boolean;"
+        "content": "  }\u003e;"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "  }\u003e;"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "type State \u003d Readonly\u003c{"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "type State \u003d Readonly\u003c{"
+        "content": "  // Mapping of number of days from today to the weather forecast for that day"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Mapping of number of days from today to the weather forecast for that day"
+        "content": "  // with zero being today"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "  // with zero being today"
+        "content": "  weather: { [key: string]: string };"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "  weather: { [key: string]: string };"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  // Which lesson has an open venue map"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Which lesson has an open venue map"
+        "content": "  openLesson: SelectedLesson | null;"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "  openLesson: SelectedLesson | null;"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  isMapExpanded: boolean;"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "  isMapExpanded: boolean;"
+        "content": "}\u003e;"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "}\u003e;"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "type DayGroup \u003d {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "type DayGroup \u003d {"
+        "content": "  offset: number;"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "  offset: number;"
+        "content": "  type: EmptyGroupType;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "  type: EmptyGroupType;"
+        "content": "  dates: Date[];"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "  dates: Date[];"
+        "content": "};"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "};"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// Number of days to display"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "// Number of days to display"
+        "content": "const DAYS \u003d 7;"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "const DAYS \u003d 7;"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "function getDayType(date: Date, weekInfo: AcadWeekInfo): EmptyGroupType {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "function getDayType(date: Date, weekInfo: AcadWeekInfo): EmptyGroupType {"
+        "content": "  switch (weekInfo.type) {"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "  switch (weekInfo.type) {"
+        "content": "    case \u0027Reading\u0027:"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027Reading\u0027:"
+        "content": "    case \u0027Examination\u0027:"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027Examination\u0027:"
+        "content": "      return \u0027reading\u0027;"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "      return \u0027reading\u0027;"
+        "content": "    case \u0027Orientation\u0027:"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027Orientation\u0027:"
+        "content": "      return \u0027orientation\u0027;"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "      return \u0027orientation\u0027;"
+        "content": "    case \u0027Recess\u0027:"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027Recess\u0027:"
+        "content": "      return \u0027recess\u0027;"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "      return \u0027recess\u0027;"
+        "content": "    case \u0027Vacation\u0027: {"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027Vacation\u0027: {"
+        "content": "      const month \u003d date.getMonth();"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "      const month \u003d date.getMonth();"
+        "content": "      return month \u003e 8 || month \u003c 3 ? \u0027winter\u0027 : \u0027summer\u0027;"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "      return month \u003e 8 || month \u003c 3 ? \u0027winter\u0027 : \u0027summer\u0027;"
+        "content": "    }"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    default:"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "    default:"
+        "content": "      if (isWeekend(date)) return \u0027weekend\u0027;"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (isWeekend(date)) return \u0027weekend\u0027;"
+        "content": "      return \u0027holiday\u0027;"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "      return \u0027holiday\u0027;"
+        "content": "  }"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "}"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "export function DaySection("
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "export function DaySection("
+        "content": "  props: Readonly\u003c{"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "  props: Readonly\u003c{"
+        "content": "    children: React.ReactNode;"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "    children: React.ReactNode;"
+        "content": "    date: Date | Date[];"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "    date: Date | Date[];"
+        "content": "    offset: number;"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "    offset: number;"
+        "content": "    forecast?: string;"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "    forecast?: string;"
+        "content": "  }\u003e,"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "  }\u003e,"
+        "content": ") {"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": ") {"
+        "content": "  return ("
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "  return ("
+        "content": "    \u003csection className\u003d{styles.day}\u003e"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003csection className\u003d{styles.day}\u003e"
+        "content": "      \u003cDayHeader date\u003d{props.date} offset\u003d{props.offset} forecast\u003d{props.forecast} /\u003e"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003cDayHeader date\u003d{props.date} offset\u003d{props.offset} forecast\u003d{props.forecast} /\u003e"
+        "content": "      {props.children}"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "      {props.children}"
+        "content": "    \u003c/section\u003e"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003c/section\u003e"
+        "content": "  );"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "  );"
+        "content": "}"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "export class TodayContainerComponent extends React.PureComponent\u003cProps, State\u003e {"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "export class TodayContainerComponent extends React.PureComponent\u003cProps, State\u003e {"
+        "content": "  state: State \u003d {"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "  state: State \u003d {"
+        "content": "    weather: {},"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "    weather: {},"
+        "content": "    openLesson: null,"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "    openLesson: null,"
+        "content": "    isMapExpanded: false,"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "    isMapExpanded: false,"
+        "content": "  };"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  componentDidMount() {"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "  componentDidMount() {"
+        "content": "    weatherAPI"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "    weatherAPI"
+        "content": "      .twoHour()"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "      .twoHour()"
+        "content": "      .then((weather) \u003d\u003e this.setState({ weather: { ...this.state.weather, \u00270\u0027: weather } }))"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then((weather) \u003d\u003e this.setState({ weather: { ...this.state.weather, \u00270\u0027: weather } }))"
+        "content": "      .catch(captureException);"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "      .catch(captureException);"
+        "content": ""
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    weatherAPI"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "    weatherAPI"
+        "content": "      .tomorrow()"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "      .tomorrow()"
+        "content": "      .then((weather) \u003d\u003e {"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then((weather) \u003d\u003e {"
+        "content": "        if (!weather) return;"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!weather) return;"
+        "content": "        this.setState({ weather: { ...this.state.weather, \u00271\u0027: weather } });"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.setState({ weather: { ...this.state.weather, \u00271\u0027: weather } });"
+        "content": "      })"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "      })"
+        "content": "      .catch(captureException);"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "      .catch(captureException);"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    weatherAPI"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    weatherAPI"
+        "content": "      .fourDay()"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "      .fourDay()"
+        "content": "      .then((forecasts) \u003d\u003e {"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then((forecasts) \u003d\u003e {"
+        "content": "        this.setState("
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.setState("
+        "content": "          produce(this.state, (draft) \u003d\u003e {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "          produce(this.state, (draft) \u003d\u003e {"
+        "content": "            forecasts.forEach((forecast) \u003d\u003e {"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "            forecasts.forEach((forecast) \u003d\u003e {"
+        "content": "              const days \u003d differenceInCalendarDays("
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "              const days \u003d differenceInCalendarDays("
+        "content": "                parseISO(forecast.timestamp),"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "                parseISO(forecast.timestamp),"
+        "content": "                this.props.currentTime,"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "                this.props.currentTime,"
+        "content": "              );"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "              );"
+        "content": ""
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "              const key \u003d String(days);"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "              const key \u003d String(days);"
+        "content": "              if (!draft.weather[key]) {"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "              if (!draft.weather[key]) {"
+        "content": "                draft.weather[key] \u003d forecast.forecast;"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "                draft.weather[key] \u003d forecast.forecast;"
+        "content": "              }"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "              }"
+        "content": "            });"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "            });"
+        "content": "          }),"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "          }),"
+        "content": "        );"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "        );"
+        "content": "      })"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "      })"
+        "content": "      .catch(captureException);"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "      .catch(captureException);"
+        "content": "  }"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": ""
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  onToggleMapExpanded \u003d (isMapExpanded: boolean) \u003d\u003e {"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "  onToggleMapExpanded \u003d (isMapExpanded: boolean) \u003d\u003e {"
+        "content": "    this.setState({ isMapExpanded });"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.setState({ isMapExpanded });"
+        "content": "  };"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": ""
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  onOpenLesson \u003d (date: Date, lesson: Lesson) \u003d\u003e {"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "  onOpenLesson \u003d (date: Date, lesson: Lesson) \u003d\u003e {"
+        "content": "    this.setState({ openLesson: { date, lesson } });"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.setState({ openLesson: { date, lesson } });"
+        "content": "  };"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": ""
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  groupLessons() {"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "  groupLessons() {"
+        "content": "    const { colors, currentTime } \u003d this.props;"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "    const { colors, currentTime } \u003d this.props;"
+        "content": ""
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const timetableLessons: Lesson[] \u003d timetableLessonsArray(this.props.timetableWithLessons);"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "    const timetableLessons: Lesson[] \u003d timetableLessonsArray(this.props.timetableWithLessons);"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // Inject color into module"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Inject color into module"
+        "content": "    const coloredTimetableLessons \u003d timetableLessons.map("
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "    const coloredTimetableLessons \u003d timetableLessons.map("
+        "content": "      (lesson: Lesson): ColoredLesson \u003d\u003e ({"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "      (lesson: Lesson): ColoredLesson \u003d\u003e ({"
+        "content": "        ...lesson,"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "        ...lesson,"
+        "content": "        colorIndex: colors[lesson.moduleCode],"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "        colorIndex: colors[lesson.moduleCode],"
+        "content": "      }),"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "      }),"
+        "content": "    );"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const groupedLessons \u003d groupLessonsByDay(coloredTimetableLessons);"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "    const groupedLessons \u003d groupLessonsByDay(coloredTimetableLessons);"
+        "content": ""
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // Group empty days / non-instructional dates together"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Group empty days / non-instructional dates together"
+        "content": "    const days: React.ReactNode[] \u003d [];"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "    const days: React.ReactNode[] \u003d [];"
+        "content": "    let currentGroup: DayGroup | null \u003d null;"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "    let currentGroup: DayGroup | null \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const pushCurrentGroup \u003d () \u003d\u003e {"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "    const pushCurrentGroup \u003d () \u003d\u003e {"
+        "content": "      if (!currentGroup) return;"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!currentGroup) return;"
+        "content": "      const { dates, type, offset } \u003d currentGroup;"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "      const { dates, type, offset } \u003d currentGroup;"
+        "content": "      days.push("
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "      days.push("
+        "content": "        \u003cDaySection date\u003d{dates} offset\u003d{offset} key\u003d{offset}\u003e"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cDaySection date\u003d{dates} offset\u003d{offset} key\u003d{offset}\u003e"
+        "content": "          \u003cEmptyLessonGroup type\u003d{type} /\u003e"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cEmptyLessonGroup type\u003d{type} /\u003e"
+        "content": "        \u003c/DaySection\u003e,"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/DaySection\u003e,"
+        "content": "      );"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "      );"
+        "content": "      days.push();"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "      days.push();"
+        "content": "      currentGroup \u003d null;"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "      currentGroup \u003d null;"
+        "content": "    };"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": ""
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const addEmptyDate \u003d (date: Date, weekInfo: AcadWeekInfo, offset: number) \u003d\u003e {"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "    const addEmptyDate \u003d (date: Date, weekInfo: AcadWeekInfo, offset: number) \u003d\u003e {"
+        "content": "      const type \u003d getDayType(date, weekInfo);"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "      const type \u003d getDayType(date, weekInfo);"
+        "content": "      if (!currentGroup || currentGroup.type !\u003d\u003d type) {"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (!currentGroup || currentGroup.type !\u003d\u003d type) {"
+        "content": "        pushCurrentGroup();"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "        pushCurrentGroup();"
+        "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        currentGroup \u003d {"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "        currentGroup \u003d {"
+        "content": "          offset,"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "          offset,"
+        "content": "          type,"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "          type,"
+        "content": "          dates: [],"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "          dates: [],"
+        "content": "        };"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "        };"
+        "content": "      }"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": ""
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      currentGroup.dates.push(date);"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "      currentGroup.dates.push(date);"
+        "content": "    };"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": ""
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    range(DAYS).forEach((day) \u003d\u003e {"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "    range(DAYS).forEach((day) \u003d\u003e {"
+        "content": "      const date \u003d addDays(currentTime, day);"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "      const date \u003d addDays(currentTime, day);"
+        "content": "      const dayOfWeek \u003d DaysOfWeek[getDayIndex(date)];"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "      const dayOfWeek \u003d DaysOfWeek[getDayIndex(date)];"
+        "content": "      const weekInfo \u003d NUSModerator.academicCalendar.getAcadWeekInfo(date);"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "      const weekInfo \u003d NUSModerator.academicCalendar.getAcadWeekInfo(date);"
+        "content": "      const lessons \u003d get(groupedLessons, dayOfWeek, EMPTY_ARRAY).filter((lesson) \u003d\u003e"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": "      const lessons \u003d get(groupedLessons, dayOfWeek, EMPTY_ARRAY).filter((lesson) \u003d\u003e"
+        "content": "        isLessonAvailable(lesson, date, weekInfo),"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "        isLessonAvailable(lesson, date, weekInfo),"
+        "content": "      );"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "      );"
+        "content": ""
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      if ("
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "      if ("
+        "content": "        // Non-instructional week"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Non-instructional week"
+        "content": "        weekInfo.type !\u003d\u003d \u0027Instructional\u0027 ||"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "        weekInfo.type !\u003d\u003d \u0027Instructional\u0027 ||"
+        "content": "        // Holiday during instructional week"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Holiday during instructional week"
+        "content": "        config.holidays.some((holiday) \u003d\u003e isSameDay(date, holiday)) ||"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "        config.holidays.some((holiday) \u003d\u003e isSameDay(date, holiday)) ||"
+        "content": "        // Weekend with no lesson"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Weekend with no lesson"
+        "content": "        (lessons.length \u003d\u003d\u003d 0 \u0026\u0026 isWeekend(date))"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "        (lessons.length \u003d\u003d\u003d 0 \u0026\u0026 isWeekend(date))"
+        "content": "      ) {"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "      ) {"
+        "content": "        addEmptyDate(date, weekInfo, day);"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "        addEmptyDate(date, weekInfo, day);"
+        "content": "      } else {"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "      } else {"
+        "content": "        pushCurrentGroup();"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "        pushCurrentGroup();"
+        "content": ""
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        const forecast \u003d this.state.weather[String(day)];"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "        const forecast \u003d this.state.weather[String(day)];"
+        "content": ""
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        days.push("
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "        days.push("
+        "content": "          \u003cDaySection date\u003d{date} offset\u003d{day} forecast\u003d{forecast} key\u003d{day}\u003e"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cDaySection date\u003d{date} offset\u003d{day} forecast\u003d{forecast} key\u003d{day}\u003e"
+        "content": "            {this.renderDay(date, lessons, day \u003d\u003d\u003d 0)}"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "            {this.renderDay(date, lessons, day \u003d\u003d\u003d 0)}"
+        "content": "          \u003c/DaySection\u003e,"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/DaySection\u003e,"
+        "content": "        );"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "        );"
+        "content": "      }"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "    });"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": ""
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    pushCurrentGroup();"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "    pushCurrentGroup();"
+        "content": ""
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    return days;"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "    return days;"
+        "content": "  }"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": ""
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  renderDay(date: Date, lessons: ColoredLesson[], isToday: boolean) {"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "  renderDay(date: Date, lessons: ColoredLesson[], isToday: boolean) {"
+        "content": "    const dayInfo \u003d NUSModerator.academicCalendar.getAcadWeekInfo(date);"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "    const dayInfo \u003d NUSModerator.academicCalendar.getAcadWeekInfo(date);"
+        "content": ""
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // In lg and above, we use the sidebar to show the map instead"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "    // In lg and above, we use the sidebar to show the map instead"
+        "content": "    // of displaying inline inside the lesson, so the opened lesson is always null"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "    // of displaying inline inside the lesson, so the opened lesson is always null"
+        "content": "    const openLesson \u003d this.props.matchBreakpoint ? null : this.state.openLesson;"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "    const openLesson \u003d this.props.matchBreakpoint ? null : this.state.openLesson;"
+        "content": ""
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // If it is a day with no lessons"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "    // If it is a day with no lessons"
+        "content": "    if (!lessons.length) {"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (!lessons.length) {"
+        "content": "      return \u003cp\u003eYou have no lessons today\u003c/p\u003e;"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "      return \u003cp\u003eYou have no lessons today\u003c/p\u003e;"
+        "content": "    }"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // If the lesson rendered is today, manage the next lesson marker and the"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "    // If the lesson rendered is today, manage the next lesson marker and the"
+        "content": "    // card that shows before the first lesson"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "    // card that shows before the first lesson"
+        "content": "    let nextLessonMarker \u003d null;"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "    let nextLessonMarker \u003d null;"
+        "content": "    let beforeFirstLessonCard \u003d null;"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "    let beforeFirstLessonCard \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if (isToday) {"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (isToday) {"
+        "content": "      const { currentTime } \u003d this.props;"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "      const { currentTime } \u003d this.props;"
+        "content": "      // Don\u0027t show any lessons in the past, and add the current time marker"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "      // Don\u0027t show any lessons in the past, and add the current time marker"
+        "content": "      const time \u003d getHours(currentTime) * 100 + getMinutes(currentTime);"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "      const time \u003d getHours(currentTime) * 100 + getMinutes(currentTime);"
+        "content": "      // eslint-disable-next-line no-param-reassign"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "      // eslint-disable-next-line no-param-reassign"
+        "content": "      lessons \u003d lessons.filter((lesson) \u003d\u003e parseInt(lesson.endTime, 10) \u003e time);"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "      lessons \u003d lessons.filter((lesson) \u003d\u003e parseInt(lesson.endTime, 10) \u003e time);"
+        "content": ""
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      const nextLesson \u003d minBy(lessons, (lesson) \u003d\u003e lesson.startTime);"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "      const nextLesson \u003d minBy(lessons, (lesson) \u003d\u003e lesson.startTime);"
+        "content": ""
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      // If there is at least one lesson remaining today..."
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "      // If there is at least one lesson remaining today..."
+        "content": "      if (nextLesson) {"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (nextLesson) {"
+        "content": "        const marker \u003d \u003cp className\u003d{styles.nowMarker}\u003e{formatTime(time)}\u003c/p\u003e;"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "        const marker \u003d \u003cp className\u003d{styles.nowMarker}\u003e{formatTime(time)}\u003c/p\u003e;"
+        "content": ""
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if (isLessonOngoing(nextLesson, time)) {"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (isLessonOngoing(nextLesson, time)) {"
+        "content": "          // If the next lesson is still ongoing, we put the marker inside the next lesson"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": "          // If the next lesson is still ongoing, we put the marker inside the next lesson"
+        "content": "          nextLessonMarker \u003d marker;"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "          nextLessonMarker \u003d marker;"
+        "content": "        } else {"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "          // Otherwise add a new card before the next lesson"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "          // Otherwise add a new card before the next lesson"
+        "content": "          beforeFirstLessonCard \u003d ("
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": "          beforeFirstLessonCard \u003d ("
+        "content": "            \u003cBeforeLessonCard currentTime\u003d{currentTime} nextLesson\u003d{nextLesson} marker\u003d{marker} /\u003e"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cBeforeLessonCard currentTime\u003d{currentTime} nextLesson\u003d{nextLesson} marker\u003d{marker} /\u003e"
+        "content": "          );"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "          );"
+        "content": "        }"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "      } else {"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "      } else {"
+        "content": "        return \u003cp\u003eYou have no lessons left today\u003c/p\u003e;"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "        return \u003cp\u003eYou have no lessons left today\u003c/p\u003e;"
+        "content": "      }"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "    }"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    return ("
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "    return ("
+        "content": "      \u003c\u003e"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c\u003e"
+        "content": "        {beforeFirstLessonCard}"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "        {beforeFirstLessonCard}"
+        "content": "        \u003cDayEvents"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cDayEvents"
+        "content": "          lessons\u003d{lessons}"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "          lessons\u003d{lessons}"
+        "content": "          date\u003d{date}"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": "          date\u003d{date}"
+        "content": "          dayInfo\u003d{dayInfo}"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": "          dayInfo\u003d{dayInfo}"
+        "content": "          marker\u003d{nextLessonMarker}"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "          marker\u003d{nextLessonMarker}"
+        "content": "          openLesson\u003d{openLesson}"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": "          openLesson\u003d{openLesson}"
+        "content": "          onOpenLesson\u003d{this.onOpenLesson}"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": "          onOpenLesson\u003d{this.onOpenLesson}"
+        "content": "        /\u003e"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
-        "content": "        /\u003e"
+        "content": "      \u003c/\u003e"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/\u003e"
+        "content": "    );"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": "  }"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": ""
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  render() {"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "  render() {"
+        "content": "    return ("
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "    return ("
+        "content": "      \u003cdiv className\u003d{styles.todayPage}\u003e"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003cdiv className\u003d{styles.todayPage}\u003e"
+        "content": "        \u003cTitle\u003eToday\u003c/Title\u003e"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cTitle\u003eToday\u003c/Title\u003e"
+        "content": ""
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        \u003cdiv className\u003d{styles.schedule}\u003e"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cAnnouncements /\u003e"
+        "content": "          {this.groupLessons()}"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          \u003cp className\u003d{styles.attribution}\u003e"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cdiv className\u003d{styles.schedule}\u003e"
+        "content": "            Icon made by \u003cExternalLink href\u003d\"https://www.freepik.com/\"\u003eFreepik\u003c/ExternalLink\u003e from{\u0027 \u0027}"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "          {this.groupLessons()}"
+        "content": "            \u003cExternalLink href\u003d\"https://www.flaticon.com/\"\u003ewww.flaticon.com\u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cp className\u003d{styles.attribution}\u003e"
+        "content": "          \u003c/p\u003e"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "            Icon made by \u003cExternalLink href\u003d\"https://www.freepik.com/\"\u003eFreepik\u003c/ExternalLink\u003e from{\u0027 \u0027}"
+        "content": "        \u003c/div\u003e"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d\"https://www.flaticon.com/\"\u003ewww.flaticon.com\u003c/ExternalLink\u003e"
+        "content": ""
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/p\u003e"
+        "content": "        {this.props.matchBreakpoint \u0026\u0026 ("
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/div\u003e"
+        "content": "          \u003c\u003e"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            \u003cNoFooter /\u003e"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "        {this.props.matchBreakpoint \u0026\u0026 ("
+        "content": "            \u003cMapContext.Provider value\u003d{{ toggleMapExpanded: this.onToggleMapExpanded }}\u003e"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c\u003e"
+        "content": "              \u003cdiv"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cNoFooter /\u003e"
+        "content": "                className\u003d{classnames(styles.mapContainer, {"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cMapContext.Provider value\u003d{{ toggleMapExpanded: this.onToggleMapExpanded }}\u003e"
+        "content": "                  [styles.expanded]: this.state.isMapExpanded,"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cdiv"
+        "content": "                })}"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "                className\u003d{classnames(styles.mapContainer, {"
+        "content": "              \u003e"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "                  [styles.expanded]: this.state.isMapExpanded,"
+        "content": "                \u003cEventMap venue\u003d{this.state.openLesson \u0026\u0026 this.state.openLesson.lesson.venue} /\u003e"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "                })}"
+        "content": "              \u003c/div\u003e"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003e"
+        "content": "            \u003c/MapContext.Provider\u003e"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u003cEventMap venue\u003d{this.state.openLesson \u0026\u0026 this.state.openLesson.lesson.venue} /\u003e"
+        "content": "          \u003c/\u003e"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003c/div\u003e"
+        "content": "        )}"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c/MapContext.Provider\u003e"
+        "content": "      \u003c/div\u003e"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/\u003e"
+        "content": "    );"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "        )}"
+        "content": "  }"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/div\u003e"
+        "content": "}"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": ""
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "export const mapStateToProps \u003d (state: StoreState, ownProps: OwnProps) \u003d\u003e {"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  const modules \u003d state.moduleBank.modules;"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const lastDay \u003d addDays(ownProps.currentTime, DAYS);"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "export const mapStateToProps \u003d (state: StoreState, ownProps: OwnProps) \u003d\u003e {"
+        "content": "  const weekInfo \u003d NUSModerator.academicCalendar.getAcadWeekInfo(lastDay);"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "  const modules \u003d state.moduleBank.modules;"
+        "content": "  const semester \u003d semesterNameMap[weekInfo.sem];"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "  const lastDay \u003d addDays(ownProps.currentTime, DAYS);"
+        "content": "  const { timetable, colors } \u003d getSemesterTimetable(semester, state.timetables);"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "  const weekInfo \u003d NUSModerator.academicCalendar.getAcadWeekInfo(lastDay);"
+        "content": "  const timetableWithLessons \u003d hydrateSemTimetableWithLessons(timetable, modules, semester);"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "  const semester \u003d semesterNameMap[weekInfo.sem];"
+        "content": ""
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "  const { timetable, colors } \u003d getSemesterTimetable(semester, state.timetables);"
+        "content": "  return {"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "  const timetableWithLessons \u003d hydrateSemTimetableWithLessons(timetable, modules, semester);"
+        "content": "    colors,"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    timetableWithLessons,"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "  return {"
+        "content": "  };"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "    colors,"
+        "content": "};"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "    timetableWithLessons,"
+        "content": ""
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": "const ConnectedTimetableContainer \u003d connect(mapStateToProps)(TodayContainerComponent);"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "};"
+        "content": ""
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "const TodayContainerWithTimer \u003d withTimer(ConnectedTimetableContainer);"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "const ConnectedTimetableContainer \u003d connect(mapStateToProps)(TodayContainerComponent);"
+        "content": "const ResponsiveTodayContainer \u003d makeResponsive(TodayContainerWithTimer, breakpointUp(\u0027lg\u0027));"
       },
       {
         "lineNumber": 364,
@@ -113628,33 +113628,12 @@
         "author": {
           "gitId": "-"
         },
-        "content": "const TodayContainerWithTimer \u003d withTimer(ConnectedTimetableContainer);"
-      },
-      {
-        "lineNumber": 366,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "const ResponsiveTodayContainer \u003d makeResponsive(TodayContainerWithTimer, breakpointUp(\u0027lg\u0027));"
-      },
-      {
-        "lineNumber": 367,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 368,
-        "author": {
-          "gitId": "-"
-        },
         "content": "export default ResponsiveTodayContainer;"
       }
     ],
     "authorContributionMap": {
       "amrut-prabhu": 6,
-      "-": 362
+      "-": 359
     }
   },
   {
