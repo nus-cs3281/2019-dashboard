@@ -23978,7 +23978,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "export type Workload \u003d string | ReadonlyArray\u003cnumber\u003e;"
+        "content": "export type Workload \u003d string | readonly number[];"
       },
       {
         "lineNumber": 15,
@@ -23990,9 +23990,9 @@
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "export type Weeks \u003d ReadonlyArray\u003cnumber\u003e | WeekRange;"
+        "content": "export type Weeks \u003d readonly number[] | WeekRange;"
       },
       {
         "lineNumber": 17,
@@ -24167,7 +24167,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "export const WorkingDays: ReadonlyArray\u003cDay\u003e \u003d ["
+        "content": "export const WorkingDays: readonly Day[] \u003d ["
       },
       {
         "lineNumber": 42,
@@ -24230,7 +24230,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "export const DaysOfWeek: ReadonlyArray\u003cDay\u003e \u003d [...WorkingDays, \u0027Sunday\u0027];"
+        "content": "export const DaysOfWeek: readonly Day[] \u003d [...WorkingDays, \u0027Sunday\u0027];"
       },
       {
         "lineNumber": 51,
@@ -24251,7 +24251,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "export const Semesters: ReadonlyArray\u003cSemester\u003e \u003d [1, 2, 3, 4];"
+        "content": "export const Semesters: readonly Semester[] \u003d [1, 2, 3, 4];"
       },
       {
         "lineNumber": 54,
@@ -24832,7 +24832,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  timetable: ReadonlyArray\u003cRawLesson\u003e;"
+        "content": "  timetable: readonly RawLesson[];"
       },
       {
         "lineNumber": 137,
@@ -24907,9 +24907,9 @@
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "  semesters: ReadonlyArray\u003cnumber\u003e;"
+        "content": "  semesters: readonly number[];"
       },
       {
         "lineNumber": 148,
@@ -25082,9 +25082,9 @@
       {
         "lineNumber": 172,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "  semesterData: ReadonlyArray\u003cSemesterDataCondensed\u003e;"
+        "content": "  semesterData: readonly SemesterDataCondensed[];"
       },
       {
         "lineNumber": 173,
@@ -25278,9 +25278,9 @@
       {
         "lineNumber": 200,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "  semesterData: ReadonlyArray\u003cSemesterData\u003e;"
+        "content": "  semesterData: readonly SemesterData[];"
       },
       {
         "lineNumber": 201,
@@ -25306,9 +25306,9 @@
       {
         "lineNumber": 204,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "  fulfillRequirements?: ReadonlyArray\u003cModuleCode\u003e;"
+        "content": "  fulfillRequirements?: readonly ModuleCode[];"
       },
       {
         "lineNumber": 205,
@@ -25319,8 +25319,8 @@
       }
     ],
     "authorContributionMap": {
-      "amrut-prabhu": 60,
-      "-": 145
+      "amrut-prabhu": 55,
+      "-": 150
     }
   },
   {
@@ -29551,7 +29551,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  unfulfilledPrereqs: ReadonlyArray\u003cPrereqTree\u003e;"
+        "content": "  unfulfilledPrereqs: readonly PrereqTree[];"
       },
       {
         "lineNumber": 101,
@@ -29586,7 +29586,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  conflictModules: ReadonlyArray\u003cModuleCode\u003e;"
+        "content": "  conflictModules: readonly ModuleCode[];"
       },
       {
         "lineNumber": 106,
@@ -29621,7 +29621,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  semestersOffered: ReadonlyArray\u003cSemester\u003e;"
+        "content": "  semestersOffered: readonly Semester[];"
       },
       {
         "lineNumber": 111,
@@ -35193,7 +35193,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "export function getModuleTimetable(module: Module, semester: Semester): ReadonlyArray\u003cRawLesson\u003e {"
+        "content": "export function getModuleTimetable(module: Module, semester: Semester): readonly RawLesson[] {"
       },
       {
         "lineNumber": 27,
@@ -35438,7 +35438,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  semesters: ReadonlyArray\u003cSemesterDataCondensed\u003e,"
+        "content": "  semesters: readonly SemesterDataCondensed[],"
       },
       {
         "lineNumber": 62,
@@ -41905,14 +41905,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "export function randomModuleLessonConfig(lessons: ReadonlyArray\u003cRawLesson\u003e): ModuleLessonConfig {"
+        "content": "export function randomModuleLessonConfig(lessons: readonly RawLesson[]): ModuleLessonConfig {"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "  const lessonByGroups: { [lessonType: string]: ReadonlyArray\u003cRawLesson\u003e } \u003d groupBy("
+        "content": "  const lessonByGroups: { [lessonType: string]: readonly RawLesson[] } \u003d groupBy("
       },
       {
         "lineNumber": 92,
@@ -41954,14 +41954,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    [lessonType: string]: { [classNo: string]: ReadonlyArray\u003cRawLesson\u003e };"
+        "content": "    [lessonType: string]: { [classNo: string]: readonly RawLesson[] };"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "  } \u003d mapValues(lessonByGroups, (lessonsOfSamelessonType: ReadonlyArray\u003cRawLesson\u003e) \u003d\u003e"
+        "content": "  } \u003d mapValues(lessonByGroups, (lessonsOfSamelessonType: readonly RawLesson[]) \u003d\u003e"
       },
       {
         "lineNumber": 99,
@@ -42003,7 +42003,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    (group: { [classNo: string]: ReadonlyArray\u003cRawLesson\u003e }) \u003d\u003e sample(group)![0].classNo,"
+        "content": "    (group: { [classNo: string]: readonly RawLesson[] }) \u003d\u003e sample(group)![0].classNo,"
       },
       {
         "lineNumber": 105,
@@ -42276,7 +42276,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  lessons: ReadonlyArray\u003cT\u003e,"
+        "content": "  lessons: readonly T[],"
       },
       {
         "lineNumber": 144,
@@ -42290,7 +42290,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "): ReadonlyArray\u003cT\u003e {"
+        "content": "): readonly T[] {"
       },
       {
         "lineNumber": 146,
@@ -42906,7 +42906,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  lessons: ReadonlyArray\u003cRawLesson\u003e,"
+        "content": "  lessons: readonly RawLesson[],"
       },
       {
         "lineNumber": 234,
@@ -57430,7 +57430,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "type Props \u003d RouteComponentProps \u0026 { semesterData: ReadonlyArray\u003cSemesterData\u003e };"
+        "content": "type Props \u003d RouteComponentProps \u0026 { semesterData: readonly SemesterData[] };"
       },
       {
         "lineNumber": 16,
@@ -58414,7 +58414,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  semesters: ReadonlyArray\u003cSemesterDataCondensed\u003e;"
+        "content": "  semesters: readonly SemesterDataCondensed[];"
       },
       {
         "lineNumber": 13,
@@ -59256,7 +59256,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "function sortWorkload(workload: ReadonlyArray\u003cnumber\u003e): WorkloadTuple[] {"
+        "content": "function sortWorkload(workload: readonly number[]): WorkloadTuple[] {"
       },
       {
         "lineNumber": 61,
@@ -70488,7 +70488,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      produce\u003cState\u003e((draft) \u003d\u003e {"
+        "content": "      produce((draft) \u003d\u003e {"
       },
       {
         "lineNumber": 138,
@@ -74535,7 +74535,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  fulfillRequirements?: ReadonlyArray\u003cModuleCode\u003e;"
+        "content": "  fulfillRequirements?: readonly ModuleCode[];"
       },
       {
         "lineNumber": 14,
@@ -114379,9 +114379,9 @@
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "import { get, isEqual, mapValues, pick, size } from \u0027lodash\u0027;"
+        "content": "import { isEqual, mapValues, pick, size } from \u0027lodash\u0027;"
       },
       {
         "lineNumber": 9,
@@ -116292,787 +116292,794 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    const [previous] \u003d get(matchedVenues, String(venueIndex - 1), []);"
+        "content": "    const [previous] \u003d matchedVenues[venueIndex - 1] || ([] as string[]);"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "    const [next] \u003d get(matchedVenues, String(venueIndex + 1), []);"
+        "content": "    const [next] \u003d matchedVenues[venueIndex + 1] || ([] as string[]);"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "    return ("
+        "content": ""
       },
       {
         "lineNumber": 284,
         "author": {
-          "gitId": "amrut-prabhu"
+          "gitId": "-"
         },
-        "content": "      \u003cVenueDetails"
+        "content": "    return ("
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "        venue\u003d{venue}"
+        "content": "      \u003cVenueDetails"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "        availability\u003d{availability}"
+        "content": "        venue\u003d{venue}"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "        next\u003d{next}"
+        "content": "        availability\u003d{availability}"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "        previous\u003d{previous}"
+        "content": "        next\u003d{next}"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "        highlightPeriod\u003d{this.getHighlightPeriod()}"
+        "content": "        previous\u003d{previous}"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "amrut-prabhu"
         },
-        "content": "      /\u003e"
+        "content": "        highlightPeriod\u003d{this.getHighlightPeriod()}"
       },
       {
         "lineNumber": 291,
         "author": {
-          "gitId": "-"
+          "gitId": "amrut-prabhu"
         },
-        "content": "    );"
+        "content": "      /\u003e"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    );"
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "  render() {"
+        "content": ""
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "    const selectedVenue \u003d this.selectedVenue();"
+        "content": "  render() {"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "    const { searchTerm, isAvailabilityEnabled, isMapExpanded, searchOptions } \u003d this.state;"
+        "content": "    const selectedVenue \u003d this.selectedVenue();"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "    const { venues } \u003d this.props;"
+        "content": "    const { searchTerm, isAvailabilityEnabled, isMapExpanded, searchOptions } \u003d this.state;"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const { venues } \u003d this.props;"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": "    let matchedVenues \u003d searchVenue(venues, searchTerm);"
+        "content": ""
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "    const unfilteredCount \u003d size(matchedVenues);"
+        "content": "    let matchedVenues \u003d searchVenue(venues, searchTerm);"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const unfilteredCount \u003d size(matchedVenues);"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (isAvailabilityEnabled) {"
+        "content": ""
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "      matchedVenues \u003d filterAvailability(matchedVenues, searchOptions);"
+        "content": "    if (isAvailabilityEnabled) {"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      matchedVenues \u003d filterAvailability(matchedVenues, searchOptions);"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": "    return ("
+        "content": ""
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003cdiv className\u003d{classnames(\u0027page-container\u0027, styles.pageContainer)}\u003e"
+        "content": "    return ("
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": "        {pageHead}"
+        "content": "      \u003cdiv className\u003d{classnames(\u0027page-container\u0027, styles.pageContainer)}\u003e"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        {pageHead}"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cdiv className\u003d{styles.venuesList}\u003e"
+        "content": ""
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": "          {this.renderSearch()}"
+        "content": "        \u003cdiv className\u003d{styles.venuesList}\u003e"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          {this.renderSearch()}"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": "          {size(matchedVenues) \u003d\u003d\u003d 0 ? ("
+        "content": ""
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.renderNoResult(unfilteredCount)"
+        "content": "          {size(matchedVenues) \u003d\u003d\u003d 0 ? ("
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "          ) : ("
+        "content": "            this.renderNoResult(unfilteredCount)"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cVenueList"
+        "content": "          ) : ("
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "              venues\u003d{matchedVenues.map(([venue]) \u003d\u003e venue)}"
+        "content": "            \u003cVenueList"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "              selectedVenue\u003d{selectedVenue}"
+        "content": "              venues\u003d{matchedVenues.map(([venue]) \u003d\u003e venue)}"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "            /\u003e"
+        "content": "              selectedVenue\u003d{selectedVenue}"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "          )}"
+        "content": "            /\u003e"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/div\u003e"
+        "content": "          )}"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        \u003c/div\u003e"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cMapContext.Provider value\u003d{{ toggleMapExpanded: this.onToggleMapExpanded }}\u003e"
+        "content": ""
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "          {this.props.matchBreakpoint ? ("
+        "content": "        \u003cMapContext.Provider value\u003d{{ toggleMapExpanded: this.onToggleMapExpanded }}\u003e"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cModal"
+        "content": "          {this.props.matchBreakpoint ? ("
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "              isOpen\u003d{selectedVenue !\u003d null}"
+        "content": "            \u003cModal"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "              onRequestClose\u003d{this.onClearVenueSelect}"
+        "content": "              isOpen\u003d{selectedVenue !\u003d null}"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "              className\u003d{styles.venueDetailModal}"
+        "content": "              onRequestClose\u003d{this.onClearVenueSelect}"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "              fullscreen"
+        "content": "              className\u003d{styles.venueDetailModal}"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003e"
+        "content": "              fullscreen"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cbutton"
+        "content": "            \u003e"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "                type\u003d\"button\""
+        "content": "              \u003cbutton"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "                className\u003d{classnames(\u0027btn btn-outline-primary btn-block\u0027, styles.closeButton)}"
+        "content": "                type\u003d\"button\""
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "                onClick\u003d{this.onClearVenueSelect}"
+        "content": "                className\u003d{classnames(\u0027btn btn-outline-primary btn-block\u0027, styles.closeButton)}"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003e"
+        "content": "                onClick\u003d{this.onClearVenueSelect}"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "                Back to Venues"
+        "content": "              \u003e"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003c/button\u003e"
+        "content": "                Back to Venues"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "              {this.renderSelectedVenue(matchedVenues)}"
+        "content": "              \u003c/button\u003e"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c/Modal\u003e"
+        "content": "              {this.renderSelectedVenue(matchedVenues)}"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "          ) : ("
+        "content": "            \u003c/Modal\u003e"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c\u003e"
+        "content": "          ) : ("
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cdiv"
+        "content": "            \u003c\u003e"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "                className\u003d{classnames(styles.venueDetail, {"
+        "content": "              \u003cdiv"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "                  [styles.mapExpanded]: isMapExpanded,"
+        "content": "                className\u003d{classnames(styles.venueDetail, {"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": "                })}"
+        "content": "                  [styles.mapExpanded]: isMapExpanded,"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003e"
+        "content": "                })}"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "                {selectedVenue \u003d\u003d null ? ("
+        "content": "              \u003e"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "                  \u003cdiv className\u003d{styles.noVenueSelected}\u003e"
+        "content": "                {selectedVenue \u003d\u003d null ? ("
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u003cMap /\u003e"
+        "content": "                  \u003cdiv className\u003d{styles.noVenueSelected}\u003e"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "                    \u003cp\u003eSelect a venue on the left to see its timetable\u003c/p\u003e"
+        "content": "                    \u003cMap /\u003e"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "                  \u003c/div\u003e"
+        "content": "                    \u003cp\u003eSelect a venue on the left to see its timetable\u003c/p\u003e"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "                ) : ("
+        "content": "                  \u003c/div\u003e"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "                  this.renderSelectedVenue(matchedVenues)"
+        "content": "                ) : ("
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "                )}"
+        "content": "                  this.renderSelectedVenue(matchedVenues)"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003c/div\u003e"
+        "content": "                )}"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cNoFooter /\u003e"
+        "content": "              \u003c/div\u003e"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c/\u003e"
+        "content": "              \u003cNoFooter /\u003e"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "          )}"
+        "content": "            \u003c/\u003e"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/MapContext.Provider\u003e"
+        "content": "          )}"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/div\u003e"
+        "content": "        \u003c/MapContext.Provider\u003e"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "    );"
+        "content": "      \u003c/div\u003e"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    );"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  }"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "// Explicitly declare top level components for React hot reloading to work."
+        "content": ""
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "const ResponsiveVenuesContainer \u003d makeResponsive(VenuesContainerComponent, breakpointDown(\u0027sm\u0027));"
+        "content": "// Explicitly declare top level components for React hot reloading to work."
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "const RoutedVenuesContainer \u003d withRouter(ResponsiveVenuesContainer);"
+        "content": "const ResponsiveVenuesContainer \u003d makeResponsive(VenuesContainerComponent, breakpointDown(\u0027sm\u0027));"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "const AsyncVenuesContainer \u003d Loadable.Map({"
+        "content": "const RoutedVenuesContainer \u003d withRouter(ResponsiveVenuesContainer);"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "  loader: {"
+        "content": "const AsyncVenuesContainer \u003d Loadable.Map({"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": "    venues: () \u003d\u003e axios.get(nusmods.venuesUrl(config.semester)),"
+        "content": "  loader: {"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": "  },"
+        "content": "    venues: () \u003d\u003e axios.get(nusmods.venuesUrl(config.semester)),"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": "  loading: (props: LoadingComponentProps) \u003d\u003e {"
+        "content": "  },"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (props.error) {"
+        "content": "  loading: (props: LoadingComponentProps) \u003d\u003e {"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": "      return \u003cApiError dataName\u003d\"venue information\" retry\u003d{props.retry} /\u003e;"
+        "content": "    if (props.error) {"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      return \u003cApiError dataName\u003d\"venue information\" retry\u003d{props.retry} /\u003e;"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (props.pastDelay) {"
+        "content": ""
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "      return \u003cLoadingSpinner /\u003e;"
+        "content": "    if (props.pastDelay) {"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      return \u003cLoadingSpinner /\u003e;"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "    return null;"
+        "content": ""
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "  },"
+        "content": "    return null;"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "  render(loaded, props) {"
+        "content": "  },"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": "    return \u003cRoutedVenuesContainer venues\u003d{sortVenues(loaded.venues.data)} {...props} /\u003e;"
+        "content": "  render(loaded, props) {"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "  },"
+        "content": "    return \u003cRoutedVenuesContainer venues\u003d{sortVenues(loaded.venues.data)} {...props} /\u003e;"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": "});"
+        "content": "  },"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "});"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "export default deferComponentRender(AsyncVenuesContainer);"
+        "content": ""
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "export default deferComponentRender(AsyncVenuesContainer);"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": "export function preload() {"
+        "content": ""
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "  AsyncVenuesContainer.preload();"
+        "content": "export function preload() {"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": "  VenueLocation.preload();"
+        "content": "  AsyncVenuesContainer.preload();"
       },
       {
         "lineNumber": 393,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  VenueLocation.preload();"
+      },
+      {
+        "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
@@ -117080,8 +117087,8 @@
       }
     ],
     "authorContributionMap": {
-      "amrut-prabhu": 40,
-      "-": 353
+      "amrut-prabhu": 39,
+      "-": 355
     }
   },
   {
