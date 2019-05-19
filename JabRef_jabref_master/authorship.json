@@ -3357,1561 +3357,1561 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    private final ExternalFileTypes externalFileTypes;"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "    public LinkedFileViewModel(LinkedFile linkedFile,"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "                               BibEntry entry,"
+        "content": "    public LinkedFileViewModel(LinkedFile linkedFile,"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "                               BibDatabaseContext databaseContext,"
+        "content": "                               BibEntry entry,"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "                               TaskExecutor taskExecutor,"
+        "content": "                               BibDatabaseContext databaseContext,"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "                               DialogService dialogService,"
+        "content": "                               TaskExecutor taskExecutor,"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "                               JabRefPreferences preferences) {"
+        "content": "                               DialogService dialogService,"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                               JabRefPreferences preferences,"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.linkedFile \u003d linkedFile;"
+        "content": "                               ExternalFileTypes externalFileTypes) {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.filePreferences \u003d preferences.getFilePreferences();"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.linkedFileHandler \u003d new LinkedFileHandler(linkedFile, entry, databaseContext, filePreferences);"
+        "content": "        this.linkedFile \u003d linkedFile;"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.databaseContext \u003d databaseContext;"
+        "content": "        this.filePreferences \u003d preferences.getFilePreferences();"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.entry \u003d entry;"
+        "content": "        this.linkedFileHandler \u003d new LinkedFileHandler(linkedFile, entry, databaseContext, filePreferences);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.dialogService \u003d dialogService;"
+        "content": "        this.databaseContext \u003d databaseContext;"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.taskExecutor \u003d taskExecutor;"
+        "content": "        this.entry \u003d entry;"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        this.dialogService \u003d dialogService;"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "        xmpPreferences \u003d preferences.getXMPPreferences();"
+        "content": "        this.taskExecutor \u003d taskExecutor;"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "        downloadOngoing.bind(downloadProgress.greaterThanOrEqualTo(0).and(downloadProgress.lessThan(1)));"
+        "content": "        this.externalFileTypes \u003d externalFileTypes;"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "        canWriteXMPMetadata.setValue(!linkedFile.isOnlineLink() \u0026\u0026 linkedFile.getFileType().equalsIgnoreCase(\"pdf\"));"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        xmpPreferences \u003d preferences.getXMPPreferences();"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        downloadOngoing.bind(downloadProgress.greaterThanOrEqualTo(0).and(downloadProgress.lessThan(1)));"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "    public BooleanProperty canWriteXMPMetadataProperty() {"
+        "content": "        canWriteXMPMetadata.setValue(!linkedFile.isOnlineLink() \u0026\u0026 linkedFile.getFileType().equalsIgnoreCase(\"pdf\"));"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "        return canWriteXMPMetadata;"
+        "content": "    }"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public BooleanProperty canWriteXMPMetadataProperty() {"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "    public boolean isAutomaticallyFound() {"
+        "content": "        return canWriteXMPMetadata;"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "        return isAutomaticallyFound.get();"
+        "content": "    }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public boolean isAutomaticallyFound() {"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "    public BooleanProperty isAutomaticallyFoundProperty() {"
+        "content": "        return isAutomaticallyFound.get();"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "        return isAutomaticallyFound;"
+        "content": "    }"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public BooleanProperty isAutomaticallyFoundProperty() {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "    public BooleanProperty downloadOngoingProperty() {"
+        "content": "        return isAutomaticallyFound;"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "        return downloadOngoing;"
+        "content": "    }"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public BooleanProperty downloadOngoingProperty() {"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "    public DoubleProperty downloadProgressProperty() {"
+        "content": "        return downloadOngoing;"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "        return downloadProgress;"
+        "content": "    }"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public DoubleProperty downloadProgressProperty() {"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "    public StringProperty linkProperty() {"
+        "content": "        return downloadProgress;"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "        return linkedFile.linkProperty();"
+        "content": "    }"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public StringProperty linkProperty() {"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "    public StringProperty descriptionProperty() {"
+        "content": "        return linkedFile.linkProperty();"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "        return linkedFile.descriptionProperty();"
+        "content": "    }"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public StringProperty descriptionProperty() {"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "    public String getDescription() {"
+        "content": "        return linkedFile.descriptionProperty();"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "        return linkedFile.getDescription();"
+        "content": "    }"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public String getDescription() {"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "    public String getDescriptionAndLink() {"
+        "content": "        return linkedFile.getDescription();"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (StringUtil.isBlank(linkedFile.getDescription())) {"
+        "content": "    }"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": "            return linkedFile.getLink();"
+        "content": ""
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "    public String getDescriptionAndLink() {"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "            return linkedFile.getDescription() + \" (\" + linkedFile.getLink() + \")\";"
+        "content": "        if (StringUtil.isBlank(linkedFile.getDescription())) {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return linkedFile.getLink();"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            return linkedFile.getDescription() + \" (\" + linkedFile.getLink() + \")\";"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "    public Optional\u003cPath\u003e findIn(List\u003cPath\u003e directories) {"
+        "content": "        }"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "        return linkedFile.findIn(directories);"
+        "content": "    }"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public Optional\u003cPath\u003e findIn(List\u003cPath\u003e directories) {"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        return linkedFile.findIn(directories);"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "     * TODO: Be a bit smarter and try to infer correct icon, for example using {@link"
+        "content": "    }"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "     * org.jabref.gui.externalfiletype.ExternalFileTypes#getExternalFileTypeByName(String)}"
+        "content": ""
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "    public JabRefIcon getTypeIcon() {"
+        "content": "     * TODO: Be a bit smarter and try to infer correct icon, for example using {@link"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "        return IconTheme.JabRefIcons.PDF_FILE;"
+        "content": "     * org.jabref.gui.externalfiletype.ExternalFileTypes#getExternalFileTypeByName(String)}"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public JabRefIcon getTypeIcon() {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void markAsAutomaticallyFound() {"
+        "content": "        return IconTheme.JabRefIcons.PDF_FILE;"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "        isAutomaticallyFound.setValue(true);"
+        "content": "    }"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void markAsAutomaticallyFound() {"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void acceptAsLinked() {"
+        "content": "        isAutomaticallyFound.setValue(true);"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "        isAutomaticallyFound.setValue(false);"
+        "content": "    }"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void acceptAsLinked() {"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "    public Observable[] getObservables() {"
+        "content": "        isAutomaticallyFound.setValue(false);"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "        List\u003cObservable\u003e observables \u003d new ArrayList\u003c\u003e(Arrays.asList(linkedFile.getObservables()));"
+        "content": "    }"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "        observables.add(downloadOngoing);"
+        "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "        observables.add(downloadProgress);"
+        "content": "    public Observable[] getObservables() {"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "        observables.add(isAutomaticallyFound);"
+        "content": "        List\u003cObservable\u003e observables \u003d new ArrayList\u003c\u003e(Arrays.asList(linkedFile.getObservables()));"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "        return observables.toArray(new Observable[observables.size()]);"
+        "content": "        observables.add(downloadOngoing);"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        observables.add(downloadProgress);"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        observables.add(isAutomaticallyFound);"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void open() {"
+        "content": "        return observables.toArray(new Observable[observables.size()]);"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": "    }"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "            Optional\u003cExternalFileType\u003e type \u003d ExternalFileTypes.getInstance().fromLinkedFile(linkedFile, true);"
+        "content": ""
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "            boolean successful \u003d JabRefDesktop.openExternalFileAnyFormat(databaseContext, linkedFile.getLink(), type);"
+        "content": "    public void open() {"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!successful) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "                dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"), Localization.lang(\"Could not find file \u0027%0\u0027.\", linkedFile.getLink()));"
+        "content": "            Optional\u003cExternalFileType\u003e type \u003d ExternalFileTypes.getInstance().fromLinkedFile(linkedFile, true);"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            boolean successful \u003d JabRefDesktop.openExternalFileAnyFormat(databaseContext, linkedFile.getLink(), type);"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "            if (!successful) {"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Error opening file \u0027%0\u0027.\", linkedFile.getLink()), e);"
+        "content": "                dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"), Localization.lang(\"Could not find file \u0027%0\u0027.\", linkedFile.getLink()));"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Error opening file \u0027%0\u0027.\", linkedFile.getLink()), e);"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void openFolder() {"
+        "content": "        }"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": "    }"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "            Path path \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "            // absolute path"
+        "content": "    public void openFolder() {"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (Paths.get(linkedFile.getLink()).isAbsolute()) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "                path \u003d Paths.get(linkedFile.getLink());"
+        "content": "            Path path \u003d null;"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "            // absolute path"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "                // relative to file folder"
+        "content": "            if (Paths.get(linkedFile.getLink()).isAbsolute()) {"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "                for (Path folder : databaseContext.getFileDirectoriesAsPaths(filePreferences)) {"
+        "content": "                path \u003d Paths.get(linkedFile.getLink());"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Path file \u003d folder.resolve(linkedFile.getLink());"
+        "content": "            } else {"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if (Files.exists(file)) {"
+        "content": "                // relative to file folder"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "                        path \u003d file;"
+        "content": "                for (Path folder : databaseContext.getFileDirectoriesAsPaths(filePreferences)) {"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "                        break;"
+        "content": "                    Path file \u003d folder.resolve(linkedFile.getLink());"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                    if (Files.exists(file)) {"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                        path \u003d file;"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                        break;"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (path !\u003d null) {"
+        "content": "                    }"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "                JabRefDesktop.openFolderAndSelectFile(path);"
+        "content": "                }"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "            }"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "                dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"));"
+        "content": "            if (path !\u003d null) {"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                JabRefDesktop.openFolderAndSelectFile(path);"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "        } catch (IOException ex) {"
+        "content": "            } else {"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "            LOGGER.debug(\"Cannot open folder\", ex);"
+        "content": "                dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"));"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        } catch (IOException ex) {"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            LOGGER.debug(\"Cannot open folder\", ex);"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void renameToSuggestion() {"
+        "content": "        }"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "        renameFileToName(linkedFileHandler.getSuggestedFileName());"
+        "content": "    }"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    public void renameToSuggestion() {"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void askForNameAndRename() {"
+        "content": "        renameFileToName(linkedFileHandler.getSuggestedFileName());"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "        String oldFile \u003d this.linkedFile.getLink();"
+        "content": "    }"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "        Path oldFilePath \u003d Paths.get(oldFile);"
+        "content": ""
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cString\u003e askedFileName \u003d dialogService.showInputDialogWithDefaultAndWait(Localization.lang(\"Rename file\"), Localization.lang(\"New Filename\"), oldFilePath.getFileName().toString());"
+        "content": "    public void askForNameAndRename() {"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "        askedFileName.ifPresent(this::renameFileToName);"
+        "content": "        String oldFile \u003d this.linkedFile.getLink();"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        Path oldFilePath \u003d Paths.get(oldFile);"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        Optional\u003cString\u003e askedFileName \u003d dialogService.showInputDialogWithDefaultAndWait(Localization.lang(\"Rename file\"), Localization.lang(\"New Filename\"), oldFilePath.getFileName().toString());"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void renameFileToName(String targetFileName) {"
+        "content": "        askedFileName.ifPresent(this::renameFileToName);"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (linkedFile.isOnlineLink()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "            // Cannot rename remote links"
+        "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "            return;"
+        "content": "    public void renameFileToName(String targetFileName) {"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (linkedFile.isOnlineLink()) {"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // Cannot rename remote links"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
+        "content": "            return;"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (file.isPresent()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "            performRenameWithConflictCheck(targetFileName);"
+        "content": ""
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "        Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"), Localization.lang(\"Could not find file \u0027%0\u0027.\", linkedFile.getLink()));"
+        "content": "        if (file.isPresent()) {"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            performRenameWithConflictCheck(targetFileName);"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"), Localization.lang(\"Could not find file \u0027%0\u0027.\", linkedFile.getLink()));"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "    private void performRenameWithConflictCheck(String targetFileName) {"
+        "content": "        }"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cPath\u003e fileConflictCheck \u003d linkedFileHandler.findExistingFile(linkedFile, entry, targetFileName);"
+        "content": "    }"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (fileConflictCheck.isPresent()) {"
+        "content": ""
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "            boolean confirmOverwrite \u003d dialogService.showConfirmationDialogAndWait("
+        "content": "    private void performRenameWithConflictCheck(String targetFileName) {"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Localization.lang(\"File exists\"),"
+        "content": "        Optional\u003cPath\u003e fileConflictCheck \u003d linkedFileHandler.findExistingFile(linkedFile, entry, targetFileName);"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Localization.lang(\"\u0027%0\u0027 exists. Overwrite file?\", targetFileName),"
+        "content": "        if (fileConflictCheck.isPresent()) {"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Localization.lang(\"Overwrite\"));"
+        "content": "            boolean confirmOverwrite \u003d dialogService.showConfirmationDialogAndWait("
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    Localization.lang(\"File exists\"),"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (confirmOverwrite) {"
+        "content": "                    Localization.lang(\"\u0027%0\u0027 exists. Overwrite file?\", targetFileName),"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "                try {"
+        "content": "                    Localization.lang(\"Overwrite\"));"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Files.delete(fileConflictCheck.get());"
+        "content": ""
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "                } catch (IOException e) {"
+        "content": "            if (confirmOverwrite) {"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "                    dialogService.showErrorDialogAndWait("
+        "content": "                try {"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "                            Localization.lang(\"Rename failed\"),"
+        "content": "                    Files.delete(fileConflictCheck.get());"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "                            Localization.lang(\"JabRef cannot access the file because it is being used by another process.\"),"
+        "content": "                } catch (IOException e) {"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "                            e);"
+        "content": "                    dialogService.showErrorDialogAndWait("
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "                            Localization.lang(\"Rename failed\"),"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                            Localization.lang(\"JabRef cannot access the file because it is being used by another process.\"),"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "                            e);"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "                    return;"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                }"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            } else {"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                return;"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": "            }"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "            linkedFileHandler.renameToName(targetFileName);"
+        "content": "        }"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "        } catch (IOException e) {"
+        "content": ""
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Rename failed\"), Localization.lang(\"JabRef cannot access the file because it is being used by another process.\"));"
+        "content": "        try {"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            linkedFileHandler.renameToName(targetFileName);"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Rename failed\"), Localization.lang(\"JabRef cannot access the file because it is being used by another process.\"));"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void moveToDefaultDirectory() {"
+        "content": "        }"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (linkedFile.isOnlineLink()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "            // Cannot move remote links"
+        "content": ""
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "            return;"
+        "content": "    public void moveToDefaultDirectory() {"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (linkedFile.isOnlineLink()) {"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // Cannot move remote links"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Get target folder"
+        "content": "            return;"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cPath\u003e fileDir \u003d databaseContext.getFirstExistingFileDir(filePreferences);"
+        "content": "        }"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!fileDir.isPresent()) {"
+        "content": ""
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Move file\"), Localization.lang(\"File directory is not set or does not exist!\"));"
+        "content": "        // Get target folder"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "            return;"
+        "content": "        Optional\u003cPath\u003e fileDir \u003d databaseContext.getFirstExistingFileDir(filePreferences);"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (!fileDir.isPresent()) {"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Move file\"), Localization.lang(\"File directory is not set or does not exist!\"));"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
+        "content": "            return;"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "        if ((file.isPresent())) {"
+        "content": "        }"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "            // Found the linked file, so move it"
+        "content": ""
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "            try {"
+        "content": "        Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "                linkedFileHandler.moveToDefaultDirectory();"
+        "content": "        if ((file.isPresent())) {"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "            } catch (IOException exception) {"
+        "content": "            // Found the linked file, so move it"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "                dialogService.showErrorDialogAndWait("
+        "content": "            try {"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "                        Localization.lang(\"Move file\"),"
+        "content": "                linkedFileHandler.moveToDefaultDirectory();"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "                        Localization.lang(\"Could not move file \u0027%0\u0027.\", file.get().toString()),"
+        "content": "            } catch (IOException exception) {"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "                        exception);"
+        "content": "                dialogService.showErrorDialogAndWait("
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                        Localization.lang(\"Move file\"),"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "                        Localization.lang(\"Could not move file \u0027%0\u0027.\", file.get().toString()),"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "            // File doesn\u0027t exist, so we can\u0027t move it."
+        "content": "                        exception);"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"), Localization.lang(\"Could not find file \u0027%0\u0027.\", linkedFile.getLink()));"
+        "content": "            }"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            // File doesn\u0027t exist, so we can\u0027t move it."
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"File not found\"), Localization.lang(\"Could not find file \u0027%0\u0027.\", linkedFile.getLink()));"
       },
       {
         "lineNumber": 281,
         "author": {
-          "gitId": "RonakLakhotia"
+          "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 282,
         "author": {
-          "gitId": "RonakLakhotia"
+          "gitId": "-"
         },
-        "content": "     * Gets the filename for the current linked file and compares it to the new suggested filename."
+        "content": "    }"
       },
       {
         "lineNumber": 283,
         "author": {
-          "gitId": "RonakLakhotia"
+          "gitId": "-"
         },
-        "content": "     * @return true if the suggested filename is same as current filename."
+        "content": ""
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "    public boolean isGeneratedNameSameAsOriginal() {"
+        "content": "     * Gets the filename for the current linked file and compares it to the new suggested filename."
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        Path file \u003d Paths.get(this.linkedFile.getLink());"
+        "content": "     * @return true if the suggested filename is same as current filename."
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        String currentFileName \u003d file.getFileName().toString();"
+        "content": "     */"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        String suggestedFileName \u003d this.linkedFileHandler.getSuggestedFileName();"
+        "content": "    public boolean isGeneratedNameSameAsOriginal() {"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": ""
+        "content": "        Path file \u003d Paths.get(this.linkedFile.getLink());"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        return currentFileName.equals(suggestedFileName);"
+        "content": "        String currentFileName \u003d file.getFileName().toString();"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "    }"
+        "content": "        String suggestedFileName \u003d this.linkedFileHandler.getSuggestedFileName();"
       },
       {
         "lineNumber": 292,
@@ -4925,455 +4925,455 @@
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "    /**"
+        "content": "        return currentFileName.equals(suggestedFileName);"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "     * Compares suggested filepath of current linkedFile with existing filepath."
+        "content": "    }"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "     * @return true if suggested filepath is same as existing filepath."
+        "content": ""
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "    public boolean isGeneratedPathSameAsOriginal() {"
+        "content": "     * Compares suggested filepath of current linkedFile with existing filepath."
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        Optional\u003cPath\u003e newDir \u003d databaseContext.getFirstExistingFileDir(filePreferences);"
+        "content": "     * @return true if suggested filepath is same as existing filepath."
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        Optional\u003cPath\u003e currentDir \u003d linkedFile.findIn(databaseContext, filePreferences);"
+        "content": "    public boolean isGeneratedPathSameAsOriginal() {"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": ""
+        "content": "        Optional\u003cPath\u003e newDir \u003d databaseContext.getFirstExistingFileDir(filePreferences);"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        BiPredicate\u003cPath, Path\u003e equality \u003d (fileA, fileB) -\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "            try {"
+        "content": "        Optional\u003cPath\u003e currentDir \u003d linkedFile.findIn(databaseContext, filePreferences);"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "                return Files.isSameFile(fileA, fileB);"
+        "content": ""
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "            } catch (IOException e) {"
+        "content": "        BiPredicate\u003cPath, Path\u003e equality \u003d (fileA, fileB) -\u003e {"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "                return false;"
+        "content": "            try {"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "            }"
+        "content": "                return Files.isSameFile(fileA, fileB);"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        };"
+        "content": "            } catch (IOException e) {"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "        return OptionalUtil.equals(newDir, currentDir, equality);"
+        "content": "                return false;"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "RonakLakhotia"
         },
-        "content": ""
+        "content": "        };"
       },
       {
         "lineNumber": 312,
         "author": {
-          "gitId": "-"
+          "gitId": "RonakLakhotia"
         },
-        "content": "    public void moveToDefaultDirectoryAndRename() {"
+        "content": "        return OptionalUtil.equals(newDir, currentDir, equality);"
       },
       {
         "lineNumber": 313,
         "author": {
-          "gitId": "-"
+          "gitId": "RonakLakhotia"
         },
-        "content": "        moveToDefaultDirectory();"
+        "content": "    }"
       },
       {
         "lineNumber": 314,
         "author": {
-          "gitId": "-"
+          "gitId": "RonakLakhotia"
         },
-        "content": "        renameToSuggestion();"
+        "content": ""
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    public void moveToDefaultDirectoryAndRename() {"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        moveToDefaultDirectory();"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "    /**"
+        "content": "        renameToSuggestion();"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Asks the user for confirmation that he really wants to the delete the file from disk (or just remove the link)."
+        "content": "    }"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": "     * @return true if the linked file should be removed afterwards from the entry (i.e because it was deleted"
+        "content": "    /**"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": "     * successfully, does not exist in the first place or the user choose to remove it)"
+        "content": "     * Asks the user for confirmation that he really wants to the delete the file from disk (or just remove the link)."
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": "    public boolean delete() {"
+        "content": "     * @return true if the linked file should be removed afterwards from the entry (i.e because it was deleted"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
+        "content": "     * successfully, does not exist in the first place or the user choose to remove it)"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!file.isPresent()) {"
+        "content": "    public boolean delete() {"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "            LOGGER.warn(\"Could not find file \" + linkedFile.getLink());"
+        "content": "        Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "            return true;"
+        "content": ""
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        if (!file.isPresent()) {"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            LOGGER.warn(\"Could not find file \" + linkedFile.getLink());"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "        ButtonType removeFromEntry \u003d new ButtonType(Localization.lang(\"Remove from entry\"), ButtonData.YES);"
+        "content": "            return true;"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "        ButtonType deleteFromEntry \u003d new ButtonType(Localization.lang(\"Delete from disk\"));"
+        "content": "        }"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cButtonType\u003e buttonType \u003d dialogService.showCustomButtonDialogAndWait(AlertType.INFORMATION,"
+        "content": ""
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "                Localization.lang(\"Delete \u0027%0\u0027\", file.get().toString()),"
+        "content": "        ButtonType removeFromEntry \u003d new ButtonType(Localization.lang(\"Remove from entry\"), ButtonData.YES);"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "                Localization.lang(\"Delete the selected file permanently from disk, or just remove the file from the entry? Pressing Delete will delete the file permanently from disk.\"),"
+        "content": "        ButtonType deleteFromEntry \u003d new ButtonType(Localization.lang(\"Delete from disk\"));"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "                removeFromEntry, deleteFromEntry, ButtonType.CANCEL);"
+        "content": "        Optional\u003cButtonType\u003e buttonType \u003d dialogService.showCustomButtonDialogAndWait(AlertType.INFORMATION,"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                Localization.lang(\"Delete \u0027%0\u0027\", file.get().toString()),"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (buttonType.isPresent()) {"
+        "content": "                Localization.lang(\"Delete the selected file permanently from disk, or just remove the file from the entry? Pressing Delete will delete the file permanently from disk.\"),"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (buttonType.get().equals(removeFromEntry)) {"
+        "content": "                removeFromEntry, deleteFromEntry, ButtonType.CANCEL);"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "                return true;"
+        "content": ""
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        if (buttonType.isPresent()) {"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if (buttonType.get().equals(removeFromEntry)) {"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (buttonType.get().equals(deleteFromEntry)) {"
+        "content": "                return true;"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "                try {"
+        "content": "            }"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Files.delete(file.get());"
+        "content": ""
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return true;"
+        "content": "            if (buttonType.get().equals(deleteFromEntry)) {"
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "                } catch (IOException ex) {"
+        "content": "                try {"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": "                    dialogService.showErrorDialogAndWait(Localization.lang(\"Cannot delete file\"), Localization.lang(\"File permission error\"));"
+        "content": "                    Files.delete(file.get());"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "                    LOGGER.warn(\"File permission error while deleting: \" + linkedFile, ex);"
+        "content": "                    return true;"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                } catch (IOException ex) {"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    dialogService.showErrorDialogAndWait(Localization.lang(\"Cannot delete file\"), Localization.lang(\"File permission error\"));"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                    LOGGER.warn(\"File permission error while deleting: \" + linkedFile, ex);"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "        return false;"
+        "content": "                }"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void edit() {"
+        "content": "        return false;"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "        LinkedFileEditDialogView dialog \u003d new LinkedFileEditDialogView(this.linkedFile);"
+        "content": "    }"
       },
       {
         "lineNumber": 358,
@@ -5387,518 +5387,518 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cLinkedFile\u003e editedFile \u003d dialog.showAndWait();"
+        "content": "    public void edit() {"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "        editedFile.ifPresent(file -\u003e {"
+        "content": "        LinkedFileEditDialogView dialog \u003d new LinkedFileEditDialogView(this.linkedFile);"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.linkedFile.setLink(file.getLink());"
+        "content": ""
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.linkedFile.setDescription(file.getDescription());"
+        "content": "        Optional\u003cLinkedFile\u003e editedFile \u003d dialog.showAndWait();"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "            this.linkedFile.setFileType(file.getFileType());"
+        "content": "        editedFile.ifPresent(file -\u003e {"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "            this.linkedFile.setLink(file.getLink());"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            this.linkedFile.setDescription(file.getDescription());"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            this.linkedFile.setFileType(file.getFileType());"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void writeXMPMetadata() {"
+        "content": "        });"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Localization.lang(\"Writing XMP-metadata...\")"
+        "content": "    }"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "        BackgroundTask\u003cVoid\u003e writeTask \u003d BackgroundTask.wrap(() -\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": "            Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
+        "content": "    public void writeXMPMetadata() {"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!file.isPresent()) {"
+        "content": "        // Localization.lang(\"Writing XMP-metadata...\")"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": "                // TODO: Print error message"
+        "content": "        BackgroundTask\u003cVoid\u003e writeTask \u003d BackgroundTask.wrap(() -\u003e {"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": "                // Localization.lang(\"PDF does not exist\");"
+        "content": "            Optional\u003cPath\u003e file \u003d linkedFile.findIn(databaseContext, filePreferences);"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "            if (!file.isPresent()) {"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": "                try {"
+        "content": "                // TODO: Print error message"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": "                    XmpUtilWriter.writeXmp(file.get(), entry, databaseContext.getDatabase(), xmpPreferences);"
+        "content": "                // Localization.lang(\"PDF does not exist\");"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "                } catch (IOException | TransformerException ex) {"
+        "content": "            } else {"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // TODO: Print error message"
+        "content": "                try {"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // Localization.lang(\"Error while writing\") + \" \u0027\" + file.toString() + \"\u0027: \" + ex;"
+        "content": "                    XmpUtilWriter.writeXmp(file.get(), entry, databaseContext.getDatabase(), xmpPreferences);"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                } catch (IOException | TransformerException ex) {"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    // TODO: Print error message"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "            return null;"
+        "content": "                    // Localization.lang(\"Error while writing\") + \" \u0027\" + file.toString() + \"\u0027: \" + ex;"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "                }"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "        // Localization.lang(\"Finished writing XMP-metadata.\")"
+        "content": "            return null;"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        });"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": "        // TODO: Show progress"
+        "content": ""
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "        taskExecutor.execute(writeTask);"
+        "content": "        // Localization.lang(\"Finished writing XMP-metadata.\")"
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        // TODO: Show progress"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "    public void download() {"
+        "content": "        taskExecutor.execute(writeTask);"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!linkedFile.isOnlineLink()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": "            throw new UnsupportedOperationException(\"In order to download the file it has to be an online link\");"
+        "content": ""
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    public void download() {"
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "        try {"
+        "content": "        if (!linkedFile.isOnlineLink()) {"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": "            Optional\u003cPath\u003e targetDirectory \u003d databaseContext.getFirstExistingFileDir(filePreferences);"
+        "content": "            throw new UnsupportedOperationException(\"In order to download the file it has to be an online link\");"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!targetDirectory.isPresent()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "                dialogService.showErrorDialogAndWait(Localization.lang(\"Download file\"), Localization.lang(\"File directory is not set or does not exist!\"));"
+        "content": "        try {"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "                return;"
+        "content": "            Optional\u003cPath\u003e targetDirectory \u003d databaseContext.getFirstExistingFileDir(filePreferences);"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            if (!targetDirectory.isPresent()) {"
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                dialogService.showErrorDialogAndWait(Localization.lang(\"Download file\"), Localization.lang(\"File directory is not set or does not exist!\"));"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": "            URLDownload urlDownload \u003d new URLDownload(linkedFile.getLink());"
+        "content": "                return;"
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "            BackgroundTask\u003cPath\u003e downloadTask \u003d prepareDownloadTask(targetDirectory.get(), urlDownload);"
+        "content": "            }"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": "            downloadTask.onSuccess(destination -\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "                LinkedFile newLinkedFile \u003d LinkedFilesEditorViewModel.fromFile(destination, databaseContext.getFileDirectoriesAsPaths(filePreferences));"
+        "content": "            URLDownload urlDownload \u003d new URLDownload(linkedFile.getLink());"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": "                linkedFile.setLink(newLinkedFile.getLink());"
+        "content": "            BackgroundTask\u003cPath\u003e downloadTask \u003d prepareDownloadTask(targetDirectory.get(), urlDownload);"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "                linkedFile.setFileType(newLinkedFile.getFileType());"
+        "content": "            downloadTask.onSuccess(destination -\u003e {"
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "-"
         },
-        "content": "            });"
+        "content": "                LinkedFile newLinkedFile \u003d LinkedFilesEditorViewModel.fromFile(destination, databaseContext.getFileDirectoriesAsPaths(filePreferences), externalFileTypes);"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": "            downloadProgress.bind(downloadTask.workDonePercentageProperty());"
+        "content": "                linkedFile.setLink(newLinkedFile.getLink());"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "            taskExecutor.execute(downloadTask);"
+        "content": "                linkedFile.setFileType(newLinkedFile.getFileType());"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "        } catch (MalformedURLException exception) {"
+        "content": "            });"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Invalid URL\"), exception);"
+        "content": "            downloadProgress.bind(downloadTask.workDonePercentageProperty());"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            taskExecutor.execute(downloadTask);"
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        } catch (MalformedURLException exception) {"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            dialogService.showErrorDialogAndWait(Localization.lang(\"Invalid URL\"), exception);"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": "    public BackgroundTask\u003cPath\u003e prepareDownloadTask(Path targetDirectory, URLDownload urlDownload) {"
+        "content": "        }"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "        BackgroundTask\u003cPath\u003e downloadTask \u003d BackgroundTask"
+        "content": "    }"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
-        "content": "                .wrap(() -\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Optional\u003cExternalFileType\u003e suggestedType \u003d inferFileType(urlDownload);"
+        "content": "    public BackgroundTask\u003cPath\u003e prepareDownloadTask(Path targetDirectory, URLDownload urlDownload) {"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "                    String suggestedTypeName \u003d suggestedType.map(ExternalFileType::getName).orElse(\"\");"
+        "content": "        BackgroundTask\u003cPath\u003e downloadTask \u003d BackgroundTask"
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
-        "content": "                    linkedFile.setFileType(suggestedTypeName);"
+        "content": "                .wrap(() -\u003e {"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    Optional\u003cExternalFileType\u003e suggestedType \u003d inferFileType(urlDownload);"
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
-        "content": "                    String suggestedName \u003d linkedFileHandler.getSuggestedFileName();"
+        "content": "                    String suggestedTypeName \u003d suggestedType.map(ExternalFileType::getName).orElse(\"\");"
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return targetDirectory.resolve(suggestedName);"
+        "content": "                    linkedFile.setFileType(suggestedTypeName);"
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
-        "content": "                })"
+        "content": ""
       },
       {
         "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
-        "content": "                .then(destination -\u003e new FileDownloadTask(urlDownload.getSource(), destination))"
+        "content": "                    String suggestedName \u003d linkedFileHandler.getSuggestedFileName(suggestedTypeName);"
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": "                .onFailure(exception -\u003e dialogService.showErrorDialogAndWait(\"Download failed\", exception));"
+        "content": "                    return targetDirectory.resolve(suggestedName);"
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": "        return downloadTask;"
+        "content": "                })"
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "                .then(destination -\u003e new FileDownloadTask(urlDownload.getSource(), destination))"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                .onFailure(exception -\u003e dialogService.showErrorDialogAndWait(\"Download failed\", exception));"
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": "    private Optional\u003cExternalFileType\u003e inferFileType(URLDownload urlDownload) {"
+        "content": "        return downloadTask;"
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": "        Optional\u003cExternalFileType\u003e suggestedType \u003d inferFileTypeFromMimeType(urlDownload);"
+        "content": "    }"
       },
       {
         "lineNumber": 433,
@@ -5912,63 +5912,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        // If we did not find a file type from the MIME type, try based on extension:"
+        "content": "    private Optional\u003cExternalFileType\u003e inferFileType(URLDownload urlDownload) {"
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (!suggestedType.isPresent()) {"
+        "content": "        Optional\u003cExternalFileType\u003e suggestedType \u003d inferFileTypeFromMimeType(urlDownload);"
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
-        "content": "            suggestedType \u003d inferFileTypeFromURL(urlDownload.getSource().toExternalForm());"
+        "content": ""
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        // If we did not find a file type from the MIME type, try based on extension:"
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
-        "content": "        return suggestedType;"
+        "content": "        if (!suggestedType.isPresent()) {"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "            suggestedType \u003d inferFileTypeFromURL(urlDownload.getSource().toExternalForm());"
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
-        "content": "    private Optional\u003cExternalFileType\u003e inferFileTypeFromMimeType(URLDownload urlDownload) {"
+        "content": "        return suggestedType;"
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": "        String mimeType \u003d urlDownload.getMimeType();"
+        "content": "    }"
       },
       {
         "lineNumber": 443,
@@ -5982,115 +5982,136 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        if (mimeType !\u003d null) {"
+        "content": "    private Optional\u003cExternalFileType\u003e inferFileTypeFromMimeType(URLDownload urlDownload) {"
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
-        "content": "            LOGGER.debug(\"MIME Type suggested: \" + mimeType);"
+        "content": "        String mimeType \u003d urlDownload.getMimeType();"
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
-        "content": "            return ExternalFileTypes.getInstance().getExternalFileTypeByMimeType(mimeType);"
+        "content": ""
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "        if (mimeType !\u003d null) {"
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
-        "content": "            return Optional.empty();"
+        "content": "            LOGGER.debug(\"MIME Type suggested: \" + mimeType);"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return externalFileTypes.getExternalFileTypeByMimeType(mimeType);"
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            return Optional.empty();"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
-        "content": "    private Optional\u003cExternalFileType\u003e inferFileTypeFromURL(String url) {"
+        "content": "        }"
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
-        "content": "        return URLUtil.getSuffix(url)"
+        "content": "    }"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
-        "content": "                      .flatMap(extension -\u003e ExternalFileTypes.getInstance().getExternalFileTypeByExt(extension));"
+        "content": ""
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    private Optional\u003cExternalFileType\u003e inferFileTypeFromURL(String url) {"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return URLUtil.getSuffix(url)"
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "-"
         },
-        "content": "    public LinkedFile getFile() {"
+        "content": "                      .flatMap(extension -\u003e externalFileTypes.getExternalFileTypeByExt(extension));"
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": "        return linkedFile;"
+        "content": "    }"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 460,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public LinkedFile getFile() {"
+      },
+      {
+        "lineNumber": 461,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        return linkedFile;"
+      },
+      {
+        "lineNumber": 462,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
@@ -6099,7 +6120,7 @@
     ],
     "authorContributionMap": {
       "RonakLakhotia": 33,
-      "-": 427
+      "-": 430
     }
   },
   {
