@@ -9184,9 +9184,9 @@
       {
         "lineNumber": 154,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "        private System.Windows.Forms.Timer eyeDropperTimer \u003d new System.Windows.Forms.Timer(new System.ComponentModel.Container());"
+        "content": "        private System.Windows.Threading.DispatcherTimer eyeDropperTimer \u003d new System.Windows.Threading.DispatcherTimer();"
       },
       {
         "lineNumber": 155,
@@ -12719,9 +12719,9 @@
       {
         "lineNumber": 659,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "                if (timer1Ticks \u003e CLICK_THRESHOLD)"
+        "content": "                if (timer1Ticks \u003e\u003d CLICK_THRESHOLD)"
       },
       {
         "lineNumber": 660,
@@ -12782,9 +12782,9 @@
       {
         "lineNumber": 668,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "                if (timer1Ticks \u003e CLICK_THRESHOLD)"
+        "content": "                if (timer1Ticks \u003e\u003d CLICK_THRESHOLD)"
       },
       {
         "lineNumber": 669,
@@ -16827,9 +16827,9 @@
       }
     ],
     "authorContributionMap": {
-      "blewjy": 1165,
+      "blewjy": 1162,
       "YuPeiHenry": 58,
-      "-": 22
+      "-": 25
     }
   },
   {
@@ -18298,7 +18298,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        private System.Windows.Forms.Timer timer;"
+        "content": "        private System.Windows.Threading.DispatcherTimer timer;"
       },
       {
         "lineNumber": 21,
@@ -18403,14 +18403,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            timer \u003d new System.Windows.Forms.Timer();"
+        "content": "            timer \u003d new System.Windows.Threading.DispatcherTimer();"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "            timer.Interval \u003d 100;"
+        "content": "            timer.Interval \u003d new TimeSpan(0, 0, 0, 0, 100);"
       },
       {
         "lineNumber": 37,
