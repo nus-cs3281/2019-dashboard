@@ -868,2411 +868,2418 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            navigationItem.leftBarButtonItem?.accessibilityLabel \u003d VOLocalizedString(\"auth.close.label\")"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "        selectedServer \u003d DatabaseManager.selectedIndex"
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "        infoRequestHandler.delegate \u003d self"
+        "content": "        selectedServer \u003d DatabaseManager.selectedIndex"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "        textFieldServerURL.placeholder \u003d localized(\"connection.server_url.placeholder\")"
+        "content": "        infoRequestHandler.delegate \u003d self"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        textFieldServerURL.placeholder \u003d localized(\"connection.server_url.placeholder\")"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let nav \u003d navigationController as? AuthNavigationController {"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "            nav.setTransparentTheme()"
+        "content": "        if let nav \u003d navigationController as? AuthNavigationController {"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            nav.setTransparentTheme()"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "        let tapGesture \u003d UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "        view.addGestureRecognizer(tapGesture)"
+        "content": "        let tapGesture \u003d UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        view.addGestureRecognizer(tapGesture)"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "        SocketManager.sharedInstance.socket?.disconnect()"
+        "content": ""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "        DatabaseManager.cleanInvalidDatabases()"
+        "content": "        SocketManager.sharedInstance.socket?.disconnect()"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        DatabaseManager.cleanInvalidDatabases()"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "        if shouldAutoConnect {"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "            connect()"
+        "content": "        if shouldAutoConnect {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            connect()"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func viewDidAppear(_ animated: Bool) {"
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "        super.viewDidAppear(animated)"
+        "content": "    override func viewDidAppear(_ animated: Bool) {"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        super.viewDidAppear(animated)"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let applicationServerURL \u003d AppManager.applicationServerURL {"
+        "content": ""
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "            textFieldServerURL.isEnabled \u003d false"
+        "content": "        if let applicationServerURL \u003d AppManager.applicationServerURL {"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "            textFieldServerURL.text \u003d applicationServerURL.host"
+        "content": "            textFieldServerURL.isEnabled \u003d false"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "            connect()"
+        "content": "            textFieldServerURL.text \u003d applicationServerURL.host"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            connect()"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "        NotificationCenter.default.addObserver("
+        "content": ""
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "            self,"
+        "content": "        NotificationCenter.default.addObserver("
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "            selector: #selector(keyboardWillAppear(_:)),"
+        "content": "            self,"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "            name: UIResponder.keyboardWillShowNotification,"
+        "content": "            selector: #selector(keyboardWillAppear(_:)),"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "            object: nil"
+        "content": "            name: UIResponder.keyboardWillShowNotification,"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "        )"
+        "content": "            object: nil"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        )"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "        NotificationCenter.default.addObserver("
+        "content": ""
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "            self,"
+        "content": "        NotificationCenter.default.addObserver("
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "            selector: #selector(keyboardWillDisappear(_:)),"
+        "content": "            self,"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "            name: UIResponder.keyboardWillHideNotification,"
+        "content": "            selector: #selector(keyboardWillDisappear(_:)),"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "            object: nil"
+        "content": "            name: UIResponder.keyboardWillHideNotification,"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "        )"
+        "content": "            object: nil"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        )"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "    deinit {"
+        "content": ""
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "        NotificationCenter.default.removeObserver(self)"
+        "content": "    deinit {"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        NotificationCenter.default.removeObserver(self)"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Keyboard Handling"
+        "content": ""
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: Keyboard Handling"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "    @objc func keyboardWillAppear(_ notification: Notification) {"
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let keyboardSize \u003d ((notification as NSNotification).userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {"
+        "content": "    @objc func keyboardWillAppear(_ notification: Notification) {"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "            var viewRect \u003d view.frame"
+        "content": "        if let keyboardSize \u003d ((notification as NSNotification).userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "            viewRect.size.height -\u003d keyboardSize.height"
+        "content": "            var viewRect \u003d view.frame"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            viewRect.size.height -\u003d keyboardSize.height"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let buttonConnect \u003d buttonConnect {"
+        "content": ""
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": "                let buttonVisibleOrigin \u003d CGPoint("
+        "content": "            if let buttonConnect \u003d buttonConnect {"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "                    x: buttonConnect.frame.origin.x,"
+        "content": "                let buttonVisibleOrigin \u003d CGPoint("
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "                    y: buttonConnect.frame.origin.y + buttonConnect.frame.size.height + buttonConnectBottomSpacing"
+        "content": "                    x: buttonConnect.frame.origin.x,"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "                )"
+        "content": "                    y: buttonConnect.frame.origin.y + buttonConnect.frame.size.height + buttonConnectBottomSpacing"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                )"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "                if viewRect.contains(buttonVisibleOrigin) {"
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return"
+        "content": "                if viewRect.contains(buttonVisibleOrigin) {"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    return"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                }"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "            keyboardConstraint.isActive \u003d true"
+        "content": ""
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "            keyboardConstraint.constant \u003d -(keyboardSize.height + buttonConnectBottomSpacing)"
+        "content": "            keyboardConstraint.isActive \u003d true"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "            UIView.animate(withDuration: 0.5) {"
+        "content": "            keyboardConstraint.constant \u003d -(keyboardSize.height + buttonConnectBottomSpacing)"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.view.layoutIfNeeded()"
+        "content": "            UIView.animate(withDuration: 0.5) {"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                self.view.layoutIfNeeded()"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "    @objc func keyboardWillDisappear(_ notification: Notification) {"
+        "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "        keyboardConstraint.isActive \u003d false"
+        "content": "    @objc func keyboardWillDisappear(_ notification: Notification) {"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "        UIView.animate(withDuration: 0.5) {"
+        "content": "        keyboardConstraint.isActive \u003d false"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.view.layoutIfNeeded()"
+        "content": "        UIView.animate(withDuration: 0.5) {"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            self.view.layoutIfNeeded()"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "    @objc func hideKeyboard() {"
+        "content": ""
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "        view.endEditing(true)"
+        "content": "    @objc func hideKeyboard() {"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        view.endEditing(true)"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: Navigation"
+        "content": ""
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: Navigation"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {"
+        "content": ""
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let controller \u003d segue.destination as? LoginTableViewController {"
+        "content": "    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "            controller.shouldShowCreateAccount \u003d true"
+        "content": "        if let controller \u003d segue.destination as? LoginTableViewController {"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "            controller.serverVersion \u003d infoRequestHandler.version"
+        "content": "            controller.shouldShowCreateAccount \u003d true"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "            controller.serverURL \u003d infoRequestHandler.url"
+        "content": "            controller.serverVersion \u003d infoRequestHandler.version"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "            controller.serverPublicSettings \u003d serverPublicSettings"
+        "content": "            controller.serverURL \u003d infoRequestHandler.url"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            controller.serverPublicSettings \u003d serverPublicSettings"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let credentials \u003d deepLinkCredentials {"
+        "content": ""
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": "                _ \u003d controller.view"
+        "content": "            if let credentials \u003d deepLinkCredentials {"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "                controller.authenticateWithDeepLinkCredentials(credentials)"
+        "content": "                _ \u003d controller.view"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "                deepLinkCredentials \u003d nil"
+        "content": "                controller.authenticateWithDeepLinkCredentials(credentials)"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                deepLinkCredentials \u003d nil"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let controller \u003d segue.destination as? AuthTableViewController, segue.identifier \u003d\u003d \"Auth\" {"
+        "content": ""
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "            controller.serverVersion \u003d infoRequestHandler.version"
+        "content": "        if let controller \u003d segue.destination as? AuthTableViewController, segue.identifier \u003d\u003d \"Auth\" {"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "            controller.serverURL \u003d infoRequestHandler.url"
+        "content": "            controller.serverVersion \u003d infoRequestHandler.version"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "            controller.serverPublicSettings \u003d serverPublicSettings"
+        "content": "            controller.serverURL \u003d infoRequestHandler.url"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            controller.serverPublicSettings \u003d serverPublicSettings"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let credentials \u003d deepLinkCredentials {"
+        "content": ""
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "                _ \u003d controller.view"
+        "content": "            if let credentials \u003d deepLinkCredentials {"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "                controller.authenticateWithDeepLinkCredentials(credentials)"
+        "content": "                _ \u003d controller.view"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "                deepLinkCredentials \u003d nil"
+        "content": "                controller.authenticateWithDeepLinkCredentials(credentials)"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                deepLinkCredentials \u003d nil"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let loginServices \u003d sender as? [LoginService] {"
+        "content": ""
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": "                controller.loginServices \u003d loginServices"
+        "content": "            if let loginServices \u003d sender as? [LoginService] {"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else if let shouldRetrieveLoginServices \u003d sender as? Bool {"
+        "content": "                controller.loginServices \u003d loginServices"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "                controller.shouldRetrieveLoginServices \u003d shouldRetrieveLoginServices"
+        "content": "            } else if let shouldRetrieveLoginServices \u003d sender as? Bool {"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                controller.shouldRetrieveLoginServices \u003d shouldRetrieveLoginServices"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: IBAction"
+        "content": ""
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: IBAction"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "    @IBAction func buttonConnectDidPressed(_ sender: Any) {"
+        "content": ""
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "        connect()"
+        "content": "    @IBAction func buttonConnectDidPressed(_ sender: Any) {"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        connect()"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "    @objc func buttonCloseDidPressed(_ sender: Any) {"
+        "content": ""
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "        dismiss(animated: true, completion: nil)"
+        "content": "    @objc func buttonCloseDidPressed(_ sender: Any) {"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "        AppManager.changeSelectedServer(index: selectedServer)"
+        "content": "        dismiss(animated: true, completion: nil)"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        AppManager.changeSelectedServer(index: selectedServer)"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "    @IBAction func buttonCertificateDidPressed(_ sender: Any) {"
+        "content": ""
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let url \u003d certificateFileURL {"
+        "content": "    @IBAction func buttonCertificateDidPressed(_ sender: Any) {"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "            let alert \u003d UIAlertController(title: url.pathComponents.last ?? \"\", message: nil, preferredStyle: .actionSheet)"
+        "content": "        if let url \u003d certificateFileURL {"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            let alert \u003d UIAlertController(title: url.pathComponents.last ?? \"\", message: nil, preferredStyle: .actionSheet)"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let presenter \u003d alert.popoverPresentationController {"
+        "content": ""
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": "                presenter.sourceView \u003d buttonCertificate"
+        "content": "            if let presenter \u003d alert.popoverPresentationController {"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": "                presenter.sourceRect \u003d buttonCertificate.bounds"
+        "content": "                presenter.sourceView \u003d buttonCertificate"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                presenter.sourceRect \u003d buttonCertificate.bounds"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": "            let removeTitle \u003d localized(\"auth.connect.ssl.certificate.remove\")"
+        "content": ""
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "            alert.addAction(UIAlertAction(title: removeTitle, style: .destructive, handler: { _ in"
+        "content": "            let removeTitle \u003d localized(\"auth.connect.ssl.certificate.remove\")"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.certificateFileURL \u003d nil"
+        "content": "            alert.addAction(UIAlertAction(title: removeTitle, style: .destructive, handler: { _ in"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "            }))"
+        "content": "                self.certificateFileURL \u003d nil"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }))"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "            alert.addAction(UIAlertAction(title: localized(\"global.cancel\"), style: .cancel, handler: nil))"
+        "content": ""
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": "            present(alert, animated: true, completion: nil)"
+        "content": "            alert.addAction(UIAlertAction(title: localized(\"global.cancel\"), style: .cancel, handler: nil))"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            present(alert, animated: true, completion: nil)"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "            return"
+        "content": ""
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "        openCertificatesPicker()"
+        "content": ""
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        openCertificatesPicker()"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": "    func connect() {"
+        "content": ""
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard let url \u003d url else { return infoRequestHandler.alertInvalidURL() }"
+        "content": "    func connect() {"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        guard let url \u003d url else { return infoRequestHandler.alertInvalidURL() }"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": "        navigationItem.hidesBackButton \u003d true"
+        "content": ""
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "        connecting \u003d true"
+        "content": "        navigationItem.hidesBackButton \u003d true"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": "        textFieldServerURL.alpha \u003d 0.5"
+        "content": "        connecting \u003d true"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonConnect.startLoading()"
+        "content": "        textFieldServerURL.alpha \u003d 0.5"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": "        textFieldServerURL.resignFirstResponder()"
+        "content": "        buttonConnect.startLoading()"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        textFieldServerURL.resignFirstResponder()"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": "        if AppManager.changeToServerIfExists(serverUrl: url) {"
+        "content": ""
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": "            return"
+        "content": "        if AppManager.changeToServerIfExists(serverUrl: url) {"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "        infoRequestHandler.url \u003d url"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": "        infoRequestHandler.validate("
+        "content": "        infoRequestHandler.url \u003d url"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "            with: url,"
+        "content": "        infoRequestHandler.validate("
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "            sslCertificatePath: certificateFileURL,"
+        "content": "            with: url,"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "            sslCertificatePassword: certificateFilePassword ?? \"\""
+        "content": "            sslCertificatePath: certificateFileURL,"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "        )"
+        "content": "            sslCertificatePassword: certificateFilePassword ?? \"\""
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        )"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "    func connectWebSocket() {"
+        "content": ""
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard let serverURL \u003d infoRequestHandler.url else { return infoRequestHandler.alertInvalidURL() }"
+        "content": "    func connectWebSocket() {"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard let socketURL \u003d infoRequestHandler.url?.socketURL() else { return infoRequestHandler.alertInvalidURL() }"
+        "content": "        guard let serverURL \u003d infoRequestHandler.url else { return infoRequestHandler.alertInvalidURL() }"
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "        let serverVersion \u003d infoRequestHandler.version"
+        "content": "        guard let socketURL \u003d infoRequestHandler.url?.socketURL() else { return infoRequestHandler.alertInvalidURL() }"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        let serverVersion \u003d infoRequestHandler.version"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": "        var sslClientCertificate: SSLClientCertificate?"
+        "content": ""
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let certificateFileURL \u003d certificateFileURL {"
+        "content": "        var sslClientCertificate: SSLClientCertificate?"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "            sslClientCertificate \u003d try? SSLClientCertificate("
+        "content": "        if let certificateFileURL \u003d certificateFileURL {"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": "                pkcs12Url: certificateFileURL,"
+        "content": "            sslClientCertificate \u003d try? SSLClientCertificate("
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "-"
         },
-        "content": "                password: certificateFilePassword ?? \"\""
+        "content": "                pkcs12Url: certificateFileURL,"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "-"
         },
-        "content": "            )"
+        "content": "                password: certificateFilePassword ?? \"\""
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            )"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": "        SocketManager.connect(socketURL, sslCertificate: sslClientCertificate) { [weak self] (_, connected) in"
+        "content": ""
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "            if !connected {"
+        "content": "        SocketManager.connect(socketURL, sslCertificate: sslClientCertificate) { [weak self] (_, connected) in"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": "                self?.stopConnecting()"
+        "content": "            if !connected {"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "                self?.alert("
+        "content": "                self?.stopConnecting()"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": "                    title: localized(\"alert.connection.socket_error.title\"),"
+        "content": "                self?.alert("
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": "                    message: localized(\"alert.connection.socket_error.message\")"
+        "content": "                    title: localized(\"alert.connection.socket_error.title\"),"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": "                )"
+        "content": "                    message: localized(\"alert.connection.socket_error.message\")"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                )"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": "                return"
+        "content": ""
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                return"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": "            let index \u003d DatabaseManager.createNewDatabaseInstance(serverURL: serverURL.absoluteString)"
+        "content": ""
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "            DatabaseManager.changeDatabaseInstance(index: index)"
+        "content": "            let index \u003d DatabaseManager.createNewDatabaseInstance(serverURL: serverURL.absoluteString)"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            DatabaseManager.changeDatabaseInstance(index: index)"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let certificateFileURL \u003d self?.certificateFileURL {"
+        "content": ""
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": "                if let newFileURL \u003d SecurityManager.save(certificate: certificateFileURL, for: String.random()) {"
+        "content": "            if let certificateFileURL \u003d self?.certificateFileURL {"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": "                    DatabaseManager.updateSSLClientInformation("
+        "content": "                if let newFileURL \u003d SecurityManager.save(certificate: certificateFileURL, for: String.random()) {"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": "                        for: index,"
+        "content": "                    DatabaseManager.updateSSLClientInformation("
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": "                        path: newFileURL,"
+        "content": "                        for: index,"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": "                        password: self?.certificateFilePassword ?? \"\""
+        "content": "                        path: newFileURL,"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": "                    )"
+        "content": "                        password: self?.certificateFilePassword ?? \"\""
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    )"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                }"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "            AuthSettingsManager.updatePublicSettings("
+        "content": ""
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": "                serverVersion: serverVersion,"
+        "content": "            AuthSettingsManager.updatePublicSettings("
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "                apiHost: serverURL,"
+        "content": "                serverVersion: serverVersion,"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "                apiSSLCertificatePath: self?.certificateFileURL,"
+        "content": "                apiHost: serverURL,"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "                apiSSLCertificatePassword: self?.certificateFilePassword ?? \"\","
+        "content": "                apiSSLCertificatePath: self?.certificateFileURL,"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": "                nil"
+        "content": "                apiSSLCertificatePassword: self?.certificateFilePassword ?? \"\","
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "            ) { (settings) in"
+        "content": "                nil"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": "                self?.serverPublicSettings \u003d settings"
+        "content": "            ) { (settings) in"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                self?.serverPublicSettings \u003d settings"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": "                if connected {"
+        "content": ""
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": "                    let api \u003d API(host: serverURL, version: serverVersion ?? .zero)"
+        "content": "                if connected {"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    let api \u003d API(host: serverURL, version: serverVersion ?? .zero)"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "                    if let sslCertificatePath \u003d self?.certificateFileURL {"
+        "content": ""
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "                        api.sslCertificatePath \u003d sslCertificatePath"
+        "content": "                    if let sslCertificatePath \u003d self?.certificateFileURL {"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "                        api.sslCertificatePassword \u003d self?.certificateFilePassword ?? \"\""
+        "content": "                        api.sslCertificatePath \u003d sslCertificatePath"
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": "                    }"
+        "content": "                        api.sslCertificatePassword \u003d self?.certificateFilePassword ?? \"\""
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    }"
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": "                    api.client(InfoClient.self).fetchLoginServices(completion: { loginServices, shouldRetrieveLoginServices in"
+        "content": ""
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": "                        self?.stopConnecting()"
+        "content": "                    api.client(InfoClient.self).fetchLoginServices(completion: { loginServices, shouldRetrieveLoginServices in"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                        self?.stopConnecting()"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": "                        if shouldRetrieveLoginServices {"
+        "content": ""
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": "                            self?.performSegue(withIdentifier: \"Auth\", sender: shouldRetrieveLoginServices)"
+        "content": "                        if shouldRetrieveLoginServices {"
       },
       {
         "lineNumber": 359,
         "author": {
           "gitId": "-"
         },
-        "content": "                        } else {"
+        "content": "                            self?.performSegue(withIdentifier: \"Auth\", sender: shouldRetrieveLoginServices)"
       },
       {
         "lineNumber": 360,
         "author": {
           "gitId": "-"
         },
-        "content": "                            if loginServices.count \u003e 0 {"
+        "content": "                        } else {"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "                                self?.performSegue(withIdentifier: \"Auth\", sender: loginServices)"
+        "content": "                            if loginServices.count \u003e 0 {"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "                            } else {"
+        "content": "                                self?.performSegue(withIdentifier: \"Auth\", sender: loginServices)"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": "                                self?.performSegue(withIdentifier: \"Login\", sender: loginServices)"
+        "content": "                            } else {"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": "                            }"
+        "content": "                                self?.performSegue(withIdentifier: \"Login\", sender: loginServices)"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "                        }"
+        "content": "                            }"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "                    })"
+        "content": "                        }"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                    })"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                }"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": "    func stopConnecting() {"
+        "content": ""
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": "        navigationItem.hidesBackButton \u003d false"
+        "content": "    func stopConnecting() {"
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": "        connecting \u003d false"
+        "content": "        navigationItem.hidesBackButton \u003d false"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": "        textFieldServerURL.alpha \u003d 1"
+        "content": "        connecting \u003d false"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": "        buttonConnect.stopLoading()"
+        "content": "        textFieldServerURL.alpha \u003d 1"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        buttonConnect.stopLoading()"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    }"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": "extension ConnectServerViewController: UITextFieldDelegate {"
+        "content": ""
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "extension ConnectServerViewController: UITextFieldDelegate {"
       },
       {
         "lineNumber": 382,
         "author": {
-          "gitId": "blewjy"
+          "gitId": "-"
         },
-        "content": "    @objc func textFieldDidChange() {"
+        "content": ""
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "blewjy"
         },
-        "content": "        if !connecting {"
+        "content": "    @objc func textFieldDidChange() {"
       },
       {
         "lineNumber": 384,
         "author": {
-          "gitId": "-"
+          "gitId": "blewjy"
         },
-        "content": "            buttonConnect.isEnabled \u003d !(textFieldServerURL.text?.isEmpty ?? true)"
+        "content": "        if !connecting {"
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            buttonConnect.isEnabled \u003d !(textFieldServerURL.text?.isEmpty ?? true)"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": "    func textFieldShouldClear(_ textField: UITextField) -\u003e Bool {"
+        "content": ""
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": "        textFieldServerURL.text \u003d \"\""
+        "content": "    func textFieldShouldClear(_ textField: UITextField) -\u003e Bool {"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": "        textFieldDidChange()"
+        "content": "        textFieldServerURL.text \u003d \"\""
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": "        return true"
+        "content": "        textFieldDidChange()"
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return true"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": "    func textFieldShouldReturn(_ textField: UITextField) -\u003e Bool {"
+        "content": ""
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": "        if buttonConnect.isLoading {"
+        "content": "    func textFieldShouldReturn(_ textField: UITextField) -\u003e Bool {"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": "            return false"
+        "content": "        if buttonConnect.isLoading {"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            return false"
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "        connect()"
+        "content": ""
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": "        return true"
+        "content": "        connect()"
       },
       {
         "lineNumber": 401,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        return true"
       },
       {
         "lineNumber": 402,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": "extension ConnectServerViewController: InfoRequestHandlerDelegate {"
+        "content": ""
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "extension ConnectServerViewController: InfoRequestHandlerDelegate {"
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "    var viewControllerToPresentAlerts: UIViewController? { return self }"
+        "content": ""
       },
       {
         "lineNumber": 408,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    var viewControllerToPresentAlerts: UIViewController? { return self }"
       },
       {
         "lineNumber": 409,
         "author": {
           "gitId": "-"
         },
-        "content": "    func urlNotValid() {"
+        "content": ""
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "        self.stopConnecting()"
+        "content": "    func urlNotValid() {"
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        self.stopConnecting()"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "    func serverIsValid() {"
+        "content": ""
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": "        self.connectWebSocket()"
+        "content": "    func serverIsValid() {"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        self.connectWebSocket()"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "    func serverChangedURL(_ newURL: String?) {"
+        "content": ""
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let url \u003d newURL {"
+        "content": "    func serverChangedURL(_ newURL: String?) {"
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.textFieldServerURL.text \u003d url"
+        "content": "        if let url \u003d newURL {"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.connect()"
+        "content": "            self.textFieldServerURL.text \u003d url"
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "            self.connect()"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
-        "content": "            self.stopConnecting()"
+        "content": "        } else {"
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            self.stopConnecting()"
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": "// MARK: Disable Theming"
+        "content": ""
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// MARK: Disable Theming"
       },
       {
         "lineNumber": 430,
         "author": {
           "gitId": "-"
         },
-        "content": "extension ConnectServerViewController {"
+        "content": ""
       },
       {
         "lineNumber": 431,
         "author": {
           "gitId": "-"
         },
-        "content": "    override func applyTheme() { }"
+        "content": "extension ConnectServerViewController {"
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    override func applyTheme() { }"
       },
       {
         "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
-        "content": "extension ConnectServerViewController: UIDocumentPickerDelegate {"
+        "content": ""
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "extension ConnectServerViewController: UIDocumentPickerDelegate {"
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
-        "content": "    func openCertificatesPicker() {"
+        "content": ""
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
-        "content": "        let controller \u003d UIDocumentPickerViewController(documentTypes: [\"public.item\"], in: .import)"
+        "content": "    func openCertificatesPicker() {"
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
-        "content": "        controller.delegate \u003d self"
+        "content": "        let controller \u003d UIDocumentPickerViewController(documentTypes: [\"public.item\"], in: .import)"
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
-        "content": "        controller.modalPresentationStyle \u003d .pageSheet"
+        "content": "        controller.delegate \u003d self"
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
-        "content": "        controller.allowsMultipleSelection \u003d false"
+        "content": "        controller.modalPresentationStyle \u003d .pageSheet"
       },
       {
         "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
-        "content": "        self.present(controller, animated: true, completion: nil)"
+        "content": "        controller.allowsMultipleSelection \u003d false"
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        self.present(controller, animated: true, completion: nil)"
       },
       {
         "lineNumber": 443,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
-        "content": "    // MARK: UIDocumentPickerDelegate"
+        "content": ""
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // MARK: UIDocumentPickerDelegate"
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
-        "content": "    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {"
+        "content": ""
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
-        "content": "        certificateFileURL \u003d url"
+        "content": "    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {"
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        certificateFileURL \u003d url"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
-        "content": "        let alert \u003d UIAlertController("
+        "content": ""
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
-        "content": "            title: localized(\"auth.connect.ssl.certificate.password.title\"),"
+        "content": "        let alert \u003d UIAlertController("
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
-        "content": "            message: localized(\"auth.connect.ssl.certificate.password.message\"),"
+        "content": "            title: localized(\"auth.connect.ssl.certificate.password.title\"),"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
-        "content": "            preferredStyle: .alert"
+        "content": "            message: localized(\"auth.connect.ssl.certificate.password.message\"),"
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
-        "content": "        )"
+        "content": "            preferredStyle: .alert"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        )"
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "-"
         },
-        "content": "        alert.addTextField { textField in"
+        "content": ""
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "-"
         },
-        "content": "            textField.isSecureTextEntry \u003d true"
+        "content": "        alert.addTextField { textField in"
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            textField.isSecureTextEntry \u003d true"
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": "        alert.addAction(UIAlertAction(title: localized(\"global.ok\"), style: .default, handler: { _ in"
+        "content": ""
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let textField \u003d alert.textFields?.first, let text \u003d textField.text {"
+        "content": "        alert.addAction(UIAlertAction(title: localized(\"global.ok\"), style: .default, handler: { _ in"
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "-"
         },
-        "content": "                self.certificateFilePassword \u003d text"
+        "content": "            if let textField \u003d alert.textFields?.first, let text \u003d textField.text {"
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                self.certificateFilePassword \u003d text"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": "        }))"
+        "content": "            }"
       },
       {
         "lineNumber": 464,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }))"
       },
       {
         "lineNumber": 465,
         "author": {
           "gitId": "-"
         },
-        "content": "        present(alert, animated: true, completion: nil)"
+        "content": ""
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        present(alert, animated: true, completion: nil)"
       },
       {
         "lineNumber": 467,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 468,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
@@ -3281,7 +3288,7 @@
     ],
     "authorContributionMap": {
       "blewjy": 7,
-      "-": 461
+      "-": 462
     }
   },
   {
