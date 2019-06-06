@@ -5484,847 +5484,847 @@
         "author": {
           "gitId": "-"
         },
-        "content": "const SELECT_TEXT_TIMEOUT \u003d 100; // ms"
+        "content": "const QR_CODE_REFRESH_TIMEOUT \u003d 200; // ms"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": "const QR_CODE_REFRESH_TIMEOUT \u003d 200; // ms"
+        "content": "const QR_CODE_CONTAINER_MARGIN \u003d 40; // px"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "const QR_CODE_CONTAINER_MARGIN \u003d 40; // px"
+        "content": "const QR_CODE_SIZE_SNAP \u003d 5; // px"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "const QR_CODE_SIZE_SNAP \u003d 5; // px"
+        "content": "const QR_CODE_SIZE_DECREASE_SNAP \u003d 2; // px"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "const QR_CODE_SIZE_DECREASE_SNAP \u003d 2; // px"
+        "content": "const WINDOW_MINIMUM_HEIGHT \u003d 250; // px"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "const WINDOW_MINIMUM_HEIGHT \u003d 250; // px"
+        "content": "const THROTTLE_SIZE_SAVING_FOR_REMEMBER \u003d 500; // ms"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "const THROTTLE_SIZE_SAVING_FOR_REMEMBER \u003d 500; // ms"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "const CONTEXT_MENU_SAVE_IMAGE \u003d \"save-image\";"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "const CONTEXT_MENU_SAVE_IMAGE \u003d \"save-image\";"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "const qrCode \u003d document.getElementById(\"qrcode\");"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "const qrCode \u003d document.getElementById(\"qrcode\");"
+        "content": "const qrCodePlaceholder \u003d document.getElementById(\"qrcode-placeholder\");"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "const qrCodePlaceholder \u003d document.getElementById(\"qrcode-placeholder\");"
+        "content": "const qrCodeContainer \u003d document.getElementById(\"qrcode-container\");"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "const qrCodeContainer \u003d document.getElementById(\"qrcode-container\");"
+        "content": "const qrCodeResizeContainer \u003d document.getElementById(\"qrcode-resize-container\");"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "const qrCodeResizeContainer \u003d document.getElementById(\"qrcode-resize-container\");"
+        "content": "const qrCodeText \u003d document.getElementById(\"qrcodetext\");"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "const qrCodeText \u003d document.getElementById(\"qrcodetext\");"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "let resizeMutationObserver;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "let resizeMutationObserver;"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "let placeholderShown \u003d true;"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "let placeholderShown \u003d true;"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "// default/last size"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "// default/last size"
+        "content": "let qrLastSize \u003d 200;"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "let qrLastSize \u003d 200;"
+        "content": "let qrCodeSizeOption \u003d {};"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "let qrCodeSizeOption \u003d {};"
+        "content": "let savingQrCodeSize \u003d null; // promise"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "let savingQrCodeSize \u003d null; // promise"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Hide QR code and show placeholder instead."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": " * Hide QR code and show placeholder instead."
+        "content": " *"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @function"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " * @private"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": " */"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "function showPlaceholder() {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "function showPlaceholder() {"
+        "content": "    if (placeholderShown \u003d\u003d\u003d true) {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (placeholderShown \u003d\u003d\u003d true) {"
+        "content": "        // nothing to do"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "        // nothing to do"
+        "content": "        return;"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "    }"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    qrCode.classList.add(\"invisible\");"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCode.classList.add(\"invisible\");"
+        "content": "    qrCodePlaceholder.classList.remove(\"invisible\");"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodePlaceholder.classList.remove(\"invisible\");"
+        "content": "    // break normally again, as \"normal\" text is shown"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "    // break normally again, as \"normal\" text is shown"
+        "content": "    qrCodeText.style.wordBreak \u003d \"unset\";"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeText.style.wordBreak \u003d \"unset\";"
+        "content": "    placeholderShown \u003d true;"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "    placeholderShown \u003d true;"
+        "content": "}"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Show QR code and hide placeholder."
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": " * Show QR code and hide placeholder."
+        "content": " *"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @function"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " * @private"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": " */"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "function hidePlaceholder() {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "function hidePlaceholder() {"
+        "content": "    if (placeholderShown \u003d\u003d\u003d false) {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (placeholderShown \u003d\u003d\u003d false) {"
+        "content": "        // nothing to do"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "        // nothing to do"
+        "content": "        return;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "    }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    qrCode.classList.remove(\"invisible\");"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCode.classList.remove(\"invisible\");"
+        "content": "    qrCodePlaceholder.classList.add(\"invisible\");"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodePlaceholder.classList.add(\"invisible\");"
+        "content": "    qrCodeText.style.wordBreak \u003d \"\";"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeText.style.wordBreak \u003d \"\";"
+        "content": "    placeholderShown \u003d false;"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "    placeholderShown \u003d false;"
+        "content": "}"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Refreshes the QR code, if the text has been changed in the input field."
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": " * Refreshes the QR code, if the text has been changed in the input field."
+        "content": " *"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @function"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " * @name saveConfig"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": " * @name saveConfig"
+        "content": " * @private"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": " */"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "const refreshQrCode \u003d throttle(() \u003d\u003e {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "const refreshQrCode \u003d throttle(() \u003d\u003e {"
+        "content": "    const text \u003d qrCodeText.value;"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "    const text \u003d qrCodeText.value;"
+        "content": "    console.info(\"new value from textarea: \", text);"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.info(\"new value from textarea: \", text);"
+        "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // show placeholder when no text is entered"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "    // show placeholder when no text is entered"
+        "content": "    if (text \u003d\u003d\u003d \"\") {"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (text \u003d\u003d\u003d \"\") {"
+        "content": "        showPlaceholder();"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "        showPlaceholder();"
+        "content": "        return;"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "    } else if (placeholderShown) {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if (placeholderShown) {"
+        "content": "        hidePlaceholder();"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "        hidePlaceholder();"
+        "content": "        CommonMessages.hideError();"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "        CommonMessages.hideError();"
+        "content": "    }"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "-"
-        },
         "content": ""
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 111,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "    try {"
       },
       {
-        "lineNumber": 113,
+        "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
         "content": "        QrCreator.setTextInternal(text);"
       },
       {
-        "lineNumber": 114,
+        "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
         "content": "        QrCreator.generate();"
       },
       {
-        "lineNumber": 115,
+        "lineNumber": 114,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "    } catch (e) {"
       },
       {
-        "lineNumber": 116,
+        "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
         "content": "        handleQrError(e);"
       },
       {
-        "lineNumber": 117,
+        "lineNumber": 116,
         "author": {
           "gitId": "ongspxm"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
         "content": "}, QR_CODE_REFRESH_TIMEOUT);"
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
         "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "/**"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Returns whether an (inpout/textare/…) element is selected or not."
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": " * Returns whether an (inpout/textare/…) element is selected or not."
+        "content": " *"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @function"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " * @private"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": " * @param {HTMLElement} input the input element this is about"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {HTMLElement} input the input element this is about"
+        "content": " * @returns {bool}"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {bool}"
+        "content": " */"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "function isSelected(input) {"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "function isSelected(input) {"
+        "content": "    return input.selectionStart \u003d\u003d\u003d 0 \u0026\u0026 input.selectionEnd \u003d\u003d\u003d input.value.length;"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "    return input.selectionStart \u003d\u003d\u003d 0 \u0026\u0026 input.selectionEnd \u003d\u003d\u003d input.value.length;"
+        "content": "}"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Selects all text of a textarea."
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": " * Selects all text of a textarea."
+        "content": " *"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @function"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " * @private"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": " * @param {Event} event"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {Event} event"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": " */"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "function selectAllText(event) {"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "function selectAllText(event) {"
+        "content": "    const targetIsSelected \u003d document.activeElement \u003d\u003d\u003d event.target \u0026\u0026 isSelected(event.target);"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "    const targetIsSelected \u003d document.activeElement \u003d\u003d\u003d event.target \u0026\u0026 isSelected(event.target);"
+        "content": ""
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "    // prevent endless loop after two rechecks (i.e. re-check only three times)"
+        "content": "    console.info(\"selectAllText\", event);"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (targetIsSelected || event.retry \u003e 3) {"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "    // re-selecting when already selected, causes flashing, so we avoid that"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    if (!targetIsSelected) {"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        event.target.focus();"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.info(\"selectAllText\", event);"
+        "content": "        event.target.select();"
       },
       {
         "lineNumber": 148,
@@ -6338,42 +6338,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    event.retry \u003d event.retry + 1 || 0;"
+        "content": "        // but set scroll position to top one, because you want to see the"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        // top of the URL ;)"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "    // re-selecting when already selected, causes flashing, so we avoid that"
+        "content": "        // (selecting makes the scroll position go to the bottom)"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (!targetIsSelected) {"
+        "content": "        setTimeout(scrollToTop, TOP_SCROLL_TIMEOUT, event);"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "        event.target.focus();"
+        "content": "    }"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "        event.target.select();"
+        "content": "}"
       },
       {
         "lineNumber": 155,
@@ -6387,70 +6387,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        // but set scroll position to top one, because you want to see the"
+        "content": "/**"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "        // top of the URL ;)"
+        "content": " * Scrolls to the top of the element."
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "        // (selecting makes the scroll position go to the bottom)"
+        "content": " *"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "        setTimeout(scrollToTop, TOP_SCROLL_TIMEOUT, event);"
+        "content": " * @function"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": " * @private"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @param {Event} event"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "    // recheck selection as a workaround for \u003cFF 60 that it really selected"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "    // it -\u003e recursive retry"
+        "content": " */"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "    setTimeout(selectAllText, SELECT_TEXT_TIMEOUT, event);"
+        "content": "function scrollToTop(event) {"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    console.info(\"scrollToTop\", event);"
       },
       {
         "lineNumber": 166,
@@ -6464,287 +6464,287 @@
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "    if (event.target.scrollTop !\u003d\u003d 0) {"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": " * Scrolls to the top of the element."
+        "content": "        event.target.scrollTop \u003d 0;"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "    }"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": "    // only retry once, if needed"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {Event} event"
+        "content": "    if (event.setScrolled) {"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": "        return;"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "    }"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": "function scrollToTop(event) {"
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.info(\"scrollToTop\", event);"
+        "content": "    event.setScrolled \u003d true;"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (event.target.scrollTop !\u003d\u003d 0) {"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "        event.target.scrollTop \u003d 0;"
+        "content": "/**"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": " * Saves the QR code size option (to remember the size)."
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " *"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "    // only retry once, if needed"
+        "content": " * @function"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (event.setScrolled) {"
+        "content": " * @private"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": " * @returns {Promise}"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": " */"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "async function saveQrCodeSizeOption() {"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "    // Attention: make sure this does not collide with the retry-property set"
+        "content": "    // never start saving an option, when the old one is stll being saved"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "    // in selectAllText()!"
+        "content": "    await savingQrCodeSize;"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "    event.setScrolled \u003d true;"
+        "content": ""
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    console.info(\"saved qr code text size/style\", qrCodeSizeOption);"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "    // recheck selection as a workaround for \u003cFF 60 that it really selected"
+        "content": ""
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "    // it -\u003e recursive retry"
+        "content": "    savingQrCodeSize \u003d browser.storage.sync.set({"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "    setTimeout(selectAllText, TOP_SCROLL_TIMEOUT, event);"
+        "content": "        \"qrCodeSize\": qrCodeSizeOption"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    });"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    return savingQrCodeSize;"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "}"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": " * Saves the QR code size option (to remember the size)."
+        "content": ""
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "/**"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " * Regularely calls saveQrCodeSizeOption to save the option, but not too often."
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": " *"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Promise}"
+        "content": " * This depends on the throttle function from lodash."
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " *"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "async function saveQrCodeSizeOption() {"
+        "content": " * @function"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "    // never start saving an option, when the old one is stll being saved"
+        "content": " * @name throttledSaveQrCodeSizeOption"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "    await savingQrCodeSize;"
+        "content": " * @private"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.info(\"saved qr code text size/style\", qrCodeSizeOption);"
+        "content": "const throttledSaveQrCodeSizeOption \u003d throttle(saveQrCodeSizeOption, THROTTLE_SIZE_SAVING_FOR_REMEMBER);"
       },
       {
         "lineNumber": 208,
@@ -6758,343 +6758,343 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    savingQrCodeSize \u003d browser.storage.sync.set({"
+        "content": "/**"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "        \"qrCodeSize\": qrCodeSizeOption"
+        "content": " * Sets the new size of the QR code."
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": " *"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "    return savingQrCodeSize;"
+        "content": " * @function"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": " * @private"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @param {int} newSize the new size in px"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * @param {bool} regenerateQr whether the QR code should be regenerated (default: false)"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": " * Regularely calls saveQrCodeSizeOption to save the option, but not too often."
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " */"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": " * This depends on the throttle function from lodash."
+        "content": "function setNewQrCodeSize(newSize, regenerateQr) {"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "    // apply new size"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": "    QrCreator.setSize(newSize);"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": " * @name throttledSaveQrCodeSizeOption"
+        "content": ""
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": "    if (qrCodeSizeOption.sizeType !\u003d\u003d \"auto\") {"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "        qrCodeResizeContainer.style.width \u003d `${newSize}px`;"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "const throttledSaveQrCodeSizeOption \u003d throttle(saveQrCodeSizeOption, THROTTLE_SIZE_SAVING_FOR_REMEMBER);"
+        "content": "        qrCodeResizeContainer.style.height \u003d `${newSize}px`;"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": " * Sets the new size of the QR code."
+        "content": "    if (regenerateQr) {"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "        QrCreator.generate();"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": "    }"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": ""
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {int} newSize the new size in px"
+        "content": "    qrLastSize \u003d newSize;"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {bool} regenerateQr whether the QR code should be regenerated (default: false)"
+        "content": ""
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": "    // also save new QR code size if needed"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "    if (qrCodeSizeOption.sizeType \u003d\u003d\u003d \"remember\") {"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": "function setNewQrCodeSize(newSize, regenerateQr) {"
+        "content": "        qrCodeSizeOption.size \u003d qrLastSize;"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "    // apply new size"
+        "content": ""
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "    QrCreator.setSize(newSize);"
+        "content": "        // only save QR code size with text size, together"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        throttledSaveQrCodeSizeOption();"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (qrCodeSizeOption.sizeType !\u003d\u003d \"auto\") {"
+        "content": "    }"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "        qrCodeResizeContainer.style.width \u003d `${newSize}px`;"
+        "content": "}"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "        qrCodeResizeContainer.style.height \u003d `${newSize}px`;"
+        "content": ""
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "/**"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * Saves the current size of the input field. (if setting is set to \"remember\")"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (regenerateQr) {"
+        "content": " *"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "-"
         },
-        "content": "        QrCreator.generate();"
+        "content": " * @function"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": " * @private"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @returns {Promise} to go on"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrLastSize \u003d newSize;"
+        "content": " */"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "function saveQrCodeTextSize() {"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": "    // also save new QR code size if needed"
+        "content": "    // if setting is disabled, ignore and always return a successful promise"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (qrCodeSizeOption.sizeType \u003d\u003d\u003d \"remember\") {"
+        "content": "    if (qrCodeSizeOption.sizeType !\u003d\u003d \"remember\") {"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "        qrCodeSizeOption.size \u003d qrLastSize;"
+        "content": "        return Promise.resolve();"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": "        // only save QR code size with text size, together"
+        "content": ""
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "        throttledSaveQrCodeSizeOption();"
+        "content": "    if (!isObject(qrCodeSizeOption.sizeText)) {"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        qrCodeSizeOption.sizeText \u003d {};"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    }"
       },
       {
         "lineNumber": 258,
@@ -7108,350 +7108,350 @@
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "    // ATTENTION: sizeText styles are saved as CSS string"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "-"
         },
-        "content": " * Saves the current size of the input field. (if setting is set to \"remember\")"
+        "content": "    qrCodeSizeOption.sizeText.height \u003d qrCodeText.style.height;"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "    qrCodeSizeOption.sizeText.width \u003d qrCodeText.style.width;"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": ""
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": "    return throttledSaveQrCodeSizeOption();"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Promise} to go on"
+        "content": "}"
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "-"
         },
-        "content": "function saveQrCodeTextSize() {"
+        "content": "/**"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "-"
         },
-        "content": "    // if setting is disabled, ignore and always return a successful promise"
+        "content": " * Resize the UI elements when the popup (actually the textarea box), etc. is resized."
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (qrCodeSizeOption.sizeType !\u003d\u003d \"remember\") {"
+        "content": " *"
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "-"
         },
-        "content": "        return Promise.resolve();"
+        "content": " * @function"
       },
       {
         "lineNumber": 270,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": " * @private"
       },
       {
         "lineNumber": 271,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (!isObject(qrCodeSizeOption.sizeText)) {"
+        "content": " */"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "-"
         },
-        "content": "        qrCodeSizeOption.sizeText \u003d {};"
+        "content": "function resizeElements() {"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "    const newQrCodeSize \u003d Math.min(qrCodeContainer.offsetHeight, qrCodeContainer.offsetWidth) - QR_CODE_CONTAINER_MARGIN;"
       },
       {
         "lineNumber": 275,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const qrSizeDiff \u003d newQrCodeSize - qrLastSize;"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "-"
         },
-        "content": "    // ATTENTION: sizeText styles are saved as CSS string"
+        "content": ""
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeSizeOption.sizeText.height \u003d qrCodeText.style.height;"
+        "content": "    // rezizing at small window heights (e.g. when popup is being constructed)"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeSizeOption.sizeText.width \u003d qrCodeText.style.width;"
+        "content": "    // could cause it to be resized to 0px or so"
       },
       {
         "lineNumber": 279,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const windowHeight \u003d window.innerHeight;"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "-"
         },
-        "content": "    return throttledSaveQrCodeSizeOption();"
+        "content": "    if (windowHeight \u003c WINDOW_MINIMUM_HEIGHT) {"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "        console.info(\"Skipped resize due to low window height\", windowHeight);"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return;"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "    }"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "-"
         },
-        "content": " * Resize the UI elements when the popup (actually the textarea box), etc. is resized."
+        "content": ""
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "    // do not resize if size is not *increased* by 5 px or *decreased* by 2px"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": "    if (qrSizeDiff \u003c QR_CODE_SIZE_SNAP \u0026\u0026 qrSizeDiff \u003e -QR_CODE_SIZE_DECREASE_SNAP) {"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": "        // but allow resize of input text, if needed"
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": "        saveQrCodeTextSize();"
       },
       {
         "lineNumber": 289,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "-"
         },
-        "content": "function resizeElements() {"
+        "content": "        return;"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "-"
         },
-        "content": "    const newQrCodeSize \u003d Math.min(qrCodeContainer.offsetHeight, qrCodeContainer.offsetWidth) - QR_CODE_CONTAINER_MARGIN;"
+        "content": "    }"
       },
       {
         "lineNumber": 292,
         "author": {
           "gitId": "-"
         },
-        "content": "    const qrSizeDiff \u003d newQrCodeSize - qrLastSize;"
+        "content": ""
       },
       {
         "lineNumber": 293,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    console.info(\"resize QR code from \", qrLastSize, \" to \", newQrCodeSize);"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "-"
         },
-        "content": "    // rezizing at small window heights (e.g. when popup is being constructed)"
+        "content": ""
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "-"
         },
-        "content": "    // could cause it to be resized to 0px or so"
+        "content": "    // do not regenerate QR code if an error or so is shown"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "-"
         },
-        "content": "    const windowHeight \u003d window.innerHeight;"
+        "content": "    setNewQrCodeSize(newQrCodeSize, !placeholderShown);"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (windowHeight \u003c WINDOW_MINIMUM_HEIGHT) {"
+        "content": "}"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "-"
         },
-        "content": "        console.info(\"Skipped resize due to low window height\", windowHeight);"
+        "content": ""
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "/**"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": " * Executes resizeElements, but only when a frame is rendered."
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " *"
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "-"
         },
-        "content": "    // do not resize if size is not *increased* by 5 px or *decreased* by 2px"
+        "content": " * This depends on the thottle function from lodash that uses requestAnimationFrame."
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (qrSizeDiff \u003c QR_CODE_SIZE_SNAP \u0026\u0026 qrSizeDiff \u003e -QR_CODE_SIZE_DECREASE_SNAP) {"
+        "content": " *"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "-"
         },
-        "content": "        // but allow resize of input text, if needed"
+        "content": " * @function"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "-"
         },
-        "content": "        saveQrCodeTextSize();"
+        "content": " * @name throttledResizeElements"
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @private"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": " */"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "const throttledResizeElements \u003d throttle(resizeElements);"
       },
       {
         "lineNumber": 309,
@@ -7465,343 +7465,343 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    console.info(\"resize QR code from \", qrLastSize, \" to \", newQrCodeSize);"
+        "content": "/**"
       },
       {
         "lineNumber": 311,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * Shows the given text in the QR code\u0027s input field."
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "-"
         },
-        "content": "    // do not regenerate QR code if an error or so is shown"
+        "content": " *"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "-"
         },
-        "content": "    setNewQrCodeSize(newQrCodeSize, !placeholderShown);"
+        "content": " * Note that this also triggers the actions to show it nicely in the UI."
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": " *"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @function"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * @param  {string} text* *"
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "-"
         },
-        "content": " * Executes resizeElements, but only when a frame is rendered."
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " */"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "-"
         },
-        "content": " * This depends on the thottle function from lodash that uses requestAnimationFrame."
+        "content": "export function setQrInputFieldText(text) {"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "    qrCodeText.textContent \u003d text;"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": ""
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "-"
         },
-        "content": " * @name throttledResizeElements"
+        "content": "    // as text has been changed, we need to focus"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": "    qrCodeText.focus();"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "}"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "-"
         },
-        "content": "const throttledResizeElements \u003d throttle(resizeElements);"
+        "content": ""
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Get the acual QR code element."
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "-"
         },
-        "content": " * Shows the given text in the QR code\u0027s input field."
+        "content": " *"
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @function"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "-"
         },
-        "content": " * Note that this also triggers the actions to show it nicely in the UI."
+        "content": " * @returns {HTMLElement}"
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " */"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": "export function getQrCodeElement() {"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param  {string} text"
+        "content": "    return qrCode.firstElementChild;"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": "}"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "-"
         },
-        "content": "export function setQrInputFieldText(text) {"
+        "content": "/**"
       },
       {
         "lineNumber": 337,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeText.textContent \u003d text;"
+        "content": " * Replace the QR code element with this (new) one."
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " *"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "-"
         },
-        "content": "    // as text has been changed, we need to focus \u0026 (potentially) re-select the text"
+        "content": " * @function"
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeText.focus();"
+        "content": " * @param  {HTMLElement} elNewQr"
       },
       {
         "lineNumber": 341,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 342,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 343,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "export function replaceQr(elNewQr) {"
       },
       {
         "lineNumber": 344,
         "author": {
           "gitId": "-"
         },
-        "content": " * Get the acual QR code element."
+        "content": "    // get old element"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "    const elOldQrCode \u003d getQrCodeElement();"
       },
       {
         "lineNumber": 346,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": ""
       },
       {
         "lineNumber": 347,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {HTMLElement}"
+        "content": "    // and replace it"
       },
       {
         "lineNumber": 348,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "    console.info(\"replace qr code from\", elOldQrCode, \"to\", elNewQr);"
       },
       {
         "lineNumber": 349,
         "author": {
           "gitId": "-"
         },
-        "content": "export function getQrCodeElement() {"
+        "content": "    qrCode.replaceChild(elNewQr, elOldQrCode);"
       },
       {
         "lineNumber": 350,
         "author": {
           "gitId": "-"
         },
-        "content": "    return qrCode.firstElementChild;"
+        "content": "}"
       },
       {
         "lineNumber": 351,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": ""
       },
       {
         "lineNumber": 352,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 353,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * Shows an error message for a QR code error or similar."
       },
       {
         "lineNumber": 354,
         "author": {
           "gitId": "-"
         },
-        "content": " * Replace the QR code element with this (new) one."
+        "content": " *"
       },
       {
         "lineNumber": 355,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @function"
       },
       {
         "lineNumber": 356,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " * @param {Error} error"
       },
       {
         "lineNumber": 357,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param  {HTMLElement} elNewQr"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 358,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": " * @throws {Error} if error could not be handled"
       },
       {
         "lineNumber": 359,
@@ -7815,287 +7815,287 @@
         "author": {
           "gitId": "-"
         },
-        "content": "export function replaceQr(elNewQr) {"
+        "content": "export function handleQrError(error) {"
       },
       {
         "lineNumber": 361,
         "author": {
           "gitId": "-"
         },
-        "content": "    // get old element"
+        "content": "    // error thrown from qrcodegen \u0026 kjua wrapper when text input is too long"
       },
       {
         "lineNumber": 362,
         "author": {
           "gitId": "-"
         },
-        "content": "    const elOldQrCode \u003d getQrCodeElement();"
+        "content": "    if (error instanceof QrError.DataOverflowError) {"
       },
       {
         "lineNumber": 363,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        CommonMessages.showError(\"errorQrCodeOverflow\");"
       },
       {
         "lineNumber": 364,
         "author": {
           "gitId": "-"
         },
-        "content": "    // and replace it"
+        "content": "        console.error(\"Maximum size of QR code data exceeded.\");"
       },
       {
         "lineNumber": 365,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.info(\"replace qr code from\", elOldQrCode, \"to\", elNewQr);"
+        "content": "    } else {"
       },
       {
         "lineNumber": 366,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCode.replaceChild(elNewQr, elOldQrCode);"
+        "content": "        throw error;"
       },
       {
         "lineNumber": 367,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    }"
       },
       {
         "lineNumber": 368,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 369,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 370,
         "author": {
           "gitId": "-"
         },
-        "content": " * Shows an error message for a QR code error or similar."
+        "content": "/**"
       },
       {
         "lineNumber": 371,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * Triggers when a context menu item has been clicked."
       },
       {
         "lineNumber": 372,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " *"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {Error} error"
+        "content": " * It downloads the QR code image."
       },
       {
         "lineNumber": 374,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": " *"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "-"
         },
-        "content": " * @throws {Error} if error could not be handled"
+        "content": " * @function"
       },
       {
         "lineNumber": 376,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " * @private"
       },
       {
         "lineNumber": 377,
         "author": {
           "gitId": "-"
         },
-        "content": "export function handleQrError(error) {"
+        "content": " * @param {event} event"
       },
       {
         "lineNumber": 378,
         "author": {
           "gitId": "-"
         },
-        "content": "    // error thrown from qrcodegen \u0026 kjua wrapper when text input is too long"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 379,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (error instanceof QrError.DataOverflowError) {"
+        "content": " */"
       },
       {
         "lineNumber": 380,
         "author": {
           "gitId": "-"
         },
-        "content": "        CommonMessages.showError(\"errorQrCodeOverflow\");"
+        "content": "function menuClicked(event) {"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "-"
         },
-        "content": "        console.error(\"Maximum size of QR code data exceeded.\");"
+        "content": "    const DOWNLOAD_PERMISSIONS \u003d {"
       },
       {
         "lineNumber": 382,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else {"
+        "content": "        permissions: [\"downloads\"]"
       },
       {
         "lineNumber": 383,
         "author": {
           "gitId": "-"
         },
-        "content": "        throw error;"
+        "content": "    };"
       },
       {
         "lineNumber": 384,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 385,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    if (event.menuItemId !\u003d\u003d CONTEXT_MENU_SAVE_IMAGE) {"
       },
       {
         "lineNumber": 386,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        return;"
       },
       {
         "lineNumber": 387,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "    }"
       },
       {
         "lineNumber": 388,
         "author": {
           "gitId": "-"
         },
-        "content": " * Triggers when a context menu item has been clicked."
+        "content": ""
       },
       {
         "lineNumber": 389,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "    const downloadPermissionGranted \u003d browser.permissions.contains(DOWNLOAD_PERMISSIONS);"
       },
       {
         "lineNumber": 390,
         "author": {
           "gitId": "-"
         },
-        "content": " * It downloads the QR code image."
+        "content": "    const requestDownloadPermissions \u003d browser.permissions.request(DOWNLOAD_PERMISSIONS);"
       },
       {
         "lineNumber": 391,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": ""
       },
       {
         "lineNumber": 392,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": "    // do not trigger when placeholder is shown"
       },
       {
         "lineNumber": 393,
         "author": {
           "gitId": "-"
         },
-        "content": " * @private"
+        "content": "    if (placeholderShown \u003d\u003d\u003d true) {"
       },
       {
         "lineNumber": 394,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {event} event"
+        "content": "        CommonMessages.showError(\"Cannot save QR code if it is not displayed.\", true);"
       },
       {
         "lineNumber": 395,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": "        return;"
       },
       {
         "lineNumber": 396,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "    }"
       },
       {
         "lineNumber": 397,
         "author": {
           "gitId": "-"
         },
-        "content": "function menuClicked(event) {"
+        "content": ""
       },
       {
         "lineNumber": 398,
         "author": {
           "gitId": "-"
         },
-        "content": "    const DOWNLOAD_PERMISSIONS \u003d {"
+        "content": "    AddonSettings.get(\"qrBackgroundColor\").then((qrBackgroundColor) \u003d\u003e {"
       },
       {
         "lineNumber": 399,
         "author": {
           "gitId": "-"
         },
-        "content": "        permissions: [\"downloads\"]"
+        "content": "        // const svgString \u003d qrCodeLib.getSvgString();"
       },
       {
         "lineNumber": 400,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": "        const svgElem \u003d document.getElementsByTagName(\"svg\")[0].cloneNode(true);"
       },
       {
         "lineNumber": 401,
@@ -8109,42 +8109,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    if (event.menuItemId !\u003d\u003d CONTEXT_MENU_SAVE_IMAGE) {"
+        "content": "        // prettify SVG for saving"
       },
       {
         "lineNumber": 403,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "        svgElem.setAttribute(\"height\", qrLastSize);"
       },
       {
         "lineNumber": 404,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        svgElem.setAttribute(\"width\", qrLastSize);"
       },
       {
         "lineNumber": 405,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        svgElem.querySelector(\"rect\").setAttribute(\"fill\", qrBackgroundColor); // replace transparent background"
       },
       {
         "lineNumber": 406,
         "author": {
           "gitId": "-"
         },
-        "content": "    const downloadPermissionGranted \u003d browser.permissions.contains(DOWNLOAD_PERMISSIONS);"
+        "content": ""
       },
       {
         "lineNumber": 407,
         "author": {
           "gitId": "-"
         },
-        "content": "    const requestDownloadPermissions \u003d browser.permissions.request(DOWNLOAD_PERMISSIONS);"
+        "content": "        const svgString \u003d (new XMLSerializer()).serializeToString(svgElem);"
       },
       {
         "lineNumber": 408,
@@ -8158,147 +8158,147 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    // do not trigger when placeholder is shown"
+        "content": "        const file \u003d new File([svgString], \"qrcode.svg\", {type: \"image/svg+xml;charset\u003dutf-8\"});"
       },
       {
         "lineNumber": 410,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (placeholderShown \u003d\u003d\u003d true) {"
+        "content": ""
       },
       {
         "lineNumber": 411,
         "author": {
           "gitId": "-"
         },
-        "content": "        CommonMessages.showError(\"Cannot save QR code if it is not displayed.\", true);"
+        "content": "        downloadPermissionGranted.then((isAlreadyGranted) \u003d\u003e {"
       },
       {
         "lineNumber": 412,
         "author": {
           "gitId": "-"
         },
-        "content": "        return;"
+        "content": "            let usePermissionWorkaround \u003d false;"
       },
       {
         "lineNumber": 413,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 414,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // if permission is not yet required"
       },
       {
         "lineNumber": 415,
         "author": {
           "gitId": "-"
         },
-        "content": "    AddonSettings.get(\"qrBackgroundColor\").then((qrBackgroundColor) \u003d\u003e {"
+        "content": "            // workaround for https://bugzilla.mozilla.org/show_bug.cgi?id\u003d1292701"
       },
       {
         "lineNumber": 416,
         "author": {
           "gitId": "-"
         },
-        "content": "        // const svgString \u003d qrCodeLib.getSvgString();"
+        "content": "            if (!isAlreadyGranted) {"
       },
       {
         "lineNumber": 417,
         "author": {
           "gitId": "-"
         },
-        "content": "        const svgElem \u003d document.getElementsByTagName(\"svg\")[0].cloneNode(true);"
+        "content": "                usePermissionWorkaround \u003d true;"
       },
       {
         "lineNumber": 418,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                CommonMessages.showInfo(\"requestDownloadPermissionForQr\");"
       },
       {
         "lineNumber": 419,
         "author": {
           "gitId": "-"
         },
-        "content": "        // prettify SVG for saving"
+        "content": "            }"
       },
       {
         "lineNumber": 420,
         "author": {
           "gitId": "-"
         },
-        "content": "        svgElem.setAttribute(\"height\", qrLastSize);"
+        "content": ""
       },
       {
         "lineNumber": 421,
         "author": {
           "gitId": "-"
         },
-        "content": "        svgElem.setAttribute(\"width\", qrLastSize);"
+        "content": "            browser.runtime.sendMessage({"
       },
       {
         "lineNumber": 422,
         "author": {
           "gitId": "-"
         },
-        "content": "        svgElem.querySelector(\"rect\").setAttribute(\"fill\", qrBackgroundColor); // replace transparent background"
+        "content": "                type: COMMUNICATION_MESSAGE_TYPE.SAVE_FILE_AS,"
       },
       {
         "lineNumber": 423,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                usePermissionWorkaround: usePermissionWorkaround,"
       },
       {
         "lineNumber": 424,
         "author": {
           "gitId": "-"
         },
-        "content": "        const svgString \u003d (new XMLSerializer()).serializeToString(svgElem);"
+        "content": "                file: file,"
       },
       {
         "lineNumber": 425,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                filename: \"qrcode.svg\","
       },
       {
         "lineNumber": 426,
         "author": {
           "gitId": "-"
         },
-        "content": "        const file \u003d new File([svgString], \"qrcode.svg\", {type: \"image/svg+xml;charset\u003dutf-8\"});"
+        "content": "            }).then(() \u003d\u003e {"
       },
       {
         "lineNumber": 427,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                console.info(\"SVG image saved on disk\", svgElem, svgString);"
       },
       {
         "lineNumber": 428,
         "author": {
           "gitId": "-"
         },
-        "content": "        downloadPermissionGranted.then((isAlreadyGranted) \u003d\u003e {"
+        "content": "            }).catch((error) \u003d\u003e {"
       },
       {
         "lineNumber": 429,
         "author": {
           "gitId": "-"
         },
-        "content": "            let usePermissionWorkaround \u003d false;"
+        "content": "                console.error(\"Could not save SVG image saved on disk\", error, svgElem, svgString);"
       },
       {
         "lineNumber": 430,
@@ -8312,364 +8312,364 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            // if permission is not yet required"
+        "content": "                // in case of user error (i.e. user cancelled e.g.) do not show error message"
       },
       {
         "lineNumber": 432,
         "author": {
           "gitId": "-"
         },
-        "content": "            // workaround for https://bugzilla.mozilla.org/show_bug.cgi?id\u003d1292701"
+        "content": "                if (error.message.includes(\"user\")) {"
       },
       {
         "lineNumber": 433,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!isAlreadyGranted) {"
+        "content": "                    return;"
       },
       {
         "lineNumber": 434,
         "author": {
           "gitId": "-"
         },
-        "content": "                usePermissionWorkaround \u003d true;"
+        "content": "                }"
       },
       {
         "lineNumber": 435,
         "author": {
           "gitId": "-"
         },
-        "content": "                CommonMessages.showInfo(\"requestDownloadPermissionForQr\");"
+        "content": ""
       },
       {
         "lineNumber": 436,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                CommonMessages.showError(\"errorDownloadingFile\", error);"
       },
       {
         "lineNumber": 437,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            });"
       },
       {
         "lineNumber": 438,
         "author": {
           "gitId": "-"
         },
-        "content": "            browser.runtime.sendMessage({"
+        "content": ""
       },
       {
         "lineNumber": 439,
         "author": {
           "gitId": "-"
         },
-        "content": "                type: COMMUNICATION_MESSAGE_TYPE.SAVE_FILE_AS,"
+        "content": "            // show error when promise is rejected"
       },
       {
         "lineNumber": 440,
         "author": {
           "gitId": "-"
         },
-        "content": "                usePermissionWorkaround: usePermissionWorkaround,"
+        "content": "            requestDownloadPermissions.then((permissionGranted) \u003d\u003e {"
       },
       {
         "lineNumber": 441,
         "author": {
           "gitId": "-"
         },
-        "content": "                file: file,"
+        "content": "                if (usePermissionWorkaround) {"
       },
       {
         "lineNumber": 442,
         "author": {
           "gitId": "-"
         },
-        "content": "                filename: \"qrcode.svg\","
+        "content": "                    // if permission result is there, hide info message"
       },
       {
         "lineNumber": 443,
         "author": {
           "gitId": "-"
         },
-        "content": "            }).then(() \u003d\u003e {"
+        "content": "                    CommonMessages.hideInfo();"
       },
       {
         "lineNumber": 444,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.info(\"SVG image saved on disk\", svgElem, svgString);"
+        "content": "                }"
       },
       {
         "lineNumber": 445,
         "author": {
           "gitId": "-"
         },
-        "content": "            }).catch((error) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 446,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.error(\"Could not save SVG image saved on disk\", error, svgElem, svgString);"
+        "content": "                // in case of success there is nothing else to do"
       },
       {
         "lineNumber": 447,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (permissionGranted) {"
       },
       {
         "lineNumber": 448,
         "author": {
           "gitId": "-"
         },
-        "content": "                // in case of user error (i.e. user cancelled e.g.) do not show error message"
+        "content": "                    return;"
       },
       {
         "lineNumber": 449,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (error.message.includes(\"user\")) {"
+        "content": "                }"
       },
       {
         "lineNumber": 450,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": ""
       },
       {
         "lineNumber": 451,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                // and stop retrying to download in background script"
       },
       {
         "lineNumber": 452,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (usePermissionWorkaround) {"
       },
       {
         "lineNumber": 453,
         "author": {
           "gitId": "-"
         },
-        "content": "                CommonMessages.showError(\"errorDownloadingFile\", error);"
+        "content": "                    browser.runtime.sendMessage({"
       },
       {
         "lineNumber": 454,
         "author": {
           "gitId": "-"
         },
-        "content": "            });"
+        "content": "                        type: COMMUNICATION_MESSAGE_TYPE.SAVE_FILE_AS_STOP_RETRY"
       },
       {
         "lineNumber": 455,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                    });"
       },
       {
         "lineNumber": 456,
         "author": {
           "gitId": "-"
         },
-        "content": "            // show error when promise is rejected"
+        "content": "                }"
       },
       {
         "lineNumber": 457,
         "author": {
           "gitId": "-"
         },
-        "content": "            requestDownloadPermissions.then((permissionGranted) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 458,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (usePermissionWorkaround) {"
+        "content": "                // if permission is declined, make user aware that this permission was required"
       },
       {
         "lineNumber": 459,
         "author": {
           "gitId": "-"
         },
-        "content": "                    // if permission result is there, hide info message"
+        "content": "                console.error(\"Permission request for\", DOWNLOAD_PERMISSIONS, \"declined.\");"
       },
       {
         "lineNumber": 460,
         "author": {
           "gitId": "-"
         },
-        "content": "                    CommonMessages.hideInfo();"
+        "content": "                CommonMessages.showError(\"errorPermissionRequired\", true);"
       },
       {
         "lineNumber": 461,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            }).catch((error) \u003d\u003e {"
       },
       {
         "lineNumber": 462,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                console.error(\"Permission request for\", DOWNLOAD_PERMISSIONS, \"failed:\", error);"
       },
       {
         "lineNumber": 463,
         "author": {
           "gitId": "-"
         },
-        "content": "                // in case of success there is nothing else to do"
+        "content": "                CommonMessages.showError(\"errorPermissionRequestFailed\", true);"
       },
       {
         "lineNumber": 464,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (permissionGranted) {"
+        "content": "            });"
       },
       {
         "lineNumber": 465,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return;"
+        "content": "        });"
       },
       {
         "lineNumber": 466,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "    });"
       },
       {
         "lineNumber": 467,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 468,
         "author": {
           "gitId": "-"
         },
-        "content": "                // and stop retrying to download in background script"
+        "content": ""
       },
       {
         "lineNumber": 469,
         "author": {
           "gitId": "-"
         },
-        "content": "                if (usePermissionWorkaround) {"
+        "content": "/**"
       },
       {
         "lineNumber": 470,
         "author": {
           "gitId": "-"
         },
-        "content": "                    browser.runtime.sendMessage({"
+        "content": " * Do things after whole initialisation completed."
       },
       {
         "lineNumber": 471,
         "author": {
           "gitId": "-"
         },
-        "content": "                        type: COMMUNICATION_MESSAGE_TYPE.SAVE_FILE_AS_STOP_RETRY"
+        "content": " *"
       },
       {
         "lineNumber": 472,
         "author": {
           "gitId": "-"
         },
-        "content": "                    });"
+        "content": " * This will only run onceper page load."
       },
       {
         "lineNumber": 473,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": " *"
       },
       {
         "lineNumber": 474,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @function"
       },
       {
         "lineNumber": 475,
         "author": {
           "gitId": "-"
         },
-        "content": "                // if permission is declined, make user aware that this permission was required"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 476,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.error(\"Permission request for\", DOWNLOAD_PERMISSIONS, \"declined.\");"
+        "content": " */"
       },
       {
         "lineNumber": 477,
         "author": {
           "gitId": "-"
         },
-        "content": "                CommonMessages.showError(\"errorPermissionRequired\", true);"
+        "content": "export function lateInit() {"
       },
       {
         "lineNumber": 478,
         "author": {
           "gitId": "-"
         },
-        "content": "            }).catch((error) \u003d\u003e {"
+        "content": "    // start listening for resize events very late, so that it does not"
       },
       {
         "lineNumber": 479,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.error(\"Permission request for\", DOWNLOAD_PERMISSIONS, \"failed:\", error);"
+        "content": "    // conflict with restoring the popup size"
       },
       {
         "lineNumber": 480,
         "author": {
           "gitId": "-"
         },
-        "content": "                CommonMessages.showError(\"errorPermissionRequestFailed\", true);"
+        "content": "    resizeMutationObserver.observe(qrCodeText, {"
       },
       {
         "lineNumber": 481,
         "author": {
           "gitId": "-"
         },
-        "content": "            });"
+        "content": "        attributes: true,"
       },
       {
         "lineNumber": 482,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "        attributeFilter: [\"style\"]"
       },
       {
         "lineNumber": 483,
@@ -8704,308 +8704,308 @@
         "author": {
           "gitId": "-"
         },
-        "content": " * Initiates after the QR code has been generated."
+        "content": " * Initiates directly after the QR code has been generated, but only in the"
       },
       {
         "lineNumber": 488,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * initialisation phase."
       },
       {
         "lineNumber": 489,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": " *"
       },
       {
         "lineNumber": 490,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {void}"
+        "content": " * @function"
       },
       {
         "lineNumber": 491,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": " * @returns {void}"
       },
       {
         "lineNumber": 492,
         "author": {
           "gitId": "-"
         },
-        "content": "export function lateInit() {"
+        "content": " */"
       },
       {
         "lineNumber": 493,
         "author": {
           "gitId": "-"
         },
-        "content": "    // manually focus (and select) element when starting"
+        "content": "export function postInitGenerate() {"
       },
       {
         "lineNumber": 494,
         "author": {
           "gitId": "-"
         },
-        "content": "    // in brute-force-style as bugs seem to prevent it from working otherwise"
+        "content": "    selectAllText({ target: qrCodeText });"
       },
       {
         "lineNumber": 495,
         "author": {
           "gitId": "-"
         },
-        "content": "    // bug: https://bugzilla.mozilla.org/show_bug.cgi?id\u003d1324255, \u003c FF 60"
+        "content": "}"
       },
       {
         "lineNumber": 496,
         "author": {
           "gitId": "-"
         },
-        "content": "    setTimeout(selectAllText, 50, { target: qrCodeText });"
+        "content": ""
       },
       {
         "lineNumber": 497,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 498,
         "author": {
           "gitId": "-"
         },
-        "content": "    // start listening for resize events very late, so taht it does not"
+        "content": " * Initalises the module."
       },
       {
         "lineNumber": 499,
         "author": {
           "gitId": "-"
         },
-        "content": "    // conflict with restoring the popup size"
+        "content": " *"
       },
       {
         "lineNumber": 500,
         "author": {
           "gitId": "-"
         },
-        "content": "    resizeMutationObserver.observe(qrCodeText, {"
+        "content": " * @function"
       },
       {
         "lineNumber": 501,
         "author": {
           "gitId": "-"
         },
-        "content": "        attributes: true,"
+        "content": " * @returns {Promise}"
       },
       {
         "lineNumber": 502,
         "author": {
           "gitId": "-"
         },
-        "content": "        attributeFilter: [\"style\"]"
+        "content": " */"
       },
       {
         "lineNumber": 503,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "export function init() {"
       },
       {
         "lineNumber": 504,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    // set error hooks"
       },
       {
         "lineNumber": 505,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    CommonMessages.setLoadingHook(showPlaceholder, hidePlaceholder);"
       },
       {
         "lineNumber": 506,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "    CommonMessages.setErrorHook(() \u003d\u003e {"
       },
       {
         "lineNumber": 507,
         "author": {
           "gitId": "-"
         },
-        "content": " * Initalises the module."
+        "content": "        // hide loading first as this may hide the placeholder"
       },
       {
         "lineNumber": 508,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": "        CommonMessages.hideLoading();"
       },
       {
         "lineNumber": 509,
         "author": {
           "gitId": "-"
         },
-        "content": " * @function"
+        "content": ""
       },
       {
         "lineNumber": 510,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Promise}"
+        "content": "        showPlaceholder();"
       },
       {
         "lineNumber": 511,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "    }, hidePlaceholder);"
       },
       {
         "lineNumber": 512,
         "author": {
           "gitId": "-"
         },
-        "content": "export function init() {"
+        "content": ""
       },
       {
         "lineNumber": 513,
         "author": {
           "gitId": "-"
         },
-        "content": "    // set error hooks"
+        "content": "    // add event listeners"
       },
       {
         "lineNumber": 514,
         "author": {
           "gitId": "-"
         },
-        "content": "    CommonMessages.setLoadingHook(showPlaceholder, hidePlaceholder);"
+        "content": "    qrCodeText.addEventListener(\"input\", refreshQrCode);"
       },
       {
         "lineNumber": 515,
         "author": {
           "gitId": "-"
         },
-        "content": "    CommonMessages.setErrorHook(() \u003d\u003e {"
+        "content": "    qrCodeText.addEventListener(\"focus\", selectAllText);"
       },
       {
         "lineNumber": 516,
         "author": {
           "gitId": "-"
         },
-        "content": "        // hide loading first as this may hide the placeholder"
+        "content": ""
       },
       {
         "lineNumber": 517,
         "author": {
           "gitId": "-"
         },
-        "content": "        CommonMessages.hideLoading();"
+        "content": "    const applyingMonospaceFont \u003d AddonSettings.get(\"monospaceFont\").then((monospaceFont) \u003d\u003e {"
       },
       {
         "lineNumber": 518,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if (monospaceFont) {"
       },
       {
         "lineNumber": 519,
         "author": {
           "gitId": "-"
         },
-        "content": "        showPlaceholder();"
+        "content": "            qrCodeText.style.fontFamily \u003d \"monospace\";"
       },
       {
         "lineNumber": 520,
         "author": {
           "gitId": "-"
         },
-        "content": "    }, hidePlaceholder);"
+        "content": "        }"
       },
       {
         "lineNumber": 521,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    });"
       },
       {
         "lineNumber": 522,
         "author": {
           "gitId": "-"
         },
-        "content": "    // add event listeners"
+        "content": ""
       },
       {
         "lineNumber": 523,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeText.addEventListener(\"input\", refreshQrCode);"
+        "content": "    const applyingQrColor \u003d AddonSettings.get(\"qrBackgroundColor\").then((qrBackgroundColor) \u003d\u003e {"
       },
       {
         "lineNumber": 524,
         "author": {
           "gitId": "-"
         },
-        "content": "    qrCodeText.addEventListener(\"focus\", selectAllText);"
+        "content": "        if (qrBackgroundColor) {"
       },
       {
         "lineNumber": 525,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            document.body.style.backgroundColor \u003d qrBackgroundColor;"
       },
       {
         "lineNumber": 526,
         "author": {
           "gitId": "-"
         },
-        "content": "    const applyingMonospaceFont \u003d AddonSettings.get(\"monospaceFont\").then((monospaceFont) \u003d\u003e {"
+        "content": "        }"
       },
       {
         "lineNumber": 527,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (monospaceFont) {"
+        "content": "    });"
       },
       {
         "lineNumber": 528,
         "author": {
           "gitId": "-"
         },
-        "content": "            qrCodeText.style.fontFamily \u003d \"monospace\";"
+        "content": ""
       },
       {
         "lineNumber": 529,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "    // for some very strange reason, the MutationObserver only works when it is initiated as fast as possible gives better performance when resizing later"
       },
       {
         "lineNumber": 530,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "    resizeMutationObserver \u003d new MutationObserver(throttledResizeElements);"
       },
       {
         "lineNumber": 531,
@@ -9019,56 +9019,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    const applyingQrColor \u003d AddonSettings.get(\"qrBackgroundColor\").then((qrBackgroundColor) \u003d\u003e {"
+        "content": "    const applyingQrSize \u003d AddonSettings.get(\"qrCodeSize\").then(async (qrCodeSize) \u003d\u003e {"
       },
       {
         "lineNumber": 533,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (qrBackgroundColor) {"
+        "content": "        // save as module variable"
       },
       {
         "lineNumber": 534,
         "author": {
           "gitId": "-"
         },
-        "content": "            document.body.style.backgroundColor \u003d qrBackgroundColor;"
+        "content": "        qrCodeSizeOption \u003d qrCodeSize;"
       },
       {
         "lineNumber": 535,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 536,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "        if (qrCodeSize.sizeType \u003d\u003d\u003d \"auto\") {"
       },
       {
         "lineNumber": 537,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // do not resize QR code, but center it horizontally (SVG maximizes automatically)"
       },
       {
         "lineNumber": 538,
         "author": {
           "gitId": "-"
         },
-        "content": "    // for some very strange reason, the MutationObserver only works when it is initiated as fast as possible gives better performance when resizing later"
+        "content": "            qrCodeResizeContainer.style.width \u003d \"auto\";"
       },
       {
         "lineNumber": 539,
         "author": {
           "gitId": "-"
         },
-        "content": "    resizeMutationObserver \u003d new MutationObserver(throttledResizeElements);"
+        "content": "        }"
       },
       {
         "lineNumber": 540,
@@ -9082,549 +9082,486 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    const applyingQrSize \u003d AddonSettings.get(\"qrCodeSize\").then(async (qrCodeSize) \u003d\u003e {"
+        "content": "        if (qrCodeSize.sizeType \u003d\u003d\u003d \"remember\" || qrCodeSize.sizeType \u003d\u003d\u003d \"fixed\") {"
       },
       {
         "lineNumber": 542,
         "author": {
           "gitId": "-"
         },
-        "content": "        // save as module variable"
+        "content": "            await QrCreator.qrCreatorInit;"
       },
       {
         "lineNumber": 543,
         "author": {
           "gitId": "-"
         },
-        "content": "        qrCodeSizeOption \u003d qrCodeSize;"
+        "content": ""
       },
       {
         "lineNumber": 544,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if (qrLastSize \u003d\u003d\u003d qrCodeSize.size) {"
       },
       {
         "lineNumber": 545,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (qrCodeSize.sizeType \u003d\u003d\u003d \"auto\") {"
+        "content": "                console.info(\"QR code last size is the same as current setting, so do not reset\");"
       },
       {
         "lineNumber": 546,
         "author": {
           "gitId": "-"
         },
-        "content": "            // do not resize QR code, but center it horizontally (SVG maximizes automatically)"
+        "content": "                // BUT set CSS stuff to make it consistent"
       },
       {
         "lineNumber": 547,
         "author": {
           "gitId": "-"
         },
-        "content": "            qrCodeResizeContainer.style.width \u003d \"auto\";"
+        "content": "                setNewQrCodeSize(qrCodeSize.size, false);"
       },
       {
         "lineNumber": 548,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            } else {"
       },
       {
         "lineNumber": 549,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                // regenerate QR code"
       },
       {
         "lineNumber": 550,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (qrCodeSize.sizeType \u003d\u003d\u003d \"remember\" || qrCodeSize.sizeType \u003d\u003d\u003d \"fixed\") {"
+        "content": "                setNewQrCodeSize(qrCodeSize.size, true);"
       },
       {
         "lineNumber": 551,
         "author": {
           "gitId": "-"
         },
-        "content": "            await QrCreator.qrCreatorInit;"
+        "content": "            }"
       },
       {
         "lineNumber": 552,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 553,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (qrLastSize \u003d\u003d\u003d qrCodeSize.size) {"
+        "content": ""
       },
       {
         "lineNumber": 554,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.info(\"QR code last size is the same as current setting, so do not reset\");"
+        "content": "        // also set height of text (also to prevent display errors) when remember is enabled"
       },
       {
         "lineNumber": 555,
         "author": {
           "gitId": "-"
         },
-        "content": "                // BUT set CSS stuff to make it consistent"
+        "content": "        if (qrCodeSize.sizeType \u003d\u003d\u003d \"remember\" \u0026\u0026 qrCodeSize.hasOwnProperty(\"sizeText\")) {"
       },
       {
         "lineNumber": 556,
         "author": {
           "gitId": "-"
         },
-        "content": "                setNewQrCodeSize(qrCodeSize.size, false);"
+        "content": "            console.info(\"restore qr code text size:\", qrCodeSize.sizeText);"
       },
       {
         "lineNumber": 557,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "            // is saved as CSS string already"
       },
       {
         "lineNumber": 558,
         "author": {
           "gitId": "-"
         },
-        "content": "                // regenerate QR code"
+        "content": "            // height is NOT (anymore) restored, as this may cause display errors (likely due to different content-box settings) and the height does not matter, anyway"
       },
       {
         "lineNumber": 559,
         "author": {
           "gitId": "-"
         },
-        "content": "                setNewQrCodeSize(qrCodeSize.size, true);"
+        "content": "            qrCodeText.style.width \u003d qrCodeSize.sizeText.width;"
       },
       {
         "lineNumber": 560,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 561,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            // detect too small size"
       },
       {
         "lineNumber": 562,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            const minimalSize \u003d qrCodeSize.size + parseInt(qrCodeSize.sizeText.height, 10);"
       },
       {
         "lineNumber": 563,
         "author": {
           "gitId": "-"
         },
-        "content": "        // also set height of text (also to prevent display errors) when remember is enabled"
+        "content": "            if (window.innerHeight \u003c minimalSize) {"
       },
       {
         "lineNumber": 564,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (qrCodeSize.sizeType \u003d\u003d\u003d \"remember\" \u0026\u0026 qrCodeSize.hasOwnProperty(\"sizeText\")) {"
+        "content": "                console.error(\"too small size\", window.innerHeight, \"should be at least: \", minimalSize);"
       },
       {
         "lineNumber": 565,
         "author": {
           "gitId": "-"
         },
-        "content": "            console.info(\"restore qr code text size:\", qrCodeSize.sizeText);"
+        "content": "            }"
       },
       {
         "lineNumber": 566,
         "author": {
           "gitId": "-"
         },
-        "content": "            // is saved as CSS string already"
+        "content": "        }"
       },
       {
         "lineNumber": 567,
         "author": {
           "gitId": "-"
         },
-        "content": "            // height is NOT (anymore) restored, as this may cause display errors (likely due to different content-box settings) and the height does not matter, anyway"
+        "content": "    });"
       },
       {
         "lineNumber": 568,
         "author": {
           "gitId": "-"
         },
-        "content": "            qrCodeText.style.width \u003d qrCodeSize.sizeText.width;"
+        "content": ""
       },
       {
         "lineNumber": 569,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    // initiate settings dependent on the type of the QR code"
       },
       {
         "lineNumber": 570,
         "author": {
           "gitId": "-"
         },
-        "content": "            // detect too small size"
+        "content": "    const initQrTypespecificSettings \u003d QrCreator.getGenerationType().then((genType) \u003d\u003e {"
       },
       {
         "lineNumber": 571,
         "author": {
           "gitId": "-"
         },
-        "content": "            const minimalSize \u003d qrCodeSize.size + parseInt(qrCodeSize.sizeText.height, 10);"
+        "content": "        if (genType !\u003d\u003d \"svg\") {"
       },
       {
         "lineNumber": 572,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (window.innerHeight \u003c minimalSize) {"
+        "content": "            // ignore if menu API is not supported (on Android e.g.)"
       },
       {
         "lineNumber": 573,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.error(\"too small size\", window.innerHeight, \"should be at least: \", minimalSize);"
+        "content": "            if (browser.menus \u003d\u003d\u003d undefined) {"
       },
       {
         "lineNumber": 574,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                return Promise.resolve();"
       },
       {
         "lineNumber": 575,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            }"
       },
       {
         "lineNumber": 576,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": ""
       },
       {
         "lineNumber": 577,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // remove menu item if it has been added before"
       },
       {
         "lineNumber": 578,
         "author": {
           "gitId": "-"
         },
-        "content": "    // initiate settings dependent on the type of the QR code"
+        "content": "            browser.menus.remove(CONTEXT_MENU_SAVE_IMAGE);"
       },
       {
         "lineNumber": 579,
         "author": {
           "gitId": "-"
         },
-        "content": "    const initQrTypespecificSettings \u003d QrCreator.getGenerationType().then((genType) \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 580,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (genType !\u003d\u003d \"svg\") {"
+        "content": "            return Promise.resolve();"
       },
       {
         "lineNumber": 581,
         "author": {
           "gitId": "-"
         },
-        "content": "            // ignore if menu API is not supported (on Android e.g.)"
+        "content": "        }"
       },
       {
         "lineNumber": 582,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (browser.menus \u003d\u003d\u003d undefined) {"
+        "content": ""
       },
       {
         "lineNumber": 583,
         "author": {
           "gitId": "-"
         },
-        "content": "                return Promise.resolve();"
+        "content": "        // create save menu if needed"
       },
       {
         "lineNumber": 584,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "        return createMenu(\"contextMenuSaveImage\", {"
       },
       {
         "lineNumber": 585,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            id: CONTEXT_MENU_SAVE_IMAGE,"
       },
       {
         "lineNumber": 586,
         "author": {
           "gitId": "-"
         },
-        "content": "            // remove menu item if it has been added before"
+        "content": "            contexts: [\"page\"],"
       },
       {
         "lineNumber": 587,
         "author": {
           "gitId": "-"
         },
-        "content": "            browser.menus.remove(CONTEXT_MENU_SAVE_IMAGE);"
+        "content": "            documentUrlPatterns: ["
       },
       {
         "lineNumber": 588,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                document.URL // only apply to own URL \u003d popup"
       },
       {
         "lineNumber": 589,
         "author": {
           "gitId": "-"
         },
-        "content": "            return Promise.resolve();"
+        "content": "            ]"
       },
       {
         "lineNumber": 590,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        }, () \u003d\u003e { // TODO unify with background.js (module!)"
       },
       {
         "lineNumber": 591,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            const lastError \u003d browser.runtime.lastError;"
       },
       {
         "lineNumber": 592,
         "author": {
           "gitId": "-"
         },
-        "content": "        // create save menu if needed"
+        "content": ""
       },
       {
         "lineNumber": 593,
         "author": {
           "gitId": "-"
         },
-        "content": "        return createMenu(\"contextMenuSaveImage\", {"
+        "content": "            if (lastError) {"
       },
       {
         "lineNumber": 594,
         "author": {
           "gitId": "-"
         },
-        "content": "            id: CONTEXT_MENU_SAVE_IMAGE,"
+        "content": "                console.warn(`error creating menu item: ${lastError}`);"
       },
       {
         "lineNumber": 595,
         "author": {
           "gitId": "-"
         },
-        "content": "            contexts: [\"page\"],"
+        "content": "            } else {"
       },
       {
         "lineNumber": 596,
         "author": {
           "gitId": "-"
         },
-        "content": "            documentUrlPatterns: ["
+        "content": "                console.info(\"menu item created successfully\");"
       },
       {
         "lineNumber": 597,
         "author": {
           "gitId": "-"
         },
-        "content": "                document.URL // only apply to own URL \u003d popup"
+        "content": "            }"
       },
       {
         "lineNumber": 598,
         "author": {
           "gitId": "-"
         },
-        "content": "            ]"
+        "content": "        }).then(() \u003d\u003e {"
       },
       {
         "lineNumber": 599,
         "author": {
           "gitId": "-"
         },
-        "content": "        }, () \u003d\u003e { // @TODO unify with background.js (module!)"
+        "content": "            // ignore if menu API is not supported (on Android e.g.)"
       },
       {
         "lineNumber": 600,
         "author": {
           "gitId": "-"
         },
-        "content": "            const lastError \u003d browser.runtime.lastError;"
+        "content": "            if (browser.menus \u003d\u003d\u003d undefined) {"
       },
       {
         "lineNumber": 601,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                return Promise.resolve();"
       },
       {
         "lineNumber": 602,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (lastError) {"
+        "content": "            }"
       },
       {
         "lineNumber": 603,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.warn(`error creating menu item: ${lastError}`);"
+        "content": ""
       },
       {
         "lineNumber": 604,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "            return browser.menus.onClicked.addListener(menuClicked);"
       },
       {
         "lineNumber": 605,
         "author": {
           "gitId": "-"
         },
-        "content": "                console.info(\"menu item created successfully\");"
+        "content": "        });"
       },
       {
         "lineNumber": 606,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "    });"
       },
       {
         "lineNumber": 607,
         "author": {
           "gitId": "-"
         },
-        "content": "        }).then(() \u003d\u003e {"
+        "content": ""
       },
       {
         "lineNumber": 608,
         "author": {
           "gitId": "-"
         },
-        "content": "            // ignore if menu API is not supported (on Android e.g.)"
+        "content": "    // return Promise chain"
       },
       {
         "lineNumber": 609,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (browser.menus \u003d\u003d\u003d undefined) {"
-      },
-      {
-        "lineNumber": 610,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "                return Promise.resolve();"
-      },
-      {
-        "lineNumber": 611,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 612,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 613,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "            return browser.menus.onClicked.addListener(menuClicked);"
-      },
-      {
-        "lineNumber": 614,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        });"
-      },
-      {
-        "lineNumber": 615,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    });"
-      },
-      {
-        "lineNumber": 616,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 617,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    // return Promise chain"
-      },
-      {
-        "lineNumber": 618,
-        "author": {
-          "gitId": "-"
-        },
         "content": "    return Promise.all([applyingMonospaceFont, applyingQrSize, applyingQrColor, initQrTypespecificSettings]);"
       },
       {
-        "lineNumber": 619,
+        "lineNumber": 610,
         "author": {
           "gitId": "-"
         },
@@ -9633,7 +9570,7 @@
     ],
     "authorContributionMap": {
       "ongspxm": 5,
-      "-": 614
+      "-": 605
     }
   }
 ]
