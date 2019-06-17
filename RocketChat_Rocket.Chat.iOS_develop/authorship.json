@@ -10518,322 +10518,322 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -\u003e CGFloat {"
       },
       {
         "lineNumber": 623,
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -\u003e CGFloat {"
+        "content": "        return 0"
       },
       {
         "lineNumber": 624,
         "author": {
           "gitId": "-"
         },
-        "content": "        return 0"
+        "content": "    }"
       },
       {
         "lineNumber": 625,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 626,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -\u003e CGFloat {"
       },
       {
         "lineNumber": 627,
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -\u003e CGFloat {"
+        "content": "        return 0"
       },
       {
         "lineNumber": 628,
         "author": {
           "gitId": "-"
         },
-        "content": "        return 0"
+        "content": "    }"
       },
       {
         "lineNumber": 629,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 630,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -\u003e UIEdgeInsets {"
       },
       {
         "lineNumber": 631,
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -\u003e UIEdgeInsets {"
+        "content": "        return .zero"
       },
       {
         "lineNumber": 632,
         "author": {
           "gitId": "-"
         },
-        "content": "        return .zero"
+        "content": "    }"
       },
       {
         "lineNumber": 633,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 634,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -\u003e CGSize {"
       },
       {
         "lineNumber": 635,
         "author": {
           "gitId": "-"
         },
-        "content": "    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -\u003e CGSize {"
+        "content": "        guard let item \u003d viewModel.item(for: indexPath) else {"
       },
       {
         "lineNumber": 636,
         "author": {
           "gitId": "-"
         },
-        "content": "        guard let item \u003d viewModel.item(for: indexPath) else {"
+        "content": "            return .zero"
       },
       {
         "lineNumber": 637,
         "author": {
           "gitId": "-"
         },
-        "content": "            return .zero"
+        "content": "        }"
       },
       {
         "lineNumber": 638,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 639,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        if let size \u003d viewSizingModel.size(for: item.differenceIdentifier) {"
       },
       {
         "lineNumber": 640,
         "author": {
           "gitId": "-"
         },
-        "content": "        if let size \u003d viewSizingModel.size(for: item.differenceIdentifier) {"
+        "content": "            return size"
       },
       {
         "lineNumber": 641,
         "author": {
           "gitId": "-"
         },
-        "content": "            return size"
+        "content": "        } else {"
       },
       {
         "lineNumber": 642,
         "author": {
           "gitId": "-"
         },
-        "content": "        } else {"
+        "content": "            let identifier \u003d item.relatedReuseIdentifier"
       },
       {
         "lineNumber": 643,
         "author": {
           "gitId": "-"
         },
-        "content": "            let identifier \u003d item.relatedReuseIdentifier"
+        "content": "            var sizingCell: Any?"
       },
       {
         "lineNumber": 644,
         "author": {
           "gitId": "-"
         },
-        "content": "            var sizingCell: Any?"
+        "content": ""
       },
       {
         "lineNumber": 645,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            if let cachedSizingCell \u003d viewSizingModel.view(for: identifier) as? SizingCell {"
       },
       {
         "lineNumber": 646,
         "author": {
           "gitId": "-"
         },
-        "content": "            if let cachedSizingCell \u003d viewSizingModel.view(for: identifier) as? SizingCell {"
+        "content": "                sizingCell \u003d cachedSizingCell"
       },
       {
         "lineNumber": 647,
         "author": {
           "gitId": "-"
         },
-        "content": "                sizingCell \u003d cachedSizingCell"
+        "content": "            } else {"
       },
       {
         "lineNumber": 648,
         "author": {
           "gitId": "-"
         },
-        "content": "            } else {"
+        "content": "                sizingCell \u003d UINib(nibName: identifier, bundle: nil).instantiate() as? SizingCell"
       },
       {
         "lineNumber": 649,
         "author": {
           "gitId": "-"
         },
-        "content": "                sizingCell \u003d UINib(nibName: identifier, bundle: nil).instantiate() as? SizingCell"
+        "content": ""
       },
       {
         "lineNumber": 650,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if let sizingCell \u003d sizingCell {"
       },
       {
         "lineNumber": 651,
         "author": {
           "gitId": "-"
         },
-        "content": "                if let sizingCell \u003d sizingCell {"
+        "content": "                    viewSizingModel.set(view: sizingCell, for: identifier)"
       },
       {
         "lineNumber": 652,
         "author": {
           "gitId": "-"
         },
-        "content": "                    viewSizingModel.set(view: sizingCell, for: identifier)"
+        "content": "                }"
       },
       {
         "lineNumber": 653,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "            }"
       },
       {
         "lineNumber": 654,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 655,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            guard let cell \u003d sizingCell as? SizingCell else {"
       },
       {
         "lineNumber": 656,
         "author": {
           "gitId": "-"
         },
-        "content": "            guard let cell \u003d sizingCell as? SizingCell else {"
+        "content": "                fatalError(\"\"\""
       },
       {
         "lineNumber": 657,
         "author": {
           "gitId": "-"
         },
-        "content": "                fatalError(\"\"\""
+        "content": "                    Failed to reference sizing cell instance. Please,"
       },
       {
         "lineNumber": 658,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Failed to reference sizing cell instance. Please,"
+        "content": "                    check the relatedReuseIdentifier and make sure all"
       },
       {
         "lineNumber": 659,
         "author": {
           "gitId": "-"
         },
-        "content": "                    check the relatedReuseIdentifier and make sure all"
+        "content": "                    the chat components conform to SizingCell protocol"
       },
       {
         "lineNumber": 660,
         "author": {
           "gitId": "-"
         },
-        "content": "                    the chat components conform to SizingCell protocol"
+        "content": "                \"\"\")"
       },
       {
         "lineNumber": 661,
         "author": {
           "gitId": "-"
         },
-        "content": "                \"\"\")"
+        "content": "            }"
       },
       {
         "lineNumber": 662,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 663,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            let cellWidth \u003d messageWidth()"
       },
       {
         "lineNumber": 664,
         "author": {
           "gitId": "-"
         },
-        "content": "            let cellWidth \u003d messageWidth()"
+        "content": "            var size \u003d type(of: cell).size(for: item, with: cellWidth)"
       },
       {
         "lineNumber": 665,
         "author": {
           "gitId": "-"
         },
-        "content": "            var size \u003d type(of: cell).size(for: item, with: cellWidth)"
+        "content": "            size \u003d CGSize(width: cellWidth, height: size.height)"
       },
       {
         "lineNumber": 666,
         "author": {
           "gitId": "-"
         },
-        "content": "            size \u003d CGSize(width: cellWidth, height: size.height)"
+        "content": "            viewSizingModel.set(size: size, for: item.differenceIdentifier)"
       },
       {
         "lineNumber": 667,
         "author": {
           "gitId": "-"
         },
-        "content": "            viewSizingModel.set(size: size, for: item.differenceIdentifier)"
+        "content": ""
       },
       {
         "lineNumber": 668,
