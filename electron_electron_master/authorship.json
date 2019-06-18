@@ -6930,21 +6930,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cvoid\u003e`"
+        "content": "Returns `Promise\u003cString\u003e` - A promise that resolves with a key for the inserted"
       },
       {
         "lineNumber": 991,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "CSS that can later be used to remove the CSS via"
       },
       {
         "lineNumber": 992,
         "author": {
           "gitId": "-"
         },
-        "content": "Injects CSS into the current web page."
+        "content": "`contents.removeInsertedCSS(key)`."
       },
       {
         "lineNumber": 993,
@@ -6958,70 +6958,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "```js"
+        "content": "Injects CSS into the current web page and returns a unique key for the inserted"
       },
       {
         "lineNumber": 995,
         "author": {
           "gitId": "-"
         },
-        "content": "contents.on(\u0027did-finish-load\u0027, function () {"
+        "content": "stylesheet."
       },
       {
         "lineNumber": 996,
         "author": {
           "gitId": "-"
         },
-        "content": "  contents.insertCSS(\u0027html, body { background-color: #f00; }\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 997,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": "```js"
       },
       {
         "lineNumber": 998,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "contents.on(\u0027did-finish-load\u0027, function () {"
       },
       {
         "lineNumber": 999,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  contents.insertCSS(\u0027html, body { background-color: #f00; }\u0027)"
       },
       {
         "lineNumber": 1000,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.executeJavaScript(code[, userGesture])`"
+        "content": "})"
       },
       {
         "lineNumber": 1001,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 1002,
         "author": {
           "gitId": "-"
         },
-        "content": "* `code` String"
+        "content": ""
       },
       {
         "lineNumber": 1003,
         "author": {
           "gitId": "-"
         },
-        "content": "* `userGesture` Boolean (optional) - Default is `false`."
+        "content": "#### `contents.removeInsertedCSS(key)`"
       },
       {
         "lineNumber": 1004,
@@ -7035,105 +7035,105 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cany\u003e` - A promise that resolves with the result of the executed code"
+        "content": "* `key` String"
       },
       {
         "lineNumber": 1006,
         "author": {
           "gitId": "-"
         },
-        "content": "or is rejected if the result of the code is a rejected promise."
+        "content": ""
       },
       {
         "lineNumber": 1007,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Promise\u003cvoid\u003e` - Resolves if the removal was successful."
       },
       {
         "lineNumber": 1008,
         "author": {
           "gitId": "-"
         },
-        "content": "Evaluates `code` in page."
+        "content": ""
       },
       {
         "lineNumber": 1009,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Removes the inserted CSS from the current web page. The stylesheet is identified"
       },
       {
         "lineNumber": 1010,
         "author": {
           "gitId": "-"
         },
-        "content": "In the browser window some HTML APIs like `requestFullScreen` can only be"
+        "content": "by its key, which is returned from `contents.insertCSS(css)`."
       },
       {
         "lineNumber": 1011,
         "author": {
           "gitId": "-"
         },
-        "content": "invoked by a gesture from the user. Setting `userGesture` to `true` will remove"
+        "content": ""
       },
       {
         "lineNumber": 1012,
         "author": {
           "gitId": "-"
         },
-        "content": "this limitation."
+        "content": "```js"
       },
       {
         "lineNumber": 1013,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "contents.on(\u0027did-finish-load\u0027, async function () {"
       },
       {
         "lineNumber": 1014,
         "author": {
           "gitId": "-"
         },
-        "content": "```js"
+        "content": "  const key \u003d await contents.insertCSS(\u0027html, body { background-color: #f00; }\u0027)"
       },
       {
         "lineNumber": 1015,
         "author": {
           "gitId": "-"
         },
-        "content": "contents.executeJavaScript(\u0027fetch(\"https://jsonplaceholder.typicode.com/users/1\").then(resp \u003d\u003e resp.json())\u0027, true)"
+        "content": "  contents.removeInsertedCSS(key)"
       },
       {
         "lineNumber": 1016,
         "author": {
           "gitId": "-"
         },
-        "content": "  .then((result) \u003d\u003e {"
+        "content": "})"
       },
       {
         "lineNumber": 1017,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.log(result) // Will be the JSON object from the fetch call"
+        "content": "```"
       },
       {
         "lineNumber": 1018,
         "author": {
           "gitId": "-"
         },
-        "content": "  })"
+        "content": ""
       },
       {
         "lineNumber": 1019,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "#### `contents.executeJavaScript(code[, userGesture])`"
       },
       {
         "lineNumber": 1020,
@@ -7147,35 +7147,35 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setIgnoreMenuShortcuts(ignore)` _Experimental_"
+        "content": "* `code` String"
       },
       {
         "lineNumber": 1022,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `userGesture` Boolean (optional) - Default is `false`."
       },
       {
         "lineNumber": 1023,
         "author": {
           "gitId": "-"
         },
-        "content": "* `ignore` Boolean"
+        "content": ""
       },
       {
         "lineNumber": 1024,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Promise\u003cany\u003e` - A promise that resolves with the result of the executed code"
       },
       {
         "lineNumber": 1025,
         "author": {
           "gitId": "-"
         },
-        "content": "Ignore application menu shortcuts while this web contents is focused."
+        "content": "or is rejected if the result of the code is a rejected promise."
       },
       {
         "lineNumber": 1026,
@@ -7189,7 +7189,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setAudioMuted(muted)`"
+        "content": "Evaluates `code` in page."
       },
       {
         "lineNumber": 1028,
@@ -7203,21 +7203,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `muted` Boolean"
+        "content": "In the browser window some HTML APIs like `requestFullScreen` can only be"
       },
       {
         "lineNumber": 1030,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "invoked by a gesture from the user. Setting `userGesture` to `true` will remove"
       },
       {
         "lineNumber": 1031,
         "author": {
           "gitId": "-"
         },
-        "content": "Mute the audio on the current web page."
+        "content": "this limitation."
       },
       {
         "lineNumber": 1032,
@@ -7231,98 +7231,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.isAudioMuted()`"
+        "content": "```js"
       },
       {
         "lineNumber": 1034,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "contents.executeJavaScript(\u0027fetch(\"https://jsonplaceholder.typicode.com/users/1\").then(resp \u003d\u003e resp.json())\u0027, true)"
       },
       {
         "lineNumber": 1035,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Boolean` - Whether this page has been muted."
+        "content": "  .then((result) \u003d\u003e {"
       },
       {
         "lineNumber": 1036,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    console.log(result) // Will be the JSON object from the fetch call"
       },
       {
         "lineNumber": 1037,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.isCurrentlyAudible()`"
+        "content": "  })"
       },
       {
         "lineNumber": 1038,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 1039,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Boolean` - Whether audio is currently playing."
+        "content": ""
       },
       {
         "lineNumber": 1040,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.setIgnoreMenuShortcuts(ignore)` _Experimental_"
       },
       {
         "lineNumber": 1041,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setZoomFactor(factor)`"
+        "content": ""
       },
       {
         "lineNumber": 1042,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `ignore` Boolean"
       },
       {
         "lineNumber": 1043,
         "author": {
           "gitId": "-"
         },
-        "content": "* `factor` Number - Zoom factor."
+        "content": ""
       },
       {
         "lineNumber": 1044,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Ignore application menu shortcuts while this web contents is focused."
       },
       {
         "lineNumber": 1045,
         "author": {
           "gitId": "-"
         },
-        "content": "Changes the zoom factor to the specified factor. Zoom factor is"
+        "content": ""
       },
       {
         "lineNumber": 1046,
         "author": {
           "gitId": "-"
         },
-        "content": "zoom percent divided by 100, so 300% \u003d 3.0."
+        "content": "#### `contents.setAudioMuted(muted)`"
       },
       {
         "lineNumber": 1047,
@@ -7336,7 +7336,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.getZoomFactor()`"
+        "content": "* `muted` Boolean"
       },
       {
         "lineNumber": 1049,
@@ -7350,7 +7350,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Number` - the current zoom factor."
+        "content": "Mute the audio on the current web page."
       },
       {
         "lineNumber": 1051,
@@ -7364,7 +7364,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setZoomLevel(level)`"
+        "content": "#### `contents.isAudioMuted()`"
       },
       {
         "lineNumber": 1053,
@@ -7378,7 +7378,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `level` Number - Zoom level."
+        "content": "Returns `Boolean` - Whether this page has been muted."
       },
       {
         "lineNumber": 1055,
@@ -7392,70 +7392,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Changes the zoom level to the specified level. The original size is 0 and each"
+        "content": "#### `contents.isCurrentlyAudible()`"
       },
       {
         "lineNumber": 1057,
         "author": {
           "gitId": "-"
         },
-        "content": "increment above or below represents zooming 20% larger or smaller to default"
+        "content": ""
       },
       {
         "lineNumber": 1058,
         "author": {
           "gitId": "-"
         },
-        "content": "limits of 300% and 50% of original size, respectively. The formula for this is"
+        "content": "Returns `Boolean` - Whether audio is currently playing."
       },
       {
         "lineNumber": 1059,
         "author": {
           "gitId": "-"
         },
-        "content": "`scale :\u003d 1.2 ^ level`."
+        "content": ""
       },
       {
         "lineNumber": 1060,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.setZoomFactor(factor)`"
       },
       {
         "lineNumber": 1061,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.getZoomLevel()`"
+        "content": ""
       },
       {
         "lineNumber": 1062,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `factor` Number - Zoom factor."
       },
       {
         "lineNumber": 1063,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Number` - the current zoom level."
+        "content": ""
       },
       {
         "lineNumber": 1064,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Changes the zoom factor to the specified factor. Zoom factor is"
       },
       {
         "lineNumber": 1065,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setVisualZoomLevelLimits(minimumLevel, maximumLevel)`"
+        "content": "zoom percent divided by 100, so 300% \u003d 3.0."
       },
       {
         "lineNumber": 1066,
@@ -7469,84 +7469,84 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `minimumLevel` Number"
+        "content": "#### `contents.getZoomFactor()`"
       },
       {
         "lineNumber": 1068,
         "author": {
           "gitId": "-"
         },
-        "content": "* `maximumLevel` Number"
+        "content": ""
       },
       {
         "lineNumber": 1069,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Number` - the current zoom factor."
       },
       {
         "lineNumber": 1070,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cvoid\u003e`"
+        "content": ""
       },
       {
         "lineNumber": 1071,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.setZoomLevel(level)`"
       },
       {
         "lineNumber": 1072,
         "author": {
           "gitId": "-"
         },
-        "content": "Sets the maximum and minimum pinch-to-zoom level."
+        "content": ""
       },
       {
         "lineNumber": 1073,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `level` Number - Zoom level."
       },
       {
         "lineNumber": 1074,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003e **NOTE**: Visual zoom is disabled by default in Electron. To re-enable it, call:"
+        "content": ""
       },
       {
         "lineNumber": 1075,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003e"
+        "content": "Changes the zoom level to the specified level. The original size is 0 and each"
       },
       {
         "lineNumber": 1076,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003e ```js"
+        "content": "increment above or below represents zooming 20% larger or smaller to default"
       },
       {
         "lineNumber": 1077,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003e contents.setVisualZoomLevelLimits(1, 3)"
+        "content": "limits of 300% and 50% of original size, respectively. The formula for this is"
       },
       {
         "lineNumber": 1078,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003e ```"
+        "content": "`scale :\u003d 1.2 ^ level`."
       },
       {
         "lineNumber": 1079,
@@ -7560,7 +7560,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setLayoutZoomLevelLimits(minimumLevel, maximumLevel)`"
+        "content": "#### `contents.getZoomLevel()`"
       },
       {
         "lineNumber": 1081,
@@ -7574,42 +7574,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `minimumLevel` Number"
+        "content": "Returns `Number` - the current zoom level."
       },
       {
         "lineNumber": 1083,
         "author": {
           "gitId": "-"
         },
-        "content": "* `maximumLevel` Number"
+        "content": ""
       },
       {
         "lineNumber": 1084,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.setVisualZoomLevelLimits(minimumLevel, maximumLevel)`"
       },
       {
         "lineNumber": 1085,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cvoid\u003e`"
+        "content": ""
       },
       {
         "lineNumber": 1086,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `minimumLevel` Number"
       },
       {
         "lineNumber": 1087,
         "author": {
           "gitId": "-"
         },
-        "content": "Sets the maximum and minimum layout-based (i.e. non-visual) zoom level."
+        "content": "* `maximumLevel` Number"
       },
       {
         "lineNumber": 1088,
@@ -7623,7 +7623,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.undo()`"
+        "content": "Returns `Promise\u003cvoid\u003e`"
       },
       {
         "lineNumber": 1090,
@@ -7637,7 +7637,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `undo` in web page."
+        "content": "Sets the maximum and minimum pinch-to-zoom level."
       },
       {
         "lineNumber": 1092,
@@ -7651,35 +7651,35 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.redo()`"
+        "content": "\u003e **NOTE**: Visual zoom is disabled by default in Electron. To re-enable it, call:"
       },
       {
         "lineNumber": 1094,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003e"
       },
       {
         "lineNumber": 1095,
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `redo` in web page."
+        "content": "\u003e ```js"
       },
       {
         "lineNumber": 1096,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003e contents.setVisualZoomLevelLimits(1, 3)"
       },
       {
         "lineNumber": 1097,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.cut()`"
+        "content": "\u003e ```"
       },
       {
         "lineNumber": 1098,
@@ -7693,7 +7693,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `cut` in web page."
+        "content": "#### `contents.setLayoutZoomLevelLimits(minimumLevel, maximumLevel)`"
       },
       {
         "lineNumber": 1100,
@@ -7707,56 +7707,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.copy()`"
+        "content": "* `minimumLevel` Number"
       },
       {
         "lineNumber": 1102,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `maximumLevel` Number"
       },
       {
         "lineNumber": 1103,
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `copy` in web page."
+        "content": ""
       },
       {
         "lineNumber": 1104,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Promise\u003cvoid\u003e`"
       },
       {
         "lineNumber": 1105,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.copyImageAt(x, y)`"
+        "content": ""
       },
       {
         "lineNumber": 1106,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Sets the maximum and minimum layout-based (i.e. non-visual) zoom level."
       },
       {
         "lineNumber": 1107,
         "author": {
           "gitId": "-"
         },
-        "content": "* `x` Integer"
+        "content": ""
       },
       {
         "lineNumber": 1108,
         "author": {
           "gitId": "-"
         },
-        "content": "* `y` Integer"
+        "content": "#### `contents.undo()`"
       },
       {
         "lineNumber": 1109,
@@ -7770,7 +7770,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Copy the image at the given position to the clipboard."
+        "content": "Executes the editing command `undo` in web page."
       },
       {
         "lineNumber": 1111,
@@ -7784,7 +7784,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.paste()`"
+        "content": "#### `contents.redo()`"
       },
       {
         "lineNumber": 1113,
@@ -7798,7 +7798,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `paste` in web page."
+        "content": "Executes the editing command `redo` in web page."
       },
       {
         "lineNumber": 1115,
@@ -7812,7 +7812,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.pasteAndMatchStyle()`"
+        "content": "#### `contents.cut()`"
       },
       {
         "lineNumber": 1117,
@@ -7826,7 +7826,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `pasteAndMatchStyle` in web page."
+        "content": "Executes the editing command `cut` in web page."
       },
       {
         "lineNumber": 1119,
@@ -7840,7 +7840,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.delete()`"
+        "content": "#### `contents.copy()`"
       },
       {
         "lineNumber": 1121,
@@ -7854,7 +7854,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `delete` in web page."
+        "content": "Executes the editing command `copy` in web page."
       },
       {
         "lineNumber": 1123,
@@ -7868,7 +7868,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.selectAll()`"
+        "content": "#### `contents.copyImageAt(x, y)`"
       },
       {
         "lineNumber": 1125,
@@ -7882,322 +7882,322 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `selectAll` in web page."
+        "content": "* `x` Integer"
       },
       {
         "lineNumber": 1127,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `y` Integer"
       },
       {
         "lineNumber": 1128,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.unselect()`"
+        "content": ""
       },
       {
         "lineNumber": 1129,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Copy the image at the given position to the clipboard."
       },
       {
         "lineNumber": 1130,
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `unselect` in web page."
+        "content": ""
       },
       {
         "lineNumber": 1131,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.paste()`"
       },
       {
         "lineNumber": 1132,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.replace(text)`"
+        "content": ""
       },
       {
         "lineNumber": 1133,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Executes the editing command `paste` in web page."
       },
       {
         "lineNumber": 1134,
         "author": {
           "gitId": "-"
         },
-        "content": "* `text` String"
+        "content": ""
       },
       {
         "lineNumber": 1135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.pasteAndMatchStyle()`"
       },
       {
         "lineNumber": 1136,
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `replace` in web page."
+        "content": ""
       },
       {
         "lineNumber": 1137,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Executes the editing command `pasteAndMatchStyle` in web page."
       },
       {
         "lineNumber": 1138,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.replaceMisspelling(text)`"
+        "content": ""
       },
       {
         "lineNumber": 1139,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.delete()`"
       },
       {
         "lineNumber": 1140,
         "author": {
           "gitId": "-"
         },
-        "content": "* `text` String"
+        "content": ""
       },
       {
         "lineNumber": 1141,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Executes the editing command `delete` in web page."
       },
       {
         "lineNumber": 1142,
         "author": {
           "gitId": "-"
         },
-        "content": "Executes the editing command `replaceMisspelling` in web page."
+        "content": ""
       },
       {
         "lineNumber": 1143,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.selectAll()`"
       },
       {
         "lineNumber": 1144,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.insertText(text)`"
+        "content": ""
       },
       {
         "lineNumber": 1145,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Executes the editing command `selectAll` in web page."
       },
       {
         "lineNumber": 1146,
         "author": {
           "gitId": "-"
         },
-        "content": "* `text` String"
+        "content": ""
       },
       {
         "lineNumber": 1147,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.unselect()`"
       },
       {
         "lineNumber": 1148,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cvoid\u003e`"
+        "content": ""
       },
       {
         "lineNumber": 1149,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Executes the editing command `unselect` in web page."
       },
       {
         "lineNumber": 1150,
         "author": {
           "gitId": "-"
         },
-        "content": "Inserts `text` to the focused element."
+        "content": ""
       },
       {
         "lineNumber": 1151,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.replace(text)`"
       },
       {
         "lineNumber": 1152,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.findInPage(text[, options])`"
+        "content": ""
       },
       {
         "lineNumber": 1153,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `text` String"
       },
       {
         "lineNumber": 1154,
         "author": {
           "gitId": "-"
         },
-        "content": "* `text` String - Content to be searched, must not be empty."
+        "content": ""
       },
       {
         "lineNumber": 1155,
         "author": {
           "gitId": "-"
         },
-        "content": "* `options` Object (optional)"
+        "content": "Executes the editing command `replace` in web page."
       },
       {
         "lineNumber": 1156,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `forward` Boolean (optional) - Whether to search forward or backward, defaults to `true`."
+        "content": ""
       },
       {
         "lineNumber": 1157,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `findNext` Boolean (optional) - Whether the operation is first request or a follow up,"
+        "content": "#### `contents.replaceMisspelling(text)`"
       },
       {
         "lineNumber": 1158,
         "author": {
           "gitId": "-"
         },
-        "content": "    defaults to `false`."
+        "content": ""
       },
       {
         "lineNumber": 1159,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `matchCase` Boolean (optional) - Whether search should be case-sensitive,"
+        "content": "* `text` String"
       },
       {
         "lineNumber": 1160,
         "author": {
           "gitId": "-"
         },
-        "content": "    defaults to `false`."
+        "content": ""
       },
       {
         "lineNumber": 1161,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `wordStart` Boolean (optional) - Whether to look only at the start of words."
+        "content": "Executes the editing command `replaceMisspelling` in web page."
       },
       {
         "lineNumber": 1162,
         "author": {
           "gitId": "-"
         },
-        "content": "    defaults to `false`."
+        "content": ""
       },
       {
         "lineNumber": 1163,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `medialCapitalAsWordStart` Boolean (optional) - When combined with `wordStart`,"
+        "content": "#### `contents.insertText(text)`"
       },
       {
         "lineNumber": 1164,
         "author": {
           "gitId": "-"
         },
-        "content": "    accepts a match in the middle of a word if the match begins with an"
+        "content": ""
       },
       {
         "lineNumber": 1165,
         "author": {
           "gitId": "-"
         },
-        "content": "    uppercase letter followed by a lowercase or non-letter."
+        "content": "* `text` String"
       },
       {
         "lineNumber": 1166,
         "author": {
           "gitId": "-"
         },
-        "content": "    Accepts several other intra-word matches, defaults to `false`."
+        "content": ""
       },
       {
         "lineNumber": 1167,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Promise\u003cvoid\u003e`"
       },
       {
         "lineNumber": 1168,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Integer` - The request id used for the request."
+        "content": ""
       },
       {
         "lineNumber": 1169,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Inserts `text` to the focused element."
       },
       {
         "lineNumber": 1170,
         "author": {
           "gitId": "-"
         },
-        "content": "Starts a request to find all matches for the `text` in the web page. The result of the request"
+        "content": ""
       },
       {
         "lineNumber": 1171,
         "author": {
           "gitId": "-"
         },
-        "content": "can be obtained by subscribing to [`found-in-page`](web-contents.md#event-found-in-page) event."
+        "content": "#### `contents.findInPage(text[, options])`"
       },
       {
         "lineNumber": 1172,
@@ -8211,105 +8211,105 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.stopFindInPage(action)`"
+        "content": "* `text` String - Content to be searched, must not be empty."
       },
       {
         "lineNumber": 1174,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `options` Object (optional)"
       },
       {
         "lineNumber": 1175,
         "author": {
           "gitId": "-"
         },
-        "content": "* `action` String - Specifies the action to take place when ending"
+        "content": "  * `forward` Boolean (optional) - Whether to search forward or backward, defaults to `true`."
       },
       {
         "lineNumber": 1176,
         "author": {
           "gitId": "-"
         },
-        "content": "  [`webContents.findInPage`] request."
+        "content": "  * `findNext` Boolean (optional) - Whether the operation is first request or a follow up,"
       },
       {
         "lineNumber": 1177,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `clearSelection` - Clear the selection."
+        "content": "    defaults to `false`."
       },
       {
         "lineNumber": 1178,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `keepSelection` - Translate the selection into a normal selection."
+        "content": "  * `matchCase` Boolean (optional) - Whether search should be case-sensitive,"
       },
       {
         "lineNumber": 1179,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `activateSelection` - Focus and click the selection node."
+        "content": "    defaults to `false`."
       },
       {
         "lineNumber": 1180,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `wordStart` Boolean (optional) - Whether to look only at the start of words."
       },
       {
         "lineNumber": 1181,
         "author": {
           "gitId": "-"
         },
-        "content": "Stops any `findInPage` request for the `webContents` with the provided `action`."
+        "content": "    defaults to `false`."
       },
       {
         "lineNumber": 1182,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `medialCapitalAsWordStart` Boolean (optional) - When combined with `wordStart`,"
       },
       {
         "lineNumber": 1183,
         "author": {
           "gitId": "-"
         },
-        "content": "```javascript"
+        "content": "    accepts a match in the middle of a word if the match begins with an"
       },
       {
         "lineNumber": 1184,
         "author": {
           "gitId": "-"
         },
-        "content": "const { webContents } \u003d require(\u0027electron\u0027)"
+        "content": "    uppercase letter followed by a lowercase or non-letter."
       },
       {
         "lineNumber": 1185,
         "author": {
           "gitId": "-"
         },
-        "content": "webContents.on(\u0027found-in-page\u0027, (event, result) \u003d\u003e {"
+        "content": "    Accepts several other intra-word matches, defaults to `false`."
       },
       {
         "lineNumber": 1186,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (result.finalUpdate) webContents.stopFindInPage(\u0027clearSelection\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1187,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": "Returns `Integer` - The request id used for the request."
       },
       {
         "lineNumber": 1188,
@@ -8323,238 +8323,238 @@
         "author": {
           "gitId": "-"
         },
-        "content": "const requestId \u003d webContents.findInPage(\u0027api\u0027)"
+        "content": "Starts a request to find all matches for the `text` in the web page. The result of the request"
       },
       {
         "lineNumber": 1190,
         "author": {
           "gitId": "-"
         },
-        "content": "console.log(requestId)"
+        "content": "can be obtained by subscribing to [`found-in-page`](web-contents.md#event-found-in-page) event."
       },
       {
         "lineNumber": 1191,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": ""
       },
       {
         "lineNumber": 1192,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.stopFindInPage(action)`"
       },
       {
         "lineNumber": 1193,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.capturePage([rect])`"
+        "content": ""
       },
       {
         "lineNumber": 1194,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `action` String - Specifies the action to take place when ending"
       },
       {
         "lineNumber": 1195,
         "author": {
           "gitId": "-"
         },
-        "content": "* `rect` [Rectangle](structures/rectangle.md) (optional) - The area of the page to be captured."
+        "content": "  [`webContents.findInPage`] request."
       },
       {
         "lineNumber": 1196,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `clearSelection` - Clear the selection."
       },
       {
         "lineNumber": 1197,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cNativeImage\u003e` - Resolves with a [NativeImage](native-image.md)"
+        "content": "  * `keepSelection` - Translate the selection into a normal selection."
       },
       {
         "lineNumber": 1198,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `activateSelection` - Focus and click the selection node."
       },
       {
         "lineNumber": 1199,
         "author": {
           "gitId": "-"
         },
-        "content": "Captures a snapshot of the page within `rect`. Omitting `rect` will capture the whole visible page."
+        "content": ""
       },
       {
         "lineNumber": 1200,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Stops any `findInPage` request for the `webContents` with the provided `action`."
       },
       {
         "lineNumber": 1201,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.getPrinters()`"
+        "content": ""
       },
       {
         "lineNumber": 1202,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```javascript"
       },
       {
         "lineNumber": 1203,
         "author": {
           "gitId": "-"
         },
-        "content": "Get the system printer list."
+        "content": "const { webContents } \u003d require(\u0027electron\u0027)"
       },
       {
         "lineNumber": 1204,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "webContents.on(\u0027found-in-page\u0027, (event, result) \u003d\u003e {"
       },
       {
         "lineNumber": 1205,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns [`PrinterInfo[]`](structures/printer-info.md)."
+        "content": "  if (result.finalUpdate) webContents.stopFindInPage(\u0027clearSelection\u0027)"
       },
       {
         "lineNumber": 1206,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "})"
       },
       {
         "lineNumber": 1207,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.print([options], [callback])`"
+        "content": ""
       },
       {
         "lineNumber": 1208,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "const requestId \u003d webContents.findInPage(\u0027api\u0027)"
       },
       {
         "lineNumber": 1209,
         "author": {
           "gitId": "-"
         },
-        "content": "* `options` Object (optional)"
+        "content": "console.log(requestId)"
       },
       {
         "lineNumber": 1210,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `silent` Boolean (optional) - Don\u0027t ask user for print settings. Default is `false`."
+        "content": "```"
       },
       {
         "lineNumber": 1211,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `printBackground` Boolean (optional) - Also prints the background color and image of"
+        "content": ""
       },
       {
         "lineNumber": 1212,
         "author": {
           "gitId": "-"
         },
-        "content": "    the web page. Default is `false`."
+        "content": "#### `contents.capturePage([rect])`"
       },
       {
         "lineNumber": 1213,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `deviceName` String (optional) - Set the printer device name to use. Default is `\u0027\u0027`."
+        "content": ""
       },
       {
         "lineNumber": 1214,
         "author": {
           "gitId": "-"
         },
-        "content": "* `callback` Function (optional)"
+        "content": "* `rect` [Rectangle](structures/rectangle.md) (optional) - The area of the page to be captured."
       },
       {
         "lineNumber": 1215,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `success` Boolean - Indicates success of the print call."
+        "content": ""
       },
       {
         "lineNumber": 1216,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Promise\u003cNativeImage\u003e` - Resolves with a [NativeImage](native-image.md)"
       },
       {
         "lineNumber": 1217,
         "author": {
           "gitId": "-"
         },
-        "content": "Prints window\u0027s web page. When `silent` is set to `true`, Electron will pick"
+        "content": ""
       },
       {
         "lineNumber": 1218,
         "author": {
           "gitId": "-"
         },
-        "content": "the system\u0027s default printer if `deviceName` is empty and the default settings"
+        "content": "Captures a snapshot of the page within `rect`. Omitting `rect` will capture the whole visible page."
       },
       {
         "lineNumber": 1219,
         "author": {
           "gitId": "-"
         },
-        "content": "for printing."
+        "content": ""
       },
       {
         "lineNumber": 1220,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.getPrinters()`"
       },
       {
         "lineNumber": 1221,
         "author": {
           "gitId": "-"
         },
-        "content": "Calling `window.print()` in web page is equivalent to calling"
+        "content": ""
       },
       {
         "lineNumber": 1222,
         "author": {
           "gitId": "-"
         },
-        "content": "`webContents.print({ silent: false, printBackground: false, deviceName: \u0027\u0027 })`."
+        "content": "Get the system printer list."
       },
       {
         "lineNumber": 1223,
@@ -8568,7 +8568,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Use `page-break-before: always; ` CSS style to force to print to a new page."
+        "content": "Returns [`PrinterInfo[]`](structures/printer-info.md)."
       },
       {
         "lineNumber": 1225,
@@ -8582,7 +8582,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.printToPDF(options)`"
+        "content": "#### `contents.print([options], [callback])`"
       },
       {
         "lineNumber": 1227,
@@ -8596,77 +8596,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `options` Object"
+        "content": "* `options` Object (optional)"
       },
       {
         "lineNumber": 1229,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `marginsType` Integer (optional) - Specifies the type of margins to use. Uses 0 for"
+        "content": "  * `silent` Boolean (optional) - Don\u0027t ask user for print settings. Default is `false`."
       },
       {
         "lineNumber": 1230,
         "author": {
           "gitId": "-"
         },
-        "content": "    default margin, 1 for no margin, and 2 for minimum margin."
+        "content": "  * `printBackground` Boolean (optional) - Also prints the background color and image of"
       },
       {
         "lineNumber": 1231,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `pageSize` String | Size (optional) - Specify page size of the generated PDF. Can be `A3`,"
+        "content": "    the web page. Default is `false`."
       },
       {
         "lineNumber": 1232,
         "author": {
           "gitId": "-"
         },
-        "content": "    `A4`, `A5`, `Legal`, `Letter`, `Tabloid` or an Object containing `height`"
+        "content": "  * `deviceName` String (optional) - Set the printer device name to use. Default is `\u0027\u0027`."
       },
       {
         "lineNumber": 1233,
         "author": {
           "gitId": "-"
         },
-        "content": "    and `width` in microns."
+        "content": "* `callback` Function (optional)"
       },
       {
         "lineNumber": 1234,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `printBackground` Boolean (optional) - Whether to print CSS backgrounds."
+        "content": "  * `success` Boolean - Indicates success of the print call."
       },
       {
         "lineNumber": 1235,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `printSelectionOnly` Boolean (optional) - Whether to print selection only."
+        "content": ""
       },
       {
         "lineNumber": 1236,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `landscape` Boolean (optional) - `true` for landscape, `false` for portrait."
+        "content": "Prints window\u0027s web page. When `silent` is set to `true`, Electron will pick"
       },
       {
         "lineNumber": 1237,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "the system\u0027s default printer if `deviceName` is empty and the default settings"
       },
       {
         "lineNumber": 1238,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cBuffer\u003e` - Resolves with the generated PDF data."
+        "content": "for printing."
       },
       {
         "lineNumber": 1239,
@@ -8680,14 +8680,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Prints window\u0027s web page as PDF with Chromium\u0027s preview printing custom"
+        "content": "Calling `window.print()` in web page is equivalent to calling"
       },
       {
         "lineNumber": 1241,
         "author": {
           "gitId": "-"
         },
-        "content": "settings."
+        "content": "`webContents.print({ silent: false, printBackground: false, deviceName: \u0027\u0027 })`."
       },
       {
         "lineNumber": 1242,
@@ -8701,7 +8701,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "The `landscape` will be ignored if `@page` CSS at-rule is used in the web page."
+        "content": "Use `page-break-before: always; ` CSS style to force to print to a new page."
       },
       {
         "lineNumber": 1244,
@@ -8715,7 +8715,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "By default, an empty `options` will be regarded as:"
+        "content": "#### `contents.printToPDF(options)`"
       },
       {
         "lineNumber": 1246,
@@ -8729,112 +8729,112 @@
         "author": {
           "gitId": "-"
         },
-        "content": "```javascript"
+        "content": "* `options` Object"
       },
       {
         "lineNumber": 1248,
         "author": {
           "gitId": "-"
         },
-        "content": "{"
+        "content": "  * `marginsType` Integer (optional) - Specifies the type of margins to use. Uses 0 for"
       },
       {
         "lineNumber": 1249,
         "author": {
           "gitId": "-"
         },
-        "content": "  marginsType: 0,"
+        "content": "    default margin, 1 for no margin, and 2 for minimum margin."
       },
       {
         "lineNumber": 1250,
         "author": {
           "gitId": "-"
         },
-        "content": "  printBackground: false,"
+        "content": "  * `pageSize` String | Size (optional) - Specify page size of the generated PDF. Can be `A3`,"
       },
       {
         "lineNumber": 1251,
         "author": {
           "gitId": "-"
         },
-        "content": "  printSelectionOnly: false,"
+        "content": "    `A4`, `A5`, `Legal`, `Letter`, `Tabloid` or an Object containing `height`"
       },
       {
         "lineNumber": 1252,
         "author": {
           "gitId": "-"
         },
-        "content": "  landscape: false"
+        "content": "    and `width` in microns."
       },
       {
         "lineNumber": 1253,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  * `printBackground` Boolean (optional) - Whether to print CSS backgrounds."
       },
       {
         "lineNumber": 1254,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "  * `printSelectionOnly` Boolean (optional) - Whether to print selection only."
       },
       {
         "lineNumber": 1255,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `landscape` Boolean (optional) - `true` for landscape, `false` for portrait."
       },
       {
         "lineNumber": 1256,
         "author": {
           "gitId": "-"
         },
-        "content": "Use `page-break-before: always; ` CSS style to force to print to a new page."
+        "content": ""
       },
       {
         "lineNumber": 1257,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Promise\u003cBuffer\u003e` - Resolves with the generated PDF data."
       },
       {
         "lineNumber": 1258,
         "author": {
           "gitId": "-"
         },
-        "content": "An example of `webContents.printToPDF`:"
+        "content": ""
       },
       {
         "lineNumber": 1259,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Prints window\u0027s web page as PDF with Chromium\u0027s preview printing custom"
       },
       {
         "lineNumber": 1260,
         "author": {
           "gitId": "-"
         },
-        "content": "```javascript"
+        "content": "settings."
       },
       {
         "lineNumber": 1261,
         "author": {
           "gitId": "-"
         },
-        "content": "const { BrowserWindow } \u003d require(\u0027electron\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1262,
         "author": {
           "gitId": "-"
         },
-        "content": "const fs \u003d require(\u0027fs\u0027)"
+        "content": "The `landscape` will be ignored if `@page` CSS at-rule is used in the web page."
       },
       {
         "lineNumber": 1263,
@@ -8848,98 +8848,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "let win \u003d new BrowserWindow({ width: 800, height: 600 })"
+        "content": "By default, an empty `options` will be regarded as:"
       },
       {
         "lineNumber": 1265,
         "author": {
           "gitId": "-"
         },
-        "content": "win.loadURL(\u0027http://github.com\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1266,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```javascript"
       },
       {
         "lineNumber": 1267,
         "author": {
           "gitId": "-"
         },
-        "content": "win.webContents.on(\u0027did-finish-load\u0027, () \u003d\u003e {"
+        "content": "{"
       },
       {
         "lineNumber": 1268,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Use default printing options"
+        "content": "  marginsType: 0,"
       },
       {
         "lineNumber": 1269,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.webContents.printToPDF({}, (error, data) \u003d\u003e {"
+        "content": "  printBackground: false,"
       },
       {
         "lineNumber": 1270,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (error) throw error"
+        "content": "  printSelectionOnly: false,"
       },
       {
         "lineNumber": 1271,
         "author": {
           "gitId": "-"
         },
-        "content": "    fs.writeFile(\u0027/tmp/print.pdf\u0027, data, (error) \u003d\u003e {"
+        "content": "  landscape: false"
       },
       {
         "lineNumber": 1272,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (error) throw error"
+        "content": "}"
       },
       {
         "lineNumber": 1273,
         "author": {
           "gitId": "-"
         },
-        "content": "      console.log(\u0027Write PDF successfully.\u0027)"
+        "content": "```"
       },
       {
         "lineNumber": 1274,
         "author": {
           "gitId": "-"
         },
-        "content": "    })"
+        "content": ""
       },
       {
         "lineNumber": 1275,
         "author": {
           "gitId": "-"
         },
-        "content": "  })"
+        "content": "Use `page-break-before: always; ` CSS style to force to print to a new page."
       },
       {
         "lineNumber": 1276,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": ""
       },
       {
         "lineNumber": 1277,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "An example of `webContents.printToPDF`:"
       },
       {
         "lineNumber": 1278,
@@ -8953,21 +8953,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.addWorkSpace(path)`"
+        "content": "```javascript"
       },
       {
         "lineNumber": 1280,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "const { BrowserWindow } \u003d require(\u0027electron\u0027)"
       },
       {
         "lineNumber": 1281,
         "author": {
           "gitId": "-"
         },
-        "content": "* `path` String"
+        "content": "const fs \u003d require(\u0027fs\u0027)"
       },
       {
         "lineNumber": 1282,
@@ -8981,14 +8981,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Adds the specified path to DevTools workspace. Must be used after DevTools"
+        "content": "let win \u003d new BrowserWindow({ width: 800, height: 600 })"
       },
       {
         "lineNumber": 1284,
         "author": {
           "gitId": "-"
         },
-        "content": "creation:"
+        "content": "win.loadURL(\u0027http://github.com\u0027)"
       },
       {
         "lineNumber": 1285,
@@ -9002,77 +9002,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": "```javascript"
+        "content": "win.webContents.on(\u0027did-finish-load\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 1287,
         "author": {
           "gitId": "-"
         },
-        "content": "const { BrowserWindow } \u003d require(\u0027electron\u0027)"
+        "content": "  // Use default printing options"
       },
       {
         "lineNumber": 1288,
         "author": {
           "gitId": "-"
         },
-        "content": "let win \u003d new BrowserWindow()"
+        "content": "  win.webContents.printToPDF({}, (error, data) \u003d\u003e {"
       },
       {
         "lineNumber": 1289,
         "author": {
           "gitId": "-"
         },
-        "content": "win.webContents.on(\u0027devtools-opened\u0027, () \u003d\u003e {"
+        "content": "    if (error) throw error"
       },
       {
         "lineNumber": 1290,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.webContents.addWorkSpace(__dirname)"
+        "content": "    fs.writeFile(\u0027/tmp/print.pdf\u0027, data, (error) \u003d\u003e {"
       },
       {
         "lineNumber": 1291,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": "      if (error) throw error"
       },
       {
         "lineNumber": 1292,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "      console.log(\u0027Write PDF successfully.\u0027)"
       },
       {
         "lineNumber": 1293,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    })"
       },
       {
         "lineNumber": 1294,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.removeWorkSpace(path)`"
+        "content": "  })"
       },
       {
         "lineNumber": 1295,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "})"
       },
       {
         "lineNumber": 1296,
         "author": {
           "gitId": "-"
         },
-        "content": "* `path` String"
+        "content": "```"
       },
       {
         "lineNumber": 1297,
@@ -9086,7 +9086,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Removes the specified path from DevTools workspace."
+        "content": "#### `contents.addWorkSpace(path)`"
       },
       {
         "lineNumber": 1299,
@@ -9100,7 +9100,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setDevToolsWebContents(devToolsWebContents)`"
+        "content": "* `path` String"
       },
       {
         "lineNumber": 1301,
@@ -9114,84 +9114,84 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `devToolsWebContents` WebContents"
+        "content": "Adds the specified path to DevTools workspace. Must be used after DevTools"
       },
       {
         "lineNumber": 1303,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "creation:"
       },
       {
         "lineNumber": 1304,
         "author": {
           "gitId": "-"
         },
-        "content": "Uses the `devToolsWebContents` as the target `WebContents` to show devtools."
+        "content": ""
       },
       {
         "lineNumber": 1305,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```javascript"
       },
       {
         "lineNumber": 1306,
         "author": {
           "gitId": "-"
         },
-        "content": "The `devToolsWebContents` must not have done any navigation, and it should not"
+        "content": "const { BrowserWindow } \u003d require(\u0027electron\u0027)"
       },
       {
         "lineNumber": 1307,
         "author": {
           "gitId": "-"
         },
-        "content": "be used for other purposes after the call."
+        "content": "let win \u003d new BrowserWindow()"
       },
       {
         "lineNumber": 1308,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "win.webContents.on(\u0027devtools-opened\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 1309,
         "author": {
           "gitId": "-"
         },
-        "content": "By default Electron manages the devtools by creating an internal `WebContents`"
+        "content": "  win.webContents.addWorkSpace(__dirname)"
       },
       {
         "lineNumber": 1310,
         "author": {
           "gitId": "-"
         },
-        "content": "with native view, which developers have very limited control of. With the"
+        "content": "})"
       },
       {
         "lineNumber": 1311,
         "author": {
           "gitId": "-"
         },
-        "content": "`setDevToolsWebContents` method, developers can use any `WebContents` to show"
+        "content": "```"
       },
       {
         "lineNumber": 1312,
         "author": {
           "gitId": "-"
         },
-        "content": "the devtools in it, including `BrowserWindow`, `BrowserView` and `\u003cwebview\u003e`"
+        "content": ""
       },
       {
         "lineNumber": 1313,
         "author": {
           "gitId": "-"
         },
-        "content": "tag."
+        "content": "#### `contents.removeWorkSpace(path)`"
       },
       {
         "lineNumber": 1314,
@@ -9205,336 +9205,336 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Note that closing the devtools does not destroy the `devToolsWebContents`, it"
+        "content": "* `path` String"
       },
       {
         "lineNumber": 1316,
         "author": {
           "gitId": "-"
         },
-        "content": "is caller\u0027s responsibility to destroy `devToolsWebContents`."
+        "content": ""
       },
       {
         "lineNumber": 1317,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Removes the specified path from DevTools workspace."
       },
       {
         "lineNumber": 1318,
         "author": {
           "gitId": "-"
         },
-        "content": "An example of showing devtools in a `\u003cwebview\u003e` tag:"
+        "content": ""
       },
       {
         "lineNumber": 1319,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.setDevToolsWebContents(devToolsWebContents)`"
       },
       {
         "lineNumber": 1320,
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": ""
       },
       {
         "lineNumber": 1321,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003chtml\u003e"
+        "content": "* `devToolsWebContents` WebContents"
       },
       {
         "lineNumber": 1322,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003chead\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1323,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003cstyle type\u003d\"text/css\"\u003e"
+        "content": "Uses the `devToolsWebContents` as the target `WebContents` to show devtools."
       },
       {
         "lineNumber": 1324,
         "author": {
           "gitId": "-"
         },
-        "content": "    * { margin: 0; }"
+        "content": ""
       },
       {
         "lineNumber": 1325,
         "author": {
           "gitId": "-"
         },
-        "content": "    #browser { height: 70%; }"
+        "content": "The `devToolsWebContents` must not have done any navigation, and it should not"
       },
       {
         "lineNumber": 1326,
         "author": {
           "gitId": "-"
         },
-        "content": "    #devtools { height: 30%; }"
+        "content": "be used for other purposes after the call."
       },
       {
         "lineNumber": 1327,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003c/style\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1328,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/head\u003e"
+        "content": "By default Electron manages the devtools by creating an internal `WebContents`"
       },
       {
         "lineNumber": 1329,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cbody\u003e"
+        "content": "with native view, which developers have very limited control of. With the"
       },
       {
         "lineNumber": 1330,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003cwebview id\u003d\"browser\" src\u003d\"https://github.com\"\u003e\u003c/webview\u003e"
+        "content": "`setDevToolsWebContents` method, developers can use any `WebContents` to show"
       },
       {
         "lineNumber": 1331,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003cwebview id\u003d\"devtools\"\u003e\u003c/webview\u003e"
+        "content": "the devtools in it, including `BrowserWindow`, `BrowserView` and `\u003cwebview\u003e`"
       },
       {
         "lineNumber": 1332,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003cscript\u003e"
+        "content": "tag."
       },
       {
         "lineNumber": 1333,
         "author": {
           "gitId": "-"
         },
-        "content": "    const browserView \u003d document.getElementById(\u0027browser\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1334,
         "author": {
           "gitId": "-"
         },
-        "content": "    const devtoolsView \u003d document.getElementById(\u0027devtools\u0027)"
+        "content": "Note that closing the devtools does not destroy the `devToolsWebContents`, it"
       },
       {
         "lineNumber": 1335,
         "author": {
           "gitId": "-"
         },
-        "content": "    browserView.addEventListener(\u0027dom-ready\u0027, () \u003d\u003e {"
+        "content": "is caller\u0027s responsibility to destroy `devToolsWebContents`."
       },
       {
         "lineNumber": 1336,
         "author": {
           "gitId": "-"
         },
-        "content": "      const browser \u003d browserView.getWebContents()"
+        "content": ""
       },
       {
         "lineNumber": 1337,
         "author": {
           "gitId": "-"
         },
-        "content": "      browser.setDevToolsWebContents(devtoolsView.getWebContents())"
+        "content": "An example of showing devtools in a `\u003cwebview\u003e` tag:"
       },
       {
         "lineNumber": 1338,
         "author": {
           "gitId": "-"
         },
-        "content": "      browser.openDevTools()"
+        "content": ""
       },
       {
         "lineNumber": 1339,
         "author": {
           "gitId": "-"
         },
-        "content": "    })"
+        "content": "```html"
       },
       {
         "lineNumber": 1340,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003c/script\u003e"
+        "content": "\u003chtml\u003e"
       },
       {
         "lineNumber": 1341,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/body\u003e"
+        "content": "\u003chead\u003e"
       },
       {
         "lineNumber": 1342,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/html\u003e"
+        "content": "  \u003cstyle type\u003d\"text/css\"\u003e"
       },
       {
         "lineNumber": 1343,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "    * { margin: 0; }"
       },
       {
         "lineNumber": 1344,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    #browser { height: 70%; }"
       },
       {
         "lineNumber": 1345,
         "author": {
           "gitId": "-"
         },
-        "content": "An example of showing devtools in a `BrowserWindow`:"
+        "content": "    #devtools { height: 30%; }"
       },
       {
         "lineNumber": 1346,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  \u003c/style\u003e"
       },
       {
         "lineNumber": 1347,
         "author": {
           "gitId": "-"
         },
-        "content": "```js"
+        "content": "\u003c/head\u003e"
       },
       {
         "lineNumber": 1348,
         "author": {
           "gitId": "-"
         },
-        "content": "const { app, BrowserWindow } \u003d require(\u0027electron\u0027)"
+        "content": "\u003cbody\u003e"
       },
       {
         "lineNumber": 1349,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  \u003cwebview id\u003d\"browser\" src\u003d\"https://github.com\"\u003e\u003c/webview\u003e"
       },
       {
         "lineNumber": 1350,
         "author": {
           "gitId": "-"
         },
-        "content": "let win \u003d null"
+        "content": "  \u003cwebview id\u003d\"devtools\"\u003e\u003c/webview\u003e"
       },
       {
         "lineNumber": 1351,
         "author": {
           "gitId": "-"
         },
-        "content": "let devtools \u003d null"
+        "content": "  \u003cscript\u003e"
       },
       {
         "lineNumber": 1352,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const browserView \u003d document.getElementById(\u0027browser\u0027)"
       },
       {
         "lineNumber": 1353,
         "author": {
           "gitId": "-"
         },
-        "content": "app.once(\u0027ready\u0027, () \u003d\u003e {"
+        "content": "    const devtoolsView \u003d document.getElementById(\u0027devtools\u0027)"
       },
       {
         "lineNumber": 1354,
         "author": {
           "gitId": "-"
         },
-        "content": "  win \u003d new BrowserWindow()"
+        "content": "    browserView.addEventListener(\u0027dom-ready\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 1355,
         "author": {
           "gitId": "-"
         },
-        "content": "  devtools \u003d new BrowserWindow()"
+        "content": "      const browser \u003d browserView.getWebContents()"
       },
       {
         "lineNumber": 1356,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.loadURL(\u0027https://github.com\u0027)"
+        "content": "      browser.setDevToolsWebContents(devtoolsView.getWebContents())"
       },
       {
         "lineNumber": 1357,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.webContents.setDevToolsWebContents(devtools.webContents)"
+        "content": "      browser.openDevTools()"
       },
       {
         "lineNumber": 1358,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.webContents.openDevTools({ mode: \u0027detach\u0027 })"
+        "content": "    })"
       },
       {
         "lineNumber": 1359,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": "  \u003c/script\u003e"
       },
       {
         "lineNumber": 1360,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "\u003c/body\u003e"
       },
       {
         "lineNumber": 1361,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/html\u003e"
       },
       {
         "lineNumber": 1362,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.openDevTools([options])`"
+        "content": "```"
       },
       {
         "lineNumber": 1363,
@@ -9548,175 +9548,175 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `options` Object (optional)"
+        "content": "An example of showing devtools in a `BrowserWindow`:"
       },
       {
         "lineNumber": 1365,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `mode` String - Opens the devtools with specified dock state, can be"
+        "content": ""
       },
       {
         "lineNumber": 1366,
         "author": {
           "gitId": "-"
         },
-        "content": "    `right`, `bottom`, `undocked`, `detach`. Defaults to last used dock state."
+        "content": "```js"
       },
       {
         "lineNumber": 1367,
         "author": {
           "gitId": "-"
         },
-        "content": "    In `undocked` mode it\u0027s possible to dock back. In `detach` mode it\u0027s not."
+        "content": "const { app, BrowserWindow } \u003d require(\u0027electron\u0027)"
       },
       {
         "lineNumber": 1368,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `activate` Boolean (optional) - Whether to bring the opened devtools window"
+        "content": ""
       },
       {
         "lineNumber": 1369,
         "author": {
           "gitId": "-"
         },
-        "content": "    to the foreground. The default is `true`."
+        "content": "let win \u003d null"
       },
       {
         "lineNumber": 1370,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "let devtools \u003d null"
       },
       {
         "lineNumber": 1371,
         "author": {
           "gitId": "-"
         },
-        "content": "Opens the devtools."
+        "content": ""
       },
       {
         "lineNumber": 1372,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "app.once(\u0027ready\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 1373,
         "author": {
           "gitId": "-"
         },
-        "content": "When `contents` is a `\u003cwebview\u003e` tag, the `mode` would be `detach` by default,"
+        "content": "  win \u003d new BrowserWindow()"
       },
       {
         "lineNumber": 1374,
         "author": {
           "gitId": "-"
         },
-        "content": "explicitly passing an empty `mode` can force using last used dock state."
+        "content": "  devtools \u003d new BrowserWindow()"
       },
       {
         "lineNumber": 1375,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  win.loadURL(\u0027https://github.com\u0027)"
       },
       {
         "lineNumber": 1376,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.closeDevTools()`"
+        "content": "  win.webContents.setDevToolsWebContents(devtools.webContents)"
       },
       {
         "lineNumber": 1377,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  win.webContents.openDevTools({ mode: \u0027detach\u0027 })"
       },
       {
         "lineNumber": 1378,
         "author": {
           "gitId": "-"
         },
-        "content": "Closes the devtools."
+        "content": "})"
       },
       {
         "lineNumber": 1379,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 1380,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.isDevToolsOpened()`"
+        "content": ""
       },
       {
         "lineNumber": 1381,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.openDevTools([options])`"
       },
       {
         "lineNumber": 1382,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Boolean` - Whether the devtools is opened."
+        "content": ""
       },
       {
         "lineNumber": 1383,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `options` Object (optional)"
       },
       {
         "lineNumber": 1384,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.isDevToolsFocused()`"
+        "content": "  * `mode` String - Opens the devtools with specified dock state, can be"
       },
       {
         "lineNumber": 1385,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    `right`, `bottom`, `undocked`, `detach`. Defaults to last used dock state."
       },
       {
         "lineNumber": 1386,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Boolean` - Whether the devtools view is focused ."
+        "content": "    In `undocked` mode it\u0027s possible to dock back. In `detach` mode it\u0027s not."
       },
       {
         "lineNumber": 1387,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `activate` Boolean (optional) - Whether to bring the opened devtools window"
       },
       {
         "lineNumber": 1388,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.toggleDevTools()`"
+        "content": "    to the foreground. The default is `true`."
       },
       {
         "lineNumber": 1389,
@@ -9730,7 +9730,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Toggles the developer tools."
+        "content": "Opens the devtools."
       },
       {
         "lineNumber": 1391,
@@ -9744,28 +9744,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.inspectElement(x, y)`"
+        "content": "When `contents` is a `\u003cwebview\u003e` tag, the `mode` would be `detach` by default,"
       },
       {
         "lineNumber": 1393,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "explicitly passing an empty `mode` can force using last used dock state."
       },
       {
         "lineNumber": 1394,
         "author": {
           "gitId": "-"
         },
-        "content": "* `x` Integer"
+        "content": ""
       },
       {
         "lineNumber": 1395,
         "author": {
           "gitId": "-"
         },
-        "content": "* `y` Integer"
+        "content": "#### `contents.closeDevTools()`"
       },
       {
         "lineNumber": 1396,
@@ -9779,7 +9779,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Starts inspecting element at position (`x`, `y`)."
+        "content": "Closes the devtools."
       },
       {
         "lineNumber": 1398,
@@ -9793,7 +9793,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.inspectSharedWorker()`"
+        "content": "#### `contents.isDevToolsOpened()`"
       },
       {
         "lineNumber": 1400,
@@ -9807,7 +9807,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Opens the developer tools for the shared worker context."
+        "content": "Returns `Boolean` - Whether the devtools is opened."
       },
       {
         "lineNumber": 1402,
@@ -9821,7 +9821,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.inspectServiceWorker()`"
+        "content": "#### `contents.isDevToolsFocused()`"
       },
       {
         "lineNumber": 1404,
@@ -9835,7 +9835,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Opens the developer tools for the service worker context."
+        "content": "Returns `Boolean` - Whether the devtools view is focused ."
       },
       {
         "lineNumber": 1406,
@@ -9849,7 +9849,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.send(channel, ...args)`"
+        "content": "#### `contents.toggleDevTools()`"
       },
       {
         "lineNumber": 1408,
@@ -9863,42 +9863,42 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `channel` String"
+        "content": "Toggles the developer tools."
       },
       {
         "lineNumber": 1410,
         "author": {
           "gitId": "-"
         },
-        "content": "* `...args` any[]"
+        "content": ""
       },
       {
         "lineNumber": 1411,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.inspectElement(x, y)`"
       },
       {
         "lineNumber": 1412,
         "author": {
           "gitId": "-"
         },
-        "content": "Send an asynchronous message to renderer process via `channel`, you can also"
+        "content": ""
       },
       {
         "lineNumber": 1413,
         "author": {
           "gitId": "-"
         },
-        "content": "send arbitrary arguments. Arguments will be serialized in JSON internally and"
+        "content": "* `x` Integer"
       },
       {
         "lineNumber": 1414,
         "author": {
           "gitId": "-"
         },
-        "content": "hence no functions or prototype chain will be included."
+        "content": "* `y` Integer"
       },
       {
         "lineNumber": 1415,
@@ -9912,63 +9912,63 @@
         "author": {
           "gitId": "-"
         },
-        "content": "The renderer process can handle the message by listening to `channel` with the"
+        "content": "Starts inspecting element at position (`x`, `y`)."
       },
       {
         "lineNumber": 1417,
         "author": {
           "gitId": "-"
         },
-        "content": "[`ipcRenderer`](ipc-renderer.md) module."
+        "content": ""
       },
       {
         "lineNumber": 1418,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.inspectSharedWorker()`"
       },
       {
         "lineNumber": 1419,
         "author": {
           "gitId": "-"
         },
-        "content": "An example of sending messages from the main process to the renderer process:"
+        "content": ""
       },
       {
         "lineNumber": 1420,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Opens the developer tools for the shared worker context."
       },
       {
         "lineNumber": 1421,
         "author": {
           "gitId": "-"
         },
-        "content": "```javascript"
+        "content": ""
       },
       {
         "lineNumber": 1422,
         "author": {
           "gitId": "-"
         },
-        "content": "// In the main process."
+        "content": "#### `contents.inspectServiceWorker()`"
       },
       {
         "lineNumber": 1423,
         "author": {
           "gitId": "-"
         },
-        "content": "const { app, BrowserWindow } \u003d require(\u0027electron\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1424,
         "author": {
           "gitId": "-"
         },
-        "content": "let win \u003d null"
+        "content": "Opens the developer tools for the service worker context."
       },
       {
         "lineNumber": 1425,
@@ -9982,56 +9982,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "app.on(\u0027ready\u0027, () \u003d\u003e {"
+        "content": "#### `contents.send(channel, ...args)`"
       },
       {
         "lineNumber": 1427,
         "author": {
           "gitId": "-"
         },
-        "content": "  win \u003d new BrowserWindow({ width: 800, height: 600 })"
+        "content": ""
       },
       {
         "lineNumber": 1428,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.loadURL(`file://${__dirname}/index.html`)"
+        "content": "* `channel` String"
       },
       {
         "lineNumber": 1429,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.webContents.on(\u0027did-finish-load\u0027, () \u003d\u003e {"
+        "content": "* `...args` any[]"
       },
       {
         "lineNumber": 1430,
         "author": {
           "gitId": "-"
         },
-        "content": "    win.webContents.send(\u0027ping\u0027, \u0027whoooooooh!\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1431,
         "author": {
           "gitId": "-"
         },
-        "content": "  })"
+        "content": "Send an asynchronous message to renderer process via `channel`, you can also"
       },
       {
         "lineNumber": 1432,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": "send arbitrary arguments. Arguments will be serialized in JSON internally and"
       },
       {
         "lineNumber": 1433,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "hence no functions or prototype chain will be included."
       },
       {
         "lineNumber": 1434,
@@ -10045,126 +10045,126 @@
         "author": {
           "gitId": "-"
         },
-        "content": "```html"
+        "content": "The renderer process can handle the message by listening to `channel` with the"
       },
       {
         "lineNumber": 1436,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c!-- index.html --\u003e"
+        "content": "[`ipcRenderer`](ipc-renderer.md) module."
       },
       {
         "lineNumber": 1437,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003chtml\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1438,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003cbody\u003e"
+        "content": "An example of sending messages from the main process to the renderer process:"
       },
       {
         "lineNumber": 1439,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003cscript\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1440,
         "author": {
           "gitId": "-"
         },
-        "content": "    require(\u0027electron\u0027).ipcRenderer.on(\u0027ping\u0027, (event, message) \u003d\u003e {"
+        "content": "```javascript"
       },
       {
         "lineNumber": 1441,
         "author": {
           "gitId": "-"
         },
-        "content": "      console.log(message) // Prints \u0027whoooooooh!\u0027"
+        "content": "// In the main process."
       },
       {
         "lineNumber": 1442,
         "author": {
           "gitId": "-"
         },
-        "content": "    })"
+        "content": "const { app, BrowserWindow } \u003d require(\u0027electron\u0027)"
       },
       {
         "lineNumber": 1443,
         "author": {
           "gitId": "-"
         },
-        "content": "  \u003c/script\u003e"
+        "content": "let win \u003d null"
       },
       {
         "lineNumber": 1444,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/body\u003e"
+        "content": ""
       },
       {
         "lineNumber": 1445,
         "author": {
           "gitId": "-"
         },
-        "content": "\u003c/html\u003e"
+        "content": "app.on(\u0027ready\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 1446,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "  win \u003d new BrowserWindow({ width: 800, height: 600 })"
       },
       {
         "lineNumber": 1447,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  win.loadURL(`file://${__dirname}/index.html`)"
       },
       {
         "lineNumber": 1448,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.sendToFrame(frameId, channel, ...args)`"
+        "content": "  win.webContents.on(\u0027did-finish-load\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 1449,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    win.webContents.send(\u0027ping\u0027, \u0027whoooooooh!\u0027)"
       },
       {
         "lineNumber": 1450,
         "author": {
           "gitId": "-"
         },
-        "content": "* `frameId` Integer"
+        "content": "  })"
       },
       {
         "lineNumber": 1451,
         "author": {
           "gitId": "-"
         },
-        "content": "* `channel` String"
+        "content": "})"
       },
       {
         "lineNumber": 1452,
         "author": {
           "gitId": "-"
         },
-        "content": "* `...args` any[]"
+        "content": "```"
       },
       {
         "lineNumber": 1453,
@@ -10178,98 +10178,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Send an asynchronous message to a specific frame in a renderer process via"
+        "content": "```html"
       },
       {
         "lineNumber": 1455,
         "author": {
           "gitId": "-"
         },
-        "content": "`channel`. Arguments will be serialized"
+        "content": "\u003c!-- index.html --\u003e"
       },
       {
         "lineNumber": 1456,
         "author": {
           "gitId": "-"
         },
-        "content": "as JSON internally and as such no functions or prototype chains will be included."
+        "content": "\u003chtml\u003e"
       },
       {
         "lineNumber": 1457,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003cbody\u003e"
       },
       {
         "lineNumber": 1458,
         "author": {
           "gitId": "-"
         },
-        "content": "The renderer process can handle the message by listening to `channel` with the"
+        "content": "  \u003cscript\u003e"
       },
       {
         "lineNumber": 1459,
         "author": {
           "gitId": "-"
         },
-        "content": "[`ipcRenderer`](ipc-renderer.md) module."
+        "content": "    require(\u0027electron\u0027).ipcRenderer.on(\u0027ping\u0027, (event, message) \u003d\u003e {"
       },
       {
         "lineNumber": 1460,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      console.log(message) // Prints \u0027whoooooooh!\u0027"
       },
       {
         "lineNumber": 1461,
         "author": {
           "gitId": "-"
         },
-        "content": "If you want to get the `frameId` of a given renderer context you should use"
+        "content": "    })"
       },
       {
         "lineNumber": 1462,
         "author": {
           "gitId": "-"
         },
-        "content": "the `webFrame.routingId` value.  E.g."
+        "content": "  \u003c/script\u003e"
       },
       {
         "lineNumber": 1463,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "\u003c/body\u003e"
       },
       {
         "lineNumber": 1464,
         "author": {
           "gitId": "-"
         },
-        "content": "```js"
+        "content": "\u003c/html\u003e"
       },
       {
         "lineNumber": 1465,
         "author": {
           "gitId": "-"
         },
-        "content": "// In a renderer process"
+        "content": "```"
       },
       {
         "lineNumber": 1466,
         "author": {
           "gitId": "-"
         },
-        "content": "console.log(\u0027My frameId is:\u0027, require(\u0027electron\u0027).webFrame.routingId)"
+        "content": ""
       },
       {
         "lineNumber": 1467,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "#### `contents.sendToFrame(frameId, channel, ...args)`"
       },
       {
         "lineNumber": 1468,
@@ -10283,70 +10283,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "You can also read `frameId` from all incoming IPC messages in the main process."
+        "content": "* `frameId` Integer"
       },
       {
         "lineNumber": 1470,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `channel` String"
       },
       {
         "lineNumber": 1471,
         "author": {
           "gitId": "-"
         },
-        "content": "```js"
+        "content": "* `...args` any[]"
       },
       {
         "lineNumber": 1472,
         "author": {
           "gitId": "-"
         },
-        "content": "// In the main process"
+        "content": ""
       },
       {
         "lineNumber": 1473,
         "author": {
           "gitId": "-"
         },
-        "content": "ipcMain.on(\u0027ping\u0027, (event) \u003d\u003e {"
+        "content": "Send an asynchronous message to a specific frame in a renderer process via"
       },
       {
         "lineNumber": 1474,
         "author": {
           "gitId": "-"
         },
-        "content": "  console.info(\u0027Message came from frameId:\u0027, event.frameId)"
+        "content": "`channel`. Arguments will be serialized"
       },
       {
         "lineNumber": 1475,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": "as JSON internally and as such no functions or prototype chains will be included."
       },
       {
         "lineNumber": 1476,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": ""
       },
       {
         "lineNumber": 1477,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The renderer process can handle the message by listening to `channel` with the"
       },
       {
         "lineNumber": 1478,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.enableDeviceEmulation(parameters)`"
+        "content": "[`ipcRenderer`](ipc-renderer.md) module."
       },
       {
         "lineNumber": 1479,
@@ -10360,238 +10360,238 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `parameters` Object"
+        "content": "If you want to get the `frameId` of a given renderer context you should use"
       },
       {
         "lineNumber": 1481,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `screenPosition` String - Specify the screen type to emulate"
+        "content": "the `webFrame.routingId` value.  E.g."
       },
       {
         "lineNumber": 1482,
         "author": {
           "gitId": "-"
         },
-        "content": "      (default: `desktop`):"
+        "content": ""
       },
       {
         "lineNumber": 1483,
         "author": {
           "gitId": "-"
         },
-        "content": "    * `desktop` - Desktop screen type."
+        "content": "```js"
       },
       {
         "lineNumber": 1484,
         "author": {
           "gitId": "-"
         },
-        "content": "    * `mobile` - Mobile screen type."
+        "content": "// In a renderer process"
       },
       {
         "lineNumber": 1485,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `screenSize` [Size](structures/size.md) - Set the emulated screen size (screenPosition \u003d\u003d mobile)."
+        "content": "console.log(\u0027My frameId is:\u0027, require(\u0027electron\u0027).webFrame.routingId)"
       },
       {
         "lineNumber": 1486,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `viewPosition` [Point](structures/point.md) - Position the view on the screen"
+        "content": "```"
       },
       {
         "lineNumber": 1487,
         "author": {
           "gitId": "-"
         },
-        "content": "      (screenPosition \u003d\u003d mobile) (default: `{ x: 0, y: 0 }`)."
+        "content": ""
       },
       {
         "lineNumber": 1488,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `deviceScaleFactor` Integer - Set the device scale factor (if zero defaults to"
+        "content": "You can also read `frameId` from all incoming IPC messages in the main process."
       },
       {
         "lineNumber": 1489,
         "author": {
           "gitId": "-"
         },
-        "content": "      original device scale factor) (default: `0`)."
+        "content": ""
       },
       {
         "lineNumber": 1490,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `viewSize` [Size](structures/size.md) - Set the emulated view size (empty means no override)"
+        "content": "```js"
       },
       {
         "lineNumber": 1491,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `scale` Float - Scale of emulated view inside available space (not in fit to"
+        "content": "// In the main process"
       },
       {
         "lineNumber": 1492,
         "author": {
           "gitId": "-"
         },
-        "content": "      view mode) (default: `1`)."
+        "content": "ipcMain.on(\u0027ping\u0027, (event) \u003d\u003e {"
       },
       {
         "lineNumber": 1493,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  console.info(\u0027Message came from frameId:\u0027, event.frameId)"
       },
       {
         "lineNumber": 1494,
         "author": {
           "gitId": "-"
         },
-        "content": "Enable device emulation with the given parameters."
+        "content": "})"
       },
       {
         "lineNumber": 1495,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 1496,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.disableDeviceEmulation()`"
+        "content": ""
       },
       {
         "lineNumber": 1497,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.enableDeviceEmulation(parameters)`"
       },
       {
         "lineNumber": 1498,
         "author": {
           "gitId": "-"
         },
-        "content": "Disable device emulation enabled by `webContents.enableDeviceEmulation`."
+        "content": ""
       },
       {
         "lineNumber": 1499,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `parameters` Object"
       },
       {
         "lineNumber": 1500,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.sendInputEvent(event)`"
+        "content": "  * `screenPosition` String - Specify the screen type to emulate"
       },
       {
         "lineNumber": 1501,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      (default: `desktop`):"
       },
       {
         "lineNumber": 1502,
         "author": {
           "gitId": "-"
         },
-        "content": "* `event` Object"
+        "content": "    * `desktop` - Desktop screen type."
       },
       {
         "lineNumber": 1503,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `type` String (**required**) - The type of the event, can be `mouseDown`,"
+        "content": "    * `mobile` - Mobile screen type."
       },
       {
         "lineNumber": 1504,
         "author": {
           "gitId": "-"
         },
-        "content": "    `mouseUp`, `mouseEnter`, `mouseLeave`, `contextMenu`, `mouseWheel`,"
+        "content": "  * `screenSize` [Size](structures/size.md) - Set the emulated screen size (screenPosition \u003d\u003d mobile)."
       },
       {
         "lineNumber": 1505,
         "author": {
           "gitId": "-"
         },
-        "content": "    `mouseMove`, `keyDown`, `keyUp` or `char`."
+        "content": "  * `viewPosition` [Point](structures/point.md) - Position the view on the screen"
       },
       {
         "lineNumber": 1506,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `modifiers` String[] - An array of modifiers of the event, can"
+        "content": "      (screenPosition \u003d\u003d mobile) (default: `{ x: 0, y: 0 }`)."
       },
       {
         "lineNumber": 1507,
         "author": {
           "gitId": "-"
         },
-        "content": "    include `shift`, `control`, `alt`, `meta`, `isKeypad`, `isAutoRepeat`,"
+        "content": "  * `deviceScaleFactor` Integer - Set the device scale factor (if zero defaults to"
       },
       {
         "lineNumber": 1508,
         "author": {
           "gitId": "-"
         },
-        "content": "    `leftButtonDown`, `middleButtonDown`, `rightButtonDown`, `capsLock`,"
+        "content": "      original device scale factor) (default: `0`)."
       },
       {
         "lineNumber": 1509,
         "author": {
           "gitId": "-"
         },
-        "content": "    `numLock`, `left`, `right`."
+        "content": "  * `viewSize` [Size](structures/size.md) - Set the emulated view size (empty means no override)"
       },
       {
         "lineNumber": 1510,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `scale` Float - Scale of emulated view inside available space (not in fit to"
       },
       {
         "lineNumber": 1511,
         "author": {
           "gitId": "-"
         },
-        "content": "Sends an input `event` to the page."
+        "content": "      view mode) (default: `1`)."
       },
       {
         "lineNumber": 1512,
         "author": {
           "gitId": "-"
         },
-        "content": "**Note:** The [`BrowserWindow`](browser-window.md) containing the contents needs to be focused for"
+        "content": ""
       },
       {
         "lineNumber": 1513,
         "author": {
           "gitId": "-"
         },
-        "content": "`sendInputEvent()` to work."
+        "content": "Enable device emulation with the given parameters."
       },
       {
         "lineNumber": 1514,
@@ -10605,7 +10605,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "For keyboard events, the `event` object also have following properties:"
+        "content": "#### `contents.disableDeviceEmulation()`"
       },
       {
         "lineNumber": 1516,
@@ -10619,21 +10619,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `keyCode` String (**required**) - The character that will be sent"
+        "content": "Disable device emulation enabled by `webContents.enableDeviceEmulation`."
       },
       {
         "lineNumber": 1518,
         "author": {
           "gitId": "-"
         },
-        "content": "  as the keyboard event. Should only use the valid key codes in"
+        "content": ""
       },
       {
         "lineNumber": 1519,
         "author": {
           "gitId": "-"
         },
-        "content": "  [Accelerator](accelerator.md)."
+        "content": "#### `contents.sendInputEvent(event)`"
       },
       {
         "lineNumber": 1520,
@@ -10647,84 +10647,84 @@
         "author": {
           "gitId": "-"
         },
-        "content": "For mouse events, the `event` object also have following properties:"
+        "content": "* `event` Object"
       },
       {
         "lineNumber": 1522,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `type` String (**required**) - The type of the event, can be `mouseDown`,"
       },
       {
         "lineNumber": 1523,
         "author": {
           "gitId": "-"
         },
-        "content": "* `x` Integer (**required**)"
+        "content": "    `mouseUp`, `mouseEnter`, `mouseLeave`, `contextMenu`, `mouseWheel`,"
       },
       {
         "lineNumber": 1524,
         "author": {
           "gitId": "-"
         },
-        "content": "* `y` Integer (**required**)"
+        "content": "    `mouseMove`, `keyDown`, `keyUp` or `char`."
       },
       {
         "lineNumber": 1525,
         "author": {
           "gitId": "-"
         },
-        "content": "* `button` String - The button pressed, can be `left`, `middle`, `right`."
+        "content": "  * `modifiers` String[] - An array of modifiers of the event, can"
       },
       {
         "lineNumber": 1526,
         "author": {
           "gitId": "-"
         },
-        "content": "* `globalX` Integer"
+        "content": "    include `shift`, `control`, `alt`, `meta`, `isKeypad`, `isAutoRepeat`,"
       },
       {
         "lineNumber": 1527,
         "author": {
           "gitId": "-"
         },
-        "content": "* `globalY` Integer"
+        "content": "    `leftButtonDown`, `middleButtonDown`, `rightButtonDown`, `capsLock`,"
       },
       {
         "lineNumber": 1528,
         "author": {
           "gitId": "-"
         },
-        "content": "* `movementX` Integer"
+        "content": "    `numLock`, `left`, `right`."
       },
       {
         "lineNumber": 1529,
         "author": {
           "gitId": "-"
         },
-        "content": "* `movementY` Integer"
+        "content": ""
       },
       {
         "lineNumber": 1530,
         "author": {
           "gitId": "-"
         },
-        "content": "* `clickCount` Integer"
+        "content": "Sends an input `event` to the page."
       },
       {
         "lineNumber": 1531,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "**Note:** The [`BrowserWindow`](browser-window.md) containing the contents needs to be focused for"
       },
       {
         "lineNumber": 1532,
         "author": {
           "gitId": "-"
         },
-        "content": "For the `mouseWheel` event, the `event` object also have following properties:"
+        "content": "`sendInputEvent()` to work."
       },
       {
         "lineNumber": 1533,
@@ -10738,189 +10738,189 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `deltaX` Integer"
+        "content": "For keyboard events, the `event` object also have following properties:"
       },
       {
         "lineNumber": 1535,
         "author": {
           "gitId": "-"
         },
-        "content": "* `deltaY` Integer"
+        "content": ""
       },
       {
         "lineNumber": 1536,
         "author": {
           "gitId": "-"
         },
-        "content": "* `wheelTicksX` Integer"
+        "content": "* `keyCode` String (**required**) - The character that will be sent"
       },
       {
         "lineNumber": 1537,
         "author": {
           "gitId": "-"
         },
-        "content": "* `wheelTicksY` Integer"
+        "content": "  as the keyboard event. Should only use the valid key codes in"
       },
       {
         "lineNumber": 1538,
         "author": {
           "gitId": "-"
         },
-        "content": "* `accelerationRatioX` Integer"
+        "content": "  [Accelerator](accelerator.md)."
       },
       {
         "lineNumber": 1539,
         "author": {
           "gitId": "-"
         },
-        "content": "* `accelerationRatioY` Integer"
+        "content": ""
       },
       {
         "lineNumber": 1540,
         "author": {
           "gitId": "-"
         },
-        "content": "* `hasPreciseScrollingDeltas` Boolean"
+        "content": "For mouse events, the `event` object also have following properties:"
       },
       {
         "lineNumber": 1541,
         "author": {
           "gitId": "-"
         },
-        "content": "* `canScroll` Boolean"
+        "content": ""
       },
       {
         "lineNumber": 1542,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `x` Integer (**required**)"
       },
       {
         "lineNumber": 1543,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.beginFrameSubscription([onlyDirty ,]callback)`"
+        "content": "* `y` Integer (**required**)"
       },
       {
         "lineNumber": 1544,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `button` String - The button pressed, can be `left`, `middle`, `right`."
       },
       {
         "lineNumber": 1545,
         "author": {
           "gitId": "-"
         },
-        "content": "* `onlyDirty` Boolean (optional) - Defaults to `false`."
+        "content": "* `globalX` Integer"
       },
       {
         "lineNumber": 1546,
         "author": {
           "gitId": "-"
         },
-        "content": "* `callback` Function"
+        "content": "* `globalY` Integer"
       },
       {
         "lineNumber": 1547,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `image` [NativeImage](native-image.md)"
+        "content": "* `movementX` Integer"
       },
       {
         "lineNumber": 1548,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `dirtyRect` [Rectangle](structures/rectangle.md)"
+        "content": "* `movementY` Integer"
       },
       {
         "lineNumber": 1549,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `clickCount` Integer"
       },
       {
         "lineNumber": 1550,
         "author": {
           "gitId": "-"
         },
-        "content": "Begin subscribing for presentation events and captured frames, the `callback`"
+        "content": ""
       },
       {
         "lineNumber": 1551,
         "author": {
           "gitId": "-"
         },
-        "content": "will be called with `callback(image, dirtyRect)` when there is a presentation"
+        "content": "For the `mouseWheel` event, the `event` object also have following properties:"
       },
       {
         "lineNumber": 1552,
         "author": {
           "gitId": "-"
         },
-        "content": "event."
+        "content": ""
       },
       {
         "lineNumber": 1553,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `deltaX` Integer"
       },
       {
         "lineNumber": 1554,
         "author": {
           "gitId": "-"
         },
-        "content": "The `image` is an instance of [NativeImage](native-image.md) that stores the"
+        "content": "* `deltaY` Integer"
       },
       {
         "lineNumber": 1555,
         "author": {
           "gitId": "-"
         },
-        "content": "captured frame."
+        "content": "* `wheelTicksX` Integer"
       },
       {
         "lineNumber": 1556,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `wheelTicksY` Integer"
       },
       {
         "lineNumber": 1557,
         "author": {
           "gitId": "-"
         },
-        "content": "The `dirtyRect` is an object with `x, y, width, height` properties that"
+        "content": "* `accelerationRatioX` Integer"
       },
       {
         "lineNumber": 1558,
         "author": {
           "gitId": "-"
         },
-        "content": "describes which part of the page was repainted. If `onlyDirty` is set to"
+        "content": "* `accelerationRatioY` Integer"
       },
       {
         "lineNumber": 1559,
         "author": {
           "gitId": "-"
         },
-        "content": "`true`, `image` will only contain the repainted area. `onlyDirty` defaults to"
+        "content": "* `hasPreciseScrollingDeltas` Boolean"
       },
       {
         "lineNumber": 1560,
         "author": {
           "gitId": "-"
         },
-        "content": "`false`."
+        "content": "* `canScroll` Boolean"
       },
       {
         "lineNumber": 1561,
@@ -10934,7 +10934,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.endFrameSubscription()`"
+        "content": "#### `contents.beginFrameSubscription([onlyDirty ,]callback)`"
       },
       {
         "lineNumber": 1563,
@@ -10948,56 +10948,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "End subscribing for frame presentation events."
+        "content": "* `onlyDirty` Boolean (optional) - Defaults to `false`."
       },
       {
         "lineNumber": 1565,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `callback` Function"
       },
       {
         "lineNumber": 1566,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.startDrag(item)`"
+        "content": "  * `image` [NativeImage](native-image.md)"
       },
       {
         "lineNumber": 1567,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `dirtyRect` [Rectangle](structures/rectangle.md)"
       },
       {
         "lineNumber": 1568,
         "author": {
           "gitId": "-"
         },
-        "content": "* `item` Object"
+        "content": ""
       },
       {
         "lineNumber": 1569,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `file` String[] | String - The path(s) to the file(s) being dragged."
+        "content": "Begin subscribing for presentation events and captured frames, the `callback`"
       },
       {
         "lineNumber": 1570,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `icon` [NativeImage](native-image.md) - The image must be non-empty on"
+        "content": "will be called with `callback(image, dirtyRect)` when there is a presentation"
       },
       {
         "lineNumber": 1571,
         "author": {
           "gitId": "-"
         },
-        "content": "    macOS."
+        "content": "event."
       },
       {
         "lineNumber": 1572,
@@ -11011,77 +11011,77 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Sets the `item` as dragging item for current drag-drop operation, `file` is the"
+        "content": "The `image` is an instance of [NativeImage](native-image.md) that stores the"
       },
       {
         "lineNumber": 1574,
         "author": {
           "gitId": "-"
         },
-        "content": "absolute path of the file to be dragged, and `icon` is the image showing under"
+        "content": "captured frame."
       },
       {
         "lineNumber": 1575,
         "author": {
           "gitId": "-"
         },
-        "content": "the cursor when dragging."
+        "content": ""
       },
       {
         "lineNumber": 1576,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "The `dirtyRect` is an object with `x, y, width, height` properties that"
       },
       {
         "lineNumber": 1577,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.savePage(fullPath, saveType)`"
+        "content": "describes which part of the page was repainted. If `onlyDirty` is set to"
       },
       {
         "lineNumber": 1578,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "`true`, `image` will only contain the repainted area. `onlyDirty` defaults to"
       },
       {
         "lineNumber": 1579,
         "author": {
           "gitId": "-"
         },
-        "content": "* `fullPath` String - The full file path."
+        "content": "`false`."
       },
       {
         "lineNumber": 1580,
         "author": {
           "gitId": "-"
         },
-        "content": "* `saveType` String - Specify the save type."
+        "content": ""
       },
       {
         "lineNumber": 1581,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `HTMLOnly` - Save only the HTML of the page."
+        "content": "#### `contents.endFrameSubscription()`"
       },
       {
         "lineNumber": 1582,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `HTMLComplete` - Save complete-html page."
+        "content": ""
       },
       {
         "lineNumber": 1583,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `MHTML` - Save complete-html page as MHTML."
+        "content": "End subscribing for frame presentation events."
       },
       {
         "lineNumber": 1584,
@@ -11095,7 +11095,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cvoid\u003e` - resolves if the page is saved."
+        "content": "#### `contents.startDrag(item)`"
       },
       {
         "lineNumber": 1586,
@@ -11109,112 +11109,112 @@
         "author": {
           "gitId": "-"
         },
-        "content": "```javascript"
+        "content": "* `item` Object"
       },
       {
         "lineNumber": 1588,
         "author": {
           "gitId": "-"
         },
-        "content": "const { BrowserWindow } \u003d require(\u0027electron\u0027)"
+        "content": "  * `file` String[] | String - The path(s) to the file(s) being dragged."
       },
       {
         "lineNumber": 1589,
         "author": {
           "gitId": "-"
         },
-        "content": "let win \u003d new BrowserWindow()"
+        "content": "  * `icon` [NativeImage](native-image.md) - The image must be non-empty on"
       },
       {
         "lineNumber": 1590,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    macOS."
       },
       {
         "lineNumber": 1591,
         "author": {
           "gitId": "-"
         },
-        "content": "win.loadURL(\u0027https://github.com\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1592,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Sets the `item` as dragging item for current drag-drop operation, `file` is the"
       },
       {
         "lineNumber": 1593,
         "author": {
           "gitId": "-"
         },
-        "content": "win.webContents.on(\u0027did-finish-load\u0027, async () \u003d\u003e {"
+        "content": "absolute path of the file to be dragged, and `icon` is the image showing under"
       },
       {
         "lineNumber": 1594,
         "author": {
           "gitId": "-"
         },
-        "content": "  win.webContents.savePage(\u0027/tmp/test.html\u0027, \u0027HTMLComplete\u0027).then(() \u003d\u003e {"
+        "content": "the cursor when dragging."
       },
       {
         "lineNumber": 1595,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.log(\u0027Page was saved successfully.\u0027)"
+        "content": ""
       },
       {
         "lineNumber": 1596,
         "author": {
           "gitId": "-"
         },
-        "content": "  }).catch(err \u003d\u003e {"
+        "content": "#### `contents.savePage(fullPath, saveType)`"
       },
       {
         "lineNumber": 1597,
         "author": {
           "gitId": "-"
         },
-        "content": "    console.log(err)"
+        "content": ""
       },
       {
         "lineNumber": 1598,
         "author": {
           "gitId": "-"
         },
-        "content": "  })"
+        "content": "* `fullPath` String - The full file path."
       },
       {
         "lineNumber": 1599,
         "author": {
           "gitId": "-"
         },
-        "content": "})"
+        "content": "* `saveType` String - Specify the save type."
       },
       {
         "lineNumber": 1600,
         "author": {
           "gitId": "-"
         },
-        "content": "```"
+        "content": "  * `HTMLOnly` - Save only the HTML of the page."
       },
       {
         "lineNumber": 1601,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `HTMLComplete` - Save complete-html page."
       },
       {
         "lineNumber": 1602,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.showDefinitionForSelection()` _macOS_"
+        "content": "  * `MHTML` - Save complete-html page as MHTML."
       },
       {
         "lineNumber": 1603,
@@ -11228,7 +11228,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Shows pop-up dictionary that searches the selected word on the page."
+        "content": "Returns `Promise\u003cvoid\u003e` - resolves if the page is saved."
       },
       {
         "lineNumber": 1605,
@@ -11242,21 +11242,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.isOffscreen()`"
+        "content": "```javascript"
       },
       {
         "lineNumber": 1607,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "const { BrowserWindow } \u003d require(\u0027electron\u0027)"
       },
       {
         "lineNumber": 1608,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Boolean` - Indicates whether *offscreen rendering* is enabled."
+        "content": "let win \u003d new BrowserWindow()"
       },
       {
         "lineNumber": 1609,
@@ -11270,7 +11270,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.startPainting()`"
+        "content": "win.loadURL(\u0027https://github.com\u0027)"
       },
       {
         "lineNumber": 1611,
@@ -11284,112 +11284,112 @@
         "author": {
           "gitId": "-"
         },
-        "content": "If *offscreen rendering* is enabled and not painting, start painting."
+        "content": "win.webContents.on(\u0027did-finish-load\u0027, async () \u003d\u003e {"
       },
       {
         "lineNumber": 1613,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  win.webContents.savePage(\u0027/tmp/test.html\u0027, \u0027HTMLComplete\u0027).then(() \u003d\u003e {"
       },
       {
         "lineNumber": 1614,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.stopPainting()`"
+        "content": "    console.log(\u0027Page was saved successfully.\u0027)"
       },
       {
         "lineNumber": 1615,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }).catch(err \u003d\u003e {"
       },
       {
         "lineNumber": 1616,
         "author": {
           "gitId": "-"
         },
-        "content": "If *offscreen rendering* is enabled and painting, stop painting."
+        "content": "    console.log(err)"
       },
       {
         "lineNumber": 1617,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  })"
       },
       {
         "lineNumber": 1618,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.isPainting()`"
+        "content": "})"
       },
       {
         "lineNumber": 1619,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "```"
       },
       {
         "lineNumber": 1620,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Boolean` - If *offscreen rendering* is enabled returns whether it is currently painting."
+        "content": ""
       },
       {
         "lineNumber": 1621,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.showDefinitionForSelection()` _macOS_"
       },
       {
         "lineNumber": 1622,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setFrameRate(fps)`"
+        "content": ""
       },
       {
         "lineNumber": 1623,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Shows pop-up dictionary that searches the selected word on the page."
       },
       {
         "lineNumber": 1624,
         "author": {
           "gitId": "-"
         },
-        "content": "* `fps` Integer"
+        "content": ""
       },
       {
         "lineNumber": 1625,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.isOffscreen()`"
       },
       {
         "lineNumber": 1626,
         "author": {
           "gitId": "-"
         },
-        "content": "If *offscreen rendering* is enabled sets the frame rate to the specified number."
+        "content": ""
       },
       {
         "lineNumber": 1627,
         "author": {
           "gitId": "-"
         },
-        "content": "Only values between 1 and 60 are accepted."
+        "content": "Returns `Boolean` - Indicates whether *offscreen rendering* is enabled."
       },
       {
         "lineNumber": 1628,
@@ -11403,7 +11403,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.getFrameRate()`"
+        "content": "#### `contents.startPainting()`"
       },
       {
         "lineNumber": 1630,
@@ -11417,7 +11417,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Integer` - If *offscreen rendering* is enabled returns the current frame rate."
+        "content": "If *offscreen rendering* is enabled and not painting, start painting."
       },
       {
         "lineNumber": 1632,
@@ -11431,7 +11431,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.invalidate()`"
+        "content": "#### `contents.stopPainting()`"
       },
       {
         "lineNumber": 1634,
@@ -11445,7 +11445,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Schedules a full repaint of the window this web contents is in."
+        "content": "If *offscreen rendering* is enabled and painting, stop painting."
       },
       {
         "lineNumber": 1636,
@@ -11459,161 +11459,161 @@
         "author": {
           "gitId": "-"
         },
-        "content": "If *offscreen rendering* is enabled invalidates the frame and generates a new"
+        "content": "#### `contents.isPainting()`"
       },
       {
         "lineNumber": 1638,
         "author": {
           "gitId": "-"
         },
-        "content": "one through the `\u0027paint\u0027` event."
+        "content": ""
       },
       {
         "lineNumber": 1639,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "Returns `Boolean` - If *offscreen rendering* is enabled returns whether it is currently painting."
       },
       {
         "lineNumber": 1640,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.getWebRTCIPHandlingPolicy()`"
+        "content": ""
       },
       {
         "lineNumber": 1641,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "#### `contents.setFrameRate(fps)`"
       },
       {
         "lineNumber": 1642,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `String` - Returns the WebRTC IP Handling Policy."
+        "content": ""
       },
       {
         "lineNumber": 1643,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "* `fps` Integer"
       },
       {
         "lineNumber": 1644,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setWebRTCIPHandlingPolicy(policy)`"
+        "content": ""
       },
       {
         "lineNumber": 1645,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "If *offscreen rendering* is enabled sets the frame rate to the specified number."
       },
       {
         "lineNumber": 1646,
         "author": {
           "gitId": "-"
         },
-        "content": "* `policy` String - Specify the WebRTC IP Handling Policy."
+        "content": "Only values between 1 and 60 are accepted."
       },
       {
         "lineNumber": 1647,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `default` - Exposes user\u0027s public and local IPs. This is the default"
+        "content": ""
       },
       {
         "lineNumber": 1648,
         "author": {
           "gitId": "-"
         },
-        "content": "  behavior. When this policy is used, WebRTC has the right to enumerate all"
+        "content": "#### `contents.getFrameRate()`"
       },
       {
         "lineNumber": 1649,
         "author": {
           "gitId": "-"
         },
-        "content": "  interfaces and bind them to discover public interfaces."
+        "content": ""
       },
       {
         "lineNumber": 1650,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `default_public_interface_only` - Exposes user\u0027s public IP, but does not"
+        "content": "Returns `Integer` - If *offscreen rendering* is enabled returns the current frame rate."
       },
       {
         "lineNumber": 1651,
         "author": {
           "gitId": "-"
         },
-        "content": "  expose user\u0027s local IP. When this policy is used, WebRTC should only use the"
+        "content": ""
       },
       {
         "lineNumber": 1652,
         "author": {
           "gitId": "-"
         },
-        "content": "  default route used by http. This doesn\u0027t expose any local addresses."
+        "content": "#### `contents.invalidate()`"
       },
       {
         "lineNumber": 1653,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `default_public_and_private_interfaces` - Exposes user\u0027s public and local"
+        "content": ""
       },
       {
         "lineNumber": 1654,
         "author": {
           "gitId": "-"
         },
-        "content": "  IPs. When this policy is used, WebRTC should only use the default route used"
+        "content": "Schedules a full repaint of the window this web contents is in."
       },
       {
         "lineNumber": 1655,
         "author": {
           "gitId": "-"
         },
-        "content": "  by http. This also exposes the associated default private address. Default"
+        "content": ""
       },
       {
         "lineNumber": 1656,
         "author": {
           "gitId": "-"
         },
-        "content": "  route is the route chosen by the OS on a multi-homed endpoint."
+        "content": "If *offscreen rendering* is enabled invalidates the frame and generates a new"
       },
       {
         "lineNumber": 1657,
         "author": {
           "gitId": "-"
         },
-        "content": "  * `disable_non_proxied_udp` - Does not expose public or local IPs. When this"
+        "content": "one through the `\u0027paint\u0027` event."
       },
       {
         "lineNumber": 1658,
         "author": {
           "gitId": "-"
         },
-        "content": "  policy is used, WebRTC should only use TCP to contact peers or servers unless"
+        "content": ""
       },
       {
         "lineNumber": 1659,
         "author": {
           "gitId": "-"
         },
-        "content": "  the proxy server supports UDP."
+        "content": "#### `contents.getWebRTCIPHandlingPolicy()`"
       },
       {
         "lineNumber": 1660,
@@ -11627,21 +11627,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Setting the WebRTC IP handling policy allows you to control which IPs are"
+        "content": "Returns `String` - Returns the WebRTC IP Handling Policy."
       },
       {
         "lineNumber": 1662,
         "author": {
           "gitId": "-"
         },
-        "content": "exposed via WebRTC. See [BrowserLeaks](https://browserleaks.com/webrtc) for"
+        "content": ""
       },
       {
         "lineNumber": 1663,
         "author": {
           "gitId": "-"
         },
-        "content": "more details."
+        "content": "#### `contents.setWebRTCIPHandlingPolicy(policy)`"
       },
       {
         "lineNumber": 1664,
@@ -11655,98 +11655,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.getOSProcessId()`"
+        "content": "* `policy` String - Specify the WebRTC IP Handling Policy."
       },
       {
         "lineNumber": 1666,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `default` - Exposes user\u0027s public and local IPs. This is the default"
       },
       {
         "lineNumber": 1667,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Integer` - The operating system `pid` of the associated renderer"
+        "content": "  behavior. When this policy is used, WebRTC has the right to enumerate all"
       },
       {
         "lineNumber": 1668,
         "author": {
           "gitId": "-"
         },
-        "content": "process."
+        "content": "  interfaces and bind them to discover public interfaces."
       },
       {
         "lineNumber": 1669,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  * `default_public_interface_only` - Exposes user\u0027s public IP, but does not"
       },
       {
         "lineNumber": 1670,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.getProcessId()`"
+        "content": "  expose user\u0027s local IP. When this policy is used, WebRTC should only use the"
       },
       {
         "lineNumber": 1671,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  default route used by http. This doesn\u0027t expose any local addresses."
       },
       {
         "lineNumber": 1672,
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Integer` - The Chromium internal `pid` of the associated renderer. Can"
+        "content": "  * `default_public_and_private_interfaces` - Exposes user\u0027s public and local"
       },
       {
         "lineNumber": 1673,
         "author": {
           "gitId": "-"
         },
-        "content": "be compared to the `frameProcessId` passed by frame specific navigation events"
+        "content": "  IPs. When this policy is used, WebRTC should only use the default route used"
       },
       {
         "lineNumber": 1674,
         "author": {
           "gitId": "-"
         },
-        "content": "(e.g. `did-frame-navigate`)"
+        "content": "  by http. This also exposes the associated default private address. Default"
       },
       {
         "lineNumber": 1675,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  route is the route chosen by the OS on a multi-homed endpoint."
       },
       {
         "lineNumber": 1676,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.takeHeapSnapshot(filePath)`"
+        "content": "  * `disable_non_proxied_udp` - Does not expose public or local IPs. When this"
       },
       {
         "lineNumber": 1677,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  policy is used, WebRTC should only use TCP to contact peers or servers unless"
       },
       {
         "lineNumber": 1678,
         "author": {
           "gitId": "-"
         },
-        "content": "* `filePath` String - Path to the output file."
+        "content": "  the proxy server supports UDP."
       },
       {
         "lineNumber": 1679,
@@ -11760,21 +11760,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "Returns `Promise\u003cvoid\u003e` - Indicates whether the snapshot has been created successfully."
+        "content": "Setting the WebRTC IP handling policy allows you to control which IPs are"
       },
       {
         "lineNumber": 1681,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "exposed via WebRTC. See [BrowserLeaks](https://browserleaks.com/webrtc) for"
       },
       {
         "lineNumber": 1682,
         "author": {
           "gitId": "-"
         },
-        "content": "Takes a V8 heap snapshot and saves it to `filePath`."
+        "content": "more details."
       },
       {
         "lineNumber": 1683,
@@ -11788,7 +11788,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.setBackgroundThrottling(allowed)`"
+        "content": "#### `contents.getOSProcessId()`"
       },
       {
         "lineNumber": 1685,
@@ -11802,28 +11802,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "* `allowed` Boolean"
+        "content": "Returns `Integer` - The operating system `pid` of the associated renderer"
       },
       {
         "lineNumber": 1687,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "process."
       },
       {
         "lineNumber": 1688,
         "author": {
           "gitId": "-"
         },
-        "content": "Controls whether or not this WebContents will throttle animations and timers"
+        "content": ""
       },
       {
         "lineNumber": 1689,
         "author": {
           "gitId": "-"
         },
-        "content": "when the page becomes backgrounded. This also affects the Page Visibility API."
+        "content": "#### `contents.getProcessId()`"
       },
       {
         "lineNumber": 1690,
@@ -11835,28 +11835,28 @@
       {
         "lineNumber": 1691,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "#### `contents.getType()`"
+        "content": "Returns `Integer` - The Chromium internal `pid` of the associated renderer. Can"
       },
       {
         "lineNumber": 1692,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "be compared to the `frameProcessId` passed by frame specific navigation events"
       },
       {
         "lineNumber": 1693,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
-        "content": "Returns `String` - the type of the webContent. Can be `backgroundPage`, `window`, `browserView`, `remote`, `webview` or `offscreen`."
+        "content": "(e.g. `did-frame-navigate`)"
       },
       {
         "lineNumber": 1694,
         "author": {
-          "gitId": "emer7"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -11865,7 +11865,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "### Instance Properties"
+        "content": "#### `contents.takeHeapSnapshot(filePath)`"
       },
       {
         "lineNumber": 1696,
@@ -11879,7 +11879,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.id`"
+        "content": "* `filePath` String - Path to the output file."
       },
       {
         "lineNumber": 1698,
@@ -11893,7 +11893,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "A `Integer` representing the unique ID of this WebContents."
+        "content": "Returns `Promise\u003cvoid\u003e` - Indicates whether the snapshot has been created successfully."
       },
       {
         "lineNumber": 1700,
@@ -11907,7 +11907,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.session`"
+        "content": "Takes a V8 heap snapshot and saves it to `filePath`."
       },
       {
         "lineNumber": 1702,
@@ -11921,7 +11921,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "A [`Session`](session.md) used by this webContents."
+        "content": "#### `contents.setBackgroundThrottling(allowed)`"
       },
       {
         "lineNumber": 1704,
@@ -11935,7 +11935,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.hostWebContents`"
+        "content": "* `allowed` Boolean"
       },
       {
         "lineNumber": 1706,
@@ -11949,56 +11949,56 @@
         "author": {
           "gitId": "-"
         },
-        "content": "A [`WebContents`](web-contents.md) instance that might own this `WebContents`."
+        "content": "Controls whether or not this WebContents will throttle animations and timers"
       },
       {
         "lineNumber": 1708,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "when the page becomes backgrounded. This also affects the Page Visibility API."
       },
       {
         "lineNumber": 1709,
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.devToolsWebContents`"
+        "content": ""
       },
       {
         "lineNumber": 1710,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": ""
+        "content": "#### `contents.getType()`"
       },
       {
         "lineNumber": 1711,
         "author": {
-          "gitId": "-"
-        },
-        "content": "A `WebContents` of DevTools for this `WebContents`."
-      },
-      {
-        "lineNumber": 1712,
-        "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
         "content": ""
       },
       {
+        "lineNumber": 1712,
+        "author": {
+          "gitId": "emer7"
+        },
+        "content": "Returns `String` - the type of the webContent. Can be `backgroundPage`, `window`, `browserView`, `remote`, `webview` or `offscreen`."
+      },
+      {
         "lineNumber": 1713,
         "author": {
-          "gitId": "-"
+          "gitId": "emer7"
         },
-        "content": "**Note:** Users should never store this object because it may become `null`"
+        "content": ""
       },
       {
         "lineNumber": 1714,
         "author": {
           "gitId": "-"
         },
-        "content": "when the DevTools has been closed."
+        "content": "### Instance Properties"
       },
       {
         "lineNumber": 1715,
@@ -12012,7 +12012,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "#### `contents.debugger`"
+        "content": "#### `contents.id`"
       },
       {
         "lineNumber": 1717,
@@ -12026,7 +12026,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "A [`Debugger`](debugger.md) instance for this webContents."
+        "content": "A `Integer` representing the unique ID of this WebContents."
       },
       {
         "lineNumber": 1719,
@@ -12040,12 +12040,145 @@
         "author": {
           "gitId": "-"
         },
+        "content": "#### `contents.session`"
+      },
+      {
+        "lineNumber": 1721,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1722,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "A [`Session`](session.md) used by this webContents."
+      },
+      {
+        "lineNumber": 1723,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1724,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "#### `contents.hostWebContents`"
+      },
+      {
+        "lineNumber": 1725,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1726,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "A [`WebContents`](web-contents.md) instance that might own this `WebContents`."
+      },
+      {
+        "lineNumber": 1727,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1728,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "#### `contents.devToolsWebContents`"
+      },
+      {
+        "lineNumber": 1729,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1730,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "A `WebContents` of DevTools for this `WebContents`."
+      },
+      {
+        "lineNumber": 1731,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1732,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**Note:** Users should never store this object because it may become `null`"
+      },
+      {
+        "lineNumber": 1733,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "when the DevTools has been closed."
+      },
+      {
+        "lineNumber": 1734,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1735,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "#### `contents.debugger`"
+      },
+      {
+        "lineNumber": 1736,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1737,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "A [`Debugger`](debugger.md) instance for this webContents."
+      },
+      {
+        "lineNumber": 1738,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 1739,
+        "author": {
+          "gitId": "-"
+        },
         "content": "[keyboardevent]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent"
       }
     ],
     "authorContributionMap": {
       "emer7": 4,
-      "-": 1716
+      "-": 1735
     }
   }
 ]
