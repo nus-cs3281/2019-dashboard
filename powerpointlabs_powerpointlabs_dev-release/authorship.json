@@ -41017,133 +41017,133 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                File.Move(shapeGalleryFileName, FullName);"
+        "content": "                // To ensure that the file fullName does not exist before attempting to move"
       },
       {
         "lineNumber": 651,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                if (!File.Exists(FullName))"
       },
       {
         "lineNumber": 652,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                {"
       },
       {
         "lineNumber": 653,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (File.Exists(FullName))"
+        "content": "                    File.Move(shapeGalleryFileName, FullName);"
       },
       {
         "lineNumber": 654,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                }"
       },
       {
         "lineNumber": 655,
         "author": {
           "gitId": "-"
         },
-        "content": "                // to reduce the chance that user opens the shape gallery file, we make the pptx file hidden"
+        "content": "            }"
       },
       {
         "lineNumber": 656,
         "author": {
           "gitId": "-"
         },
-        "content": "                File.SetAttributes(FullName, FileAttributes.Normal);"
+        "content": ""
       },
       {
         "lineNumber": 657,
         "author": {
           "gitId": "-"
         },
-        "content": "                File.SetAttributes(FullName, FileAttributes.Hidden);"
+        "content": "            if (File.Exists(FullName))"
       },
       {
         "lineNumber": 658,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "            {"
       },
       {
         "lineNumber": 659,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "                // to reduce the chance that user opens the shape gallery file, we make the pptx file hidden"
       },
       {
         "lineNumber": 660,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                File.SetAttributes(FullName, FileAttributes.Normal);"
       },
       {
         "lineNumber": 661,
         "author": {
           "gitId": "-"
         },
-        "content": "        private void RetrieveShapeGalleryFile()"
+        "content": "                File.SetAttributes(FullName, FileAttributes.Hidden);"
       },
       {
         "lineNumber": 662,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            }"
       },
       {
         "lineNumber": 663,
         "author": {
           "gitId": "-"
         },
-        "content": "            // set the file as a visible readonly .pptlabsshapes file."
+        "content": "        }"
       },
       {
         "lineNumber": 664,
         "author": {
           "gitId": "-"
         },
-        "content": "            string shapeGalleryFileName \u003d FullName.Replace(\".pptx\", ShapeGalleryFileExtension);"
+        "content": ""
       },
       {
         "lineNumber": 665,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        private void RetrieveShapeGalleryFile()"
       },
       {
         "lineNumber": 666,
         "author": {
           "gitId": "-"
         },
-        "content": "            Trace.TraceInformation(\"FullName \u003d \" + FullName + \", Name \u003d \" + shapeGalleryFileName);"
+        "content": "        {"
       },
       {
         "lineNumber": 667,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            // set the file as a visible readonly .pptlabsshapes file."
       },
       {
         "lineNumber": 668,
         "author": {
           "gitId": "-"
         },
-        "content": "            File.Move(FullName, shapeGalleryFileName);"
+        "content": "            string shapeGalleryFileName \u003d FullName.Replace(\".pptx\", ShapeGalleryFileExtension);"
       },
       {
         "lineNumber": 669,
@@ -41157,21 +41157,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            File.SetAttributes(shapeGalleryFileName, FileAttributes.Normal);"
+        "content": "            Trace.TraceInformation(\"FullName \u003d \" + FullName + \", Name \u003d \" + shapeGalleryFileName);"
       },
       {
         "lineNumber": 671,
         "author": {
           "gitId": "-"
         },
-        "content": "            File.SetAttributes(shapeGalleryFileName, FileAttributes.ReadOnly);"
+        "content": ""
       },
       {
         "lineNumber": 672,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            File.Move(FullName, shapeGalleryFileName);"
       },
       {
         "lineNumber": 673,
@@ -41185,21 +41185,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        private string AddShape(string name, string category) "
+        "content": "            File.SetAttributes(shapeGalleryFileName, FileAttributes.Normal);"
       },
       {
         "lineNumber": 675,
         "author": {
           "gitId": "-"
         },
-        "content": "        {"
+        "content": "            File.SetAttributes(shapeGalleryFileName, FileAttributes.ReadOnly);"
       },
       {
         "lineNumber": 676,
         "author": {
           "gitId": "-"
         },
-        "content": "            PowerPointSlide categorySlide \u003d _defaultCategory;"
+        "content": "        }"
       },
       {
         "lineNumber": 677,
@@ -41213,21 +41213,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            if (!string.IsNullOrEmpty(category))"
+        "content": "        private string AddShape(string name, string category) "
       },
       {
         "lineNumber": 679,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "        {"
       },
       {
         "lineNumber": 680,
         "author": {
           "gitId": "-"
         },
-        "content": "                int categoryIndex \u003d FindCategoryIndex(category);"
+        "content": "            PowerPointSlide categorySlide \u003d _defaultCategory;"
       },
       {
         "lineNumber": 681,
@@ -41241,259 +41241,259 @@
         "author": {
           "gitId": "-"
         },
-        "content": "                if (categoryIndex \u003d\u003d -1)"
+        "content": "            if (!string.IsNullOrEmpty(category))"
       },
       {
         "lineNumber": 683,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": "            {"
       },
       {
         "lineNumber": 684,
         "author": {
           "gitId": "-"
         },
-        "content": "                    return string.Empty;"
+        "content": "                int categoryIndex \u003d FindCategoryIndex(category);"
       },
       {
         "lineNumber": 685,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 686,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                if (categoryIndex \u003d\u003d -1)"
       },
       {
         "lineNumber": 687,
         "author": {
           "gitId": "-"
         },
-        "content": "                categorySlide \u003d Slides[categoryIndex - 1];"
+        "content": "                {"
       },
       {
         "lineNumber": 688,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    return string.Empty;"
       },
       {
         "lineNumber": 689,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                }"
       },
       {
         "lineNumber": 690,
         "author": {
           "gitId": "-"
         },
-        "content": "            // check if the name has been used, if used, name it to the next available name"
+        "content": ""
       },
       {
         "lineNumber": 691,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (categorySlide.HasShapeWithRule(GenerateNameSearchPattern(name)))"
+        "content": "                categorySlide \u003d Slides[categoryIndex - 1];"
       },
       {
         "lineNumber": 692,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "            }"
       },
       {
         "lineNumber": 693,
         "author": {
           "gitId": "-"
         },
-        "content": "                Regex nameExtractionRegex \u003d new Regex(string.Format(NameExtractionPatternFormat, name, name));"
+        "content": ""
       },
       {
         "lineNumber": 694,
         "author": {
           "gitId": "-"
         },
-        "content": "                List\u003cstring\u003e nameList \u003d categorySlide.GetShapesWithRule(nameExtractionRegex)"
+        "content": "            // check if the name has been used, if used, name it to the next available name"
       },
       {
         "lineNumber": 695,
         "author": {
           "gitId": "-"
         },
-        "content": "                                            .Select(item \u003d\u003e nameExtractionRegex.Match(item.Name))"
+        "content": "            if (categorySlide.HasShapeWithRule(GenerateNameSearchPattern(name)))"
       },
       {
         "lineNumber": 696,
         "author": {
           "gitId": "-"
         },
-        "content": "                                            .Select(match \u003d\u003e !string.IsNullOrEmpty(match.Groups[1].Value)"
+        "content": "            {"
       },
       {
         "lineNumber": 697,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                             ? match.Groups[1].Value"
+        "content": "                Regex nameExtractionRegex \u003d new Regex(string.Format(NameExtractionPatternFormat, name, name));"
       },
       {
         "lineNumber": 698,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                             : match.Groups[2].Value)"
+        "content": "                List\u003cstring\u003e nameList \u003d categorySlide.GetShapesWithRule(nameExtractionRegex)"
       },
       {
         "lineNumber": 699,
         "author": {
           "gitId": "-"
         },
-        "content": "                                            .Distinct()"
+        "content": "                                            .Select(item \u003d\u003e nameExtractionRegex.Match(item.Name))"
       },
       {
         "lineNumber": 700,
         "author": {
           "gitId": "-"
         },
-        "content": "                                            .ToList();"
+        "content": "                                            .Select(match \u003d\u003e !string.IsNullOrEmpty(match.Groups[1].Value)"
       },
       {
         "lineNumber": 701,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                                             ? match.Groups[1].Value"
       },
       {
         "lineNumber": 702,
         "author": {
           "gitId": "-"
         },
-        "content": "                name \u003d CommonUtil.NextAvailableName(nameList, name);"
+        "content": "                                                             : match.Groups[2].Value)"
       },
       {
         "lineNumber": 703,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                                            .Distinct()"
       },
       {
         "lineNumber": 704,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                            .ToList();"
       },
       {
         "lineNumber": 705,
         "author": {
           "gitId": "-"
         },
-        "content": "            ShapeRange pastedShapeRange \u003d categorySlide.Shapes.Paste();"
+        "content": ""
       },
       {
         "lineNumber": 706,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                name \u003d CommonUtil.NextAvailableName(nameList, name);"
       },
       {
         "lineNumber": 707,
         "author": {
           "gitId": "-"
         },
-        "content": "            if (pastedShapeRange.Count \u003e 1)"
+        "content": "            }"
       },
       {
         "lineNumber": 708,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": ""
       },
       {
         "lineNumber": 709,
         "author": {
           "gitId": "-"
         },
-        "content": "                for (int nameCount \u003d 1; nameCount \u003c\u003d pastedShapeRange.Count; nameCount++)"
+        "content": "            ShapeRange pastedShapeRange \u003d categorySlide.Shapes.Paste();"
       },
       {
         "lineNumber": 710,
         "author": {
           "gitId": "-"
         },
-        "content": "                {"
+        "content": ""
       },
       {
         "lineNumber": 711,
         "author": {
           "gitId": "-"
         },
-        "content": "                    Shape shape \u003d pastedShapeRange[nameCount];"
+        "content": "            if (pastedShapeRange.Count \u003e 1)"
       },
       {
         "lineNumber": 712,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            {"
       },
       {
         "lineNumber": 713,
         "author": {
           "gitId": "-"
         },
-        "content": "                    shape.Name \u003d string.Format(GroupSelectionNameFormat, name, nameCount);"
+        "content": "                for (int nameCount \u003d 1; nameCount \u003c\u003d pastedShapeRange.Count; nameCount++)"
       },
       {
         "lineNumber": 714,
         "author": {
           "gitId": "-"
         },
-        "content": "                }"
+        "content": "                {"
       },
       {
         "lineNumber": 715,
         "author": {
           "gitId": "-"
         },
-        "content": "            }"
+        "content": "                    Shape shape \u003d pastedShapeRange[nameCount];"
       },
       {
         "lineNumber": 716,
         "author": {
           "gitId": "-"
         },
-        "content": "            else"
+        "content": ""
       },
       {
         "lineNumber": 717,
         "author": {
           "gitId": "-"
         },
-        "content": "            {"
+        "content": "                    shape.Name \u003d string.Format(GroupSelectionNameFormat, name, nameCount);"
       },
       {
         "lineNumber": 718,
         "author": {
           "gitId": "-"
         },
-        "content": "                pastedShapeRange[1].Name \u003d name;"
+        "content": "                }"
       },
       {
         "lineNumber": 719,
@@ -41507,59 +41507,87 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            else"
       },
       {
         "lineNumber": 721,
         "author": {
           "gitId": "-"
         },
-        "content": "            Save();"
+        "content": "            {"
       },
       {
         "lineNumber": 722,
         "author": {
           "gitId": "-"
         },
-        "content": "            ActionProtection();"
+        "content": "                pastedShapeRange[1].Name \u003d name;"
       },
       {
         "lineNumber": 723,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            }"
       },
       {
         "lineNumber": 724,
         "author": {
           "gitId": "-"
         },
-        "content": "            return name;"
+        "content": ""
       },
       {
         "lineNumber": 725,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "            Save();"
       },
       {
         "lineNumber": 726,
         "author": {
           "gitId": "-"
         },
-        "content": "        # endregion"
+        "content": "            ActionProtection();"
       },
       {
         "lineNumber": 727,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 728,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            return name;"
+      },
+      {
+        "lineNumber": 729,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 730,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        # endregion"
+      },
+      {
+        "lineNumber": 731,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 732,
         "author": {
           "gitId": "-"
         },
@@ -41568,7 +41596,7 @@
     ],
     "authorContributionMap": {
       "YuPeiHenry": 18,
-      "-": 710
+      "-": 714
     }
   },
   {
