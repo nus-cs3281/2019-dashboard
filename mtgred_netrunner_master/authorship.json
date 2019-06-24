@@ -16459,3993 +16459,4000 @@
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events"
+        "content": "   {:implementation \"Needs to be resolved manually with Crisium Grid\""
       },
       {
         "lineNumber": 818,
         "author": {
           "gitId": "-"
         },
-        "content": "    {:successful-run"
+        "content": "    :events"
       },
       {
         "lineNumber": 819,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:async true"
+        "content": "    {:successful-run"
       },
       {
         "lineNumber": 820,
         "author": {
           "gitId": "-"
         },
-        "content": "      :interactive (req true)"
+        "content": "     {:async true"
       },
       {
         "lineNumber": 821,
         "author": {
           "gitId": "-"
         },
-        "content": "      :msg \"draw 2 cards and take 1 tag\""
+        "content": "      :interactive (req true)"
       },
       {
         "lineNumber": 822,
         "author": {
           "gitId": "-"
         },
-        "content": "      :req (req (and (is-central? (:server run))"
+        "content": "      :msg \"draw 2 cards and take 1 tag\""
       },
       {
         "lineNumber": 823,
         "author": {
           "gitId": "-"
         },
-        "content": "                     (first-event? state side :successful-run is-central?)))"
+        "content": "      :req (req (and (is-central? (:server run))"
       },
       {
         "lineNumber": 824,
         "author": {
           "gitId": "-"
         },
-        "content": "      :effect (req (wait-for (gain-tags state :runner 1)"
+        "content": "                     (first-event? state side :successful-run is-central?)))"
       },
       {
         "lineNumber": 825,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (draw state :runner eid 2 nil)))}}}"
+        "content": "      :effect (req (wait-for (gain-tags state :runner 1)"
       },
       {
         "lineNumber": 826,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                             (draw state :runner eid 2 nil)))}}}"
       },
       {
         "lineNumber": 827,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Los: Data Hijacker\""
+        "content": ""
       },
       {
         "lineNumber": 828,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:rez {:once :per-turn"
+        "content": "   \"Los: Data Hijacker\""
       },
       {
         "lineNumber": 829,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :req (req (ice? target))"
+        "content": "   {:events {:rez {:once :per-turn"
       },
       {
         "lineNumber": 830,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :msg \"gain 2 [Credits]\""
+        "content": "                   :req (req (ice? target))"
       },
       {
         "lineNumber": 831,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :effect (effect (gain-credits :runner 2))}}}"
+        "content": "                   :msg \"gain 2 [Credits]\""
       },
       {
         "lineNumber": 832,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                   :effect (effect (gain-credits :runner 2))}}}"
       },
       {
         "lineNumber": 833,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"MaxX: Maximum Punk Rock\""
+        "content": ""
       },
       {
         "lineNumber": 834,
         "author": {
           "gitId": "-"
         },
-        "content": "   (let [ability {:msg (msg (let [deck (:deck runner)]"
+        "content": "   \"MaxX: Maximum Punk Rock\""
       },
       {
         "lineNumber": 835,
         "author": {
           "gitId": "-"
         },
-        "content": "                              (if (pos? (count deck))"
+        "content": "   (let [ability {:msg (msg (let [deck (:deck runner)]"
       },
       {
         "lineNumber": 836,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (str \"trash \" (join \", \" (map :title (take 2 deck))) \" from their Stack and draw 1 card\")"
+        "content": "                              (if (pos? (count deck))"
       },
       {
         "lineNumber": 837,
         "author": {
           "gitId": "-"
         },
-        "content": "                                \"trash the top 2 cards from their Stack and draw 1 card - but their Stack is empty\")))"
+        "content": "                                (str \"trash \" (join \", \" (map :title (take 2 deck))) \" from their Stack and draw 1 card\")"
       },
       {
         "lineNumber": 838,
         "author": {
           "gitId": "-"
         },
-        "content": "                  :once :per-turn"
+        "content": "                                \"trash the top 2 cards from their Stack and draw 1 card - but their Stack is empty\")))"
       },
       {
         "lineNumber": 839,
         "author": {
           "gitId": "-"
         },
-        "content": "                  :async true"
+        "content": "                  :once :per-turn"
       },
       {
         "lineNumber": 840,
         "author": {
           "gitId": "-"
         },
-        "content": "                  :effect (effect (mill :runner 2) (draw eid 1 nil))}]"
+        "content": "                  :async true"
       },
       {
         "lineNumber": 841,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:flags {:runner-turn-draw true"
+        "content": "                  :effect (effect (mill :runner 2) (draw eid 1 nil))}]"
       },
       {
         "lineNumber": 842,
         "author": {
           "gitId": "-"
         },
-        "content": "              :runner-phase-12 (req (and (not (:disabled card))"
+        "content": "     {:flags {:runner-turn-draw true"
       },
       {
         "lineNumber": 843,
         "author": {
           "gitId": "-"
         },
-        "content": "                                         (some #(card-flag? % :runner-turn-draw true) (all-active-installed state :runner))))}"
+        "content": "              :runner-phase-12 (req (and (not (:disabled card))"
       },
       {
         "lineNumber": 844,
         "author": {
           "gitId": "-"
         },
-        "content": "      :events {:runner-turn-begins ability}"
+        "content": "                                         (some #(card-flag? % :runner-turn-draw true) (all-active-installed state :runner))))}"
       },
       {
         "lineNumber": 845,
         "author": {
           "gitId": "-"
         },
-        "content": "      :abilities [ability]})"
+        "content": "      :events {:runner-turn-begins ability}"
       },
       {
         "lineNumber": 846,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      :abilities [ability]})"
       },
       {
         "lineNumber": 847,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Mti Mwekundu: Life Improved\""
+        "content": ""
       },
       {
         "lineNumber": 848,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "   \"Mti Mwekundu: Life Improved\""
+      },
+      {
+        "lineNumber": 849,
         "author": {
           "gitId": "ChooJeremy"
         },
         "content": "   (let [ability {:once :per-turn"
       },
       {
-        "lineNumber": 849,
+        "lineNumber": 850,
         "author": {
           "gitId": "-"
         },
         "content": "                  :label \"Install a piece of ice from HQ at the innermost position\""
       },
       {
-        "lineNumber": 850,
+        "lineNumber": 851,
         "author": {
           "gitId": "-"
         },
         "content": "                  :req (req (and run"
       },
       {
-        "lineNumber": 851,
+        "lineNumber": 852,
         "author": {
           "gitId": "-"
         },
         "content": "                                 (zero? (:position run))"
       },
       {
-        "lineNumber": 852,
+        "lineNumber": 853,
         "author": {
           "gitId": "-"
         },
         "content": "                                 (not (contains? run :corp-phase-43))"
       },
       {
-        "lineNumber": 853,
+        "lineNumber": 854,
         "author": {
           "gitId": "-"
         },
         "content": "                                 (not (contains? run :successful))))"
       },
       {
-        "lineNumber": 854,
+        "lineNumber": 855,
         "author": {
           "gitId": "-"
         },
         "content": "                  :prompt \"Choose ICE to install from HQ\""
       },
       {
-        "lineNumber": 855,
+        "lineNumber": 856,
         "author": {
           "gitId": "-"
         },
         "content": "                  :msg \"install ice at the innermost position of this server. Runner is now approaching that ice\""
       },
       {
-        "lineNumber": 856,
+        "lineNumber": 857,
         "author": {
           "gitId": "-"
         },
         "content": "                  :choices {:req #(and (ice? %)"
       },
       {
-        "lineNumber": 857,
+        "lineNumber": 858,
         "author": {
           "gitId": "-"
         },
         "content": "                                       (in-hand? %))}"
       },
       {
-        "lineNumber": 858,
+        "lineNumber": 859,
         "author": {
           "gitId": "ChooJeremy"
         },
         "content": "                  :effect (req (corp-install state side target (zone-\u003ename (first (:server run)))"
       },
       {
-        "lineNumber": 859,
+        "lineNumber": 860,
         "author": {
           "gitId": "ChooJeremy"
         },
         "content": "                                             {:ignore-all-cost true"
       },
       {
-        "lineNumber": 860,
+        "lineNumber": 861,
         "author": {
           "gitId": "-"
         },
         "content": "                                              :front true})"
       },
       {
-        "lineNumber": 861,
+        "lineNumber": 862,
         "author": {
           "gitId": "ChooJeremy"
         },
         "content": "                               (swap! state assoc-in [:run :position] 1))}]"
       },
       {
-        "lineNumber": 862,
+        "lineNumber": 863,
         "author": {
           "gitId": "ChooJeremy"
         },
         "content": "     {:abilities [ability]"
       },
       {
-        "lineNumber": 863,
+        "lineNumber": 864,
         "author": {
           "gitId": "ChooJeremy"
         },
         "content": "      :events {:approach-server {:req (req (can-trigger? state side ability card nil))"
       },
       {
-        "lineNumber": 864,
+        "lineNumber": 865,
         "author": {
           "gitId": "ChooJeremy"
         },
         "content": "                                 :effect (req (toast state :corp \"You may use Mti Mwekundu: Life Improved to install ice from HQ.\" \"info\"))}}})"
       },
       {
-        "lineNumber": 865,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 866,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Nasir Meidan: Cyber Explorer\""
+        "content": ""
       },
       {
         "lineNumber": 867,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:rez {:req (req (and (:run @state)"
+        "content": "   \"Nasir Meidan: Cyber Explorer\""
       },
       {
         "lineNumber": 868,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  ;; check that the rezzed item is the encountered ice"
+        "content": "   {:events {:rez {:req (req (and (:run @state)"
       },
       {
         "lineNumber": 869,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  (\u003d (:cid target)"
+        "content": "                                  ;; check that the rezzed item is the encountered ice"
       },
       {
         "lineNumber": 870,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (:cid (get-card state current-ice)))))"
+        "content": "                                  (\u003d (:cid target)"
       },
       {
         "lineNumber": 871,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :effect (req (toast state :runner \"Click Nasir Meidan: Cyber Explorer to lose all credits and gain credits equal to the rez cost of the newly rezzed ice.\" \"info\"))}}"
+        "content": "                                     (:cid (get-card state current-ice)))))"
       },
       {
         "lineNumber": 872,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [{:req (req (and (:run @state)"
+        "content": "                   :effect (req (toast state :runner \"Click Nasir Meidan: Cyber Explorer to lose all credits and gain credits equal to the rez cost of the newly rezzed ice.\" \"info\"))}}"
       },
       {
         "lineNumber": 873,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (:rezzed (get-card state current-ice))))"
+        "content": "    :abilities [{:req (req (and (:run @state)"
       },
       {
         "lineNumber": 874,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (req (let [current-ice (get-card state current-ice)]"
+        "content": "                                (:rezzed (get-card state current-ice))))"
       },
       {
         "lineNumber": 875,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (trigger-event state side :pre-rez-cost current-ice)"
+        "content": "                 :effect (req (let [current-ice (get-card state current-ice)]"
       },
       {
         "lineNumber": 876,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (let [cost (rez-cost state side current-ice)]"
+        "content": "                                (trigger-event state side :pre-rez-cost current-ice)"
       },
       {
         "lineNumber": 877,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  (lose-credits state side (:credit runner))"
+        "content": "                                (let [cost (rez-cost state side current-ice)]"
       },
       {
         "lineNumber": 878,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  (gain-credits state side cost)"
+        "content": "                                  (lose-credits state side (:credit runner))"
       },
       {
         "lineNumber": 879,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  (system-msg state side (str \"loses all credits and gains \" cost"
+        "content": "                                  (gain-credits state side cost)"
       },
       {
         "lineNumber": 880,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                              \" [Credits] from the rez of \" (:title current-ice)))"
+        "content": "                                  (system-msg state side (str \"loses all credits and gains \" cost"
       },
       {
         "lineNumber": 881,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  (swap! state update-in [:bonus] dissoc :cost))))}]}"
+        "content": "                                                              \" [Credits] from the rez of \" (:title current-ice)))"
       },
       {
         "lineNumber": 882,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                  (swap! state update-in [:bonus] dissoc :cost))))}]}"
       },
       {
         "lineNumber": 883,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Nathaniel \\\"Gnat\\\" Hall: One-of-a-Kind\""
+        "content": ""
       },
       {
         "lineNumber": 884,
         "author": {
           "gitId": "-"
         },
-        "content": "   (let [ability {:label \"Gain 1 [Credits] (start of turn)\""
+        "content": "   \"Nathaniel \\\"Gnat\\\" Hall: One-of-a-Kind\""
       },
       {
         "lineNumber": 885,
         "author": {
           "gitId": "-"
         },
-        "content": "                  :once :per-turn"
+        "content": "   (let [ability {:label \"Gain 1 [Credits] (start of turn)\""
       },
       {
         "lineNumber": 886,
         "author": {
           "gitId": "-"
         },
-        "content": "                  :effect (req (when (and (\u003e 3 (count (:hand runner)))"
+        "content": "                  :once :per-turn"
       },
       {
         "lineNumber": 887,
         "author": {
           "gitId": "-"
         },
-        "content": "                                          (:runner-phase-12 @state))"
+        "content": "                  :effect (req (when (and (\u003e 3 (count (:hand runner)))"
       },
       {
         "lineNumber": 888,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 (system-msg state :runner (str \"uses \" (:title card) \" to gain 1 [Credits]\"))"
+        "content": "                                          (:runner-phase-12 @state))"
       },
       {
         "lineNumber": 889,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 (gain-credits state :runner 1)))}]"
+        "content": "                                 (system-msg state :runner (str \"uses \" (:title card) \" to gain 1 [Credits]\"))"
       },
       {
         "lineNumber": 890,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:flags {:drip-economy true"
+        "content": "                                 (gain-credits state :runner 1)))}]"
       },
       {
         "lineNumber": 891,
         "author": {
           "gitId": "-"
         },
-        "content": "              :runner-phase-12 (req (and (not (:disabled card))"
+        "content": "     {:flags {:drip-economy true"
       },
       {
         "lineNumber": 892,
         "author": {
           "gitId": "-"
         },
-        "content": "                                         (some #(card-flag? % :runner-turn-draw true) (all-active-installed state :runner))))}"
+        "content": "              :runner-phase-12 (req (and (not (:disabled card))"
       },
       {
         "lineNumber": 893,
         "author": {
           "gitId": "-"
         },
-        "content": "      :abilities [ability]"
+        "content": "                                         (some #(card-flag? % :runner-turn-draw true) (all-active-installed state :runner))))}"
       },
       {
         "lineNumber": 894,
         "author": {
           "gitId": "-"
         },
-        "content": "      :events {:runner-turn-begins ability}})"
+        "content": "      :abilities [ability]"
       },
       {
         "lineNumber": 895,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      :events {:runner-turn-begins ability}})"
       },
       {
         "lineNumber": 896,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"NBN: Controlling the Message\""
+        "content": ""
       },
       {
         "lineNumber": 897,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:runner-trash"
+        "content": "   \"NBN: Controlling the Message\""
       },
       {
         "lineNumber": 898,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:async true"
+        "content": "   {:events {:runner-trash"
       },
       {
         "lineNumber": 899,
         "author": {
           "gitId": "-"
         },
-        "content": "              :req (req (and (\u003d 1 (count (filter #(and (installed? (first %)) (corp? (first %)))"
+        "content": "             {:async true"
       },
       {
         "lineNumber": 900,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (turn-events state side :runner-trash))))"
+        "content": "              :req (req (and (\u003d 1 (count (filter #(and (installed? (first %)) (corp? (first %)))"
       },
       {
         "lineNumber": 901,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (corp? target)"
+        "content": "                                                 (turn-events state side :runner-trash))))"
       },
       {
         "lineNumber": 902,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (installed? target)))"
+        "content": "                             (corp? target)"
       },
       {
         "lineNumber": 903,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (req (show-wait-prompt state :runner \"Corp to use NBN: Controlling the Message\")"
+        "content": "                             (installed? target)))"
       },
       {
         "lineNumber": 904,
         "author": {
           "gitId": "-"
         },
-        "content": "                           (continue-ability"
+        "content": "              :effect (req (show-wait-prompt state :runner \"Corp to use NBN: Controlling the Message\")"
       },
       {
         "lineNumber": 905,
         "author": {
           "gitId": "-"
         },
-        "content": "                             state :corp"
+        "content": "                           (continue-ability"
       },
       {
         "lineNumber": 906,
         "author": {
           "gitId": "-"
         },
-        "content": "                             {:optional"
+        "content": "                             state :corp"
       },
       {
         "lineNumber": 907,
         "author": {
           "gitId": "-"
         },
-        "content": "                              {:prompt \"Trace the Runner with NBN: Controlling the Message?\""
+        "content": "                             {:optional"
       },
       {
         "lineNumber": 908,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :autoresolve (get-autoresolve :auto-ctm)"
+        "content": "                              {:prompt \"Trace the Runner with NBN: Controlling the Message?\""
       },
       {
         "lineNumber": 909,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :yes-ability {:trace {:base 4"
+        "content": "                               :autoresolve (get-autoresolve :auto-ctm)"
       },
       {
         "lineNumber": 910,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                     :successful"
+        "content": "                               :yes-ability {:trace {:base 4"
       },
       {
         "lineNumber": 911,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                     {:msg \"give the Runner 1 tag\""
+        "content": "                                                     :successful"
       },
       {
         "lineNumber": 912,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                      :async true"
+        "content": "                                                     {:msg \"give the Runner 1 tag\""
       },
       {
         "lineNumber": 913,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                      :effect (effect (gain-tags :corp eid 1 {:unpreventable true}))}}}"
+        "content": "                                                      :async true"
       },
       {
         "lineNumber": 914,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :end-effect (effect (clear-wait-prompt :runner))}}"
+        "content": "                                                      :effect (effect (gain-tags :corp eid 1 {:unpreventable true}))}}}"
       },
       {
         "lineNumber": 915,
         "author": {
           "gitId": "-"
         },
-        "content": "                             card nil))}}"
+        "content": "                               :end-effect (effect (clear-wait-prompt :runner))}}"
       },
       {
         "lineNumber": 916,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [(set-autoresolve :auto-ctm \"CtM\")]}"
+        "content": "                             card nil))}}"
       },
       {
         "lineNumber": 917,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    :abilities [(set-autoresolve :auto-ctm \"CtM\")]}"
       },
       {
         "lineNumber": 918,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"NBN: Making News\""
+        "content": ""
       },
       {
         "lineNumber": 919,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:recurring 2"
+        "content": "   \"NBN: Making News\""
       },
       {
         "lineNumber": 920,
         "author": {
           "gitId": "-"
         },
-        "content": "    :interactions {:pay-credits {:req (req (\u003d :trace (:source-type eid)))"
+        "content": "   {:recurring 2"
       },
       {
         "lineNumber": 921,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :type :recurring}}}"
+        "content": "    :interactions {:pay-credits {:req (req (\u003d :trace (:source-type eid)))"
       },
       {
         "lineNumber": 922,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                 :type :recurring}}}"
       },
       {
         "lineNumber": 923,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"NBN: The World is Yours*\""
+        "content": ""
       },
       {
         "lineNumber": 924,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:effect (effect (gain :hand-size 1))"
+        "content": "   \"NBN: The World is Yours*\""
       },
       {
         "lineNumber": 925,
         "author": {
           "gitId": "-"
         },
-        "content": "    :leave-play (effect (lose :hand-size 1))}"
+        "content": "   {:effect (effect (gain :hand-size 1))"
       },
       {
         "lineNumber": 926,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    :leave-play (effect (lose :hand-size 1))}"
       },
       {
         "lineNumber": 927,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Near-Earth Hub: Broadcast Center\""
+        "content": ""
       },
       {
         "lineNumber": 928,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:server-created {:req (req (first-event? state :corp :server-created))"
+        "content": "   \"Near-Earth Hub: Broadcast Center\""
       },
       {
         "lineNumber": 929,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :msg \"draw 1 card\""
+        "content": "   {:events {:server-created {:req (req (first-event? state :corp :server-created))"
       },
       {
         "lineNumber": 930,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :async true"
+        "content": "                              :msg \"draw 1 card\""
       },
       {
         "lineNumber": 931,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :effect (effect (draw :corp eid 1 nil))}}}"
+        "content": "                              :async true"
       },
       {
         "lineNumber": 932,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                              :effect (effect (draw :corp eid 1 nil))}}}"
       },
       {
         "lineNumber": 933,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Nero Severn: Information Broker\""
+        "content": ""
       },
       {
         "lineNumber": 934,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:abilities [{:req (req (has-subtype? current-ice \"Sentry\"))"
+        "content": "   \"Nero Severn: Information Broker\""
       },
       {
         "lineNumber": 935,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :once :per-turn"
+        "content": "   {:abilities [{:req (req (has-subtype? current-ice \"Sentry\"))"
       },
       {
         "lineNumber": 936,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg \"jack out when encountering a Sentry\""
+        "content": "                 :once :per-turn"
       },
       {
         "lineNumber": 937,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (effect (jack-out nil))}]}"
+        "content": "                 :msg \"jack out when encountering a Sentry\""
       },
       {
         "lineNumber": 938,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                 :effect (effect (jack-out nil))}]}"
       },
       {
         "lineNumber": 939,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"New Angeles Sol: Your News\""
+        "content": ""
       },
       {
         "lineNumber": 940,
         "author": {
           "gitId": "-"
         },
-        "content": "   (let [nasol {:optional"
+        "content": "   \"New Angeles Sol: Your News\""
       },
       {
         "lineNumber": 941,
         "author": {
           "gitId": "-"
         },
-        "content": "                {:prompt \"Play a Current?\""
+        "content": "   (let [nasol {:optional"
       },
       {
         "lineNumber": 942,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :player :corp"
+        "content": "                {:prompt \"Play a Current?\""
       },
       {
         "lineNumber": 943,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :req (req (some #(has-subtype? % \"Current\") (concat (:hand corp) (:discard corp) (:current corp))))"
+        "content": "                 :player :corp"
       },
       {
         "lineNumber": 944,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :yes-ability {:prompt \"Select a Current to play from HQ or Archives\""
+        "content": "                 :req (req (some #(has-subtype? % \"Current\") (concat (:hand corp) (:discard corp) (:current corp))))"
       },
       {
         "lineNumber": 945,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :show-discard true"
+        "content": "                 :yes-ability {:prompt \"Select a Current to play from HQ or Archives\""
       },
       {
         "lineNumber": 946,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :async true"
+        "content": "                               :show-discard true"
       },
       {
         "lineNumber": 947,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :choices {:req #(and (has-subtype? % \"Current\")"
+        "content": "                               :async true"
       },
       {
         "lineNumber": 948,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                    (corp? %)"
+        "content": "                               :choices {:req #(and (has-subtype? % \"Current\")"
       },
       {
         "lineNumber": 949,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                    (#{[:hand] [:discard]} (:zone %)))}"
+        "content": "                                                    (corp? %)"
       },
       {
         "lineNumber": 950,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :msg (msg \"play a current from \" (name-zone \"Corp\" (:zone target)))"
+        "content": "                                                    (#{[:hand] [:discard]} (:zone %)))}"
       },
       {
         "lineNumber": 951,
         "author": {
           "gitId": "-"
         },
-        "content": "                               :effect (effect (play-instant eid target))}}}]"
+        "content": "                               :msg (msg \"play a current from \" (name-zone \"Corp\" (:zone target)))"
       },
       {
         "lineNumber": 952,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:events {:agenda-scored nasol"
+        "content": "                               :effect (effect (play-instant eid target))}}}]"
       },
       {
         "lineNumber": 953,
         "author": {
           "gitId": "-"
         },
-        "content": "               :agenda-stolen nasol}})"
+        "content": "     {:events {:agenda-scored nasol"
       },
       {
         "lineNumber": 954,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "               :agenda-stolen nasol}})"
       },
       {
         "lineNumber": 955,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"NEXT Design: Guarding the Net\""
+        "content": ""
       },
       {
         "lineNumber": 956,
         "author": {
           "gitId": "-"
         },
-        "content": "   (let [ndhelper (fn nd [n] {:prompt (msg \"When finished, click NEXT Design: Guarding the Net to draw back up to 5 cards in HQ. \""
+        "content": "   \"NEXT Design: Guarding the Net\""
       },
       {
         "lineNumber": 957,
         "author": {
           "gitId": "-"
         },
-        "content": "                                           \"Select a piece of ICE in HQ to install:\")"
+        "content": "   (let [ndhelper (fn nd [n] {:prompt (msg \"When finished, click NEXT Design: Guarding the Net to draw back up to 5 cards in HQ. \""
       },
       {
         "lineNumber": 958,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :choices {:req #(and (corp? %)"
+        "content": "                                           \"Select a piece of ICE in HQ to install:\")"
       },
       {
         "lineNumber": 959,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   (ice? %)"
+        "content": "                              :choices {:req #(and (corp? %)"
       },
       {
         "lineNumber": 960,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   (in-hand? %))}"
+        "content": "                                                   (ice? %)"
       },
       {
         "lineNumber": 961,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :effect (req (corp-install state side target nil)"
+        "content": "                                                   (in-hand? %))}"
       },
       {
         "lineNumber": 962,
         "author": {
           "gitId": "-"
         },
-        "content": "                                           (when (\u003c n 3)"
+        "content": "                              :effect (req (corp-install state side target nil)"
       },
       {
         "lineNumber": 963,
         "author": {
           "gitId": "-"
         },
-        "content": "                                             (resolve-ability state side (nd (inc n)) card nil)))})]"
+        "content": "                                           (when (\u003c n 3)"
       },
       {
         "lineNumber": 964,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:events {:pre-first-turn {:req (req (\u003d side :corp))"
+        "content": "                                             (resolve-ability state side (nd (inc n)) card nil)))})]"
       },
       {
         "lineNumber": 965,
         "author": {
           "gitId": "-"
         },
-        "content": "                                :msg \"install up to 3 pieces of ICE and draw back up to 5 cards\""
+        "content": "     {:events {:pre-first-turn {:req (req (\u003d side :corp))"
       },
       {
         "lineNumber": 966,
         "author": {
           "gitId": "-"
         },
-        "content": "                                :effect (effect (resolve-ability (ndhelper 1) card nil)"
+        "content": "                                :msg \"install up to 3 pieces of ICE and draw back up to 5 cards\""
       },
       {
         "lineNumber": 967,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                (update! (assoc card :fill-hq true)))}}"
+        "content": "                                :effect (effect (resolve-ability (ndhelper 1) card nil)"
       },
       {
         "lineNumber": 968,
         "author": {
           "gitId": "-"
         },
-        "content": "      :abilities [{:req (req (:fill-hq card))"
+        "content": "                                                (update! (assoc card :fill-hq true)))}}"
       },
       {
         "lineNumber": 969,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :msg (msg \"draw \" (- 5 (count (:hand corp))) \" cards\")"
+        "content": "      :abilities [{:req (req (:fill-hq card))"
       },
       {
         "lineNumber": 970,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :effect (req (draw state side (- 5 (count (:hand corp))))"
+        "content": "                   :msg (msg \"draw \" (- 5 (count (:hand corp))) \" cards\")"
       },
       {
         "lineNumber": 971,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (update! state side (dissoc card :fill-hq))"
+        "content": "                   :effect (req (draw state side (- 5 (count (:hand corp))))"
       },
       {
         "lineNumber": 972,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (swap! state dissoc :turn-events))}]})"
+        "content": "                                (update! state side (dissoc card :fill-hq))"
       },
       {
         "lineNumber": 973,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                (swap! state dissoc :turn-events))}]})"
       },
       {
         "lineNumber": 974,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Nisei Division: The Next Generation\""
+        "content": ""
       },
       {
         "lineNumber": 975,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:reveal-spent-credits"
+        "content": "   \"Nisei Division: The Next Generation\""
       },
       {
         "lineNumber": 976,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:req (req (and (some? (first targets))"
+        "content": "   {:events {:reveal-spent-credits"
       },
       {
         "lineNumber": 977,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (some? (second targets))))"
+        "content": "             {:req (req (and (some? (first targets))"
       },
       {
         "lineNumber": 978,
         "author": {
           "gitId": "-"
         },
-        "content": "              :msg \"gain 1 [Credits]\""
+        "content": "                             (some? (second targets))))"
       },
       {
         "lineNumber": 979,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (effect (gain-credits :corp 1))}}}"
+        "content": "              :msg \"gain 1 [Credits]\""
       },
       {
         "lineNumber": 980,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "              :effect (effect (gain-credits :corp 1))}}}"
       },
       {
         "lineNumber": 981,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Noise: Hacker Extraordinaire\""
+        "content": ""
       },
       {
         "lineNumber": 982,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:runner-install {:msg \"force the Corp to trash the top card of R\u0026D\""
+        "content": "   \"Noise: Hacker Extraordinaire\""
       },
       {
         "lineNumber": 983,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :effect (effect (mill :corp))"
+        "content": "   {:events {:runner-install {:msg \"force the Corp to trash the top card of R\u0026D\""
       },
       {
         "lineNumber": 984,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :req (req (has-subtype? target \"Virus\"))}}}"
+        "content": "                              :effect (effect (mill :corp))"
       },
       {
         "lineNumber": 985,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                              :req (req (has-subtype? target \"Virus\"))}}}"
       },
       {
         "lineNumber": 986,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Null: Whistleblower\""
+        "content": ""
       },
       {
         "lineNumber": 987,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:abilities [{:once :per-turn"
+        "content": "   \"Null: Whistleblower\""
       },
       {
         "lineNumber": 988,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :req (req (and (:run @state)"
+        "content": "   {:abilities [{:once :per-turn"
       },
       {
         "lineNumber": 989,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (rezzed? current-ice)))"
+        "content": "                 :req (req (and (:run @state)"
       },
       {
         "lineNumber": 990,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :prompt \"Select a card in your Grip to trash\""
+        "content": "                                (rezzed? current-ice)))"
       },
       {
         "lineNumber": 991,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :choices {:req in-hand?}"
+        "content": "                 :prompt \"Select a card in your Grip to trash\""
       },
       {
         "lineNumber": 992,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg (msg \"trash \" (:title target) \" and reduce the strength of \" (:title current-ice)"
+        "content": "                 :choices {:req in-hand?}"
       },
       {
         "lineNumber": 993,
         "author": {
           "gitId": "-"
         },
-        "content": "                           \" by 2 for the remainder of the run\")"
+        "content": "                 :msg (msg \"trash \" (:title target) \" and reduce the strength of \" (:title current-ice)"
       },
       {
         "lineNumber": 994,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (effect (update! (assoc card :null-target current-ice))"
+        "content": "                           \" by 2 for the remainder of the run\")"
       },
       {
         "lineNumber": 995,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 (update-ice-strength current-ice)"
+        "content": "                 :effect (effect (update! (assoc card :null-target current-ice))"
       },
       {
         "lineNumber": 996,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 (trash target {:unpreventable true}))}]"
+        "content": "                                 (update-ice-strength current-ice)"
       },
       {
         "lineNumber": 997,
         "author": {
           "gitId": "-"
         },
-        "content": "    :events {:pre-ice-strength"
+        "content": "                                 (trash target {:unpreventable true}))}]"
       },
       {
         "lineNumber": 998,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:req (req (\u003d (:cid target) (get-in card [:null-target :cid])))"
+        "content": "    :events {:pre-ice-strength"
       },
       {
         "lineNumber": 999,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (effect (ice-strength-bonus -2 target))}"
+        "content": "             {:req (req (\u003d (:cid target) (get-in card [:null-target :cid])))"
       },
       {
         "lineNumber": 1000,
         "author": {
           "gitId": "-"
         },
-        "content": "             :run-ends"
+        "content": "              :effect (effect (ice-strength-bonus -2 target))}"
       },
       {
         "lineNumber": 1001,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:effect (req (swap! state dissoc-in [:runner :identity :null-target]))}}}"
+        "content": "             :run-ends"
       },
       {
         "lineNumber": 1002,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "             {:effect (req (swap! state dissoc-in [:runner :identity :null-target]))}}}"
       },
       {
         "lineNumber": 1003,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Omar Keung: Conspiracy Theorist\""
+        "content": ""
       },
       {
         "lineNumber": 1004,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:abilities [{:cost [:click 1]"
+        "content": "   \"Omar Keung: Conspiracy Theorist\""
       },
       {
         "lineNumber": 1005,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg \"make a run on Archives\""
+        "content": "   {:abilities [{:cost [:click 1]"
       },
       {
         "lineNumber": 1006,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :once :per-turn"
+        "content": "                 :msg \"make a run on Archives\""
       },
       {
         "lineNumber": 1007,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :makes-run true"
+        "content": "                 :once :per-turn"
       },
       {
         "lineNumber": 1008,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (effect (update! (assoc card :omar-run-activated true))"
+        "content": "                 :makes-run true"
       },
       {
         "lineNumber": 1009,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 (make-run :archives nil (get-card state card)))}]"
+        "content": "                 :effect (effect (update! (assoc card :omar-run-activated true))"
       },
       {
         "lineNumber": 1010,
         "author": {
           "gitId": "-"
         },
-        "content": "    :events {:pre-successful-run {:interactive (req true)"
+        "content": "                                 (make-run :archives nil (get-card state card)))}]"
       },
       {
         "lineNumber": 1011,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  :req (req (and (:omar-run-activated card)"
+        "content": "    :events {:pre-successful-run {:interactive (req true)"
       },
       {
         "lineNumber": 1012,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (\u003d :archives (-\u003e run :server first))))"
+        "content": "                                  :req (req (and (:omar-run-activated card)"
       },
       {
         "lineNumber": 1013,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  :prompt \"Treat as a successful run on which server?\""
+        "content": "                                                 (\u003d :archives (-\u003e run :server first))))"
       },
       {
         "lineNumber": 1014,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  :choices [\"HQ\" \"R\u0026D\"]"
+        "content": "                                  :prompt \"Treat as a successful run on which server?\""
       },
       {
         "lineNumber": 1015,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  :effect (req (let [target-server (if (\u003d target \"HQ\") :hq :rd)]"
+        "content": "                                  :choices [\"HQ\" \"R\u0026D\"]"
       },
       {
         "lineNumber": 1016,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (swap! state update-in [:runner :register :successful-run] #(rest %))"
+        "content": "                                  :effect (req (let [target-server (if (\u003d target \"HQ\") :hq :rd)]"
       },
       {
         "lineNumber": 1017,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (swap! state assoc-in [:run :server] [target-server])"
+        "content": "                                                 (swap! state update-in [:runner :register :successful-run] #(rest %))"
       },
       {
         "lineNumber": 1018,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 ; remove the :req from the run-effect, so that other cards that replace"
+        "content": "                                                 (swap! state assoc-in [:run :server] [target-server])"
       },
       {
         "lineNumber": 1019,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 ; access don\u0027t use Omar\u0027s req."
+        "content": "                                                 ; remove the :req from the run-effect, so that other cards that replace"
       },
       {
         "lineNumber": 1020,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (swap! state dissoc-in [:run :run-effect :req])"
+        "content": "                                                 ; access don\u0027t use Omar\u0027s req."
       },
       {
         "lineNumber": 1021,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (trigger-event state :corp :no-action)"
+        "content": "                                                 (swap! state dissoc-in [:run :run-effect :req])"
       },
       {
         "lineNumber": 1022,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (swap! state update-in [:runner :register :successful-run] #(conj % target-server))"
+        "content": "                                                 (trigger-event state :corp :no-action)"
       },
       {
         "lineNumber": 1023,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 (system-msg state side (str \"uses Omar Keung: Conspiracy Theorist to make a successful run on \" target))))}"
+        "content": "                                                 (swap! state update-in [:runner :register :successful-run] #(conj % target-server))"
       },
       {
         "lineNumber": 1024,
         "author": {
           "gitId": "-"
         },
-        "content": "             :run-ends {:effect (req (swap! state dissoc-in [:runner :identity :omar-run-activated]))}}}"
+        "content": "                                                 (system-msg state side (str \"uses Omar Keung: Conspiracy Theorist to make a successful run on \" target))))}"
       },
       {
         "lineNumber": 1025,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "             :run-ends {:effect (req (swap! state dissoc-in [:runner :identity :omar-run-activated]))}}}"
       },
       {
         "lineNumber": 1026,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Pālanā Foods: Sustainable Growth\""
+        "content": ""
       },
       {
         "lineNumber": 1027,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:runner-draw {:req (req (and (first-event? state :corp :runner-draw)"
+        "content": "   \"Pālanā Foods: Sustainable Growth\""
       },
       {
         "lineNumber": 1028,
         "author": {
           "gitId": "-"
         },
-        "content": "                                          (pos? target)))"
+        "content": "   {:events {:runner-draw {:req (req (and (first-event? state :corp :runner-draw)"
       },
       {
         "lineNumber": 1029,
         "author": {
           "gitId": "-"
         },
-        "content": "                           :msg \"gain 1 [Credits]\""
+        "content": "                                          (pos? target)))"
       },
       {
         "lineNumber": 1030,
         "author": {
           "gitId": "-"
         },
-        "content": "                           :effect (effect (gain-credits :corp 1))}}}"
+        "content": "                           :msg \"gain 1 [Credits]\""
       },
       {
         "lineNumber": 1031,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                           :effect (effect (gain-credits :corp 1))}}}"
       },
       {
         "lineNumber": 1032,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Quetzal: Free Spirit\""
+        "content": ""
       },
       {
         "lineNumber": 1033,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:abilities [{:once :per-turn"
+        "content": "   \"Quetzal: Free Spirit\""
       },
       {
         "lineNumber": 1034,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg \"break 1 Barrier subroutine\"}]}"
+        "content": "   {:abilities [{:once :per-turn"
       },
       {
         "lineNumber": 1035,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                 :msg \"break 1 Barrier subroutine\"}]}"
       },
       {
         "lineNumber": 1036,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Reina Roja: Freedom Fighter\""
+        "content": ""
       },
       {
         "lineNumber": 1037,
         "author": {
           "gitId": "-"
         },
-        "content": "   (letfn [(not-triggered? [state card] (not (get-in @state [:per-turn (:cid card)])))"
+        "content": "   \"Reina Roja: Freedom Fighter\""
       },
       {
         "lineNumber": 1038,
         "author": {
           "gitId": "-"
         },
-        "content": "           (mark-triggered [state card] (swap! state assoc-in [:per-turn (:cid card)] true))]"
+        "content": "   (letfn [(not-triggered? [state card] (not (get-in @state [:per-turn (:cid card)])))"
       },
       {
         "lineNumber": 1039,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:effect (req (when (pos? (event-count state :corp :rez #(ice? (first %))))"
+        "content": "           (mark-triggered [state card] (swap! state assoc-in [:per-turn (:cid card)] true))]"
       },
       {
         "lineNumber": 1040,
         "author": {
           "gitId": "-"
         },
-        "content": "                     (mark-triggered state card)))"
+        "content": "     {:effect (req (when (pos? (event-count state :corp :rez #(ice? (first %))))"
       },
       {
         "lineNumber": 1041,
         "author": {
           "gitId": "-"
         },
-        "content": "      :events {:pre-rez {:req (req (and (ice? target)"
+        "content": "                     (mark-triggered state card)))"
       },
       {
         "lineNumber": 1042,
         "author": {
           "gitId": "-"
         },
-        "content": "                                        (not-triggered? state card)))"
+        "content": "      :events {:pre-rez {:req (req (and (ice? target)"
       },
       {
         "lineNumber": 1043,
         "author": {
           "gitId": "-"
         },
-        "content": "                         :effect (effect (rez-cost-bonus 1))}"
+        "content": "                                        (not-triggered? state card)))"
       },
       {
         "lineNumber": 1044,
         "author": {
           "gitId": "-"
         },
-        "content": "               :rez {:req (req (and (ice? target)"
+        "content": "                         :effect (effect (rez-cost-bonus 1))}"
       },
       {
         "lineNumber": 1045,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    (not-triggered? state card)))"
+        "content": "               :rez {:req (req (and (ice? target)"
       },
       {
         "lineNumber": 1046,
         "author": {
           "gitId": "-"
         },
-        "content": "                     :effect (req (mark-triggered state card))}}})"
+        "content": "                                    (not-triggered? state card)))"
       },
       {
         "lineNumber": 1047,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                     :effect (req (mark-triggered state card))}}})"
       },
       {
         "lineNumber": 1048,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Rielle \\\"Kit\\\" Peddler: Transhuman\""
+        "content": ""
       },
       {
         "lineNumber": 1049,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:abilities [{:req (req (and (:run @state)"
+        "content": "   \"Rielle \\\"Kit\\\" Peddler: Transhuman\""
       },
       {
         "lineNumber": 1050,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (:rezzed (get-card state current-ice))))"
+        "content": "   {:abilities [{:req (req (and (:run @state)"
       },
       {
         "lineNumber": 1051,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :once :per-turn"
+        "content": "                                (:rezzed (get-card state current-ice))))"
       },
       {
         "lineNumber": 1052,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg (msg \"make \" (:title current-ice) \" gain Code Gate until the end of the run\")"
+        "content": "                 :once :per-turn"
       },
       {
         "lineNumber": 1053,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (req (let [ice current-ice"
+        "content": "                 :msg (msg \"make \" (:title current-ice) \" gain Code Gate until the end of the run\")"
       },
       {
         "lineNumber": 1054,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    stypes (:subtype ice)]"
+        "content": "                 :effect (req (let [ice current-ice"
       },
       {
         "lineNumber": 1055,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (update! state side (assoc ice :subtype (combine-subtypes true stypes \"Code Gate\")))"
+        "content": "                                    stypes (:subtype ice)]"
       },
       {
         "lineNumber": 1056,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (register-events state side"
+        "content": "                                (update! state side (assoc ice :subtype (combine-subtypes true stypes \"Code Gate\")))"
       },
       {
         "lineNumber": 1057,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 {:run-ends {:effect (effect (update! (assoc ice :subtype stypes))"
+        "content": "                                (register-events state side"
       },
       {
         "lineNumber": 1058,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                             (trigger-event :ice-subtype-changed ice)"
+        "content": "                                                 {:run-ends {:effect (effect (update! (assoc ice :subtype stypes))"
       },
       {
         "lineNumber": 1059,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                             (unregister-events card))}} card)"
+        "content": "                                                                             (trigger-event :ice-subtype-changed ice)"
       },
       {
         "lineNumber": 1060,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (update-ice-strength state side ice)"
+        "content": "                                                                             (unregister-events card))}} card)"
       },
       {
         "lineNumber": 1061,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (trigger-event state side :ice-subtype-changed ice)))}]"
+        "content": "                                (update-ice-strength state side ice)"
       },
       {
         "lineNumber": 1062,
         "author": {
           "gitId": "-"
         },
-        "content": "    :events {:run-ends nil}}"
+        "content": "                                (trigger-event state side :ice-subtype-changed ice)))}]"
       },
       {
         "lineNumber": 1063,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    :events {:run-ends nil}}"
       },
       {
         "lineNumber": 1064,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Saraswati Mnemonics: Endless Exploration\""
+        "content": ""
       },
       {
         "lineNumber": 1065,
         "author": {
           "gitId": "-"
         },
-        "content": "   (letfn [(install-card [chosen]"
+        "content": "   \"Saraswati Mnemonics: Endless Exploration\""
       },
       {
         "lineNumber": 1066,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:prompt \"Select a remote server\""
+        "content": "   (letfn [(install-card [chosen]"
       },
       {
         "lineNumber": 1067,
         "author": {
           "gitId": "-"
         },
-        "content": "              :choices (req (conj (vec (get-remote-names state)) \"New remote\"))"
+        "content": "             {:prompt \"Select a remote server\""
       },
       {
         "lineNumber": 1068,
         "author": {
           "gitId": "-"
         },
-        "content": "              :async true"
+        "content": "              :choices (req (conj (vec (get-remote-names state)) \"New remote\"))"
       },
       {
         "lineNumber": 1069,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (req (let [tgtcid (:cid chosen)]"
+        "content": "              :async true"
       },
       {
         "lineNumber": 1070,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (register-turn-flag!"
+        "content": "              :effect (req (let [tgtcid (:cid chosen)]"
       },
       {
         "lineNumber": 1071,
         "author": {
           "gitId": "-"
         },
-        "content": "                               state side"
+        "content": "                             (register-turn-flag!"
       },
       {
         "lineNumber": 1072,
         "author": {
           "gitId": "-"
         },
-        "content": "                               card :can-rez"
+        "content": "                               state side"
       },
       {
         "lineNumber": 1073,
         "author": {
           "gitId": "-"
         },
-        "content": "                               (fn [state side card]"
+        "content": "                               card :can-rez"
       },
       {
         "lineNumber": 1074,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 (if (\u003d (:cid card) tgtcid)"
+        "content": "                               (fn [state side card]"
       },
       {
         "lineNumber": 1075,
         "author": {
           "gitId": "-"
         },
-        "content": "                                   ((constantly false) (toast state :corp \"Cannot rez due to Saraswati Mnemonics: Endless Exploration.\" \"warning\"))"
+        "content": "                                 (if (\u003d (:cid card) tgtcid)"
       },
       {
         "lineNumber": 1076,
         "author": {
           "gitId": "-"
         },
-        "content": "                                   true)))"
+        "content": "                                   ((constantly false) (toast state :corp \"Cannot rez due to Saraswati Mnemonics: Endless Exploration.\" \"warning\"))"
       },
       {
         "lineNumber": 1077,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (register-turn-flag!"
+        "content": "                                   true)))"
       },
       {
         "lineNumber": 1078,
         "author": {
           "gitId": "-"
         },
-        "content": "                               state side"
+        "content": "                             (register-turn-flag!"
       },
       {
         "lineNumber": 1079,
         "author": {
           "gitId": "-"
         },
-        "content": "                               card :can-score"
+        "content": "                               state side"
       },
       {
         "lineNumber": 1080,
         "author": {
           "gitId": "-"
         },
-        "content": "                               (fn [state side card]"
+        "content": "                               card :can-score"
       },
       {
         "lineNumber": 1081,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 (if (and (\u003d (:cid card) tgtcid)"
+        "content": "                               (fn [state side card]"
       },
       {
         "lineNumber": 1082,
         "author": {
           "gitId": "-"
         },
-        "content": "                                          (\u003e\u003d (get-counters card :advancement) (or (:current-cost card) (:advancementcost card))))"
+        "content": "                                 (if (and (\u003d (:cid card) tgtcid)"
       },
       {
         "lineNumber": 1083,
         "author": {
           "gitId": "-"
         },
-        "content": "                                   ((constantly false) (toast state :corp \"Cannot score due to Saraswati Mnemonics: Endless Exploration.\" \"warning\"))"
+        "content": "                                          (\u003e\u003d (get-counters card :advancement) (or (:current-cost card) (:advancementcost card))))"
       },
       {
         "lineNumber": 1084,
         "author": {
           "gitId": "-"
         },
-        "content": "                                   true))))"
+        "content": "                                   ((constantly false) (toast state :corp \"Cannot score due to Saraswati Mnemonics: Endless Exploration.\" \"warning\"))"
       },
       {
         "lineNumber": 1085,
         "author": {
           "gitId": "-"
         },
-        "content": "                           (wait-for (corp-install state side chosen target nil)"
+        "content": "                                   true))))"
       },
       {
         "lineNumber": 1086,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (add-prop state :corp (find-latest state chosen) :advance-counter 1 {:placed true})"
+        "content": "                           (wait-for (corp-install state side chosen target nil)"
       },
       {
         "lineNumber": 1087,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (effect-completed state side eid)))})]"
+        "content": "                                     (add-prop state :corp (find-latest state chosen) :advance-counter 1 {:placed true})"
       },
       {
         "lineNumber": 1088,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:abilities [{:async true"
+        "content": "                                     (effect-completed state side eid)))})]"
       },
       {
         "lineNumber": 1089,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :label \"Install a card from HQ\""
+        "content": "     {:abilities [{:async true"
       },
       {
         "lineNumber": 1090,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :cost [:click 1 :credit 1]"
+        "content": "                   :label \"Install a card from HQ\""
       },
       {
         "lineNumber": 1091,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :prompt \"Select a card to install from HQ\""
+        "content": "                   :cost [:click 1 :credit 1]"
       },
       {
         "lineNumber": 1092,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :choices {:req #(and (#{\"Asset\" \"Agenda\" \"Upgrade\"} (:type %))"
+        "content": "                   :prompt \"Select a card to install from HQ\""
       },
       {
         "lineNumber": 1093,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (corp? %)"
+        "content": "                   :choices {:req #(and (#{\"Asset\" \"Agenda\" \"Upgrade\"} (:type %))"
       },
       {
         "lineNumber": 1094,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (in-hand? %))}"
+        "content": "                                     (corp? %)"
       },
       {
         "lineNumber": 1095,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :msg (msg \"install a card in a remote server and place 1 advancement token on it\")"
+        "content": "                                     (in-hand? %))}"
       },
       {
         "lineNumber": 1096,
         "author": {
           "gitId": "-"
         },
-        "content": "                   :effect (effect (continue-ability (install-card target) card nil))}]})"
+        "content": "                   :msg (msg \"install a card in a remote server and place 1 advancement token on it\")"
       },
       {
         "lineNumber": 1097,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                   :effect (effect (continue-ability (install-card target) card nil))}]})"
       },
       {
         "lineNumber": 1098,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Seidr Laboratories: Destiny Defined\""
+        "content": ""
       },
       {
         "lineNumber": 1099,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:implementation \"Manually triggered\""
+        "content": "   \"Seidr Laboratories: Destiny Defined\""
       },
       {
         "lineNumber": 1100,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [{:req (req (:run @state))"
+        "content": "   {:implementation \"Manually triggered\""
       },
       {
         "lineNumber": 1101,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :once :per-turn"
+        "content": "    :abilities [{:req (req (:run @state))"
       },
       {
         "lineNumber": 1102,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :prompt \"Select a card to add to the top of R\u0026D\""
+        "content": "                 :once :per-turn"
       },
       {
         "lineNumber": 1103,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :show-discard true"
+        "content": "                 :prompt \"Select a card to add to the top of R\u0026D\""
       },
       {
         "lineNumber": 1104,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :choices {:req #(and (corp? %) (in-discard? %))}"
+        "content": "                 :show-discard true"
       },
       {
         "lineNumber": 1105,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (effect (move target :deck {:front true}))"
+        "content": "                 :choices {:req #(and (corp? %) (in-discard? %))}"
       },
       {
         "lineNumber": 1106,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg (msg \"add \" (if (:seen target) (:title target) \"a card\") \" to the top of R\u0026D\")}]}"
+        "content": "                 :effect (effect (move target :deck {:front true}))"
       },
       {
         "lineNumber": 1107,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                 :msg (msg \"add \" (if (:seen target) (:title target) \"a card\") \" to the top of R\u0026D\")}]}"
       },
       {
         "lineNumber": 1108,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Silhouette: Stealth Operative\""
+        "content": ""
       },
       {
         "lineNumber": 1109,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:successful-run"
+        "content": "   \"Silhouette: Stealth Operative\""
       },
       {
         "lineNumber": 1110,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:interactive (req (some #(not (rezzed? %)) (all-installed state :corp)))"
+        "content": "   {:events {:successful-run"
       },
       {
         "lineNumber": 1111,
         "author": {
           "gitId": "-"
         },
-        "content": "              :async true"
+        "content": "             {:interactive (req (some #(not (rezzed? %)) (all-installed state :corp)))"
       },
       {
         "lineNumber": 1112,
         "author": {
           "gitId": "-"
         },
-        "content": "              :req (req (and (\u003d target :hq)"
+        "content": "              :async true"
       },
       {
         "lineNumber": 1113,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (first-successful-run-on-server? state :hq)))"
+        "content": "              :req (req (and (\u003d target :hq)"
       },
       {
         "lineNumber": 1114,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (effect (continue-ability {:choices {:req #(and (installed? %)"
+        "content": "                             (first-successful-run-on-server? state :hq)))"
       },
       {
         "lineNumber": 1115,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                      (not (rezzed? %)))}"
+        "content": "              :effect (effect (continue-ability {:choices {:req #(and (installed? %)"
       },
       {
         "lineNumber": 1116,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 :effect (effect (expose eid target))"
+        "content": "                                                                      (not (rezzed? %)))}"
       },
       {
         "lineNumber": 1117,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 :msg \"expose 1 card\""
+        "content": "                                                 :effect (effect (expose eid target))"
       },
       {
         "lineNumber": 1118,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                 :async true}"
+        "content": "                                                 :msg \"expose 1 card\""
       },
       {
         "lineNumber": 1119,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                card nil))}}}"
+        "content": "                                                 :async true}"
       },
       {
         "lineNumber": 1120,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                                card nil))}}}"
       },
       {
         "lineNumber": 1121,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Skorpios Defense Systems: Persuasive Power\""
+        "content": ""
       },
       {
         "lineNumber": 1122,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:implementation \"Manually triggered, no restriction on which cards in Heap can be targeted.  Cannot use on in progress run event\""
+        "content": "   \"Skorpios Defense Systems: Persuasive Power\""
       },
       {
         "lineNumber": 1123,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [{:label \"Remove a card in the Heap that was just trashed from the game\""
+        "content": "   {:implementation \"Manually triggered, no restriction on which cards in Heap can be targeted.  Cannot use on in progress run event\""
       },
       {
         "lineNumber": 1124,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :async true"
+        "content": "    :abilities [{:label \"Remove a card in the Heap that was just trashed from the game\""
       },
       {
         "lineNumber": 1125,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (req (when-not (and (used-this-turn? (:cid card) state) (active-prompt? state side card))"
+        "content": "                 :async true"
       },
       {
         "lineNumber": 1126,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (show-wait-prompt state :runner \"Corp to use Skorpios\u0027 ability\" {:card card})"
+        "content": "                 :effect (req (when-not (and (used-this-turn? (:cid card) state) (active-prompt? state side card))"
       },
       {
         "lineNumber": 1127,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (continue-ability state side"
+        "content": "                                (show-wait-prompt state :runner \"Corp to use Skorpios\u0027 ability\" {:card card})"
       },
       {
         "lineNumber": 1128,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                  {:prompt \"Choose a card in the Runner\u0027s Heap that was just trashed\""
+        "content": "                                (continue-ability state side"
       },
       {
         "lineNumber": 1129,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :once :per-turn"
+        "content": "                                                  {:prompt \"Choose a card in the Runner\u0027s Heap that was just trashed\""
       },
       {
         "lineNumber": 1130,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :choices (req (cancellable"
+        "content": "                                                   :once :per-turn"
       },
       {
         "lineNumber": 1131,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                   ;; do not allow a run event in progress to get nuked #2963"
+        "content": "                                                   :choices (req (cancellable"
       },
       {
         "lineNumber": 1132,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                   (remove #(same-card? % (get-in @state [:run :run-effect :card]))"
+        "content": "                                                                   ;; do not allow a run event in progress to get nuked #2963"
       },
       {
         "lineNumber": 1133,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                           (:discard runner))))"
+        "content": "                                                                   (remove #(same-card? % (get-in @state [:run :run-effect :card]))"
       },
       {
         "lineNumber": 1134,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :msg (msg \"remove \" (:title target) \" from the game\")"
+        "content": "                                                                           (:discard runner))))"
       },
       {
         "lineNumber": 1135,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :effect (req (move state :runner target :rfg)"
+        "content": "                                                   :msg (msg \"remove \" (:title target) \" from the game\")"
       },
       {
         "lineNumber": 1136,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                (clear-wait-prompt state :runner)"
+        "content": "                                                   :effect (req (move state :runner target :rfg)"
       },
       {
         "lineNumber": 1137,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                (effect-completed state side eid))"
+        "content": "                                                                (clear-wait-prompt state :runner)"
       },
       {
         "lineNumber": 1138,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :cancel-effect (req (clear-wait-prompt state :runner)"
+        "content": "                                                                (effect-completed state side eid))"
       },
       {
         "lineNumber": 1139,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                       (effect-completed state side eid))}"
+        "content": "                                                   :cancel-effect (req (clear-wait-prompt state :runner)"
       },
       {
         "lineNumber": 1140,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                  card nil)))}]}"
+        "content": "                                                                       (effect-completed state side eid))}"
       },
       {
         "lineNumber": 1141,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                                  card nil)))}]}"
       },
       {
         "lineNumber": 1142,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Spark Agency: Worldswide Reach\""
+        "content": ""
       },
       {
         "lineNumber": 1143,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events"
+        "content": "   \"Spark Agency: Worldswide Reach\""
       },
       {
         "lineNumber": 1144,
         "author": {
           "gitId": "-"
         },
-        "content": "    {:rez {:req (req (and (has-subtype? target \"Advertisement\")"
+        "content": "   {:events"
       },
       {
         "lineNumber": 1145,
         "author": {
           "gitId": "-"
         },
-        "content": "                          (first-event? state :corp :rez #(has-subtype? (first %) \"Advertisement\"))))"
+        "content": "    {:rez {:req (req (and (has-subtype? target \"Advertisement\")"
       },
       {
         "lineNumber": 1146,
         "author": {
           "gitId": "-"
         },
-        "content": "           :effect (effect (lose-credits :runner 1))"
+        "content": "                          (first-event? state :corp :rez #(has-subtype? (first %) \"Advertisement\"))))"
       },
       {
         "lineNumber": 1147,
         "author": {
           "gitId": "-"
         },
-        "content": "           :msg (msg \"make the Runner lose 1 [Credits] by rezzing an Advertisement\")}}}"
+        "content": "           :effect (effect (lose-credits :runner 1))"
       },
       {
         "lineNumber": 1148,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "           :msg (msg \"make the Runner lose 1 [Credits] by rezzing an Advertisement\")}}}"
       },
       {
         "lineNumber": 1149,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Sportsmetal: Go Big or Go Home\""
+        "content": ""
       },
       {
         "lineNumber": 1150,
         "author": {
           "gitId": "-"
         },
-        "content": "   (let [ab {:prompt \"Gain 2 credits or draw 2 cards?\""
+        "content": "   \"Sportsmetal: Go Big or Go Home\""
       },
       {
         "lineNumber": 1151,
         "author": {
           "gitId": "-"
         },
-        "content": "             :player :corp"
+        "content": "   (let [ab {:prompt \"Gain 2 credits or draw 2 cards?\""
       },
       {
         "lineNumber": 1152,
         "author": {
           "gitId": "-"
         },
-        "content": "             :choices [\"2 credits\" \"2 cards\"]"
+        "content": "             :player :corp"
       },
       {
         "lineNumber": 1153,
         "author": {
           "gitId": "-"
         },
-        "content": "             :msg \"gain 2 [Credits] or draw 2 cards\""
+        "content": "             :choices [\"2 credits\" \"2 cards\"]"
       },
       {
         "lineNumber": 1154,
         "author": {
           "gitId": "-"
         },
-        "content": "             :async true"
+        "content": "             :msg \"gain 2 [Credits] or draw 2 cards\""
       },
       {
         "lineNumber": 1155,
         "author": {
           "gitId": "-"
         },
-        "content": "             :interactive (req true)"
+        "content": "             :async true"
       },
       {
         "lineNumber": 1156,
         "author": {
           "gitId": "-"
         },
-        "content": "             :effect (req (if (\u003d target \"2 credits\")"
+        "content": "             :interactive (req true)"
       },
       {
         "lineNumber": 1157,
         "author": {
           "gitId": "-"
         },
-        "content": "                            (do (system-msg state side \"chooses to take 2 [Credits]\")"
+        "content": "             :effect (req (if (\u003d target \"2 credits\")"
       },
       {
         "lineNumber": 1158,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (gain-credits state :corp 2)"
+        "content": "                            (do (system-msg state side \"chooses to take 2 [Credits]\")"
       },
       {
         "lineNumber": 1159,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (effect-completed state side eid))"
+        "content": "                                (gain-credits state :corp 2)"
       },
       {
         "lineNumber": 1160,
         "author": {
           "gitId": "-"
         },
-        "content": "                            (do (system-msg state side \"chooses to draw 2 cards\")"
+        "content": "                                (effect-completed state side eid))"
       },
       {
         "lineNumber": 1161,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (draw state :corp eid 2 nil))))}]"
+        "content": "                            (do (system-msg state side \"chooses to draw 2 cards\")"
       },
       {
         "lineNumber": 1162,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:events {:agenda-scored ab"
+        "content": "                                (draw state :corp eid 2 nil))))}]"
       },
       {
         "lineNumber": 1163,
         "author": {
           "gitId": "-"
         },
-        "content": "               :agenda-stolen ab}})"
+        "content": "     {:events {:agenda-scored ab"
       },
       {
         "lineNumber": 1164,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "               :agenda-stolen ab}})"
       },
       {
         "lineNumber": 1165,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"SSO Industries: Fueling Innovation\""
+        "content": ""
       },
       {
         "lineNumber": 1166,
         "author": {
           "gitId": "-"
         },
-        "content": "   (letfn [(installed-faceup-agendas [state]"
+        "content": "   \"SSO Industries: Fueling Innovation\""
       },
       {
         "lineNumber": 1167,
         "author": {
           "gitId": "-"
         },
-        "content": "             (-\u003e\u003e (all-installed state :corp)"
+        "content": "   (letfn [(installed-faceup-agendas [state]"
       },
       {
         "lineNumber": 1168,
         "author": {
           "gitId": "-"
         },
-        "content": "                  (filter agenda?)"
+        "content": "             (-\u003e\u003e (all-installed state :corp)"
       },
       {
         "lineNumber": 1169,
         "author": {
           "gitId": "-"
         },
-        "content": "                  (filter faceup?)))"
+        "content": "                  (filter agenda?)"
       },
       {
         "lineNumber": 1170,
         "author": {
           "gitId": "-"
         },
-        "content": "           (selectable-ice? [card]"
+        "content": "                  (filter faceup?)))"
       },
       {
         "lineNumber": 1171,
         "author": {
           "gitId": "-"
         },
-        "content": "             (and"
+        "content": "           (selectable-ice? [card]"
       },
       {
         "lineNumber": 1172,
         "author": {
           "gitId": "-"
         },
-        "content": "               (ice? card)"
+        "content": "             (and"
       },
       {
         "lineNumber": 1173,
         "author": {
           "gitId": "-"
         },
-        "content": "               (installed? card)"
+        "content": "               (ice? card)"
       },
       {
         "lineNumber": 1174,
         "author": {
           "gitId": "-"
         },
-        "content": "               (zero? (+ (get-counters card :advancement)"
+        "content": "               (installed? card)"
       },
       {
         "lineNumber": 1175,
         "author": {
           "gitId": "-"
         },
-        "content": "                         (:extra-advance-counter card 0)))))"
+        "content": "               (zero? (+ (get-counters card :advancement)"
       },
       {
         "lineNumber": 1176,
         "author": {
           "gitId": "-"
         },
-        "content": "           (ice-with-no-advancement-tokens [state]"
+        "content": "                         (:extra-advance-counter card 0)))))"
       },
       {
         "lineNumber": 1177,
         "author": {
           "gitId": "-"
         },
-        "content": "             (-\u003e\u003e (all-installed state :corp)"
+        "content": "           (ice-with-no-advancement-tokens [state]"
       },
       {
         "lineNumber": 1178,
         "author": {
           "gitId": "-"
         },
-        "content": "                  (filter selectable-ice?)))]"
+        "content": "             (-\u003e\u003e (all-installed state :corp)"
       },
       {
         "lineNumber": 1179,
         "author": {
           "gitId": "-"
         },
-        "content": "     {:events {:corp-turn-ends"
+        "content": "                  (filter selectable-ice?)))]"
       },
       {
         "lineNumber": 1180,
         "author": {
           "gitId": "-"
         },
-        "content": "               {:optional"
+        "content": "     {:events {:corp-turn-ends"
       },
       {
         "lineNumber": 1181,
         "author": {
           "gitId": "-"
         },
-        "content": "                {:prompt \"Place advancement tokens?\""
+        "content": "               {:optional"
       },
       {
         "lineNumber": 1182,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :req (req (and"
+        "content": "                {:prompt \"Place advancement tokens?\""
       },
       {
         "lineNumber": 1183,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (not-empty (installed-faceup-agendas state))"
+        "content": "                 :req (req (and"
       },
       {
         "lineNumber": 1184,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (not-empty (ice-with-no-advancement-tokens state))))"
+        "content": "                             (not-empty (installed-faceup-agendas state))"
       },
       {
         "lineNumber": 1185,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :autoresolve (get-autoresolve :auto-sso)"
+        "content": "                             (not-empty (ice-with-no-advancement-tokens state))))"
       },
       {
         "lineNumber": 1186,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :yes-ability"
+        "content": "                 :autoresolve (get-autoresolve :auto-sso)"
       },
       {
         "lineNumber": 1187,
         "author": {
           "gitId": "-"
         },
-        "content": "                 {:async true"
+        "content": "                 :yes-ability"
       },
       {
         "lineNumber": 1188,
         "author": {
           "gitId": "-"
         },
-        "content": "                  :effect (req (show-wait-prompt state :runner \"Corp to use SSO Industries\u0027 ability\")"
+        "content": "                 {:async true"
       },
       {
         "lineNumber": 1189,
         "author": {
           "gitId": "-"
         },
-        "content": "                            (let [agendas (installed-faceup-agendas state)"
+        "content": "                  :effect (req (show-wait-prompt state :runner \"Corp to use SSO Industries\u0027 ability\")"
       },
       {
         "lineNumber": 1190,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  agenda-points (-\u003e\u003e agendas"
+        "content": "                            (let [agendas (installed-faceup-agendas state)"
       },
       {
         "lineNumber": 1191,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                     (map :agendapoints)"
+        "content": "                                  agenda-points (-\u003e\u003e agendas"
       },
       {
         "lineNumber": 1192,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                     (reduce +))"
+        "content": "                                                     (map :agendapoints)"
       },
       {
         "lineNumber": 1193,
         "author": {
           "gitId": "-"
         },
-        "content": "                                  ice (ice-with-no-advancement-tokens state)]"
+        "content": "                                                     (reduce +))"
       },
       {
         "lineNumber": 1194,
         "author": {
           "gitId": "-"
         },
-        "content": "                              (continue-ability"
+        "content": "                                  ice (ice-with-no-advancement-tokens state)]"
       },
       {
         "lineNumber": 1195,
         "author": {
           "gitId": "-"
         },
-        "content": "                                state side"
+        "content": "                              (continue-ability"
       },
       {
         "lineNumber": 1196,
         "author": {
           "gitId": "-"
         },
-        "content": "                                {:prompt (str \"Select ICE with no advancement tokens to place \""
+        "content": "                                state side"
       },
       {
         "lineNumber": 1197,
         "author": {
           "gitId": "-"
         },
-        "content": "                                              (quantify agenda-points \"advancement token\") \" on\")"
+        "content": "                                {:prompt (str \"Select ICE with no advancement tokens to place \""
       },
       {
         "lineNumber": 1198,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :choices {:req #(selectable-ice? %)}"
+        "content": "                                              (quantify agenda-points \"advancement token\") \" on\")"
       },
       {
         "lineNumber": 1199,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :msg (msg \"places \" (quantify agenda-points \"advancement token\")"
+        "content": "                                 :choices {:req #(selectable-ice? %)}"
       },
       {
         "lineNumber": 1200,
         "author": {
           "gitId": "-"
         },
-        "content": "                                           \" on ICE with no advancement tokens\")"
+        "content": "                                 :msg (msg \"places \" (quantify agenda-points \"advancement token\")"
       },
       {
         "lineNumber": 1201,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :effect (req (add-prop state :corp target :advance-counter agenda-points {:placed true})"
+        "content": "                                           \" on ICE with no advancement tokens\")"
       },
       {
         "lineNumber": 1202,
         "author": {
           "gitId": "-"
         },
-        "content": "                                              (clear-wait-prompt state :runner))"
+        "content": "                                 :effect (req (add-prop state :corp target :advance-counter agenda-points {:placed true})"
       },
       {
         "lineNumber": 1203,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :cancel-effect (req (clear-wait-prompt state :runner))}"
+        "content": "                                              (clear-wait-prompt state :runner))"
       },
       {
         "lineNumber": 1204,
         "author": {
           "gitId": "-"
         },
-        "content": "                                card nil)))}}}}"
+        "content": "                                 :cancel-effect (req (clear-wait-prompt state :runner))}"
       },
       {
         "lineNumber": 1205,
         "author": {
           "gitId": "-"
         },
-        "content": "      :abilities [(set-autoresolve :auto-sso \"SSO\")]})"
+        "content": "                                card nil)))}}}}"
       },
       {
         "lineNumber": 1206,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      :abilities [(set-autoresolve :auto-sso \"SSO\")]})"
       },
       {
         "lineNumber": 1207,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Steve Cambridge: Master Grifter\""
+        "content": ""
       },
       {
         "lineNumber": 1208,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:successful-run"
+        "content": "   \"Steve Cambridge: Master Grifter\""
       },
       {
         "lineNumber": 1209,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:req (req (and (\u003d target :hq)"
+        "content": "   {:events {:successful-run"
       },
       {
         "lineNumber": 1210,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (first-successful-run-on-server? state :hq)"
+        "content": "             {:req (req (and (\u003d target :hq)"
       },
       {
         "lineNumber": 1211,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (if (-\u003e @state :run :run-effect :card)"
+        "content": "                             (first-successful-run-on-server? state :hq)"
       },
       {
         "lineNumber": 1212,
         "author": {
           "gitId": "-"
         },
-        "content": "                               (\u003e (count (:discard runner)) 2)"
+        "content": "                             (if (-\u003e @state :run :run-effect :card)"
       },
       {
         "lineNumber": 1213,
         "author": {
           "gitId": "-"
         },
-        "content": "                               (\u003e (count (:discard runner)) 1))))"
+        "content": "                               (\u003e (count (:discard runner)) 2)"
       },
       {
         "lineNumber": 1214,
         "author": {
           "gitId": "-"
         },
-        "content": "              :interactive (req true)"
+        "content": "                               (\u003e (count (:discard runner)) 1))))"
       },
       {
         "lineNumber": 1215,
         "author": {
           "gitId": "-"
         },
-        "content": "              :async true"
+        "content": "              :interactive (req true)"
       },
       {
         "lineNumber": 1216,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (effect (continue-ability"
+        "content": "              :async true"
       },
       {
         "lineNumber": 1217,
         "author": {
           "gitId": "-"
         },
-        "content": "                                {:async true"
+        "content": "              :effect (effect (continue-ability"
       },
       {
         "lineNumber": 1218,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :prompt \"Select 2 cards in your Heap\""
+        "content": "                                {:async true"
       },
       {
         "lineNumber": 1219,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :show-discard true"
+        "content": "                                 :prompt \"Select 2 cards in your Heap\""
       },
       {
         "lineNumber": 1220,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :choices {:max 2 :req #(and (in-discard? %)"
+        "content": "                                 :show-discard true"
       },
       {
         "lineNumber": 1221,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                             (runner? %)"
+        "content": "                                 :choices {:max 2 :req #(and (in-discard? %)"
       },
       {
         "lineNumber": 1222,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                             (not\u003d (-\u003e @state :run :run-effect :card :cid) (:cid %)))}"
+        "content": "                                                             (runner? %)"
       },
       {
         "lineNumber": 1223,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :cancel-effect (req (effect-completed state side eid))"
+        "content": "                                                             (not\u003d (-\u003e @state :run :run-effect :card :cid) (:cid %)))}"
       },
       {
         "lineNumber": 1224,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :effect (req (let [c1 (first targets)"
+        "content": "                                 :cancel-effect (req (effect-completed state side eid))"
       },
       {
         "lineNumber": 1225,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                    c2 (second targets)]"
+        "content": "                                 :effect (req (let [c1 (first targets)"
       },
       {
         "lineNumber": 1226,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                (show-wait-prompt state :runner \"Corp to choose which card to remove from the game\")"
+        "content": "                                                    c2 (second targets)]"
       },
       {
         "lineNumber": 1227,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                (continue-ability"
+        "content": "                                                (show-wait-prompt state :runner \"Corp to choose which card to remove from the game\")"
       },
       {
         "lineNumber": 1228,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                  state :corp"
+        "content": "                                                (continue-ability"
       },
       {
         "lineNumber": 1229,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                  {:prompt \"Choose which card to remove from the game\""
+        "content": "                                                  state :corp"
       },
       {
         "lineNumber": 1230,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :player :corp"
+        "content": "                                                  {:prompt \"Choose which card to remove from the game\""
       },
       {
         "lineNumber": 1231,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :choices [c1 c2]"
+        "content": "                                                   :player :corp"
       },
       {
         "lineNumber": 1232,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                   :effect (req (if (\u003d target c1)"
+        "content": "                                                   :choices [c1 c2]"
       },
       {
         "lineNumber": 1233,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                  (do (move state :runner c1 :rfg)"
+        "content": "                                                   :effect (req (if (\u003d target c1)"
       },
       {
         "lineNumber": 1234,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                      (move state :runner c2 :hand)"
+        "content": "                                                                  (do (move state :runner c1 :rfg)"
       },
       {
         "lineNumber": 1235,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                      (system-msg state :runner"
+        "content": "                                                                      (move state :runner c2 :hand)"
       },
       {
         "lineNumber": 1236,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                                  (str \"uses Steve Cambridge: Master Grifter\""
+        "content": "                                                                      (system-msg state :runner"
       },
       {
         "lineNumber": 1237,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                                       \" to add \" (:title c2) \" to their Grip.\""
+        "content": "                                                                                  (str \"uses Steve Cambridge: Master Grifter\""
       },
       {
         "lineNumber": 1238,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                                       \" Corp removes \" (:title c1) \" from the game\")))"
+        "content": "                                                                                       \" to add \" (:title c2) \" to their Grip.\""
       },
       {
         "lineNumber": 1239,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                  (do (move state :runner c2 :rfg)"
+        "content": "                                                                                       \" Corp removes \" (:title c1) \" from the game\")))"
       },
       {
         "lineNumber": 1240,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                      (move state :runner c1 :hand)"
+        "content": "                                                                  (do (move state :runner c2 :rfg)"
       },
       {
         "lineNumber": 1241,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                      (system-msg state :runner"
+        "content": "                                                                      (move state :runner c1 :hand)"
       },
       {
         "lineNumber": 1242,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                                  (str \"uses Steve Cambridge: Master Grifter\""
+        "content": "                                                                      (system-msg state :runner"
       },
       {
         "lineNumber": 1243,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                                       \" to add \" (:title c1) \" to their Grip.\""
+        "content": "                                                                                  (str \"uses Steve Cambridge: Master Grifter\""
       },
       {
         "lineNumber": 1244,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                                       \" Corp removes \" (:title c2) \" from the game\"))))"
+        "content": "                                                                                       \" to add \" (:title c1) \" to their Grip.\""
       },
       {
         "lineNumber": 1245,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                (clear-wait-prompt state :runner)"
+        "content": "                                                                                       \" Corp removes \" (:title c2) \" from the game\"))))"
       },
       {
         "lineNumber": 1246,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                (effect-completed state side eid))}"
+        "content": "                                                                (clear-wait-prompt state :runner)"
       },
       {
         "lineNumber": 1247,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                  card nil)))}"
+        "content": "                                                                (effect-completed state side eid))}"
       },
       {
         "lineNumber": 1248,
         "author": {
           "gitId": "-"
         },
-        "content": "                                card nil))}}}"
+        "content": "                                                  card nil)))}"
       },
       {
         "lineNumber": 1249,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                card nil))}}}"
       },
       {
         "lineNumber": 1250,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Strategic Innovations: Future Forward\""
+        "content": ""
       },
       {
         "lineNumber": 1251,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:pre-start-game {:effect draft-points-target}"
+        "content": "   \"Strategic Innovations: Future Forward\""
       },
       {
         "lineNumber": 1252,
         "author": {
           "gitId": "-"
         },
-        "content": "             :runner-turn-ends"
+        "content": "   {:events {:pre-start-game {:effect draft-points-target}"
       },
       {
         "lineNumber": 1253,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:req (req (and (not (:disabled card))"
+        "content": "             :runner-turn-ends"
       },
       {
         "lineNumber": 1254,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (has-most-faction? state :corp \"Haas-Bioroid\")"
+        "content": "             {:req (req (and (not (:disabled card))"
       },
       {
         "lineNumber": 1255,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (pos? (count (:discard corp)))))"
+        "content": "                             (has-most-faction? state :corp \"Haas-Bioroid\")"
       },
       {
         "lineNumber": 1256,
         "author": {
           "gitId": "-"
         },
-        "content": "              :prompt \"Select a card in Archives to shuffle into R\u0026D\""
+        "content": "                             (pos? (count (:discard corp)))))"
       },
       {
         "lineNumber": 1257,
         "author": {
           "gitId": "-"
         },
-        "content": "              :choices {:req #(and (corp? %) (in-discard? %))}"
+        "content": "              :prompt \"Select a card in Archives to shuffle into R\u0026D\""
       },
       {
         "lineNumber": 1258,
         "author": {
           "gitId": "-"
         },
-        "content": "              :player :corp :show-discard true :priority true"
+        "content": "              :choices {:req #(and (corp? %) (in-discard? %))}"
       },
       {
         "lineNumber": 1259,
         "author": {
           "gitId": "-"
         },
-        "content": "              :msg (msg \"shuffle \" (if (:seen target) (:title target) \"a card\")"
+        "content": "              :player :corp :show-discard true :priority true"
       },
       {
         "lineNumber": 1260,
         "author": {
           "gitId": "-"
         },
-        "content": "                        \" into R\u0026D\")"
+        "content": "              :msg (msg \"shuffle \" (if (:seen target) (:title target) \"a card\")"
       },
       {
         "lineNumber": 1261,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (effect (move :corp target :deck)"
+        "content": "                        \" into R\u0026D\")"
       },
       {
         "lineNumber": 1262,
         "author": {
           "gitId": "-"
         },
-        "content": "                              (shuffle! :corp :deck))}}}"
+        "content": "              :effect (effect (move :corp target :deck)"
       },
       {
         "lineNumber": 1263,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                              (shuffle! :corp :deck))}}}"
       },
       {
         "lineNumber": 1264,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Sunny Lebeau: Security Specialist\""
+        "content": ""
       },
       {
         "lineNumber": 1265,
         "author": {
           "gitId": "-"
         },
-        "content": "   ;; No special implementation"
+        "content": "   \"Sunny Lebeau: Security Specialist\""
       },
       {
         "lineNumber": 1266,
         "author": {
           "gitId": "-"
         },
-        "content": "   {}"
+        "content": "   ;; No special implementation"
       },
       {
         "lineNumber": 1267,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "   {}"
       },
       {
         "lineNumber": 1268,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"SYNC: Everything, Everywhere\""
+        "content": ""
       },
       {
         "lineNumber": 1269,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:effect (req (when (\u003e (:turn @state) 1)"
+        "content": "   \"SYNC: Everything, Everywhere\""
       },
       {
         "lineNumber": 1270,
         "author": {
           "gitId": "-"
         },
-        "content": "                   (if (:sync-front card)"
+        "content": "   {:effect (req (when (\u003e (:turn @state) 1)"
       },
       {
         "lineNumber": 1271,
         "author": {
           "gitId": "-"
         },
-        "content": "                     (tag-remove-bonus state side -1)"
+        "content": "                   (if (:sync-front card)"
       },
       {
         "lineNumber": 1272,
         "author": {
           "gitId": "-"
         },
-        "content": "                     (trash-resource-bonus state side 2))))"
+        "content": "                     (tag-remove-bonus state side -1)"
       },
       {
         "lineNumber": 1273,
         "author": {
           "gitId": "-"
         },
-        "content": "    :events {:pre-first-turn {:req (req (\u003d side :corp))"
+        "content": "                     (trash-resource-bonus state side 2))))"
       },
       {
         "lineNumber": 1274,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :effect (effect (update! (assoc card :sync-front true))"
+        "content": "    :events {:pre-first-turn {:req (req (\u003d side :corp))"
       },
       {
         "lineNumber": 1275,
         "author": {
           "gitId": "-"
         },
-        "content": "                                              (tag-remove-bonus -1))}}"
+        "content": "                              :effect (effect (update! (assoc card :sync-front true))"
       },
       {
         "lineNumber": 1276,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [{:cost [:click 1]"
+        "content": "                                              (tag-remove-bonus -1))}}"
       },
       {
         "lineNumber": 1277,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (req (if (:sync-front card)"
+        "content": "    :abilities [{:cost [:click 1]"
       },
       {
         "lineNumber": 1278,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (do (tag-remove-bonus state side 1)"
+        "content": "                 :effect (req (if (:sync-front card)"
       },
       {
         "lineNumber": 1279,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    (trash-resource-bonus state side 2)"
+        "content": "                                (do (tag-remove-bonus state side 1)"
       },
       {
         "lineNumber": 1280,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    (update! state side (-\u003e card (assoc :sync-front false"
+        "content": "                                    (trash-resource-bonus state side 2)"
       },
       {
         "lineNumber": 1281,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                        :code \"sync\"))))"
+        "content": "                                    (update! state side (-\u003e card (assoc :sync-front false"
       },
       {
         "lineNumber": 1282,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (do (tag-remove-bonus state side -1)"
+        "content": "                                                                        :code \"sync\"))))"
       },
       {
         "lineNumber": 1283,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    (trash-resource-bonus state side -2)"
+        "content": "                                (do (tag-remove-bonus state side -1)"
       },
       {
         "lineNumber": 1284,
         "author": {
           "gitId": "-"
         },
-        "content": "                                    (update! state side (-\u003e card (assoc :sync-front true"
+        "content": "                                    (trash-resource-bonus state side -2)"
       },
       {
         "lineNumber": 1285,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                        :code \"09001\"))))))"
+        "content": "                                    (update! state side (-\u003e card (assoc :sync-front true"
       },
       {
         "lineNumber": 1286,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg (msg \"flip their ID\")}]"
+        "content": "                                                                        :code \"09001\"))))))"
       },
       {
         "lineNumber": 1287,
         "author": {
           "gitId": "-"
         },
-        "content": "    :leave-play (req (if (:sync-front card)"
+        "content": "                 :msg (msg \"flip their ID\")}]"
       },
       {
         "lineNumber": 1288,
         "author": {
           "gitId": "-"
         },
-        "content": "                       (tag-remove-bonus state side 1)"
+        "content": "    :leave-play (req (if (:sync-front card)"
       },
       {
         "lineNumber": 1289,
         "author": {
           "gitId": "-"
         },
-        "content": "                       (trash-resource-bonus state side -2)))}"
+        "content": "                       (tag-remove-bonus state side 1)"
       },
       {
         "lineNumber": 1290,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                       (trash-resource-bonus state side -2)))}"
       },
       {
         "lineNumber": 1291,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Synthetic Systems: The World Re-imagined\""
+        "content": ""
       },
       {
         "lineNumber": 1292,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:pre-start-game {:effect draft-points-target}}"
+        "content": "   \"Synthetic Systems: The World Re-imagined\""
       },
       {
         "lineNumber": 1293,
         "author": {
           "gitId": "-"
         },
-        "content": "    :flags {:corp-phase-12 (req (and (not (:disabled (get-card state card)))"
+        "content": "   {:events {:pre-start-game {:effect draft-points-target}}"
       },
       {
         "lineNumber": 1294,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (has-most-faction? state :corp \"Jinteki\")"
+        "content": "    :flags {:corp-phase-12 (req (and (not (:disabled (get-card state card)))"
       },
       {
         "lineNumber": 1295,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (\u003e (count (filter ice? (all-installed state :corp))) 1)))}"
+        "content": "                                     (has-most-faction? state :corp \"Jinteki\")"
       },
       {
         "lineNumber": 1296,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [{:prompt \"Select two pieces of ICE to swap positions\""
+        "content": "                                     (\u003e (count (filter ice? (all-installed state :corp))) 1)))}"
       },
       {
         "lineNumber": 1297,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :choices {:req #(and (installed? %)"
+        "content": "    :abilities [{:prompt \"Select two pieces of ICE to swap positions\""
       },
       {
         "lineNumber": 1298,
         "author": {
           "gitId": "-"
         },
-        "content": "                                      (ice? %))"
+        "content": "                 :choices {:req #(and (installed? %)"
       },
       {
         "lineNumber": 1299,
         "author": {
           "gitId": "-"
         },
-        "content": "                           :max 2}"
+        "content": "                                      (ice? %))"
       },
       {
         "lineNumber": 1300,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :once :per-turn"
+        "content": "                           :max 2}"
       },
       {
         "lineNumber": 1301,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (req (when (\u003d (count targets) 2)"
+        "content": "                 :once :per-turn"
       },
       {
         "lineNumber": 1302,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (swap-ice state side (first targets) (second targets))))"
+        "content": "                 :effect (req (when (\u003d (count targets) 2)"
       },
       {
         "lineNumber": 1303,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :msg (msg \"swap the positions of \" (card-str state (first targets))"
+        "content": "                                (swap-ice state side (first targets) (second targets))))"
       },
       {
         "lineNumber": 1304,
         "author": {
           "gitId": "-"
         },
-        "content": "                           \" and \" (card-str state (second targets)))}]}"
+        "content": "                 :msg (msg \"swap the positions of \" (card-str state (first targets))"
       },
       {
         "lineNumber": 1305,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                           \" and \" (card-str state (second targets)))}]}"
       },
       {
         "lineNumber": 1306,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Tennin Institute: The Secrets Within\""
+        "content": ""
       },
       {
         "lineNumber": 1307,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:flags {:corp-phase-12 (req (and (not (:disabled (get-card state card)))"
+        "content": "   \"Tennin Institute: The Secrets Within\""
       },
       {
         "lineNumber": 1308,
         "author": {
           "gitId": "-"
         },
-        "content": "                                     (not-last-turn? state :runner :successful-run)))}"
+        "content": "   {:flags {:corp-phase-12 (req (and (not (:disabled (get-card state card)))"
       },
       {
         "lineNumber": 1309,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [{:msg (msg \"place 1 advancement token on \" (card-str state target))"
+        "content": "                                     (not-last-turn? state :runner :successful-run)))}"
       },
       {
         "lineNumber": 1310,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :choices {:req installed?}"
+        "content": "    :abilities [{:msg (msg \"place 1 advancement token on \" (card-str state target))"
       },
       {
         "lineNumber": 1311,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :req (req (and (:corp-phase-12 @state) (not-last-turn? state :runner :successful-run)))"
+        "content": "                 :choices {:req installed?}"
       },
       {
         "lineNumber": 1312,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :once :per-turn"
+        "content": "                 :req (req (and (:corp-phase-12 @state) (not-last-turn? state :runner :successful-run)))"
       },
       {
         "lineNumber": 1313,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (effect (add-prop target :advance-counter 1 {:placed true}))}]}"
+        "content": "                 :once :per-turn"
       },
       {
         "lineNumber": 1314,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                 :effect (effect (add-prop target :advance-counter 1 {:placed true}))}]}"
       },
       {
         "lineNumber": 1315,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"The Foundry: Refining the Process\""
+        "content": ""
       },
       {
         "lineNumber": 1316,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events"
+        "content": "   \"The Foundry: Refining the Process\""
       },
       {
         "lineNumber": 1317,
         "author": {
           "gitId": "-"
         },
-        "content": "    {:rez {:req (req (and (ice? target) ;; Did you rez and ice just now"
+        "content": "   {:events"
       },
       {
         "lineNumber": 1318,
         "author": {
           "gitId": "-"
         },
-        "content": "                          (first-event? state :runner :rez #(ice? (first %)))))"
+        "content": "    {:rez {:req (req (and (ice? target) ;; Did you rez and ice just now"
       },
       {
         "lineNumber": 1319,
         "author": {
           "gitId": "-"
         },
-        "content": "           :optional"
+        "content": "                          (first-event? state :runner :rez #(ice? (first %)))))"
       },
       {
         "lineNumber": 1320,
         "author": {
           "gitId": "-"
         },
-        "content": "           {:prompt \"Add another copy to HQ?\""
+        "content": "           :optional"
       },
       {
         "lineNumber": 1321,
         "author": {
           "gitId": "-"
         },
-        "content": "            :yes-ability {:effect (req (if-let [found-card (some #(when (\u003d (:title %) (:title target)) %) (concat (:deck corp) (:play-area corp)))]"
+        "content": "           {:prompt \"Add another copy to HQ?\""
       },
       {
         "lineNumber": 1322,
         "author": {
           "gitId": "-"
         },
-        "content": "                                         (do (move state side found-card :hand)"
+        "content": "            :yes-ability {:effect (req (if-let [found-card (some #(when (\u003d (:title %) (:title target)) %) (concat (:deck corp) (:play-area corp)))]"
       },
       {
         "lineNumber": 1323,
         "author": {
           "gitId": "-"
         },
-        "content": "                                             (system-msg state side (str \"uses The Foundry to add a copy of \""
+        "content": "                                         (do (move state side found-card :hand)"
       },
       {
         "lineNumber": 1324,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                                         (:title found-card) \" to HQ, and shuffles their deck\"))"
+        "content": "                                             (system-msg state side (str \"uses The Foundry to add a copy of \""
       },
       {
         "lineNumber": 1325,
         "author": {
           "gitId": "-"
         },
-        "content": "                                             (shuffle! state side :deck))"
+        "content": "                                                                         (:title found-card) \" to HQ, and shuffles their deck\"))"
       },
       {
         "lineNumber": 1326,
         "author": {
           "gitId": "-"
         },
-        "content": "                                         (do (system-msg state side (str \"fails to find a target for The Foundry, and shuffles their deck\"))"
+        "content": "                                             (shuffle! state side :deck))"
       },
       {
         "lineNumber": 1327,
         "author": {
           "gitId": "-"
         },
-        "content": "                                             (shuffle! state side :deck))))}}}}}"
+        "content": "                                         (do (system-msg state side (str \"fails to find a target for The Foundry, and shuffles their deck\"))"
       },
       {
         "lineNumber": 1328,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                             (shuffle! state side :deck))))}}}}}"
       },
       {
         "lineNumber": 1329,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"The Masque: Cyber General\""
+        "content": ""
       },
       {
         "lineNumber": 1330,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:pre-start-game {:effect draft-points-target}}}"
+        "content": "   \"The Masque: Cyber General\""
       },
       {
         "lineNumber": 1331,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "   {:events {:pre-start-game {:effect draft-points-target}}}"
       },
       {
         "lineNumber": 1332,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"The Outfit: Family Owned and Operated\""
+        "content": ""
       },
       {
         "lineNumber": 1333,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:corp-gain-bad-publicity {:msg \"gain 3 [Credit]\""
+        "content": "   \"The Outfit: Family Owned and Operated\""
       },
       {
         "lineNumber": 1334,
         "author": {
           "gitId": "-"
         },
-        "content": "                                       :effect (effect (gain-credits 3))}}}"
+        "content": "   {:events {:corp-gain-bad-publicity {:msg \"gain 3 [Credit]\""
       },
       {
         "lineNumber": 1335,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                       :effect (effect (gain-credits 3))}}}"
       },
       {
         "lineNumber": 1336,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"The Professor: Keeper of Knowledge\""
+        "content": ""
       },
       {
         "lineNumber": 1337,
         "author": {
           "gitId": "-"
         },
-        "content": "   ;; No special implementation"
+        "content": "   \"The Professor: Keeper of Knowledge\""
       },
       {
         "lineNumber": 1338,
         "author": {
           "gitId": "-"
         },
-        "content": "   {}"
+        "content": "   ;; No special implementation"
       },
       {
         "lineNumber": 1339,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "   {}"
       },
       {
         "lineNumber": 1340,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"The Shadow: Pulling the Strings\""
+        "content": ""
       },
       {
         "lineNumber": 1341,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:pre-start-game {:effect draft-points-target}}}"
+        "content": "   \"The Shadow: Pulling the Strings\""
       },
       {
         "lineNumber": 1342,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "   {:events {:pre-start-game {:effect draft-points-target}}}"
       },
       {
         "lineNumber": 1343,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Titan Transnational: Investing In Your Future\""
+        "content": ""
       },
       {
         "lineNumber": 1344,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:agenda-scored {:msg (msg \"add 1 agenda counter to \" (:title target))"
+        "content": "   \"Titan Transnational: Investing In Your Future\""
       },
       {
         "lineNumber": 1345,
         "author": {
           "gitId": "-"
         },
-        "content": "                             :effect (effect (add-counter (get-card state target) :agenda 1))}}}"
+        "content": "   {:events {:agenda-scored {:msg (msg \"add 1 agenda counter to \" (:title target))"
       },
       {
         "lineNumber": 1346,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                             :effect (effect (add-counter (get-card state target) :agenda 1))}}}"
       },
       {
         "lineNumber": 1347,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Valencia Estevez: The Angel of Cayambe\""
+        "content": ""
       },
       {
         "lineNumber": 1348,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:pre-start-game"
+        "content": "   \"Valencia Estevez: The Angel of Cayambe\""
       },
       {
         "lineNumber": 1349,
         "author": {
           "gitId": "-"
         },
-        "content": "             {:req (req (and (\u003d side :runner)"
+        "content": "   {:events {:pre-start-game"
       },
       {
         "lineNumber": 1350,
         "author": {
           "gitId": "-"
         },
-        "content": "                             (zero? (get-in @state [:corp :bad-publicity]))))"
+        "content": "             {:req (req (and (\u003d side :runner)"
       },
       {
         "lineNumber": 1351,
         "author": {
           "gitId": "-"
         },
-        "content": "              :effect (effect (gain :corp :bad-publicity 1))}}}"
+        "content": "                             (zero? (get-in @state [:corp :bad-publicity]))))"
       },
       {
         "lineNumber": 1352,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "              :effect (effect (gain :corp :bad-publicity 1))}}}"
       },
       {
         "lineNumber": 1353,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Weyland Consortium: Because We Built It\""
+        "content": ""
       },
       {
         "lineNumber": 1354,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:recurring 1"
+        "content": "   \"Weyland Consortium: Because We Built It\""
       },
       {
         "lineNumber": 1355,
         "author": {
           "gitId": "-"
         },
-        "content": "    :interactions {:pay-credits {:req (req (\u003d :advance (:source-type eid)))"
+        "content": "   {:recurring 1"
       },
       {
         "lineNumber": 1356,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :type :recurring}}}"
+        "content": "    :interactions {:pay-credits {:req (req (\u003d :advance (:source-type eid)))"
       },
       {
         "lineNumber": 1357,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                 :type :recurring}}}"
       },
       {
         "lineNumber": 1358,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Weyland Consortium: Builder of Nations\""
+        "content": ""
       },
       {
         "lineNumber": 1359,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:implementation \"Damage triggered manually\""
+        "content": "   \"Weyland Consortium: Builder of Nations\""
       },
       {
         "lineNumber": 1360,
         "author": {
           "gitId": "-"
         },
-        "content": "    :abilities [{:label \"Do 1 meat damage\""
+        "content": "   {:implementation \"Damage triggered manually\""
       },
       {
         "lineNumber": 1361,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :once :per-turn"
+        "content": "    :abilities [{:label \"Do 1 meat damage\""
       },
       {
         "lineNumber": 1362,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :prompt \"Do a meat damage from identity ability?\""
+        "content": "                 :once :per-turn"
       },
       {
         "lineNumber": 1363,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :choices (cancellable [\"Yes\"])"
+        "content": "                 :prompt \"Do a meat damage from identity ability?\""
       },
       {
         "lineNumber": 1364,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :async true"
+        "content": "                 :choices (cancellable [\"Yes\"])"
       },
       {
         "lineNumber": 1365,
         "author": {
           "gitId": "-"
         },
-        "content": "                 :effect (req (when (\u003d target \"Yes\")"
+        "content": "                 :async true"
       },
       {
         "lineNumber": 1366,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (damage state side eid :meat 1 {:card card})"
+        "content": "                 :effect (req (when (\u003d target \"Yes\")"
       },
       {
         "lineNumber": 1367,
         "author": {
           "gitId": "-"
         },
-        "content": "                                (system-msg state side \"uses Weyland Consortium: Builder of Nations to do 1 meat damage\")))}]}"
+        "content": "                                (damage state side eid :meat 1 {:card card})"
       },
       {
         "lineNumber": 1368,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                (system-msg state side \"uses Weyland Consortium: Builder of Nations to do 1 meat damage\")))}]}"
       },
       {
         "lineNumber": 1369,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Weyland Consortium: Building a Better World\""
+        "content": ""
       },
       {
         "lineNumber": 1370,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:play-operation {:msg \"gain 1 [Credits]\""
+        "content": "   \"Weyland Consortium: Building a Better World\""
       },
       {
         "lineNumber": 1371,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :effect (effect (gain-credits 1))"
+        "content": "   {:events {:play-operation {:msg \"gain 1 [Credits]\""
       },
       {
         "lineNumber": 1372,
         "author": {
           "gitId": "-"
         },
-        "content": "                              :req (req (has-subtype? target \"Transaction\"))}}}"
+        "content": "                              :effect (effect (gain-credits 1))"
       },
       {
         "lineNumber": 1373,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                              :req (req (has-subtype? target \"Transaction\"))}}}"
       },
       {
         "lineNumber": 1374,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Whizzard: Master Gamer\""
+        "content": ""
       },
       {
         "lineNumber": 1375,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:recurring 3"
+        "content": "   \"Whizzard: Master Gamer\""
       },
       {
         "lineNumber": 1376,
         "author": {
           "gitId": "-"
         },
-        "content": "    :interactions {:pay-credits {:req (req (and (\u003d :runner-trash-corp-cards (:source-type eid))"
+        "content": "   {:recurring 3"
       },
       {
         "lineNumber": 1377,
         "author": {
           "gitId": "-"
         },
-        "content": "                                                (corp? target)))"
+        "content": "    :interactions {:pay-credits {:req (req (and (\u003d :runner-trash-corp-cards (:source-type eid))"
       },
       {
         "lineNumber": 1378,
         "author": {
           "gitId": "-"
         },
-        "content": "                                 :type :recurring}}}"
+        "content": "                                                (corp? target)))"
       },
       {
         "lineNumber": 1379,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                                 :type :recurring}}}"
       },
       {
         "lineNumber": 1380,
         "author": {
           "gitId": "-"
         },
-        "content": "   \"Wyvern: Chemically Enhanced\""
+        "content": ""
       },
       {
         "lineNumber": 1381,
         "author": {
           "gitId": "-"
         },
-        "content": "   {:events {:pre-start-game {:effect draft-points-target}"
+        "content": "   \"Wyvern: Chemically Enhanced\""
       },
       {
         "lineNumber": 1382,
         "author": {
           "gitId": "-"
         },
-        "content": "             :runner-trash {:req (req (and (has-most-faction? state :runner \"Anarch\")"
+        "content": "   {:events {:pre-start-game {:effect draft-points-target}"
       },
       {
         "lineNumber": 1383,
         "author": {
           "gitId": "-"
         },
-        "content": "                                           (corp? target)"
+        "content": "             :runner-trash {:req (req (and (has-most-faction? state :runner \"Anarch\")"
       },
       {
         "lineNumber": 1384,
         "author": {
           "gitId": "-"
         },
-        "content": "                                           (pos? (count (:discard runner)))))"
+        "content": "                                           (corp? target)"
       },
       {
         "lineNumber": 1385,
         "author": {
           "gitId": "-"
         },
-        "content": "                            :msg (msg \"shuffle \" (:title (last (:discard runner))) \" into their Stack\")"
+        "content": "                                           (pos? (count (:discard runner)))))"
       },
       {
         "lineNumber": 1386,
         "author": {
           "gitId": "-"
         },
-        "content": "                            :effect (effect (move :runner (last (:discard runner)) :deck)"
+        "content": "                            :msg (msg \"shuffle \" (:title (last (:discard runner))) \" into their Stack\")"
       },
       {
         "lineNumber": 1387,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                            :effect (effect (move :runner (last (:discard runner)) :deck)"
+      },
+      {
+        "lineNumber": 1388,
         "author": {
           "gitId": "-"
         },
@@ -20453,7 +20460,7 @@
       }
     ],
     "authorContributionMap": {
-      "-": 1380,
+      "-": 1381,
       "ChooJeremy": 7
     }
   },
