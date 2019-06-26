@@ -476,98 +476,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "const humanReadableTemplateList \u003d `${validTemplates.slice(0, -1)"
+        "content": "const humanReadableTemplateList \u003d `${validTemplates"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "  .map((template) \u003d\u003e `\"${template}\"`).join(\u0027, \u0027)} and \"${validTemplates.slice(-1)}\"`;"
+        "content": "  .slice(0, -1)"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  .map(template \u003d\u003e `\"${template}\"`)"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "class Create {"
+        "content": "  .join(\u0027, \u0027)} and \"${validTemplates.slice(-1)}\"`;"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "  constructor(serverless, options) {"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.serverless \u003d serverless;"
+        "content": "class Create {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.options \u003d options;"
+        "content": "  constructor(serverless, options) {"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    this.serverless \u003d serverless;"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.commands \u003d {"
+        "content": "    this.options \u003d options;"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "      create: {"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "        usage: \u0027Create new Serverless service\u0027,"
+        "content": "    this.commands \u003d {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "        lifecycleEvents: ["
+        "content": "      create: {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u0027create\u0027,"
+        "content": "        usage: \u0027Create new Serverless service\u0027,"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "        ],"
+        "content": "        lifecycleEvents: [\u0027create\u0027],"
       },
       {
         "lineNumber": 82,
@@ -581,7 +581,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          template: {"
+        "content": "          \u0027template\u0027: {"
       },
       {
         "lineNumber": 84,
@@ -658,7 +658,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          path: {"
+        "content": "          \u0027path\u0027: {"
       },
       {
         "lineNumber": 95,
@@ -686,7 +686,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          name: {"
+        "content": "          \u0027name\u0027: {"
       },
       {
         "lineNumber": 99,
@@ -749,112 +749,112 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      \u0027create:create\u0027: () \u003d\u003e BbPromise.bind(this)"
+        "content": "      \u0027create:create\u0027: () \u003d\u003e BbPromise.bind(this).then(this.create),"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "        .then(this.create),"
+        "content": "    };"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": "  }"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": ""
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  create() {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "  create() {"
+        "content": "    this.serverless.cli.log(\u0027Generating boilerplate...\u0027);"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.serverless.cli.log(\u0027Generating boilerplate...\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if (\u0027template\u0027 in this.options) {"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (\u0027template\u0027 in this.options) {"
+        "content": "      this.createFromTemplate();"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.createFromTemplate();"
+        "content": "    } else if (\u0027template-url\u0027 in this.options) {"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if (\u0027template-url\u0027 in this.options) {"
+        "content": "      return download"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
-        "content": "      return download.downloadTemplateFromRepo("
+        "content": "        .downloadTemplateFromRepo("
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options[\u0027template-url\u0027],"
+        "content": "          this.options[\u0027template-url\u0027],"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.name,"
+        "content": "          this.options.name,"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.options.path"
+        "content": "          this.options.path"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "      )"
+        "content": "        )"
       },
       {
         "lineNumber": 123,
@@ -880,289 +880,289 @@
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "            `${this.options.name \u0026\u0026"
+        "content": "            `${"
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "              this.options.name !\u003d\u003d serviceName ? `as \"${this.options.name}\"` : \u0027\u0027}`,"
+        "content": "              this.options.name \u0026\u0026 this.options.name !\u003d\u003d serviceName"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "          ].join(\u0027\u0027);"
+        "content": "                ? `as \"${this.options.name}\"`"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "                : \u0027\u0027"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "          this.serverless.cli.log(message);"
+        "content": "            }`,"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "          userStats.track(\u0027service_created\u0027, {"
+        "content": ""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "            template: this.options.template,"
+        "content": "          this.serverless.cli.log(message);"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "            serviceName: this.options.name,"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": "          });"
+        "content": "          userStats.track(\u0027service_created\u0027, {"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "        })"
+        "content": "            template: this.options.template,"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": "        .catch(err \u003d\u003e {"
+        "content": "            serviceName: this.options.name,"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "          throw new this.serverless.classes.Error(err);"
+        "content": "          });"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "        })"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else if (\u0027template-path\u0027 in this.options) {"
+        "content": "        .catch(err \u003d\u003e {"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": "      // Copying template from a local directory"
+        "content": "          throw new this.serverless.classes.Error(err);"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": "      const servicePath \u003d this.options.path"
+        "content": "        });"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "        ? untildify(this.options.path)"
+        "content": "    } else if (\u0027template-path\u0027 in this.options) {"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "        : path.join(process.cwd(), this.options.name);"
+        "content": "      // Copying template from a local directory"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (dirExistsSync(servicePath)) {"
+        "content": "      const servicePath \u003d this.options.path"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "        const errorMessage \u003d `A folder named \"${servicePath}\" already exists.`;"
+        "content": "        ? untildify(this.options.path)"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
-        "content": "        throw new ServerlessError(errorMessage);"
+        "content": "        : path.join(process.cwd(), this.options.name);"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      if (dirExistsSync(servicePath)) {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": "      copyDirContentsSync(untildify(this.options[\u0027template-path\u0027]), servicePath, {"
+        "content": "        const errorMessage \u003d `A folder named \"${servicePath}\" already exists.`;"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "        noLinks: true,"
+        "content": "        throw new ServerlessError(errorMessage);"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "      }"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (this.options.name) {"
+        "content": "      copyDirContentsSync(untildify(this.options[\u0027template-path\u0027]), servicePath, {"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "        renameService(this.options.name, servicePath);"
+        "content": "        noLinks: true,"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "      });"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else {"
+        "content": "      if (this.options.name) {"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "      const errorMessage \u003d ["
+        "content": "        renameService(this.options.name, servicePath);"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027You must either pass a template name (--template), \u0027,"
+        "content": "      }"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027a URL (--template-url) or a local path (--template-path).\u0027,"
+        "content": "    } else {"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "      ].join(\u0027\u0027);"
+        "content": "      const errorMessage \u003d ["
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "      throw new this.serverless.classes.Error(errorMessage);"
+        "content": "        \u0027You must either pass a template name (--template), \u0027,"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        \u0027a URL (--template-url) or a local path (--template-path).\u0027,"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "    return BbPromise.resolve();"
+        "content": "      ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "      throw new this.serverless.classes.Error(errorMessage);"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "  createFromTemplate() {"
+        "content": "    return BbPromise.resolve();"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "    const notPlugin \u003d this.options.template !\u003d\u003d \u0027plugin\u0027;"
+        "content": "  }"
       },
       {
         "lineNumber": 167,
@@ -1176,238 +1176,238 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    if (validTemplates.indexOf(this.options.template) \u003d\u003d\u003d -1) {"
+        "content": "  createFromTemplate() {"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "      const errorMessage \u003d ["
+        "content": "    const notPlugin \u003d this.options.template !\u003d\u003d \u0027plugin\u0027;"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "        `Template \"${this.options.template}\" is not supported.`,"
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "        ` Supported templates are: ${humanReadableTemplateList}.`,"
+        "content": "    if (validTemplates.indexOf(this.options.template) \u003d\u003d\u003d -1) {"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": "      ].join(\u0027\u0027);"
+        "content": "      const errorMessage \u003d ["
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "      throw new this.serverless.classes.Error(errorMessage);"
+        "content": "        `Template \"${this.options.template}\" is not supported.`,"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "        ` Supported templates are: ${humanReadableTemplateList}.`,"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": "    // store the custom options for the service if given"
+        "content": "      throw new this.serverless.classes.Error(errorMessage);"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": "    const boilerplatePath \u003d _.toString(this.options.path);"
+        "content": "    }"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": "    const serviceName \u003d _.toString(this.options.name);"
+        "content": ""
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "    const templateSrcDir \u003d path.join(this.serverless.config.serverlessPath,"
+        "content": "    // store the custom options for the service if given"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u0027plugins\u0027, \u0027create\u0027, \u0027templates\u0027, this.options.template);"
+        "content": "    const boilerplatePath \u003d _.toString(this.options.path);"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const serviceName \u003d _.toString(this.options.name);"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "    // create (if not yet present) and chdir into the directory for the service"
+        "content": "    const templateSrcDir \u003d path.join("
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (boilerplatePath) {"
+        "content": "      this.serverless.config.serverlessPath,"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "      const newPath \u003d path.join(process.cwd(), boilerplatePath);"
+        "content": "      \u0027plugins\u0027,"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      \u0027create\u0027,"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (this.serverless.utils.dirExistsSync(newPath)) {"
+        "content": "      \u0027templates\u0027,"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "        const errorMessage \u003d ["
+        "content": "      this.options.template"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "          `The directory \"${newPath}\" already exists, and serverless will not overwrite it. `,"
+        "content": "    );"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u0027Rename or move the directory and try again if you want serverless to create it\"\u0027,"
+        "content": ""
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "        ].join(\u0027\u0027);"
+        "content": "    // create (if not yet present) and chdir into the directory for the service"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if (boilerplatePath) {"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "        throw new this.serverless.classes.Error(errorMessage);"
+        "content": "      const newPath \u003d path.join(process.cwd(), boilerplatePath);"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": ""
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      if (this.serverless.utils.dirExistsSync(newPath)) {"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.cli.log(`Generating boilerplate in \"${newPath}\"`);"
+        "content": "        const errorMessage \u003d ["
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          `The directory \"${newPath}\" already exists, and serverless will not overwrite it. `,"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "      fse.mkdirsSync(newPath);"
+        "content": "          \u0027Rename or move the directory and try again if you want serverless to create it\"\u0027,"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "      process.chdir(newPath);"
+        "content": "        ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": "    } else {"
+        "content": ""
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "      // ensure no template file already exists in cwd that we may overwrite"
+        "content": "        throw new this.serverless.classes.Error(errorMessage);"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "      const templateFullFilePaths \u003d this.serverless.utils.walkDirSync(templateSrcDir);"
+        "content": "      }"
       },
       {
         "lineNumber": 202,
@@ -1421,49 +1421,49 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      templateFullFilePaths.forEach(ffp \u003d\u003e {"
+        "content": "      this.serverless.cli.log(`Generating boilerplate in \"${newPath}\"`);"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "-"
         },
-        "content": "        const filename \u003d path.basename(ffp);"
+        "content": ""
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "-"
         },
-        "content": "        if (this.serverless.utils.fileExistsSync(path.join(process.cwd(), filename))) {"
+        "content": "      fse.mkdirsSync(newPath);"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": "          const errorMessage \u003d ["
+        "content": "      process.chdir(newPath);"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "            `The file \"${filename}\" already exists, and serverless will not overwrite it. `,"
+        "content": "    } else {"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "            `Move the file and try again if you want serverless to write a new \"${filename}\"`,"
+        "content": "      // ensure no template file already exists in cwd that we may overwrite"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "          ].join(\u0027\u0027);"
+        "content": "      const templateFullFilePaths \u003d this.serverless.utils.walkDirSync(templateSrcDir);"
       },
       {
         "lineNumber": 210,
@@ -1477,238 +1477,238 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          throw new this.serverless.classes.Error(errorMessage);"
+        "content": "      templateFullFilePaths.forEach(ffp \u003d\u003e {"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "        }"
+        "content": "        const filename \u003d path.basename(ffp);"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": "        if (this.serverless.utils.fileExistsSync(path.join(process.cwd(), filename))) {"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "          const errorMessage \u003d ["
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "            `The file \"${filename}\" already exists, and serverless will not overwrite it. `,"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (notPlugin) {"
+        "content": "            `Move the file and try again if you want serverless to write a new \"${filename}\"`,"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.config.update({ servicePath: process.cwd() });"
+        "content": "          ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          throw new this.serverless.classes.Error(errorMessage);"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "-"
         },
-        "content": "    // copy template files recursively to cwd"
+        "content": "        }"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "-"
         },
-        "content": "    // while keeping template file tree"
+        "content": "      });"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
-        "content": "    try {"
+        "content": "    }"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.utils.copyDirContentsSync(templateSrcDir, process.cwd());"
+        "content": ""
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if (notPlugin) {"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": "      // NPM renames .gitignore to .npmignore on publish so we have to rename it."
+        "content": "      this.serverless.config.update({ servicePath: process.cwd() });"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "      if (fse.existsSync(path.join(process.cwd(), \u0027gitignore\u0027))) {"
+        "content": "    }"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "        fse.renameSync(path.join(process.cwd(), \u0027gitignore\u0027),"
+        "content": ""
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "          path.join(process.cwd(), \u0027.gitignore\u0027));"
+        "content": "    // copy template files recursively to cwd"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "-"
         },
-        "content": "      }"
+        "content": "    // while keeping template file tree"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
-        "content": "    } catch (err) {"
+        "content": "    try {"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "-"
         },
-        "content": "      const errorMessage \u003d ["
+        "content": "      this.serverless.utils.copyDirContentsSync(templateSrcDir, process.cwd());"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027Error unable to create a service in this directory. \u0027,"
+        "content": ""
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027Please check that you have the required permissions to write to the directory\u0027,"
+        "content": "      // NPM renames .gitignore to .npmignore on publish so we have to rename it."
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "-"
         },
-        "content": "      ].join(\u0027\u0027);"
+        "content": "      if (fse.existsSync(path.join(process.cwd(), \u0027gitignore\u0027))) {"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        fse.renameSync("
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "-"
         },
-        "content": "      throw new this.serverless.classes.Error(errorMessage);"
+        "content": "          path.join(process.cwd(), \u0027gitignore\u0027),"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "          path.join(process.cwd(), \u0027.gitignore\u0027)"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        );"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "-"
         },
-        "content": "    // rename the service if the user has provided a path via options and is creating a service"
+        "content": "      }"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "-"
         },
-        "content": "    if ((boilerplatePath || serviceName) \u0026\u0026 notPlugin) {"
+        "content": "    } catch (err) {"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "-"
         },
-        "content": "      const newServiceName \u003d serviceName || boilerplatePath.split(path.sep).pop();"
+        "content": "      const errorMessage \u003d ["
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        \u0027Error unable to create a service in this directory. \u0027,"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "-"
         },
-        "content": "      renameService(newServiceName, this.serverless.config.servicePath);"
+        "content": "        \u0027Please check that you have the required permissions to write to the directory\u0027,"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 245,
@@ -1722,98 +1722,98 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    userStats.track(\u0027service_created\u0027, {"
+        "content": "      throw new this.serverless.classes.Error(errorMessage);"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "-"
         },
-        "content": "      template: this.options.template,"
+        "content": "    }"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "-"
         },
-        "content": "      serviceName,"
+        "content": ""
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "    // rename the service if the user has provided a path via options and is creating a service"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    if ((boilerplatePath || serviceName) \u0026\u0026 notPlugin) {"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.serverless.cli.asciiGreeting();"
+        "content": "      const newServiceName \u003d serviceName || boilerplatePath.split(path.sep).pop();"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.serverless.cli"
+        "content": ""
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "-"
         },
-        "content": "      .log(`Successfully generated boilerplate for template: \"${this.options.template}\"`);"
+        "content": "      renameService(newServiceName, this.serverless.config.servicePath);"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (!(boilerplatePath || serviceName) \u0026\u0026 notPlugin) {"
+        "content": ""
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "-"
         },
-        "content": "      this.serverless.cli"
+        "content": "    userStats.track(\u0027service_created\u0027, {"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "-"
         },
-        "content": "        .log(\u0027NOTE: Please update the \"service\" property in serverless.yml with your service name\u0027);"
+        "content": "      template: this.options.template,"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      serviceName,"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    });"
       },
       {
         "lineNumber": 260,
@@ -1827,17 +1827,94 @@
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    this.serverless.cli.asciiGreeting();"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    this.serverless.cli.log("
       },
       {
         "lineNumber": 263,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      `Successfully generated boilerplate for template: \"${this.options.template}\"`"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    if (!(boilerplatePath || serviceName) \u0026\u0026 notPlugin) {"
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      this.serverless.cli.log("
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        \u0027NOTE: Please update the \"service\" property in serverless.yml with your service name\u0027"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "      );"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  }"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 274,
         "author": {
           "gitId": "-"
         },
@@ -1845,8 +1922,8 @@
       }
     ],
     "authorContributionMap": {
-      "Xenonym": 4,
-      "-": 259
+      "Xenonym": 2,
+      "-": 272
     }
   },
   {
@@ -2125,7 +2202,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          conceal: {"
+        "content": "          \u0027conceal\u0027: {"
       },
       {
         "lineNumber": 27,
@@ -2146,7 +2223,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          stage: {"
+        "content": "          \u0027stage\u0027: {"
       },
       {
         "lineNumber": 30,
@@ -2174,7 +2251,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          region: {"
+        "content": "          \u0027region\u0027: {"
       },
       {
         "lineNumber": 34,
@@ -2202,7 +2279,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          package: {"
+        "content": "          \u0027package\u0027: {"
       },
       {
         "lineNumber": 38,
@@ -2230,7 +2307,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          verbose: {"
+        "content": "          \u0027verbose\u0027: {"
       },
       {
         "lineNumber": 42,
@@ -2258,7 +2335,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          force: {"
+        "content": "          \u0027force\u0027: {"
       },
       {
         "lineNumber": 46,
@@ -2279,14 +2356,14 @@
         "author": {
           "gitId": "-"
         },
-        "content": "          function: {"
+        "content": "          \u0027function\u0027: {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "            usage: \u0027Function name. Deploys a single function (see \\\u0027deploy function\\\u0027)\u0027,"
+        "content": "            usage: \"Function name. Deploys a single function (see \u0027deploy function\u0027)\","
       },
       {
         "lineNumber": 50,
@@ -2356,70 +2433,70 @@
         "author": {
           "gitId": "-"
         },
-        "content": "            lifecycleEvents: ["
+        "content": "            lifecycleEvents: [\u0027initialize\u0027, \u0027packageFunction\u0027, \u0027deploy\u0027],"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027initialize\u0027,"
+        "content": "            options: {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027packageFunction\u0027,"
+        "content": "              \u0027function\u0027: {"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027deploy\u0027,"
+        "content": "                usage: \u0027Name of the function\u0027,"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "            ],"
+        "content": "                shortcut: \u0027f\u0027,"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "            options: {"
+        "content": "                required: true,"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "              function: {"
+        "content": "              },"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "                usage: \u0027Name of the function\u0027,"
+        "content": "              \u0027stage\u0027: {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "                shortcut: \u0027f\u0027,"
+        "content": "                usage: \u0027Stage of the function\u0027,"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "                required: true,"
+        "content": "                shortcut: \u0027s\u0027,"
       },
       {
         "lineNumber": 69,
@@ -2433,21 +2510,21 @@
         "author": {
           "gitId": "-"
         },
-        "content": "              stage: {"
+        "content": "              \u0027region\u0027: {"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "                usage: \u0027Stage of the function\u0027,"
+        "content": "                usage: \u0027Region of the function\u0027,"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "                shortcut: \u0027s\u0027,"
+        "content": "                shortcut: \u0027r\u0027,"
       },
       {
         "lineNumber": 73,
@@ -2461,514 +2538,465 @@
         "author": {
           "gitId": "-"
         },
-        "content": "              region: {"
+        "content": "              \u0027force\u0027: {"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "                usage: \u0027Region of the function\u0027,"
+        "content": "                usage: \u0027Forces a deployment to take place\u0027,"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "                shortcut: \u0027r\u0027,"
+        "content": "              },"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "              },"
+        "content": "              \u0027update-config\u0027: {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "              force: {"
+        "content": "                usage:"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "                usage: \u0027Forces a deployment to take place\u0027,"
+        "content": "                  \u0027Updates function configuration, e.g. Timeout or Memory Size without deploying code\u0027, // eslint-disable-line max-len"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "              },"
+        "content": "                shortcut: \u0027u\u0027,"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027update-config\u0027: {"
+        "content": "              },"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "                usage: \u0027Updates function configuration, e.g. Timeout or Memory Size without deploying code\u0027, // eslint-disable-line max-len"
+        "content": "            },"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "                shortcut: \u0027u\u0027,"
+        "content": "          },"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "              },"
+        "content": "          list: {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "            },"
+        "content": "            usage: \u0027List deployed version of your Serverless Service\u0027,"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "          },"
+        "content": "            lifecycleEvents: [\u0027log\u0027],"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "          list: {"
+        "content": "            commands: {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "            usage: \u0027List deployed version of your Serverless Service\u0027,"
+        "content": "              functions: {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "            lifecycleEvents: ["
+        "content": "                usage: \u0027List all the deployed functions and their versions\u0027,"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027log\u0027,"
+        "content": "                lifecycleEvents: [\u0027log\u0027],"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "            ],"
+        "content": "              },"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "            commands: {"
+        "content": "            },"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "              functions: {"
+        "content": "          },"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "                usage: \u0027List all the deployed functions and their versions\u0027,"
+        "content": "        },"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "                lifecycleEvents: ["
+        "content": "      },"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "                  \u0027log\u0027,"
+        "content": "    };"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "                ],"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "              },"
+        "content": "    this.hooks \u003d {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "            },"
+        "content": "      \u0027before:deploy:deploy\u0027: () \u003d\u003e"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "          },"
+        "content": "        BbPromise.bind(this).then(() \u003d\u003e {"
       },
       {
         "lineNumber": 101,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        },"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      },"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    };"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    this.hooks \u003d {"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "      \u0027before:deploy:deploy\u0027: () \u003d\u003e BbPromise.bind(this)"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "        .then(() \u003d\u003e {"
-      },
-      {
-        "lineNumber": 108,
         "author": {
           "gitId": "Xenonym"
         },
         "content": "          const provider \u003d this.serverless.service.provider.name;"
       },
       {
-        "lineNumber": 109,
+        "lineNumber": 102,
         "author": {
           "gitId": "Xenonym"
         },
         "content": "          if (!this.serverless.getProvider(provider)) {"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 103,
         "author": {
           "gitId": "Xenonym"
         },
         "content": "            const errorMessage \u003d `The specified provider \"${provider}\" does not exist.`;"
       },
       {
-        "lineNumber": 111,
+        "lineNumber": 104,
         "author": {
           "gitId": "Xenonym"
         },
         "content": "            return BbPromise.reject(new this.serverless.classes.Error(errorMessage));"
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 105,
         "author": {
           "gitId": "Xenonym"
         },
         "content": "          }"
       },
       {
-        "lineNumber": 113,
+        "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
         "content": "          if (this.options.function) {"
       },
       {
-        "lineNumber": 114,
+        "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
         "content": "            // If the user has given a function parameter, spawn a function deploy"
       },
       {
-        "lineNumber": 115,
+        "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
         "content": "            // and terminate execution right afterwards. We did not enter the"
       },
       {
-        "lineNumber": 116,
+        "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
         "content": "            // deploy lifecycle yet, so nothing has to be cleaned up."
       },
       {
-        "lineNumber": 117,
+        "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "            return this.serverless.pluginManager.spawn("
+        "content": "            return this.serverless.pluginManager.spawn(\u0027deploy:function\u0027, {"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u0027deploy:function\u0027, { terminateLifecycleAfterExecution: true }"
+        "content": "              terminateLifecycleAfterExecution: true,"
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "            );"
+        "content": "            });"
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
         "content": "          }"
       },
       {
-        "lineNumber": 121,
+        "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
         "content": "          if (!this.options.package \u0026\u0026 !this.serverless.service.package.path) {"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
         "content": "            return this.serverless.pluginManager.spawn(\u0027package\u0027);"
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
         "content": "          }"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
         "content": "          return BbPromise.resolve();"
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
         "content": "        }),"
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 119,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
         "content": "      \u0027after:deploy:deploy\u0027: () \u003d\u003e BbPromise.bind(this).then(this.track),"
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
         "content": "    };"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
         "content": "  }"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 123,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 124,
         "author": {
           "gitId": "-"
         },
         "content": "  track() {"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
         "content": "    const sls \u003d this.serverless;"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
         "content": "    let serviceInfo \u003d {};"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
         "content": "    if (sls \u0026\u0026 sls.service \u0026\u0026 sls.service.provider \u0026\u0026 sls.service.provider.name) {"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
         "content": "      serviceInfo \u003d {"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
         "content": "        provider: sls.service.provider.name,"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
         "content": "        runtime: sls.service.provider.runtime,"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
         "content": "      };"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
         "content": "    userStats.track(\u0027service_deployed\u0027, {"
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
         "content": "      data: serviceInfo,"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
         "content": "    });"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
         "content": "    return BbPromise.resolve();"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
         "content": "  }"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
         "content": "}"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
@@ -2977,7 +3005,7 @@
     ],
     "authorContributionMap": {
       "Xenonym": 5,
-      "-": 142
+      "-": 135
     }
   },
   {
@@ -3205,266 +3233,266 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      expect(noOptionDeploy).to.have.property(\u0027options\u0027).to.be.eql({});"
+        "content": "      expect(noOptionDeploy)"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "        .to.have.property(\u0027options\u0027)"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "  });"
+        "content": "        .to.be.eql({});"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    });"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "  describe(\u0027\"before:deploy:deploy\" hook\u0027, () \u003d\u003e {"
+        "content": "  });"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "    let spawnStub;"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "    let spawnPackageStub;"
+        "content": "  describe(\u0027\"before:deploy:deploy\" hook\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": "    let spawnDeployFunctionStub;"
+        "content": "    let spawnStub;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    let spawnPackageStub;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "    beforeEach(() \u003d\u003e {"
+        "content": "    let spawnDeployFunctionStub;"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "      spawnStub \u003d sinon.stub(serverless.pluginManager, \u0027spawn\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "      spawnPackageStub \u003d spawnStub.withArgs(\u0027package\u0027).resolves();"
+        "content": "    beforeEach(() \u003d\u003e {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "      spawnDeployFunctionStub \u003d spawnStub.withArgs(\u0027deploy:function\u0027).resolves();"
+        "content": "      spawnStub \u003d sinon.stub(serverless.pluginManager, \u0027spawn\u0027);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "      spawnPackageStub \u003d spawnStub.withArgs(\u0027package\u0027).resolves();"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      spawnDeployFunctionStub \u003d spawnStub.withArgs(\u0027deploy:function\u0027).resolves();"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "    afterEach(() \u003d\u003e {"
+        "content": "    });"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "      serverless.pluginManager.spawn.restore();"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "    afterEach(() \u003d\u003e {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      serverless.pluginManager.spawn.restore();"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "    it(\u0027should resolve if the package option is set\u0027, () \u003d\u003e {"
+        "content": "    });"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.options.package \u003d false;"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.serverless.service.package.path \u003d \u0027some_path\u0027;"
+        "content": "    it(\u0027should resolve if the package option is set\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      deploy.options.package \u003d false;"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled"
+        "content": "      deploy.serverless.service.package.path \u003d \u0027some_path\u0027;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "        .then(() \u003d\u003e expect(spawnPackageStub).to.be.not.called);"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled.then("
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "        () \u003d\u003e expect(spawnPackageStub).to.be.not.called"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "    it(\u0027should resolve if the service package path is set\u0027, () \u003d\u003e {"
+        "content": "      );"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.options.package \u003d \u0027some_path\u0027;"
+        "content": "    });"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.serverless.service.package.path \u003d false;"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    it(\u0027should resolve if the service package path is set\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled"
+        "content": "      deploy.options.package \u003d \u0027some_path\u0027;"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "        .then(() \u003d\u003e expect(spawnPackageStub).to.be.not.called);"
+        "content": "      deploy.serverless.service.package.path \u003d false;"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled.then("
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "    it(\u0027should use the default packaging mechanism if no packaging config is provided\u0027, () \u003d\u003e {"
+        "content": "        () \u003d\u003e expect(spawnPackageStub).to.be.not.called"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.options.package \u003d false;"
+        "content": "      );"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.serverless.service.package.path \u003d false;"
+        "content": "    });"
       },
       {
         "lineNumber": 70,
@@ -3478,84 +3506,84 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled"
+        "content": "    it(\u0027should use the default packaging mechanism if no packaging config is provided\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "        .then(() \u003d\u003e BbPromise.all(["
+        "content": "      deploy.options.package \u003d false;"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "          expect(spawnDeployFunctionStub).to.not.be.called,"
+        "content": "      deploy.serverless.service.package.path \u003d false;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "          expect(spawnPackageStub).to.be.calledOnce,"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "          expect(spawnPackageStub).to.be.calledWithExactly(\u0027package\u0027),"
+        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled.then(() \u003d\u003e"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "        ]));"
+        "content": "        BbPromise.all(["
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "          expect(spawnDeployFunctionStub).to.not.be.called,"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          expect(spawnPackageStub).to.be.calledOnce,"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "    it(\u0027should execute deploy function if a function option is given\u0027, () \u003d\u003e {"
+        "content": "          expect(spawnPackageStub).to.be.calledWithExactly(\u0027package\u0027),"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.options.package \u003d false;"
+        "content": "        ])"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.options.function \u003d \u0027myfunc\u0027;"
+        "content": "      );"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "      deploy.serverless.service.package.path \u003d false;"
+        "content": "    });"
       },
       {
         "lineNumber": 83,
@@ -3569,143 +3597,171 @@
         "author": {
           "gitId": "-"
         },
-        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled"
+        "content": "    it(\u0027should execute deploy function if a function option is given\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "      .then(() \u003d\u003e BbPromise.all(["
+        "content": "      deploy.options.package \u003d false;"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "        expect(spawnPackageStub).to.not.be.called,"
+        "content": "      deploy.options.function \u003d \u0027myfunc\u0027;"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "        expect(spawnDeployFunctionStub).to.be.calledOnce,"
+        "content": "      deploy.serverless.service.package.path \u003d false;"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "        expect(spawnDeployFunctionStub).to.be"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "          .calledWithExactly(\u0027deploy:function\u0027, {"
+        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.fulfilled.then(() \u003d\u003e"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "            terminateLifecycleAfterExecution: true,"
+        "content": "        BbPromise.all(["
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "          }"
+        "content": "          expect(spawnPackageStub).to.not.be.called,"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "        ),"
+        "content": "          expect(spawnDeployFunctionStub).to.be.calledOnce,"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "      ]));"
+        "content": "          expect(spawnDeployFunctionStub).to.be.calledWithExactly(\u0027deploy:function\u0027, {"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "    });"
+        "content": "            terminateLifecycleAfterExecution: true,"
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "          }),"
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "    it(\u0027should throw an error if provider does not exist\u0027, () \u003d\u003e {"
+        "content": "        ])"
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "      deploy.serverless.service.provider.name \u003d \u0027nonExistentProvider\u0027;"
+        "content": "      );"
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "    });"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "Xenonym"
         },
-        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.rejectedWith("
+        "content": ""
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "Xenonym"
         },
-        "content": "        \u0027The specified provider \"nonExistentProvider\" does not exist.\u0027"
+        "content": "    it(\u0027should throw an error if provider does not exist\u0027, () \u003d\u003e {"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "Xenonym"
         },
-        "content": "      );"
+        "content": "      deploy.serverless.service.provider.name \u003d \u0027nonExistentProvider\u0027;"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "Xenonym"
         },
-        "content": "    });"
+        "content": ""
       },
       {
         "lineNumber": 103,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "      return expect(deploy.hooks[\u0027before:deploy:deploy\u0027]()).to.be.rejectedWith("
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "        \u0027The specified provider \"nonExistentProvider\" does not exist.\u0027"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "      );"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    });"
+      },
+      {
+        "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
         "content": "  });"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
@@ -3713,8 +3769,8 @@
       }
     ],
     "authorContributionMap": {
-      "Xenonym": 10,
-      "-": 94
+      "Xenonym": 9,
+      "-": 99
     }
   },
   {
@@ -3830,297 +3886,311 @@
         "author": {
           "gitId": "-"
         },
-        "content": "        lifecycleEvents: ["
+        "content": "        lifecycleEvents: [\u0027install\u0027],"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u0027install\u0027,"
+        "content": "        options: {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": "        ],"
+        "content": "          url: {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "        options: {"
+        "content": "            usage: \u0027URL of the Serverless service on GitHub\u0027,"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": "          url: {"
+        "content": "            required: true,"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": "            usage: \u0027URL of the Serverless service on GitHub\u0027,"
+        "content": "            shortcut: \u0027u\u0027,"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": "            required: true,"
+        "content": "          },"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "            shortcut: \u0027u\u0027,"
+        "content": "          name: {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "          },"
+        "content": "            usage: \u0027Name for the service\u0027,"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "          name: {"
+        "content": "            shortcut: \u0027n\u0027,"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "            usage: \u0027Name for the service\u0027,"
+        "content": "          },"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "            shortcut: \u0027n\u0027,"
+        "content": "        },"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": "          },"
+        "content": "      },"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": "        },"
+        "content": "    };"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "      },"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": "    this.hooks \u003d {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      \u0027install:install\u0027: () \u003d\u003e BbPromise.bind(this).then(this.install),"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "    this.hooks \u003d {"
+        "content": "    };"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u0027install:install\u0027: () \u003d\u003e BbPromise.bind(this)"
+        "content": "  }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "        .then(this.install),"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": "  install() {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    return download"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "      .downloadTemplateFromRepo(this.options.url, this.options.name)"
       },
       {
         "lineNumber": 39,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  install() {"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    return download.downloadTemplateFromRepo(this.options.url, this.options.name)"
-      },
-      {
-        "lineNumber": 41,
         "author": {
           "gitId": "Xenonym"
         },
         "content": "      .then(serviceName \u003d\u003e {"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
         "content": "        const message \u003d ["
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 41,
         "author": {
           "gitId": "Xenonym"
         },
         "content": "          `Successfully installed \"${serviceName}\" `,"
       },
       {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "          `${"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "            this.options.name \u0026\u0026 this.options.name !\u003d\u003d serviceName"
+      },
+      {
         "lineNumber": 44,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "          `${this.options.name \u0026\u0026"
+        "content": "              ? `as \"${this.options.name}\"`"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "            this.options.name !\u003d\u003d serviceName ? `as \"${this.options.name}\"` : \u0027\u0027}`,"
+        "content": "              : \u0027\u0027"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "        ].join(\u0027\u0027);"
+        "content": "          }`,"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "        userStats.track(\u0027service_installed\u0027, {"
+        "content": "        ].join(\u0027\u0027);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "          data: { // will be updated with core analtyics lib"
+        "content": "        userStats.track(\u0027service_installed\u0027, {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "            url: this.options.url,"
+        "content": "          data: {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "          },"
+        "content": "            // will be updated with core analtyics lib"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "        });"
+        "content": "            url: this.options.url,"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          },"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "        this.serverless.cli.log(message);"
+        "content": "        });"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "      });"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "        this.serverless.cli.log(message);"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "      });"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
@@ -4128,8 +4198,8 @@
       }
     ],
     "authorContributionMap": {
-      "Xenonym": 4,
-      "-": 54
+      "Xenonym": 2,
+      "-": 58
     }
   },
   {
@@ -4420,7 +4490,7 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    // validate if given url is a valid url"
+        "content": "  // validate if given url is a valid url"
       },
       {
         "lineNumber": 42,
@@ -4434,161 +4504,161 @@
         "author": {
           "gitId": "-"
         },
-        "content": "    const errorMessage \u003d `The URL must be a valid ${"
+        "content": "    const errorMessage \u003d `The URL must be a valid ${service} URL in the following format: https://${hostname}/serverless/serverless`;"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "        service"
+        "content": "    throw new ServerlessError(errorMessage);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "      } URL in the following format: https://${"
+        "content": "  }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "        hostname"
+        "content": "}"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "      }/serverless/serverless`;"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "    throw new ServerlessError(errorMessage);"
+        "content": "/**"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": " * @param {Object} url"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": " * @returns {Object}"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": "function parseGitHubURL(url) {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {Object} url"
+        "content": "  const pathLength \u003d 4;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Object}"
+        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "function parseGitHubURL(url) {"
+        "content": "  const owner \u003d parts[1];"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "  const pathLength \u003d 4;"
+        "content": "  const repo \u003d parts[2];"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
+        "content": "  const branch \u003d isSubdirectory ? parts[pathLength] : \u0027master\u0027;"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "  const owner \u003d parts[1];"
+        "content": "  // validate if given url is a valid GitHub url"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "  const repo \u003d parts[2];"
+        "content": "  validateUrl(url, \u0027github.com\u0027, \u0027GitHub\u0027, owner, repo);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "  const branch \u003d isSubdirectory ? parts[pathLength] : \u0027master\u0027;"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const downloadUrl \u003d `https://${"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "  // validate if given url is a valid GitHub url"
+        "content": "    url.auth ? `${url.auth}@` : \u0027\u0027"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "  validateUrl(url, \u0027github.com\u0027, \u0027GitHub\u0027, owner, repo);"
+        "content": "  }github.com/${owner}/${repo}/archive/${branch}.zip`;"
       },
       {
         "lineNumber": 66,
@@ -4602,196 +4672,196 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  const downloadUrl \u003d `https://${url.auth ? `${url.auth}@` : \u0027\u0027}github.com/${owner}/${repo}/archive/${branch}.zip`;"
+        "content": "  return {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    owner,"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "  return {"
+        "content": "    repo,"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "    owner,"
+        "content": "    branch,"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "    repo,"
+        "content": "    downloadUrl,"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "    branch,"
+        "content": "    isSubdirectory,"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "    downloadUrl,"
+        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "    isSubdirectory,"
+        "content": "  };"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
+        "content": "}"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "/**"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @param {Object} url"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * @returns {Object}"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {Object} url"
+        "content": " */"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Object}"
+        "content": "function parseBitbucketURL(url) {"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "  const pathLength \u003d 4;"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "function parseBitbucketURL(url) {"
+        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "  const pathLength \u003d 4;"
+        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
+        "content": "  const owner \u003d parts[1];"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
+        "content": "  const repo \u003d parts[2];"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": "  const owner \u003d parts[1];"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "  const repo \u003d parts[2];"
+        "content": "  const query \u003d qs.parse(url.query);"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const branch \u003d \u0027at\u0027 in query ? query.at : \u0027master\u0027;"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "  const query \u003d qs.parse(url.query);"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "  const branch \u003d \u0027at\u0027 in query ? query.at : \u0027master\u0027;"
+        "content": "  // validate if given url is a valid Bitbucket url"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  validateUrl(url, \u0027bitbucket.org\u0027, \u0027Bitbucket\u0027, owner, repo);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "  // validate if given url is a valid Bitbucket url"
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "  validateUrl(url, \u0027bitbucket.org\u0027, \u0027Bitbucket\u0027, owner, repo);"
+        "content": "  const downloadUrl \u003d `https://bitbucket.org/${owner}/${repo}/get/${branch}.zip`;"
       },
       {
         "lineNumber": 95,
@@ -4805,154 +4875,154 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  const downloadUrl \u003d `https://bitbucket.org/${owner}/${repo}/get/${branch}.zip`;"
+        "content": "  return {"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    owner,"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "  return {"
+        "content": "    repo,"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "    owner,"
+        "content": "    branch,"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "    repo,"
+        "content": "    downloadUrl,"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "    branch,"
+        "content": "    isSubdirectory,"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "    downloadUrl,"
+        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "    isSubdirectory,"
+        "content": "  };"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
+        "content": "}"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "/**"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @param {Object} url"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * @returns {Object}"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {Object} url"
+        "content": " */"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Object}"
+        "content": "function parseGitlabURL(url) {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "  const pathLength \u003d 4;"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "function parseGitlabURL(url) {"
+        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "  const pathLength \u003d 4;"
+        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "  const parts \u003d url.pathname.split(\u0027/\u0027);"
+        "content": "  const owner \u003d parts[1];"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "-"
         },
-        "content": "  const isSubdirectory \u003d parts.length \u003e pathLength;"
+        "content": "  const repo \u003d parts[2];"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
-        "content": "  const owner \u003d parts[1];"
+        "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "-"
         },
-        "content": "  const repo \u003d parts[2];"
+        "content": "  const branch \u003d isSubdirectory ? parts[pathLength] : \u0027master\u0027;"
       },
       {
         "lineNumber": 118,
@@ -4966,28 +5036,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  const branch \u003d isSubdirectory ? parts[pathLength] : \u0027master\u0027;"
+        "content": "  // validate if given url is a valid GitLab url"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  validateUrl(url, \u0027gitlab.com\u0027, \u0027Bitbucket\u0027, owner, repo);"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
-        "content": "  // validate if given url is a valid GitLab url"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "-"
         },
-        "content": "  validateUrl(url, \u0027gitlab.com\u0027, \u0027Bitbucket\u0027, owner, repo);"
+        "content": "  const downloadUrl \u003d `https://gitlab.com/${owner}/${repo}/-/archive/${branch}/${repo}-${branch}.zip`;"
       },
       {
         "lineNumber": 123,
@@ -5001,161 +5071,161 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  const downloadUrl \u003d `https://gitlab.com/${owner}/${repo}/-/archive/${branch}/${repo}-${branch}.zip`;"
+        "content": "  return {"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    owner,"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "-"
         },
-        "content": "  return {"
+        "content": "    repo,"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "-"
         },
-        "content": "    owner,"
+        "content": "    branch,"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "-"
         },
-        "content": "    repo,"
+        "content": "    downloadUrl,"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "-"
         },
-        "content": "    branch,"
+        "content": "    isSubdirectory,"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "-"
         },
-        "content": "    downloadUrl,"
+        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "-"
         },
-        "content": "    isSubdirectory,"
+        "content": "  };"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "-"
         },
-        "content": "    pathToDirectory: getPathDirectory(pathLength + 1, parts),"
+        "content": "}"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "-"
         },
-        "content": "  };"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "/**"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * Parse URL and call the appropriate adaptor"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " *"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "-"
         },
-        "content": " * Parse URL and call the appropriate adaptor"
+        "content": " * @param {string} inputUrl"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": " *"
+        "content": " * @throws {ServerlessError}"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {string} inputUrl"
+        "content": " * @returns {Object}"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "-"
         },
-        "content": " * @throws {ServerlessError}"
+        "content": " */"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Object}"
+        "content": "function parseRepoURL(inputUrl) {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "  if (!inputUrl) {"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "-"
         },
-        "content": "function parseRepoURL(inputUrl) {"
+        "content": "    throw new ServerlessError(\u0027URL is required\u0027);"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (!inputUrl) {"
+        "content": "  }"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "-"
         },
-        "content": "    throw new ServerlessError(\u0027URL is required\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "  const url \u003d URL.parse(inputUrl.replace(/\\/$/, \u0027\u0027));"
       },
       {
         "lineNumber": 147,
@@ -5169,392 +5239,392 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  const url \u003d URL.parse(inputUrl.replace(/\\/$/, \u0027\u0027));"
+        "content": "  // check if url parameter is a valid url"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  if (!url.host) {"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "-"
         },
-        "content": "  // check if url parameter is a valid url"
+        "content": "    throw new ServerlessError(\u0027The URL you passed is not a valid URL\u0027);"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (!url.host) {"
+        "content": "  }"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "-"
         },
-        "content": "    throw new ServerlessError(\u0027The URL you passed is not a valid URL\u0027);"
+        "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "  switch (url.hostname) {"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    case \u0027github.com\u0027: {"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "-"
         },
-        "content": "  switch (url.hostname) {"
+        "content": "      return parseGitHubURL(url);"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027github.com\u0027: {"
+        "content": "    }"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
-        "content": "      return parseGitHubURL(url);"
+        "content": "    case \u0027bitbucket.org\u0027: {"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      return parseBitbucketURL(url);"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027bitbucket.org\u0027: {"
+        "content": "    }"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "-"
         },
-        "content": "      return parseBitbucketURL(url);"
+        "content": "    case \u0027gitlab.com\u0027: {"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      return parseGitlabURL(url);"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "-"
         },
-        "content": "    case \u0027gitlab.com\u0027: {"
+        "content": "    }"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "-"
         },
-        "content": "      return parseGitlabURL(url);"
+        "content": "    default: {"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      const msg \u003d"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "-"
         },
-        "content": "    default: {"
+        "content": "        \u0027The URL you passed is not one of the valid providers: \"GitHub\", \"Bitbucket\", or \"GitLab\".\u0027;"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "-"
         },
-        "content": "      const msg \u003d"
+        "content": "      throw new ServerlessError(msg);"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u0027The URL you passed is not one of the valid providers: \"GitHub\", \"Bitbucket\", or \"GitLab\".\u0027;"
+        "content": "    }"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "      throw new ServerlessError(msg);"
+        "content": "  }"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "}"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "/**"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": " * @param {string} inputUrl"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "-"
         },
-        "content": "/**"
+        "content": " * @param {string} [templateName]"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {string} inputUrl"
+        "content": " * @param {string} [path]"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {string} [templateName]"
+        "content": " * @returns {Promise}"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "-"
         },
-        "content": " * @param {string} [path]"
+        "content": " */"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "-"
         },
-        "content": " * @returns {Promise}"
+        "content": "function downloadTemplateFromRepo(inputUrl, templateName, downloadPath) {"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "-"
         },
-        "content": " */"
+        "content": "  const repoInformation \u003d parseRepoURL(inputUrl);"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "-"
         },
-        "content": "function downloadTemplateFromRepo(inputUrl, templateName, downloadPath) {"
+        "content": ""
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
-        "content": "  const repoInformation \u003d parseRepoURL(inputUrl);"
+        "content": "  let serviceName;"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  let dirName;"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
-        "content": "  let serviceName;"
+        "content": "  let downloadServicePath;"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
-        "content": "  let dirName;"
+        "content": ""
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
-        "content": "  let downloadServicePath;"
+        "content": "  if (repoInformation.isSubdirectory) {"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const folderName \u003d repoInformation.pathToDirectory.split(\u0027/\u0027).splice(-1)[0];"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (repoInformation.isSubdirectory) {"
+        "content": "    serviceName \u003d folderName;"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
-        "content": "    const folderName \u003d repoInformation.pathToDirectory.split(\u0027/\u0027).splice(-1)[0];"
+        "content": "    dirName \u003d downloadPath || templateName || folderName;"
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
-        "content": "    serviceName \u003d folderName;"
+        "content": "    downloadServicePath \u003d path.join(os.tmpdir(), repoInformation.repo);"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
-        "content": "    dirName \u003d downloadPath || templateName || folderName;"
+        "content": "  } else {"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
-        "content": "    downloadServicePath \u003d path.join(os.tmpdir(), repoInformation.repo);"
+        "content": "    serviceName \u003d repoInformation.repo;"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
-        "content": "  } else {"
+        "content": "    dirName \u003d downloadPath || templateName || repoInformation.repo;"
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "-"
         },
-        "content": "    serviceName \u003d repoInformation.repo;"
+        "content": "    downloadServicePath \u003d path.join(process.cwd(), dirName);"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "-"
         },
-        "content": "    dirName \u003d downloadPath || templateName || repoInformation.repo;"
+        "content": "  }"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "-"
         },
-        "content": "    downloadServicePath \u003d path.join(process.cwd(), dirName);"
+        "content": ""
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "  const servicePath \u003d path.join(process.cwd(), dirName);"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const renamed \u003d dirName !\u003d\u003d repoInformation.repo;"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "-"
         },
-        "content": "  const servicePath \u003d path.join(process.cwd(), dirName);"
+        "content": ""
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "-"
         },
-        "content": "  const renamed \u003d dirName !\u003d\u003d repoInformation.repo;"
+        "content": "  if (dirExistsSync(path.join(process.cwd(), dirName))) {"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "    const errorMessage \u003d `A folder named \"${dirName}\" already exists.`;"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (dirExistsSync(path.join(process.cwd(), dirName))) {"
+        "content": "    throw new ServerlessError(errorMessage);"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "-"
         },
-        "content": "    const errorMessage \u003d `A folder named \"${dirName}\" already exists.`;"
+        "content": "  }"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "-"
         },
-        "content": "    throw new ServerlessError(errorMessage);"
+        "content": ""
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "  log(`Downloading and installing \"${serviceName}\"...`);"
       },
       {
         "lineNumber": 204,
@@ -5568,171 +5638,178 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  log(`Downloading and installing \"${serviceName}\"...`);"
+        "content": "  // download service"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  return download(repoInformation.downloadUrl, downloadServicePath, {"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "-"
         },
-        "content": "  // download service"
+        "content": "    timeout: 30000,"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "-"
         },
-        "content": "  return download("
+        "content": "    extract: true,"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "    repoInformation.downloadUrl,"
+        "content": "    strip: 1,"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "-"
         },
-        "content": "    downloadServicePath,"
+        "content": "    mode: \u0027755\u0027,"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "-"
         },
-        "content": "    { timeout: 30000, extract: true, strip: 1, mode: \u0027755\u0027 }"
+        "content": "  })"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "-"
         },
-        "content": "  ).then(() \u003d\u003e {"
+        "content": "    .then(() \u003d\u003e {"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "-"
         },
-        "content": "    // if it\u0027s a directory inside of git"
+        "content": "      // if it\u0027s a directory inside of git"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "-"
         },
-        "content": "    if (repoInformation.isSubdirectory) {"
+        "content": "      if (repoInformation.isSubdirectory) {"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "-"
         },
-        "content": "      const directory \u003d path.join(downloadServicePath, repoInformation.pathToDirectory);"
+        "content": "        const directory \u003d path.join(downloadServicePath, repoInformation.pathToDirectory);"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "-"
         },
-        "content": "      copyDirContentsSync(directory, servicePath);"
+        "content": "        copyDirContentsSync(directory, servicePath);"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "-"
         },
-        "content": "      fse.removeSync(downloadServicePath);"
+        "content": "        fse.removeSync(downloadServicePath);"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      }"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "-"
         },
-        "content": "  }).then(() \u003d\u003e {"
+        "content": "    })"
       },
       {
         "lineNumber": 220,
         "author": {
-          "gitId": "Xenonym"
+          "gitId": "-"
         },
-        "content": "    if (renamed) renameService(dirName, servicePath);"
+        "content": "    .then(() \u003d\u003e {"
       },
       {
         "lineNumber": 221,
+        "author": {
+          "gitId": "Xenonym"
+        },
+        "content": "      if (renamed) renameService(dirName, servicePath);"
+      },
+      {
+        "lineNumber": 222,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 222,
+        "lineNumber": 223,
         "author": {
           "gitId": "Xenonym"
         },
-        "content": "    return BbPromise.resolve(serviceName);"
-      },
-      {
-        "lineNumber": 223,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "  });"
+        "content": "      return BbPromise.resolve(serviceName);"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "    });"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "-"
         },
-        "content": "module.exports \u003d {"
+        "content": ""
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "-"
         },
-        "content": "  downloadTemplateFromRepo,"
+        "content": "module.exports \u003d {"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "-"
         },
-        "content": "  parseRepoURL,"
+        "content": "  downloadTemplateFromRepo,"
       },
       {
         "lineNumber": 229,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  parseRepoURL,"
+      },
+      {
+        "lineNumber": 230,
         "author": {
           "gitId": "-"
         },
@@ -5741,7 +5818,7 @@
     ],
     "authorContributionMap": {
       "Xenonym": 2,
-      "-": 227
+      "-": 228
     }
   }
 ]
