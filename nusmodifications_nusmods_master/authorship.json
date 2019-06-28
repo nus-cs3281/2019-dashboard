@@ -61925,689 +61925,696 @@
         "author": {
           "gitId": "-"
         },
-        "content": "  const { commitHash, versionStr } \u003d process.env;"
+        "content": "  const commitHash \u003d process.env.DISPLAY_COMMIT_HASH;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  const versionStr \u003d process.env.VERSION_STR;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "  // Try catch because of Chrome crashing on calling toLocaleString with no parameter"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "-"
         },
-        "content": "  // See https://sentry.io/nusmods/v3/issues/434084130/"
+        "content": "  // Try catch because of Chrome crashing on calling toLocaleString with no parameter"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": "  let lastUpdatedText \u003d \u0027Loading data...\u0027;"
+        "content": "  // See https://sentry.io/nusmods/v3/issues/434084130/"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "-"
         },
-        "content": "  if (props.lastUpdatedDate) {"
+        "content": "  let lastUpdatedText \u003d \u0027Loading data...\u0027;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "-"
         },
-        "content": "    try {"
+        "content": "  if (props.lastUpdatedDate) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "-"
         },
-        "content": "      lastUpdatedText \u003d `Data correct as at ${props.lastUpdatedDate.toLocaleString()}.`;"
+        "content": "    try {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "-"
         },
-        "content": "    } catch (e) {"
+        "content": "      lastUpdatedText \u003d `Data correct as at ${props.lastUpdatedDate.toLocaleString()}.`;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "-"
         },
-        "content": "      lastUpdatedText \u003d `Data correct as at ${props.lastUpdatedDate.toString()}.`;"
+        "content": "    } catch (e) {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "-"
         },
-        "content": "    }"
+        "content": "      lastUpdatedText \u003d `Data correct as at ${props.lastUpdatedDate.toString()}.`;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "-"
         },
-        "content": "  }"
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "-"
         },
-        "content": "  const versionSpan \u003d commitHash \u0026\u0026 versionStr \u0026\u0026 ("
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003cspan\u003e"
+        "content": "  const versionSpan \u003d commitHash \u0026\u0026 versionStr \u0026\u0026 ("
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "-"
         },
-        "content": "      NUSMods R version{\u0027 \u0027}"
+        "content": "    \u003cspan\u003e"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003cExternalLink href\u003d{`https://github.com/nusmodifications/nusmods/commit/${commitHash}`}\u003e"
+        "content": "      NUSMods R version{\u0027 \u0027}"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "-"
         },
-        "content": "        {versionStr}"
+        "content": "      \u003cExternalLink href\u003d{`https://github.com/nusmodifications/nusmods/commit/${commitHash}`}\u003e"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/ExternalLink\u003e"
+        "content": "        {versionStr}"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "-"
         },
-        "content": "      ."
+        "content": "      \u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003c/span\u003e"
+        "content": "      ."
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "-"
         },
-        "content": "  );"
+        "content": "    \u003c/span\u003e"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "  );"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "-"
         },
-        "content": "  return ("
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003cfooter className\u003d{styles.footer}\u003e"
+        "content": "  return ("
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003cdiv className\u003d\"container\"\u003e"
+        "content": "    \u003cfooter className\u003d{styles.footer}\u003e"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cul className\u003d{styles.footerLinks}\u003e"
+        "content": "      \u003cdiv className\u003d\"container\"\u003e"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "        \u003cul className\u003d{styles.footerLinks}\u003e"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d{config.contact.githubRepo}\u003eGitHub\u003c/ExternalLink\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cExternalLink href\u003d{config.contact.githubRepo}\u003eGitHub\u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d{config.contact.facebook}\u003eFacebook\u003c/ExternalLink\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cExternalLink href\u003d{config.contact.facebook}\u003eFacebook\u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d{config.contact.messenger}\u003eMessenger\u003c/ExternalLink\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cExternalLink href\u003d{config.contact.messenger}\u003eMessenger\u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d{config.contact.twitter}\u003eTwitter\u003c/ExternalLink\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cExternalLink href\u003d{config.contact.twitter}\u003eTwitter\u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d{config.contact.blog}\u003eBlog\u003c/ExternalLink\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cExternalLink href\u003d{config.contact.blog}\u003eBlog\u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cExternalLink href\u003d\"https://github.com/nusmodifications/nusmods/tree/master/api\"\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "-"
         },
-        "content": "              API"
+        "content": "            \u003cExternalLink href\u003d\"https://github.com/nusmodifications/nusmods/tree/master/api\"\u003e"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c/ExternalLink\u003e"
+        "content": "              API"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003c/ExternalLink\u003e"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cLink to\u003d\"/apps\"\u003eApps\u003c/Link\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cLink to\u003d\"/apps\"\u003eApps\u003c/Link\u003e"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cLink to\u003d\"/about\"\u003eAbout\u003c/Link\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cLink to\u003d\"/about\"\u003eAbout\u003c/Link\u003e"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cLink to\u003d\"/team\"\u003eTeam\u003c/Link\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cLink to\u003d\"/team\"\u003eTeam\u003c/Link\u003e"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cLink to\u003d\"/contributors\"\u003eContributors\u003c/Link\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cLink to\u003d\"/contributors\"\u003eContributors\u003c/Link\u003e"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cLink to\u003d\"/faq\"\u003eFAQ\u003c/Link\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003cLink to\u003d\"/faq\"\u003eFAQ\u003c/Link\u003e"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "-"
         },
-        "content": "          {/* new Date().getMonth() \u003d\u003d\u003d 9 \u0026\u0026 ("
+        "content": ""
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cli\u003e"
+        "content": "          {/* new Date().getMonth() \u003d\u003d\u003d 9 \u0026\u0026 ("
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003cLink to\u003d\"/hacktoberfest\"\u003e"
+        "content": "            \u003cli\u003e"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "-"
         },
-        "content": "                \u003cstrong\u003eHacktoberfest!\u003c/strong\u003e"
+        "content": "              \u003cLink to\u003d\"/hacktoberfest\"\u003e"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "-"
         },
-        "content": "              \u003c/Link\u003e"
+        "content": "                \u003cstrong\u003eHacktoberfest!\u003c/strong\u003e"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c/li\u003e"
+        "content": "              \u003c/Link\u003e"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
-        "content": "          ) */}"
+        "content": "            \u003c/li\u003e"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "          ) */}"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cli\u003e"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003cLink to\u003d\"/contribute\" className\u003d{styles.feedbackBtn}\u003e"
+        "content": "          \u003cli\u003e"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "-"
         },
-        "content": "              Contribute to NUSMods!"
+        "content": "            \u003cLink to\u003d\"/contribute\" className\u003d{styles.feedbackBtn}\u003e"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "-"
         },
-        "content": "            \u003c/Link\u003e"
+        "content": "              Contribute to NUSMods!"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003c/li\u003e"
+        "content": "            \u003c/Link\u003e"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/ul\u003e"
+        "content": "          \u003c/li\u003e"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cp\u003e{lastUpdatedText}\u003c/p\u003e"
+        "content": "        \u003c/ul\u003e"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cp\u003e"
+        "content": "        \u003cp\u003e{lastUpdatedText}\u003c/p\u003e"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "-"
         },
-        "content": "          Designed and built with all the love in the world by{\u0027 \u0027}"
+        "content": "        \u003cp\u003e"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cExternalLink href\u003d{config.contact.githubOrg}\u003e@nusmodifications\u003c/ExternalLink\u003e. Maintained"
+        "content": "          Designed and built with all the love in the world by{\u0027 \u0027}"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "-"
         },
-        "content": "          by the \u003cLink to\u003d\"/team\"\u003ecore team\u003c/Link\u003e with the help of{\u0027 \u0027}"
+        "content": "          \u003cExternalLink href\u003d{config.contact.githubOrg}\u003e@nusmodifications\u003c/ExternalLink\u003e. Maintained"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "-"
         },
-        "content": "          \u003cLink to\u003d\"/contributors\"\u003eour contributors\u003c/Link\u003e."
+        "content": "          by the \u003cLink to\u003d\"/team\"\u003ecore team\u003c/Link\u003e with the help of{\u0027 \u0027}"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003c/p\u003e"
+        "content": "          \u003cLink to\u003d\"/contributors\"\u003eour contributors\u003c/Link\u003e."
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "-"
         },
-        "content": "        \u003cp\u003eCopyright © 2014 - Present, NUSModifications. All rights reserved. {versionSpan}\u003c/p\u003e"
+        "content": "        \u003c/p\u003e"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "-"
         },
-        "content": "      \u003c/div\u003e"
+        "content": "        \u003cp\u003eCopyright © 2014 - Present, NUSModifications. All rights reserved. {versionSpan}\u003c/p\u003e"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "-"
         },
-        "content": "    \u003c/footer\u003e"
+        "content": "      \u003c/div\u003e"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "-"
         },
-        "content": "  );"
+        "content": "    \u003c/footer\u003e"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "-"
         },
-        "content": "}"
+        "content": "  );"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "}"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "-"
         },
-        "content": "export default connect("
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
-        "content": "  (state: State) \u003d\u003e {"
+        "content": "export default connect("
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "-"
         },
-        "content": "    const lastUpdatedString \u003d state.moduleBank.apiLastUpdatedTimestamp;"
+        "content": "  (state: State) \u003d\u003e {"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "-"
         },
-        "content": "    return {"
+        "content": "    const lastUpdatedString \u003d state.moduleBank.apiLastUpdatedTimestamp;"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "-"
         },
-        "content": "      lastUpdatedDate: lastUpdatedString ? new Date(lastUpdatedString) : null,"
+        "content": "    return {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "-"
         },
-        "content": "    };"
+        "content": "      lastUpdatedDate: lastUpdatedString ? new Date(lastUpdatedString) : null,"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "-"
         },
-        "content": "  },"
+        "content": "    };"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "-"
         },
-        "content": "  { toggleFeedback },"
+        "content": "  },"
       },
       {
         "lineNumber": 115,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "  { toggleFeedback },"
+      },
+      {
+        "lineNumber": 116,
         "author": {
           "gitId": "-"
         },
@@ -62616,7 +62623,7 @@
     ],
     "authorContributionMap": {
       "amrut-prabhu": 1,
-      "-": 114
+      "-": 115
     }
   },
   {
